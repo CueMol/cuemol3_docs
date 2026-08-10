@@ -16,18 +16,21 @@ theme:
     - toc.follow
     - search.highlight
     - search.suggest
+  # Colours are defined in docs/stylesheets/extra.css (see "Colour palette"),
+  # derived from the CueMol3 icon. 'custom' tells Material to emit the data
+  # attributes without applying a built-in palette.
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: cyan
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: ダークモードに切り替え
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: cyan
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: ライトモードに切り替え
