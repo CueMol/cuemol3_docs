@@ -1,6 +1,7 @@
 # Windows へのインストール
 
-対象: **Windows (x64)**。配布物は `CueMol3-<version>-x64.exe` (NSIS インストーラー) です。
+対象: **Windows (x64)**。配布物は `CueMol3-<version>-x64.exe` (NSIS インストーラー) です
+(入手方法は [ダウンロード](index.md#ダウンロード) を参照)。
 
 !!! warning "配布物は未署名です"
     現在の `.exe` は Authenticode によるコード署名を行っていません。

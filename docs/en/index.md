@@ -4,6 +4,8 @@
 structures of biological macromolecules. It inherits the CueMol2 visualization engine (libcuemol2)
 while the GUI has been rebuilt from scratch on Electron + React.
 
+![CueMol3 in use: the main window showing a cryo-EM map with a ribbon model, and the rendering window ray-tracing the scene with Umbreon](../assets/images/index/app-example.webp){ .on-glb }
+
 !!! warning "This is a development build"
     CueMol3 is currently distributed as **dev / internal builds only**; there is no general
     release yet, and the builds carry no code signature identifying their origin (the macOS
@@ -30,6 +32,7 @@ while the GUI has been rebuilt from scratch on Electron + React.
 
 | Link | Contents |
 |---|---|
+| [GitHub Releases](https://github.com/CueMol/cuemol2/releases) | Downloads and release notes (CueMol3 assets are the `CueMol3-*` files) |
 | [CueMol2 documentation](https://cuemol.github.io/cuemol2_docs/) | Documentation for CueMol2 (stable). Frozen for CueMol2 |
 | [Gallery](https://cuemol.github.io/cuemol2_docs/en/Gallery/) | Example images made with CueMol (on the CueMol2 site) |
 | [GitHub: CueMol/cuemol2](https://github.com/CueMol/cuemol2) | Source repository (CueMol3 lives under `tritium/`) |

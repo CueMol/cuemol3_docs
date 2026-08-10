@@ -3,6 +3,8 @@
 **CueMol3** (開発コードネーム *tritium*) は、生体高分子の立体構造を可視化するためのソフトウェアです。
 CueMol2 の可視化エンジン (libcuemol2) をそのまま受け継ぎつつ、GUI を Electron + React で全面的に作り直しています。
 
+![CueMol3 の画面例。メインウィンドウでクライオ電顕マップとリボンモデルを表示し、レンダリングウィンドウで Umbreon によるレイトレーシングを実行しているところ](assets/images/index/app-example.webp){ .on-glb }
+
 !!! warning "現在のバージョンは開発版です"
     CueMol3 の配布物は **dev / internal 配布のみ**で、一般利用向けの正式リリースはまだありません。
     実務で安定して使いたい場合は、CueMol2 の安定版
@@ -44,6 +46,7 @@ CueMol3 では GUI が大きく変わり、一部の機能が統合・改名・�
 
 | リンク | 内容 |
 |---|---|
+| [GitHub Releases](https://github.com/CueMol/cuemol2/releases) | 配布物のダウンロードとリリースノート (→ [ダウンロード](install/index.md#ダウンロード)) |
 | [CueMol2 ドキュメント](https://cuemol.github.io/cuemol2_docs/) | CueMol2 (安定版) のドキュメント。CueMol2 向けに凍結維持されています |
 | [ギャラリー](https://cuemol.github.io/cuemol2_docs/en/Gallery/) | CueMol で作成された画像の作例 (CueMol2 サイト内) |
 | [GitHub: CueMol/cuemol2](https://github.com/CueMol/cuemol2) | ソースコードリポジトリ (CueMol3 は `tritium/` 以下) |

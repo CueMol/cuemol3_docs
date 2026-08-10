@@ -10,7 +10,7 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 |---|---|---|
 | Rendering &gt; POV-Ray rendering... | **Rendering &gt; Image rendering...** | バックエンド (Umbreon / POV-Ray) はレンダリングウィンドウ内で選ぶため、メニューは出力の種類を表す名前になりました → [レンダリングウィンドウ](../ui/rendering-window.md) |
 | Rendering &gt; Animation rendering... | **Rendering &gt; Movie rendering...** | 同じレンダリングウィンドウの動画モードになりました |
-| Tools &gt; Mol bond editor... | ツールパレットの **Add Bond** ツール | モーダルダイアログから、3D ビューを直接クリックする方式に変わりました → [ツールバーとツールパレット](../ui/toolbar-tools.md) |
+| Tools &gt; Mol bond editor... | ツールパレットの **Add Bond** ツール | モーダルダイアログから、分子ビューを直接クリックする方式に変わりました → [ツールバーとツールパレット](../ui/toolbar-tools.md) |
 | Edit &gt; Options (プリファレンスウィンドウ) | **Settings** タブ | モーダルではなくコンテンツ領域のタブとして開きます。macOS では Preferences... |
 | レンダラ種類ごとのプロパティダイアログ | **プロパティインスペクタ** | ダイアログを廃し、常設パネルでのライブ編集になりました → [プロパティインスペクタ](../ui/inspector.md) |
 | カラーメニューのプリセット | **カラーピッカーの Palette パネル** | グレースケール + 色相ごとのバリエーションとして統合されました |
