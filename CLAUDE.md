@@ -40,6 +40,9 @@ CueMol3 (tritium) のユーザードキュメントサイト (mkdocs-material、
 ## 同期記録
 
 - 前回同期: 2026-08-10 / cuemol2 コミット: `d4c35ba9e9ca` (branch: feat/app-icon-refresh)
+- 追加反映: 2026-08-10 / cuemol2 `b706529c` (branch: develop) + **未コミットの作業ツリー変更**
+  (object Save File As の改良: `listSavableObjects` / `saveWriterName`)。
+  次回同期時、この変更がコミットされたら通常の差分確認に含めること。
 
 ## その他の規約
 

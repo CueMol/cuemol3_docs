@@ -37,7 +37,7 @@ macOS では、アプリケーション名 (**CueMol3**) のメニューに次�
 
 <div class="grid cards" markdown>
 
-- **[File](file.md)** — シーン・オブジェクトの読み書き、タブ操作
+- **[File](file.md)** — シーン・Object の読み書き、タブ操作
 - **[Edit](edit.md)** — 取り消し、分子の編集、設定
 - **[Rendering](rendering.md)** — 画像・動画の出力、シーンのエクスポート
 - **[Scene](scene.md)** — 背景色、シーンのプロパティ

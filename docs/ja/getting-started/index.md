@@ -25,8 +25,6 @@ libcuemol2 が読み書きできる形式で、CueMol2 と共通です。
 | mmCIF | `.cif` / `.cif.gz` |
 | SYBYL Mol2 | `.mol2` |
 | MOL / SDF | `.mol` / `.sdf` |
-| PyMOL セッション | `.pse` |
-| CueMol 座標ファイル (QDF) | `.qdf` |
 
 ### 電子密度・ポテンシャルマップ (読み込み)
 
@@ -38,7 +36,6 @@ libcuemol2 が読み書きできる形式で、CueMol2 と共通です。
 | MTZ 構造因子 | `.mtz` |
 | mmCIF マップ係数 | `.cif` / `.cif.gz` |
 | APBS 静電ポテンシャルマップ (OpenDX) | `.dx` |
-| CueMol 密度マップ / elepot ファイル | `.qdf` |
 
 ### 分子表面・その他 (読み込み)
 
@@ -46,7 +43,6 @@ libcuemol2 が読み書きできる形式で、CueMol2 と共通です。
 |---|---|
 | MSMS 表面ファイル | `.face` / `.vert` |
 | PLY ポリゴンファイル | `.ply` |
-| CueMol molsurf ファイル | `.qdf` |
 
 ### MD トラジェクトリ (読み込み)
 
@@ -61,6 +57,15 @@ CueMol3 では File メニューの **Open MD Trajectory...** から MD シミ�
 | GROMACS 座標 / XTC / TRR | `.gro` / `.xtc` / `.trr` |
 | NAMD 座標 | `.coor` |
 
+### シーン (読み込み)
+
+これらは File メニューの **Open Scene...** から読み込みます (Open File... には出てきません)。
+
+| 形式 | 拡張子 |
+|---|---|
+| PyMOL セッション | `.pse` |
+| CueMol シーン | `.qsc` |
+
 ### 書き出し
 
 | 形式 | 用途 |
@@ -71,7 +76,7 @@ CueMol3 では File メニューの **Open MD Trajectory...** から MD シミ�
 | POV-Ray SDL (`.pov`) | POV-Ray 用シーン記述 (`.inc` も同時出力) |
 | STL (`.stl`) | 3D プリンタ等の形状データ |
 | Metasequoia (`.mqo`) | 3D モデリングソフト用 |
-| PDB / MOL・SDF / PQR / XYZR | 分子オブジェクト単体の保存 (File &gt; Save File As...) |
+| PDB / MOL・SDF / PQR / XYZR | 分子 Object 単体の保存 (File &gt; Save File As...) |
 
 ## 動作環境
 

@@ -10,7 +10,7 @@
 | Movie rendering... *(CueMol3 で改名)* | レンダリングウィンドウを開き、**動画 (Movie) モード**にします | |
 
 !!! info "CueMol2 からの変更"
-    CueMol2 では「POV-Ray rendering...」「Animation rendering...」という、レンダラの名前を冠した
+    CueMol2 では「POV-Ray rendering...」「Animation rendering...」という、Renderer の名前を冠した
     別々のウィンドウでした。CueMol3 では 1 つの**レンダリングウィンドウ**に統合され、
     メニュー項目は**出力の種類**(静止画 / 動画)を表すようになっています。
     レンダリングバックエンド (Umbreon / POV-Ray) はウィンドウ内で選びます。
