@@ -1,0 +1,123 @@
+site_name: CueMol3 &mdash; Molecular Visualization Framework
+site_description: CueMol3 (tritium) user documentation
+site_url: https://cuemol.github.io/cuemol3_docs/
+repo_url: https://github.com/CueMol/cuemol2
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/images/cuemol3-logo-160px.png
+  favicon: assets/favicon.png
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: ダークモードに切り替え
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: ライトモードに切り替え
+
+plugins:
+  # NOTE: the search plugin must be listed explicitly. Declaring `plugins:`
+  # overrides the default plugin set, and omitting it silently disables search
+  # (a latent bug in the cuemol2_docs site).
+  - search
+  - glightbox:
+      manual: true
+  - i18n:
+      fallback_to_default: true
+      docs_structure: folder
+      languages:
+        - locale: ja
+          default: true
+          name: 日本語
+          build: true
+
+        - locale: en
+          name: English
+          build: true
+          nav:
+            - Home: index.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - toc:
+      permalink: true
+      toc_depth: 3
+      # Unicode-aware slugify: the stock python-markdown slugify strips CJK and
+      # turns every Japanese heading into a meaningless '_1' / '_2' anchor.
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+
+extra:
+  alternate:
+    - name: 日本語
+      link: /cuemol3_docs/
+      lang: ja
+    - name: English
+      link: /cuemol3_docs/en/
+      lang: en
+
+nav:
+  - ホーム: index.md
+  - はじめに:
+      - getting-started/index.md
+      - クイックツアー: getting-started/quick-tour.md
+  - インストール:
+      - install/index.md
+      - macOS: install/macos.md
+      - Windows: install/windows.md
+      - Linux: install/linux.md
+      - 外部ツールの設定: install/external-tools.md
+  - 画面構成:
+      - ui/index.md
+      - サイドパネル: ui/side-panels.md
+      - プロパティインスペクタ: ui/inspector.md
+      - 下部パネル: ui/bottom-panels.md
+      - ツールバーとツールパレット: ui/toolbar-tools.md
+      - レンダリングウィンドウ: ui/rendering-window.md
+      - マウス・トラックパッド操作: ui/mouse-input.md
+  - メニューリファレンス:
+      - menu/index.md
+      - File メニュー: menu/file.md
+      - Edit メニュー: menu/edit.md
+      - Rendering メニュー: menu/rendering.md
+      - Scene メニュー: menu/scene.md
+      - View メニュー: menu/view.md
+      - Tools メニュー: menu/tools.md
+      - Window / Help メニュー: menu/window-help.md
+  - CueMol2からの変更点:
+      - changes/index.md
+      - 操作パラダイムの変更: changes/ui-paradigm.md
+      - 機能の統合・改名・廃止: changes/features.md
+      - 開発状況と未実装機能: changes/status.md
+  - チュートリアル: tutorials/index.md
+  - リファレンス: reference/index.md
+
+extra_css:
+  - stylesheets/extra.css
