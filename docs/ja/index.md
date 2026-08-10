@@ -1,4 +1,4 @@
-# CueMol3 ドキュメント
+# CueMol3
 
 **CueMol3** (開発コードネーム *tritium*) は、生体高分子の立体構造を可視化するためのソフトウェアです。
 CueMol2 の可視化エンジン (libcuemol2) をそのまま受け継ぎつつ、GUI を Electron + React で全面的に作り直しています。

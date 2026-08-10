@@ -19,7 +19,7 @@ CueMol3 には性格の異なる 2 つのボタン列があります。
 | New Tab | 新しいタブを作ります | File &gt; New Tab |
 | Open File | ファイルを開きます | File &gt; Open File... |
 | Save <span class="badge-wip">開発中</span> | **現在のバージョンでは動作しません** (シーンの保存は下記の Save Scene ボタンをお使いください) | |
-| Save As | オブジェクトをファイルに保存します | File &gt; Save File As... |
+| Save As | Object をファイルに保存します | File &gt; Save File As... |
 | Open Scene | シーンファイルを開きます | File &gt; Open Scene... |
 | Reload Scene | シーンを読み込み直します | File &gt; Reload Scene |
 | Save Scene | シーンを保存します | File &gt; Save Scene |

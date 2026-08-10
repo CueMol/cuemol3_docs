@@ -1,4 +1,4 @@
-# CueMol3 Documentation
+# CueMol3
 
 **CueMol3** (development codename *tritium*) is a program for visualizing the three-dimensional
 structures of biological macromolecules. It inherits the CueMol2 visualization engine (libcuemol2)

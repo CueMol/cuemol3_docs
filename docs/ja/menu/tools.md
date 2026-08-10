@@ -15,8 +15,8 @@
 | Interaction... | 原子間の相互作用 (距離・水素結合) を検出し、ラベルとして表示します。対象分子と選択範囲、距離の範囲、ラベル数の上限を指定できます | |
 | Reassign secondary str... | タンパク質の二次構造を再計算して割り当て直します | |
 | Mol morphing animation... <span class="badge-wip">開発中</span> | 2 つの構造間を補間するモーフィングアニメーションを作成します。**現在のバージョンでは動作しません** | |
-| Mol surface generation... | 分子表面 (SES) オブジェクトを生成します。対象分子・選択範囲・メッシュ密度・プローブ半径を指定します | |
-| Mol surface cutter... | 分子表面を平面で切断します。断面の扱い (本体のみ / 断面のみ / 2 つのオブジェクトに分割) を選べます | |
+| Mol surface generation... | 分子表面 (SES) Object を生成します。対象分子・選択範囲・メッシュ密度・プローブ半径を指定します | |
+| Mol surface cutter... | 分子表面を平面で切断します。断面の扱い (本体のみ / 断面のみ / 2 つの Object に分割) を選べます | |
 | APBS elepot calculation... | APBS を使って静電ポテンシャルマップを計算します。pdb2pqr で電荷と半径を割り当ててから APBS を実行し、結果を読み込みます | |
 
 !!! warning "APBS の利用には設定が必要です"

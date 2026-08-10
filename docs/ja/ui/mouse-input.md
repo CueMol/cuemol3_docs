@@ -44,7 +44,7 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 |---|---|
 | Pointing device | 上記のポインティングデバイスの種類 |
 | XY Rotation Sensitivity | X / Y 軸まわりの回転の感度 (0.1〜5.0) |
-| Pick Precision | 原子やオブジェクトをクリックで拾うときの許容半径 (ピクセル、1〜50) |
+| Pick Precision | 原子や Object をクリックで拾うときの許容半径 (ピクセル、1〜50) |
 
 ## 視点を数値で操作する
 
