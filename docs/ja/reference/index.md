@@ -24,6 +24,7 @@
 
 <div class="grid cards" markdown>
 
+- **[Scene](scene.md)** — シーン全体の表示設定 (AO / アンチエイリアシング / 背景)
 - **[Object](objects/index.md)** — 分子・密度マップ・分子表面などのデータ
 - **[Renderer](renderers/index.md)** — 表示方法の種類と設定項目
 - **[Coloring](coloring.md)** — Paint / CPK / Rainbow などの着色の種類
