@@ -105,15 +105,15 @@ nav:
       - ツールバーとツールパレット: ui/toolbar-tools.md
       - レンダリングウィンドウ: ui/rendering-window.md
       - マウス・トラックパッド操作: ui/mouse-input.md
-  - メニューリファレンス:
-      - menu/index.md
-      - File メニュー: menu/file.md
-      - Edit メニュー: menu/edit.md
-      - Rendering メニュー: menu/rendering.md
-      - Scene メニュー: menu/scene.md
-      - View メニュー: menu/view.md
-      - Tools メニュー: menu/tools.md
-      - Window / Help メニュー: menu/window-help.md
+      - メニュー:
+          - menu/index.md
+          - File メニュー: menu/file.md
+          - Edit メニュー: menu/edit.md
+          - Rendering メニュー: menu/rendering.md
+          - Scene メニュー: menu/scene.md
+          - View メニュー: menu/view.md
+          - Tools メニュー: menu/tools.md
+          - Window / Help メニュー: menu/window-help.md
   - CueMol2からの変更点:
       - changes/index.md
       - 操作パラダイムの変更: changes/ui-paradigm.md
