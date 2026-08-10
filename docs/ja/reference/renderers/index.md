@@ -67,7 +67,7 @@ New Renderer ダイアログでは、複数の Renderer をまとめて作成す
 ## 関連項目
 
 - [Object](../objects/index.md) — Renderer が描画する対象
-- [塗り分け方式](../coloring.md)
+- [Coloring](../coloring.md)
 - [スタイル](../styles.md)
 - [選択式の文法](../selection.md)
 

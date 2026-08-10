@@ -23,16 +23,16 @@ Renderer には多数のプロパティがあるため、よく使う組み合�
 
 ## スタイルの種類
 
-形状に関するスタイルと、塗り分けに関するスタイルは独立に定義されており、
+形状に関するスタイルと、Coloring に関するスタイルは独立に定義されており、
 別々に適用できます。
 
 形状のスタイル
 :   Renderer の形に関するプロパティ群。シーンツリーで Renderer を右クリックして適用します。
     たとえば [ribbon](renderers/ribbon.md) には Default / Fancy1 / Round があります
 
-塗り分けのスタイル
+Coloring のスタイル
 :   着色に関するプロパティ群。Color パネルから適用します
-    (→ [塗り分け方式](coloring.md))
+    (→ [Coloring](coloring.md))
 
 !!! info "準備中"
     システムで定義されているスタイルの一覧は今後追加されます。
@@ -55,7 +55,7 @@ Renderer には多数のプロパティがあるため、よく使う組み合�
 ## 関連項目
 
 - [Renderer](renderers/index.md)
-- [塗り分け方式](coloring.md)
+- [Coloring](coloring.md)
 - [プロパティインスペクタ](../ui/inspector.md)
 - [サイドパネル](../ui/side-panels.md)
 

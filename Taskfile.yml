@@ -70,13 +70,19 @@ tasks:
     silent: true
     desc: Report wording that the style conventions rule out (informational)
     cmds:
-      # Full-width Latin punctuation from the CueMol2 docs, and the katakana
-      # terms that were unified to Renderer / Object. Some hits are legitimate
-      # (e.g. a third-party product's own terminology), so this only reports.
+      # Full-width Latin punctuation from the CueMol2 docs, and the Japanese
+      # terms that were unified to Renderer / Object / Coloring. Some hits are
+      # legitimate (a third-party product's own terminology, or 塗り分ける used
+      # as a plain verb), so this only reports.
       - |
         hits=$(grep -rn '[，．]' docs/ --include='*.md' || true)
         if [ -n "$hits" ]; then
           echo "Full-width Latin punctuation (should be 、。):"
+          echo "$hits"
+        fi
+        hits=$(grep -rn '塗り分け方式' docs/ mkdocs.yml --include='*.md' --include='*.yml' || true)
+        if [ -n "$hits" ]; then
+          echo "塗り分け方式 was unified to Coloring:"
           echo "$hits"
         fi
         hits=$(grep -rn 'レンダラ\|オブジェクト' docs/ --include='*.md' || true)

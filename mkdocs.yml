@@ -124,7 +124,7 @@ nav:
       - reference/index.md
       - 選択式の文法: reference/selection.md
       - 色の記法: reference/color-syntax.md
-      - 塗り分け方式: reference/coloring.md
+      - Coloring: reference/coloring.md
       - Object:
           - reference/objects/index.md
           - MolCoord (分子): reference/objects/molcoord.md

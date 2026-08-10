@@ -46,7 +46,7 @@ PDB ID がわかっている場合は、**File &gt; Get PDB...** が最も手軽
 シーンツリーで Renderer を選ぶと、右側の**プロパティインスペクタ**にその Renderer の設定が表示されます。
 値を変えると分子ビューに即座に反映されます。取り消したいときは ++cmd+z++ / ++ctrl+z++ で戻せます。
 
-色は左サイドパネルの **Explorer &gt; Color** から、Renderer 単位で塗り分け方式 (Paint / CPK / Rainbow /
+色は左サイドパネルの **Explorer &gt; Color** から、Renderer 単位で Coloring (Paint / CPK / Rainbow /
 B-factor / 静電ポテンシャル など) を切り替えられます。
 
 ### 視点を動かす

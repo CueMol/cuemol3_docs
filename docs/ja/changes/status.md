@@ -26,7 +26,7 @@ CueMol3 は **dev / internal 配布のみ**で、一般利用向けの正式リ�
 | 機能 | 現状 |
 |---|---|
 | **Renderer 種類ごとの詳細設定** | プロパティインスペクタの Properties タブには共通設定 (Common) のセクションがあり、一部の Renderer 種類には専用のセクションがあります。それ以外の種類固有の設定は **Generic** タブから編集してください |
-| **Multi-gradient の塗り分け** | Color パネルの塗り分け方式のうち Multi-gradient は選択できません |
+| **Multi-gradient の Coloring** | Color パネルの Coloring の種類のうち Multi-gradient は選択できません |
 | **Generic タブの入力欄** | 色 / ベクトル / 時刻の値については専用の入力ウィジェットが未整備です |
 | **密度マップの Multi-gradient 表示** | Density map パネルでは単色のみ設定できます |
 | **スタイルの適用・作成ダイアログ** | Edit style / Create style の動作に不具合が報告されています (調査中) |
@@ -49,7 +49,7 @@ CueMol3 は **dev / internal 配布のみ**で、一般利用向けの正式リ�
 - ファイル / シーンの読み書き、Get PDB によるネットワーク取得、最近使ったファイル
 - シーンツリー (表示切り替え / 名前変更 / 並べ替え / 複数選択 / 右クリックメニュー)
 - Renderer の作成 (プリセットを含む) と、インスペクタでの設定編集
-- 塗り分け (Solid / Paint / CPK / Rainbow / B-factor / 静電ポテンシャル)
+- Coloring (Solid / Paint / CPK / Rainbow / B-factor / 静電ポテンシャル)
 - 選択 (選択式・分子構造ツリー・配列パネル・矩形 / 投げ縄ツール)
 - 計測 (距離 / 角度 / 二面角) と結合の追加・削除
 - 分子表面の生成・切断・再生成、相互作用解析、二次構造の再割り当て、分子の重ね合わせ

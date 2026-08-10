@@ -74,7 +74,7 @@ rgb(1,1,0){material:shadow}
 #FF0{material:shadow}
 ```
 
-塗り分けの各行に別々のマテリアルを指定すれば、
+Coloring の Paint の各行に別々のマテリアルを指定すれば、
 二次構造ごとに質感を変えるといったこともできます。
 
 シート (sheet)

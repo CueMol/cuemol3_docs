@@ -25,7 +25,7 @@ APBS が出力した OpenDX 形式 (`.dx`) を読み込みます
 [gpu_mapmesh](../renderers/gpu_mapmesh.md)
 
 分子表面を静電ポテンシャルで塗り分けることもできます
-(→ [塗り分け方式](../coloring.md))。
+(→ [Coloring](../coloring.md))。
 
 ## 関連項目
 

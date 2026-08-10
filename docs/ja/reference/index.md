@@ -26,7 +26,7 @@
 
 - **[Object](objects/index.md)** — 分子・密度マップ・分子表面などのデータ
 - **[Renderer](renderers/index.md)** — 表示方法の種類と設定項目
-- **[塗り分け方式](coloring.md)** — Paint / CPK / Rainbow などの着色方式
+- **[Coloring](coloring.md)** — Paint / CPK / Rainbow などの着色の種類
 - **[スタイル](styles.md)** — プロパティのプリセットと値の優先順位
 - **[カメラ](camera.md)** — 視点の保存と呼び出し
 - **[アニメーション](animation/index.md)** — タイムラインに置ける要素の種類

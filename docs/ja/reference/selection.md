@@ -509,7 +509,7 @@ i; 20A, 20B
 
 ## 関連項目
 
-- [塗り分け方式](coloring.md) — 選択範囲ごとの色指定 (Paint)
+- [Coloring](coloring.md) — 選択範囲ごとの色指定 (Paint)
 - [サイドパネル](../ui/side-panels.md) — Selection パネルの操作
 
 ---
