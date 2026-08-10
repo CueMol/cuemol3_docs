@@ -1,6 +1,7 @@
 # macOS へのインストール
 
-対象: **macOS / Apple Silicon (arm64)**。配布物は `CueMol3-<version>-arm64.dmg` です。
+対象: **macOS / Apple Silicon (arm64)**。配布物は `CueMol3-<version>-arm64.dmg` です
+(入手方法は [ダウンロード](index.md#ダウンロード) を参照)。
 
 !!! warning "アドホック署名のみで、配布元は証明されていません"
     アプリには **アドホック署名** (`codesign --sign -`) が付いています。これは Apple Silicon で

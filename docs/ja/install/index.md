@@ -23,23 +23,30 @@
     拒否されます) であって、**配布元を証明するものではありません**。
     したがって Web からダウンロードした場合の Gatekeeper の警告は従来どおり表示されます。
 
-## 入手方法
+## ダウンロード
 
-CueMol3 は現時点で一般公開のダウンロードページを持っていません。配布物は次のいずれかで入手します。
+CueMol3 の配布物は、GitHub の **Releases** ページで公開されています
+(CueMol2 の配布物と同じリリースに並んでいます)。
 
-- 開発者から直接配布されたビルド
+- **[最新リリース](https://github.com/CueMol/cuemol2/releases/latest)** —
+  ページ下部の **Assets** 欄から、ファイル名が `CueMol3-` で始まるものをダウンロードしてください
+  (`cuemol2_...` で始まるファイルは CueMol2 の配布物です)
+- **[リリース一覧・リリースノート](https://github.com/CueMol/cuemol2/releases)** —
+  過去のバージョンのダウンロードと、リリースごとの変更点
+
+そのほか、開発版の入手経路として次の方法もあります。
+
 - [GitHub リポジトリ](https://github.com/CueMol/cuemol2) の CI (`build2.yml`) が生成したアーティファクト
+  (GitHub へのログインが必要)
 - 自分でソースからパッケージをビルドする
 
 ## 配布物一覧
 
-| OS | 配布物 | インストーラー形式 |
+| OS | 配布物 (例: バージョン 2.3.7) | インストーラー形式 |
 |---|---|---|
-| macOS (Apple Silicon / arm64) | `CueMol3-<version>-arm64.dmg` | ディスクイメージ |
-| Windows (x64) | `CueMol3-<version>-x64.exe` | NSIS ウィザード型インストーラー |
-| Linux (x64) | `CueMol3-<version>-x64.AppImage` / `.deb` | AppImage / Debian パッケージ |
-
-バージョン番号はソースの `QM_VERSION` から決まります。
+| macOS (Apple Silicon / arm64) | `CueMol3-2.3.7-arm64.dmg` | ディスクイメージ |
+| Windows (x64) | `CueMol3-2.3.7-x64.exe` | NSIS ウィザード型インストーラー |
+| Linux (x64) | `CueMol3-2.3.7-x86_64.AppImage` / `CueMol3-2.3.7-amd64.deb` | AppImage / Debian パッケージ |
 
 ## OS 別の手順
 

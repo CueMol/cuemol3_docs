@@ -1,14 +1,16 @@
 # Linux へのインストール
 
-対象: **Linux (x64)**。配布物は `CueMol3-<version>-x64.AppImage` と `.deb` の 2 種類です。
+対象: **Linux (x64)**。配布物は `CueMol3-<version>-x86_64.AppImage` と
+`CueMol3-<version>-amd64.deb` の 2 種類です
+(入手方法は [ダウンロード](index.md#ダウンロード) を参照)。
 
 ## AppImage
 
 インストール不要で単体で実行できます。
 
 ```sh
-chmod +x CueMol3-<version>-x64.AppImage
-./CueMol3-<version>-x64.AppImage
+chmod +x CueMol3-<version>-x86_64.AppImage
+./CueMol3-<version>-x86_64.AppImage
 ```
 
 不要になったらファイルを削除するだけです。
@@ -22,7 +24,7 @@ chmod +x CueMol3-<version>-x64.AppImage
 Debian / Ubuntu 系では `.deb` を利用できます。
 
 ```sh
-sudo apt install ./CueMol3-<version>-x64.deb
+sudo apt install ./CueMol3-<version>-amd64.deb
 ```
 
 アンインストールはパッケージマネージャから行います。
