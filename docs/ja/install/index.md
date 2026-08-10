@@ -1,12 +1,27 @@
 # インストール
 
 !!! warning "CueMol3 は開発版です — 一般利用向けの配布ではありません"
-    現在の CueMol3 の配布物は **すべて未署名** (コード署名 / notarization 未実施) で、
-    **dev / internal 配布専用**です。初回起動時に OS のセキュリティ警告が表示され、
+    現在の CueMol3 の配布物は **dev / internal 配布専用**です。
+    配布元を証明するコード署名 (Developer ID / Authenticode) と notarization は
+    行っていないため、初回起動時に OS のセキュリティ警告が表示され、
     回避のための手動操作が必要になります。
 
     業務や論文作成で安定して使いたい場合は、**CueMol2 の安定版**をご利用ください。
     入手方法は [CueMol2 ドキュメントサイト](https://cuemol.github.io/cuemol2_docs/) にあります。
+
+## 配布物の署名状況
+
+| OS | 署名 | 起動時の警告 |
+|---|---|---|
+| macOS | **アドホック署名のみ** (`codesign --sign -`)。Developer ID 署名・notarization なし | Gatekeeper の警告が出ます → [回避手順](macos.md#初回起動時の警告を回避する) |
+| Windows | なし (Authenticode 署名は今後の作業) | SmartScreen の警告が出ます → [回避手順](windows.md#初回実行時の警告を回避する) |
+| Linux | なし | 警告はありません |
+
+!!! info "アドホック署名では Gatekeeper は通りません"
+    macOS の配布物にはビルド時にアドホック署名が付きます。これは Apple Silicon で
+    アプリを起動可能にするために必要な処理 (署名のないバンドルは「壊れている」として
+    拒否されます) であって、**配布元を証明するものではありません**。
+    したがって Web からダウンロードした場合の Gatekeeper の警告は従来どおり表示されます。
 
 ## 入手方法
 

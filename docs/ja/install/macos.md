@@ -2,8 +2,10 @@
 
 対象: **macOS / Apple Silicon (arm64)**。配布物は `CueMol3-<version>-arm64.dmg` です。
 
-!!! warning "配布物は未署名です"
-    現在の dmg はコード署名・notarization を行っていません。Web からダウンロードした dmg には
+!!! warning "アドホック署名のみで、配布元は証明されていません"
+    アプリには **アドホック署名** (`codesign --sign -`) が付いています。これは Apple Silicon で
+    アプリを起動可能にするために必要なもので、**配布元を証明するものではありません**。
+    Developer ID 署名と notarization は行っていないため、Web からダウンロードした dmg には
     quarantine 属性が付き、そのままでは起動できません。下記の手順で回避してください。
 
 ## 手順

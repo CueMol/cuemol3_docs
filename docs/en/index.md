@@ -5,9 +5,10 @@ structures of biological macromolecules. It inherits the CueMol2 visualization e
 while the GUI has been rebuilt from scratch on Electron + React.
 
 !!! warning "This is a development build"
-    CueMol3 is currently distributed as **unsigned dev / internal builds only**; there is no
-    general release yet. If you need a stable version for day-to-day work, please use CueMol2 —
-    see the [CueMol2 documentation site](https://cuemol.github.io/cuemol2_docs/).
+    CueMol3 is currently distributed as **dev / internal builds only**; there is no general
+    release yet, and the builds carry no code signature identifying their origin (the macOS
+    app is ad-hoc signed only). If you need a stable version for day-to-day work, please use
+    CueMol2 — see the [CueMol2 documentation site](https://cuemol.github.io/cuemol2_docs/).
 
 !!! note "Documentation language"
     The documentation is written in Japanese first. Pages that have not been translated yet fall

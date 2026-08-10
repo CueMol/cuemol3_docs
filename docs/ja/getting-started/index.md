@@ -77,7 +77,7 @@ CueMol3 では File メニューの **Open MD Trajectory...** から MD シミ�
 
 | OS | 配布形式 | 備考 |
 |---|---|---|
-| macOS (Apple Silicon / arm64) | `.dmg` | 未署名のため初回起動に手順が必要 |
+| macOS (Apple Silicon / arm64) | `.dmg` | アドホック署名のみ。初回起動に手順が必要 |
 | Windows (x64) | `.exe` (NSIS インストーラー) | 未署名のため SmartScreen 警告が出る |
 | Linux (x64) | `.AppImage` / `.deb` | |
 

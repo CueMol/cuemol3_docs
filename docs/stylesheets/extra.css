@@ -4,7 +4,9 @@
  * Colour palette
  *
  * Derived from the CueMol3 icon, which is built from three colours:
- *   pale cyan  #f0ffff  HSB(180, 6%, 100%)  -> page background
+ *   pale cyan  #f0ffff  HSB(180, 6%, 100%)  -> page background, desaturated
+ *                                             to HSB(180, 3%, 100%) so it
+ *                                             reads as white with a tint
  *   charcoal   #404046                      -> the icon disc
  *   base cyan  #269999  HSB(180, 75%, 60%)  -> the site's base colour
  *
@@ -26,14 +28,14 @@
   --md-accent-bg-color--light:      #ffffffb3;
 }
 
-/* Light scheme: the icon's pale cyan becomes the page background. */
+/* Light scheme: a lightly tinted version of the icon's pale cyan. */
 [data-md-color-scheme="default"] {
-  --md-default-bg-color: #f0ffff;
+  --md-default-bg-color: #f7ffff;
   --md-typeset-a-color: #127575;
   --md-footer-bg-color: #0f4747;
   --md-footer-bg-color--dark: #0a3535;
   /* Code blocks need to stay distinct from the tinted page background. */
-  --md-code-bg-color: #e2f5f5;
+  --md-code-bg-color: #ebf6f6;
 }
 
 /* Dark scheme: retint Material's slate greys to the same hue. */

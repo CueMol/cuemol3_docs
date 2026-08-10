@@ -4,7 +4,7 @@
 CueMol2 の可視化エンジン (libcuemol2) をそのまま受け継ぎつつ、GUI を Electron + React で全面的に作り直しています。
 
 !!! warning "現在のバージョンは開発版です"
-    CueMol3 の配布物は **未署名の dev / internal 配布のみ**で、一般利用向けの正式リリースはまだありません。
+    CueMol3 の配布物は **dev / internal 配布のみ**で、一般利用向けの正式リリースはまだありません。
     実務で安定して使いたい場合は、CueMol2 の安定版
     ([CueMol2 ドキュメントサイト](https://cuemol.github.io/cuemol2_docs/)) をご利用ください。
 

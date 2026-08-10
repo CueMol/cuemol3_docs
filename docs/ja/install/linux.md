@@ -31,10 +31,10 @@ sudo apt install ./CueMol3-<version>-x64.deb
 sudo apt remove cuemol3
 ```
 
-## 未署名配布について
+## 署名について
 
-Linux ではコード署名に起因する起動時の警告はありませんが、配布物が未署名の dev / internal ビルドである点は
-macOS / Windows と同じです。
+Linux の配布物は署名されていませんが、コード署名に起因する起動時の警告は出ません。
+dev / internal 配布であり一般利用向けではない点は macOS / Windows と同じです。
 
 ## 外部ツールの設定
 
