@@ -58,8 +58,8 @@ Renderer の種類と対象を選んで作成します。
 
 ### Color パネル
 
-Renderer 単位の**塗り分け方式**を設定します。上部で Renderer を選び (色を扱える Renderer のみが並びます)、
-続いて塗り分けの種類を選ぶと、その種類に応じた設定欄が下に表示されます。
+Renderer 単位の **Coloring** を設定します。上部で Renderer を選び (色を扱える Renderer のみが並びます)、
+続いて Coloring の種類を選ぶと、その種類に応じた設定欄が下に表示されます。
 
 | 種類 | 設定内容 |
 |---|---|
@@ -71,7 +71,7 @@ Renderer 単位の**塗り分け方式**を設定します。上部で Renderer 
 | 静電ポテンシャル | 対象のポテンシャルマップ、SAS で色付けするか、低 / 中 / 高の値と色 |
 
 !!! warning "Multi-gradient は未実装です"
-    塗り分けの種類のうち **Multi-gradient** は選択できません (準備中)。
+    Coloring の種類のうち **Multi-gradient** は選択できません (準備中)。
 
 ### View パネル
 

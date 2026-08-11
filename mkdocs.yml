@@ -120,7 +120,53 @@ nav:
       - 機能の統合・改名・廃止: changes/features.md
       - 開発状況と未実装機能: changes/status.md
   - チュートリアル: tutorials/index.md
-  - リファレンス: reference/index.md
+  - リファレンス:
+      - reference/index.md
+      - 選択式の文法: reference/selection.md
+      - 色の記法: reference/color-syntax.md
+      - Coloring: reference/coloring.md
+      - Scene: reference/scene.md
+      - Object:
+          - reference/objects/index.md
+          - MolCoord (分子): reference/objects/molcoord.md
+          - DensityMap (密度マップ): reference/objects/densitymap.md
+          - ElePotMap (静電ポテンシャル): reference/objects/elepot.md
+          - MolSurfObj (分子表面): reference/objects/molsurf.md
+      - Renderer:
+          - reference/renderers/index.md
+          - 共通プロパティ: reference/renderers/common.md
+          - マテリアル: reference/renderers/material.md
+          - エッジライン: reference/renderers/edge-lines.md
+          - simple (結合線): reference/renderers/simple.md
+          - trace (Cα トレース): reference/renderers/trace.md
+          - spline (スプライン): reference/renderers/spline.md
+          - ballstick (棒球モデル): reference/renderers/ballstick.md
+          - cpk (空間充填モデル): reference/renderers/cpk.md
+          - anisou (熱振動楕円体): reference/renderers/anisou.md
+          - tube (チューブ): reference/renderers/tube.md
+          - ribbon (リボン): reference/renderers/ribbon.md
+          - cartoon (カートゥーン): reference/renderers/cartoon.md
+          - nucl (核酸): reference/renderers/nucl.md
+          - atomintr (計測表示): reference/renderers/atomintr.md
+          - disorder (ディスオーダー): reference/renderers/disorder.md
+          - molsurf (分子表面・計算済み): reference/renderers/molsurf.md
+          - dsurface (分子表面・直接計算): reference/renderers/dsurface.md
+          - dsurf2 (分子表面・距離場): reference/renderers/dsurf2.md
+          - contour (等高線メッシュ): reference/renderers/contour.md
+          - isosurf (等値面): reference/renderers/isosurf.md
+          - gpu_mapmesh (等高線・GPU): reference/renderers/gpu_mapmesh.md
+      - カメラ: reference/camera.md
+      - アニメーション:
+          - reference/animation/index.md
+          - SimpleSpin (スピン): reference/animation/simplespin.md
+          - CamMotion (カメラ移動): reference/animation/cammotion.md
+          - ShowHide (表示・非表示): reference/animation/showhide.md
+          - SlideInOut (スライド): reference/animation/slideinout.md
+          - MolAnim (構造変化): reference/animation/molanim.md
+      - スタイル: reference/styles.md
+      - 設定項目: reference/settings.md
+      - キーボードショートカット: reference/shortcuts.md
+      - シーンファイル (.qsc): reference/qsc-format.md
 
 extra_css:
   - stylesheets/extra.css

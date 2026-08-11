@@ -1,0 +1,114 @@
+version: '3'
+
+vars:
+  # Prefer the repo-local venv; fall back to a system-wide mkdocs.
+  MKDOCS:
+    sh: if [ -x .venv/bin/python ]; then echo ".venv/bin/python -m mkdocs"; else echo "mkdocs"; fi
+  # Max image size in bytes, per the writing conventions in README.md.
+  MAX_IMAGE_BYTES: '307200'
+  ADDR: 127.0.0.1:8000
+
+tasks:
+  default:
+    desc: List the available tasks
+    cmds:
+      - task --list
+    silent: true
+
+  setup:
+    desc: Create .venv and install the documentation dependencies
+    status:
+      - test -x .venv/bin/mkdocs
+    cmds:
+      - python3 -m venv .venv
+      - .venv/bin/pip install -r requirements.txt
+
+  serve:
+    desc: Serve the site locally with live reload (ADDR=host:port to override)
+    deps: [setup]
+    cmds:
+      # mkdocs serves under the site_url path, so the site lives at
+      # http://{{.ADDR}}/cuemol3_docs/ -- the bare host root only redirects.
+      - '{{.MKDOCS}} serve -a {{.ADDR}} --open'
+
+  build:
+    desc: Build the site the way CI does (warnings fail the build)
+    deps: [setup]
+    cmds:
+      - '{{.MKDOCS}} build --strict'
+
+  clean:
+    desc: Remove build output
+    cmds:
+      - rm -rf site .cache
+
+  check:
+    desc: Run every check (strict build, image sizes, wording)
+    cmds:
+      - task: build
+      - task: check:images
+      - task: check:text
+
+  check:images:
+    silent: true
+    desc: Fail if any image exceeds the size limit or is tracked by Git LFS
+    cmds:
+      # This repository deliberately does not use Git LFS, so images must stay
+      # small enough to live in the repo directly.
+      - |
+        big=$(find docs/assets/images -type f -size +{{.MAX_IMAGE_BYTES}}c 2>/dev/null || true)
+        if [ -n "$big" ]; then
+          echo "Images over {{.MAX_IMAGE_BYTES}} bytes:"
+          echo "$big" | while read -r f; do
+            echo "  $(du -h "$f" | cut -f1)  $f"
+          done
+          exit 1
+        fi
+        echo "All images are within the size limit."
+
+  check:text:
+    silent: true
+    desc: Report wording that the style conventions rule out (informational)
+    cmds:
+      # Full-width Latin punctuation from the CueMol2 docs, and the Japanese
+      # terms that were unified to Renderer / Object / Coloring. Some hits are
+      # legitimate (a third-party product's own terminology, or 塗り分ける used
+      # as a plain verb), so this only reports.
+      - |
+        hits=$(grep -rn '[，．]' docs/ --include='*.md' || true)
+        if [ -n "$hits" ]; then
+          echo "Full-width Latin punctuation (should be 、。):"
+          echo "$hits"
+        fi
+        hits=$(grep -rn '塗り分け方式' docs/ mkdocs.yml --include='*.md' --include='*.yml' || true)
+        if [ -n "$hits" ]; then
+          echo "塗り分け方式 was unified to Coloring:"
+          echo "$hits"
+        fi
+        hits=$(grep -rn 'レンダラ\|オブジェクト' docs/ --include='*.md' || true)
+        if [ -n "$hits" ]; then
+          echo "Katakana terms unified to Renderer / Object (check each hit):"
+          echo "$hits"
+        fi
+        echo "Wording check done."
+
+  todo:
+    silent: true
+    desc: List the outstanding TODO markers in the docs
+    cmds:
+      - |
+        grep -rho 'TODO([a-z]*)' docs/ --include='*.md' | sort | uniq -c | sort -rn
+        echo
+        grep -rn 'TODO(' docs/ --include='*.md' || true
+
+  images:
+    silent: true
+    desc: Show the image inventory by directory
+    cmds:
+      - |
+        find docs/assets/images -type d -mindepth 1 | sort | while read -r d; do
+          n=$(find "$d" -maxdepth 1 -type f | wc -l | tr -d ' ')
+          [ "$n" -gt 0 ] && printf '%-58s %3s files  %s\n' "$d" "$n" "$(du -sh "$d" | cut -f1)"
+        done
+        echo
+        echo "total: $(find docs/assets/images -type f | wc -l | tr -d ' ') files, $(du -sh docs/assets/images | cut -f1)"
