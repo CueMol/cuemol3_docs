@@ -8,7 +8,7 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 
 | CueMol2 | CueMol3 | 備考 |
 |---|---|---|
-| Rendering &gt; POV-Ray rendering... | **Rendering &gt; Image rendering...** | バックエンド (Umbreon / POV-Ray) はレンダリングウィンドウ内で選ぶため、メニューは出力の種類を表す名前になりました → [レンダリングウィンドウ](../ui/rendering-window.md) |
+| Rendering &gt; POV-Ray rendering... | **Rendering &gt; Image rendering...** | バックエンドはレンダリングウィンドウ内で選ぶため、メニューは出力の種類を表す名前になりました。既定は内蔵レイトレーサの Umbreon で、POV-Ray は非推奨です → [レンダリング](../reference/rendering.md) |
 | Rendering &gt; Animation rendering... | **Rendering &gt; Movie rendering...** | 同じレンダリングウィンドウの動画モードになりました |
 | Tools &gt; Mol bond editor... | ツールパレットの **Add Bond** ツール | モーダルダイアログから、分子ビューを直接クリックする方式に変わりました → [ツールバーとツールパレット](../ui/toolbar-tools.md) |
 | Edit &gt; Options (プリファレンスウィンドウ) | **Settings** タブ | モーダルではなくコンテンツ領域のタブとして開きます。macOS では Preferences... |
@@ -54,4 +54,4 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 
 ---
 
-*最終確認: 2026-08-10 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.7.489*

@@ -164,6 +164,7 @@ nav:
           - SlideInOut (スライド): reference/animation/slideinout.md
           - MolAnim (構造変化): reference/animation/molanim.md
       - スタイル: reference/styles.md
+      - レンダリング: reference/rendering.md
       - 設定項目: reference/settings.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md

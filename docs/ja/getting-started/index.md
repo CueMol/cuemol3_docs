@@ -72,8 +72,8 @@ CueMol3 では File メニューの **Open MD Trajectory...** から MD シミ�
 |---|---|
 | CueMol シーン (`.qsc`) | シーン全体の保存。CueMol2 と互換 |
 | PNG 画像 | 画面のスナップショット (Rendering &gt; Export scene) |
-| Umbreon レイトレース画像 (PNG) | 内蔵レイトレーサによる高品位画像 |
-| POV-Ray SDL (`.pov`) | POV-Ray 用シーン記述 (`.inc` も同時出力) |
+| Umbreon レイトレース画像 (PNG) | 内蔵レイトレーサによる高品位画像 (既定のレンダリング方式) |
+| POV-Ray SDL (`.pov`) | 外部の POV-Ray 用シーン記述 (`.inc` も同時出力) |
 | STL (`.stl`) | 3D プリンタ等の形状データ |
 | Metasequoia (`.mqo`) | 3D モデリングソフト用 |
 | PDB / MOL・SDF / PQR / XYZR | 分子 Object 単体の保存 (File &gt; Save File As...) |
@@ -88,9 +88,10 @@ CueMol3 では File メニューの **Open MD Trajectory...** から MD シミ�
 
 3D 表示に OpenGL が利用できる環境が必要です。
 
-外部ツール (POV-Ray / ffmpeg / APBS・PDB2PQR) は一部の機能でのみ使用します。
+外部ツール (ffmpeg / APBS・PDB2PQR / 旧バックエンドの POV-Ray) は一部の機能でのみ使用します。
 配布物に同梱されていない場合は Settings で実行ファイルのパスを指定してください
 (→ [外部ツールの設定](../install/external-tools.md))。
+レイトレーシングは内蔵の Umbreon で行うため、外部プログラムは不要です。
 
 ## ライセンス
 

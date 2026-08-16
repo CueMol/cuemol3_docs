@@ -36,12 +36,13 @@ sudo apt remove cuemol3
 ## 署名について
 
 Linux の配布物は署名されていませんが、コード署名に起因する起動時の警告は出ません。
-dev / internal 配布であり一般利用向けではない点は macOS / Windows と同じです。
+開発途上のバージョンである点は macOS / Windows と同じです。
 
 ## 外部ツールの設定
 
-Linux 版の配布物には POV-Ray / ffmpeg / APBS・PDB2PQR は同梱されません。
-これらを使う機能 (レイトレーシング、動画出力、静電ポテンシャル計算) を利用する場合は、
+Linux 版の配布物には ffmpeg / APBS・PDB2PQR / POV-Ray は同梱されません。
+これらを使う機能 (動画出力、静電ポテンシャル計算、旧バックエンドの POV-Ray) を利用する場合は、
 ディストリビューションのパッケージなどで別途導入し、Settings でパスを指定してください。
+レイトレーシングは内蔵の Umbreon で行うため、別途の導入は不要です。
 
 → [外部ツールの設定](external-tools.md)

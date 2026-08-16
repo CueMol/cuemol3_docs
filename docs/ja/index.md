@@ -6,7 +6,9 @@ CueMol2 の可視化エンジン (libcuemol2) をそのまま受け継ぎつつ�
 ![CueMol3 の画面例。メインウィンドウでクライオ電顕マップとリボンモデルを表示し、レンダリングウィンドウで Umbreon によるレイトレーシングを実行しているところ](assets/images/index/app-example.webp){ .on-glb }
 
 !!! warning "現在のバージョンは開発版です"
-    CueMol3 の配布物は **dev / internal 配布のみ**で、一般利用向けの正式リリースはまだありません。
+    CueMol3 の配布物は [GitHub の Releases](https://github.com/CueMol/cuemol2/releases/latest)
+    からダウンロードできますが、**開発途上のバージョン**です
+    (→ [ダウンロード](install/index.md#ダウンロード))。
     実務で安定して使いたい場合は、CueMol2 の安定版
     ([CueMol2 ドキュメントサイト](https://cuemol.github.io/cuemol2_docs/)) をご利用ください。
 
