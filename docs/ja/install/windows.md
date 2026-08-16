@@ -37,8 +37,9 @@
 
 ## 外部ツールの同梱について
 
-CI がビルドした Windows 配布物には POV-Ray / ffmpeg / APBS・PDB2PQR が同梱されます。
+CI がビルドした Windows 配布物には ffmpeg / APBS・PDB2PQR / POV-Ray が同梱されます。
 同梱されていないビルドでは Settings でパスを指定してください。
+レイトレーシングに使う Umbreon はライブラリに組み込まれているため、同梱の対象外です。
 
 → [外部ツールの設定](external-tools.md)
 

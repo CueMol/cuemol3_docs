@@ -24,17 +24,18 @@ Settings は独立したウィンドウではなく、コンテンツ領域の**
 
 レンダリングウィンドウで使うツールです。
 
+!!! note "レイトレーシングに外部ツールは不要です"
+    CueMol3 の既定のレンダリングバックエンドは内蔵レイトレーサの **Umbreon** で、
+    ライブラリに組み込まれているため設定は不要です。下記のうち POV-Ray と blendpng は、
+    旧バックエンドである POV-Ray を選んだ場合にだけ使われます
+    (→ [レンダリング](../reference/rendering.md))。
+
 | 設定項目 | 対象 | 用途 |
 |---|---|---|
 | POV-Ray Executable | POV-Ray 本体 | POV-Ray バックエンドによるレイトレーシング |
 | POV-Ray Include Directory | POV-Ray の標準インクルードファイルのディレクトリ | 同上 |
-| blendpng Executable | blendpng | レンダリング結果のレイヤ合成 |
-| ffmpeg Executable | ffmpeg | 動画 (Movie) 出力のエンコード |
-
-!!! note "Umbreon は外部ツール不要"
-    内蔵レイトレーサ **Umbreon** はライブラリに組み込まれているため、外部プログラムの設定は不要です。
-    ただし `HAVE_UMBREON` を有効にしていないビルドでは Umbreon が使えず、
-    レンダリングウィンドウのバックエンド選択や Export scene のメニュー項目からも表示されません。
+| blendpng Executable | blendpng | POV-Ray バックエンドでのレンダリング結果のレイヤ合成 |
+| ffmpeg Executable | ffmpeg | 動画 (Movie) 出力のエンコード。バックエンドによらず必要です |
 
 ### Tools &gt; APBS / PDB2PQR
 
@@ -57,7 +58,7 @@ POV-Ray Include Directory の場合はディレクトリ) を選ぶか、パス�
 
 ## 同梱状況
 
-| OS | POV-Ray / ffmpeg / APBS・PDB2PQR |
+| OS | ffmpeg / APBS・PDB2PQR / POV-Ray |
 |---|---|
 | macOS (CI ビルド) | 同梱 |
 | Windows (CI ビルド) | 同梱 |
@@ -65,3 +66,6 @@ POV-Ray Include Directory の場合はディレクトリ) を選ぶか、パス�
 | 手元でパッケージングしたビルド | 準備状況によっては同梱されない |
 
 同梱されていない場合でも、対象のプログラムを別途インストールして上記のパスを設定すれば機能します。
+
+Umbreon はライブラリの一部として組み込まれているため、この表には含まれません。
+どの OS の配布物でも、レイトレーシングは追加の導入なしに使えます。
