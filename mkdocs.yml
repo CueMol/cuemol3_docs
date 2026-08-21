@@ -119,7 +119,10 @@ nav:
       - 操作パラダイムの変更: changes/ui-paradigm.md
       - 機能の統合・改名・廃止: changes/features.md
       - 開発状況と未実装機能: changes/status.md
-  - チュートリアル: tutorials/index.md
+  - チュートリアル:
+      - tutorials/index.md
+      - タンパク質のリボン図を作る: tutorials/ribbon-figure.md
+      - 論文用の高解像度画像を書き出す: tutorials/publication-images.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md
