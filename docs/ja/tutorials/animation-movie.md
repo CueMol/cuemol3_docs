@@ -74,6 +74,18 @@ PDB に登録されているアデニル酸キナーゼ (closed: **1AKE** / open
 2. **File &gt; Get PDB...** で `1AKE` を取得します。Renderer の指定画面では **tube** を選びます
 3. 同様に **File &gt; Get PDB...** で `4AKE` も取得します (Renderer はどれでも構いません)
 
+### 4AKE を 1AKE に重ね合わせる
+
+モーフィングの補間は座標をそのまま使うため、2 つの構造をあらかじめ
+重ねておく必要があります (別々の結晶に由来する座標系は大きくずれています)。
+
+1. **Tools &gt; Molecular superposition...** を開きます
+2. **Reference** の **Molecule** で 1AKE を選びます
+3. **Moving** の **Molecule** で 4AKE を選びます
+4. **Algorithm** は既定の **Least-Square Fitting** のまま、**OK** を押します
+
+4AKE が 1AKE に重なる位置へ移動します。
+
 ### MorphMol に変換してフレームを追加する
 
 1. **Tools &gt; Mol morphing animation...** を開きます
