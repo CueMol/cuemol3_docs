@@ -18,8 +18,8 @@
 
 1. **PDB Accession Code** に `3UG9` を入力します
 2. **Fetch coord file** にチェックが入っていることを確認します (形式は既定の **RCSB (mmCIF)** のまま)
-3. 取得が終わると、Object 名と Renderer を指定する画面が出ます。
-   **Renderer type** から **cartoon** を選び、そのほかは既定のまま作成します
+3. 取得が終わると、Object 名と Renderer を指定する画面が出ます
+4. **Renderer type** から **cartoon** を選び、そのほかは既定のまま作成します
 
 タンパク質部分が、二次構造を反映した cartoon 表示で描かれます
 (→ [cartoon](../reference/renderers/cartoon.md))。
@@ -107,8 +107,10 @@ ballstick の Renderer にも同じ操作を繰り返します
 視点が決まったら、カメラとして保存しておくと、後で同じ構図に戻せます。
 
 1. シーンツリーの **Cameras** 行を右クリックし、**New Camera...** を選びます
-2. 名前を付けて作成します。カメラ行のダブルクリックでいつでもその視点に戻れます
-   (→ [カメラ](../reference/camera.md))
+2. 名前を付けて作成します
+
+カメラ行のダブルクリックで、いつでもその視点に戻れます
+(→ [カメラ](../reference/camera.md))。
 
 最後に **File &gt; Save Scene** (++cmd+s++ / ++ctrl+s++) でシーンを `.qsc` ファイルに
 保存します。
