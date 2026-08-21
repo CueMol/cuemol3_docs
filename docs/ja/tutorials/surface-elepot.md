@@ -30,12 +30,6 @@ Renderer は **cartoon** を選んでおきます。
 表面の Object と Renderer の詳細は [MolSurf](../reference/objects/molsurf.md) /
 [molsurf](../reference/renderers/molsurf.md) を参照してください。
 
-!!! note "CueMol2 との違い"
-    表面の生成は CueMol2 のときから内蔵のアルゴリズムで行われており、手順も同じです。
-    CueMol2 のメニューにあった **MSMS による分子表面生成** (外部プログラムを使う別経路) は
-    使われていなかったため、CueMol3 では廃止されています
-    (→ [機能の統合・改名・廃止](../changes/features.md))。
-
 ## 3. 静電ポテンシャルを計算する
 
 **Tools &gt; APBS elepot calculation...** を開きます。
@@ -74,7 +68,7 @@ Settings でパスを指定します (→ [外部ツールの設定](../install/
 
 ## 5. 半透明の表面とリボンを重ねる
 
-表面の内側の構造も見せたい場合は、表面を半透明にしてカートゥーンと重ねます。
+表面の内側の構造も見せたい場合は、表面を半透明にして cartoon と重ねます。
 
 1. シーンツリーで molsurf の Renderer を選びます
 2. プロパティインスペクタの **Common** セクションで **Opacity** を 0.5 前後に下げます
@@ -82,7 +76,7 @@ Settings でパスを指定します (→ [外部ツールの設定](../install/
 表面越しに主鎖の走行が見える、定番の重ね図になります。
 仕上げと書き出しは [論文用の高解像度画像を書き出す](publication-images.md) を参照してください。
 
-<!-- TODO(screenshot): 半透明表面 + カートゥーンの重ね図 -->
+<!-- TODO(screenshot): 半透明表面 + cartoon の重ね図 -->
 
 ## 次のステップ
 
