@@ -77,16 +77,6 @@ Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリ�
 密度マップ入りの図も、通常のシーンと同じ手順で書き出せます
 (→ [論文用の高解像度画像を書き出す](publication-images.md))。
 
-!!! tip "マップの値に応じた多色表示もできます"
-    contour の色は 1 本の Renderer につき 1 色ですが、**Color** パネルで Coloring を
-    **Multi-gradient** に切り替えると、マップの値に応じたグラデーションで塗れます
-    (→ [Coloring](../reference/coloring.md))。
-
-!!! note "CueMol2 との違い"
-    CueMol2 の Multi-gradient はモーダルなダイアログで、ストップを一覧から選んで数値で
-    編集する方式でしたが、CueMol3 では **Color パネル内のグラデーションバーを直接操作**する
-    方式に変わりました (→ [Coloring](../reference/coloring.md))。
-
 ## 次のステップ
 
 - [対称分子・単位格子を表示する](symmetry.md) — 同じ 1QIO で結晶パッキングを見る
