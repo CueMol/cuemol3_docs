@@ -64,50 +64,53 @@
 
 ## 7. モーフィングを加える
 
-同じ分子の 2 つの構造の間で、対応する原子どうしの座標を補間して、
-構造変化をアニメーション化します。ここでは、閉じた構造と開いた構造の両方が
-PDB に登録されているアデニル酸キナーゼ (closed: **1AKE** / open: **4AKE**) を使います。
+同じ分子の 2 つの構造の間で、対応する原子どうしの座標を線形補間して、
+構造変化をアニメーション化します。ここでは transducin-α の
+GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を例にします。
 
 ### 2 つの構造を読み込む
 
 1. **File &gt; New Tab** を選び、**New Scene** で新しいシーンを作ります
-2. **File &gt; Get PDB...** で `1AKE` を取得します。Renderer の指定画面では **tube** を選びます
-3. 同様に **File &gt; Get PDB...** で `4AKE` も取得します (Renderer はどれでも構いません)
+2. **File &gt; Get PDB...** で `1TND` を取得します。Renderer の指定画面では **trace** を選び、
+   **Selection** に `c; A` を指定します (1TND には同じ分子が 3 つ (chain A / B / C)
+   含まれているため、chain A だけを表示します)
+3. 同様に **File &gt; Get PDB...** で `1TAG` も取得します (Renderer は **trace**。
+   こちらは chain A のみなので Selection の指定は不要です)
 
-### 4AKE を 1AKE に重ね合わせる
+### 1TAG を 1TND に重ね合わせる
 
-モーフィングの補間は座標をそのまま使うため、2 つの構造をあらかじめ
-重ねておく必要があります (別々の結晶に由来する座標系は大きくずれています)。
+2 つの構造は分子としてはほとんど同じですが、PDB エントリに含まれる分子の位置は
+ばらばらです。モーフィングの補間は座標をそのまま使うため、まず両者を重ね合わせます。
 
 1. **Tools &gt; Molecular superposition...** を開きます
-2. **Reference** の **Molecule** で 1AKE を選びます
-3. **Moving** の **Molecule** で 4AKE を選びます
-4. **Algorithm** は既定の **Least-Square Fitting** のまま、**OK** を押します
-
-4AKE が 1AKE に重なる位置へ移動します。
+2. **Algorithm** で **Secondary Structure Matching** を選びます
+3. **Reference** の **Molecule** で 1TND を選び、**Selection** に `c; A` を指定します
+4. **Moving** の **Molecule** で 1TAG を選びます
+5. **OK** を押すと、1TAG が 1TND の chain A に重なる位置へ移動します
 
 ### MorphMol に変換してフレームを追加する
 
 1. **Tools &gt; Mol morphing animation...** を開きます
-2. **Target** で 1AKE を選びます
+2. **Target** で、変化の始点にする 1TND を選びます
 3. **Convert to MorphMol** を押します。分子が、複数のフレーム (構造) を保持できる
    **MorphMol** に変換されます
-4. **Add mol...** を押し、4AKE を選びます。座標がフレームとしてコピーされます
+4. **Add mol...** を押し、変化の終点となる 1TAG を選びます。座標がフレームとして
+   コピーされます
 5. フレームの一覧に、元の構造 (`(this)`) と追加した構造が並んだことを確認して、
    ダイアログを閉じます
 
-コピー元の 4AKE の Object はもう使わないので、シーンツリーで削除するか
+コピー元の 1TAG の Object はもう使わないので、シーンツリーで削除するか
 非表示にして構いません。
 
 ### タイムラインに載せて再生する
 
 1. Animation パネルの追加メニューから **Mol morphing** を選びます
 2. 追加されたストリップを選び、インスペクタの **Target MorphMol** で
-   変換した 1AKE を指定します (→ [MolAnim](../reference/animation/molanim.md))
-3. 再生すると、閉じた構造と開いた構造の間で分子が変形します
+   変換した 1TND を指定します (→ [MolAnim](../reference/animation/molanim.md))
+3. 再生すると、GTP 結合型と GDP 結合型の間で分子が変形します
 
-1AKE 側にしかない阻害剤や水分子は、対応が取れないため静止したままですが、
-tube は主鎖しか描かないため画面には影響しません。
+1TND 側にしかない chain B・C やリガンド・水分子は、対応が取れないため
+静止したままですが、表示は chain A の trace だけなので画面には影響しません。
 
 <!-- TODO(screenshot): Morph animation tool ダイアログ (フレーム一覧) と、モーフィング再生中の分子ビュー -->
 
