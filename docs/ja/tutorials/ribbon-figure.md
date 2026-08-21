@@ -27,9 +27,10 @@
 <!-- TODO(screenshot): Get PDB ダイアログ (3UG9 入力済み) と、取得後の Renderer 指定画面 -->
 
 !!! note "CueMol2 との違い"
-    CueMol2 では Renderer の作成時に設定ダイアログが開きましたが、CueMol3 では種類を選ぶと
-    **既定値で即座に作成**され、細かい設定は後からインスペクタで調整します。取り消したいときは
-    Undo で戻せます (→ [操作パラダイムの変更](../changes/ui-paradigm.md))。
+    ファイルを読み込んで Renderer を作るまでの流れは CueMol2 と同じです。変わったのは
+    作成後の調整のしかたで、プロパティダイアログを開き直す代わりに、常設の
+    **プロパティインスペクタ**で結果を見ながら編集します
+    (→ [操作パラダイムの変更](../changes/ui-paradigm.md))。
 
 !!! tip "プリセットなら一度で作れます"
     **Renderer type** の Presets にある **Default preset 2** を選ぶと、タンパク質のカートゥーン・
