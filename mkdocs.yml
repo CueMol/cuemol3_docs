@@ -123,6 +123,8 @@ nav:
       - tutorials/index.md
       - タンパク質のリボン図を作る: tutorials/ribbon-figure.md
       - 論文用の高解像度画像を書き出す: tutorials/publication-images.md
+      - 電子密度マップを重ねて表示する: tutorials/density-map.md
+      - 対称分子・単位格子を表示する: tutorials/symmetry.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md
