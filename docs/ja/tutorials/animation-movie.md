@@ -64,36 +64,38 @@
 
 ## 7. モーフィングを加える
 
-原子構成が同じで座標だけが異なる 2 つの構造の間を補間して、
-構造変化をアニメーション化します。ここでは同梱のサンプル
-(アデニル酸キナーゼの closed / open 構造、PDB 1AKE / 4AKE 由来) を使います。
-次の 2 つのファイルをダウンロードしてください。
+同じ分子の 2 つの構造の間で、対応する原子どうしの座標を補間して、
+構造変化をアニメーション化します。ここでは、閉じた構造と開いた構造の両方が
+PDB に登録されているアデニル酸キナーゼ (closed: **1AKE** / open: **4AKE**) を使います。
 
-- [adk-closed.pdb.gz](../../assets/data/morphing/adk-closed.pdb.gz) (閉じた構造)
-- [adk-open.pdb.gz](../../assets/data/morphing/adk-open.pdb.gz) (開いた構造)
-
-### 構造を読み込む
+### 2 つの構造を読み込む
 
 1. **File &gt; New Tab** を選び、**New Scene** で新しいシーンを作ります
-2. **File &gt; Open File...** で `adk-closed.pdb.gz` を開きます
-3. Renderer の指定画面では **tube** を選びます
+2. **File &gt; Get PDB...** で `1AKE` を取得します。Renderer の指定画面では **tube** を選びます
+3. 同様に **File &gt; Get PDB...** で `4AKE` も取得します (Renderer はどれでも構いません)
 
 ### MorphMol に変換してフレームを追加する
 
 1. **Tools &gt; Mol morphing animation...** を開きます
-2. **Target** で、読み込んだ分子を選びます
+2. **Target** で 1AKE を選びます
 3. **Convert to MorphMol** を押します。分子が、複数のフレーム (構造) を保持できる
    **MorphMol** に変換されます
-4. **Add PDB file...** を押し、`adk-open.pdb.gz` を選びます
+4. **Add mol...** を押し、4AKE を選びます。座標がフレームとしてコピーされます
 5. フレームの一覧に、元の構造 (`(this)`) と追加した構造が並んだことを確認して、
    ダイアログを閉じます
+
+コピー元の 4AKE の Object はもう使わないので、シーンツリーで削除するか
+非表示にして構いません。
 
 ### タイムラインに載せて再生する
 
 1. Animation パネルの追加メニューから **Mol morphing** を選びます
 2. 追加されたストリップを選び、インスペクタの **Target MorphMol** で
-   変換した分子を指定します (→ [MolAnim](../reference/animation/molanim.md))
+   変換した 1AKE を指定します (→ [MolAnim](../reference/animation/molanim.md))
 3. 再生すると、閉じた構造と開いた構造の間で分子が変形します
+
+1AKE 側にしかない阻害剤や水分子は、対応が取れないため静止したままですが、
+tube は主鎖しか描かないため画面には影響しません。
 
 <!-- TODO(screenshot): Morph animation tool ダイアログ (フレーム一覧) と、モーフィング再生中の分子ビュー -->
 
