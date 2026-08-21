@@ -1,4 +1,4 @@
-# SlideInOutAnim (スライド)
+# SlideInOutAnim
 
 Renderer を画面外から滑り込ませる (スライドイン)、または画面外へ
 滑り出させる (スライドアウト) アニメーションです。

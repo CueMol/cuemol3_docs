@@ -196,7 +196,7 @@ Light radius を大きくするほど影の縁が広くぼけ、ノイズも出�
 | Contact edges | OFF | | 別々の Renderer が交わる線を描きます (下記) |
 
 **Contact edges** は、ある Renderer の形状が別の Renderer の表面に突き刺さっている箇所
-(たとえばリボンに入り込む棒球モデルの結合) の交線を描きます。既定では、この交線は
+(たとえば ribbon に入り込む ballstick の結合) の交線を描きます。既定では、この交線は
 Umbreon でも分子ビューでも描かれません。そのため Edge type が Silhouette の Renderer では、
 他の Renderer と接する部分で輪郭が途切れます。この設定を ON にすると、その線が描かれます。
 

@@ -1,6 +1,6 @@
-# ballstick (棒球モデル)
+# ballstick
 
-原子を球、結合を円柱で描画する棒球モデルの Renderer です。
+原子を球、結合を円柱で描画する Renderer です。
 対象 Object: 分子 (MolCoord)。
 
 !!! info "準備中"

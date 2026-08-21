@@ -41,7 +41,7 @@ X 線結晶構造に電子密度マップを重ねて、モデルと密度の対
 マップは**ビュー中心の周囲だけ**が描かれます。分子ビューを平行移動すると、
 表示されるマップの範囲も追従します。
 
-コンター表示の仕組みは [contour](../reference/renderers/contour.md)、
+contour 表示の仕組みは [contour](../reference/renderers/contour.md)、
 マップ Object の詳細は [DensityMap](../reference/objects/densitymap.md) を参照してください。
 
 ## 3. レベルと範囲を調整する

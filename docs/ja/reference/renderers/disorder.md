@@ -1,4 +1,4 @@
-# disorder (ディスオーダー)
+# disorder
 
 タンパク質・核酸のディスオーダー領域の主鎖を表示するための Renderer です。
 対象 Object: 分子 (MolCoord)。

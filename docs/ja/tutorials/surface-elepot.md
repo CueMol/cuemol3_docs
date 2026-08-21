@@ -66,7 +66,7 @@ Settings でパスを指定します (→ [外部ツールの設定](../install/
 
 <!-- TODO(screenshot): Color パネルの Electrostatic potential 設定と、色分けされた表面 -->
 
-## 5. 半透明の表面とリボンを重ねる
+## 5. 半透明の表面と cartoon を重ねる
 
 表面の内側の構造も見せたい場合は、表面を半透明にして cartoon と重ねます。
 

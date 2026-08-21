@@ -1,4 +1,4 @@
-# spline (スプライン)
+# spline
 
 主鎖を平滑化したスプライン曲線として線で描画する Renderer です。
 対象 Object: 分子 (MolCoord)。

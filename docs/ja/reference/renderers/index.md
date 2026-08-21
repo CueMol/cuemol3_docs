@@ -1,7 +1,7 @@
 # Renderer
 
 **Renderer** は Object のデータをどう描画するかを決める要素です。
-1 つの Object に複数の Renderer を付けて、主鎖はリボン・活性部位は棒球モデル、
+1 つの Object に複数の Renderer を付けて、主鎖は ribbon・活性部位は ballstick、
 といった重ね方ができます。
 
 Renderer はシーンツリーで Object 行または Renderer グループ行を右クリックし、
@@ -16,7 +16,7 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 | [simple](simple.md) | 分子 | 結合を線で描画する最軽量の表示 | ○ |
 | [trace](trace.md) | 分子 | 主鎖の pivot 原子 (Cα など) を線で結ぶ表示 | ○ |
 | [spline](spline.md) | 分子 | 主鎖を平滑化した曲線で描画 | ○ |
-| [ballstick](ballstick.md) | 分子 | 原子を球、結合を円柱で描画する棒球モデル | ○ |
+| [ballstick](ballstick.md) | 分子 | 原子を球、結合を円柱で描画 | ○ |
 | [cpk](cpk.md) | 分子 | ファンデルワールス半径の球で描画する空間充填モデル | ○ |
 | [anisou](anisou.md) | 分子 | 異方性温度因子を楕円体で描画 (ORTEP 風) | ○ |
 | [tube](tube.md) | 分子 | 主鎖を滑らかなチューブで描画 | ○ |
