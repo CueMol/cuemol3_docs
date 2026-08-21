@@ -69,9 +69,7 @@ Renderer 単位の **Coloring** を設定します。上部で Renderer を選�
 | Rainbow | モード、変化させる基準、開始・終了の色相、明度、彩度 |
 | B-factor | モード (B-factor / 占有率 / 距離)、下限・上限の色、下限値・上限値 (Auto が Manual のときのみ入力可) |
 | 静電ポテンシャル | 対象のポテンシャルマップ、SAS で色付けするか、低 / 中 / 高の値と色 |
-
-!!! warning "Multi-gradient は未実装です"
-    Coloring の種類のうち **Multi-gradient** は選択できません (準備中)。
+| Multi-gradient | マップのヒストグラムとグラデーションバー上で、ストップ (色の区切り) を直接編集します |
 
 ### View パネル
 
@@ -136,4 +134,4 @@ Renderer 単位の **Coloring** を設定します。上部で Renderer を選�
 
 ---
 
-*最終確認: 2026-08-10 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.8.494*
