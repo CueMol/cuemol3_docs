@@ -40,15 +40,19 @@
    **Backend** は既定の **Umbreon** のままで構いません
 2. **Image** タブで出力サイズを選びます。プリセット (例: **1200×1200 (600dpi)**) から選ぶか、
    **Custom** で幅・高さを直接指定します
-3. **Render** タブの **Quality** セクションで品質を選びます。
-   通常は **Lighting** (陰影の付け方) と **Supersampling** (基本画質) を選ぶだけで済みます
+3. **Render** タブの **Quality** セクションで、**Lighting** (陰影の付け方) を
+   **Raytrace only** にします。今回のようなリボン図は、これで十分きれいに仕上がります。
+   **Supersampling** (基本画質) は既定のままで構いません
 4. **Start** を押すとレンダリングが始まり、進捗が表示されます
 
-<!-- TODO(screenshot): レンダリングウィンドウ。Image タブでサイズ選択 → Render タブの Quality セクション -->
+<!-- TODO(screenshot): レンダリングウィンドウ。Image タブでサイズ選択 → Render タブの Quality セクション (Lighting = Raytrace only) -->
+
+!!! tip "陰影に奥行き感を出すなら Global Illumination"
+    **Lighting** を **Global Illumination** (既定) にすると、大域照明による陰影づけで
+    奥行き感のある仕上がりになります。ただし、リボン図のような図では効果は小さめです。
+    分子表面のような込み入った形状の図で試してみてください。
 
 各品質項目の意味と使い分けは [レンダリング](../reference/rendering.md) を参照してください。
-仕上げの品質を上げるなら、まず **Lighting** を Ambient Occlusion に、**Supersampling** を
-一段上げるところから試すのがおすすめです。
 
 !!! note "CueMol2 との違い"
     CueMol2 の高品位出力は外部の POV-Ray を呼び出す方式でしたが、CueMol3 では内蔵
