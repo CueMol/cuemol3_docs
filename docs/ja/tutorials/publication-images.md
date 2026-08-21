@@ -52,6 +52,8 @@
     奥行き感のある仕上がりになります。ただし、リボン図のような図では効果は小さめです。
     分子表面のような込み入った形状の図で試してみてください。
 
+    <!-- TODO(screenshot): Raytrace only と Global Illumination の比較例 (同一構図、GI の効果がわかる込み入った形状が望ましい)。この admonition 内にインデントして width 指定 + .on-glb で挿入 -->
+
 各品質項目の意味と使い分けは [レンダリング](../reference/rendering.md) を参照してください。
 
 !!! note "CueMol2 との違い"
