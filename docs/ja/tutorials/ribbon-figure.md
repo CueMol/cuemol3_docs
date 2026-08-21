@@ -65,8 +65,8 @@ Paint は上の行から順に評価され、最初にマッチした行の色�
 <!-- TODO(screenshot): Color パネルで Paint に鎖 A / B の 2 行を設定した状態と、塗り分け後の分子ビュー -->
 
 !!! note "CueMol2 との違い"
-    CueMol2 では Paint の設定は専用ダイアログでしたが、CueMol3 では **Color パネルの
-    Paint 表**に集約され、表のセルを直接編集します
+    CueMol2 にも Paint のパネルはありましたが、行 (エントリ) の編集は別のダイアログで
+    行う必要がありました。CueMol3 では**表のセルを直接編集**できます
     (→ [機能の統合・改名・廃止](../changes/features.md))。
 
 !!! tip "1 本鎖なら Rainbow も定番です"
