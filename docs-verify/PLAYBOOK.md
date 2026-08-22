@@ -41,6 +41,22 @@ spec を書き始める前に、ページが次を満たしているか確認す
   (Renderer の既定色は `$molcol` を参照するので、ballstick の炭素まで追従する)
 - 役目を終えた Renderer は目のアイコンで非表示にする、まで書く
 
+## 1.5 cuemol2_docs との対応を取る
+
+CueMol3 のチュートリアルは CueMol2 の対応ページを下敷きにしている。ページを書く前に
+**対応する CueMol2 ページ (`~/works/cuemol2_docs/docs/ja/Documents/GUIのチュートリアル(CueMol2)/`)
+を開き、図と説明を洗い出して突き合わせる**。
+
+- **図**: CueMol2 が図を出している対象 (ダイアログ、パネル、ステータスバー、コンテキスト
+  メニュー、ツールバーのボタンなど) には、こちらでも図を用意する。**被写体は同じでも、
+  画面は CueMol3 のものを撮る** (`docShot`)。
+- **文章**: 実装が変わっていない部分は、**言い回しも CueMol2 と同じにする**。表現を変えるのは
+  実装が変わった箇所だけ。
+- **流用**: 内容が変わっていない図 (概念図など) は CueMol2 の画像をそのままコピーして使う
+  (例: `scene_concept_small2.png` → `tutorials/basic/loading/scene-concept.png`)。
+- CueMol2 が説明していて CueMol3 に存在しない GUI (ロック列など) は、**存在しないことを
+  確認してから**「CueMol2 との違い」に書く。確認できなければ書かない。
+
 ## 2. セレクタの調べ方 (使い捨て DOM ダンプ)
 
 production コードに `data-testid` は無いので、セレクタは可視テキスト・aria-label・
@@ -283,6 +299,9 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | 撮影サイズでしか通らない spec を書いてしまう | 座標依存の操作を書かない。最後に `task e2e` (1600x1000) で回帰確認する |
 | `docShot` が `no visible clip target` / `not an HTMLElement` で落ちる | 対象が `display: contents` の要素だと矩形を持たない (View パネルの `.h3-form-grid-row` がこれ)。内側の実体 (ラベルとコントロール) を配列で渡す |
 | View パネルに入れた回転角が読み戻せない | Rotation (RotX/RotY/RotZ) は相対ダイヤルで、確定すると 0 に戻る。読み戻しで検証できるのは Translation / Zoom / Slab / Dist |
+| ホイール操作がズームにならず視点が平行移動する | 合成したホイールイベントは **Mac trackpad と自動判定**され、2 本指スクロール = 平行移動として扱われる (ステータスバーに `Input device auto-detected: Mac trackpad` と出る)。中心を狙ったクリックはホイール操作の**前**に行う |
+| 原子クリックの結果がログに出ない | クリックの報告は**ステータスバー (`.status-left`) と Output パネル** (`.bottom-panel-content pre[data-select-scope]`) に出る。main プロセスの stdout には流れないので `logs.waitForLine` では待てない |
+| `--grep` で 1 test だけ流すと落ちる | `describe.serial` の前提となる test (分子の読み込みなど) が走らないため。分子が無い状態では原子ピックは必ず失敗する。切り分けのときも spec 全体を流す |
 | ログ行の待ち受けが別の行に当たる | `waitForLine` は部分一致。`'read '` は `thread read (2047) ok` に、`'> read '` は `LoadSymLib> read 266 s.g.s` に当たる。読み込み確認は `' atoms'` を待って `/read \d+ atoms/` で検証する |
 
 ## セレクタ台帳

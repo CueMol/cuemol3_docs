@@ -31,10 +31,12 @@ const MAX_BYTES = 300 * 1024;
 const SHOT_SETTLE_MS = 500;
 const WEBP_QUALITIES = [82, 70, 58, 46];
 
+export interface Rect { x: number; y: number; width: number; height: number }
+
 export async function docShot(
     window: Page,
     id: string,
-    opts: { clip?: Locator | Locator[]; pad?: number } = {},
+    opts: { clip?: Locator | Locator[]; pad?: number; rect?: Rect } = {},
 ): Promise<void> {
     if (!process.env.DOCSHOT) return;
 
@@ -64,7 +66,12 @@ export async function docShot(
     console.log(`[docShot] ${id}.webp (${Math.round(out.length / 1024)} KB)`);
 }
 
-async function capture(window: Page, opts: { clip?: Locator | Locator[]; pad?: number }): Promise<Buffer> {
+async function capture(
+    window: Page,
+    opts: { clip?: Locator | Locator[]; pad?: number; rect?: Rect },
+): Promise<Buffer> {
+    // An explicit region, for parts of the GL canvas that no element covers.
+    if (opts.rect) return window.screenshot({ clip: opts.rect });
     if (!opts.clip) return window.screenshot();
     const clips = Array.isArray(opts.clip) ? opts.clip : [opts.clip];
     if (clips.length === 1 && opts.pad === undefined) return clips[0].screenshot();

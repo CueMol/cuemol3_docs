@@ -18,7 +18,7 @@ import { setupLoadingPage, LYSOZYME, SECOND_OBJ } from '../../fixtures/course';
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { expectRow, sceneRow } from '../../helpers/sceneTree';
 import { enterViewValue, setViewValue, viewPaneRowParts } from '../../helpers/viewPane';
-import { rotateView, zoomView } from '../../helpers/molView';
+import { clickAtomNearCenter, rotateView, zoomView } from '../../helpers/molView';
 import { docShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/basic/loading';
@@ -80,6 +80,24 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
     });
 
     test('2. 視点を操作する', async () => {
+        // 「原子の上でクリックすると、その原子の名前がラベルとして分子ビューに
+        //   表示されます。同時に、ステータスバーと Output パネルに ... が出ます」
+        // Done before the gestures below, while the molecule is still centred
+        // from loading: the synthetic wheel is auto-detected as a Mac trackpad
+        // and pans the view instead of zooming, moving the molecule off centre.
+        const hit = await clickAtomNearCenter(harness.window, LYSOZYME);
+        // "Molecule [lysozyme], A TRP 63 CH2, O: 1.00 B: 12.58 Pos: (...)"
+        await expect(harness.window.locator('.status-left'))
+            .toContainText(/O: [\d.]+ B: [\d.]+ Pos: \(/);
+        await expect(harness.window.locator('.bottom-panel-content pre[data-select-scope]'))
+            .toContainText(`Molecule [${LYSOZYME}]`);
+        await docShot(harness.window, `${SHOT}/2-atom-label`, {
+            rect: { x: hit.x - 200, y: hit.y - 130, width: 400, height: 260 },
+        });
+        await docShot(harness.window, `${SHOT}/2-status-bar`, {
+            clip: harness.window.locator('.status-left'),
+        });
+
         // 「1. 分子ビュー上を左ドラッグします」「2. ホイールを回します」
         await rotateView(harness.window);
         await zoomView(harness.window);
@@ -102,7 +120,7 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
 
         test.info().annotations.push({
             type: 'skipped-step',
-            description: '§2 原子クリックによるラベル表示と Center at this atom (macOS ではネイティブメニュー)',
+            description: '§2 分子ビューの右クリックメニュー (macOS ではネイティブメニューのため撮影・操作ともできない)',
         });
     });
 
