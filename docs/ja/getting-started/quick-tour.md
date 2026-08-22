@@ -103,9 +103,12 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
 ### 色を塗り替える
 
-色は Renderer ごとに、左サイドパネルの **Explorer &gt; Color** パネルで設定します。
+色は左サイドパネルの **Explorer &gt; Color** パネルで設定します。Coloring は
+Renderer ごとにも、分子 Object 側にも設定できます。Renderer の既定の色は
+Object の色 (`$molcol`) を参照するため、Object 側を塗り替えると、それを参照して
+いるすべての Renderer に反映されます。ここでは Object 側を塗り替えます。
 
-1. 上部で `ribbon1 (ribbon)` を選びます
+1. 上部で `1crn (object)` を選びます
 
     ![Color パネルの対象選択](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="233" }
 
@@ -113,10 +116,11 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
     ![Coloring メニュー](../../assets/images/getting-started/quick-tour/3-coloring-menu.webp){ width="196" .on-glb }
 
-リボンが N 末端から C 末端へ虹色に塗り替わります。Coloring には Paint / CPK /
-B-factor / 静電ポテンシャルなどの種類があります (→ [Coloring](../reference/coloring.md))。
+リボンが N 末端から C 末端へ虹色に塗り替わり、ballstick の炭素原子の色も
+追従します。Coloring には Paint / CPK / B-factor / 静電ポテンシャルなどの
+種類があります (→ [Coloring](../reference/coloring.md))。
 
-![ribbon に Cys 残基の ballstick を重ね、ribbon を Rainbow coloring で塗り替えたところ](../../assets/images/getting-started/quick-tour/3-styled.webp){ .on-glb }
+![Object の Coloring を Rainbow coloring にし、ribbon と ballstick の炭素が追従したところ](../../assets/images/getting-started/quick-tour/3-styled.webp){ .on-glb }
 
 ### 視点を動かす
 

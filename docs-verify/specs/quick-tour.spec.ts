@@ -199,8 +199,9 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
         });
 
         await test.step('色を塗り替える', async () => {
-            // 「ribbon1 (ribbon) を選び、Coloring ボタンから Rainbow coloring を選びます。」
-            await selectColorTarget(harness.window, 'ribbon1 (ribbon)');
+            // 「上部で 1crn (object) を選びます」 — the object-side coloring;
+            // the renderers' default colours reference it via $molcol.
+            await selectColorTarget(harness.window, '1crn (object)');
             await docShot(harness.window, 'getting-started/quick-tour/3-color-target', {
                 clip: harness.window.locator('.color-shell-row').first(),
                 pad: 6,
