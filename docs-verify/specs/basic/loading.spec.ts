@@ -17,7 +17,7 @@ import { CueMolHarness } from '../../fixtures/app';
 import { setupLoadingPage, LYSOZYME, SECOND_OBJ } from '../../fixtures/course';
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { expectRow, sceneRow } from '../../helpers/sceneTree';
-import { setViewValue, viewPaneRowParts } from '../../helpers/viewPane';
+import { enterViewValue, setViewValue, viewPaneRowParts } from '../../helpers/viewPane';
 import { rotateView, zoomView } from '../../helpers/molView';
 import { docShot } from '../../helpers/docShot';
 
@@ -52,7 +52,19 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         const mark = harness.logs.mark();
         await setupLoadingPage.loadLysozyme(harness, {
             onGetPdbDialog: (dlg) => docShot(harness.window, `${SHOT}/1-getpdb`, { clip: dlg }),
-            onOptionsDialog: (dlg) => docShot(harness.window, `${SHOT}/1-open-options`, { clip: dlg }),
+            onOptionsDialog: async (dlg) => {
+                // 「ファイル名 (1qio.cif) と、判別したファイル形式 (mmCIF) が表示されます」
+                await expect(dlg.locator('.fod-file-name')).toHaveText('1qio.cif');
+                await expect(dlg.locator('.fod-file-format')).toHaveText('mmCIF');
+                // 「Renderer name は選んだ種類から自動で決まります (simple1)」
+                await expect(dlg.locator('#rend-name')).toHaveValue('simple1');
+                // 「Renderer type のリストの先頭には Presets というグループがあります」
+                await expect(dlg.locator('#rend-type optgroup[label="Presets"]')).toHaveCount(1);
+                // 「<形式>-specific options ... 既定のままなら (defaults) と表示されます」
+                await expect(dlg.locator('.fod-collapsible-label')).toHaveText('mmCIF-specific options');
+                await expect(dlg.locator('.fod-collapsible-hint')).toHaveText('(defaults)');
+                await docShot(harness.window, `${SHOT}/1-open-options`, { clip: dlg });
+            },
         });
 
         // 「分子が線画 (stick モデル) で表示されます。」
@@ -73,7 +85,11 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         await zoomView(harness.window);
         await expect(harness.window.locator('canvas').first()).toBeVisible();
 
+        // 「Rotation は相対値で、操作するとその角度だけ回り、値は 0 に戻ります」
+        expect(await enterViewValue(harness.window, 'RotY', 90)).toMatch(/^0\s*deg/);
+
         // 「3. Explorer > View パネルで Zoom の値をクリックし、40 と入力して Enter」
+        // (Zoom は絶対値なので入力した値がそのまま残る)
         await setViewValue(harness.window, 'Zoom', 40);
         await docShot(harness.window, `${SHOT}/2-view-zoom`, {
             clip: viewPaneRowParts(harness.window, 'Zoom'),
@@ -110,9 +126,13 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         for (const name of [LYSOZYME, 'simple1', SECOND_OBJ, 'trace1']) {
             await expect(sceneRow(harness.window, name)).toBeVisible();
         }
-        // 「分子を読み込むと、選択部分をハイライト表示するための *selection という
-        //   Renderer も自動で作られます」
+        // 「名前のない Renderer は括弧と型だけが表示されます」
         await expect(harness.window.getByText('(*selection)').first()).toBeVisible();
+        // 「いちばん下の Camera と Styles は…」
+        await expect(harness.window.getByText('Camera', { exact: true })).toBeVisible();
+        await expect(harness.window.getByText('Styles', { exact: true })).toBeVisible();
+        // 「パネル上部には 4 つのボタンがあります」(Add / Focus / Delete / Property)
+        await expect(harness.window.locator('.section-action-btn')).toHaveCount(4);
 
         // Header (it carries the Delete button the section mentions) down to
         // the last renderer row; Camera / Styles are not part of this section.

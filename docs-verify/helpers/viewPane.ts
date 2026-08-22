@@ -17,14 +17,24 @@ function viewRow(window: Page, label: string): Locator {
         .filter({ has: window.locator('.h3-form-grid-label', { hasText: new RegExp(`^${label}$`) }) });
 }
 
-/** Set an absolute View-pane value (Zoom / Slab / Dist / TraX...) and verify it. */
-export async function setViewValue(window: Page, label: string, value: number): Promise<void> {
+/**
+ * Type a value into a View-pane row and commit it. Returns what the row
+ * displays afterwards, which is the entered value for the absolute rows and
+ * 0 for the relative Rotation dials.
+ */
+export async function enterViewValue(window: Page, label: string, value: number): Promise<string> {
     const row = viewRow(window, label);
     await row.locator('.h3-form-drag').click();
     const input = row.locator('input.h3-form-drag-input');
     await input.fill(String(value));
     await input.press('Enter');
-    await expect(row.locator('.h3-form-drag-value')).toContainText(String(value));
+    return (await row.locator('.h3-form-drag-value').innerText()).trim();
+}
+
+/** Set an absolute View-pane value (Zoom / Slab / Dist / TraX...) and verify it. */
+export async function setViewValue(window: Page, label: string, value: number): Promise<void> {
+    await enterViewValue(window, label, value);
+    await expect(viewRow(window, label).locator('.h3-form-drag-value')).toContainText(String(value));
 }
 
 /** The value as displayed, e.g. "30A" (number plus unit, no separator). */

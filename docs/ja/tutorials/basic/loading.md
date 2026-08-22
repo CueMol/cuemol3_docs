@@ -14,12 +14,18 @@
 
 ![Get PDB ダイアログ](../../../assets/images/tutorials/basic/loading/1-getpdb.webp){ width="380" .on-glb }
 
-取得が終わると、**Open File Options** の画面が出ます。
+ダウンロード中は `Downloading 1QIO…` という進捗画面が出ます。**Cancel** を押せば中断できます。
+存在しない ID を入れた場合は **Get PDB failed** というエラーが表示されます。
+
+取得が終わると、**Open File Options** の画面が出ます。いちばん上にはこれから読み込む
+ファイル名 (`1qio.cif`) と、CueMol3 が判別したファイル形式 (`mmCIF`) が表示されます。
 
 1. **Object name** を `lysozyme` に変更します。読み込まれたデータは **Object** と呼ばれ、
    CueMol の中ではこの名前で識別されます (既定ではファイル名由来の名前が入っています)
 2. **Renderer type** から **simple** を選びます
-3. そのほかは既定のまま **Open** を押します
+3. **Renderer name** は選んだ種類から自動で決まります (`simple1`)。ここでは既定のままにします。
+   この名前はシーンツリーやチュートリアルの以降の説明でそのまま使います
+4. そのほかは既定のまま **Open** を押します
 
 ![Open File Options (Object name = lysozyme, Renderer type = simple)](../../../assets/images/tutorials/basic/loading/1-open-options.webp){ width="480" .on-glb }
 
@@ -54,12 +60,24 @@ nucl
 
 全種類の一覧と詳細は [Renderer 一覧](../../reference/renderers/index.md) を参照してください。
 
+**Renderer type** のリストの先頭には、**Presets** というグループがあります。ここから
+**Default preset 1** などを選ぶと、Renderer を 1 つではなく、タンパク質は ribbon、核酸は
+nucl、それ以外は ballstick、というように**複数の Renderer をまとめたグループ**が一度に
+作られます。プリセットを選んだときは、下の **Selection** は使えなくなります。
+
 ### そのほかのオプション
 
+- **Renderer name** — 作られる Renderer の名前。種類を選ぶと自動で埋まります
+  (プリセットの場合はグループ名になります)
+- **Selection** — チェックを入れると隣の欄が有効になり、**表示する範囲**を選択式で
+  絞れます。読み込み自体は分子全体に対して行われるので、後から表示範囲だけを
+  広げ直せます (→ [分子の一部を選択する](selection.md))
 - **Center view on molecule after loading** — 読み込んだ分子へ視点を移します。
   現在の視点を保ちたいときはチェックを外します
-- **Selection** — 表示する範囲をあらかじめ選択式で絞れます。読み込み自体は
-  分子全体に対して行われます
+- **&lt;形式&gt;-specific options** — いちばん下の折りたたみです。開くと、その形式に固有の
+  読み込み設定 (mmCIF / PDB なら **Load MODEL records**、**Load anisotropic U (ANISOU)**、
+  **Load alternate conformations**、**Calculate secondary structure** など) が並びます。
+  既定のままなら見出しの右に `(defaults)`、変更すると `(modified)` と表示されます
 
 ## 2. 視点を操作する
 
@@ -75,16 +93,31 @@ nucl
 Zoom は分子ビューに映す範囲の高さ (Å) です。値を小さくすると、その分だけ分子が
 大きく表示されます。マウスで動かすより正確に視点を合わせたいときに使います。
 
+View パネルの各行は、次の 3 通りで操作できます。
+
+- **左右の矢印**を押すと 1 段ずつ増減します
+- 数値の上を**左右にドラッグ**すると連続して変化します
+- 数値を**クリック**すると直接入力できる状態になり、++enter++ で確定します
+
+**Rotation** (RotX / RotY / RotZ) は**相対値**で、操作するとその角度だけ回り、値は 0 に
+戻ります。**Translation** (TraX / TraY / TraZ、Å) と **Zoom / Slab** (Zoom・Slab・Dist、Å) は
+**絶対値**で、現在の視点の値がそのまま表示されます。
+
 ![Zoom を 40 Å にしたところ](../../../assets/images/tutorials/basic/loading/2-zoomed.webp){ .on-glb }
 
 平行移動やスラブ (手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
 [マウス・トラックパッド操作](../../ui/mouse-input.md)、View パネルの各項目は
 [サイドパネル](../../ui/side-panels.md) を参照してください。
 
-原子の上でクリックすると、その原子の名前がラベルとして表示されます
-(もう一度クリックすると消えます)。右クリックすると、分子名・チェイン・残基・原子の
-情報がメニューの先頭に表示され、**Center at this atom** でその原子を
-ビュー中央に移せます。
+原子の上でクリックすると、その原子の名前がラベルとして分子ビューに表示されます
+(もう一度クリックすると消えます)。同時に、**ウィンドウ最下部のステータスバー**と
+**Output パネル**に、Object 名・チェイン・残基・原子名に加えて、占有率 (O)・温度因子 (B)・
+座標が出ます。
+
+右クリックするとメニューが開きます。**先頭の行はいま指している原子の情報**で、選んでも
+何も起きません。その下の **Center at this atom** を選ぶと、その原子がビューの中央に来る
+ように視点が移ります。さらに下には選択のための項目が並びます
+(→ [分子の一部を選択する](selection.md))。
 
 ## 3. もう 1 つ分子を読み込む
 
@@ -139,19 +172,42 @@ View
 :   シーンを映す画面 (分子ビュー) のこと。1 つのシーンに複数の View を
     接続することもできます (→ [File メニュー](../../menu/file.md) の New Tab)
 
+![Scene / Object / Renderer / View の関係](../../../assets/images/tutorials/basic/loading/scene-concept.png){ .on-glb }
+
+シーンとは、複数の Object と、それらに接続された Renderer を含む全体だと捉えてください。
+
 ## 5. シーンツリーで全体を把握する
 
 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー) には、シーン内の
 Object とその配下の Renderer が階層で表示されます (→ [サイドパネル](../../ui/side-panels.md))。
 
-- いまは `lysozyme` と `1g59` の 2 つの Object があり、それぞれに simple / trace の
-  Renderer が付いています (Get PDB で読み込むと、Object 名は PDB ID の小文字になります)
-- 分子を読み込むと、選択部分をハイライト表示するための `*selection` という
-  Renderer も自動で作られます
+行の表記は **`名前 (型)`** です。名前の左の**三角**をクリックすると、その Object に
+接続された Renderer の一覧を開いたり閉じたりできます。いまのツリーは次のように読みます。
+
+- シーン `Untitled 1` に `lysozyme` と `1g59` の 2 つの Object がある
+  (Get PDB で読み込むと、Object 名は PDB ID の小文字になります)
+- `1g59 (MolCoord)` — Object `1g59` の型は MolCoord (分子座標) である
+- `trace1 (trace)` — `1g59` に接続された Renderer `trace1` の型は trace である
+- `(*selection)` — 名前のない Renderer は括弧と型だけが表示されます。これは選択部分を
+  ハイライト表示するための Renderer で、分子を読み込むと自動で作られます
+
+いちばん下の **Camera** と **Styles** は、それぞれ保存した視点とスタイルの置き場所です
+(→ [カメラとシーンの保存](camera-scene.md))。
+
+### 目のアイコンとパネル上部のボタン
+
 - 行の**目のアイコン**で Renderer の表示・非表示を切り替えられます。Object 行で
   切り替えると、配下の Renderer がまとめて切り替わります
-- 不要になった Object や Renderer は、行を選んでパネル上部の **Delete** ボタンで
-  削除できます (Undo で戻せます)
+- パネル上部には 4 つのボタンがあります (ポインタを載せると名前が出ます)
+
+| ボタン | 動作 |
+|---|---|
+| **Add** | 選んでいる Object に Renderer を追加します (右クリックの New Renderer と同じ) |
+| **Focus** | 選んでいる Object や Renderer に合わせて視点 (Zoom と Slab) を調整します |
+| **Delete** | 選んでいる Object や Renderer を削除します。Undo で戻せます |
+| **Property** | 選んでいる項目をプロパティインスペクタに表示します |
+
+シーン行を右クリックすると **Background color** から背景色を変えられます。
 
 ![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="237" .on-glb }
 
