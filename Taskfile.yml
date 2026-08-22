@@ -112,3 +112,41 @@ tasks:
         done
         echo
         echo "total: $(find docs/assets/images -type f | wc -l | tr -d ' ') files, $(du -sh docs/assets/images | cut -f1)"
+
+  e2e:setup:
+    desc: Install the docs-verify E2E dependencies
+    dir: docs-verify
+    status:
+      - test -d node_modules
+    cmds:
+      - npm ci
+
+  e2e:
+    desc: Run the documentation E2E suite against the real app (docs-verify/README.md)
+    deps: [e2e:setup]
+    dir: docs-verify
+    cmds:
+      - npm run doctor
+      - npx playwright test
+
+  e2e:offline:
+    desc: Run only the network-free E2E specs (harness smoke)
+    deps: [e2e:setup]
+    dir: docs-verify
+    cmds:
+      - npm run doctor
+      - npx playwright test --grep-invert @net
+
+  e2e:slow:
+    desc: Run the E2E suite including slow steps (Umbreon rendering)
+    deps: [e2e:setup]
+    dir: docs-verify
+    cmds:
+      - npm run doctor
+      - E2E_SLOW=1 npx playwright test
+
+  e2e:report:
+    desc: Open the last Playwright HTML report
+    dir: docs-verify
+    cmds:
+      - npx playwright show-report

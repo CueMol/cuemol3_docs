@@ -17,6 +17,23 @@ mkdocs serve          # http://127.0.0.1:8000/
 mkdocs build --strict # CI と同じ検証 (警告があれば失敗)
 ```
 
+go-task があれば `task serve` / `task build` / `task check` でも同じことができます
+(venv の作成も自動で行われます)。
+
+## E2E 検証 (docs の手順を実アプリで自動実行)
+
+`docs-verify/` に、クイックツアーなどの手順を実アプリ (tritium) 上で Playwright により
+自動実行する検証があります。ドキュメントと実装の齟齬を機械的に検出するのが目的です。
+
+```sh
+task e2e          # smoke + クイックツアー (Get PDB で実ネットワークを使用)
+task e2e:offline  # ネット不要の smoke のみ
+task e2e:slow     # レイトレース実行などの重いステップも含める
+```
+
+前提 (macOS + 実ディスプレイ、cuemol2 側の `task build_tritium` 済みなど) と詳細は
+[docs-verify/README.md](docs-verify/README.md) を参照。CI では実行されません (ローカル専用)。
+
 ## 執筆規約
 
 ### 言語と構成
