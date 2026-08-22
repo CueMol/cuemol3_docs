@@ -146,13 +146,13 @@ tasks:
       - E2E_SLOW=1 npx playwright test
 
   e2e:shots:
-    desc: Capture the documentation screenshots into docs/assets/images (quick tour)
+    desc: Capture the documentation screenshots into docs/assets/images
     deps: [e2e:setup]
     dir: docs-verify
     cmds:
       - npm run doctor
       # E2E_SLOW so the raytraced result is captured too.
-      - DOCSHOT=1 E2E_SLOW=1 E2E_WINDOW=1280x800 npx playwright test specs/quick-tour.spec.ts
+      - DOCSHOT=1 E2E_SLOW=1 E2E_WINDOW=1280x800 npx playwright test specs/quick-tour.spec.ts specs/basic
       - task: check:images
 
   e2e:report:
