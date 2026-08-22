@@ -153,6 +153,14 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await docShot(renderWindow, 'getting-started/quick-tour/4-rendering-window');
 
             if (process.env.E2E_SLOW) {
+                // 「2. 画質・サイズを設定する」— the default Lighting is
+                // Global Illumination; pick Raytrace only so the slow step
+                // stays light and deterministic.
+                await renderWindow.getByRole('radio', { name: 'Render', exact: true }).click();
+                await renderWindow
+                    .getByText('Lighting', { exact: true })
+                    .locator('xpath=following::select[1]')
+                    .selectOption({ label: 'Raytrace only' });
                 await renderWindow.getByRole('button', { name: 'Start Render', exact: true }).click();
                 // The result viewer shows the rendered image when the job is done.
                 await expect(renderWindow.getByAltText('Render result')).toBeVisible({ timeout: 600_000 });
