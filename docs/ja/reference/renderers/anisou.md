@@ -1,7 +1,7 @@
 # anisou (熱振動楕円体)
 
 異方性温度因子 (ANISOU) を楕円体で描画する ORTEP 風の Renderer です。
-対象 Object: 分子 (MolCoord)。棒球モデルの派生で、原子と結合の設定は
+対象 Object: 分子 (MolCoord)。ballstick の派生で、原子と結合の設定は
 [ballstick](ballstick.md) と共通です。
 
 !!! info "準備中"

@@ -1,4 +1,4 @@
-# ribbon (リボン)
+# ribbon
 
 タンパク質・ポリペプチドの主鎖をスプライン曲線でリボン状に表現する Renderer です。
 対象 Object: 分子 (MolCoord)。

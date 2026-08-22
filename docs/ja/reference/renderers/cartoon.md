@@ -1,4 +1,4 @@
-# cartoon (カートゥーン)
+# cartoon
 
 タンパク質専用の Renderer で、ヘリックスを筒状、シートを板状、コイルをチューブ状に
 表示します。対象 Object: 分子 (MolCoord)。実装クラスは Ribbon2Renderer です。

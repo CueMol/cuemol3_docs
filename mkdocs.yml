@@ -125,6 +125,8 @@ nav:
       - 論文用の高解像度画像を書き出す: tutorials/publication-images.md
       - 電子密度マップを重ねて表示する: tutorials/density-map.md
       - 対称分子・単位格子を表示する: tutorials/symmetry.md
+      - 分子表面を静電ポテンシャルで着色する: tutorials/surface-elepot.md
+      - アニメーションを作って動画に出力する: tutorials/animation-movie.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md
@@ -144,16 +146,16 @@ nav:
           - エッジライン: reference/renderers/edge-lines.md
           - simple (結合線): reference/renderers/simple.md
           - trace (Cα トレース): reference/renderers/trace.md
-          - spline (スプライン): reference/renderers/spline.md
-          - ballstick (棒球モデル): reference/renderers/ballstick.md
+          - spline: reference/renderers/spline.md
+          - ballstick: reference/renderers/ballstick.md
           - cpk (空間充填モデル): reference/renderers/cpk.md
           - anisou (熱振動楕円体): reference/renderers/anisou.md
-          - tube (チューブ): reference/renderers/tube.md
-          - ribbon (リボン): reference/renderers/ribbon.md
-          - cartoon (カートゥーン): reference/renderers/cartoon.md
+          - tube: reference/renderers/tube.md
+          - ribbon: reference/renderers/ribbon.md
+          - cartoon: reference/renderers/cartoon.md
           - nucl (核酸): reference/renderers/nucl.md
           - atomintr (計測表示): reference/renderers/atomintr.md
-          - disorder (ディスオーダー): reference/renderers/disorder.md
+          - disorder: reference/renderers/disorder.md
           - molsurf (分子表面・計算済み): reference/renderers/molsurf.md
           - dsurface (分子表面・直接計算): reference/renderers/dsurface.md
           - dsurf2 (分子表面・距離場): reference/renderers/dsurf2.md
@@ -163,10 +165,10 @@ nav:
       - カメラ: reference/camera.md
       - アニメーション:
           - reference/animation/index.md
-          - SimpleSpin (スピン): reference/animation/simplespin.md
+          - SimpleSpin: reference/animation/simplespin.md
           - CamMotion (カメラ移動): reference/animation/cammotion.md
           - ShowHide (表示・非表示): reference/animation/showhide.md
-          - SlideInOut (スライド): reference/animation/slideinout.md
+          - SlideInOut: reference/animation/slideinout.md
           - MolAnim (構造変化): reference/animation/molanim.md
       - スタイル: reference/styles.md
       - レンダリング: reference/rendering.md

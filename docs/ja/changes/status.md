@@ -15,7 +15,6 @@ CueMol3 の配布物は GitHub の Releases からダウンロードできます
 | メニュー項目 | 内容 |
 |---|---|
 | Edit &gt; Clear undo data | Undo 履歴の破棄 |
-| Tools &gt; Mol morphing animation... | 2 構造間のモーフィングアニメーションの作成 |
 | Tools &gt; Performance measure | 描画性能の計測 |
 
 ツールバーの **Save** ボタンも現在は動作しません。シーンの保存には **Save Scene** ボタン、
@@ -52,7 +51,7 @@ CueMol3 の配布物は GitHub の Releases からダウンロードできます
 - 分子表面の生成・切断・再生成、相互作用解析、二次構造の再割り当て、分子の重ね合わせ
 - 対称性の変更と対称分子・単位格子の表示 (Create SYMM mol を含む)、密度マップの表示調整
 - APBS による静電ポテンシャル計算 (外部ツールの設定が必要)
-- アニメーションのタイムライン編集と再生
+- アニメーションのタイムライン編集と再生、モーフィングアニメーションの作成
 - レンダリングウィンドウでの静止画・動画出力 (既定は内蔵レイトレーサ Umbreon)
 - Export scene (PNG / Umbreon / POV-Ray SDL / STL / MQO)
 
