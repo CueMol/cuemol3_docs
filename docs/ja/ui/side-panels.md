@@ -101,16 +101,22 @@ Renderer 単位の **Coloring** を設定します。上部で Renderer を選�
 
 ### Selection パネル
 
-選択式を直接書いて適用します。
+分子の選択を表示・編集する専用パネルです。
 
-- 複数行のテキスト入力欄に選択式を書き、**Select** で適用します。
-- 入力中に式の妥当性が検証され、誤りがあれば入力欄が警告表示になります。
-- **History** から過去に使った選択式を再利用できます (履歴はアプリケーションに保存され、
-  Renderer の色設定などの選択欄と共有されます)。
+- **Molecule** で対象の分子を選ぶと、**Selection** 欄にその分子の現在の選択が
+  選択式として表示されます。パネルでの操作は選択に即座に反映され、Undo で戻せます。
+- **選択ビルダー** (Named / History / Term / Mod の 4 タブ) で、式を書かずに選択を
+  組み立てられます。定義済み選択・履歴のワンクリック適用、条件の合成
+  (Set / Add / Sub / Intsec)、現在の選択の変換 (Invert / Byres / Sidech / Mainch /
+  Arnd / Expn) ができ、各操作には適用した場合の原子数が表示されます
+  (→ [選択ビルダー](selection-builder.md))。
+- **Selection** 欄は手でも編集できます。入力中に式の妥当性が検証され、誤りがあれば
+  警告表示になります。手入力した式は **Select** ボタンで適用します。
+- 履歴はアプリケーションに保存され、Renderer の選択欄などと共有されます。
 
-!!! note
-    CueMol2 の選択パネルにあった階層型エディタ (Hierarchical / Terminal / Around-Expand) は
-    CueMol3 では提供していません。選択式を直接書く方法をお使いください。
+!!! note "CueMol2 との違い"
+    CueMol2 の選択パネルにあった階層型エディタ (Hierarchical / Terminal / Around-Expand) は、
+    選択ビルダーに置き換わりました。
 
 ## Crystal
 
