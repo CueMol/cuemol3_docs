@@ -11,7 +11,7 @@
 - **[論文用の高解像度画像を書き出す](publication-images.md)** — Export scene とレイトレースの使い分け
 - **[電子密度マップを重ねて表示する](density-map.md)** — Get PDB でのマップ取得と Density map パネル
 - **[対称分子・単位格子を表示する](symmetry.md)** — 結晶パッキングの表示と Create SYMM mol
-- **[分子表面を静電ポテンシャルで色分けする](surface-elepot.md)** — 表面生成から APBS 計算・電位による着色まで
+- **[分子表面を静電ポテンシャルで着色する](surface-elepot.md)** — 表面生成から APBS 計算・着色まで
 - **[アニメーションを作って動画に出力する](animation-movie.md)** — タイムライン編集・モーフィング・動画出力
 
 </div>

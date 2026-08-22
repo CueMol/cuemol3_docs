@@ -125,7 +125,7 @@ nav:
       - 論文用の高解像度画像を書き出す: tutorials/publication-images.md
       - 電子密度マップを重ねて表示する: tutorials/density-map.md
       - 対称分子・単位格子を表示する: tutorials/symmetry.md
-      - 分子表面を静電ポテンシャルで色分けする: tutorials/surface-elepot.md
+      - 分子表面を静電ポテンシャルで着色する: tutorials/surface-elepot.md
       - アニメーションを作って動画に出力する: tutorials/animation-movie.md
   - リファレンス:
       - reference/index.md
