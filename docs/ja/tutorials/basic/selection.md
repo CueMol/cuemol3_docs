@@ -86,8 +86,8 @@ Selection 欄の下の**選択ビルダー**を使うと、選択式を書かず
 
 <!-- TODO(screenshot): Selection パネルと選択ビルダー (Named タブと Term タブ) -->
 
-この選択ビルダーは、New Renderer の Selection 欄など、選択式を入力する
-ほかの場面でも ▼ ボタンから同じものが開きます。タブごとの機能の詳細は
+この選択ビルダーは、New Renderer の Selection 欄をはじめ、選択式を入力する
+ほぼすべての場面で ▼ ボタンから同じものが開きます。タブごとの機能の詳細は
 [選択ビルダー](../../ui/selection-builder.md) を参照してください。
 
 ### 選択式を直接書く
