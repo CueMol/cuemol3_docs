@@ -91,13 +91,16 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 
 ## 6. 背景と輪郭線で仕上げる
 
-論文の図では白背景が定番です。**Scene &gt; Background &gt; White** で背景を白にします。
+論文の図では、白い背景に輪郭線 (エッジライン) を組み合わせるのが定番です。
+エッジラインを付けると、白背景でも各要素の境界がはっきりします。
 
-輪郭線 (エッジライン) を付けると、白背景でも各要素の境界がはっきりします。
-シーンツリーで cartoon の Renderer を右クリックし、**Style &gt; Edge line (normal)** を
-選びます。線の種類と太さがまとめて設定されます。太さ違いの **Edge line (thin)** /
-**Edge line (thick)** もここから選べ、**No edge line** で外せます。
-ballstick の Renderer にも同じ操作を繰り返します
+1. **Scene &gt; Background &gt; White** で背景を白にします
+2. シーンツリーで cartoon の Renderer を右クリックします
+3. **Style &gt; Edge line (normal)** を選びます。エッジ線の種類と太さがまとめて設定されます
+4. ballstick の Renderer にも、同じ操作 (手順 2〜3) を繰り返します
+
+線を太く / 細くしたいときは、同じメニューから **Edge line (thick)** /
+**Edge line (thin)** を選び直します。外すときは **No edge line** を選びます
 (→ [エッジライン](../reference/renderers/edge-lines.md))。
 
 <!-- TODO(screenshot): 白背景 + エッジライン適用後の完成図 (適用前後の比較でも可) -->
