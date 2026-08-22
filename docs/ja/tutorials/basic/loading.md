@@ -103,7 +103,7 @@ View パネルの各行は、次の 3 通りで操作できます。
 戻ります。**Translation** (TraX / TraY / TraZ、Å) と **Zoom / Slab** (Zoom・Slab・Dist、Å) は
 **絶対値**で、現在の視点の値がそのまま表示されます。
 
-![Zoom を 40 Å にしたところ](../../../assets/images/tutorials/basic/loading/2-zoomed.webp){ .on-glb }
+![View パネル。回転させた後でも Rotation は 0 に戻っており、Zoom には入力した 40 が残っている](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="237" .on-glb }
 
 平行移動やスラブ (手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
 [マウス・トラックパッド操作](../../ui/mouse-input.md)、View パネルの各項目は

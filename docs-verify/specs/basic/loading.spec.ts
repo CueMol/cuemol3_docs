@@ -95,7 +95,10 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
             clip: viewPaneRowParts(harness.window, 'Zoom'),
             pad: 0,
         });
-        await docShot(harness.window, `${SHOT}/2-zoomed`);
+        // The pane as a whole, for the paragraph about how its rows work.
+        await docShot(harness.window, `${SHOT}/2-view-pane`, {
+            clip: harness.window.locator('.view-pane'),
+        });
 
         test.info().annotations.push({
             type: 'skipped-step',
