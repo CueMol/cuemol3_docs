@@ -1,6 +1,8 @@
 name: check
 on:
   pull_request:
+    paths-ignore:
+      - 'docs-verify/**'
   workflow_dispatch:
 permissions:
   contents: read

@@ -5,3 +5,7 @@ __pycache__/
 *.pyc
 *~
 .DS_Store
+docs-verify/node_modules/
+docs-verify/test-results/
+docs-verify/playwright-report/
+docs-verify/.artifacts/

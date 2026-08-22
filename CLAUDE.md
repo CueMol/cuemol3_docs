@@ -66,6 +66,16 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   Umbreon を既定バックエンドとする記述への更新。**レンダリング以外の差分は未確認**なので、
   次回はこの hash ではなく `b706529c` から通常の差分確認を行うこと。
 
+## E2E 検証 (docs-verify/)
+
+`docs-verify/` は、クイックツアーなどの手順を実アプリ (tritium) 上で Playwright により
+自動実行し、ドキュメントと実装の齟齬を機械検出する仕組み (`task e2e`、ローカル専用)。
+**対応する docs ページを改稿したら、`docs-verify/specs/` の spec を追随させること**
+(spec の test.step 名はページの見出しと一致させる規約)。
+クイックツアーのスクリーンショットは `task e2e:shots` が spec の `docShot` 呼び出しから
+自動生成して `docs/assets/images/getting-started/quick-tour/` に書き出す。
+**この画像を手動編集・手動撮影で置き換えないこと** (再生成は e2e:shots)。
+
 ## その他の規約
 
 - 執筆規約 (画像は LFS 不使用・1 枚 300 KB 目安、`TODO(screenshot)` の書式) は README.md を参照。
