@@ -88,7 +88,7 @@ nucl、それ以外は ballstick、というように**複数の Renderer をま
 3. 左サイドパネルの **Explorer &gt; View** パネルで、**Zoom / Slab** の **Zoom** の値を
    クリックし、`40` と入力して ++enter++ を押すと、Zoom が 40 に設定されます
 
-    ![View パネルの Zoom](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="150" }
+    ![View パネルの Zoom](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="213" }
 
 Zoom は分子ビューに映す範囲の高さ (Å) です。値を小さくすると、その分だけ分子が
 大きく表示されます。マウスで動かすより正確に視点を合わせたいときに使います。
@@ -209,7 +209,7 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 
 シーン行を右クリックすると **Background color** から背景色を変えられます。
 
-![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="237" .on-glb }
+![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="253" .on-glb }
 
 ## 次のステップ
 
