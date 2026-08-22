@@ -94,8 +94,11 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         await docShot(harness.window, `${SHOT}/2-atom-label`, {
             rect: { x: hit.x - 200, y: hit.y - 130, width: 400, height: 260 },
         });
+        // The bar alone does not read as a status bar; include the bottom edge
+        // of the window above it (where the same line is logged).
+        const bar = (await harness.window.locator('.status-bar').boundingBox())!;
         await docShot(harness.window, `${SHOT}/2-status-bar`, {
-            clip: harness.window.locator('.status-left'),
+            rect: { x: 0, y: bar.y - 60, width: 760, height: bar.height + 60 },
         });
 
         // 「1. 分子ビュー上を左ドラッグします」「2. ホイールを回します」

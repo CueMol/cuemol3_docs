@@ -122,7 +122,7 @@ View パネルの各行は、次の 3 通りで操作できます。
 表示されます (同じ内容が **Output** パネルにも残ります)。分子 Object 名、チェイン名、
 残基名・番号、原子名の順に並び、続いて占有率 (O)、温度因子 (B)、座標が出ます。
 
-![ステータスバーに表示された原子の情報](../../../assets/images/tutorials/basic/loading/2-status-bar.webp){ width="451" }
+![ウィンドウ下端。ステータスバー (青い帯) と Output パネルの両方に原子の情報が出ている](../../../assets/images/tutorials/basic/loading/2-status-bar.webp){ width="640" .on-glb }
 
 原子の位置で右クリックするとコンテキストメニューが表示されます。一番上は上と同じ原子の
 情報で、選んでも何も起こりません。次の **Center at this atom** を選ぶと、その原子が
