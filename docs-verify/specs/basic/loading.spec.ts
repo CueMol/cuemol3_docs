@@ -101,6 +101,11 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
             rect: { x: 0, y: bar.y - 60, width: 760, height: bar.height + 60 },
         });
 
+        // 「もう一度クリックすると消えます」(ラベルは消えるが、ラベル用の
+        //   (*namelabel) Renderer の行はツリーに残る)
+        await harness.window.mouse.click(hit.x, hit.y);
+        await expect(harness.window.getByText('(*namelabel)')).toBeVisible();
+
         // 「1. 分子ビュー上を左ドラッグします」「2. ホイールを回します」
         await rotateView(harness.window);
         await zoomView(harness.window);
@@ -136,11 +141,13 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         await expectRow(harness.window, SECOND_OBJ);
         await expectRow(harness.window, 'trace1');
 
-        // 「1. Zoom に 300 と入力します」「2. Slab に 300 と入力します」
+        // 「1. Slab に 300 と入力します」「2. Zoom に 150 と入力します」
         // Widening Zoom alone is not enough: the default 50 A slab clips
         // lysozyme, which sits about 100 A away from 1g59.
-        await setViewValue(harness.window, 'Zoom', 300);
         await setViewValue(harness.window, 'Slab', 300);
+        await setViewValue(harness.window, 'Zoom', 150);
+        // 「3. RotY に 90 と入力します」— they overlap in depth head-on.
+        await enterViewValue(harness.window, 'RotY', 90);
         await docShot(harness.window, `${SHOT}/3-two-objects`);
     });
 
