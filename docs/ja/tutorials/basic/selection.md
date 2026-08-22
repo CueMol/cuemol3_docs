@@ -3,7 +3,7 @@
 CueMol では、分子の一部分に対して操作を行うとき (一部だけ表示方法を変える、
 色を塗るなど)、まずその部分を**選択**してから操作します。選択のやり方は
 複数あるので、このページでまとめて練習します。
-前のページ ([構造の読み込みと表示](basics-loading.md)) の `lysozyme` を使います。
+前のページ ([構造の読み込みと表示](loading.md)) の `lysozyme` を使います。
 
 !!! info "撮影予定"
     このページには操作の流れを示すスクリーンショットを追加予定です。
@@ -40,7 +40,7 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 
 残基番号や原子名から選びたいときは、左サイドパネルの
 **Selection &gt; Molecular structure** パネルを使います
-(→ [サイドパネル](../ui/side-panels.md))。
+(→ [サイドパネル](../../ui/side-panels.md))。
 
 1. パネル上部で対象の分子 (`lysozyme`) を選びます
 2. ツリーがチェイン → 残基 → 原子の階層で表示されるので、残基 Val2 と Phe3 を
@@ -72,19 +72,19 @@ A.2:3.*
 
 選択式は Renderer の表示範囲の指定や Paint の塗り分けなど、CueMol の
 あらゆる場面で使います。文法の全体は
-[選択式の文法](../reference/selection.md) を参照してください。
+[選択式の文法](../../reference/selection.md) を参照してください。
 
 !!! note "CueMol2 との違い"
     CueMol2 の選択パネルにあった階層型エディタ (Hierarchical / Terminal /
     Around-Expand) は CueMol3 では提供していません。選択式を直接書く方法を
-    お使いください (→ [サイドパネル](../ui/side-panels.md))。
+    お使いください (→ [サイドパネル](../../ui/side-panels.md))。
 
 ## 次のステップ
 
 次のページで使うので、Val2〜Phe3 (`A.2:3.*`) を選択した状態にしておいてください。
 
-- [Renderer の追加・削除と設定](basics-renderers.md) — 選択部分だけを別の表示にする
-- [選択式の文法](../reference/selection.md) — 式で書ける条件の全体
+- [Renderer の追加・削除と設定](renderers.md) — 選択部分だけを別の表示にする
+- [選択式の文法](../../reference/selection.md) — 式で書ける条件の全体
 
 ---
 

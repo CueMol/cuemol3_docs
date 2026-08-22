@@ -11,12 +11,12 @@
 
 <div class="grid cards" markdown>
 
-- **[構造の読み込みと表示](basics-loading.md)** — 読み込み・視点操作・Scene / Object / Renderer の考え方
-- **[分子の一部を選択する](basics-selection.md)** — クリック・パネル・選択式による選択
-- **[Renderer の追加・削除と設定](basics-renderers.md)** — 表示の重ね方とインスペクタ
-- **[Renderer を着色する](basics-coloring.md)** — CPK / B-factor / Rainbow / Paint
-- **[カメラとシーンの保存](basics-camera-scene.md)** — 視点とシーンファイルの扱い
-- **[計測と相互作用の表示](basics-measure.md)** — 距離・角度の測定と atomintr
+- **[構造の読み込みと表示](basic/loading.md)** — 読み込み・視点操作・Scene / Object / Renderer の考え方
+- **[分子の一部を選択する](basic/selection.md)** — クリック・パネル・選択式による選択
+- **[Renderer の追加・削除と設定](basic/renderers.md)** — 表示の重ね方とインスペクタ
+- **[Renderer を着色する](basic/coloring.md)** — CPK / B-factor / Rainbow / Paint
+- **[カメラとシーンの保存](basic/camera-scene.md)** — 視点とシーンファイルの扱い
+- **[計測と相互作用の表示](basic/measure.md)** — 距離・角度の測定と atomintr
 
 </div>
 

@@ -2,7 +2,7 @@
 
 Renderer の色は、設定のうち着色 (Coloring) だけを独立して扱う
 **Color パネル**で変更します。代表的な Coloring の種類を順に試します。
-前のページ ([Renderer の追加・削除と設定](basics-renderers.md)) の
+前のページ ([Renderer の追加・削除と設定](renderers.md)) の
 `lysozyme` (simple + ballstick + ribbon) と `1G59` (trace) を使います。
 
 !!! info "撮影予定"
@@ -11,12 +11,12 @@ Renderer の色は、設定のうち着色 (Coloring) だけを独立して扱�
 ## 1. Color パネルの使い方
 
 左サイドパネルの **Explorer &gt; Color** パネルを開きます
-(→ [サイドパネル](../ui/side-panels.md))。
+(→ [サイドパネル](../../ui/side-panels.md))。
 
 1. 上部で操作対象の Renderer を選びます
 2. 続いて Coloring の**種類**を選ぶと、種類に応じた設定欄が下に表示されます
 
-種類の一覧と各設定は [Coloring](../reference/coloring.md) を参照してください。
+種類の一覧と各設定は [Coloring](../../reference/coloring.md) を参照してください。
 
 ## 2. CPK — 元素ごとの色
 
@@ -27,7 +27,7 @@ Renderer の色は、設定のうち着色 (Coloring) だけを独立して扱�
 3. **C** (炭素) の色を灰色 (例: `#808080`) に変えてみてください
 
 ballstick の炭素部分だけが灰色に変わります。色の指定方法 (色名・カラーコードなど) は
-[色の記法](../reference/color-syntax.md) を参照してください。
+[色の記法](../../reference/color-syntax.md) を参照してください。
 
 ## 3. B-factor — 値に応じたグラデーション
 
@@ -69,7 +69,7 @@ ballstick の炭素部分だけが灰色に変わります。色の指定方法 
 | `*` | 白系 |
 
 `helix` / `sheet` は二次構造を表す定義済みの選択です
-(→ [選択式の文法](../reference/selection.md))。`*` (全体) の行は一番下に
+(→ [選択式の文法](../../reference/selection.md))。`*` (全体) の行は一番下に
 あるので、ヘリックスでもシートでもないコイル部分だけがこの色になります。
 
 ### 塗りを追加する
@@ -92,8 +92,8 @@ C 末端部分が赤に変わります。`helix` の行より上にあるため�
 
 ## 次のステップ
 
-- [カメラとシーンの保存](basics-camera-scene.md) — 視点と作業状態を残す
-- [Coloring](../reference/coloring.md) / [色の記法](../reference/color-syntax.md)
+- [カメラとシーンの保存](camera-scene.md) — 視点と作業状態を残す
+- [Coloring](../../reference/coloring.md) / [色の記法](../../reference/color-syntax.md)
 
 ---
 

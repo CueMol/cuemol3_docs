@@ -2,7 +2,7 @@
 
 1 つの Object に複数の Renderer を付けて表示を重ねる操作と、
 インスペクタでの設定変更を練習します。
-前のページ ([分子の一部を選択する](basics-selection.md)) に続けて、
+前のページ ([分子の一部を選択する](selection.md)) に続けて、
 `lysozyme` の Val2〜Phe3 (`A.2:3.*`) が選択された状態から始めます。
 
 !!! info "撮影予定"
@@ -54,7 +54,7 @@ Renderer の表示範囲が現在の選択に置き換わり、Glu7 まで広が
 ## 5. プロパティを調整する
 
 Renderer の見た目の細部は**プロパティ**で決まっており、右側の
-**プロパティインスペクタ**で編集します (→ [プロパティインスペクタ](../ui/inspector.md))。
+**プロパティインスペクタ**で編集します (→ [プロパティインスペクタ](../../ui/inspector.md))。
 
 1. シーンツリーで `ballstick1` を選びます
 2. インスペクタの **Properties** タブに、ballstick 用のセクションが表示されます
@@ -67,19 +67,19 @@ Renderer の見た目の細部は**プロパティ**で決まっており、右�
 
 種類別のセクションが用意されていないプロパティは、**Generic** タブからすべて
 編集できます。各値には既定値が定義されており、既定値から変えた項目だけを
-リセットすることもできます (→ [プロパティインスペクタ](../ui/inspector.md))。
+リセットすることもできます (→ [プロパティインスペクタ](../../ui/inspector.md))。
 
 <!-- TODO(screenshot): インスペクタで ballstick の Bond width / Atom radius を変更した前後 -->
 
 !!! note "CueMol2 との違い"
     CueMol2 ではプロパティは Renderer ごとのダイアログを開いて編集し、OK で
     確定する方式でしたが、CueMol3 では常設のインスペクタで結果を見ながら
-    編集します (→ [操作パラダイムの変更](../changes/ui-paradigm.md))。
+    編集します (→ [操作パラダイムの変更](../../changes/ui-paradigm.md))。
 
 ## 次のステップ
 
-- [Renderer を着色する](basics-coloring.md) — Coloring の種類と塗り分け
-- [Renderer 一覧](../reference/renderers/index.md) — 各種類のプロパティの詳細
+- [Renderer を着色する](coloring.md) — Coloring の種類と塗り分け
+- [Renderer 一覧](../../reference/renderers/index.md) — 各種類のプロパティの詳細
 
 ---
 

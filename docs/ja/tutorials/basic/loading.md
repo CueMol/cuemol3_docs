@@ -15,7 +15,7 @@
 
 **File &gt; Get PDB...** を開き、**PDB Accession Code** に `1QIO` と入力して取得します。
 手元のファイルを開く場合は **File &gt; Open File...** (++cmd+o++) を使います
-(→ [File メニュー](../menu/file.md))。
+(→ [File メニュー](../../menu/file.md))。
 
 取得が終わると、オプションを指定する画面が出ます。
 
@@ -53,7 +53,7 @@ ribbon / cartoon
 nucl
 :   核酸向けの主鎖チューブ + 塩基表示
 
-全種類の一覧と詳細は [Renderer 一覧](../reference/renderers/index.md) を参照してください。
+全種類の一覧と詳細は [Renderer 一覧](../../reference/renderers/index.md) を参照してください。
 
 ### そのほかのオプション
 
@@ -66,9 +66,9 @@ nucl
 
 分子ビュー上の左ドラッグで回転、ホイールでズームします。平行移動やスラブ
 (手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
-[マウス・トラックパッド操作](../ui/mouse-input.md) を参照してください。
+[マウス・トラックパッド操作](../../ui/mouse-input.md) を参照してください。
 数値で正確に動かしたいときは **Explorer &gt; View** パネルも使えます
-(→ [サイドパネル](../ui/side-panels.md))。
+(→ [サイドパネル](../../ui/side-panels.md))。
 
 原子の上でクリックすると、その原子の名前がラベルとして表示されます
 (もう一度クリックすると消えます)。右クリックすると、分子名・チェイン・残基・原子の
@@ -99,12 +99,12 @@ Scene
 
 View
 :   シーンを映す画面 (分子ビュー) のこと。1 つのシーンに複数の View を
-    接続することもできます (→ [File メニュー](../menu/file.md) の New Tab)
+    接続することもできます (→ [File メニュー](../../menu/file.md) の New Tab)
 
 ## 5. シーンツリーで全体を把握する
 
 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー) には、シーン内の
-Object とその配下の Renderer が階層で表示されます (→ [サイドパネル](../ui/side-panels.md))。
+Object とその配下の Renderer が階層で表示されます (→ [サイドパネル](../../ui/side-panels.md))。
 
 - いまは `lysozyme` と `1G59` の 2 つの Object があり、それぞれに simple / trace の
   Renderer が付いています
@@ -119,8 +119,8 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 
 ## 次のステップ
 
-- [分子の一部を選択する](basics-selection.md) — 操作対象を選ぶ方法
-- [マウス・トラックパッド操作](../ui/mouse-input.md) / [サイドパネル](../ui/side-panels.md)
+- [分子の一部を選択する](selection.md) — 操作対象を選ぶ方法
+- [マウス・トラックパッド操作](../../ui/mouse-input.md) / [サイドパネル](../../ui/side-panels.md)
 
 ---
 

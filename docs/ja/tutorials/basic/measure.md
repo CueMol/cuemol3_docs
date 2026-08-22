@@ -9,7 +9,7 @@
 ## 1. 距離を測る
 
 計測には、分子ビュー左端の**ツールパレット**の Measure グループを使います
-(→ [ツールバーとツールパレット](../ui/toolbar-tools.md))。
+(→ [ツールバーとツールパレット](../../ui/toolbar-tools.md))。
 
 1. ツールパレットで **Distance** ツールを選びます (ショートカット ++d++)
 2. 距離を測りたい 1 つめの原子をクリックします。途中経過は十字マークで示されます
@@ -53,7 +53,7 @@ atomintr Renderer になるため、「活性部位の距離」「配位結合�
 
 点線が破線状の立体表示に変わります (**Dashed stick2** は別の太さのプリセットです)。
 線の太さや破線の間隔などを個別に調整したい場合は、インスペクタで atomintr の
-プロパティを編集します (→ [atomintr](../reference/renderers/atomintr.md))。
+プロパティを編集します (→ [atomintr](../../reference/renderers/atomintr.md))。
 
 <!-- TODO(screenshot): Dashed stick1 適用前後の計測表示の比較 -->
 
@@ -70,15 +70,15 @@ atomintr Renderer になるため、「活性部位の距離」「配位結合�
 !!! note "CueMol2 との違い"
     CueMol2 では計測モードの切り替えはウィンドウ上部のリボン (Measure タブ) で
     行いましたが、CueMol3 では分子ビュー左端の**ツールパレット**に移りました
-    (→ [ツールバーとツールパレット](../ui/toolbar-tools.md))。
+    (→ [ツールバーとツールパレット](../../ui/toolbar-tools.md))。
 
 ## 次のステップ
 
 基本操作コースはここまでです。ここからは目的別のチュートリアルで、
 実際の作図の流れを追ってみてください。
 
-- [タンパク質のリボン図を作る](ribbon-figure.md) — 作図の基本コース
-- [atomintr](../reference/renderers/atomintr.md) — 計測表示の設定項目
+- [タンパク質のリボン図を作る](../ribbon-figure.md) — 作図の基本コース
+- [atomintr](../../reference/renderers/atomintr.md) — 計測表示の設定項目
 
 ---
 
