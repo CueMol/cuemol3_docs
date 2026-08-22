@@ -66,15 +66,29 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   Umbreon を既定バックエンドとする記述への更新。**レンダリング以外の差分は未確認**なので、
   次回はこの hash ではなく `b706529c` から通常の差分確認を行うこと。
 
-## E2E 検証 (docs-verify/)
+## E2E 検証と画像生成 (docs-verify/)
 
 `docs-verify/` は、クイックツアーなどの手順を実アプリ (tritium) 上で Playwright により
 自動実行し、ドキュメントと実装の齟齬を機械検出する仕組み (`task e2e`、ローカル専用)。
-**対応する docs ページを改稿したら、`docs-verify/specs/` の spec を追随させること**
-(spec の test.step 名はページの見出しと一致させる規約)。
-クイックツアーのスクリーンショットは `task e2e:shots` が spec の `docShot` 呼び出しから
-自動生成して `docs/assets/images/getting-started/quick-tour/` に書き出す。
-**この画像を手動編集・手動撮影で置き換えないこと** (再生成は e2e:shots)。
+ドキュメント用のスクリーンショットも同じ spec から生成する (`task e2e:shots`)。
+
+**新しいページに spec や画像を用意するとき、既存の spec を直すときは、
+[`docs-verify/PLAYBOOK.md`](docs-verify/PLAYBOOK.md) に従うこと。**
+作業手順・セレクタの調べ方 (使い捨て DOM ダンプ spec)・セレクタ台帳・既知の落とし穴を
+まとめてあり、これを読めば再調査は不要。以下はそこから外せない要点のみ:
+
+- **spec はページの写像**。1 spec = 1 ページ、test 名 = h2 の節、`test.step` 名 = 見出しと
+  一字一句一致。**ページを改稿したら spec を追随させる** (逆も同じ)。
+- spec が書けないページは、ページ自体が曖昧。題材・操作対象・値・**結果の見え方**を
+  特定し、手順は順序付きリストで **1 ステップ = 1 GUI 操作**にしてから spec を書く。
+- **spec が落ちて、原因がページの記述と実装の食い違いだった場合はページを直す**
+  (これが docs-verify の目的。実例: 「Start」→ 実際は Start Render)。
+  意図的な簡略化か obsolete か判断がつかないときは書き換えず報告する。
+- 画像は `docs/assets/images/<spec の docShot id>.webp` に自動生成される。
+  **手動編集・手動撮影で置き換えないこと** (再生成は `task e2e:shots`)。
+- 撮影した画像は必ず目視確認する (Read で `.webp` を開く)。
+- 仕上げは `task build` (strict) / `task check:images` / `task e2e` の 3 点。
+  `test-results/` や `.last-run.json` をコミットしない。
 
 ## その他の規約
 
