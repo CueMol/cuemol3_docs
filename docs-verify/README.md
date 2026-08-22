@@ -4,6 +4,11 @@
 Playwright により自動実行します。アプリの E2E 検証と、「ドキュメントの記述が現在の実装と
 一致しているか」の機械検証を兼ねます。spec の `test.step` 名は対応する docs ページの
 見出しと一致させてあり、ページを改稿したら対応 spec を追随させます (逆も同じ)。
+ドキュメント用のスクリーンショットも、この spec から自動生成します。
+
+**新しいページに spec や画像を用意するときは [PLAYBOOK.md](PLAYBOOK.md) に従うこと。**
+作業手順・セレクタの調べ方・セレクタ台帳・既知の落とし穴をまとめてあります。
+この README は実行方法と構成のみを扱います。
 
 ## 前提
 
@@ -69,24 +74,7 @@ scripts/   doctor (プリフライト)
   は Retina の 2x デバイスピクセルのまま保存して、ページ側の `width` 指定で原寸表示する。
   **ページの画像は手動編集せず、この仕組みで再生成する。**
 
-## 実装中に得たセレクタ知見
+## セレクタ知見・upstream への要望リスト
 
-- シーンツリーの行テキストは `名前 (型)` 形式 (例: `1crn (MolCoord)`、`(*selection)`)。
-- ダイアログは accessible name (タイトル) で特定する。ダウンロード進捗とオプション画面など
-  複数ダイアログが同時に存在しうる。
-- インスペクタはツリー行の**ダブルクリック**で対象を表示。種類別セクションはアコーディオンで、
-  数値は DragNumericField (値クリック → type=number 入力 = role spinbutton → Enter 確定)。
-- Color パネルの種類メニューのトリガは accessible name「Coloring」。
-- レンダリングウィンドウは別 BrowserWindow (`render.html`)。実行ボタンは「Start Render」、
-  結果画像は `alt="Render result"`。
-
-## upstream (cuemol2) への要望リスト
-
-セレクタが位置依存・実装詳細依存になっている箇所。data-testid (または aria-label) の
-付与を上流に提案したい:
-
-- Scene パネルのツールバーボタン (Add / Focus / Delete / Property) — 現状 class + 位置で特定
-- シーンツリーの行 (名前と型を分離して取得できる属性)
-- アクティビティバーの各アイコン
-- `window.__cm` は「TEMPORARY」宣言のため未使用。検証用に安定した読み取り専用ブリッジが
-  あると、モデル状態のアサーションが可能になる
+[PLAYBOOK.md](PLAYBOOK.md) の「セレクタ台帳」「既知の落とし穴」「upstream (cuemol2) への
+要望リスト」に集約しています。
