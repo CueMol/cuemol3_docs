@@ -72,6 +72,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
 自動実行し、ドキュメントと実装の齟齬を機械検出する仕組み (`task e2e`、ローカル専用)。
 **対応する docs ページを改稿したら、`docs-verify/specs/` の spec を追随させること**
 (spec の test.step 名はページの見出しと一致させる規約)。
+クイックツアーのスクリーンショットは `task e2e:shots` が spec の `docShot` 呼び出しから
+自動生成して `docs/assets/images/getting-started/quick-tour/` に書き出す。
+**この画像を手動編集・手動撮影で置き換えないこと** (再生成は e2e:shots)。
 
 ## その他の規約
 

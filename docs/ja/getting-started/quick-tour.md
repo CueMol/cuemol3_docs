@@ -4,15 +4,12 @@ CueMol3 を起動してから、構造を読み込み、表示を整えて画像
 最短の流れを追います。個々の画面の詳細は [画面構成](../ui/index.md)、
 メニュー項目の詳細は [メニューリファレンス](../menu/index.md) を参照してください。
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 起動直後のウィンドウ全景 (空のシーン)。ツールバー / アクティビティバー / サイドパネル / 分子ビュー / 下部パネルが写る構図 -->
-
 ## 1. 起動する
 
 CueMol3 を起動すると単一のウィンドウが開きます。
 シーンはウィンドウ上部の**タブ**として並びます。
+
+![起動直後の CueMol3 ウィンドウ (空のシーン)](../../assets/images/getting-started/quick-tour/1-startup.webp){ .on-glb }
 
 ## 2. 構造を読み込む
 
@@ -20,12 +17,22 @@ CueMol3 を起動すると単一のウィンドウが開きます。
 PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得するのが最も手軽です。
 
 1. **File &gt; Get PDB...** を選びます (ツールバーの `Get PDB` ボタンでも同じ)
+
+    ![ツールバーの Get PDB ボタン](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="94" }
+
 2. **PDB Accession Code** に `1CRN` と入力し、**Download** を押します
+
+    ![Get PDB ダイアログ](../../assets/images/getting-started/quick-tour/2-getpdb.webp){ width="380" .on-glb }
+
 3. 読み込みのオプション画面が出るので、**Renderer type** から **simple** を選んで
    **Open** を押します
 
+    ![読み込みのオプション画面 (Open File Options)](../../assets/images/getting-started/quick-tour/2-open-options.webp){ width="480" .on-glb }
+
 分子全体が細い線画で表示されます。simple は結合を線で描くだけの最も軽い
 表示方法で、まず全体を眺めるのに向いています。
+
+![1CRN を simple で読み込んだところ](../../assets/images/getting-started/quick-tour/2-loaded-simple.webp){ .on-glb }
 
 座標に加えて、電子密度マップ (RCSB の cif.gz、EBI の MTZ) も取得できます。
 ダウンロードは進捗ダイアログの Cancel で中断できます。手元のファイルを開く場合は
@@ -42,7 +49,12 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
 1. 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー) で Object (`1crn`) を
    右クリックし、**New Renderer** を選びます
+
+    ![シーンツリーの Object 行](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="237" .on-glb }
+
 2. **Renderer type** から **ribbon** を選び、**Create** を押します
+
+    ![New Renderer ダイアログ](../../assets/images/getting-started/quick-tour/3-new-renderer.webp){ width="480" .on-glb }
 
 線画に重なって、ヘリックスとシートは板状のリボン、それ以外は細いチューブで
 描かれます。同じ手順で **ballstick** も追加してみてください。原子を球、結合を
@@ -62,15 +74,24 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 球が大きくなり、原子を強調した表示に変わります。値の変更は分子ビューに
 即座に反映され、取り消したいときは ++cmd+z++ / ++ctrl+z++ で戻せます。
 
+![プロパティインスペクタの Ball and stick セクション](../../assets/images/getting-started/quick-tour/3-inspector.webp){ width="300" .on-glb }
+
 ### 色を塗り替える
 
 色は Renderer ごとに、左サイドパネルの **Explorer &gt; Color** パネルで設定します。
 
 1. 上部で `ribbon1 (ribbon)` を選びます
+
+    ![Color パネルの対象選択](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="233" }
+
 2. 隣の **Coloring** ボタンを押し、**Rainbow coloring** を選びます
+
+    ![Coloring メニュー](../../assets/images/getting-started/quick-tour/3-coloring-menu.webp){ width="196" .on-glb }
 
 リボンが N 末端から C 末端へ虹色に塗り替わります。Coloring には Paint / CPK /
 B-factor / 静電ポテンシャルなどの種類があります (→ [Coloring](../reference/coloring.md))。
+
+![ribbon と ballstick を重ね、ribbon を Rainbow coloring で塗り替えたところ](../../assets/images/getting-started/quick-tour/3-styled.webp){ .on-glb }
 
 ### 視点を動かす
 
@@ -93,14 +114,26 @@ B-factor / 静電ポテンシャルなどの種類があります (→ [Coloring
 **Rendering &gt; Export scene &gt; PNG image...** を選ぶと、保存先とサイズ・DPI・背景の透過を指定して
 PNG を書き出せます。
 
+![PNG options ダイアログ](../../assets/images/getting-started/quick-tour/4-png-options.webp){ width="360" .on-glb }
+
 ### 高品位なレイトレース画像を出す
 
 **Rendering &gt; Image rendering...** を選ぶと、独立した**レンダリングウィンドウ**が開き、
 静止画 (Still) モードになります。
 
+![レンダリングウィンドウ (Still モード)](../../assets/images/getting-started/quick-tour/4-rendering-window.webp){ .on-glb }
+
 1. 対象のビュー (Target) を選ぶ。バックエンドは既定の **Umbreon** のままで構いません
+
+    ![Still モードの操作列](../../assets/images/getting-started/quick-tour/4-render-controls.webp){ width="561" .on-glb }
+
 2. 画質・サイズを設定する
+
+    ![Render Settings パネル](../../assets/images/getting-started/quick-tour/4-render-settings.webp){ width="307" .on-glb }
+
 3. **Start Render** を押すと、進捗が表示され、完了すると結果画像が同じウィンドウに表示されます
+
+    ![レンダリングが完了したところ](../../assets/images/getting-started/quick-tour/4-render-result.webp){ .on-glb }
 
 動画を作る場合は **Rendering &gt; Movie rendering...** で同じウィンドウの Movie モードを使います
 (→ [レンダリングウィンドウ](../ui/rendering-window.md))。
@@ -110,6 +143,8 @@ PNG を書き出せます。
 **File &gt; Save Scene** (++cmd+s++ / ++ctrl+s++) でシーンを `.qsc` ファイルに保存します。
 初めての保存では **Save Scene As...** と同じく保存先とオプション (埋め込み / 互換性 / 圧縮 / エンコーディング) を
 指定する画面が出ます。
+
+![Scene options ダイアログ](../../assets/images/getting-started/quick-tour/5-scene-options.webp){ width="360" .on-glb }
 
 `.qsc` は CueMol2 と互換のため、CueMol2 で作成したシーンを CueMol3 で開くこともできます。
 

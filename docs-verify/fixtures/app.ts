@@ -43,11 +43,17 @@ export class CueMolHarness {
         await window.locator('canvas').first().waitFor({ state: 'visible', timeout: 30_000 });
 
         // Fixed window size: the ground for any coordinate-dependent gestures.
-        await app.evaluate(({ BrowserWindow }) => {
+        // E2E_WINDOW overrides it (e.g. "1280x800" for documentation shots,
+        // where a smaller window keeps the UI legible at web display widths).
+        const [winW, winH] = (process.env.E2E_WINDOW ?? '1600x1000').split('x').map(Number);
+        if (!Number.isInteger(winW) || !Number.isInteger(winH)) {
+            throw new Error(`E2E_WINDOW must look like "1280x800", got: ${process.env.E2E_WINDOW}`);
+        }
+        await app.evaluate(({ BrowserWindow }, size) => {
             const win = BrowserWindow.getAllWindows()[0];
-            win.setSize(1600, 1000);
+            win.setSize(size.w, size.h);
             win.center();
-        });
+        }, { w: winW, h: winH });
 
         await installDialogStubs(app);
         return new CueMolHarness(app, window, logs, extraFiles);

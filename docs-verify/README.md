@@ -21,6 +21,7 @@ Playwright により自動実行します。アプリの E2E 検証と、「ド�
 task e2e          # smoke + クイックツアー (@net: Get PDB で実ネットワークを使う)
 task e2e:offline  # ネット不要の smoke のみ
 task e2e:slow     # 重いステップ (Umbreon レイトレース実行) も含める
+task e2e:shots    # ドキュメント用スクリーンショットを撮影し docs/assets/images に書き出す
 task e2e:report   # 直近の HTML レポートを開く
 ```
 
@@ -35,6 +36,8 @@ task e2e:report   # 直近の HTML レポートを開く
 | `LIBCUEMOL2_ROOT` | `$CUEMOL2_REPO/.build_out/cuemol2` | libcuemol2 のインストール先 |
 | `BUNDLE_APPS` | `~/tmp/proj64_deplibs` | 同梱外部バイナリ群 |
 | `E2E_SLOW` | (未設定) | 1 でレイトレース実行などの重いステップを有効化 |
+| `DOCSHOT` | (未設定) | 1 で docShot がスクリーンショットを docs/assets/images に書き出す |
+| `E2E_WINDOW` | `1600x1000` | メインウィンドウのサイズ (e2e:shots は 1280x800 で撮影) |
 | `DEBUG_E2E` | (未設定) | 1 でアプリの main プロセスログをコンソールに流す |
 | `PWDEBUG` | (未設定) | Playwright inspector でステップ実行 |
 
@@ -59,8 +62,12 @@ scripts/   doctor (プリフライト)
   (`fixtures/app.ts`。tritium/CLAUDE.md 記載のレシピ)。
 - 重いステップは grep タグではなく `E2E_SLOW` の env ゲートで、シナリオの連続性を保ったまま
   スキップされる (スキップは annotation に記録)。
-- `helpers/docShot.ts` は将来のドキュメント用スクリーンショット自動撮影のフック (現状 no-op)。
-  spec 側には docs の `TODO(screenshot)` に対応する呼び出しを既に埋めてある。
+- `helpers/docShot.ts` はドキュメント用スクリーンショットの撮影パイプライン。通常の検証実行では
+  no-op で、`task e2e:shots` (DOCSHOT=1 + 1280x800 ウィンドウ) のときだけ、撮影 → WebP 変換 →
+  300 KB 検査を経て `docs/assets/images/<id>.webp` に直接書き出す。全景はウィンドウの CSS 幅
+  (1280 px) に縮小し、要素切り抜き (`clip` オプション: 単一要素、または複数要素の外接矩形 + pad)
+  は Retina の 2x デバイスピクセルのまま保存して、ページ側の `width` 指定で原寸表示する。
+  **ページの画像は手動編集せず、この仕組みで再生成する。**
 
 ## 実装中に得たセレクタ知見
 

@@ -69,11 +69,15 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
 
     test('2. 構造を読み込む', async () => {
         await test.step('File > Get PDB... で取得する', async () => {
+            await docShot(harness.window, 'getting-started/quick-tour/2-toolbar-getpdb', {
+                clip: harness.window.getByRole('button', { name: 'Get PDB', exact: true }),
+                pad: 6,
+            });
             await clickMenu(harness.app, ['File', 'Get PDB...']);
             const dlg = dialog(harness.window, 'Get PDB');
             await expect(dlg).toBeVisible();
             await dlg.locator('#get-pdb-id').fill(PDB_ID);
-            await docShot(harness.window, 'getting-started/quick-tour/2-getpdb');
+            await docShot(harness.window, 'getting-started/quick-tour/2-getpdb', { clip: dlg });
             await clickDialogButton(harness.window, 'Get PDB', 'Download');
         });
 
@@ -81,6 +85,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             const options = dialog(harness.window, 'Open File Options');
             await expect(options).toBeVisible({ timeout: NET_TIMEOUT_MS });
             await options.locator('#rend-type').selectOption('simple');
+            await docShot(harness.window, 'getting-started/quick-tour/2-open-options', { clip: options });
             await options.getByRole('button', { name: 'Open', exact: true }).click();
             await expectDialogClosed(harness.window, 'Open File Options');
             await expectDialogClosed(harness.window, /Downloading/);
@@ -89,6 +94,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
         // Get PDB derives the object name from the downloaded file (lowercase id).
         await expectRow(harness.window, OBJ_NAME);
         await expectRow(harness.window, 'simple1');
+        await docShot(harness.window, 'getting-started/quick-tour/2-loaded-simple');
     });
 
     test('3. 表示を整える', async () => {
@@ -97,20 +103,26 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
         // Playwright cannot click; the Scene panel toolbar's Add button
         // opens the same New Renderer flow, so the dialog contents are
         // still verified end-to-end.
-        const addRenderer = async (type: string, expectName: string) => {
+        const addRenderer = async (type: string, expectName: string, shotId?: string) => {
             await selectRow(harness.window, OBJ_NAME);
             await clickSceneToolbar(harness.window, 'add');
             const dlg = dialog(harness.window, 'New Renderer');
             await expect(dlg).toBeVisible();
             await dlg.locator('#rend-type').selectOption(type);
+            if (shotId) await docShot(harness.window, shotId, { clip: dlg });
             await clickDialogButton(harness.window, 'New Renderer', 'Create');
             await expectDialogClosed(harness.window, 'New Renderer');
             await expectRow(harness.window, expectName);
         };
 
         await test.step('Renderer を追加する', async () => {
+            // The right-click target: the scene tree with the object row.
+            await selectRow(harness.window, OBJ_NAME);
+            await docShot(harness.window, 'getting-started/quick-tour/3-scene-tree', {
+                clip: harness.window.locator('.sp-pane').first(),
+            });
             // 「二次構造がわかるように、ribbon を追加してみます。」
-            await addRenderer('ribbon', 'ribbon1');
+            await addRenderer('ribbon', 'ribbon1', 'getting-started/quick-tour/3-new-renderer');
             // 「同じ手順で ballstick も追加してみてください。」
             await addRenderer('ballstick', 'ballstick1');
         });
@@ -120,12 +132,32 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             // Opened by double-clicking the tree row, as the docs state.
             await openInInspector(harness.window, 'ballstick1');
             await setNumericProperty(harness.window, 'Ball and stick', 'Atom radius', 0.5);
+            // The open "Ball and stick" section, top tab bar to last field.
+            await docShot(harness.window, 'getting-started/quick-tour/3-inspector', {
+                clip: [
+                    harness.window.locator('.inspector-mode-bar'),
+                    harness.window.getByText('Atom radius', { exact: true }).last(),
+                    harness.window.getByText('Ring color', { exact: true }).last(),
+                ],
+                pad: 0,
+            });
         });
 
         await test.step('色を塗り替える', async () => {
             // 「ribbon1 (ribbon) を選び、Coloring ボタンから Rainbow coloring を選びます。」
             await selectColorTarget(harness.window, 'ribbon1 (ribbon)');
-            await chooseColoring(harness.window, 'Rainbow coloring');
+            await docShot(harness.window, 'getting-started/quick-tour/3-color-target', {
+                clip: harness.window.locator('.color-shell-row').first(),
+                pad: 6,
+            });
+            await chooseColoring(harness.window, 'Rainbow coloring', {
+                beforeSelect: async (menu) => {
+                    await docShot(harness.window, 'getting-started/quick-tour/3-coloring-menu', {
+                        clip: [harness.window.getByRole('button', { name: 'Coloring', exact: true }), menu],
+                    });
+                },
+            });
+            await docShot(harness.window, 'getting-started/quick-tour/3-styled');
         });
 
         await test.step('視点を動かす', async () => {
@@ -141,7 +173,9 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             fs.rmSync(pngPath, { force: true });
             await expectSaveDialog(harness.app, pngPath);
             await clickMenu(harness.app, ['Rendering', 'Export scene', 'PNG image...']);
-            await expect(dialog(harness.window, 'PNG options')).toBeVisible();
+            const pngOptions = dialog(harness.window, 'PNG options');
+            await expect(pngOptions).toBeVisible();
+            await docShot(harness.window, 'getting-started/quick-tour/4-png-options', { clip: pngOptions });
             await clickDialogButton(harness.window, 'PNG options', 'OK');
             await expectDialogClosed(harness.window, 'PNG options');
             await waitForFile(pngPath);
@@ -157,7 +191,31 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
                 .poll(() => harness.app.windows().some((w) => w.url().includes('render.html')), { timeout: 15_000 })
                 .toBe(true);
             const renderWindow = harness.app.windows().find((w) => w.url().includes('render.html'))!;
+            if (process.env.DOCSHOT) {
+                // The rendering window opens at its own default size; match the
+                // documentation shot size before capturing.
+                await harness.app.evaluate(({ BrowserWindow }) => {
+                    // Electron types are not installed here, hence the anys.
+                    const wins: any[] = BrowserWindow.getAllWindows();
+                    const win = wins.find((w) => w.webContents.getURL().includes('render.html'));
+                    win?.setSize(1280, 800);
+                });
+            }
             await docShot(renderWindow, 'getting-started/quick-tour/4-rendering-window');
+            // Just the operated controls; the bar's right half is empty and
+            // the settings panel extends far below its last field.
+            await docShot(renderWindow, 'getting-started/quick-tour/4-render-controls', {
+                clip: [
+                    renderWindow.getByRole('button', { name: 'Start Render', exact: true }),
+                    renderWindow.locator('.render-panel-bar select').last(),
+                ],
+            });
+            await docShot(renderWindow, 'getting-started/quick-tour/4-render-settings', {
+                clip: [
+                    renderWindow.locator('.render-window-settings-header'),
+                    renderWindow.getByText('Transparent background', { exact: true }),
+                ],
+            });
 
             if (process.env.E2E_SLOW) {
                 // 「2. 画質・サイズを設定する」— the default Lighting is
@@ -171,6 +229,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
                 await renderWindow.getByRole('button', { name: 'Start Render', exact: true }).click();
                 // The result viewer shows the rendered image when the job is done.
                 await expect(renderWindow.getByAltText('Render result')).toBeVisible({ timeout: 600_000 });
+                await docShot(renderWindow, 'getting-started/quick-tour/4-render-result');
             } else {
                 test.info().annotations.push({
                     type: 'skipped-step',
@@ -188,7 +247,9 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
         fs.rmSync(qscPath, { force: true });
         await expectSaveDialog(harness.app, qscPath);
         await clickMenu(harness.app, ['File', 'Save Scene']);
-        await expect(dialog(harness.window, 'Scene options')).toBeVisible();
+        const sceneOptions = dialog(harness.window, 'Scene options');
+        await expect(sceneOptions).toBeVisible();
+        await docShot(harness.window, 'getting-started/quick-tour/5-scene-options', { clip: sceneOptions });
         await clickDialogButton(harness.window, 'Scene options', 'OK');
         await expectDialogClosed(harness.window, 'Scene options');
         await waitForFile(qscPath);
