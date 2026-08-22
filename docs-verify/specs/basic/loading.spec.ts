@@ -96,8 +96,11 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         await expectRow(harness.window, SECOND_OBJ);
         await expectRow(harness.window, 'trace1');
 
-        // 「読み込むと視点は新しい分子に移ります。Zoom を 200 にすると両方が入ります」
-        await setViewValue(harness.window, 'Zoom', 200);
+        // 「1. Zoom に 300 と入力します」「2. Slab に 300 と入力します」
+        // Widening Zoom alone is not enough: the default 50 A slab clips
+        // lysozyme, which sits about 100 A away from 1g59.
+        await setViewValue(harness.window, 'Zoom', 300);
+        await setViewValue(harness.window, 'Slab', 300);
         await docShot(harness.window, `${SHOT}/3-two-objects`);
     });
 
