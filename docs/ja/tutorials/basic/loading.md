@@ -100,8 +100,8 @@ View パネルの各行は、次の 3 通りで操作できます。
 - 数値を**クリック**すると直接入力できる状態になり、++enter++ で確定します
 
 このように、View パネルはマウスで動かすより正確に視点を合わせたいときに使います。
-**Rotation** (RotX / RotY / RotZ) は**相対値**で、操作するとその角度だけ回り、値は 0 に
-戻ります。**Translation** (TraX / TraY / TraZ、Å) と **Zoom / Slab** (Zoom・Slab・Dist、Å) は
+**Rotation** (RotX / RotY / RotZ) は**相対値**で、操作するとその角度だけ回り、操作後、
+値は 0 に戻ります。**Translation** (TraX / TraY / TraZ、Å) と **Zoom / Slab** (Zoom・Slab・Dist、Å) は
 **絶対値**で、現在の視点の値がそのまま表示されます。
 
 ![View パネル。回転させた後でも Rotation は 0 に戻っており、Zoom には入力した 40 が残っている](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="237" .on-glb }
