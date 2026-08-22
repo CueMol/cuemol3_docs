@@ -84,8 +84,11 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
 - **spec が落ちて、原因がページの記述と実装の食い違いだった場合はページを直す**
   (これが docs-verify の目的。実例: 「Start」→ 実際は Start Render)。
   意図的な簡略化か obsolete か判断がつかないときは書き換えず報告する。
-- 画像は `docs/assets/images/<spec の docShot id>.webp` に自動生成される。
-  **手動編集・手動撮影で置き換えないこと** (再生成は `task e2e:shots`)。
+- 画像は `docs/assets/images/<spec の docShot id>.webp` に自動生成される。再生成は
+  `task e2e:shots`。**自動生成された図を手動で撮り直さないこと**。
+- ただし**手作りの図は許容**する (注釈付き・変更前後の並べ図など)。docShot はハッシュを
+  `docs-verify/docshot-manifest.json` に記録し、**自分が書いたまま手つかずのファイル以外は
+  上書きしない** (手作り・手加工した図は `SKIP` と報告して残す)。詳細と操作は PLAYBOOK 参照。
 - 撮影した画像は必ず目視確認する (Read で `.webp` を開く)。
 - 仕上げは `task build` (strict) / `task check:images` / `task e2e` の 3 点。
   `test-results/` や `.last-run.json` をコミットしない。

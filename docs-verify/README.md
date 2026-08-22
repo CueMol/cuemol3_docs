@@ -42,6 +42,8 @@ task e2e:report   # 直近の HTML レポートを開く
 | `BUNDLE_APPS` | `~/tmp/proj64_deplibs` | 同梱外部バイナリ群 |
 | `E2E_SLOW` | (未設定) | 1 でレイトレース実行などの重いステップを有効化 |
 | `DOCSHOT` | (未設定) | 1 で docShot がスクリーンショットを docs/assets/images に書き出す |
+| `DOCSHOT_FORCE` | (未設定) | 1 で手作り・手加工の図も上書きする (既定は残す) |
+| `DOCSHOT_ADOPT` | (未設定) | 1 で撮影せず、現在のファイルのハッシュを manifest に記録する |
 | `E2E_WINDOW` | `1600x1000` | メインウィンドウのサイズ (e2e:shots は 1280x800 で撮影) |
 | `DEBUG_E2E` | (未設定) | 1 でアプリの main プロセスログをコンソールに流す |
 | `PWDEBUG` | (未設定) | Playwright inspector でステップ実行 |
@@ -72,7 +74,8 @@ scripts/   doctor (プリフライト)
   300 KB 検査を経て `docs/assets/images/<id>.webp` に直接書き出す。全景はウィンドウの CSS 幅
   (1280 px) に縮小し、要素切り抜き (`clip` オプション: 単一要素、または複数要素の外接矩形 + pad)
   は Retina の 2x デバイスピクセルのまま保存して、ページ側の `width` 指定で原寸表示する。
-  **ページの画像は手動編集せず、この仕組みで再生成する。**
+  書き出したファイルのハッシュを `docshot-manifest.json` に記録し、**自分が書いたまま
+  手つかずのファイルしか上書きしない** (手作りの図は `SKIP` して残す)。
 
 ## セレクタ知見・upstream への要望リスト
 
