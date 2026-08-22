@@ -121,6 +121,13 @@ nav:
       - 開発状況と未実装機能: changes/status.md
   - チュートリアル:
       - tutorials/index.md
+      - 基本操作:
+          - 構造の読み込みと表示: tutorials/basics-loading.md
+          - 分子の一部を選択する: tutorials/basics-selection.md
+          - Renderer の追加・削除と設定: tutorials/basics-renderers.md
+          - Renderer を着色する: tutorials/basics-coloring.md
+          - カメラとシーンの保存: tutorials/basics-camera-scene.md
+          - 計測と相互作用の表示: tutorials/basics-measure.md
       - タンパク質のリボン図を作る: tutorials/ribbon-figure.md
       - 論文用の高解像度画像を書き出す: tutorials/publication-images.md
       - 電子密度マップを重ねて表示する: tutorials/density-map.md

@@ -1,9 +1,26 @@
 # チュートリアル
 
-具体的な作図の手順を、目的別に解説する章です。
+操作を順に学ぶ基本操作コースと、目的別の作図チュートリアルの 2 部構成です。
+はじめての方は、まず [クイックツアー](../getting-started/quick-tour.md) で
+全体の流れをつかんでから、基本操作コースに進んでください。
 
-各チュートリアルは独立して読めますが、はじめての方は先に
-[クイックツアー](../getting-started/quick-tour.md) で操作の基本を押さえてください。
+## 基本操作
+
+リゾチーム (1QIO) を題材に、CueMol3 の操作をひととおり練習するコースです。
+順に進めると前のページの状態を引き継げます。
+
+<div class="grid cards" markdown>
+
+- **[構造の読み込みと表示](basics-loading.md)** — 読み込み・視点操作・Scene / Object / Renderer の考え方
+- **[分子の一部を選択する](basics-selection.md)** — クリック・パネル・選択式による選択
+- **[Renderer の追加・削除と設定](basics-renderers.md)** — 表示の重ね方とインスペクタ
+- **[Renderer を着色する](basics-coloring.md)** — CPK / B-factor / Rainbow / Paint
+- **[カメラとシーンの保存](basics-camera-scene.md)** — 視点とシーンファイルの扱い
+- **[計測と相互作用の表示](basics-measure.md)** — 距離・角度の測定と atomintr
+
+</div>
+
+## 目的別チュートリアル
 
 <div class="grid cards" markdown>
 
