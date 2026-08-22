@@ -5,7 +5,7 @@
  * test.step carries the section wording so the two can be diffed by grep.
  * Update this spec whenever the page changes (and vice versa).
  */
-import { test, expect } from '@playwright/test';
+import { test, expect, type Locator } from '@playwright/test';
 import * as fs from 'node:fs';
 import { CueMolHarness } from '../fixtures/app';
 import { artifacts } from '../support/env';
@@ -17,7 +17,14 @@ import {
     expectDialogClosed,
     expectSaveDialog,
 } from '../helpers/dialogs';
-import { expectRow, selectRow, openInInspector, clickSceneToolbar } from '../helpers/sceneTree';
+import {
+    expectRow,
+    selectRow,
+    openInInspector,
+    clickSceneToolbar,
+    toggleRowVisibility,
+    rowVisibilityToggle,
+} from '../helpers/sceneTree';
 import { setNumericProperty } from '../helpers/inspector';
 import { selectColorTarget, chooseColoring } from '../helpers/colorPane';
 import { rotateView, zoomView } from '../helpers/molView';
@@ -103,13 +110,18 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
         // Playwright cannot click; the Scene panel toolbar's Add button
         // opens the same New Renderer flow, so the dialog contents are
         // still verified end-to-end.
-        const addRenderer = async (type: string, expectName: string, shotId?: string) => {
+        const addRenderer = async (
+            type: string,
+            expectName: string,
+            opts: { shotId?: string; configure?: (dlg: Locator) => Promise<void> } = {},
+        ) => {
             await selectRow(harness.window, OBJ_NAME);
             await clickSceneToolbar(harness.window, 'add');
             const dlg = dialog(harness.window, 'New Renderer');
             await expect(dlg).toBeVisible();
             await dlg.locator('#rend-type').selectOption(type);
-            if (shotId) await docShot(harness.window, shotId, { clip: dlg });
+            await opts.configure?.(dlg);
+            if (opts.shotId) await docShot(harness.window, opts.shotId, { clip: dlg });
             await clickDialogButton(harness.window, 'New Renderer', 'Create');
             await expectDialogClosed(harness.window, 'New Renderer');
             await expectRow(harness.window, expectName);
@@ -122,9 +134,52 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
                 clip: harness.window.locator('.sp-pane').first(),
             });
             // 「二次構造がわかるように、ribbon を追加してみます。」
-            await addRenderer('ribbon', 'ribbon1', 'getting-started/quick-tour/3-new-renderer');
-            // 「同じ手順で ballstick も追加してみてください。」
-            await addRenderer('ballstick', 'ballstick1');
+            await addRenderer('ribbon', 'ribbon1', { shotId: 'getting-started/quick-tour/3-new-renderer' });
+
+            // 「次に、ジスルフィド結合を作っている Cys 残基だけを ballstick で
+            // 表示してみます。」 The selection is composed with the selection
+            // builder (Term tab, keyword resn, value CYS), as the docs describe.
+            const mark = harness.logs.mark();
+            await addRenderer('ballstick', 'ballstick1', {
+                shotId: 'getting-started/quick-tour/3-ballstick-selection',
+                configure: async (dlg) => {
+                    await dlg.getByText('Selection', { exact: true }).click();
+                    await dlg.getByRole('button', { name: 'Build selection' }).click();
+                    const builder = harness.window.locator('.selbuilder');
+                    await expect(builder).toBeVisible();
+                    await builder.getByRole('radio', { name: 'Term', exact: true }).click();
+                    await builder.getByLabel('Term keyword').selectOption('resn');
+                    // 「値の欄の ▼ から候補を開き、CYS を選びます」
+                    await builder.getByTitle('Show candidate values').click();
+                    const candidates = harness.window.locator('.h3-form-combobox-menu');
+                    await expect(candidates).toBeVisible();
+                    await candidates.getByText('CYS', { exact: true }).click();
+                    // The Set button carries a hit-count badge; shoot before
+                    // pressing it, as the docs' step 7 image shows.
+                    await docShot(harness.window, 'getting-started/quick-tour/3-selection-builder', {
+                        clip: builder,
+                    });
+                    await builder.getByRole('button', { name: /^Set/ }).click();
+                    // Toggle the builder closed; MolSelList commits on close.
+                    await dlg.getByRole('button', { name: 'Build selection' }).click();
+                    await expect(builder).toBeHidden();
+                    await expect(dlg.getByPlaceholder('* (all atoms)')).toHaveValue('resn CYS');
+                },
+            });
+            // The selection must actually narrow the renderer: 1CRN has 327
+            // atoms, its six cysteines far fewer.
+            const line = await harness.logs.waitForLine('BallStickRenderer> rendered', { from: mark });
+            const atoms = Number(/rendered (\d+) atoms/.exec(line)?.[1]);
+            expect(atoms).toBeGreaterThan(0);
+            expect(atoms).toBeLessThan(100);
+
+            // 「最初の線画はもう不要なので、シーンツリーの simple1 の行の
+            // 目のアイコンをクリックして非表示にします。」
+            await toggleRowVisibility(harness.window, 'simple1');
+            await expect(rowVisibilityToggle(harness.window, 'simple1')).toHaveClass(/hidden/);
+            await docShot(harness.window, 'getting-started/quick-tour/3-hide-simple', {
+                clip: harness.window.locator('.sp-pane').first(),
+            });
         });
 
         await test.step('見た目を調整する', async () => {

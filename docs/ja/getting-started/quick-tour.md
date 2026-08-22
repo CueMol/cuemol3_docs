@@ -57,14 +57,39 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
     ![New Renderer ダイアログ](../../assets/images/getting-started/quick-tour/3-new-renderer.webp){ width="480" .on-glb }
 
 線画に重なって、ヘリックスとシートは板状のリボン、それ以外は細いチューブで
-描かれます。同じ手順で **ballstick** も追加してみてください。原子を球、結合を
-円柱で描くモデルが重なります。
+描かれます。
+
+次に、ジスルフィド結合を作っている Cys 残基だけを **ballstick** (原子を球、結合を
+円柱で描くモデル) で表示してみます。Renderer は**選択式**で対象の原子を絞り込めます
+(→ [選択式の文法](../reference/selection.md))。ここでは式を手で書くかわりに、
+[選択ビルダー](../ui/selection-builder.md)で組み立てます。
+
+1. 同じ手順で Object (`1crn`) を右クリックし、**New Renderer** を選びます
+2. **Renderer type** から **ballstick** を選びます
+3. **Selection** にチェックを入れます
+4. 選択式の欄の右端の ▼ を押して、選択ビルダーを開きます
+5. **Term** タブに切り替え、キーワードから **resn** (残基名) を選びます
+6. 値の欄の ▼ から候補を開き、**CYS** を選びます
+7. **Set** を押します。選択式の欄に `resn CYS` と入力されます
+
+    ![選択ビルダーの Term タブで resn CYS を組み立てたところ](../../assets/images/getting-started/quick-tour/3-selection-builder.webp){ width="228" .on-glb }
+
+8. **Create** を押します
+
+    ![Selection を指定した New Renderer ダイアログ](../../assets/images/getting-started/quick-tour/3-ballstick-selection.webp){ width="480" .on-glb }
+
+リボンに重なって、6 個の Cys 残基だけが球と円柱で描かれます。クランビンでは
+これらが 3 対のジスルフィド結合を作っています。
+
+最初の線画はもう不要なので、シーンツリーの `simple1` の行の**目のアイコン**を
+クリックして非表示にします。目のアイコンでは Renderer ごとの表示・非表示を
+いつでも切り替えられます。
+
+![simple1 を非表示にしたシーンツリー](../../assets/images/getting-started/quick-tour/3-hide-simple.webp){ width="237" .on-glb }
 
 - Renderer は種類を選ぶと**すぐに既定値で作成**され、細かい設定は後から
   インスペクタで調整します (この方針は [操作パラダイムの変更](../changes/ui-paradigm.md) を参照)
 - 定義済みの組み合わせ (プリセット) を選ぶと、複数の Renderer をまとめたグループが一度に作られます
-- 表示が込み合ってきたら、シーンツリーの**目のアイコン**で Renderer ごとに
-  表示・非表示を切り替えられます
 
 ### 見た目を調整する
 
@@ -91,7 +116,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 リボンが N 末端から C 末端へ虹色に塗り替わります。Coloring には Paint / CPK /
 B-factor / 静電ポテンシャルなどの種類があります (→ [Coloring](../reference/coloring.md))。
 
-![ribbon と ballstick を重ね、ribbon を Rainbow coloring で塗り替えたところ](../../assets/images/getting-started/quick-tour/3-styled.webp){ .on-glb }
+![ribbon に Cys 残基の ballstick を重ね、ribbon を Rainbow coloring で塗り替えたところ](../../assets/images/getting-started/quick-tour/3-styled.webp){ .on-glb }
 
 ### 視点を動かす
 

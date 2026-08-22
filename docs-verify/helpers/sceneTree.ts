@@ -31,6 +31,21 @@ export async function openInInspector(window: Page, name: string): Promise<void>
 }
 
 /**
+ * The eye button in a row's secondary label. Icon-only with no accessible
+ * name, so it is addressed by class; its className carries the state
+ * ("visible" / "hidden"). Recorded as an upstream data-testid candidate.
+ */
+export function rowVisibilityToggle(window: Page, name: string): Locator {
+    return sceneRow(window, name)
+        .locator('xpath=ancestor::div[contains(@class, "bp5-tree-node-content")]')
+        .locator('.visibility-toggle');
+}
+
+export async function toggleRowVisibility(window: Page, name: string): Promise<void> {
+    await rowVisibilityToggle(window, name).click();
+}
+
+/**
  * The Scene section's toolbar buttons (Add / Focus / Delete / Property)
  * share one class and carry no accessible names; they are addressed by
  * position. Recorded as an upstream data-testid candidate.
