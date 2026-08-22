@@ -92,33 +92,40 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
     });
 
     test('3. 表示を整える', async () => {
-        await test.step('Renderer を追加する', async () => {
-            // Docs: シーンツリーで Object を右クリック → New Renderer。
-            // The tree context menu is a native Menu (main process), which
-            // Playwright cannot click; the Scene panel toolbar's Add button
-            // opens the same New Renderer flow, so the dialog contents are
-            // still verified end-to-end.
+        // Docs: シーンツリーで Object を右クリック → New Renderer。
+        // The tree context menu is a native Menu (main process), which
+        // Playwright cannot click; the Scene panel toolbar's Add button
+        // opens the same New Renderer flow, so the dialog contents are
+        // still verified end-to-end.
+        const addRenderer = async (type: string, expectName: string) => {
             await selectRow(harness.window, OBJ_NAME);
             await clickSceneToolbar(harness.window, 'add');
             const dlg = dialog(harness.window, 'New Renderer');
             await expect(dlg).toBeVisible();
-            await dlg.locator('#rend-type').selectOption('ballstick');
+            await dlg.locator('#rend-type').selectOption(type);
             await clickDialogButton(harness.window, 'New Renderer', 'Create');
             await expectDialogClosed(harness.window, 'New Renderer');
-            await expectRow(harness.window, 'ballstick1');
+            await expectRow(harness.window, expectName);
+        };
+
+        await test.step('Renderer を追加する', async () => {
+            // 「二次構造がわかるように、ribbon を追加してみます。」
+            await addRenderer('ribbon', 'ribbon1');
+            // 「同じ手順で ballstick も追加してみてください。」
+            await addRenderer('ballstick', 'ballstick1');
         });
 
         await test.step('見た目を調整する', async () => {
-            // 「値を変えると分子ビューに即座に反映されます。」— round-trips a
-            // ballstick property through the inspector (opened by
-            // double-clicking the tree row, as the side-panels page states).
+            // 「Atom radius を既定の 0.3 から 0.5 に上げてみてください。」
+            // Opened by double-clicking the tree row, as the docs state.
             await openInInspector(harness.window, 'ballstick1');
-            await setNumericProperty(harness.window, 'Ball and stick', 'Bond width', 0.4);
+            await setNumericProperty(harness.window, 'Ball and stick', 'Atom radius', 0.5);
         });
 
-        await test.step('色は Explorer > Color から切り替える', async () => {
-            await selectColorTarget(harness.window, `ballstick1 (ballstick)`);
-            await chooseColoring(harness.window, 'CPK coloring');
+        await test.step('色を塗り替える', async () => {
+            // 「ribbon1 (ribbon) を選び、Coloring ボタンから Rainbow coloring を選びます。」
+            await selectColorTarget(harness.window, 'ribbon1 (ribbon)');
+            await chooseColoring(harness.window, 'Rainbow coloring');
         });
 
         await test.step('視点を動かす', async () => {
