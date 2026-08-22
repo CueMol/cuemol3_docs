@@ -6,27 +6,26 @@
 
 基本操作コースの各ページは、この順に進めると前のページの状態を引き継げます。
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 1QIO を simple で表示し、シーンツリーに lysozyme が並んだ全景 -->
-
 ## 1. 構造を読み込む
 
 **File &gt; Get PDB...** を開き、**PDB Accession Code** に `1QIO` と入力して取得します。
 手元のファイルを開く場合は **File &gt; Open File...** (++cmd+o++) を使います
 (→ [File メニュー](../../menu/file.md))。
 
-取得が終わると、オプションを指定する画面が出ます。
+![Get PDB ダイアログ](../../../assets/images/tutorials/basic/loading/1-getpdb.webp){ width="380" .on-glb }
+
+取得が終わると、**Open File Options** の画面が出ます。
 
 1. **Object name** を `lysozyme` に変更します。読み込まれたデータは **Object** と呼ばれ、
    CueMol の中ではこの名前で識別されます (既定ではファイル名由来の名前が入っています)
 2. **Renderer type** から **simple** を選びます
-3. そのほかは既定のまま作成します
+3. そのほかは既定のまま **Open** を押します
+
+![Open File Options (Object name = lysozyme, Renderer type = simple)](../../../assets/images/tutorials/basic/loading/1-open-options.webp){ width="480" .on-glb }
 
 分子が線画 (stick モデル) で表示されます。
 
-<!-- TODO(screenshot): Get PDB 後のオプション画面 (Object name = lysozyme, Renderer type = simple) -->
+![1QIO を lysozyme という名前で simple 表示したところ](../../../assets/images/tutorials/basic/loading/1-loaded.webp){ .on-glb }
 
 ### Renderer type の種類
 
@@ -64,11 +63,23 @@ nucl
 
 ## 2. 視点を操作する
 
-分子ビュー上の左ドラッグで回転、ホイールでズームします。平行移動やスラブ
-(手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
-[マウス・トラックパッド操作](../../ui/mouse-input.md) を参照してください。
-数値で正確に動かしたいときは **Explorer &gt; View** パネルも使えます
-(→ [サイドパネル](../../ui/side-panels.md))。
+読み込んだ分子を、いろいろな向きから眺めてみます。
+
+1. 分子ビュー上を**左ドラッグ**します。ドラッグした向きに分子が回転します
+2. **ホイール**を回します。分子が拡大・縮小します
+3. 左サイドパネルの **Explorer &gt; View** パネルで、**Zoom / Slab** の **Zoom** の値を
+   クリックし、`40` と入力して ++enter++ を押します
+
+    ![View パネルの Zoom](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="150" }
+
+Zoom は分子ビューに映す範囲の高さ (Å) です。値を小さくすると、その分だけ分子が
+大きく表示されます。マウスで動かすより正確に視点を合わせたいときに使います。
+
+![Zoom を 40 Å にしたところ](../../../assets/images/tutorials/basic/loading/2-zoomed.webp){ .on-glb }
+
+平行移動やスラブ (手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
+[マウス・トラックパッド操作](../../ui/mouse-input.md)、View パネルの各項目は
+[サイドパネル](../../ui/side-panels.md) を参照してください。
 
 原子の上でクリックすると、その原子の名前がラベルとして表示されます
 (もう一度クリックすると消えます)。右クリックすると、分子名・チェイン・残基・原子の
@@ -77,10 +88,24 @@ nucl
 
 ## 3. もう 1 つ分子を読み込む
 
-同じシーンには複数の Object を読み込めます。**File &gt; Get PDB...** で `1G59`
-(グルタミル tRNA 合成酵素と tRNA の複合体) を取得し、今度は **Renderer type** に
-**trace** を選んでみてください。タンパク質は Cα 原子、核酸はリン原子だけを
-つないだ軽量な表示で描かれます。
+同じシーンには複数の Object を読み込めます。ここでは `1G59`
+(グルタミル tRNA 合成酵素と tRNA の複合体) を追加します。
+
+1. **File &gt; Get PDB...** を開き、**PDB Accession Code** に `1G59` と入力して
+   **Download** を押します
+2. **Renderer type** から **trace** を選びます
+
+    ![Renderer type に trace を選ぶ](../../../assets/images/tutorials/basic/loading/3-open-options.webp){ width="480" .on-glb }
+
+3. **Object name** は既定のまま (`1g59`) にして **Open** を押します
+
+タンパク質は Cα 原子、核酸はリン原子だけをつないだ軽量な表示で描かれます。
+
+読み込むと視点は新しい分子へ移る (**Center view on molecule after loading** が既定でオン)
+ため、この時点ではリゾチームは画面の外にあります。§2 と同じ要領で **Zoom** を `200` に
+すると、2 つの Object が並んで見えます。
+
+![lysozyme と 1g59 が並んで表示されたところ](../../../assets/images/tutorials/basic/loading/3-two-objects.webp){ .on-glb }
 
 ## 4. Scene・Object・Renderer・View
 
@@ -106,8 +131,8 @@ View
 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー) には、シーン内の
 Object とその配下の Renderer が階層で表示されます (→ [サイドパネル](../../ui/side-panels.md))。
 
-- いまは `lysozyme` と `1G59` の 2 つの Object があり、それぞれに simple / trace の
-  Renderer が付いています
+- いまは `lysozyme` と `1g59` の 2 つの Object があり、それぞれに simple / trace の
+  Renderer が付いています (Get PDB で読み込むと、Object 名は PDB ID の小文字になります)
 - 分子を読み込むと、選択部分をハイライト表示するための `*selection` という
   Renderer も自動で作られます
 - 行の**目のアイコン**で Renderer の表示・非表示を切り替えられます。Object 行で
@@ -115,7 +140,7 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 - 不要になった Object や Renderer は、行を選んでパネル上部の **Delete** ボタンで
   削除できます (Undo で戻せます)
 
-<!-- TODO(screenshot): シーンツリー (lysozyme / 1G59 と各 Renderer、目のアイコン) -->
+![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="237" .on-glb }
 
 ## 次のステップ
 
@@ -124,4 +149,4 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 
 ---
 
-*確認対象: CueMol3 2.3.8.494*
+*確認対象: CueMol3 2.3.8.495*

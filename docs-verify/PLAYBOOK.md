@@ -281,6 +281,9 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | シーンツリーの右クリックメニューが操作できない | native Menu なので Playwright からクリックできない。Scene パネルのツールバー Add ボタンが同じ New Renderer フローを開くので代替する (spec にその旨のコメントを残す) |
 | ネイティブの open/save ダイアログでハングする | `expectOpenDialog` / `expectSaveDialog` で応答をキューに積んでから操作する。積み忘れは即エラーになる |
 | 撮影サイズでしか通らない spec を書いてしまう | 座標依存の操作を書かない。最後に `task e2e` (1600x1000) で回帰確認する |
+| `docShot` が `no visible clip target` / `not an HTMLElement` で落ちる | 対象が `display: contents` の要素だと矩形を持たない (View パネルの `.h3-form-grid-row` がこれ)。内側の実体 (ラベルとコントロール) を配列で渡す |
+| View パネルに入れた回転角が読み戻せない | Rotation (RotX/RotY/RotZ) は相対ダイヤルで、確定すると 0 に戻る。読み戻しで検証できるのは Translation / Zoom / Slab / Dist |
+| ログ行の待ち受けが別の行に当たる | `waitForLine` は部分一致。`'read '` は `thread read (2047) ok` に、`'> read '` は `LoadSymLib> read 266 s.g.s` に当たる。読み込み確認は `' atoms'` を待って `/read \d+ atoms/` で検証する |
 
 ## セレクタ台帳
 
@@ -289,6 +292,8 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | 対象 | セレクタ | ヘルパー |
 |---|---|---|
 | アプリケーションメニュー | Electron Menu API のラベル走査 | `clickMenu(app, ['File', 'Get PDB...'])` |
+| File &gt; Get PDB... 一式 | Get PDB ダイアログ (`#get-pdb-id`) → Download → Open File Options (`#rend-objname` / `#rend-type` / `#rend-name`) → Open | `getPdb(app, window, { id, rendType, objectName? })` |
+| View パネルの数値欄 | `.view-pane` → ラベルで絞った `.h3-form-grid-row` → `.h3-form-drag` をクリック → `input.h3-form-drag-input` | `setViewValue` / `viewPaneRowParts` |
 | Blueprint ダイアログ | `getByRole('dialog', { name })` | `dialog` / `clickDialogButton` / `expectDialogClosed` |
 | シーンツリーの行 | `getByText(/^名前 \(/)` | `sceneRow` / `selectRow` / `openInInspector` |
 | 行の目のアイコン | 行の `.bp5-tree-node-content` 内 `.visibility-toggle` (class に `visible` / `hidden`) | `toggleRowVisibility` / `rowVisibilityToggle` |
@@ -310,11 +315,14 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 
 ## 次に適用する対象 (未着手)
 
-現状 spec があるのは `getting-started/quick-tour.md` のみ。適用の優先順:
+spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/loading.md`。適用の優先順:
 
-1. `tutorials/basic/` の 6 ページ (loading / selection / renderers / coloring / camera-scene /
-   measure)。原子ピック (Center 後に canvas 中心をクリック)、ダブルクリック選択、
-   `harness.restart()` を使う camera-scene がここで初めて必要になる。
+1. `tutorials/basic/` の残り 5 ページ (selection / renderers / coloring / camera-scene /
+   measure)。原子ピック、ダブルクリック選択、`harness.restart()` を使う camera-scene が
+   ここで初めて必要になる。
+   **基本操作コースはページ間で状態を引き継ぐ**構成なので、前ページの到達状態は
+   `fixtures/course.ts` に足していく (`setupLoadingPage.run()` が loading.md の終状態を作る)。
+   前ページの spec と手順を二重に持たないこと。
 2. 目的別チュートリアル 6 ページ (ribbon-figure / publication-images / density-map /
    symmetry / surface-elepot / animation-movie)。APBS・ffmpeg・レイトレースを伴うため
    `E2E_SLOW` ゲートの対象が増える。

@@ -25,12 +25,12 @@ import {
     toggleRowVisibility,
     rowVisibilityToggle,
 } from '../helpers/sceneTree';
+import { getPdb } from '../helpers/openFile';
 import { setNumericProperty } from '../helpers/inspector';
 import { selectColorTarget, chooseColoring } from '../helpers/colorPane';
 import { rotateView, zoomView } from '../helpers/molView';
 import { docShot } from '../helpers/docShot';
 
-const NET_TIMEOUT_MS = 60_000;
 const PDB_ID = '1CRN';
 const OBJ_NAME = PDB_ID.toLowerCase();
 
@@ -75,27 +75,20 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
     });
 
     test('2. 構造を読み込む', async () => {
-        await test.step('File > Get PDB... で取得する', async () => {
-            await docShot(harness.window, 'getting-started/quick-tour/2-toolbar-getpdb', {
-                clip: harness.window.getByRole('button', { name: 'Get PDB', exact: true }),
-                pad: 6,
-            });
-            await clickMenu(harness.app, ['File', 'Get PDB...']);
-            const dlg = dialog(harness.window, 'Get PDB');
-            await expect(dlg).toBeVisible();
-            await dlg.locator('#get-pdb-id').fill(PDB_ID);
-            await docShot(harness.window, 'getting-started/quick-tour/2-getpdb', { clip: dlg });
-            await clickDialogButton(harness.window, 'Get PDB', 'Download');
+        // 「1. File > Get PDB... を選びます (ツールバーの Get PDB ボタンでも同じ)」
+        await docShot(harness.window, 'getting-started/quick-tour/2-toolbar-getpdb', {
+            clip: harness.window.getByRole('button', { name: 'Get PDB', exact: true }),
+            pad: 6,
         });
-
-        await test.step('読み込み時に Renderer の種類を選ぶ画面が出ます', async () => {
-            const options = dialog(harness.window, 'Open File Options');
-            await expect(options).toBeVisible({ timeout: NET_TIMEOUT_MS });
-            await options.locator('#rend-type').selectOption('simple');
-            await docShot(harness.window, 'getting-started/quick-tour/2-open-options', { clip: options });
-            await options.getByRole('button', { name: 'Open', exact: true }).click();
-            await expectDialogClosed(harness.window, 'Open File Options');
-            await expectDialogClosed(harness.window, /Downloading/);
+        await getPdb(harness.app, harness.window, {
+            // 「2. PDB Accession Code に 1CRN と入力し、Download を押します」
+            id: PDB_ID,
+            // 「3. Renderer type から simple を選んで Open を押します」
+            rendType: 'simple',
+            onGetPdbDialog: (dlg) =>
+                docShot(harness.window, 'getting-started/quick-tour/2-getpdb', { clip: dlg }),
+            onOptionsDialog: (dlg) =>
+                docShot(harness.window, 'getting-started/quick-tour/2-open-options', { clip: dlg }),
         });
 
         // Get PDB derives the object name from the downloaded file (lowercase id).

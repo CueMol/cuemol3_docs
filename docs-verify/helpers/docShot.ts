@@ -71,6 +71,8 @@ async function capture(window: Page, opts: { clip?: Locator | Locator[]; pad?: n
 
     const boxes = [];
     for (const c of clips) {
+        // A pane can be scrolled out of view at the shot window size.
+        await c.scrollIntoViewIfNeeded().catch(() => {});
         const b = await c.boundingBox();
         if (b) boxes.push(b);
     }
