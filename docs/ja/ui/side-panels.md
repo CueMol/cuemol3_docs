@@ -108,7 +108,8 @@ Renderer 単位の **Coloring** を設定します。上部で Renderer を選�
 - **選択ビルダー** (Named / History / Term / Mod の 4 タブ) で、式を書かずに選択を
   組み立てられます。定義済み選択・履歴のワンクリック適用、条件の合成
   (Set / Add / Sub / Intsec)、現在の選択の変換 (Invert / Byres / Sidech / Mainch /
-  Arnd / Expn) ができ、各操作には適用した場合の原子数が表示されます。
+  Arnd / Expn) ができ、各操作には適用した場合の原子数が表示されます
+  (→ [選択ビルダー](selection-builder.md))。
 - **Selection** 欄は手でも編集できます。入力中に式の妥当性が検証され、誤りがあれば
   警告表示になります。手入力した式は **Select** ボタンで適用します。
 - 履歴はアプリケーションに保存され、Renderer の選択欄などと共有されます。

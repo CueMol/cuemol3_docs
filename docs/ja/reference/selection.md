@@ -8,7 +8,8 @@ CueMol2 の選択式と共通で、シーンファイル (`.qsc`) の互換性�
 
 !!! tip "選択式を入力する場所"
     - **Selection パネル** — 選択式を直接入力して適用します。入力中に妥当性が検証され、
-      過去に使った式は **History** から再利用できます
+      過去に使った式は **History** から再利用できます。式を書かずに GUI で組み立てる
+      **選択ビルダー**も使えます (→ [選択ビルダー](../ui/selection-builder.md))
     - **Renderer の `sel` プロパティ** — プロパティインスペクタ、または New Renderer
       ダイアログの Selection 欄で、その Renderer が描画する範囲を指定します
     - **各種ダイアログの選択欄** — 分子表面の生成、相互作用の検出などの対象指定
@@ -509,6 +510,7 @@ i; 20A, 20B
 
 ## 関連項目
 
+- [選択ビルダー](../ui/selection-builder.md) — 選択式を書かずに GUI で組み立てる
 - [Coloring](coloring.md) — 選択範囲ごとの色指定 (Paint)
 - [サイドパネル](../ui/side-panels.md) — Selection パネルの操作
 

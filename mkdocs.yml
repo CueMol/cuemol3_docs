@@ -100,6 +100,7 @@ nav:
   - 画面構成:
       - ui/index.md
       - サイドパネル: ui/side-panels.md
+      - 選択ビルダー: ui/selection-builder.md
       - プロパティインスペクタ: ui/inspector.md
       - 下部パネル: ui/bottom-panels.md
       - ツールバーとツールパレット: ui/toolbar-tools.md
