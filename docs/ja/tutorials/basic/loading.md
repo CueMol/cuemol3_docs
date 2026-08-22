@@ -86,7 +86,7 @@ nucl、それ以外は ballstick、というように**複数の Renderer をま
 1. 分子ビュー上を**左ドラッグ**します。ドラッグした向きに分子が回転します
 2. **ホイール**を回すと、表示が拡大・縮小されます
 3. 左サイドパネルの **Explorer &gt; View** パネルで、**Zoom / Slab** の **Zoom** の値を
-   クリックし、`40` と入力して ++enter++ を押します
+   クリックし、`40` と入力して ++enter++ を押すと、Zoom が 40 に設定されます
 
     ![View パネルの Zoom](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="150" }
 
