@@ -39,6 +39,7 @@
 <div class="grid cards" markdown>
 
 - **[レンダリング](rendering.md)** — Umbreon の品質設定と個別の設定項目
+- **[NPR (インク画風レンダリング)](rendering-npr.md)** — Umbreon (NPR) の Hatching と Detail タブ
 - **[設定項目](settings.md)** — Settings タブの全項目
 - **[キーボードショートカット](shortcuts.md)** — ショートカットの一覧
 - **[メニューリファレンス](../menu/index.md)** — 全メニュー項目の一覧
@@ -56,4 +57,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.7.489*
+*確認対象: CueMol3 2.3.10.504*

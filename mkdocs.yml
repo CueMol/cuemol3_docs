@@ -120,6 +120,7 @@ nav:
       - 操作パラダイムの変更: changes/ui-paradigm.md
       - 機能の統合・改名・廃止: changes/features.md
       - 開発状況と未実装機能: changes/status.md
+  - 更新履歴: releases.md
   - チュートリアル:
       - tutorials/index.md
       - 基本操作:
@@ -180,6 +181,7 @@ nav:
           - MolAnim (構造変化): reference/animation/molanim.md
       - スタイル: reference/styles.md
       - レンダリング: reference/rendering.md
+      - NPR (インク画風レンダリング): reference/rendering-npr.md
       - 設定項目: reference/settings.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md

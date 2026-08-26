@@ -65,6 +65,11 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   umbreon `169ab1c` (branch: main) / CueMol3 `2.3.7.489`。
   Umbreon を既定バックエンドとする記述への更新。**レンダリング以外の差分は未確認**なので、
   次回はこの hash ではなく `b706529c` から通常の差分確認を行うこと。
+- 前回同期: 2026-08-26 / cuemol2 `f252c4eacb0f` (branch: develop) / CueMol3 `2.3.10.504`。
+  `b706529c..f252c4ea` の tritium 差分を全件確認した (リリースノート
+  `docs/release_notes/v2.3.10.504.md` を含む)。次回はこの hash から差分確認を行う。
+  **未着手の残件**: 新規・改稿したページのスクリーンショット (`TODO(screenshot)` のまま)、
+  および docs-verify の spec 追加 (NPR / 分子表面ダイアログ)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

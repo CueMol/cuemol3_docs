@@ -14,10 +14,16 @@ Umbreon は可視化ライブラリ (libcuemol2) に組み込まれているた�
 | Backend | 内容 |
 |---|---|
 | Umbreon | 内蔵レイトレーサ。**既定**。外部プログラム不要 |
+| Umbreon (NPR) | 同じレイトレーサで、陰影をハッチングで表すインク画風の出力 → [NPR (インク画風レンダリング)](rendering-npr.md) |
 | POV-Ray | 旧バックエンド。**非推奨** |
 
 配布されているビルドには Umbreon が組み込まれているため、ウィンドウを開いた時点で
 Umbreon が選ばれています。一度手で切り替えると、その選択がウィンドウを閉じるまで残ります。
+
+このページで扱うのは写実的な出力を行う **Umbreon** の設定です。Umbreon (NPR) の
+Hatching グループと Detail タブについては
+[NPR (インク画風レンダリング)](rendering-npr.md) を参照してください
+(Quality の Lighting と Supersampling、個別の設定は共通です)。
 
 !!! info "POV-Ray は当面のあいだ残します"
     POV-Ray は CueMol2 から使われてきたバックエンドですが、CueMol3 では非推奨です。
@@ -260,6 +266,7 @@ GUI がシーン保存時に書き込む現在のビュー (`__current`) を使�
 ## 関連項目
 
 - [レンダリングウィンドウ](../ui/rendering-window.md) — ウィンドウの構成と操作
+- [NPR (インク画風レンダリング)](rendering-npr.md) — Umbreon (NPR) バックエンドの設定
 - [Rendering メニュー](../menu/rendering.md) — メニュー項目と Export scene
 - [マテリアル](renderers/material.md) / [エッジライン](renderers/edge-lines.md)
 - [Scene](scene.md) — 分子ビュー側のアンビエントオクルージョンとアンチエイリアシング
@@ -267,4 +274,4 @@ GUI がシーン保存時に書き込む現在のビュー (`__current`) を使�
 
 ---
 
-*確認対象: CueMol3 2.3.7.489*
+*確認対象: CueMol3 2.3.10.504*
