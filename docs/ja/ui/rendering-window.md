@@ -23,7 +23,7 @@
 | 領域 | 内容 |
 |---|---|
 | 画像領域 (左上) | レンダリング結果のプレビュー |
-| Render Settings (右) | 設定パネル。**Image** タブと **Render** タブがあります |
+| Render Settings (右) | 設定パネル。**Image** タブと **Render** タブ、Umbreon (NPR) を選んでいるときは **Detail** タブがあります |
 | 実行バー + ログ (下) | Backend / Target の選択、Start / Stop、進捗とログ |
 
 ## 実行バー
@@ -38,7 +38,9 @@
 
 !!! note "Backend は Umbreon のままで構いません"
     Umbreon は可視化ライブラリに組み込まれているため、外部プログラムの用意もパスの設定も
-    不要です。もう一方の POV-Ray は CueMol2 から使われてきた**旧バックエンドで、非推奨**です
+    不要です。**Umbreon (NPR)** は同じレイトレーサで陰影をハッチングに置き換えたもので、
+    インク画風の図が得られます (→ [NPR](../reference/rendering-npr.md))。
+    残る POV-Ray は CueMol2 から使われてきた**旧バックエンドで、非推奨**です
     (→ [レンダリング](../reference/rendering.md))。
 
 ## Image タブ
@@ -69,6 +71,11 @@ Umbreon では、先頭に **Quality** セクションがあります。品質�
 
 その下のアコーディオンには個別の設定項目が並びます。詳細と既定値は
 [レンダリング](../reference/rendering.md)を参照してください。
+
+Umbreon (NPR) では、先頭に **Hatching** セクションが加わり、描き味 (Style)・インクと紙の
+組み合わせ (Coloring)・線や点の密度と太さを指定します。Quality の Lighting からは
+Global Illumination がなくなります。さらに細かく調整する **Detail** タブについては
+[NPR](../reference/rendering-npr.md) を参照してください。
 
 POV-Ray バックエンドでは、ラジオシティのモード、影の有無、ライティング (既定ライトの使用 /
 光源の広がり / 強度) などを指定できます。Quality セクションはありません。
@@ -105,4 +112,4 @@ CueMol3 では 1 つのウィンドウに統合され、**出力の種類** (静
 
 ---
 
-*確認対象: CueMol3 2.3.8.495*
+*確認対象: CueMol3 2.3.10.504*

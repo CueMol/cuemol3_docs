@@ -43,11 +43,33 @@ CueMol3 の配布物は、GitHub の **Releases** ページで公開されてい
 
 ## 配布物一覧
 
-| OS | 配布物 (例: バージョン 2.3.7) | インストーラー形式 |
+| OS | 配布物 (例: バージョン 2.3.10.504) | インストーラー形式 |
 |---|---|---|
-| macOS (Apple Silicon / arm64) | `CueMol3-2.3.7-arm64.dmg` | ディスクイメージ |
-| Windows (x64) | `CueMol3-2.3.7-x64.exe` | NSIS ウィザード型インストーラー |
-| Linux (x64) | `CueMol3-2.3.7-x86_64.AppImage` / `CueMol3-2.3.7-amd64.deb` | AppImage / Debian パッケージ |
+| macOS (Apple Silicon / arm64) | `CueMol3-2.3.10.504-macOS-arm64-Installer.dmg` | ディスクイメージ |
+| Windows (x64) | `CueMol3-2.3.10.504-Windows-x64-Setup.exe` | NSIS ウィザード型インストーラー |
+| Linux (x64) | `CueMol3-2.3.10.504-Linux-x64.AppImage` / `CueMol3-2.3.10.504-Linux-x64.deb` | AppImage / Debian パッケージ |
+
+ファイル名には対象の OS と、4 桁のビルド番号を含むバージョンが入ります。
+`Installer` / `Setup` が付いているものがインストーラーです。
+
+!!! warning "x86-64 版は AVX2 対応の CPU を必要とします"
+    Windows / Linux の x86-64 版は **AVX2** 命令を使ってビルドされています。
+    対応するのは Intel Haswell / AMD Zen 以降 (おおむね 2013 年以降) の CPU です。
+    これより古い CPU では、**分子表面を生成したときにアプリが異常終了します**。
+
+    macOS (Apple Silicon) と ARM 版は影響を受けません。
+
+## ファイルの関連付け
+
+CueMol3 は、扱えるファイル形式 (`.qsc` / `.pdb` / `.cif` / `.mol2` / `.ccp4` など 16 種類) を
+OS に登録します。macOS の「このアプリケーションで開く」、Windows のエクスプローラーの
+「プログラムから開く」、Linux のファイルマネージャの "Open With" に CueMol3 が並びます。
+
+登録は**候補としての登録**です。既定のアプリケーションを CueMol3 が奪うことはないため、
+`.qsc` を CueMol2 で、`.pdb` を別のアプリケーションで開く設定はそのまま残ります。
+
+Linux では `.deb` パッケージが関連付けを登録します。AppImage の場合は、お使いの
+デスクトップ統合ツールに依存します。
 
 ## OS 別の手順
 

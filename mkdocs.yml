@@ -180,6 +180,7 @@ nav:
           - MolAnim (構造変化): reference/animation/molanim.md
       - スタイル: reference/styles.md
       - レンダリング: reference/rendering.md
+      - NPR (インク画風レンダリング): reference/rendering-npr.md
       - 設定項目: reference/settings.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md

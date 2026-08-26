@@ -1,6 +1,6 @@
 # macOS へのインストール
 
-対象: **macOS / Apple Silicon (arm64)**。配布物は `CueMol3-<version>-arm64.dmg` です
+対象: **macOS / Apple Silicon (arm64)**。配布物は `CueMol3-<version>-macOS-arm64-Installer.dmg` です
 (入手方法は [ダウンロード](index.md#ダウンロード) を参照)。
 
 !!! warning "アドホック署名のみで、配布元は証明されていません"
@@ -11,7 +11,7 @@
 
 ## 手順
 
-1. `CueMol3-<version>-arm64.dmg` をダブルクリックしてマウントする
+1. `CueMol3-<version>-macOS-arm64-Installer.dmg` をダブルクリックしてマウントする
 2. 表示された `CueMol3.app` を `Applications` フォルダにドラッグしてコピーする
 3. 初回起動は次のいずれかの方法で行う (下記参照)
 

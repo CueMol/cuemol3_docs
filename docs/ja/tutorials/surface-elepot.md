@@ -26,7 +26,9 @@ Renderer は **cartoon** を選んでおきます。
    小さなタンパク質では上げるときれいな表面になります (巨大な分子では既定の 1 の
    ままの方が軽快です)
 4. **Object name** と **Probe radius (A)** (水分子の半径 1.4 Å) は既定のままで構いません
-5. OK を押すと、分子表面の Object と molsurf Renderer が作られ、表面が表示されます
+5. **Algorithm** も既定の **Auto** のままで構いません (→
+   [MolSurfObj (分子表面)](../reference/objects/molsurf.md#生成アルゴリズム-algorithm))
+6. OK を押すと、分子表面の Object と molsurf Renderer が作られ、表面が表示されます
 
 <!-- TODO(screenshot): Mol surface generation ダイアログと、生成直後の分子表面 -->
 
@@ -99,4 +101,4 @@ Settings でパスを指定します (→ [外部ツールの設定](../install/
 
 ---
 
-*確認対象: CueMol3 2.3.8.494*
+*確認対象: CueMol3 2.3.10.504*
