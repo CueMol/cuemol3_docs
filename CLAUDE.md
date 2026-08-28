@@ -70,6 +70,16 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `docs/release_notes/v2.3.10.504.md` を含む)。次回はこの hash から差分確認を行う。
   **未着手の残件**: 新規・改稿したページのスクリーンショット (`TODO(screenshot)` のまま)、
   および docs-verify の spec 追加 (NPR / 分子表面ダイアログ)。
+- 前回同期: 2026-08-28 / cuemol2 `21990220` (branch: develop) / CueMol3 `2.3.11.507`。
+  リリース v2.3.11.507 を更新履歴 (`docs/ja/releases.md`) に反映し、実装と食い違って
+  いた記述を修正した (gpu_mapmesh の新規作成可否とプロパティセクション、シーンツリーと
+  Paint デッキの複数選択、AO プリセットの半解像度、内容によるファイル形式の判別)。
+  次回はこの hash から差分確認を行う。
+  **cryo-EM マップモードはユーザー判断により `TODO(content)` 止め** (Map type /
+  Region / Level of detail / LoD budget / Refine on zoom / Subsample)。仕様が動く
+  可能性があるため、リファレンスとチュートリアルには本文を書いていない。
+  **未着手の残件**: 上記 cryo-EM マップモードの記述、スクリーンショット、
+  docs-verify の spec 追加 (NPR / 分子表面ダイアログ)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

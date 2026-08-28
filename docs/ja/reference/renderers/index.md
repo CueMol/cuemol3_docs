@@ -30,13 +30,16 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 | [molsurf](molsurf.md) | 分子表面 | 生成済みの分子表面 Object の描画 | ○ |
 | [contour](contour.md) | 密度マップ | 等高線メッシュ表示 | ○ |
 | [isosurf](isosurf.md) | 密度マップ | 等値面表示 | ○ |
-| [gpu_mapmesh](gpu_mapmesh.md) | 密度マップ | 等高線メッシュの GPU 実装 | ○ |
+| [gpu_mapmesh](gpu_mapmesh.md) | 密度マップ | 等高線メッシュの GPU 実装 | — |
 
 **New Renderer** 列が「—」の型は、New Renderer ダイアログの一覧に表示されません。
 
 - **atomintr** は、ツールパレットの計測ツール (Distance / Angle / Torsion) や
   Tools メニューの **Interaction...** を使うと自動的に作成されます
 - **disorder** は主鎖 Renderer を対象に取るため、単独では作成できません
+- **gpu_mapmesh** は、線の太さを変えられず [contour](contour.md) より遅いため、
+  新規作成の選択肢から外されました。既存のシーンに含まれるものは今までどおり
+  表示され、設定も変更できます
 
 また、内部処理用の Renderer (選択のハイライト、原子ラベル、対称分子、単位格子など) は
 一覧に表示されません。
@@ -73,4 +76,4 @@ New Renderer ダイアログでは、複数の Renderer をまとめて作成す
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.11.507*

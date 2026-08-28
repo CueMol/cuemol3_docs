@@ -16,6 +16,11 @@ File メニューの **Open File...** で密度マップファイルまたは
 <!-- TODO(content): densitymap のプロパティ表 (名前 / 型 / 説明) を
      C++ の qif 定義とインスペクタから起こす -->
 
+<!-- TODO(content): cryo-EM マップモード (2.3.11.507 で追加)。map_type
+     (Auto (from header) / Crystallographic (periodic) / Cryo-EM (whole map,
+     level of detail)。読み込み後はインスペクタの Generic タブから変更する) と、
+     MRC の ORIGIN の読み取り。仕様が変わる可能性があるため保留 -->
+
 ## 対応する Renderer
 
 [contour](../renderers/contour.md) / [isosurf](../renderers/isosurf.md) /
