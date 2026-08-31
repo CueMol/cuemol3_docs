@@ -80,6 +80,21 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   可能性があるため、リファレンスとチュートリアルには本文を書いていない。
   **未着手の残件**: 上記 cryo-EM マップモードの記述、スクリーンショット、
   docs-verify の spec 追加 (NPR / 分子表面ダイアログ)。
+- 前回同期: 2026-08-31 / cuemol2 `5186111d` (branch: develop) / CueMol3 `2.3.12.517`。
+  リリース v2.3.12.517 を更新履歴 (`docs/ja/releases.md`) に反映した。ユーザー指示により
+  **項目は絞った** (4 節)。実装と食い違っていた記述を修正した (New Renderer に
+  disorder / atomintr が並ぶようになった、インスペクタの Renderer 種類ごとの
+  専用セクションが全種類に揃った、Renderer 行へのペースト、Scene メニューの色見本と
+  カラープルーフィングのチェック)。数値のドラッグ入力の操作方法を
+  `docs/ja/ui/inspector.md` に追加した。次回はこの hash から差分確認を行う。
+  **cryo-EM マップモードは保留を解除し、ユーザー指示により簡潔な記述にとどめた**
+  (Map type / Region / Level of detail / LoD budget / Refine on zoom / Subsample)。
+  GUI が固まったら詳しく書く。`TODO(content)` は 6 か所すべて解消済み。
+  **`cap_mode` (等値面の縁の閉じ方、2.3.12.517 の新設定) はユーザー判断により書かなかった。**
+  isosurf 専用で、tritium の Properties タブに行が無く Generic タブからしか触れないため
+  (`src/modules/xtal/MapSurfRenderer.qif:45-55`)。GUI に行が付いたら書くこと。
+  **未着手の残件**: スクリーンショット、docs-verify の spec 追加
+  (NPR / 分子表面ダイアログ / 密度マップ)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

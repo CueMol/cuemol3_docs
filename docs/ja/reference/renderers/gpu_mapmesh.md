@@ -28,10 +28,8 @@
 <!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
      説明) を gpu_mapmesh のインスペクタセクションと C++ 定義から起こす -->
 
-<!-- TODO(content): cryo-EM マップモード (2.3.11.507 で追加)。contour と同じ
-     Region / Level of detail / LoD budget / Refine on zoom を持つ
-     (インスペクタのセクション見出しは GPU contour)。仕様が変わる可能性が
-     あるため保留 -->
+表示範囲と細かさの設定 (**Region** / **Level of detail** / **LoD budget** /
+**Refine on zoom**) も contour と同じです → [contour](contour.md#contour)
 
 ## 関連項目
 
