@@ -16,10 +16,19 @@ File メニューの **Open File...** で密度マップファイルまたは
 <!-- TODO(content): densitymap のプロパティ表 (名前 / 型 / 説明) を
      C++ の qif 定義とインスペクタから起こす -->
 
-<!-- TODO(content): cryo-EM マップモード (2.3.11.507 で追加)。map_type
-     (Auto (from header) / Crystallographic (periodic) / Cryo-EM (whole map,
-     level of detail)。読み込み後はインスペクタの Generic タブから変更する) と、
-     MRC の ORIGIN の読み取り。仕様が変わる可能性があるため保留 -->
+### マップの種類 (Map type)
+
+結晶学的マップ (周期的) とクライオ電子顕微鏡マップ (非周期的) を区別して扱います。
+種類はファイルのヘッダから自動的に判別され、表示範囲の既定値がこれで決まります
+(→ [contour](../renderers/contour.md) / [isosurf](../renderers/isosurf.md) の **Region**)。
+
+判別結果を変えたいときは、ファイルを開くときのオプション画面の **Map type** で
+*Auto (from header)* / *Crystallographic (periodic)* / *Cryo-EM (whole map, level of detail)*
+のいずれかを指定します (→ [File メニュー](../../menu/file.md))。読み込んだあとは
+プロパティインスペクタの **Generic** タブの `map_type` で変更できます。
+
+MRC ファイルの ORIGIN も読み込むので、原点が 0 でないマップも、そこに当てはめた
+モデルと正しく重なります。
 
 ## 対応する Renderer
 
@@ -36,4 +45,4 @@ File メニューの **Open File...** で密度マップファイルまたは
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.12.517*

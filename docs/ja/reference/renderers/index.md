@@ -23,8 +23,8 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 | [ribbon](ribbon.md) | 分子 | 二次構造に応じたリボン / 板 / チューブ表示 | ○ |
 | [cartoon](cartoon.md) | 分子 | ヘリックスを筒状にした模式的な二次構造表示 | ○ |
 | [nucl](nucl.md) | 分子 | 核酸の主鎖チューブ + 塩基表示 | ○ |
-| [atomintr](atomintr.md) | 分子 | 原子間の距離・角度・相互作用の表示 | — |
-| [disorder](disorder.md) | 分子 | ディスオーダー領域を点線で補って表示 | — |
+| [atomintr](atomintr.md) | 分子 | 原子間の距離・角度・相互作用の表示 | ○ |
+| [disorder](disorder.md) | 分子 | ディスオーダー領域を点線で補って表示 | ○ |
 | [dsurface](dsurface.md) | 分子 | 分子から直接計算した分子表面 | ○ |
 | [dsurf2](dsurf2.md) | 分子 | 距離場を用いた分子表面 | ○ |
 | [molsurf](molsurf.md) | 分子表面 | 生成済みの分子表面 Object の描画 | ○ |
@@ -36,7 +36,10 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 
 - **atomintr** は、ツールパレットの計測ツール (Distance / Angle / Torsion) や
   Tools メニューの **Interaction...** を使うと自動的に作成されます
-- **disorder** は主鎖 Renderer を対象に取るため、単独では作成できません
+- **atomintr** と **disorder** は、ファイルを開くときの Renderer type の一覧には
+  表示されません。読み込んだ直後は描くものがない (計測はまだ作られておらず、
+  disorder が追従する主鎖 Renderer もまだない) ためです。Object がシーンに入ってから
+  New Renderer で作成します
 - **gpu_mapmesh** は、線の太さを変えられず [contour](contour.md) より遅いため、
   新規作成の選択肢から外されました。既存のシーンに含まれるものは今までどおり
   表示され、設定も変更できます
@@ -76,4 +79,4 @@ New Renderer ダイアログでは、複数の Renderer をまとめて作成す
 
 ---
 
-*確認対象: CueMol3 2.3.11.507*
+*確認対象: CueMol3 2.3.12.517*

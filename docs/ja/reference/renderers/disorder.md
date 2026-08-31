@@ -8,13 +8,11 @@
 
 ![disorder の表示例](../../../assets/images/reference/renderers/disorder/disorend-1.png){ width="320" .on-glb }
 
-!!! note "New Renderer ダイアログからは作成できません"
-    disorder は単独では機能せず、対象となる主鎖 Renderer を必要とするため、
-    New Renderer ダイアログの一覧には表示されません。
-    CueMol2 で作成したシーン (`.qsc`) を読み込んだ場合には表示・編集できます。
-
-<!-- TODO(verify): tritium で disorder renderer を新規作成する経路があるか
-     (現状 getNewRendererOptions.service.ts が atomintr とともに除外している) -->
+!!! note "作成できるのは Object がシーンに入ってからです"
+    disorder は単独では機能せず、対象となる主鎖 Renderer を必要とします。
+    そのため、ファイルを開くときの Renderer type の一覧には表示されません。
+    New Renderer ダイアログからは作成でき、そのときシーンにある
+    tube / ribbon / cartoon / nucl のうち最初のものが Target に設定されます。
 
 ## ディスオーダー領域の判定
 
@@ -96,4 +94,4 @@ Color
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.12.517*

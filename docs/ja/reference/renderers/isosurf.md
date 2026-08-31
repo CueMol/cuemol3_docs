@@ -19,11 +19,29 @@
 <!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
      説明) を isosurf のインスペクタセクションと C++ 定義から起こす -->
 
-<!-- TODO(content): cryo-EM マップモード (2.3.11.507 で追加)。Region
-     (Auto / Box around center / Full map) / Level of detail / LoD budget
-     (既定 16 Mcell、Full map のときのみ) / Refine on zoom (同上)。Full map では
-     Max grid size と Use periodic boundary が隠れる。仕様が変わる可能性が
-     あるため保留 -->
+Region
+:   表示する範囲。*Auto* (既定) は、結晶学的マップでは *Box around center*、
+    クライオ電子顕微鏡マップでは *Full map* になります。
+    *Box around center* はビュー中心の周りだけを描き、視点の移動に追従します。
+    *Full map* はマップ全体を描きます
+
+Level of detail
+:   格子を何点おきに読むか。*Auto* (既定) は、*Full map* のときは描く範囲の格子数が
+    **LoD budget** に収まる最小の値 (2 の冪) を選び、*Box around center* のときは
+    全格子点を使います。*1 (full resolution)* から *8* までを直接指定することもできます
+
+LoD budget
+:   *Auto* の **Level of detail** が収めようとする格子数。単位の 1 Mcell は
+    約 100 万格子点です。大きくすると細かくなりますが描画が重くなります
+    (既定は 16 Mcell)。**Region** が *Full map* のときだけ表示されます
+
+Refine on zoom
+:   ON (既定) にすると、描く範囲を視点の周りに絞り込み、その分だけ細かく描き直します。
+    引いて見ているときはマップ全体が粗く、拡大した部分は細かくなります。
+    **Region** が *Full map* のときだけ表示されます
+
+**Max grid size** と **Use periodic boundary** は、**Region** が
+*Box around center* のときだけ表示されます。
 
 ## 関連項目
 
@@ -33,4 +51,4 @@
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.12.517*
