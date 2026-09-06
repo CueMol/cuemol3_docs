@@ -46,7 +46,7 @@ MolSurf Object は表面の形状だけを保持しており、molsurf Renderer 
 2. こちらも **Use selection** を有効にし、`protein` を指定します
    (水やイオンを除いて計算するのが普通です)
 3. **Elepot name** (作られる静電ポテンシャルマップ Object の名前) は既定のままで構いません
-4. **Charge method** は既定の **Use PDB2PQR** のままにします
+4. **Charge method** の **Method** は既定の **Use PDB2PQR** のままにします
 5. **Start** を押すと、pdb2pqr → apbs の順に計算が走り、進捗が表示されます。
    分子が大きい場合は時間がかかります。完了すると静電ポテンシャルマップ (ElePotMap) の
    Object がシーンに追加されます
@@ -101,4 +101,4 @@ Settings でパスを指定します (→ [外部ツールの設定](../install/
 
 ---
 
-*確認対象: CueMol3 2.3.10.504*
+*確認対象: CueMol3 2.3.13.523*

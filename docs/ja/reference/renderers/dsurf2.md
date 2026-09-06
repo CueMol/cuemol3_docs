@@ -2,6 +2,8 @@
 
 距離場 (distance field) を用いて分子表面を描画する Renderer です。
 対象 Object: 分子 (MolCoord)。
+着色は Color パネルで設定します。静電ポテンシャルと Multi-gradient も選べます
+(→ [Coloring](../coloring.md))。
 
 !!! note "dsurface とプロパティを共有します"
     dsurf2 は [dsurface](dsurface.md) と同じプロパティセット
@@ -35,4 +37,4 @@
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.13.523*

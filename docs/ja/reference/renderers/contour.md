@@ -19,6 +19,10 @@
 <!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
      説明) を contour のインスペクタセクションと C++ 定義から起こす -->
 
+Map kind
+:   このマップの種類 (*Crystallographic* / *Cryo-EM*)。読み取り専用で、
+    [DensityMap](../objects/densitymap.md#マップの種類-map-type) の **Map type** の判別結果です
+
 Region
 :   表示する範囲。*Auto* (既定) は、結晶学的マップでは *Box around center*、
     クライオ電子顕微鏡マップでは *Full map* になります。
@@ -53,4 +57,4 @@ Refine on zoom
 
 ---
 
-*確認対象: CueMol3 2.3.12.517*
+*確認対象: CueMol3 2.3.13.523*

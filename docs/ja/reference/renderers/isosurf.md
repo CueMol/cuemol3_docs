@@ -19,6 +19,10 @@
 <!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
      説明) を isosurf のインスペクタセクションと C++ 定義から起こす -->
 
+Map kind
+:   このマップの種類 (*Crystallographic* / *Cryo-EM*)。読み取り専用で、
+    [DensityMap](../objects/densitymap.md#マップの種類-map-type) の **Map type** の判別結果です
+
 Region
 :   表示する範囲。*Auto* (既定) は、結晶学的マップでは *Box around center*、
     クライオ電子顕微鏡マップでは *Full map* になります。
@@ -40,8 +44,15 @@ Refine on zoom
     引いて見ているときはマップ全体が粗く、拡大した部分は細かくなります。
     **Region** が *Full map* のときだけ表示されます
 
+Cap mode
+:   等値面が表示範囲の境界で切れる箇所を、面で閉じるかどうか。*Auto* (既定) は、
+    **Region** が *Full map* のときと生成した表面 Object では閉じ、*Box around center* の
+    ときは開いたままにします。*On* で常に閉じ、*Off* で常に開いたままにします
+
 **Max grid size** と **Use periodic boundary** は、**Region** が
 *Box around center* のときだけ表示されます。
+
+色の既定値は明るい灰色です (等高線メッシュの [contour](contour.md) は青)。
 
 ## 関連項目
 
@@ -51,4 +62,4 @@ Refine on zoom
 
 ---
 
-*確認対象: CueMol3 2.3.12.517*
+*確認対象: CueMol3 2.3.13.523*

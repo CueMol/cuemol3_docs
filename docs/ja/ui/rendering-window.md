@@ -66,7 +66,7 @@ Umbreon では、先頭に **Quality** セクションがあります。品質�
 |---|---|
 | Lighting | 陰影の付け方 (Raytrace only / Ambient Occlusion / Global Illumination) |
 | Supersampling | 基本画質。エッジラインの品質もこれで決まります |
-| AO quality / GI quality | Lighting で選んだ方式の品質 |
+| AO quality / GI lighting | Lighting で選んだ方式の品質 (Global Illumination では光の配分) |
 | Shadows | 落ち影 |
 
 その下のアコーディオンには個別の設定項目が並びます。詳細と既定値は
@@ -79,6 +79,10 @@ Global Illumination がなくなります。さらに細かく調整する **Det
 
 POV-Ray バックエンドでは、ラジオシティのモード、影の有無、ライティング (既定ライトの使用 /
 光源の広がり / 強度) などを指定できます。Quality セクションはありません。
+
+Render Settings の内容は Backend の選択も含めてシーンに保存され、シーンごとに復元されます。
+変更は Undo の対象で、このウィンドウ内でも ++cmd+z++ が効きます
+(→ [設定の保存](../reference/rendering.md#設定の保存))。
 
 ## 動画 (Movie) モード
 
@@ -112,4 +116,4 @@ CueMol3 では 1 つのウィンドウに統合され、**出力の種類** (静
 
 ---
 
-*確認対象: CueMol3 2.3.10.504*
+*確認対象: CueMol3 2.3.13.523*

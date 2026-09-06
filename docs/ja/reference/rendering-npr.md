@@ -77,12 +77,13 @@ Coloring で選びます。
 Umbreon (NPR) の **Quality** セクションは、写実側の Umbreon から次の点が異なります。
 
 - **Lighting** は **Raytrace only** (**既定**) と **Ambient Occlusion** の 2 つだけです。
-  ハッチングを行うと大域照明は無効になるため、**GI quality の軸はありません**。
+  ハッチングを行うと大域照明は無効になるため、**GI lighting の軸はありません**。
 - **Supersampling** の意味は同じです。ハッチングの最小間隔は出力ピクセルではなく
   スーパーサンプリング後の格子で決まるため、細かいスタイルではここを上げると効きます。
 
-そのほかの個別設定 (Ambient Occlusion / Shadows / Edges) は
-[レンダリング](rendering.md#個別の設定)と共通です。
+そのほかの個別設定 (Lights / Ambient Occlusion / Shadows / Edges) は
+[レンダリング](rendering.md#個別の設定)と共通です (Lights の既定値だけは Light intensity 1.55 /
+Flash fraction 0.6 と、写実側の Umbreon と異なります)。
 
 ## Detail タブ
 
@@ -93,9 +94,9 @@ Render タブで選んだ Style を**テンプレートとして読み込み**�
 - **Reset to style** でテンプレートの状態に戻ります。
 - Render タブで Style を切り替えると、編集内容は確認なしで破棄されます。
 
-!!! warning "編集内容は保存されません"
-    Detail タブの編集はレンダリングウィンドウ内の一時的な状態です。ウィンドウを閉じると
-    失われ、シーンファイルにも保存されません。未編集のスタイルは、この機能が無かったときと
+!!! note "編集内容はシーンに保存されます"
+    Detail タブの編集内容は、ほかのレンダリング設定と同じくシーンに保存されます
+    (→ [設定の保存](rendering.md#設定の保存))。未編集のスタイルは、この機能が無かったときと
     まったく同じ経路で描画されます。
 
 <!-- TODO(screenshot): Detail タブ (Layers セクションを展開し、Edited バッジが出た状態) -->
@@ -177,4 +178,4 @@ Mark density と Mark width は Render タブ側の倍率のままで、レイ�
 
 ---
 
-*確認対象: CueMol3 2.3.10.504*
+*確認対象: CueMol3 2.3.13.523*

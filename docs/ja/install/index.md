@@ -44,11 +44,11 @@ CueMol3 の配布物は、GitHub の **Releases** ページで公開されてい
 
 ## 配布物一覧
 
-| OS | 配布物 (例: バージョン 2.3.12.517) | インストーラー形式 |
+| OS | 配布物 (例: バージョン 2.3.13.523) | インストーラー形式 |
 |---|---|---|
-| macOS (Apple Silicon / arm64) | `CueMol3-2.3.12.517-macOS-arm64-Installer.dmg` | ディスクイメージ |
-| Windows (x64) | `CueMol3-2.3.12.517-Windows-x64-Setup.exe` | NSIS ウィザード型インストーラー |
-| Linux (x64) | `CueMol3-2.3.12.517-Linux-x64.AppImage` / `CueMol3-2.3.12.517-Linux-x64.deb` | AppImage / Debian パッケージ |
+| macOS (Apple Silicon / arm64) | `CueMol3-2.3.13.523-macOS-arm64-Installer.dmg` | ディスクイメージ |
+| Windows (x64) | `CueMol3-2.3.13.523-Windows-x64-Setup.exe` | NSIS ウィザード型インストーラー |
+| Linux (x64) | `CueMol3-2.3.13.523-Linux-x64.AppImage` / `CueMol3-2.3.13.523-Linux-x64.deb` | AppImage / Debian パッケージ |
 
 ファイル名には対象の OS と、4 桁のビルド番号を含むバージョンが入ります。
 `Installer` / `Setup` が付いているものがインストーラーです。

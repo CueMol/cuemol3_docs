@@ -95,6 +95,23 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   (`src/modules/xtal/MapSurfRenderer.qif:45-55`)。GUI に行が付いたら書くこと。
   **未着手の残件**: スクリーンショット、docs-verify の spec 追加
   (NPR / 分子表面ダイアログ / 密度マップ)。
+- 前回同期: 2026-09-06 / cuemol2 `aeacb41f` (branch: develop) / CueMol3 `2.3.13.523`。
+  リリース v2.3.13.523 を更新履歴 (`docs/ja/releases.md`) に**全面反映**した (4 節 +
+  互換性の warning)。実装と食い違っていた記述を修正した (レンダリング設定のシーン保存、
+  GI lighting / Lights / GI samples、Contact edges の既定 ON、Crease angle / Edge rise、
+  cuetty・Python の設定、NPR Detail の保存、マップの等高線レベルの単位と Cryo-EM スタイル、
+  Map type の編集場所、View after loading、Paint の Default / Molecule color と対象の追従、
+  name / sel の非リセット、Scene ページの全セクション表示、APBS の Method、選択履歴の
+  範囲と件数、New Tab の Scene settings、アニメーションの時刻入力)。`docs/ja/ui/inspector.md`
+  に「時刻の入力」節を追加した。次回はこの hash から差分確認を行う。
+  **`cap_mode` は GUI (isosurf の Cap mode 行) が付いたので書いた。**
+  **`egroup` (エッジグループ名、`src/qsys/Renderer.qif:83-88`) はユーザー判断により
+  書かなかった。** Generic タブからしか設定できないため。GUI に行が付いたら書くこと。
+  Contact edges の互換性注意 (releases.md) にも egroup による復帰手段は書いていない。
+  `docs/ja/reference/rendering.md` の Enable AO / Enable GI 行は以前から表示されていなかった
+  (obsolete) ので削除した。
+  **未着手の残件**: スクリーンショット、docs-verify の spec 追加
+  (NPR / 分子表面ダイアログ / 密度マップ)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
