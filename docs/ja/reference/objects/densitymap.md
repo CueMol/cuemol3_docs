@@ -19,13 +19,23 @@ File メニューの **Open File...** で密度マップファイルまたは
 ### マップの種類 (Map type)
 
 結晶学的マップ (周期的) とクライオ電子顕微鏡マップ (非周期的) を区別して扱います。
-種類はファイルのヘッダから自動的に判別され、表示範囲の既定値がこれで決まります
-(→ [contour](../renderers/contour.md) / [isosurf](../renderers/isosurf.md) の **Region**)。
+種類はファイルのヘッダから自動的に判別され、表示範囲の既定値
+(→ [contour](../renderers/contour.md) / [isosurf](../renderers/isosurf.md) の **Region**)、
+等高線レベルの単位 (下記)、Renderer に適用される既定のスタイル (*Default* / *Cryo-EM*)
+がこれで決まります。
 
-判別結果を変えたいときは、ファイルを開くときのオプション画面の **Map type** で
+判別結果を変えたいときは、ファイルを開くときのオプション画面 (CCP4/MRC の場合) の **Map type** で
 *Auto (from header)* / *Crystallographic (periodic)* / *Cryo-EM (whole map, level of detail)*
 のいずれかを指定します (→ [File メニュー](../../menu/file.md))。読み込んだあとは
-プロパティインスペクタの **Generic** タブの `map_type` で変更できます。
+プロパティインスペクタの **Properties** タブの **Density map** セクションにある **Map type**
+で変更できます。判別の結果は同じセクションの **Effective kind** に表示されます。
+Map type を変えると、contour / isosurf のスタイルも *Default* と *Cryo-EM* の間で
+入れ替わります (自分で別のスタイルにした Renderer は変わりません)。
+
+等高線レベルは、マップの種類に応じた単位で持ちます。結晶学的マップでは σ (マップの
+標準偏差を 1 とする単位、既定 1.1)、クライオ電子顕微鏡マップでは格子点の値の上位何 % を
+囲むか (既定は上位 1 %) です。Density map パネルの **Level** では、この単位でも
+絶対値でも指定できます (→ [サイドパネル](../../ui/side-panels.md))。
 
 MRC ファイルの ORIGIN も読み込むので、原点が 0 でないマップも、そこに当てはめた
 モデルと正しく重なります。
@@ -45,4 +55,4 @@ MRC ファイルの ORIGIN も読み込むので、原点が 0 でないマッ�
 
 ---
 
-*確認対象: CueMol3 2.3.12.517*
+*確認対象: CueMol3 2.3.13.523*

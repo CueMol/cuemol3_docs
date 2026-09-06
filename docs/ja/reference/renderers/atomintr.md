@@ -30,6 +30,9 @@ Renderer です。対象 Object: 分子 (MolCoord)。
 
 ### Value label
 
+**Font name** は、システムにインストールされているフォントの一覧から選びます
+(Settings の Atom Label Font と同じ一覧です → [設定項目](../settings.md))。
+
 <!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
      説明) を atomintr のインスペクタセクションと C++ 定義から起こす -->
 
@@ -40,4 +43,4 @@ Renderer です。対象 Object: 分子 (MolCoord)。
 
 ---
 
-*確認対象: CueMol3 2.3.12.517*
+*確認対象: CueMol3 2.3.13.523*

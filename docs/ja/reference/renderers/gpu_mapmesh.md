@@ -28,8 +28,9 @@
 <!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
      説明) を gpu_mapmesh のインスペクタセクションと C++ 定義から起こす -->
 
-表示範囲と細かさの設定 (**Region** / **Level of detail** / **LoD budget** /
-**Refine on zoom**) も contour と同じです → [contour](contour.md#contour)
+マップの種類の表示 (**Map kind**) と、表示範囲と細かさの設定 (**Region** /
+**Level of detail** / **LoD budget** / **Refine on zoom**) も contour と同じです
+→ [contour](contour.md#contour)
 
 ## 関連項目
 
@@ -40,4 +41,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.11.507*
+*確認対象: CueMol3 2.3.13.523*
