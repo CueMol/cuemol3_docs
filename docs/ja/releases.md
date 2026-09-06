@@ -25,9 +25,10 @@
   すべての方式に効く **Lights** (Light intensity / Flash fraction) が加わり、GI intensity /
   GI environment はウィンドウから外れ、GI quality は GI samples (8 / 32 / 64 / 256) の
   選択になりました → [レンダリング](reference/rendering.md#gi-lighting)
-- **Renderer どうしが交わる線 (Contact edges) が既定で描かれるようになりました。**
-  ribbon に刺さる ballstick の結合などの交線です。エッジ線の設定が同じ Renderer は
-  ひとまとまりとして扱われ、その内側 (1 つの cartoon を構成する Renderer の間など) には
+- **Renderer どうしが交わる線 (Contact edges) を、エッジ線の設定が異なる Renderer の間に
+  描くようになりました。** ribbon に刺さる ballstick の結合などの交線です。エッジ線の設定
+  (種類・太さ・色) が同じ Renderer はひとまとまりとして扱われ、その間には描かれません。
+  すべての Renderer が同じエッジ設定 (既定のままなど) のシーンでは、これまでどおり交線は
   描かれません → [レンダリング](reference/rendering.md#edges)
 - **Silhouette の輪郭が、フォグで薄れた面の奥でも描けるようになりました。** Umbreon が
   分子ビューと同じ奥行きで描画を打ち切るようになり、輪郭を描き始める深さを
@@ -109,9 +110,10 @@
       レベルの数値が σ ではなく上位 % として読まれます。Density map パネルでレベルを
       動かしていたシーンは見た目が変わるので、レベルを一度調整してください。動かして
       いなかったものは既定 (上位 1.1 %) になります。結晶学的マップは変わりません
-    - **これまで無かった交線が描かれます。** Contact edges が既定で ON になり、エッジ線の
-      設定が同じ Renderer はひとまとまりとして扱われます。すべてのチェインが同じスタイルの
-      シーンでは、チェインの間の輪郭が描かれなくなります
+    - **エッジ線の設定が同じ Renderer はひとまとまりとして扱われます。** Edge type が
+      Silhouette のとき、まとまりの外周だけが描かれるため、すべてのチェインが同じエッジ設定の
+      シーンでは、チェインどうしが重なる部分の輪郭が描かれなくなります。エッジ設定が異なる
+      Renderer の間には、交線 (Contact edges) が新たに描かれます
     - **Umbreon は分子ビューと同じ奥行きで描画を打ち切ります。** フォグの終端より奥に
       あって薄く描かれていたものは描かれなくなります
     - **`cuetty` / Python は、設定のないシーンを Global Illumination で描画します。**
