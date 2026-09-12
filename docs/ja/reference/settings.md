@@ -54,8 +54,11 @@
 | Pointing device | Auto-detect | スクロール入力を視点操作にどう対応づけるか。**Mouse** はホイールでズーム、**Mac trackpad** は 2 本指スクロールで平行移動・ピンチでズーム、**Auto-detect** はスクロールの特徴から推定します |
 | XY Rotation Sensitivity | 0.8 | X / Y 軸まわりの回転の感度 (0.1〜5.0) |
 | Pick Precision | 10 px | 原子や Object をクリックで拾うときの許容半径 (1〜50 px) |
+| GPU Picking | ON | 描かれた形状そのものから当たり判定を行います。OFF にすると従来の原子の位置による判定に戻ります。動作の遅いマシン向けの逃げ道です。切り替えは即時に効きます |
+| Hover Info | ON | ポインタの下にあるものを分子ビューの隅に表示します。OFF にすると当たり判定の呼び出し自体が止まります |
+| Hover Highlight | ON | ポインタの下の要素を分子ビュー上で強調します。GPU Picking と Hover Info の両方が必要です |
 
-→ [マウス・トラックパッド操作](../ui/mouse-input.md)
+→ [ピッキングとホバー表示](../ui/mouse-input.md#ピッキングとホバー表示)
 
 ## Tools
 
@@ -83,4 +86,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.7.489*
+*確認対象: CueMol3 2.3.14.525*

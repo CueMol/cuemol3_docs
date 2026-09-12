@@ -2,8 +2,8 @@
 
 分子 Object から分子表面を直接計算して描画する Renderer です。
 対象 Object: 分子 (MolCoord)。表面 Object を別途生成する必要がありません。
-着色は Color パネルで設定します。静電ポテンシャルと Multi-gradient も選べます
-(→ [Coloring](../coloring.md))。
+着色は Color パネルで設定します。Solid coloring のほか、静電ポテンシャルと
+Multi-gradient も選べます (→ [Coloring](../coloring.md))。
 
 !!! info "準備中"
     このページは骨組みのみです。各プロパティの詳細は今後追加されます。
@@ -33,4 +33,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 2.3.14.525*
