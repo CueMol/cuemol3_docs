@@ -118,7 +118,8 @@ antiquewhite
 $molcol
 ```
 
-分子 Renderer に関する色の指定の場合のみ使用できます。
+分子 Object を参照する Renderer の色指定で使用できます。分子構造の Renderer のほか、
+分子表面 (molsurf / dsurface / dsurf2) と等値面 (isosurf) の Solid coloring でも使えます。
 対応する分子 Object 側で指定されている色を参照するようになります。
 
 分子 Object 側の着色を変えると、`$molcol` を指定した Renderer の色も追従します。
@@ -183,4 +184,4 @@ $molcol{mod_s: -0.2}
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.14.525*
