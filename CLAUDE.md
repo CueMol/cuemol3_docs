@@ -112,6 +112,30 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   (obsolete) ので削除した。
   **未着手の残件**: スクリーンショット、docs-verify の spec 追加
   (NPR / 分子表面ダイアログ / 密度マップ)。
+- 前回同期: 2026-09-12 / cuemol2 `a4a5c193` (branch: develop) / CueMol3 `2.3.14.525`。
+  `aeacb41f..a4a5c193` の差分を全件確認した (リリースノート
+  `docs/release_notes/v2.3.14.525.md` を含む)。次回はこの hash から差分確認を行う。
+  今回の主題は **3D ビューの当たり判定とホバー表示** (GPU ID バッファによるピッキング) で、
+  `docs/ja/ui/mouse-input.md` に「ピッキングとホバー表示」節を新設した (同ページの旧書式
+  フッタも移行)。`docs/ja/reference/settings.md` に GPU Picking / Hover Info /
+  Hover Highlight の 3 行、`docs/ja/reference/rendering.md` に **Transparency** 節を追加。
+  実装と食い違っていた記述を修正した (GI lighting の段はキーライトを動かさない、
+  Lights の既定 1.3 / 0、Ambient fraction 0.6、レンダリングウィンドウが倍率と表示位置を
+  保つ、分子表面の Solid coloring と `$molcol`、シーンツリーの名前変更はゆっくり 2 回
+  クリックを廃止して F2 / Rename... のみ、Paint の行の編集ジェスチャとクリップボード、
+  Named の先頭の `all (*)` と一覧の高さ)。
+  **更新履歴 (`docs/ja/releases.md`) はユーザー指示により項目を絞った** (3 節 + warning)。
+  絞って落としたもの: フォグの奥を拾わない / 右クリックメニュー中のハイライト保持 /
+  ハイライトが出ない条件 / GI に戻ったとき既定の段で入り直す。いずれもリファレンスには書いた。
+  **ステレオ表示には言及しなかった。** ソース上は「ステレオでは GPU pick を使わない」が
+  事実だが、CueMol3 の GUI にステレオを選ぶ経路が無く (`menuTemplate.ts` の View メニューに
+  項目なし、`stereoMode` / `stereoDepth` は POV-Ray 専用)、`docs/ja/menu/view.md` の
+  「ハードウェアステレオは廃止されました」と矛盾するため。
+  **`hover_hl_color` (ハイライトの塗り色) は書かなかった** (GUI に行が無い。`egroup` と同じ基準)。
+  **Component Catalog / plugin host は `feat/tritium-plugin-host-phase0` のみで未リリース**
+  なので書いていない。`2.3.14.524` は未リリースのため更新履歴は 2.3.13.523 から直接飛ばした。
+  **未着手の残件**: スクリーンショット全般 (今回追加した 3D ビューのホバーの図を含む)、
+  docs-verify の spec 追加 (NPR / 分子表面ダイアログ / 密度マップ / ピッキングとホバー)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

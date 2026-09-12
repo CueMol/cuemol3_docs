@@ -81,7 +81,7 @@ Umbreon (NPR) の **Quality** セクションは、写実側の Umbreon から�
 - **Supersampling** の意味は同じです。ハッチングの最小間隔は出力ピクセルではなく
   スーパーサンプリング後の格子で決まるため、細かいスタイルではここを上げると効きます。
 
-そのほかの個別設定 (Lights / Ambient Occlusion / Shadows / Edges) は
+そのほかの個別設定 (Lights / Ambient Occlusion / Shadows / Edges / Transparency) は
 [レンダリング](rendering.md#個別の設定)と共通です (Lights の既定値だけは Light intensity 1.55 /
 Flash fraction 0.6 と、写実側の Umbreon と異なります)。
 
@@ -178,4 +178,4 @@ Mark density と Mark width は Render タブ側の倍率のままで、レイ�
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 2.3.14.525*

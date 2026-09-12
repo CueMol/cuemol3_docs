@@ -44,9 +44,18 @@ Renderer の色を分子側の着色に従わせるスタイルで、Paint で�
 
 ## Solid
 
-Renderer 全体を単一の色で塗ります。
+Renderer 全体を単一の色で塗ります。分子表面 (molsurf / isosurf / dsurface / dsurf2) でも
+同じように使えます。
 
-<!-- TODO(content): 既定色のプロパティ名と挙動 -->
+色に `$molcol` を指定すると、分子 Object 側の着色に従います
+(→ [分子側の着色](#分子側の着色-molcol))。これは Paint に (`*`, `$molcol`) の 1 行だけを
+置いたのと同じ結果になります。
+
+!!! note "`$molcol` を選ぶと、原子を見ない一色塗りではなくなります"
+    分子表面の Renderer には、原子をいっさい参照せずに 1 色で塗るモードがあります。
+    Solid で `$molcol` を選ぶと原子ごとの色を引くモードに切り替わるため、このモードからは
+    外れます。戻すには **Reset to default style** を使ってください。等値面 (isosurf) は
+    Density map パネルの **Solid color** からも戻せます。
 
 ## CPK
 
@@ -106,6 +115,8 @@ Renderer ごとではなく分子 Object 側に着色を持たせ、複数の Re
 できます。この場合、Renderer 側の色指定に `$molcol` を使います
 (→ [色の記法](color-syntax.md#分子色表記))。
 
+分子表面の Renderer では、[Solid](#solid) の色として `$molcol` を選ぶとこの形になります。
+
 ## 関連項目
 
 - [色の記法](color-syntax.md)
@@ -115,4 +126,4 @@ Renderer ごとではなく分子 Object 側に着色を持たせ、複数の Re
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 2.3.14.525*
