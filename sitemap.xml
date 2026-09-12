@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/releases/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/releases/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/releases/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/changes/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/changes/features/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/features/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/features/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/changes/status/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/status/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/status/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/changes/ui-paradigm/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/ui-paradigm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/ui-paradigm/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/getting-started/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/getting-started/quick-tour/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/getting-started/quick-tour/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/getting-started/quick-tour/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/install/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/install/external-tools/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/external-tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/external-tools/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/install/linux/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/linux/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/linux/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/install/macos/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/macos/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/macos/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/install/windows/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/windows/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/windows/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/edit/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/edit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/edit/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/file/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/file/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/file/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/rendering/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/rendering/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/scene/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/scene/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/scene/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/tools/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/tools/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/view/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/view/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/view/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/menu/window-help/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/window-help/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/window-help/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/camera/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/camera/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/camera/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/color-syntax/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/color-syntax/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/color-syntax/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/coloring/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/coloring/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/coloring/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/qsc-format/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/qsc-format/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/qsc-format/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/rendering-npr/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/rendering-npr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/rendering-npr/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/rendering/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/rendering/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/scene/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/scene/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/scene/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/selection/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/selection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/selection/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/settings/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/settings/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/settings/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/shortcuts/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/shortcuts/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/shortcuts/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/styles/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/styles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/styles/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/animation/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/animation/cammotion/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/cammotion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/cammotion/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/animation/molanim/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/molanim/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/molanim/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/animation/showhide/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/showhide/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/showhide/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/animation/simplespin/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/simplespin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/simplespin/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/animation/slideinout/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/slideinout/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/slideinout/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/objects/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/objects/densitymap/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/densitymap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/densitymap/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/objects/elepot/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/elepot/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/elepot/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/objects/molcoord/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/molcoord/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/molcoord/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/objects/molsurf/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/molsurf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/molsurf/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/anisou/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/anisou/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/anisou/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/atomintr/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/atomintr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/atomintr/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/ballstick/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/ballstick/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/ballstick/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/cartoon/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/cartoon/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/cartoon/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/common/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/common/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/common/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/contour/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/contour/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/contour/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/cpk/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/cpk/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/cpk/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/disorder/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/disorder/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/disorder/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/dsurf2/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/dsurf2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/dsurf2/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/dsurface/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/dsurface/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/dsurface/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/edge-lines/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/edge-lines/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/edge-lines/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/gpu_mapmesh/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/gpu_mapmesh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/gpu_mapmesh/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/isosurf/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/isosurf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/isosurf/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/material/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/material/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/material/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/molsurf/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/molsurf/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/molsurf/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/nucl/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/nucl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/nucl/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/ribbon/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/ribbon/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/ribbon/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/simple/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/simple/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/simple/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/spline/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/spline/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/spline/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/trace/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/trace/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/trace/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/reference/renderers/tube/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/tube/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/tube/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/animation-movie/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/animation-movie/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/animation-movie/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/density-map/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/density-map/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/density-map/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/publication-images/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/publication-images/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/publication-images/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/ribbon-figure/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/ribbon-figure/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/ribbon-figure/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/surface-elepot/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/surface-elepot/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/surface-elepot/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/symmetry/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/symmetry/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/symmetry/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/basic/camera-scene/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/camera-scene/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/camera-scene/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/basic/coloring/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/coloring/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/coloring/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/basic/loading/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/loading/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/loading/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/basic/measure/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/measure/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/measure/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/basic/renderers/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/renderers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/renderers/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/tutorials/basic/selection/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/selection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/selection/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/bottom-panels/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/bottom-panels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/bottom-panels/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/inspector/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/inspector/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/inspector/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/mouse-input/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/mouse-input/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/mouse-input/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/rendering-window/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/rendering-window/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/rendering-window/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/selection-builder/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/selection-builder/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/selection-builder/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/side-panels/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/side-panels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/side-panels/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/ui/toolbar-tools/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/toolbar-tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/toolbar-tools/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/releases/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/releases/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/releases/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/changes/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/changes/features/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/features/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/features/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/changes/status/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/status/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/status/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/changes/ui-paradigm/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/changes/ui-paradigm/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/changes/ui-paradigm/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/getting-started/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/getting-started/quick-tour/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/getting-started/quick-tour/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/getting-started/quick-tour/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/install/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/install/external-tools/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/external-tools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/external-tools/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/install/linux/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/linux/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/linux/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/install/macos/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/macos/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/macos/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/install/windows/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/install/windows/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/install/windows/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/edit/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/edit/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/edit/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/file/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/file/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/file/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/rendering/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/rendering/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/scene/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/scene/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/scene/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/tools/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/tools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/tools/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/view/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/view/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/view/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/menu/window-help/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/menu/window-help/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/menu/window-help/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/camera/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/camera/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/camera/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/color-syntax/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/color-syntax/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/color-syntax/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/coloring/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/coloring/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/coloring/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/qsc-format/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/qsc-format/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/qsc-format/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/rendering-npr/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/rendering-npr/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/rendering-npr/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/rendering/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/rendering/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/rendering/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/scene/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/scene/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/scene/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/selection/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/selection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/selection/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/settings/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/settings/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/settings/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/shortcuts/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/shortcuts/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/shortcuts/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/styles/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/styles/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/styles/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/animation/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/animation/cammotion/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/cammotion/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/cammotion/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/animation/molanim/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/molanim/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/molanim/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/animation/showhide/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/showhide/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/showhide/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/animation/simplespin/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/simplespin/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/simplespin/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/animation/slideinout/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/animation/slideinout/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/animation/slideinout/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/objects/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/objects/densitymap/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/densitymap/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/densitymap/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/objects/elepot/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/elepot/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/elepot/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/objects/molcoord/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/molcoord/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/molcoord/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/objects/molsurf/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/objects/molsurf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/objects/molsurf/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/anisou/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/anisou/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/anisou/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/atomintr/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/atomintr/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/atomintr/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/ballstick/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/ballstick/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/ballstick/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/cartoon/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/cartoon/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/cartoon/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/common/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/common/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/common/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/contour/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/contour/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/contour/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/cpk/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/cpk/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/cpk/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/disorder/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/disorder/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/disorder/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/dsurf2/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/dsurf2/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/dsurf2/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/dsurface/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/dsurface/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/dsurface/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/edge-lines/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/edge-lines/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/edge-lines/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/gpu_mapmesh/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/gpu_mapmesh/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/gpu_mapmesh/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/isosurf/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/isosurf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/isosurf/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/material/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/material/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/material/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/molsurf/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/molsurf/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/molsurf/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/nucl/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/nucl/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/nucl/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/ribbon/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/ribbon/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/ribbon/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/simple/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/simple/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/simple/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/spline/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/spline/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/spline/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/trace/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/trace/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/trace/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/reference/renderers/tube/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/reference/renderers/tube/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/reference/renderers/tube/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/animation-movie/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/animation-movie/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/animation-movie/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/density-map/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/density-map/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/density-map/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/publication-images/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/publication-images/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/publication-images/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/ribbon-figure/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/ribbon-figure/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/ribbon-figure/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/surface-elepot/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/surface-elepot/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/surface-elepot/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/symmetry/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/symmetry/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/symmetry/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/camera-scene/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/camera-scene/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/camera-scene/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/coloring/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/coloring/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/coloring/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/loading/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/loading/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/loading/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/measure/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/measure/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/measure/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/renderers/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/renderers/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/renderers/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/selection/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/selection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/tutorials/basic/selection/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/bottom-panels/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/bottom-panels/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/bottom-panels/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/inspector/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/inspector/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/inspector/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/mouse-input/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/mouse-input/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/mouse-input/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/rendering-window/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/rendering-window/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/rendering-window/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/selection-builder/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/selection-builder/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/selection-builder/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/side-panels/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/side-panels/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/side-panels/"/>
+    </url>
+    <url>
+        <loc>https://cuemol.github.io/cuemol3_docs/en/ui/toolbar-tools/</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://cuemol.github.io/cuemol3_docs/en/ui/toolbar-tools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://cuemol.github.io/cuemol3_docs/ui/toolbar-tools/"/>
+    </url>
+</urlset>

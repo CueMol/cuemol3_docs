@@ -1,0 +1,3466 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CueMol3 (tritium) user documentation">
+      
+      
+      
+        <link rel="canonical" href="https://cuemol.github.io/cuemol3_docs/tutorials/ribbon-figure/">
+      
+      
+        <link rel="prev" href="../basic/measure/">
+      
+      
+        <link rel="next" href="../publication-images/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>タンパク質のリボン図を作る - CueMol3 &mdash; Molecular Visualization Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#タンパク質のリボン図を作る" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-header__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CueMol3 &mdash; Molecular Visualization Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              タンパク質のリボン図を作る
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="言語切り替え">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/tutorials/ribbon-figure/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CueMol/cuemol2" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+    
+  
+  はじめに
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../install/" class="md-tabs__link">
+          
+  
+    
+  
+  インストール
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ui/" class="md-tabs__link">
+          
+  
+    
+  
+  画面構成
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../changes/" class="md-tabs__link">
+          
+  
+    
+  
+  CueMol2からの変更点
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../releases/" class="md-tabs__link">
+        
+  
+    
+  
+  更新履歴
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  チュートリアル
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+    
+  
+  リファレンス
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-nav__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    CueMol3 &mdash; Molecular Visualization Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CueMol/cuemol2" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ホーム
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    はじめに
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            はじめに
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クイックツアー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../install/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    インストール
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            インストール
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/macos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    macOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/external-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    外部ツールの設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ui/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    画面構成
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            画面構成
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/side-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    サイドパネル
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/selection-builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    選択ビルダー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/inspector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    プロパティインスペクタ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/bottom-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    下部パネル
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/toolbar-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ツールバーとツールパレット
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/rendering-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    レンダリングウィンドウ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui/mouse-input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    マウス・トラックパッド操作
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../menu/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    メニュー
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            メニュー
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menu/file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File メニュー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menu/edit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edit メニュー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menu/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering メニュー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menu/scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene メニュー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menu/view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View メニュー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menu/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools メニュー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menu/window-help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window / Help メニュー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../changes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    CueMol2からの変更点
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            CueMol2からの変更点
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/ui-paradigm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    操作パラダイムの変更
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    機能の統合・改名・廃止
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    開発状況と未実装機能
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    更新履歴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    チュートリアル
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            チュートリアル
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    基本操作
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            基本操作
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/loading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    構造の読み込みと表示
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分子の一部を選択する
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/renderers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Renderer の追加・削除と設定
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/coloring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Renderer を着色する
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/camera-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    カメラとシーンの保存
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/measure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    計測と相互作用の表示
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    タンパク質のリボン図を作る
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    タンパク質のリボン図を作る
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-構造を取得する" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 構造を取得する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-視点を合わせる" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 視点を合わせる
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cartoon-の見た目を調整する" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. cartoon の見た目を調整する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ドメインごとに色を塗り分ける" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ドメインごとに色を塗り分ける
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-リガンドを-ballstick-で表示" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. リガンドを ballstick で表示
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-背景と輪郭線で仕上げる" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 背景と輪郭線で仕上げる
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-カメラとシーンを保存する" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. カメラとシーンを保存する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#次のステップ" class="md-nav__link">
+    <span class="md-ellipsis">
+      次のステップ
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publication-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    論文用の高解像度画像を書き出す
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../density-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    電子密度マップを重ねて表示する
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../symmetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    対称分子・単位格子を表示する
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../surface-elepot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分子表面を静電ポテンシャルで着色する
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation-movie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    アニメーションを作って動画に出力する
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    リファレンス
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            リファレンス
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    選択式の文法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/color-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    色の記法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/coloring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coloring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/objects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Object
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_6" id="__nav_8_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_6">
+            <span class="md-nav__icon md-icon"></span>
+            Object
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/objects/molcoord/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolCoord (分子)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/objects/densitymap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DensityMap (密度マップ)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/objects/elepot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ElePotMap (静電ポテンシャル)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/objects/molsurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolSurfObj (分子表面)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/renderers/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Renderer
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_7">
+            <span class="md-nav__icon md-icon"></span>
+            Renderer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/common/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    共通プロパティ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    マテリアル
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/edge-lines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    エッジライン
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    simple (結合線)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/trace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    trace (Cα トレース)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/spline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/ballstick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ballstick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/cpk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cpk (空間充填モデル)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/anisou/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    anisou (熱振動楕円体)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/tube/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tube
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/ribbon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ribbon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/cartoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cartoon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/nucl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nucl (核酸)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/atomintr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    atomintr (計測表示)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/disorder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    disorder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/molsurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    molsurf (分子表面・計算済み)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/dsurface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dsurface (分子表面・直接計算)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/dsurf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dsurf2 (分子表面・距離場)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/contour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    contour (等高線メッシュ)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/isosurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    isosurf (等値面)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/renderers/gpu_mapmesh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gpu_mapmesh (等高線・GPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/camera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    カメラ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/animation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    アニメーション
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            アニメーション
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/animation/simplespin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SimpleSpin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/animation/cammotion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CamMotion (カメラ移動)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/animation/showhide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShowHide (表示・非表示)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/animation/slideinout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SlideInOut
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/animation/molanim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolAnim (構造変化)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/styles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    スタイル
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    レンダリング
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rendering-npr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPR (インク画風レンダリング)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    設定項目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    キーボードショートカット
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/qsc-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    シーンファイル (.qsc)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-構造を取得する" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 構造を取得する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-視点を合わせる" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 視点を合わせる
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cartoon-の見た目を調整する" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. cartoon の見た目を調整する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ドメインごとに色を塗り分ける" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ドメインごとに色を塗り分ける
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-リガンドを-ballstick-で表示" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. リガンドを ballstick で表示
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-背景と輪郭線で仕上げる" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 背景と輪郭線で仕上げる
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-カメラとシーンを保存する" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. カメラとシーンを保存する
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#次のステップ" class="md-nav__link">
+    <span class="md-ellipsis">
+      次のステップ
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="タンパク質のリボン図を作る">タンパク質のリボン図を作る<a class="headerlink" href="#タンパク質のリボン図を作る" title="Permanent link">&para;</a></h1>
+<p>タンパク質を cartoon (いわゆるリボン図) で表示し、リガンドを ballstick で重ね、
+色と輪郭線を整えて 1 枚の図に仕上げるまでの流れを追います。題材にはチャネルロドプシンの結晶構造
+(PDB ID: <strong>3UG9</strong>) を使います。</p>
+<p>このチュートリアルは、<a href="../../getting-started/quick-tour/">クイックツアー</a> の内容
+(起動・読み込み・視点操作の基本) を前提にしています。</p>
+<div class="admonition info">
+<p class="admonition-title">撮影予定</p>
+<p>このページには操作の流れを示すスクリーンショットを追加予定です。</p>
+</div>
+<!-- TODO(screenshot): 完成イメージ。3UG9 の cartoon (ドメインごとに塗り分け) + レチナールの ballstick、白背景 + エッジライン -->
+
+<h2 id="1-構造を取得する">1. 構造を取得する<a class="headerlink" href="#1-構造を取得する" title="Permanent link">&para;</a></h2>
+<p><strong>File &gt; Get PDB...</strong> で構造をネットワークから取得します。</p>
+<ol>
+<li><strong>PDB Accession Code</strong> に <code>3UG9</code> を入力します</li>
+<li><strong>Fetch coord file</strong> にチェックが入っていることを確認します (形式は既定の <strong>RCSB (mmCIF)</strong> のまま)</li>
+<li>取得が終わると、Object 名と Renderer を指定する画面が出ます</li>
+<li><strong>Renderer type</strong> から <strong>cartoon</strong> を選び、そのほかは既定のまま作成します</li>
+</ol>
+<p>タンパク質部分が、二次構造を反映した cartoon 表示で描かれます
+(→ <a href="../../reference/renderers/cartoon/">cartoon</a>)。</p>
+<!-- TODO(screenshot): Get PDB ダイアログ (3UG9 入力済み) と、取得後の Renderer 指定画面 -->
+
+<div class="admonition tip">
+<p class="admonition-title">プリセットなら一度で作れます</p>
+<p><strong>Renderer type</strong> の Presets にある <strong>Default preset 2</strong> を選ぶと、タンパク質の cartoon・
+核酸・それ以外 (リガンドなど) の ballstick をまとめた Renderer グループが一度に作られます。
+このチュートリアルでは仕組みを追うため、Renderer を 1 つずつ作っていきます。</p>
+</div>
+<h2 id="2-視点を合わせる">2. 視点を合わせる<a class="headerlink" href="#2-視点を合わせる" title="Permanent link">&para;</a></h2>
+<p>分子ビュー上の左ドラッグで回転、ホイールでズームして、分子全体が見える向きにします
+(→ <a href="../../ui/mouse-input/">マウス・トラックパッド操作</a>)。</p>
+<p>視点を分子全体に合わせ直すには、左サイドパネルの <strong>Explorer &gt; Scene</strong> ツリー
+(シーンツリー → <a href="../../ui/side-panels/">サイドパネル</a>) で
+Object (3UG9) を選び、パネル上部の <strong>Focus</strong> ボタンを押します。</p>
+<h2 id="3-cartoon-の見た目を調整する">3. cartoon の見た目を調整する<a class="headerlink" href="#3-cartoon-の見た目を調整する" title="Permanent link">&para;</a></h2>
+<p>シーンツリーで cartoon の Renderer を選ぶと、右側の<strong>プロパティインスペクタ</strong>に設定が
+表示されます。値を変えると分子ビューに即座に反映され、<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-z">Z</kbd></span> / <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-z">Z</kbd></span> で
+取り消せます。</p>
+<p>ヘリックスの幅・厚みは <strong>Helix</strong>、シートは <strong>Sheet</strong>、ループは <strong>Coil</strong> の各セクションで
+調整します。たとえば、後の手順で重ねるリガンドがヘリックスに隠れて見えにくいときは、
+<strong>Helix</strong> の幅を細めにすると内側が見通せます。各プロパティの意味と既定値は
+<a href="../../reference/renderers/cartoon/">cartoon</a> を参照してください。</p>
+<h2 id="4-ドメインごとに色を塗り分ける">4. ドメインごとに色を塗り分ける<a class="headerlink" href="#4-ドメインごとに色を塗り分ける" title="Permanent link">&para;</a></h2>
+<p>3UG9 に含まれる分子は 1 つ (chain A) です。N 末端ドメイン・膜貫通部・C 末端ドメインの
+3 つの領域を、残基番号の範囲で塗り分けます。</p>
+<ol>
+<li>左サイドパネルの <strong>Explorer &gt; Color</strong> パネルを開きます</li>
+<li>上部で cartoon の Renderer を選びます</li>
+<li>Coloring の種類から <strong>Paint</strong> を選びます</li>
+<li>表に次の 3 行を作り、それぞれ好みの色を指定します</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>選択式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N 末端ドメイン</td>
+<td><code>A.49:83.*</code></td>
+</tr>
+<tr>
+<td>膜貫通部</td>
+<td><code>A.84:317.*</code></td>
+</tr>
+<tr>
+<td>C 末端ドメイン</td>
+<td><code>A.318:342.*</code></td>
+</tr>
+</tbody>
+</table>
+<p>Paint は上の行から順に評価され、最初にマッチした行の色が使われます
+(→ <a href="../../reference/coloring/">Coloring</a>)。<code>A.49:83.*</code> は「chain A の残基番号 49〜83 の
+全原子」を表す書き方です (→ <a href="../../reference/selection/">選択式の文法</a>)。</p>
+<!-- TODO(screenshot): Color パネルで Paint にドメイン 3 行を設定した状態と、塗り分け後の分子ビュー -->
+
+<div class="admonition note">
+<p class="admonition-title">CueMol2 との違い</p>
+<p>CueMol2 にも Paint のパネルはありましたが、行 (エントリ) の編集は別のダイアログで
+行う必要がありました。CueMol3 では<strong>表のセルを直接編集</strong>できます
+(→ <a href="../../changes/features/">機能の統合・改名・廃止</a>)。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">1 本鎖なら Rainbow も定番です</p>
+<p>N 末端から C 末端へ虹色に変化させる <strong>Rainbow</strong> も、鎖の走行を示す図の定番です。
+Coloring の種類から Rainbow を選ぶだけで適用されます。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">複数の図で色を揃えるにはスタイルが使えます</p>
+<p>色や選択の定義に名前を付けて共通化しておくと、複数のシーンを通して一貫した
+色遣いの図を作れます (→ <a href="../../reference/styles/">スタイル</a>)。</p>
+</div>
+<h2 id="5-リガンドを-ballstick-で表示">5. リガンドを ballstick で表示<a class="headerlink" href="#5-リガンドを-ballstick-で表示" title="Permanent link">&para;</a></h2>
+<p>cartoon は主鎖の走行だけを描くため、リガンドは表示されません。
+3UG9 が持つレチナール (残基名 <code>RET</code>) を、ballstick (棒と球のモデル) で重ねて表示します。</p>
+<ol>
+<li>シーンツリーで Object (3UG9) を右クリックし、<strong>New Renderer</strong> を選びます</li>
+<li><strong>Renderer type</strong> から <strong>ballstick</strong> を選びます</li>
+<li><strong>Selection</strong> にチェックを入れ、選択式に <code>r; RET</code> を入力します</li>
+<li><strong>Create</strong> を押すと、cartoon に重ねてレチナールが ballstick で描かれます</li>
+</ol>
+<p>1 つの Object には、このように複数の Renderer を重ねられます。各 Renderer の表示対象は
+選択式で絞り込みます (<code>r;</code> は残基名による選択の省略形です →
+<a href="../../reference/selection/">選択式の文法</a>)。</p>
+<p>残基名がわからないときは、<strong>Selection &gt; Molecular structure</strong> パネルのツリーから
+残基を探して選択することもできます (→ <a href="../../ui/side-panels/">サイドパネル</a>)。
+また、全体図でリガンドが小さすぎて見えにくい場合は、ballstick の代わりに
+<strong>cpk</strong> (空間充填モデル) で表示するのも定番です。</p>
+<!-- TODO(screenshot): New Renderer ダイアログ (ballstick + r; RET) と、レチナールが重なった分子ビュー -->
+
+<h2 id="6-背景と輪郭線で仕上げる">6. 背景と輪郭線で仕上げる<a class="headerlink" href="#6-背景と輪郭線で仕上げる" title="Permanent link">&para;</a></h2>
+<p>論文の図では、白い背景に輪郭線 (エッジライン) を組み合わせるのが定番です。
+エッジラインを付けると、白背景でも各要素の境界がはっきりします。</p>
+<ol>
+<li><strong>Scene &gt; Background &gt; White</strong> で背景を白にします</li>
+<li>シーンツリーで cartoon の Renderer を右クリックします</li>
+<li><strong>Style &gt; Edge line (normal)</strong> を選びます。エッジ線の種類と太さがまとめて設定されます</li>
+<li>ballstick の Renderer にも、同じ操作 (手順 2〜3) を繰り返します</li>
+</ol>
+<p>線を太く / 細くしたいときは、同じメニューから <strong>Edge line (thick)</strong> /
+<strong>Edge line (thin)</strong> を選び直します。外すときは <strong>No edge line</strong> を選びます
+(→ <a href="../../reference/renderers/edge-lines/">エッジライン</a>)。</p>
+<div class="admonition tip">
+<p class="admonition-title">白背景ではリガンドの色を確かめてください</p>
+<p>白背景にすると、明るい色の原子が背景に溶け込んで見えにくいことがあります。
+気になるときは <strong>Color</strong> パネルの <strong>CPK</strong> で炭素の色を暗め (例: <code>#404040</code>) にします
+(→ <a href="../../reference/color-syntax/">色の記法</a>)。</p>
+</div>
+<!-- TODO(screenshot): 白背景 + エッジライン適用後の完成図 (適用前後の比較でも可) -->
+
+<h2 id="7-カメラとシーンを保存する">7. カメラとシーンを保存する<a class="headerlink" href="#7-カメラとシーンを保存する" title="Permanent link">&para;</a></h2>
+<p>視点が決まったら、カメラとして保存しておくと、後で同じ構図に戻せます。</p>
+<ol>
+<li>シーンツリーの <strong>Cameras</strong> 行を右クリックし、<strong>New Camera...</strong> を選びます</li>
+<li>名前を付けて作成します</li>
+</ol>
+<p>カメラ行のダブルクリックで、いつでもその視点に戻れます
+(→ <a href="../../reference/camera/">カメラ</a>)。</p>
+<p>最後に <strong>File &gt; Save Scene</strong> (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-s">S</kbd></span> / <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span>) でシーンを <code>.qsc</code> ファイルに
+保存します。保存すると、そのときの視点も <code>__current</code> という名前のカメラとして記録され、
+次に開いたときに適用されます。また、保存オプションの<strong>データの埋め込み</strong>を有効にすると、
+分子データも <code>.qsc</code> に取り込まれ、ファイル単体で持ち運べるようになります
+(→ <a href="../../menu/file/">File メニュー</a>)。</p>
+<h2 id="次のステップ">次のステップ<a class="headerlink" href="#次のステップ" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../publication-images/">論文用の高解像度画像を書き出す</a> — この図をレイトレースで仕上げる</li>
+<li><a href="../../reference/coloring/">Coloring</a> / <a href="../../reference/selection/">選択式の文法</a> — 塗り分けと選択の詳細</li>
+<li><a href="../../reference/renderers/">Renderer 一覧</a> — 他の表示方法を知る</li>
+</ul>
+<hr />
+<p><em>確認対象: CueMol3 2.3.8.494</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="フッター" >
+        
+          
+          <a href="../basic/measure/" class="md-footer__link md-footer__link--prev" aria-label="前: 計測と相互作用の表示">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                前
+              </span>
+              <div class="md-ellipsis">
+                計測と相互作用の表示
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../publication-images/" class="md-footer__link md-footer__link--next" aria-label="次: 論文用の高解像度画像を書き出す">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                次
+              </span>
+              <div class="md-ellipsis">
+                論文用の高解像度画像を書き出す
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

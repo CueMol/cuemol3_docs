@@ -1,0 +1,754 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CueMol3 (tritium) user documentation">
+      
+      
+      
+        <link rel="canonical" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/loading/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>構造の読み込みと表示 - CueMol3 &mdash; Molecular Visualization Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#構造の読み込みと表示" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../" title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-header__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CueMol3 &mdash; Molecular Visualization Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              構造の読み込みと表示
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../tutorials/basic/loading/" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CueMol/cuemol2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-nav__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    CueMol3 &mdash; Molecular Visualization Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CueMol/cuemol2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-構造を読み込む" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 構造を読み込む
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 構造を読み込む">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renderer-type-の種類" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renderer type の種類
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#そのほかのオプション" class="md-nav__link">
+    <span class="md-ellipsis">
+      そのほかのオプション
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-視点を操作する" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 視点を操作する
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 視点を操作する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#原子の名称と情報を表示する" class="md-nav__link">
+    <span class="md-ellipsis">
+      原子の名称と情報を表示する
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-もう-1-つ分子を読み込む" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. もう 1 つ分子を読み込む
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sceneobjectrendererview" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Scene・Object・Renderer・View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-シーンツリーで全体を把握する" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. シーンツリーで全体を把握する
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. シーンツリーで全体を把握する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#目のアイコンとパネル上部のボタン" class="md-nav__link">
+    <span class="md-ellipsis">
+      目のアイコンとパネル上部のボタン
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#次のステップ" class="md-nav__link">
+    <span class="md-ellipsis">
+      次のステップ
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="構造の読み込みと表示">構造の読み込みと表示<a class="headerlink" href="#構造の読み込みと表示" title="Permanent link">&para;</a></h1>
+<p>分子構造を読み込んで表示するまでの操作と、CueMol3 の中心にある
+<strong>Scene / Object / Renderer</strong> の考え方を学びます。
+題材には 1.2 Å 分解能のリゾチームの結晶構造 (PDB ID: <strong>1QIO</strong>) を使います。</p>
+<p>基本操作コースの各ページは、この順に進めると前のページの状態を引き継げます。</p>
+<h2 id="1-構造を読み込む">1. 構造を読み込む<a class="headerlink" href="#1-構造を読み込む" title="Permanent link">&para;</a></h2>
+<p><strong>File &gt; Get PDB...</strong> を開き、<strong>PDB Accession Code</strong> に <code>1QIO</code> と入力して取得します。
+手元のファイルを開く場合は <strong>File &gt; Open File...</strong> (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-o">O</kbd></span>) を使います
+(→ <a href="../../../menu/file/">File メニュー</a>)。</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/1-getpdb.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Get PDB ダイアログ" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/1-getpdb.webp" width="380" /></a></p>
+<p>ダウンロード中は <code>Downloading 1QIO…</code> という進捗画面が出ます。<strong>Cancel</strong> を押せば中断できます。
+存在しない ID を入れた場合は <strong>Get PDB failed</strong> というエラーが表示されます。</p>
+<p>取得が終わると、<strong>Open File Options</strong> の画面が出ます。いちばん上にはこれから読み込む
+ファイル名 (<code>1qio.cif</code>) と、CueMol3 が判別したファイル形式 (<code>mmCIF</code>) が表示されます。</p>
+<ol>
+<li><strong>Object name</strong> を <code>lysozyme</code> に変更します。読み込まれたデータは <strong>Object</strong> と呼ばれ、
+   CueMol の中ではこの名前で識別されます (既定ではファイル名由来の名前が入っています)</li>
+<li><strong>Renderer type</strong> から <strong>simple</strong> を選びます</li>
+<li><strong>Renderer name</strong> は選んだ種類から自動で決まります (<code>simple1</code>)。ここでは既定のままにします。
+   この名前はシーンツリーやチュートリアルの以降の説明でそのまま使います</li>
+<li>そのほかは既定のまま <strong>Open</strong> を押します</li>
+</ol>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/1-open-options.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Open File Options (Object name = lysozyme, Renderer type = simple)" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/1-open-options.webp" width="480" /></a></p>
+<p>分子が線画 (stick モデル) で表示されます。</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/1-loaded.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="1QIO を lysozyme という名前で simple 表示したところ" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/1-loaded.webp" /></a></p>
+<h3 id="renderer-type-の種類">Renderer type の種類<a class="headerlink" href="#renderer-type-の種類" title="Permanent link">&para;</a></h3>
+<p>よく使う表示方法には次のようなものがあります。</p>
+<dl>
+<dt>simple</dt>
+<dd>線画の stick モデル。パフォーマンス的には trace に次いで高速。細かく見る場合に適している</dd>
+<dt>trace</dt>
+<dd>線画の Cα (タンパク質の場合)、リン原子 (核酸の場合) トレース。パフォーマンス的には
+最も高速。大まかに見る場合に適している</dd>
+<dt>ballstick</dt>
+<dd>ball and stick モデル表示</dd>
+<dt>cpk</dt>
+<dd>CPK モデル表示。空間充填モデルともいう</dd>
+<dt>tube</dt>
+<dd>主鎖のチューブ状モデル表示。trace の発展版のようなもの</dd>
+<dt>ribbon / cartoon</dt>
+<dd>いわゆるリボンモデル表示。cartoon はヘリックスを筒状に描く</dd>
+<dt>nucl</dt>
+<dd>tube の DNA、RNA 向け発展版。塩基が棒状に表示される</dd>
+</dl>
+<p>全種類の一覧と詳細は <a href="../../../reference/renderers/">Renderer 一覧</a> を参照してください。</p>
+<p><strong>Renderer type</strong> のリストの先頭には、<strong>Presets</strong> というグループがあります。ここから
+<strong>Default preset 1</strong> などを選ぶと、Renderer を 1 つではなく、タンパク質は ribbon、核酸は
+nucl、それ以外は ballstick、というように<strong>複数の Renderer をまとめたグループ</strong>が一度に
+作られます。プリセットを選んだときは、下の <strong>Selection</strong> は使えなくなります。</p>
+<h3 id="そのほかのオプション">そのほかのオプション<a class="headerlink" href="#そのほかのオプション" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Renderer name</strong> — 作られる Renderer の名前。種類を選ぶと自動で埋まります
+  (プリセットの場合はグループ名になります)</li>
+<li><strong>Selection</strong> — チェックを入れると隣の欄が有効になり、<strong>表示する範囲</strong>を選択式で
+  絞れます。読み込み自体は分子全体に対して行われるので、後から表示範囲を
+  変更できます (→ <a href="../selection/">分子の一部を選択する</a>)</li>
+<li><strong>Center view on molecule after loading</strong> — 読み込んだ分子へ視点を移動します。
+  現在の視点を変更したくないときはチェックを外します</li>
+<li><strong>&lt;形式&gt;-specific options</strong> — いちばん下の折りたたみです。開くと、その形式に固有の
+  読み込み設定 (mmCIF / PDB なら <strong>Load MODEL records</strong>、<strong>Load anisotropic U (ANISOU)</strong>、
+  <strong>Load alternate conformations</strong>、<strong>Calculate secondary structure</strong> など) が並びます。
+  既定のままなら見出しの右に <code>(defaults)</code>、変更すると <code>(modified)</code> と表示されます</li>
+</ul>
+<h2 id="2-視点を操作する">2. 視点を操作する<a class="headerlink" href="#2-視点を操作する" title="Permanent link">&para;</a></h2>
+<p>読み込んだ分子を、いろいろな向きから眺めてみます。</p>
+<ol>
+<li>分子ビュー上を<strong>左ドラッグ</strong>します。ドラッグした向きに分子が回転します</li>
+<li><strong>ホイール</strong>を回すと、表示が拡大・縮小されます</li>
+<li>
+<p>左サイドパネルの <strong>Explorer &gt; View</strong> パネルで、<strong>Zoom / Slab</strong> の <strong>Zoom</strong> の値を
+   クリックし、<code>40</code> と入力して <span class="keys"><kbd class="key-enter">Enter</kbd></span> を押すと、Zoom が 40 に設定されます</p>
+<p><img alt="View パネルの Zoom" src="../../../../assets/images/tutorials/basic/loading/2-view-zoom.webp" width="213" /></p>
+</li>
+</ol>
+<p>Zoom は分子ビューに表示する範囲の高さ (Å) です。値を小さくすると、その分だけ分子が
+大きく表示されます。</p>
+<p>View パネルの各行は、次の 3 通りで操作できます。</p>
+<ul>
+<li><strong>左右の矢印</strong>を押すと 1 段ずつ増減します</li>
+<li>数値の上を<strong>左右にドラッグ</strong>すると連続して変化します</li>
+<li>数値を<strong>クリック</strong>すると直接入力できる状態になり、<span class="keys"><kbd class="key-enter">Enter</kbd></span> で確定します</li>
+</ul>
+<p>このように、View パネルはマウスで動かすより正確に視点を合わせたいときに使います。
+<strong>Rotation</strong> (RotX / RotY / RotZ) は<strong>相対値</strong>で、操作するとその角度だけ回り、操作後、
+値は 0 に戻ります。<strong>Translation</strong> (TraX / TraY / TraZ、Å) と <strong>Zoom / Slab</strong> (Zoom・Slab・Dist、Å) は
+<strong>絶対値</strong>で、現在の視点の値がそのまま表示されます。</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/2-view-pane.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="View パネル。回転させた後でも Rotation は 0 に戻っており、Zoom には入力した 40 が残っている" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/2-view-pane.webp" width="237" /></a></p>
+<p>平行移動やスラブ (手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
+<a href="../../../ui/mouse-input/">マウス・トラックパッド操作</a>、View パネルの各項目は
+<a href="../../../ui/side-panels/">サイドパネル</a> を参照してください。</p>
+<h3 id="原子の名称と情報を表示する">原子の名称と情報を表示する<a class="headerlink" href="#原子の名称と情報を表示する" title="Permanent link">&para;</a></h3>
+<p>原子の位置でクリックすると、その原子の名称が分子ビューに表示されます
+(もう一度クリックすると消えます)。</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/2-atom-label.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="クリックした原子に名称が表示される" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/2-atom-label.webp" width="400" /></a></p>
+<p>さらに、その原子の座標や温度因子など、詳しい情報が<strong>ウィンドウ最下部のステータスバー</strong>に
+表示されます (同じ内容が <strong>Output</strong> パネルにも残ります)。分子 Object 名、チェイン名、
+残基名・番号、原子名の順に並び、続いて占有率 (O)、温度因子 (B)、座標が出ます。</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/2-status-bar.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ウィンドウ下端。ステータスバー (青い帯) と Output パネルの両方に原子の情報が出ている" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/2-status-bar.webp" width="640" /></a></p>
+<p>原子の位置で右クリックするとコンテキストメニューが表示されます。一番上は上と同じ原子の
+情報で、選んでも何も起こりません。次の <strong>Center at this atom</strong> を選ぶと、その原子が
+ビューの中央に来るように視点が移動します。それ以下の Select 関連のメニューは
+<a href="../selection/">分子の一部を選択する</a> で説明します。</p>
+<h2 id="3-もう-1-つ分子を読み込む">3. もう 1 つ分子を読み込む<a class="headerlink" href="#3-もう-1-つ分子を読み込む" title="Permanent link">&para;</a></h2>
+<p>同じシーンには複数の Object を読み込めます。ここでは <code>1G59</code>
+(グルタミル tRNA 合成酵素と tRNA の複合体) を追加します。</p>
+<ol>
+<li><strong>File &gt; Get PDB...</strong> を開き、<strong>PDB Accession Code</strong> に <code>1G59</code> と入力して
+   <strong>Download</strong> を押します</li>
+<li>
+<p><strong>Renderer type</strong> から <strong>trace</strong> を選びます</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/3-open-options.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Renderer type に trace を選ぶ" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/3-open-options.webp" width="480" /></a></p>
+</li>
+<li>
+<p><strong>Object name</strong> は既定のまま (<code>1g59</code>) にして <strong>Open</strong> を押します</p>
+</li>
+</ol>
+<p>タンパク質は Cα 原子、核酸はリン原子だけをつないだ軽量な表示で描かれます。1G59 の
+非対称単位には複合体が 2 組 (タンパク質 2 本 + tRNA 2 本) 入っているので、同じ形が
+2 つ現れます。</p>
+<p>読み込むと視点は新しい分子へ移る (<strong>Center view on molecule after loading</strong> が既定でオン)
+ため、この時点ではリゾチームは見えません。両方を同時に見るには、§2 と同じ要領で View
+パネルを操作します。</p>
+<ol>
+<li><strong>Slab</strong> に <code>300</code> と入力します</li>
+<li><strong>Zoom</strong> に <code>150</code> と入力します</li>
+<li><strong>RotY</strong> に <code>90</code> と入力します</li>
+</ol>
+<p><strong>Slab</strong> (奥行き方向に表示する厚み) を広げるのが要点です。既定の 50 Å のままでは、
+1G59 から 100 Å ほど離れた位置にあるリゾチームは、Zoom をいくら広げても奥行きで
+切り落とされてしまいます。また、3 つの分子は奥行き方向にも重なっているため、
+読み込んだ向きのままでは前後に重なって見分けが付きません。<strong>RotY</strong> で 90° 回すと、
+横に並んで見えます。</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/3-two-objects.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="1g59 の複合体 2 組と lysozyme (右側の小さな塊)" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/3-two-objects.webp" /></a></p>
+<p>特定の Object だけを見たいときは、シーンツリーでその行を選び、パネル上部の <strong>Focus</strong>
+ボタンを押します。その Object に合わせて Zoom と Slab が自動で調整されます。</p>
+<h2 id="4-sceneobjectrendererview">4. Scene・Object・Renderer・View<a class="headerlink" href="#4-sceneobjectrendererview" title="Permanent link">&para;</a></h2>
+<p>ここまでに登場した概念を整理します。</p>
+<dl>
+<dt>Object</dt>
+<dd>分子座標・電子密度・静電ポテンシャルなどの<strong>データ</strong>。それ自身は画面に現れません</dd>
+<dt>Renderer</dt>
+<dd>Object を画面に<strong>表示する</strong>役割。1 つの Object に複数の Renderer を付けられるので、
+同じ分子を ribbon と ballstick で同時に表示する、といったことができます</dd>
+<dt>Scene</dt>
+<dd>Object と Renderer をまとめた 1 つの作業単位。ウィンドウ上部の<strong>タブ</strong>が
+シーンに対応し、複数のシーンを開いても互いに干渉しません</dd>
+<dt>View</dt>
+<dd>シーンを映す画面 (分子ビュー) のこと。1 つのシーンに複数の View を
+接続することもできます (→ <a href="../../../menu/file/">File メニュー</a> の New Tab)</dd>
+</dl>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/scene-concept.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Scene / Object / Renderer / View の関係" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/scene-concept.png" /></a></p>
+<p>シーンとは、複数の Object と、それらに接続された Renderer を含む全体だと捉えてください。</p>
+<h2 id="5-シーンツリーで全体を把握する">5. シーンツリーで全体を把握する<a class="headerlink" href="#5-シーンツリーで全体を把握する" title="Permanent link">&para;</a></h2>
+<p>左サイドパネルの <strong>Explorer &gt; Scene</strong> ツリー (シーンツリー) には、シーン内の
+Object とその配下の Renderer が階層で表示されます (→ <a href="../../../ui/side-panels/">サイドパネル</a>)。</p>
+<p>行の表記は <strong><code>名前 (型)</code></strong> です。名前の左の<strong>三角</strong>をクリックすると、その Object に
+接続された Renderer の一覧を開いたり閉じたりできます。いまのツリーは次のように読みます。</p>
+<ul>
+<li>シーン <code>Untitled 1</code> に <code>lysozyme</code> と <code>1g59</code> の 2 つの Object がある
+  (Get PDB で読み込むと、Object 名は PDB ID の小文字になります)</li>
+<li><code>1g59 (MolCoord)</code> — Object <code>1g59</code> の型は MolCoord (分子座標) である</li>
+<li><code>trace1 (trace)</code> — <code>1g59</code> に接続された Renderer <code>trace1</code> の型は trace である</li>
+<li><code>(*selection)</code> — 名前のない Renderer は括弧と型だけが表示されます。これは選択部分を
+  ハイライト表示するための Renderer で、分子を読み込むと自動で作られます</li>
+<li><code>(*namelabel)</code> — §2 で原子をクリックして名称を表示したときに作られた、ラベル用の
+  Renderer です。ラベルを消しても行は残ります</li>
+</ul>
+<p>いちばん下の <strong>Camera</strong> と <strong>Styles</strong> は、それぞれ保存した視点とスタイルの置き場所です
+(→ <a href="../camera-scene/">カメラとシーンの保存</a>)。</p>
+<h3 id="目のアイコンとパネル上部のボタン">目のアイコンとパネル上部のボタン<a class="headerlink" href="#目のアイコンとパネル上部のボタン" title="Permanent link">&para;</a></h3>
+<ul>
+<li>行の<strong>目のアイコン</strong>で Renderer の表示・非表示を切り替えられます。Object 行で
+  切り替えると、配下の Renderer がまとめて切り替わります</li>
+<li>パネル上部には 4 つのボタンがあります (ポインタを載せると名前が出ます)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ボタン</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add</strong></td>
+<td>選んでいる Object に Renderer を追加します (右クリックの New Renderer と同じ)</td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td>選んでいる Object や Renderer に合わせて視点 (Zoom と Slab) を調整します</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>選んでいる Object や Renderer を削除します。Undo で戻せます</td>
+</tr>
+<tr>
+<td><strong>Property</strong></td>
+<td>選んでいる項目をプロパティインスペクタに表示します</td>
+</tr>
+</tbody>
+</table>
+<p>シーン行を右クリックすると <strong>Background color</strong> から背景色を変えられます。</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/5-scene-tree.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="シーンツリー (lysozyme / 1g59 と各 Renderer)" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/5-scene-tree.webp" width="253" /></a></p>
+<h2 id="次のステップ">次のステップ<a class="headerlink" href="#次のステップ" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../selection/">分子の一部を選択する</a> — 操作対象を選ぶ方法</li>
+<li><a href="../../../ui/mouse-input/">マウス・トラックパッド操作</a> / <a href="../../../ui/side-panels/">サイドパネル</a></li>
+</ul>
+<hr />
+<p><em>確認対象: CueMol3 2.3.8.495</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
