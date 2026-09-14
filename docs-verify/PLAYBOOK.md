@@ -261,6 +261,9 @@ sips -g pixelWidth -g pixelHeight docs/assets/images/<id>.webp   # 寸法の確�
 注釈 (矢印・囲み)、変更前後を並べた図、人が構図を選んだ方がよい図など、**撮影より手で
 作った方がよい図**がある。自動生成と手作りは同じ `docs/assets/images/` に同居させてよい。
 
+手作りの図を WebP にするときは `task images:import -- <入力> docs/assets/images/<ページ>/<名前>.webp`
+を使う (撮影と同じ sharp / 同じ品質ラダーで変換するので、生成した図と見た目がそろう)。
+
 仕組み: docShot は書き出すたびにファイルのハッシュを `docs-verify/docshot-manifest.json`
 に記録し、**次回はハッシュが記録と一致するファイル (= 自分が書いたまま手つかずのもの) しか
 上書きしない**。手作りの図も、生成後に手で加工した図もハッシュが合わないので、

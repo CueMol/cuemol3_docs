@@ -82,6 +82,17 @@ CI 帯域の消費と運用事故を避けるため踏襲しません)。次の�
 
 - スクリーンショットは WebP または圧縮 PNG。**1 枚 300 KB 以内**を目安に、
   ページ表示幅に合わせてリサイズしてから追加する。
+- 置き場所は `docs/assets/images/<ページのパス (ja/en は含めない)>/<名前>.webp`
+  (例: `docs/ja/ui/inspector.md` の図は `docs/assets/images/ui/inspector/`)。
+  日本語版と英語版で同じ画像を参照します。
+- 手で作った図 (注釈付きの図など) を WebP にするには `task images:import` を使う。
+  1280 px 幅に縮小し、300 KB に収まるまで品質を落とす (撮影と同じ変換)。
+
+  ```sh
+  task images:import -- ~/Desktop/figure.png docs/assets/images/ui/inspector/drag-input.webp
+  task images:import -- in.png out.webp --width 1920   # 全景を大きく見せたいとき
+  task images:import -- in.png out.webp --width 0      # 2x の切り抜き (縮小しない)
+  ```
 - アプリ画面の撮影は `docs-verify/` で自動化してある (`task e2e:shots`)。
   **自動生成された画像は手動で撮り直さない**。逆に、手で作った図 (注釈付きの図など) は
   撮影で上書きされない仕組みがある (→ [docs-verify/PLAYBOOK.md](docs-verify/PLAYBOOK.md))。

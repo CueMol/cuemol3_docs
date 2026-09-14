@@ -113,6 +113,15 @@ tasks:
         echo
         echo "total: $(find docs/assets/images -type f | wc -l | tr -d ' ') files, $(du -sh docs/assets/images | cut -f1)"
 
+  images:import:
+    silent: true
+    desc: 'Convert a hand-made image to WebP (task images:import -- in.png docs/assets/images/<page>/name.webp)'
+    deps: [e2e:setup]
+    cmds:
+      # Same encoder and quality ladder as the screenshot pipeline, so
+      # hand-made figures match the generated ones and stay within the budget.
+      - docs-verify/node_modules/.bin/tsx docs-verify/scripts/import-image.ts {{.CLI_ARGS}}
+
   e2e:setup:
     desc: Install the docs-verify E2E dependencies
     dir: docs-verify
