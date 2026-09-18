@@ -100,8 +100,6 @@
   **Drag and drop opens into** と **File manager opens into** で、経路ごとに選べます
   (どちらも既定は現在のシーン)。**Open File...** と **Open Recent** は常に現在のシーン、
   `.qsc` は対象外です → [設定項目](reference/settings.md#files)
-- **日本語入力の変換を ++enter++ で確定したときに、そのまま送信されなくなりました。**
-  テキストを入力するすべての欄が対象です
 
 !!! warning "既存のシーンで見え方が変わることがあります"
     - **dsurface で保存したシーンは、距離場によるメッシュで描かれます。** 従来の
