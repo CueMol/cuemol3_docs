@@ -136,6 +136,53 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   なので書いていない。`2.3.14.524` は未リリースのため更新履歴は 2.3.13.523 から直接飛ばした。
   **未着手の残件**: スクリーンショット全般 (今回追加した 3D ビューのホバーの図を含む)、
   docs-verify の spec 追加 (NPR / 分子表面ダイアログ / 密度マップ / ピッキングとホバー)。
+- 前回同期: 2026-09-18 / cuemol2 `af9509eb` (branch: develop) / CueMol3 `2.3.15.530`。
+  `a4a5c193..af9509eb` の差分を全件確認した (リリースノート
+  `docs/release_notes/v2.3.15.530.md` を含む)。次回はこの hash から差分確認を行う。
+  今回の主題は **プラグイン機構**・**Camera pane (View アクティビティビュー)**・
+  **dsurf2 の dsurface への統合**。`docs/ja/reference/plugins/` を新設した
+  (`index.md` は本文あり、`ai-agent.md` / `pymconsole.md` は**ユーザー指示により
+  今後追記する前提の骨組み**)。`docs/ja/ui/side-panels.md` に `## View` と
+  `### Camera パネル` を新設し、`### View パネル`を Explorer からその下へ移した。
+  `docs/ja/reference/settings.md` に **General &gt; Files** と **Plugins** を追加。
+  `docs/ja/menu/view.md` に **Tool palette** を追加 (旧書式フッタも移行)。
+  `docs/ja/reference/renderers/dsurface.md` にプロパティ表を書き、`dsurf2.md` は
+  **案内ページに変更** (ユーザー判断。nav とリンクは残す)。
+  **更新履歴 (`docs/ja/releases.md`) は 5 節 + warning** (ユーザー指示。節は
+  プラグイン / 分子表面 / カメラ / 3D ビュー / 画面と操作)。
+  **ユーザー指示: 不具合修正・「本来の動作が正しくなった」類は更新履歴にだけ書き、
+  マニュアル本体には新機能として書かない。** これに従い、名前付き選択がどこでも
+  解決するようになった件 (と入れ子参照)、空の選択での Zoom / Center、暗い背景での
+  ホバー強調、IME の Enter、スタイルセット名 `user` → `style_N`、PyM Console の
+  map renderer、New Renderer のプリセット行の重複、カメラの死んだ `Properties` の
+  削除は、リファレンス・チュートリアルに書いていない。
+  **角度・二面角の「選択による定義」は書かなかった** (通常 GUI に経路が無く
+  PyM Console のコマンドのみ。`egroup` / `hover_hl_color` と同じ基準)。
+  **dsurface の `proberad` / `cullface` / `showsel` / `target` も書いていない**
+  (Properties タブに行が無く Generic タブのみ)。旧 `dsurf2.md` の note が
+  `Probe radius` を共有プロパティとして挙げていたが、案内ページ化で落ちた。
+  **Point density の既定 1 → 2 (/A) は更新履歴のみ** (既定値を書いているページが無い)。
+  **ユーザー判断により更新履歴からも落としたもの**: 表面の頂点色のメモリ削減
+  (リファクタリング)、大きな表面での異常終了の修正、画面全体の文字サイズ、
+  日本語 IME の変換確定 Enter、名前付き選択が描画外でも解決するようになった件、
+  空の選択での Zoom / Center (いずれも内部的な話か純粋な不具合修正で、読み手が
+  何かする余地が無い)。**不具合修正は更新履歴にも載せない**のが今回確認できた基準。
+  `docs/ja/ui/bottom-panels.md` のタブ表にあった「Output = ログ表示とコマンド入力」の
+  「コマンド入力」は、Output にその欄が無く PyM Console と紛らわしいので落とした。
+  **要判断として残したもの**: Mol Struct パネルの名称 (実装は `Mol Struct`、
+  ドキュメントは「Molecular structure パネル」。今回の差分ではない)、
+  名前付き選択の定義方法 (Selection パネルの **Define name** ボタン) がどこにも
+  書かれていないこと。
+  **未着手の残件**: スクリーンショット全般 (Camera パネル / Settings &gt; Plugins /
+  PyM Console / AI Agent / dsurface の図を含む)、AI Agent と PyM Console ページの本文、
+  docs-verify の spec 追加 (NPR / 分子表面ダイアログ / 密度マップ / ピッキングとホバー)
+  と、**View パネルがアクティビティビューを移ったことによる既存 spec の修正**
+  (`specs/basic/loading.spec.ts` / `helpers/viewPane.ts`。ユーザー判断により今回は触っていない)。
+  **`task e2e` は 2.3.15.530 のビルドでは 5 件すべてが起動の時点で失敗する**
+  (`docs-verify/support/log.ts:8-13` の `READY_LINES` にある
+  `CueMol2 nodejs add-on : INITIALIZED` を 60 秒待って現れない)。smoke も落ちるので
+  ドキュメントとは無関係のハーネス側の問題。**これを直さないと spec による検証が
+  できない**ので、次回はここから。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

@@ -28,7 +28,7 @@ File メニューの **Open File...** で分子座標ファイルを読み込む
 [tube](../renderers/tube.md) / [ribbon](../renderers/ribbon.md) /
 [cartoon](../renderers/cartoon.md) / [nucl](../renderers/nucl.md) /
 [atomintr](../renderers/atomintr.md) / [disorder](../renderers/disorder.md) /
-[dsurface](../renderers/dsurface.md) / [dsurf2](../renderers/dsurf2.md)
+[dsurface](../renderers/dsurface.md)
 
 ## 書き出せる形式
 
@@ -42,4 +42,4 @@ PDB / MOL・SDF / PQR / XYZR 形式で書き出せます
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.15.530*

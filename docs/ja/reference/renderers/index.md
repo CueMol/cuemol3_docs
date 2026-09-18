@@ -26,7 +26,7 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 | [atomintr](atomintr.md) | 分子 | 原子間の距離・角度・相互作用の表示 | ○ |
 | [disorder](disorder.md) | 分子 | ディスオーダー領域を点線で補って表示 | ○ |
 | [dsurface](dsurface.md) | 分子 | 分子から直接計算した分子表面 | ○ |
-| [dsurf2](dsurf2.md) | 分子 | 距離場を用いた分子表面 | ○ |
+| [dsurf2](dsurf2.md) | 分子 | 距離場を用いた分子表面 | — |
 | [molsurf](molsurf.md) | 分子表面 | 生成済みの分子表面 Object の描画 | ○ |
 | [contour](contour.md) | 密度マップ | 等高線メッシュ表示 | ○ |
 | [isosurf](isosurf.md) | 密度マップ | 等値面表示 | ○ |
@@ -43,6 +43,9 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 - **gpu_mapmesh** は、線の太さを変えられず [contour](contour.md) より遅いため、
   新規作成の選択肢から外されました。既存のシーンに含まれるものは今までどおり
   表示され、設定も変更できます
+- **dsurf2** は [dsurface](dsurface.md) に統合されました。距離場によるメッシュは
+  dsurface の **Algorithm** で選びます。既存のシーンに含まれるものは dsurface として
+  読み込まれます (→ [dsurf2](dsurf2.md))
 
 また、内部処理用の Renderer (選択のハイライト、原子ラベル、対称分子、単位格子など) は
 一覧に表示されません。
@@ -79,4 +82,4 @@ New Renderer ダイアログでは、複数の Renderer をまとめて作成す
 
 ---
 
-*確認対象: CueMol3 2.3.12.517*
+*確認対象: CueMol3 2.3.15.530*

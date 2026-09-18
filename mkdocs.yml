@@ -183,6 +183,10 @@ nav:
       - レンダリング: reference/rendering.md
       - NPR (インク画風レンダリング): reference/rendering-npr.md
       - 設定項目: reference/settings.md
+      - プラグイン:
+          - reference/plugins/index.md
+          - AI Agent: reference/plugins/ai-agent.md
+          - PyM Console: reference/plugins/pymconsole.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md
 

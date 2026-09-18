@@ -41,6 +41,7 @@
 - **[レンダリング](rendering.md)** — Umbreon の品質設定と個別の設定項目
 - **[NPR (インク画風レンダリング)](rendering-npr.md)** — Umbreon (NPR) の Hatching と Detail タブ
 - **[設定項目](settings.md)** — Settings タブの全項目
+- **[プラグイン](plugins/index.md)** — 切り替えられる機能と、AI Agent / PyM Console
 - **[キーボードショートカット](shortcuts.md)** — ショートカットの一覧
 - **[メニューリファレンス](../menu/index.md)** — 全メニュー項目の一覧
 
@@ -57,4 +58,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.10.504*
+*確認対象: CueMol3 2.3.15.530*

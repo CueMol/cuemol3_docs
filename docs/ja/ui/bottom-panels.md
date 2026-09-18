@@ -1,17 +1,23 @@
 # 下部パネル
 
-ウィンドウ下部のパネルは 4 つのタブを持ちます。
+ウィンドウ下部のパネルは、既定では 3 つのタブを持ちます。
 
 !!! info "撮影予定"
 
-<!-- TODO(screenshot): 下部パネルの 4 タブ (Output / Sequence / Animation / Trajectory)。Sequence タブで残基が選択されている状態 -->
+<!-- TODO(screenshot): 下部パネルの 3 タブ (Output / Sequence / Animation)。Sequence タブで残基が選択されている状態 -->
 
 | タブ | 内容 |
 |---|---|
-| **Output** | ログ表示とコマンド入力 |
+| **Output** | ログ表示 |
 | **Sequence** | 分子のアミノ酸・塩基配列の表示と選択 |
 | **Animation** | アニメーションのタイムライン編集 |
-| **Trajectory** | MD トラジェクトリの再生 |
+
+[プラグイン](../reference/plugins/index.md)を有効にすると、次のタブが加わります。
+
+| タブ | 内容 | プラグイン |
+|---|---|---|
+| **PyM Console** | PyMOL 互換のコマンドライン (→ [PyM Console](../reference/plugins/pymconsole.md)) | PyM Console |
+| **Trajectory** | MD トラジェクトリの再生 | MD Tools |
 
 ## Output
 
@@ -74,11 +80,24 @@
     アニメーションのプロパティを編集している最中は、分子ビューはリアルタイムには追従しません。
     再生して確認してください。
 
+## PyM Console
+
+PyMOL のコマンド言語の一部を解釈するコマンドラインです。`fetch 1crn` のような
+PyMOL のコマンドをそのまま打てます。
+
+このタブは **PyM Console** プラグインの一部で、**既定では無効**です。
+Settings &gt; Plugins &gt; Installed で有効にしてください
+(→ [PyM Console](../reference/plugins/pymconsole.md))。
+
 ## Trajectory
 
 **File &gt; Open MD Trajectory...** で読み込んだ MD トラジェクトリを再生します。
 タイムライン上にフレームのブロックが表示され、再生・コマ送り・シークができます。
 
+このタブは **MD Tools** プラグインの一部で、**既定では無効**です。
+Settings &gt; Plugins &gt; Installed で有効にしてください
+(→ [プラグイン](../reference/plugins/index.md))。
+
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 2.3.15.530*

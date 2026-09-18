@@ -1,40 +1,31 @@
 # dsurf2 (分子表面・距離場)
 
-距離場 (distance field) を用いて分子表面を描画する Renderer です。
-対象 Object: 分子 (MolCoord)。
-着色は Color パネルで設定します。Solid coloring のほか、静電ポテンシャルと
-Multi-gradient も選べます (→ [Coloring](../coloring.md))。
+!!! info "dsurface に統合されました"
+    距離場 (distance field) による分子表面は、[dsurface](dsurface.md) の
+    **Algorithm** の選択肢のひとつ (**Distance field**) になりました。
+    そのため **dsurf2 は New Renderer の一覧に表示されません**。
+    新しく作る場合は dsurface を選び、Algorithm に **Distance field** を指定してください。
 
-!!! note "dsurface とプロパティを共有します"
-    dsurf2 は [dsurface](dsurface.md) と同じプロパティセット
-    (Surface type / Detail / Probe radius / 描画モード / 元素ごとの半径) を持ち、
-    インスペクタでも同じセクションが表示されます。各項目の説明は
-    [dsurface](dsurface.md) を参照してください。
+    2 つは元々同じプロパティを持つ同じ Renderer で、違いはメッシュの作り方だけでした。
+    一覧に両方が並んでいても、どちらを選べばよいかを示すものがありませんでした。
 
-!!! info "準備中"
-    このページは骨組みのみです。各プロパティの詳細は今後追加されます。
+## 既存のシーンについて
 
-## 概要
+`dsurf2` を含むシーンファイル (`.qsc`) は今までどおり開けます。読み込むと
+**Algorithm が Distance field の dsurface** になります。これは dsurf2 が行っていた
+描画そのものなので、見た目は変わりません。
 
-<!-- TODO(screenshot): dsurf2 の表示例 -->
-
-## プロパティ
-
-共通プロパティは [Renderer 共通プロパティ](common.md) を参照してください。
-
-### Surface
-
-### Atom radii
-
-<!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
-     説明) を dsurf2 のインスペクタセクションと C++ 定義から起こす -->
+一方、**もともと `dsurface` で保存されたシーンは、開くと Algorithm が
+Distance field (新しい既定) になります**。以前の dsurface はボクセルによる
+実装だったため、メッシュの見え方と Detail の効き方が変わります。以前の見た目に
+戻すには、Algorithm に **EDTSurf (voxel)** を指定してください。
 
 ## 関連項目
 
+- [dsurface](dsurface.md) — プロパティの説明はこちら
 - [Renderer の一覧](index.md)
 - [molsurf](molsurf.md)
-- [マテリアル](material.md) / [エッジライン](edge-lines.md)
 
 ---
 
-*確認対象: CueMol3 2.3.14.525*
+*確認対象: CueMol3 2.3.15.530*
