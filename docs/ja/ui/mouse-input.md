@@ -69,8 +69,13 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 網目 (Wireframe) と点 (Dots) は対象外です
 (→ [dsurface](../reference/renderers/dsurface.md#クリックとホバー))。
 
-生成済みの分子表面 (molsurf) とラベル、原子間の相互作用 (atomintr) は、
-クリックの対象ではありません。
+**対象になるのは dsurface だけで、molsurf は対象になりません。** Tools &gt; Mol surface
+generation... で生成した分子表面は、分子 (MolCoord) とは別の Object (MolSurfObj) として
+作られ、それを描く molsurf は分子ではなくその表面 Object を対象とする Renderer だからです。
+同じ形に見えていても、表面の点から分子の原子はたどれません
+(→ [MolSurfObj](../reference/objects/molsurf.md))。
+
+ラベルと原子間の相互作用 (atomintr) も、クリックの対象ではありません。
 
 !!! info "以前は原子の位置だけで判定していました"
     従来は、Renderer が登録した原子 1 点 (cartoon などの主鎖系では残基あたり 1 つ、
