@@ -44,7 +44,7 @@ Renderer の色を分子側の着色に従わせるスタイルで、Paint で�
 
 ## Solid
 
-Renderer 全体を単一の色で塗ります。分子表面 (molsurf / isosurf / dsurface / dsurf2) でも
+Renderer 全体を単一の色で塗ります。分子表面 (molsurf / isosurf / dsurface) でも
 同じように使えます。
 
 色に `$molcol` を指定すると、分子 Object 側の着色に従います
@@ -90,7 +90,7 @@ C / N / O / S / P / H とその他について、それぞれ色を指定でき�
 ## Multi-gradient
 
 マップの値に応じて、複数の色を経由するグラデーションで塗ります。
-密度マップなどのマップ系の Renderer と、分子表面系の Renderer (molsurf / dsurface / dsurf2) で選択できます。
+密度マップなどのマップ系の Renderer と、分子表面系の Renderer (molsurf / dsurface) で選択できます。
 
 設定欄には対象マップのヒストグラムとグラデーションバーが表示され、
 バー上のストップ (色の区切り) を直接操作して編集します。
@@ -126,4 +126,4 @@ Renderer ごとではなく分子 Object 側に着色を持たせ、複数の Re
 
 ---
 
-*確認対象: CueMol3 2.3.14.525*
+*確認対象: CueMol3 2.3.15.530*

@@ -47,7 +47,9 @@ libcuemol2 が読み書きできる形式で、CueMol2 と共通です。
 ### MD トラジェクトリ (読み込み)
 
 CueMol3 では File メニューの **Open MD Trajectory...** から MD シミュレーションの
-トラジェクトリを読み込めます。
+トラジェクトリを読み込めます。この項目は **MD Tools** プラグインの一部で、
+**既定では無効**です。Settings &gt; Plugins &gt; Installed で有効にしてください
+(→ [プラグイン](../reference/plugins/index.md))。
 
 | 形式 | 拡張子 |
 |---|---|

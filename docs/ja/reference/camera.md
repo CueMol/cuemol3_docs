@@ -1,23 +1,38 @@
 # カメラ
 
 **カメラ**は視点の状態 (位置・向き・拡大率・スラブ) を名前を付けて保存したものです。
-シーンツリーにノードとして表示され、いつでも呼び出して同じ視点に戻せます。
+サイドパネルの **View &gt; Camera** に一覧表示され、いつでも呼び出して同じ視点に戻せます。
 
 !!! info "準備中"
     このページは骨組みのみです。各項目の詳細は今後追加されます。
 
 ## カメラの操作
 
-シーンツリーのカメラ行の右クリックメニューから操作します
-(→ [サイドパネル](../ui/side-panels.md))。
+アクティビティバーの **View** を選ぶと現れる **Camera パネル**で操作します
+(→ [サイドパネル](../ui/side-panels.md#camera-パネル))。
+よく使う 6 つはツールバーのボタンに、それ以外は行の右クリックメニューにあります。
 
-- 新規作成 / 名前の変更 / 削除 / コピー & ペースト
-- ビューへの適用 (保存した視点に戻す)
-- カメラファイルの読み書き
-- 表示フラグの編集
+下表の「右クリック」の列はメニューの項目名、「ツールバー」の列はボタンのツールチップです。
 
-<!-- TODO(content): 各操作の具体的な項目名と挙動を、シーンツリーの
-     コンテキストメニュー定義 (sceneCtxItems.ts) から起こす -->
+| 右クリックメニュー | ツールバー | 内容 |
+|---|---|---|
+| New Camera... | New camera from view | 現在の視点から新しいカメラを作ります。同じ名前のカメラがあると確認なしで上書きされます |
+| Save from view | Save from view | 選んでいるカメラに現在の視点を上書きします |
+| Save from scene (with vis flags) | Save from view with show/hide | 同上。表示フラグも一緒に保存します |
+| Apply to view | Apply to view | 保存した視点に戻します |
+| Apply to scene (with vis flags) | Apply to view with show/hide | 同上。表示フラグも復元します。行のダブルクリックでも行えます |
+| Delete | Delete | カメラを削除します。++delete++ / ++backspace++ キーでも行えます |
+| Rename... | — | 名前を変更します。++f2++ でも行えます |
+| Copy / Paste Camera | — | カメラをコピー・貼り付けます。Edit メニューと ++cmd+c++ / ++cmd+v++ でも行えます |
+| Camera file &gt; Load... / Reload / Save / Save As... | — | カメラファイル (`.cam`) を読み書きします。**Reload** はファイルから読み込んだカメラでのみ選べます |
+| Edit vis flags... / Clear vis flags | — | 表示フラグを編集・消去します。**Clear vis flags** はフラグを持つカメラでのみ選べます |
+
+一覧の順序は行をドラッグして変更でき、シーンファイルに保存されます。
+`__current` は先頭に固定され、並べ替えの対象外です。
+
+!!! note "CueMol2 (UXP 版) ではカメラの順序が保たれません"
+    順序は CueMol3 で導入されたものです。順序を付けたシーンを CueMol2 で保存し直すと、
+    カメラは名前順に戻ります。
 
 ## カメラが保持する情報
 
@@ -29,7 +44,7 @@
 現在のビューのカメラは、File メニューの **Save current view...** で
 `.cam` ファイルに書き出せます (→ [File メニュー](../menu/file.md))。
 
-<!-- TODO(content): .cam ファイルの読み込み経路と、シーンツリーのカメラとの関係 -->
+<!-- TODO(content): .cam ファイルの読み込み経路と、Camera パネルのカメラとの関係 -->
 
 ## 表示フラグ
 
@@ -42,8 +57,8 @@
 
 - [アニメーション](animation/index.md) — [CamMotion](animation/cammotion.md) はカメラを対象にします
 - [File メニュー](../menu/file.md)
-- [サイドパネル](../ui/side-panels.md)
+- [サイドパネル](../ui/side-panels.md#camera-パネル)
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.15.530*

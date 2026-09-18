@@ -14,7 +14,7 @@
 | 項目 | 説明 | ショートカット |
 |---|---|---|
 | Open File... | 分子座標・密度マップ・分子表面などのファイルを開きます。読み込み時に Renderer の種類や形式ごとのオプションを指定できます | ++cmd+o++ |
-| Open MD Trajectory... | MD シミュレーションのトラジェクトリを開きます *(CueMol3 で追加)* | |
+| Open MD Trajectory... | MD シミュレーションのトラジェクトリを開きます *(CueMol3 で追加)*。**MD Tools** プラグインを有効にすると現れます (→ [プラグイン](../reference/plugins/index.md)) | |
 | Get PDB... | PDB ID を指定して構造をネットワークから取得します。座標 (RCSB の CIF / PDB) と密度マップ (RCSB の cif.gz、EBI の MTZ) に対応します。一時ファイルを介さずに直接読み込み、進捗ダイアログの Cancel で中断できます | |
 | Open Recent | 最近開いたファイルの一覧 (最大 10 件) から選んで開きます。**Clear Menu** で履歴を消去します | |
 
@@ -45,6 +45,12 @@ CCP4/MRC の密度マップを開くときは、オプション画面に格子�
 ダブルクリックしたり、コマンドラインで渡したりして開くこともできます
 (→ [ファイルの関連付け](../install/index.md#ファイルの関連付け))。
 
+この 2 つの経路については、読み込み先を現在のシーンにするか新しいシーンにするかを
+**Settings &gt; General &gt; Files** の **Drag and drop opens into** /
+**File manager opens into** で選べます (既定はどちらも現在のシーン)。
+**Open File...** と **Open Recent** は、この設定によらず常に現在のシーンに読み込みます
+(→ [設定項目](../reference/settings.md#files))。
+
 ## Object の保存
 
 | 項目 | 説明 | ショートカット |
@@ -72,4 +78,4 @@ CCP4/MRC の密度マップを開くときは、オプション画面に格子�
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 2.3.15.530*

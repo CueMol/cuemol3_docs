@@ -61,10 +61,16 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 
 | 判定の方式 | 対象 |
 |---|---|
-| 描かれた形状 | cartoon / tube / ribbon / spline / nucl / trace / cpk / anisou / ballstick / simple |
+| 描かれた形状 | cartoon / tube / ribbon / spline / nucl / trace / cpk / anisou / ballstick / simple / dsurface |
 | 原子の位置 | 対称操作で生成した分子 (symm) |
 
-分子表面やラベル、原子間の相互作用 (atomintr) は、以前からクリックの対象ではありません。
+**dsurface (分子から直接計算した分子表面) は、描画モードが Fill のときだけ**
+対象になります。表面の上の点が属する原子が拾われ、その原子のまわりの面が強調されます。
+網目 (Wireframe) と点 (Dots) は対象外です
+(→ [dsurface](../reference/renderers/dsurface.md#クリックとホバー))。
+
+生成済みの分子表面 (molsurf) とラベル、原子間の相互作用 (atomintr) は、
+クリックの対象ではありません。
 
 !!! info "以前は原子の位置だけで判定していました"
     従来は、Renderer が登録した原子 1 点 (cartoon などの主鎖系では残基あたり 1 つ、
@@ -103,7 +109,8 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 画質が初期状態へ戻ってしまうことはありません
 (→ [Scene](../reference/scene.md))。
 
-対称操作で生成した分子と、不透明度が 0.5 を下回る Renderer には強調表示が出ません。
+対称操作で生成した分子と、不透明度が 0.6 以下の Renderer には強調表示が出ません。
+不透明度 0.6 以下の Renderer はクリックも透過します (奥にあるものが拾われます)。
 
 ### 切り替え
 
@@ -120,7 +127,7 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 
 ## 視点を数値で操作する
 
-細かく視点を合わせたい場合は、左サイドパネルの **Explorer &gt; View** パネルを使うと、
+細かく視点を合わせたい場合は、左サイドパネルの **View &gt; View** パネルを使うと、
 回転・平行移動・ズーム・スラブを数値で指定できます (→ [サイドパネル](side-panels.md))。
 
 ## 選択・計測時の操作
@@ -133,4 +140,4 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 
 ---
 
-*確認対象: CueMol3 2.3.14.525*
+*確認対象: CueMol3 2.3.15.530*
