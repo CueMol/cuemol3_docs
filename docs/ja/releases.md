@@ -13,6 +13,55 @@
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
 
+## 2.3.20.539 (2026-09-29)
+
+### Renderer
+
+- **主鎖を球と円柱で描く tracestick が追加されました。** pivot 原子 (タンパク質では Cα、
+  核酸では P) を球で描き、つながった残基のあいだを円柱で結びます。[trace](reference/renderers/trace.md)
+  を ballstick の形にしたもので、途切れる場所も trace と同じです。スタイルは **Default** /
+  **Thick** / **Ball &amp; stick** / **Thick ball &amp; stick** の 4 つです
+  → [tracestick](reference/renderers/tracestick.md)
+
+### PyM Console
+
+- **PyMOL のスクリプトを実行できるようになりました。** `@file.pml` または `run file.pml`
+  で実行し、スクリプト全体が 1 回の Undo にまとまります。`log_open` / `log_close` で
+  打ったコマンドを記録でき、記録したファイルは `@` でそのまま再実行できます。
+  実行中は **Stop** で止められます → [PyM Console](reference/plugins/pymconsole.md#スクリプトとログ)
+- **使えるコマンドが増えました。** `save` (分子・シーン・画像)、`label`、`spectrum`、
+  `set_color`、`align` / `super` / `pair_fit` (RMSD を表示)、`get_view` / `set_view`、
+  `orient`、`mplay` / `mstop` / `rewind` / `frame` などです。`load` は `.qsc` / `.pse` /
+  `.pml` と URL を、`fetch` は密度マップ (`type=2fofc`) と生物学的集合体 (`type=pdb1`)、
+  チェーンの指定 (`1abcA`) を受け付けます
+  → [PyM Console](reference/plugins/pymconsole.md#対応コマンド)
+- **書き方が PyMOL に近づきました。** 選択式の中で Object 名が使えます
+  (`1abc and chain A`)。`show` / `hide` は引数なしや `everything`、略した表現名も
+  受け付け、`quiet=1` のような PyMOL のキーワード引数も通ります。`stick_radius` などの
+  PyMOL の設定は、CueMol に同じ量があるものが対応するプロパティに割り当てられます
+
+### AI Agent
+
+- **Google Gemini が使えるようになりました。** モデルは `google:<モデル名>` と書き、
+  API キーは **Settings &gt; Plugins &gt; AI Agent** の **Google AI API key**
+  (または環境変数 `GEMINI_API_KEY`) に設定します
+  → [AI Agent](reference/plugins/ai-agent.md#モデルと-api-キーの設定)
+- **パネル上端でモデルを切り替えられるようになりました。** 一覧には、API キーを
+  保存したプロバイダのモデルのうち、そのキーで使えるものだけが並びます
+  → [AI Agent](reference/plugins/ai-agent.md#使い方)
+- **モデルが今のビューを見られるようになりました。** 操作の結果を画像にして確かめながら
+  進めます。その画像は記録のツールの行に縮小表示されます
+
+### ファイルを開く
+
+- **MD トラジェクトリのファイルをドロップしたときの案内が正しくなりました。**
+  `.xtc` / `.dcd` / `.trr` はフレームしか持たず単独では開けませんが、これまでは
+  「壊れているか、対応していない形式」と表示されていました。今は **File &gt; Open MD
+  Trajectory...** で開くよう案内し、MD Tools が無効のときは先に **Settings &gt; Plugins**
+  で有効にするよう案内します → [File メニュー](menu/file.md#object-の読み込み)
+- **Open File... の形式の一覧から、トラジェクトリの形式がなくなりました。**
+  選んでも開けなかったためです
+
 ## 2.3.15.530 (2026-09-18)
 
 ### プラグイン
@@ -343,75 +392,17 @@
   → [選択式の文法](reference/selection.md#名前リスト))、二次構造の判定、
   PDB の MODEL の扱い、Undo / Redo、壊れたファイルの読み飛ばしなどが含まれます。
 
-## 2.3.11.507 (2026-08-27)
-
-### 密度マップ
-
-- **クライオ電子顕微鏡のマップに対応しました。** ファイルのヘッダからマップの種類を
-  判別し、クライオ電顕マップでは**マップ全体**を表示します。従来はビュー中心の周りの
-  立方体だけを表示していたため、箱の端を越えると反対側の密度が折り返して描かれていました。
-- **拡大すると表示が細かくなります。** 全体を細かく描くと面の数が膨大になるため、
-  全体は粗く描き、拡大した部分だけを細かく描き直します (**Level of detail** /
-  **Refine on zoom**)。等値面でも等高線メッシュでも働きます。
-- **大きなマップを開けるようになりました。** メモリの使い方を改めたことで、一辺 1300 格子
-  ほどのマップも読み込めます。CCP4/MRC を開くときは、ダイアログにマップの大きさと必要な
-  メモリが表示され、大きすぎる場合は **Subsample** (格子の間引き) が提案されます。
-- **判別の結果と表示範囲は手で変えられます。** ファイルを開くときの **Map type** で
-  結晶学的マップかクライオ電顕マップかを指定でき、表示範囲は Renderer の **Region** で
-  **Box around center** (中心の周りだけ) と **Full map** (全体) を選べます。
-- **MRC の ORIGIN を読むようになりました。** 原点が 0 でないマップが、そこに当てはめた
-  モデルと正しく重なるようになりました。
-- **クライオ電顕マップは、読み込んだ時点で見える状態になります。** 等値レベルが自動で
-  決まり、マップ全体が画面に収まるように視点も合わせられます。
-- **gpu_mapmesh が描画されるようになりました。** シェーダが動いていなかったため、
-  これまでは何も表示されていませんでした。ただし線の太さを変えられず
-  [contour](reference/renderers/contour.md) より遅いため、Renderer の新規作成の
-  選択肢からは外れています → [gpu_mapmesh](reference/renderers/gpu_mapmesh.md)
-
-!!! warning "既存のシーンで見え方が変わることがあります"
-    外部の CCP4/MRC ファイルを参照しているシーンで、そのマップがクライオ電顕マップと
-    判別された場合、中心の周りだけの表示から全体の表示に変わります。元に戻すには、
-    Renderer の **Region** を **Box around center** にするか、マップの **Map type** を
-    *Crystallographic* にしてください (プロパティインスペクタの **Generic** タブから
-    変更できます)。
-
-### ファイルを開く
-
-- **手元の mmCIF ファイルが開けるようになりました。** 最近の PDB の mmCIF はヘッダが長く、
-  座標が数百 KB 先から始まるため、形式を判別できず開けないことがありました
-  → [File メニュー](menu/file.md)
-
-### 画面と操作
-
-- **シーンツリーの複数選択が実際に働くようになりました。** ++shift++ + クリックの範囲選択が
-  これまで反応していませんでした。**Delete** ボタンは選んだノードすべてを削除するようになり、
-  ++delete++ / ++backspace++ キーでも削除できます → [サイドパネル](ui/side-panels.md)
-- **Paint の表も複数選択できるようになりました。** ++cmd++ / ++ctrl++ + クリックと
-  ++shift++ + クリックで選び、削除・Cut・Copy が選んだ行すべてに効きます。ツールバーは
-  行の追加・削除と並べ替えの 4 つになり、**Delete all** と **Cut / Copy / Paste** は
-  行の右クリックメニューに移りました → [サイドパネル](ui/side-panels.md)
-- **ダイアログの中でコピー &amp; ペーストができるようになりました (macOS)。** ダイアログを
-  開いている間はアプリケーションメニューが無効になっていたため、**Get PDB...** の入力欄
-  などに ++cmd+v++ で貼り付けられませんでした。
-- **アンビエントオクルージョンの Medium / High が軽くなりました。** 視点を動かしている間は
-  半分の解像度で計算し、止めると元の解像度で描き直します。書き出す画像は常に元の解像度です
-  → [Scene](reference/scene.md#ambient-occlusion)
-- **待機カーソルがちらつかなくなりました。** すぐ終わる処理では出なくなりました。
-- **数値の設定がスライダーになりました。** レイトレーサのアンビエントオクルージョン
-  (サンプル数・距離・強さ・直接光の割合)、分子表面 Renderer の **Detail**、
-  Tools &gt; **Mol surface generation...** の **Probe radius** です。
-
 ---
 
-2.3.10.504 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
+2.3.11.507 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
 
 ## 関連項目
 
-- [過去のリリース](releases-archive.md) — 2.3.10.504 以前の更新履歴
+- [過去のリリース](releases-archive.md) — 2.3.11.507 以前の更新履歴
 - [CueMol2 からの変更点](changes/index.md) — CueMol2 と CueMol3 の違い
 - [開発状況と未実装機能](changes/status.md) — 現時点で残っている制限
 - [ダウンロード](install/index.md#ダウンロード) — 配布物の入手方法
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.20.539*

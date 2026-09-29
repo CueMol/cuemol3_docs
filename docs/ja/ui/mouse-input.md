@@ -61,7 +61,7 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 
 | 判定の方式 | 対象 |
 |---|---|
-| 描かれた形状 | cartoon / tube / ribbon / spline / nucl / trace / cpk / anisou / ballstick / simple / dsurface |
+| 描かれた形状 | cartoon / tube / ribbon / spline / nucl / trace / tracestick / cpk / anisou / ballstick / simple / dsurface |
 | 原子の位置 | 対称操作で生成した分子 (symm) |
 
 **dsurface (分子から直接計算した分子表面) は、描画モードが Fill のときだけ**
@@ -96,7 +96,7 @@ generation... で生成した分子表面は、分子 (MolCoord) とは別の Ob
 
 - 1 行目は、チェイン名のバッジと残基 (`ALA 10`)。原子単位の Renderer では原子名が続きます
   (`ALA 10 CA`)。cartoon / ribbon / tube / spline / nucl / trace は帯が残基のものなので、
-  原子名は出ません
+  原子名は出ません (tracestick も同じです)
 - 2 行目は、その要素が属する Object と Renderer (`1crn | cartoon1`)。対称操作で生成した
   分子では、対称操作の名前も続きます
 
@@ -145,4 +145,4 @@ generation... で生成した分子表面は、分子 (MolCoord) とは別の Ob
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.20.539*

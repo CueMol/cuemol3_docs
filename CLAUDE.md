@@ -217,6 +217,32 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `CueMol2 nodejs add-on : INITIALIZED` を 60 秒待って現れない)。smoke も落ちるので
   ドキュメントとは無関係のハーネス側の問題。**これを直さないと spec による検証が
   できない**ので、次回はここから。
+- 前回同期: 2026-09-29 / cuemol2 `7de1a63a` (branch: develop) / CueMol3 `2.3.20.539`。
+  `af9509eb..7de1a63a` の差分を全件確認した (リリースノート
+  `docs/release_notes/v2.3.20.539.md` を含む。2.3.16〜2.3.19 は未リリースなので
+  更新履歴は 2.3.15.530 から直接飛ばした)。次回はこの hash から差分確認を行う。
+  更新履歴は 6 本目になったので、2.3.11.507 を `releases-archive.md` へ移した。
+  今回の主題は **MD トラジェクトリの大規模化**・**PyM Console の拡張**・
+  **AI Agent の Gemini 対応**・**新 Renderer tracestick**。
+  `docs/ja/reference/renderers/tracestick.md` を新設した (nav と一覧表にも追加)。
+  `docs/ja/reference/plugins/pymconsole.md` の「対応コマンド」の TODO を**ユーザー指示により
+  一覧で埋めた**ほか、「スクリプトとログ」節を新設し、制限事項の obsolete な記述を直した。
+  選択式の翻訳表の TODO は残っている。`ai-agent.md` に Google AI API key・パネル上端の
+  Model・`capture_view` を追加した (「できること」の TODO は残っている)。
+  **更新履歴の MD トラジェクトリは、ユーザー判断によりドロップ時の案内と Open File... の
+  一覧の変更だけ**を載せた。遅延読み込み・メモリ上限・先読み再生・GRO 高速化は
+  性能の話なので書いていない。
+  **名前ラベルの `format` プロパティ (`NameLabelRenderer.qif:45-48`) は書かなかった**
+  (Properties タブに行が無く Generic タブのみ。`egroup` と同じ基準)。GUI に行が付いたら書くこと。
+  **`Trajectory.applyLoadSel` も書いていない** (スクリプトのみで GUI が無い)。
+  **互換性の warning は書かなかった**: アニメーション中の分子の原子座標を個別に編集できなく
+  なった件 (もともと動いていなかった)、トラジェクトリが xformMat を無視する件 (tritium の
+  重ね合わせダイアログは以前からトラジェクトリを出していない)、座標の単精度化 (スクリプトからしか
+  見えない)。
+  **未着手の残件**: スクリーンショット全般 (tracestick を含む)、AI Agent の「できること」と
+  PyM Console の選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正。
+  **`task e2e` は 2.3.20.539 でも 5 件すべてが起動の時点で失敗する** (前回と同じ
+  `READY_LINES` の待ちでタイムアウトする)。次回はここから。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

@@ -15,6 +15,7 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 |---|---|---|---|
 | [simple](simple.md) | 分子 | 結合を線で描画する最軽量の表示 | ○ |
 | [trace](trace.md) | 分子 | 主鎖の pivot 原子 (Cα など) を線で結ぶ表示 | ○ |
+| [tracestick](tracestick.md) | 分子 | 主鎖の pivot 原子を球、そのあいだを円柱で描く trace | ○ |
 | [spline](spline.md) | 分子 | 主鎖を平滑化した曲線で描画 | ○ |
 | [ballstick](ballstick.md) | 分子 | 原子を球、結合を円柱で描画 | ○ |
 | [cpk](cpk.md) | 分子 | ファンデルワールス半径の球で描画する空間充填モデル | ○ |
@@ -82,4 +83,4 @@ New Renderer ダイアログでは、複数の Renderer をまとめて作成す
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.20.539*
