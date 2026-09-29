@@ -13,7 +13,7 @@
 
 | プラグイン | 内容 | 既定 | 有効にすると増えるもの |
 |---|---|---|---|
-| **AI Agent** | 文章で指示するとシーンを組み立てるチャットパネル。OpenAI または Anthropic のモデルを使い、API キーは自分で用意します | OFF | アクティビティバーの **AI Agent** ビューと、Settings の **Plugins &gt; AI Agent** ページ (→ [AI Agent](ai-agent.md)) |
+| **AI Agent** | 文章で指示するとシーンを組み立てるチャットパネル。OpenAI・Anthropic・Google (Gemini) のモデルを使い、API キーは自分で用意します | OFF | アクティビティバーの **AI Agent** ビューと、Settings の **Plugins &gt; AI Agent** ページ (→ [AI Agent](ai-agent.md)) |
 | **MD Tools** | MD シミュレーションのトラジェクトリ (topology + DCD / XTC / TRR) を開いて再生します | OFF | **File &gt; Open MD Trajectory...** と、下部パネルの **Trajectory** タブ |
 | **PyM Console** | PyMOL のコマンド言語の一部を解釈するコマンドラインです | OFF | 下部パネルの **PyM Console** タブ (→ [PyM Console](pymconsole.md)) |
 | **Component Catalog** | 画面部品のカタログ。CueMol3 の UI を開発・レビューするための内部ツールです | OFF | アクティビティバーの **Component Catalog** ビュー |
@@ -58,4 +58,4 @@ Installed で **MD Tools** を有効にしてください。
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.20.539*

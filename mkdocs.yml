@@ -157,6 +157,7 @@ nav:
           - エッジライン: reference/renderers/edge-lines.md
           - simple (結合線): reference/renderers/simple.md
           - trace (Cα トレース): reference/renderers/trace.md
+          - tracestick: reference/renderers/tracestick.md
           - spline: reference/renderers/spline.md
           - ballstick: reference/renderers/ballstick.md
           - cpk (空間充填モデル): reference/renderers/cpk.md
