@@ -108,7 +108,8 @@
 |---|---|---|
 | AI Agent | OFF | 文章での指示からシーンを組み立てるチャットパネル (→ [AI Agent](plugins/ai-agent.md)) |
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** と下部パネルの **Trajectory** タブ |
-| PyM Console | OFF | PyMOL 互換のコマンドライン (→ [PyM Console](plugins/pymconsole.md)) |
+| Console | ON | CueMol のコマンドライン。PyMOL 互換モードも使えます (→ [Console](plugins/console.md)) |
+| MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md)) |
 | Component Catalog | OFF | 画面部品のカタログ (CueMol3 の UI 開発用) |
 
 切り替えられないプラグイン (Get PDB / Sequence Panel) は、この一覧には並びません。
@@ -117,6 +118,28 @@
 
 **AI Agent** を有効にすると現れるページです。使用するモデルと API キーを設定します。
 項目の一覧は [AI Agent](plugins/ai-agent.md) を参照してください。
+
+### Console
+
+**Console** を有効にすると現れるページです (Console は既定で有効です)。
+
+| 項目 | 既定値 | 説明 |
+|---|---|---|
+| Command line access | OFF | 起動中のこのウィンドウで、tritium_cli からのコマンドを実行できるようにします。tritium_cli が起動した CueMol3 では、この設定を変えずにその回だけ許可されます |
+| Command line tool | — | 同梱の tritium_cli のパス。**Copy** でコピーでき、PATH に通す方法が併記されます |
+
+詳しくは [Console](plugins/console.md#ターミナルから使う-tritium_cli) を参照してください。
+
+### MCP Server
+
+**MCP Server** を有効にすると現れるページです。
+
+| 項目 | 既定値 | 説明 |
+|---|---|---|
+| Accept connections | ON | MCP クライアントからの接続を受け付けます |
+| Port | 27182 | 待ち受けるポート (1024〜65535) |
+
+詳しくは [MCP Server](plugins/mcp-server.md) を参照してください。
 
 ## 関連項目
 
@@ -127,4 +150,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.21.544*

@@ -243,6 +243,32 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   PyM Console の選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正。
   **`task e2e` は 2.3.20.539 でも 5 件すべてが起動の時点で失敗する** (前回と同じ
   `READY_LINES` の待ちでタイムアウトする)。次回はここから。
+- 前回同期: 2026-10-10 / cuemol2 `d3a2038e` (tag `v2.3.21.544`, branch: develop) / CueMol3 `2.3.21.544`。
+  `7de1a63a..d3a2038e` の差分を確認した (リリースノート `docs/release_notes/v2.3.21.544.md` を含む)。
+  次回はこの hash から差分確認を行う。cuemol2 のローカル作業ツリーは古いままだったので、
+  根拠は `git show d3a2038e:<path>` で取った。更新履歴は 6 本目になったので、2.3.12.517 を
+  `releases-archive.md` へ移した。
+  今回の主題は **外部からの操作** (PyM Console → **Console** プラグインと native 方言、
+  **MCP Server**、**tritium_cli**)・**ラベル**・**Color パネルの Paint 表**。
+  **ユーザー判断により** `reference/plugins/console.md` (native 方言 + tritium_cli) と
+  `reference/plugins/mcp-server.md` を新設し、`pymconsole.md` は「PyMOL 互換モード (Console)」の
+  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「CueMol モード」「PyMOL 互換モード」と書く** (ユーザー指示。コード側の dialect に対応)。`reference/renderers/namelabel.md` も新設
+  (name label のインスペクタページができ、`format` に GUI 行が付いたので前回の保留を解除)。
+  **リリースノートとソースの食い違いはソースに従った**: `new_scene` → `create_scene`、
+  `obj.rend` → `obj/rend`、native の `ray` → `render` (`ray` は PyMOL 方言)、
+  CLI の PyMOL 方言プロンプトは `pymol <dir> ❯`。
+  エッジラインが面を持たない Renderer (simple / trace / spline / contour / gpu_mapmesh /
+  selection / unitcell / namelabel) に表示されない件を edge-lines / common / inspector /
+  renderers/index に書いた (simple / trace / contour は以前から非表示だった)。
+  **不具合修正としてマニュアル・更新履歴のどちらにも書かなかったもの**: Paint の Undo の
+  重複行、Windows のウィンドウ表示の遅れ、レンダリングウィンドウで保存した PNG の DPI、
+  クリックでホバー強調が消えない、name label のプロパティ変更での再描画、File Open で
+  初めて選ぶ型の既定 Renderer (simple / contour / molsurf)、DefaultLabel のフォント名。
+  **Label on top がレンダリングウィンドウ (Umbreon) で効くかは未確認**なので書いていない。
+  AI Agent の「できること」の TODO は残した (ツール名の一覧は書いていない)。
+  **未着手の残件**: スクリーンショット全般 (Console / MCP / namelabel を含む)、AI Agent の
+  「できること」と PyMOL 互換モードの選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正
+  (今回もユーザー指示により e2e には触れていない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

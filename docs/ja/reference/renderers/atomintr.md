@@ -33,6 +33,8 @@ Renderer です。対象 Object: 分子 (MolCoord)。
 **Font name** は、システムにインストールされているフォントの一覧から選びます
 (Settings の Atom Label Font と同じ一覧です → [設定項目](../settings.md))。
 
+**Label on top** を ON にすると、手前にある形状に隠されず、常にラベルが見えます (既定は OFF)。
+
 <!-- TODO(content): プロパティ表 (インスペクタ表記 / プロパティ名 / 既定値 /
      説明) を atomintr のインスペクタセクションと C++ 定義から起こす -->
 
@@ -43,4 +45,4 @@ Renderer です。対象 Object: 分子 (MolCoord)。
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 2.3.21.544*

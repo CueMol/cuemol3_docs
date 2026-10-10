@@ -1,22 +1,23 @@
 # 下部パネル
 
-ウィンドウ下部のパネルは、既定では 3 つのタブを持ちます。
+ウィンドウ下部のパネルは、既定では 4 つのタブを持ちます。
 
 !!! info "撮影予定"
 
-<!-- TODO(screenshot): 下部パネルの 3 タブ (Output / Sequence / Animation)。Sequence タブで残基が選択されている状態 -->
+<!-- TODO(screenshot): 下部パネルの 4 タブ (Output / Console / Sequence / Animation)。Sequence タブで残基が選択されている状態 -->
 
 | タブ | 内容 |
 |---|---|
 | **Output** | ログ表示 |
+| **Console** | コマンドライン (→ [Console](../reference/plugins/console.md)) |
 | **Sequence** | 分子のアミノ酸・塩基配列の表示と選択 |
 | **Animation** | アニメーションのタイムライン編集 |
 
 [プラグイン](../reference/plugins/index.md)を有効にすると、次のタブが加わります。
+**Console** タブも Console プラグインの一部で、無効にすると表示されなくなります。
 
 | タブ | 内容 | プラグイン |
 |---|---|---|
-| **PyM Console** | PyMOL 互換のコマンドライン (→ [PyM Console](../reference/plugins/pymconsole.md)) | PyM Console |
 | **Trajectory** | MD トラジェクトリの再生 | MD Tools |
 
 ## Output
@@ -80,14 +81,13 @@
     アニメーションのプロパティを編集している最中は、分子ビューはリアルタイムには追従しません。
     再生して確認してください。
 
-## PyM Console
+## Console
 
-PyMOL のコマンド言語の一部を解釈するコマンドラインです。`fetch 1crn` のような
-PyMOL のコマンドをそのまま打てます。
+CueMol の操作をコマンドで実行するコマンドラインです。ツールバーで PyMOL 互換モードに切り替えると、
+`fetch 1crn` のような PyMOL のコマンドもそのまま打てます。
 
-このタブは **PyM Console** プラグインの一部で、**既定では無効**です。
-Settings &gt; Plugins &gt; Installed で有効にしてください
-(→ [PyM Console](../reference/plugins/pymconsole.md))。
+このタブは **Console** プラグインの一部で、**既定で有効**です
+(→ [Console](../reference/plugins/console.md))。
 
 ## Trajectory
 
@@ -100,4 +100,4 @@ Settings &gt; Plugins &gt; Installed で有効にしてください
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.21.544*

@@ -167,6 +167,7 @@ nav:
           - cartoon: reference/renderers/cartoon.md
           - nucl (核酸): reference/renderers/nucl.md
           - atomintr (計測表示): reference/renderers/atomintr.md
+          - namelabel (名前ラベル): reference/renderers/namelabel.md
           - disorder: reference/renderers/disorder.md
           - molsurf (分子表面・計算済み): reference/renderers/molsurf.md
           - dsurface (分子表面・直接計算): reference/renderers/dsurface.md
@@ -189,7 +190,9 @@ nav:
       - プラグイン:
           - reference/plugins/index.md
           - AI Agent: reference/plugins/ai-agent.md
-          - PyM Console: reference/plugins/pymconsole.md
+          - Console: reference/plugins/console.md
+          - PyMOL 互換モード (Console): reference/plugins/pymconsole.md
+          - MCP Server: reference/plugins/mcp-server.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md
 
