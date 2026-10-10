@@ -18,10 +18,10 @@
 ### Console
 
 - **PyM Console は Console になり、既定で有効になりました。** 下部パネルの Output の隣に
-  **Console** タブがあります。コマンドの書き方 (方言) は 2 つあり、ツールバーで切り替えます。
-  既定の **CueMol** 方言は CueMol 自身の操作のコマンドで、従来の PyMOL 互換のコマンドは
-  **PyMOL** 方言としてそのまま使えます → [Console](reference/plugins/console.md)
-- **CueMol 方言では、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
+  **Console** タブがあります。モードは 2 つあり、ツールバーで切り替えます。
+  既定の **CueMol モード**は CueMol 自身の操作のコマンドで、従来の PyMOL 互換のコマンドは
+  **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console.md)
+- **CueMol モードでは、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
   切り替え、視点とカメラ、Renderer とスタイル、着色と Paint、密度マップ、重ね合わせなどの
   分子の編集、レンダリング、静電ポテンシャルの計算、分子表面の切断、モーフィングなどです。
   Object は `1crn`、Renderer は `1crn/cartoon1` のように指定し、プロパティは
@@ -30,8 +30,8 @@
 - **++tab++ 補完は、引数ごとに候補を出します。** 引数の値、まだ指定していない引数の
   `name=`、Renderer のプロパティ、ファイルのパスなどです。補完はカーソルより前の部分に働き、
   候補の一覧はプロンプトのすぐ上に表示されます
-- **PyMOL 方言に `ray` が加わりました。** ビューをレンダリングし、続く `png` でその画像を
-  保存します → [PyMOL 方言](reference/plugins/pymconsole.md#対応コマンド)
+- **PyMOL 互換モードに `ray` が加わりました。** ビューをレンダリングし、続く `png` でその画像を
+  保存します → [PyMOL 互換モード](reference/plugins/pymconsole.md#対応コマンド)
 
 ### 外部からの操作
 
@@ -77,7 +77,7 @@
 !!! warning "Console プラグインを無効にしていた場合"
     - **PyM Console を無効にしていても、Console は有効になります。** プラグインの識別子が
       変わったためです。使わない場合は Settings &gt; Plugins &gt; Installed で **Console** を
-      無効にしてください。PyMOL 方言の入力の履歴は引き継がれます
+      無効にしてください。PyMOL 互換モードの入力の履歴は引き継がれます
 
 ## 2.3.20.539 (2026-09-29)
 

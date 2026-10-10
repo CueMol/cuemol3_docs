@@ -108,7 +108,7 @@
 |---|---|---|
 | AI Agent | OFF | 文章での指示からシーンを組み立てるチャットパネル (→ [AI Agent](plugins/ai-agent.md)) |
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** と下部パネルの **Trajectory** タブ |
-| Console | ON | CueMol のコマンドライン。PyMOL 互換の方言も使えます (→ [Console](plugins/console.md)) |
+| Console | ON | CueMol のコマンドライン。PyMOL 互換モードも使えます (→ [Console](plugins/console.md)) |
 | MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md)) |
 | Component Catalog | OFF | 画面部品のカタログ (CueMol3 の UI 開発用) |
 

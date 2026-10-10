@@ -191,7 +191,7 @@ nav:
           - reference/plugins/index.md
           - AI Agent: reference/plugins/ai-agent.md
           - Console: reference/plugins/console.md
-          - PyMOL 方言 (Console): reference/plugins/pymconsole.md
+          - PyMOL 互換モード (Console): reference/plugins/pymconsole.md
           - MCP Server: reference/plugins/mcp-server.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md

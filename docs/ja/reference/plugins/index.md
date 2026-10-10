@@ -15,7 +15,7 @@
 |---|---|---|---|
 | **AI Agent** | 文章で指示するとシーンを組み立てるチャットパネル。OpenAI・Anthropic・Google (Gemini) のモデルを使い、API キーは自分で用意します | OFF | アクティビティバーの **AI Agent** ビューと、Settings の **Plugins &gt; AI Agent** ページ (→ [AI Agent](ai-agent.md)) |
 | **MD Tools** | MD シミュレーションのトラジェクトリ (topology + DCD / XTC / TRR) を開いて再生します | OFF | **File &gt; Open MD Trajectory...** と、下部パネルの **Trajectory** タブ |
-| **Console** | CueMol の操作をコマンドで実行するコマンドラインです。PyMOL 互換の方言も使えます | **ON** | 下部パネルの **Console** タブ、ステータスバーの **CLI**、Settings の **Plugins &gt; Console** ページ (→ [Console](console.md)) |
+| **Console** | CueMol の操作をコマンドで実行するコマンドラインです。PyMOL 互換モードも使えます | **ON** | 下部パネルの **Console** タブ、ステータスバーの **CLI**、Settings の **Plugins &gt; Console** ページ (→ [Console](console.md)) |
 | **MCP Server** | 同じコンピュータの AI クライアント (Claude Code など) から MCP で CueMol3 を操作できるようにします | OFF | ステータスバーの **MCP** と、Settings の **Plugins &gt; MCP Server** ページ (→ [MCP Server](mcp-server.md)) |
 | **Component Catalog** | 画面部品のカタログ。CueMol3 の UI を開発・レビューするための内部ツールです | OFF | アクティビティバーの **Component Catalog** ビュー |
 
@@ -53,7 +53,7 @@ Installed で **MD Tools** を有効にしてください。
 
 ## 関連項目
 
-- [AI Agent](ai-agent.md) / [Console](console.md) / [PyMOL 方言](pymconsole.md) / [MCP Server](mcp-server.md)
+- [AI Agent](ai-agent.md) / [Console](console.md) / [PyMOL 互換モード](pymconsole.md) / [MCP Server](mcp-server.md)
 - [設定項目](../settings.md#plugins)
 - [サイドパネル](../../ui/side-panels.md) / [下部パネル](../../ui/bottom-panels.md)
 

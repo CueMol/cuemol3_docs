@@ -251,8 +251,8 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   今回の主題は **外部からの操作** (PyM Console → **Console** プラグインと native 方言、
   **MCP Server**、**tritium_cli**)・**ラベル**・**Color パネルの Paint 表**。
   **ユーザー判断により** `reference/plugins/console.md` (native 方言 + tritium_cli) と
-  `reference/plugins/mcp-server.md` を新設し、`pymconsole.md` は「PyMOL 方言 (Console)」の
-  ページとして残した (ファイル名・既存の URL は維持)。`reference/renderers/namelabel.md` も新設
+  `reference/plugins/mcp-server.md` を新設し、`pymconsole.md` は「PyMOL 互換モード (Console)」の
+  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「CueMol モード」「PyMOL 互換モード」と書く** (ユーザー指示。コード側の dialect に対応)。`reference/renderers/namelabel.md` も新設
   (name label のインスペクタページができ、`format` に GUI 行が付いたので前回の保留を解除)。
   **リリースノートとソースの食い違いはソースに従った**: `new_scene` → `create_scene`、
   `obj.rend` → `obj/rend`、native の `ray` → `render` (`ray` は PyMOL 方言)、
@@ -267,7 +267,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **Label on top がレンダリングウィンドウ (Umbreon) で効くかは未確認**なので書いていない。
   AI Agent の「できること」の TODO は残した (ツール名の一覧は書いていない)。
   **未着手の残件**: スクリーンショット全般 (Console / MCP / namelabel を含む)、AI Agent の
-  「できること」と PyMOL 方言の選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正
+  「できること」と PyMOL 互換モードの選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正
   (今回もユーザー指示により e2e には触れていない)。
 
 ## E2E 検証と画像生成 (docs-verify/)

@@ -4,16 +4,16 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 下部パネルの **Console** タブから使います。ターミナルから同じコマンドを実行する
 **tritium_cli** も同梱されています (→ [ターミナルから使う (tritium_cli)](#ターミナルから使う-tritium_cli))。
 
-コマンドの書き方 (**方言**) は 2 つあり、パネルで切り替えます。
+コマンドのモードは 2 つあり、パネルで切り替えます。
 
-| 方言 | プロンプト | 内容 |
+| モード | プロンプト | 内容 |
 |---|---|---|
-| **CueMol** (native、既定) | `CueMol>` | CueMol 自身の操作のコマンド。選択は CueMol の[選択式](../selection.md)で書きます。このページで説明します |
-| **PyMOL** | `PyM>` | PyMOL 互換のコマンド (→ [PyMOL 方言](pymconsole.md)) |
+| **CueMol モード** (既定) | `CueMol>` | CueMol 自身の操作のコマンド。選択は CueMol の[選択式](../selection.md)で書きます。このページで説明します |
+| **PyMOL 互換モード** | `PyM>` | PyMOL 互換のコマンド (→ [PyMOL 互換モード](pymconsole.md)) |
 
 !!! info "撮影予定"
 
-<!-- TODO(screenshot): Console タブ (CueMol 方言でコマンドを実行した直後の状態) -->
+<!-- TODO(screenshot): Console タブ (CueMol モードでコマンドを実行した直後の状態) -->
 
 ## 有効にする
 
@@ -24,14 +24,14 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 !!! note "PyM Console から名前が変わりました"
     2.3.20.539 までの **PyM Console** プラグインは、2.3.21.544 で **Console** に
     変わりました。PyM Console を無効にしていた場合も Console は有効になっているので、
-    使わない場合はもう一度無効にしてください。PyMOL 方言の入力の履歴は引き継がれます。
+    使わない場合はもう一度無効にしてください。PyMOL 互換モードの入力の履歴は引き継がれます。
 
-## 方言の切り替え
+## モードの切り替え
 
 - ツールバー左端の **CueMol** | **PyMOL** で切り替えます。
 - 行に `native` または `pymol` とだけ打って実行しても切り替わります。
-- 選んだ方言は記憶され、次に起動したときもその方言で始まります。
-- 入力の履歴は方言ごとに別々です。
+- 選んだモードは記憶され、次に起動したときもそのモードで始まります。
+- 入力の履歴はモードごとに別々です。
 
 ## 入力と補完
 
@@ -43,15 +43,15 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 | ++up++ / ++down++ | 入力の履歴をたどります (カーソルが先頭行 / 最終行にあるとき) |
 
 - 補完の候補の一覧は、文字を打つか ++enter++ / ++esc++ を押すと消えます。
-- CueMol 方言の ++tab++ は、コマンド名、`help` の項目、引数の値 (選択肢や true / false)、
+- CueMol モードの ++tab++ は、コマンド名、`help` の項目、引数の値 (選択肢や true / false)、
   Object・Renderer の名前、名前付き選択、色の名前、Renderer の種類、プロパティのパス、
   まだ指定していない引数の `name=`、ファイルのパス (パスを取る引数のみ) を補完します。
 - **1 回の実行が 1 回の Undo にまとまります。**
-- ツールバーの **Clear** で記録領域を消去し、**Help** でいまの方言の `help` を実行します。
+- ツールバーの **Clear** で記録領域を消去し、**Help** でいまのモードの `help` を実行します。
 - 実行中は「Running...」の横に **Stop** が表示されます。押すと次のコマンドの前で止まります。
   それまでに実行した分は残ります。
 
-## CueMol 方言の書き方
+## CueMol モードの書き方
 
 ```
 zoom 1crn, chain A and resid 10:20
@@ -108,11 +108,11 @@ create_renderer 1crn, ballstick, name=bs1
 
 ## スクリプトとログ
 
-- CueMol 方言のスクリプトは拡張子 `.cml` です。`run file.cml` または `@file.cml` で実行し、
+- CueMol モードのスクリプトは拡張子 `.cml` です。`run file.cml` または `@file.cml` で実行し、
   スクリプト全体が 1 回の Undo にまとまります。
 - `open_log` でファイル (既定は `log.cml`) を開くと、それ以降にプロンプトで打ったコマンドが
   記録されます。`close_log` で記録を終えます。
-- `.pml` (PyMOL のスクリプト) は CueMol 方言では実行できません。PyMOL 方言に切り替えて
+- `.pml` (PyMOL のスクリプト) は CueMol モードでは実行できません。PyMOL 互換モードに切り替えて
   実行してください。
 
 ## ターミナルから使う (tritium_cli)
@@ -125,8 +125,8 @@ tritium_cli [--dialect native|pymol] [--echo] [--no-launch] [-c COMMANDS | SCRIP
 ```
 
 - 引数なしで起動すると対話モードになります。プロンプトは `CueMol <ディレクトリ> ❯`
-  (PyMOL 方言では `pymol <ディレクトリ> ❯`) で、++tab++ で補完、++ctrl+c++ で実行中の
-  コマンドを止め、`native` / `pymol` で方言を切り替え、`exit` または ++ctrl+d++ で終了します。
+  (PyMOL 互換モードでは `pymol <ディレクトリ> ❯`) で、++tab++ で補完、++ctrl+c++ で実行中の
+  コマンドを止め、`native` / `pymol` でモードを切り替え、`exit` または ++ctrl+d++ で終了します。
 - `-c` でコマンドを、または引数にスクリプトのファイルを渡すと、それを実行して終了します。
   パイプから流し込むこともできます。失敗したときの終了ステータスは 1 です。
 - `--echo` は、実行する各コマンドを出力の前に表示します。
@@ -170,7 +170,7 @@ Console が有効なとき、ステータスバーの右側に **CLI** が表示
 
 ## 関連項目
 
-- [PyMOL 方言](pymconsole.md) / [MCP Server](mcp-server.md) / [AI Agent](ai-agent.md)
+- [PyMOL 互換モード](pymconsole.md) / [MCP Server](mcp-server.md) / [AI Agent](ai-agent.md)
 - [プラグイン](index.md) / [設定項目](../settings.md#plugins)
 - [選択式の文法](../selection.md)
 - [下部パネル](../../ui/bottom-panels.md)
