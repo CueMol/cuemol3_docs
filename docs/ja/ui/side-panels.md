@@ -77,6 +77,8 @@ Renderer の種類と対象を選んで作成します。
 Renderer 単位の **Coloring** を設定します。上部で Renderer を選び (色を扱える Renderer と、
 その親の Object が並びます。シーンツリーで Object や Renderer を選ぶと、ここも追従します)、
 続いて Coloring の種類を選ぶと、その種類に応じた設定欄が下に表示されます。
+種類を選ぶボタンには、その Renderer の現在の種類 (Paint / Solid / CPK / B-factor /
+Rainbow / Potential / Multi-gradient) が表示されます。
 
 | 種類 | 設定内容 |
 |---|---|
@@ -91,12 +93,14 @@ Renderer 単位の **Coloring** を設定します。上部で Renderer を選�
 Paint の表は複数選択できます。++cmd++ / ++ctrl++ + クリックで行を選択に加える / 外す、
 ++shift++ + クリックで範囲を選びます。削除・Cut・Copy は選んだ行すべてに効きます。
 並べ替え (Move up / Move down) は 1 行だけ選んでいるときに使えます。
+行をドラッグして並べ替えることもできます。最後の行より下に落とすと末尾に移ります。
 行の移動と選択は、シーンツリーと同じキー (++up++ / ++down++ / ++home++ / ++end++ と
 ++shift++ の併用) でも行えます。
 
-ツールバーにあるのは行の追加 (**Add row**)・削除 (**Remove row**)・並べ替え
-(**Move up** / **Move down**) の 4 つで、**Delete all** と **Cut** / **Copy** /
-**Paste** は行の右クリックメニューにあります。Selection 列と Color 列の境界は
+表の上のツールバーにあるのは行の追加 (**Add**)・並べ替え (**Move up** / **Move down**)・
+削除 (**Delete**) の 4 つで、**Delete all** と **Cut** / **Copy** /
+**Paste** は行の右クリックメニューにあります。選んだ行は ++delete++ / ++backspace++
+でも削除できます。Selection 列と Color 列の境界は
 ドラッグして幅を変えられます。
 
 行のクリックは選択だけを行います。セルの編集は、そのセルのダブルクリック / ++enter++ /
@@ -226,4 +230,4 @@ Paint の Cut は 1 回の Undo でまとめて戻せます。Paste はクリッ
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.21.544*

@@ -36,6 +36,8 @@ CueMol2 の各種プロパティダイアログを置き換えるものです。
 
 Properties タブに **Common** セクション (基本設定とエッジライン) が表示されます。
 不透明度・マテリアル・エッジラインの設定などをここで調整します。
+面を持たない Renderer (simple / trace / spline / contour など) では、エッジラインの設定は
+表示されません (→ [エッジライン](../reference/renderers/edge-lines.md))。
 
 !!! note "Renderer 種類ごとの詳細設定"
     Renderer の種類 (ribbon / ballstick / molsurf など) に固有の設定項目は、
@@ -122,4 +124,4 @@ View メニューの **View property...** から開きます。Generic タブで
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.3.21.544*

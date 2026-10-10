@@ -39,6 +39,8 @@ Width
 Color
 :   エッジ線の色
 
+面を持たない Renderer (simple / trace / spline / contour / gpu_mapmesh、選択のハイライト、
+単位格子、[namelabel](namelabel.md)) には、エッジラインの設定は表示されません。
 → [エッジライン](edge-lines.md)
 
 !!! info "準備中"
@@ -56,4 +58,4 @@ Color
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.3.21.544*
