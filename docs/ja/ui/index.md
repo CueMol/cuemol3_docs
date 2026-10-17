@@ -19,7 +19,7 @@ CueMol2 のように機能ごとに別ウィンドウが開くことはありま
 | 6 | **ツールパレット** | 分子ビュー左端に浮かぶ縦のツールボタン列。視点操作 / 範囲選択 / 計測 / 結合編集のモードを切り替えます | [ツールバーとツールパレット](toolbar-tools.md) |
 | 7 | **プロパティインスペクタ (右)** | シーンツリーで選んだ要素の設定を表示・編集します。変更は分子ビューに即座に反映されます | [プロパティインスペクタ](inspector.md) |
 | 8 | **下部パネル** | Console (コマンドライン) / Output (ログ) / Sequence (配列) / Animation (タイムライン) のタブ。プラグインを有効にするとタブが増えます | [下部パネル](bottom-panels.md) |
-| 9 | **ステータスバー** | 状態表示。プラグインの項目 (Console の **CLI**、MCP Server の **MCP**) もここに並びます。右端のベルは通知センターを開きます | [tritium_cli](../reference/plugins/tritium-cli.md#ステータスバーの-cli) / [MCP Server](../reference/plugins/mcp-server.md#ステータスバーの-mcp) / [通知センター](../install/update.md#通知センター) |
+| 9 | **ステータスバー** | 状態表示。プラグインの項目 (Console の **CLI**、MCP Server の **MCP**) もここに並びます。右端のベルは通知センターを開きます | [tritium_cli](../reference/plugins/console/cli.md#ステータスバーの-cli) / [MCP Server](../reference/plugins/mcp-server.md#ステータスバーの-mcp) / [通知センター](../install/update.md#通知センター) |
 | — | **メニューバー** | File / Edit などのメニュー。macOS では画面上部のシステムメニューバーにあるため図には写っていません。Windows / Linux ではウィンドウ内の上部にあります | [メニュー](../menu/index.md) |
 
 ## タブ

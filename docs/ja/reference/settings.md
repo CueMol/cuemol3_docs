@@ -119,7 +119,7 @@
 |---|---|---|
 | AI Agent | OFF | 文章での指示からシーンを組み立てるチャットパネル (→ [AI Agent](plugins/ai-agent.md)) |
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** と下部パネルの **Trajectory** タブ |
-| Console | ON | CueMol のコマンドライン。PyMOL 互換モードも使えます (→ [Console](plugins/console.md)) |
+| Console | ON | CueMol のコマンドライン。PyMOL 互換モードも使えます (→ [Console](plugins/console/index.md)) |
 | MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md)) |
 | Component Catalog | OFF | 画面部品のカタログ (CueMol3 の UI 開発用) |
 
@@ -139,7 +139,7 @@
 | Command line access | OFF | 起動中のこのウィンドウで、tritium_cli からのコマンドを実行できるようにします。tritium_cli が起動した CueMol3 では、この設定を変えずにその回だけ許可されます |
 | Command line tool | — | 同梱の tritium_cli のパス。**Copy** でコピーでき、PATH に通す方法が併記されます |
 
-詳しくは [tritium_cli](plugins/tritium-cli.md) を参照してください。
+詳しくは [tritium_cli](plugins/console/cli.md) を参照してください。
 
 ### MCP Server
 

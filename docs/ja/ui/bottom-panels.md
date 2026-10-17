@@ -8,7 +8,7 @@
 
 | タブ | 内容 |
 |---|---|
-| **Console** | コマンドライン (→ [Console](../reference/plugins/console.md)) |
+| **Console** | コマンドライン (→ [Console](../reference/plugins/console/index.md)) |
 | **Output** | ログ表示 |
 | **Sequence** | 分子のアミノ酸・塩基配列の表示と選択 |
 | **Animation** | アニメーションのタイムライン編集 |
@@ -87,7 +87,7 @@ CueMol の操作をコマンドで実行するコマンドラインです。ツ�
 `fetch 1crn` のような PyMOL のコマンドもそのまま打てます。
 
 このタブは **Console** プラグインの一部で、**既定で有効**です
-(→ [Console](../reference/plugins/console.md))。下部パネルの先頭のタブで、ほかのタブを
+(→ [Console](../reference/plugins/console/index.md))。下部パネルの先頭のタブで、ほかのタブを
 選ぶまでは前面に表示されます。
 
 ## Trajectory

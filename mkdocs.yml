@@ -191,10 +191,11 @@ nav:
       - プラグイン:
           - reference/plugins/index.md
           - AI Agent: reference/plugins/ai-agent.md
-          - Console: reference/plugins/console.md
-          - Console のコマンド一覧: reference/plugins/console-commands.md
-          - tritium_cli: reference/plugins/tritium-cli.md
-          - PyMOL 互換モード (Console): reference/plugins/pymconsole.md
+          - Console:
+              - reference/plugins/console/index.md
+              - コマンド一覧: reference/plugins/console/commands.md
+              - tritium_cli: reference/plugins/console/cli.md
+              - PyMOL 互換モード: reference/plugins/console/pymconsole.md
           - MCP Server: reference/plugins/mcp-server.md
       - 操作の記録と再生 (Actions): reference/actions.md
       - キーボードショートカット: reference/shortcuts.md

@@ -52,9 +52,9 @@ Console が有効なとき、ステータスバーの右側に **CLI** が表示
 
 ## 関連項目
 
-- [Console](console.md) / [Console のコマンド一覧](console-commands.md) / [PyMOL 互換モード](pymconsole.md)
-- [MCP Server](mcp-server.md) — 同じサーバーを使います
-- [操作の記録と再生](../actions.md) / [設定項目](../settings.md#console)
+- [Console](index.md) / [Console のコマンド一覧](commands.md) / [PyMOL 互換モード](pymconsole.md)
+- [MCP Server](../mcp-server.md) — 同じサーバーを使います
+- [操作の記録と再生](../../actions.md) / [設定項目](../../settings.md#console)
 
 ---
 

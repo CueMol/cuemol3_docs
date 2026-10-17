@@ -1,7 +1,7 @@
 # Console のコマンド一覧
 
-[Console](console.md) の **CueMol モード**で使えるコマンドの一覧です。書き方は
-[CueMol モードの書き方](console.md#cuemol-モードの書き方)を、各コマンドの引数は Console で
+[Console](index.md) の **CueMol モード**で使えるコマンドの一覧です。書き方は
+[CueMol モードの書き方](index.md#cuemol-モードの書き方)を、各コマンドの引数は Console で
 `help <コマンド>` を参照してください。
 
 ## 項目ごとの一覧
@@ -33,13 +33,13 @@
   `load_pdb` などの形式ごとのコマンドは、ファイルを開くときのオプションを名前付きの引数で
   受け付けます (`load_pdb f.pdb, build2ndry=false`)。
 - `fetch` は既定で mmCIF 形式で取得します。
-- `render` は[レンダリング](../rendering.md)を実行します (GI または NPR)。実行中は **Stop** で止められます。
+- `render` は[レンダリング](../../rendering.md)を実行します (GI または NPR)。実行中は **Stop** で止められます。
 - `calc_elepot` は **Tools** メニューの静電ポテンシャル計算と同じ処理で、Settings に設定した
   APBS のパスを使います。`cut_surface` は分子表面の切断、`add_morph_frame` などはモーフィングの
   アニメーションを作るツールと同じ処理です。
 - `superpose` は既定で US-align により重ね合わせます (`algo` で `SSM` / `LSQ` も選べます)。
   `pivot` で、US-align が残基の代表に使う原子 (`auto` / `CA` / `C3'` / `C4'` / `P`) を指定します
-  (→ [Tools メニュー](../../menu/tools.md))。
+  (→ [Tools メニュー](../../../menu/tools.md))。
 - `animate` はアニメーションの再生・一時停止・停止・時刻の移動を行います。
 - シーンのコマンド (`create_scene` / `switch_scene` / `close_scene`) はタブを開閉・切り替えます。
   `close_scene` は、変更が保存されていないシーンは閉じません。`discardChanges=true` を付けると
@@ -49,9 +49,9 @@
 
 ## 関連項目
 
-- [Console](console.md) / [tritium_cli](tritium-cli.md) / [PyMOL 互換モード](pymconsole.md)
-- [MCP Server](mcp-server.md) — 同じ操作をツールとして呼び出せます
-- [操作の記録と再生](../actions.md)
+- [Console](index.md) / [tritium_cli](cli.md) / [PyMOL 互換モード](pymconsole.md)
+- [MCP Server](../mcp-server.md) — 同じ操作をツールとして呼び出せます
+- [操作の記録と再生](../../actions.md)
 
 ---
 

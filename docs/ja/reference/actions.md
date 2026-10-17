@@ -17,7 +17,7 @@ Actions ビューには 2 つのパネルがあります。
 
 ## 記録される操作
 
-GUI での編集のほとんどと、[Console](plugins/console.md) (CueMol モード・PyMOL 互換モード)・
+GUI での編集のほとんどと、[Console](plugins/console/index.md) (CueMol モード・PyMOL 互換モード)・
 [MCP Server](plugins/mcp-server.md)・[AI Agent](plugins/ai-agent.md) から行った編集が、
 保存して再生できる操作として記録されます。プロパティの変更、ファイルの読み込みと取得、
 Renderer とスタイル、着色と Paint、選択、分子の編集、重ね合わせ、ラベルと計測、
@@ -46,7 +46,7 @@ Undo / Redo の表示 (ツールバーの Undo / Redo のドロップダウン�
 | 操作 | 内容 |
 |---|---|
 | **Go to step** (右クリックでは **Go to This Step** / **Go to Initial State**) | Undo / Redo を繰り返して、選んだ行の状態まで移ります |
-| **Copy as commands** | 選んだステップの操作を、[Console](plugins/console.md) (CueMol モード) のコマンドとしてコピーします。パネルで **Edit &gt; Copy** (++cmd+c++ / ++ctrl+c++) を使っても同じです |
+| **Copy as commands** | 選んだステップの操作を、[Console](plugins/console/index.md) (CueMol モード) のコマンドとしてコピーします。パネルで **Edit &gt; Copy** (++cmd+c++ / ++ctrl+c++) を使っても同じです |
 | **Save as qax** | 選んだステップを qax ファイルに保存します |
 | **Save to Actions** | 選んだステップを Actions パネルの User Actions に保存します (→ [マクロとして保存する](#マクロとして保存する)) |
 | **Show in Inspector** (右クリックのみ) | 選んだステップを[プロパティインスペクタ](../ui/inspector.md)に表示します |
@@ -130,12 +130,12 @@ History パネルでステップを選んで **Save to Actions** を押すと、
 qax は、記録された操作を XML で書いたファイルです (拡張子 `.qax`)。
 
 - History パネルの **Save as qax** や **Save to Actions** で保存します。
-- [Console](plugins/console.md#スクリプトとログ) の CueMol モードでは、`run file.qax` (または
+- [Console](plugins/console/index.md#スクリプトとログ) の CueMol モードでは、`run file.qax` (または
   `@file.qax`) で再生します。記録された操作ごとに 1 回の Undo になります。
   `list_actions` で履歴を表示し、`export_actions file[, first[, last]]` で qax に書き出せます。
   `open_log` も、それ以降の操作を qax に記録します。
 - ターミナルからは `tritium_cli file.qax` で再生できます
-  (→ [tritium_cli](plugins/tritium-cli.md))。
+  (→ [tritium_cli](plugins/console/cli.md))。
 - PyMOL 互換モードでは qax を実行できません。
 
 ## 制限事項
@@ -147,7 +147,7 @@ qax は、記録された操作を XML で書いたファイルです (拡張子
 ## 関連項目
 
 - [サイドパネル](../ui/side-panels.md#actions) — Actions ビューの位置づけ
-- [Console](plugins/console.md) / [MCP Server](plugins/mcp-server.md) / [AI Agent](plugins/ai-agent.md)
+- [Console](plugins/console/index.md) / [MCP Server](plugins/mcp-server.md) / [AI Agent](plugins/ai-agent.md)
 - [Edit メニュー](../menu/edit.md) — Undo / Redo
 
 ---

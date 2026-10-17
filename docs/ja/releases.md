@@ -25,7 +25,7 @@
   アミノ酸に CA、ヌクレオチドに C3' を使います。ダイアログの設定は次回に引き継がれます
 - **Console の `superpose` は `pivot` を取ります。** PyMOL 互換モードの `align` / `super` も
   US-align になり、RMSD とあわせて対応づけた残基の数と TM-score を表示します
-  → [PyMOL 互換モード](reference/plugins/pymconsole.md#対応コマンド)
+  → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
 
 ### 操作の記録と再生 (Actions)
 
@@ -48,7 +48,7 @@
 - **複数の対象とワイルドカードを書けるようになりました。** `hide 1crn 2abc/cartoon1`、
   `set */simple1.width, 0.7`、`load *.pdb` のように、対象ごとにコマンドが実行されます。
   行全体は 1 回の Undo のままです
-  → [Console](reference/plugins/console.md#複数の対象とワイルドカード)
+  → [Console](reference/plugins/console/index.md#複数の対象とワイルドカード)
 - **++tab++ の補完がメニューになりました。** 候補が出ているときにもう一度 ++tab++ を押すと、
   ++tab++ / ++shift+tab++ / 矢印キーで候補を選べます。tritium_cli でも同じです
 - **`help` の表示が整理されました。** `help` で項目の一覧、`help <項目>` でコマンドの一覧、
@@ -95,18 +95,18 @@
 - **PyM Console は Console になり、既定で有効になりました。** 下部パネルの Output の隣に
   **Console** タブがあります。モードは 2 つあり、ツールバーで切り替えます。
   既定の **CueMol モード**は CueMol 自身の操作のコマンドで、従来の PyMOL 互換のコマンドは
-  **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console.md)
+  **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console/index.md)
 - **CueMol モードでは、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
   切り替え、視点とカメラ、Renderer とスタイル、着色と Paint、密度マップ、重ね合わせなどの
   分子の編集、レンダリング、静電ポテンシャルの計算、分子表面の切断、モーフィングなどです。
   Object は `1crn`、Renderer は `1crn/cartoon1` のように指定し、プロパティは
   `set 1crn/cartoon1.width, 2` で設定します。`help` で項目ごとの一覧が出ます
-  → [Console](reference/plugins/console.md#対応コマンド)
+  → [Console](reference/plugins/console/index.md#対応コマンド)
 - **++tab++ 補完は、引数ごとに候補を出します。** 引数の値、まだ指定していない引数の
   `name=`、Renderer のプロパティ、ファイルのパスなどです。補完はカーソルより前の部分に働き、
   候補の一覧はプロンプトのすぐ上に表示されます
 - **PyMOL 互換モードに `ray` が加わりました。** ビューをレンダリングし、続く `png` でその画像を
-  保存します → [PyMOL 互換モード](reference/plugins/pymconsole.md#対応コマンド)
+  保存します → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
 
 ### 外部からの操作
 
@@ -119,7 +119,7 @@
   対話モードのほか、`-c` やスクリプトのファイルで実行できます。CueMol3 が起動していなければ
   起動します。起動済みの CueMol3 に接続するには **Settings &gt; Plugins &gt; Console** の
   **Command line access** を ON にします
-  → [Console](reference/plugins/console.md#ターミナルから使う-tritium_cli)
+  → [Console](reference/plugins/console/index.md#ターミナルから使う-tritium_cli)
 
 ### AI Agent
 
@@ -169,13 +169,13 @@
 - **PyMOL のスクリプトを実行できるようになりました。** `@file.pml` または `run file.pml`
   で実行し、スクリプト全体が 1 回の Undo にまとまります。`log_open` / `log_close` で
   打ったコマンドを記録でき、記録したファイルは `@` でそのまま再実行できます。
-  実行中は **Stop** で止められます → [PyM Console](reference/plugins/pymconsole.md#スクリプトとログ)
+  実行中は **Stop** で止められます → [PyM Console](reference/plugins/console/pymconsole.md#スクリプトとログ)
 - **使えるコマンドが増えました。** `save` (分子・シーン・画像)、`label`、`spectrum`、
   `set_color`、`align` / `super` / `pair_fit` (RMSD を表示)、`get_view` / `set_view`、
   `orient`、`mplay` / `mstop` / `rewind` / `frame` などです。`load` は `.qsc` / `.pse` /
   `.pml` と URL を、`fetch` は密度マップ (`type=2fofc`) と生物学的集合体 (`type=pdb1`)、
   チェーンの指定 (`1abcA`) を受け付けます
-  → [PyM Console](reference/plugins/pymconsole.md#対応コマンド)
+  → [PyM Console](reference/plugins/console/pymconsole.md#対応コマンド)
 - **書き方が PyMOL に近づきました。** 選択式の中で Object 名が使えます
   (`1abc and chain A`)。`show` / `hide` は引数なしや `everything`、略した表現名も
   受け付け、`quiet=1` のような PyMOL のキーワード引数も通ります。`stick_radius` などの
@@ -219,7 +219,7 @@
 - **PyMOL 互換のコマンドライン PyM Console が追加されました** (既定は無効)。
   `fetch 1crn` や `bg_color white` のような、PyMOL で使っていたコマンドをそのまま打てます。
   コマンドの解析と ++tab++ 補完は PyMOL の実装を移植したものです
-  → [PyM Console](reference/plugins/pymconsole.md)
+  → [PyM Console](reference/plugins/console/pymconsole.md)
 - **MD トラジェクトリの GUI が既定で無効になりました。** **File &gt; Open MD
   Trajectory...** と下部パネルの **Trajectory** タブは **MD Tools** プラグインの
   一部になり、Settings &gt; Plugins &gt; Installed で有効にしないと現れません。

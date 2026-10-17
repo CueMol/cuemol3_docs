@@ -2,13 +2,13 @@
 
 CueMol の操作をコマンドで実行するコマンドラインです。**既定で有効**のプラグインで、
 下部パネルの **Console** タブから使います。ターミナルから同じコマンドを実行する
-**tritium_cli** も同梱されています (→ [tritium_cli](tritium-cli.md))。
+**tritium_cli** も同梱されています (→ [tritium_cli](cli.md))。
 
 コマンドのモードは 2 つあり、パネルで切り替えます。
 
 | モード | プロンプト | 内容 |
 |---|---|---|
-| **CueMol モード** (既定) | `CueMol>` | CueMol 自身の操作のコマンド。選択は CueMol の[選択式](../selection.md)で書きます。このページで説明します |
+| **CueMol モード** (既定) | `CueMol>` | CueMol 自身の操作のコマンド。選択は CueMol の[選択式](../../selection.md)で書きます。このページで説明します |
 | **PyMOL 互換モード** | `PyM>` | PyMOL 互換のコマンド (→ [PyMOL 互換モード](pymconsole.md)) |
 
 !!! info "撮影予定"
@@ -20,7 +20,7 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 既定で有効なので、下部パネルの先頭に **Console** タブがあります。ほかのタブを選ぶまでは、
 このタブが前面に表示されます。
 使わない場合は **Settings &gt; Plugins &gt; Installed** で **Console** を無効にします
-(→ [プラグイン](index.md))。
+(→ [プラグイン](../index.md))。
 
 !!! note "PyM Console から名前が変わりました"
     2.3.20.539 までの **PyM Console** プラグインは、2.3.21.544 で **Console** に
@@ -105,7 +105,7 @@ get_prop *.visible
 
 ## 対応コマンド
 
-CueMol モードのコマンドは、`help` の項目ごとに [Console のコマンド一覧](console-commands.md)に
+CueMol モードのコマンドは、`help` の項目ごとに [Console のコマンド一覧](commands.md)に
 まとめてあります。
 
 ## スクリプトとログ
@@ -115,7 +115,7 @@ CueMol モードのコマンドは、`help` の項目ごとに [Console のコ�
 - `run file.qax` (または `@file.qax`) は、記録された操作のファイル (qax) を再生します。
   行にそれだけを書いた場合は、記録された操作ごとに 1 回の Undo になり、失敗した操作の
   ところで止まります。スクリプトの中から実行した場合は、スクリプト全体の Undo に含まれます
-  (→ [操作の記録と再生](../actions.md))。
+  (→ [操作の記録と再生](../../actions.md))。
 - `open_log` でファイル (既定は `log.qax`) を開くと、それ以降の実行で行われた操作が
   qax として記録されます。シーンを変えなかった実行は記録されません。`log` で書いた文は
   メモとして入ります。`close_log` で記録を終えます。
@@ -127,24 +127,24 @@ CueMol モードのコマンドは、`help` の項目ごとに [Console のコ�
 ## ターミナルから使う (tritium_cli)
 
 **tritium_cli** は、Console のコマンドをターミナルから実行するクライアントです。
-CueMol3 に同梱されています。使い方・接続・PATH の通し方は [tritium_cli](tritium-cli.md) を
+CueMol3 に同梱されています。使い方・接続・PATH の通し方は [tritium_cli](cli.md) を
 参照してください。
 
 ## 制限事項
 
 - シーンのコマンド (`create_scene` / `switch_scene` / `close_scene`) と `quit` / `exit` は、スクリプトの中では使えません。
 - Python は受け付けません。`.py` / `.pym` のスクリプトや、`/` で始まる行は拒否されます。
-- AI Agent の指示や [MCP Server](mcp-server.md) の呼び出しを実行している間は、コマンドを
+- AI Agent の指示や [MCP Server](../mcp-server.md) の呼び出しを実行している間は、コマンドを
   実行できません。
 
 ## 関連項目
 
-- [Console のコマンド一覧](console-commands.md) / [tritium_cli](tritium-cli.md)
-- [PyMOL 互換モード](pymconsole.md) / [MCP Server](mcp-server.md) / [AI Agent](ai-agent.md)
-- [プラグイン](index.md) / [設定項目](../settings.md#plugins)
-- [選択式の文法](../selection.md)
-- [操作の記録と再生](../actions.md)
-- [下部パネル](../../ui/bottom-panels.md)
+- [Console のコマンド一覧](commands.md) / [tritium_cli](cli.md)
+- [PyMOL 互換モード](pymconsole.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
+- [プラグイン](../index.md) / [設定項目](../../settings.md#plugins)
+- [選択式の文法](../../selection.md)
+- [操作の記録と再生](../../actions.md)
+- [下部パネル](../../../ui/bottom-panels.md)
 
 ---
 
