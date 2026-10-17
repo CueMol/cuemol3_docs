@@ -9,9 +9,10 @@
 
 Tools メニューの **Mol surface generation...** で分子から生成するか、
 MSMS の表面ファイル (`.face` / `.vert`) や PLY ファイルを読み込みます
-(→ [Tools メニュー](../../menu/tools.md))。
+(→ [分子表面の生成](../tools/mol-surface.md))。
 
-生成後は Tools &gt; **Mol surface cutter...** で平面による切断、
+生成後は Tools &gt; **Mol surface cutter...** で平面による切断
+(→ [分子表面の切断](../tools/surface-cutter.md))、
 シーンツリーの右クリックメニューから再生成ができます。
 
 ### 生成アルゴリズム (Algorithm)
@@ -60,4 +61,4 @@ Output パネルのログに 1 行出力されます。
 
 ---
 
-*確認対象: CueMol3 2.3.10.504*
+*確認対象: CueMol3 2.4.0.546*

@@ -11,7 +11,7 @@ DensityMap と同じくスカラー場 (ScalarObject) の一種で、
 
 Tools メニューの **APBS elepot calculation...** で計算するか、
 APBS が出力した OpenDX 形式 (`.dx`) を読み込みます
-(→ [Tools メニュー](../../menu/tools.md)、
+(→ [静電ポテンシャルの計算](../tools/apbs.md)、
 [外部ツールの設定](../../install/external-tools.md))。
 
 ## プロパティ
@@ -34,4 +34,4 @@ APBS が出力した OpenDX 形式 (`.dx`) を読み込みます
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.4.0.546*

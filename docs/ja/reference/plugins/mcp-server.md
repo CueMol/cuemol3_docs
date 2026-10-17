@@ -4,7 +4,7 @@
 **MCP** (Model Context Protocol) で CueMol3 を操作できるようにするプラグインです。
 **既定では無効**です。
 
-クライアントからは、[Console](console.md) のコマンドと同じ操作をツールとして呼び出せます。
+クライアントからは、[Console](console/index.md) のコマンドと同じ操作をツールとして呼び出せます。
 API キーは CueMol3 側では不要で、モデルの利用はクライアント側の設定に従います。
 
 !!! info "撮影予定"
@@ -22,7 +22,7 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
 | 項目 | 既定値 | 説明 |
 |---|---|---|
 | Accept connections | ON | 接続を受け付けます。OFF にするとポートを閉じます (ステータスバーの MCP は残り、そこから ON に戻せます) |
-| Port | 27182 | 待ち受けるポート (1024〜65535)。変えたときは、クライアントを登録し直してください |
+| Port | 27182 | 待ち受けるポート (1024〜65535)。++enter++ を押すかフォーカスを外したときに反映されます (++esc++ で元の値に戻ります)。範囲外の値はエラーを表示して反映しません。欄の下に待ち受けの状態が表示され、既定値でないときは **Reset to 27182** で戻せます。変えたときは、クライアントを登録し直してください |
 
 ## ステータスバーの MCP
 
@@ -65,30 +65,38 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
 
 ## できること
 
-- [Console](console.md#対応コマンド) のコマンドにあたる操作を、すべてツールとして呼び出せます。
+- [Console](console/commands.md) のコマンドにあたる操作を、すべてツールとして呼び出せます。
   そのほか、今のビューを画像として返す `capture_view` があります。
 - シーンの一覧・新規作成・切り替え・クローズ (`list_scenes` / `create_scene` / `switch_scene` /
   `close_scene`) ができます。`close_scene` は、変更が保存されていないシーンを閉じません
   (`discardChanges` を指定すると変更を捨てて閉じます)。`save_scene` での保存や、
   `.qsc` を開くこともできます。
 - **1 回のツール呼び出しが 1 回の Undo にまとまります** (Undo の名前は `MCP: <ツール名>`)。
+  呼び出しは [Actions ビューの History](../actions.md) に記録されます。
 - AI Agent の指示や Console のコマンドを実行している間は、ツールの呼び出しは断られます。
   クライアントが呼び出しを取り消すと、実行中の処理も止まります。
 - エラーは、クライアントが読める形 (`{ok: false, error}`) で返されます。
 
+!!! note "2.4.0.546 で引数の名前が変わりました"
+    着色と Paint の操作 (`add_paint` / `set_paint` / `clear_paint` / `set_default_color` /
+    `set_renderer_coloring` など) は、`rendId` の代わりに `nodeId` と `nodeType`
+    (`renderer` または `object`) を取ります。Object を指す引数 `molId` は `objId` になりました
+    (`add_morph_frame` の `fromMolId` は `fromObjId`)。
+
 ## セキュリティ
 
 - サーバーは `127.0.0.1` (このコンピュータの中) でだけ待ち受けます。
-- 接続にはトークンが必要です。トークンは OS の安全な保管領域に保存されます。
+- 接続にはトークンが必要です。トークンは CueMol3 のユーザーデータのフォルダに、本人だけが
+  読めるファイルとして保存されます。
 - Web ページからの要求は拒否されます。
 - 待ち受け中は、ポートとトークンが `~/.cuemol/local-api.json` (本人だけが読めるファイル) に
-  書かれます。[tritium_cli](console.md#ターミナルから使う-tritium_cli) も同じサーバーを使います。
+  書かれます。[tritium_cli](console/cli.md) も同じサーバーを使います。
 
 ## 関連項目
 
-- [Console](console.md) / [AI Agent](ai-agent.md)
+- [Console](console/index.md) / [AI Agent](ai-agent.md)
 - [プラグイン](index.md) / [設定項目](../settings.md#plugins)
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 2.4.0.546*

@@ -13,25 +13,100 @@
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
 
+## 2.4.0.546 (2026-10-17)
+
+### 重ね合わせ
+
+- **重ね合わせの既定の手法が US-align になりました。** **Tools &gt; Molecular superposition...** の
+  **Method** で US-align / SSM / LSQ を選べます。US-align はタンパク質のほか
+  **RNA / DNA** も重ね合わせられます (SSM はタンパク質専用です)。SSM と LSQ は従来どおりです
+  → [Tools メニュー](menu/tools.md)
+- **US-align では Pivot atom で残基の代表にする原子を選べます。** 既定の Auto (CA / C3') は
+  アミノ酸に CA、ヌクレオチドに C3' を使います。ダイアログの設定は次回に引き継がれます
+- **Console の `superpose` は `pivot` を取ります。** PyMOL 互換モードの `align` / `super` も
+  US-align になり、RMSD とあわせて対応づけた残基の数と TM-score を表示します
+  → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
+
+### 操作の記録と再生 (Actions)
+
+- **アクティビティバーに Actions ビューが加わりました。** **History** パネルには Undo の
+  ステップが 1 行ずつ並び、各ステップで行われた操作を展開して見られます。
+  **Go to step** でその状態まで移り、**Copy as commands** でコマンドとしてコピーし、
+  **Save as qax** でファイルに保存できます → [操作の記録と再生](reference/actions.md)
+- **Actions パネルから、プリセットと自分で保存した操作を実行できます。** 表示・図の仕上げ・
+  解析・動きの 12 個のプリセットが同梱されています。History の **Save to Actions** で
+  選んだステップを保存でき、**マクロ**にすると別の Object にも適用できます
+- **Undo / Redo の表示が、行った操作の内容になりました。** ツールバーの Undo / Redo の
+  ドロップダウンにも、どの Renderer を作ったか、どのプロパティを変えたかが表示されます
+- **記録した操作 (qax) は Console でも再生できます。** `run file.qax` / `tritium_cli file.qax`
+  で再生し、`list_actions` / `export_actions` で履歴の表示と書き出しができます。`open_log` の
+  記録も qax になりました
+
+### Console
+
+- **Console タブが下部パネルの先頭になりました。** ほかのタブを選ぶまで前面に表示されます
+- **複数の対象とワイルドカードを書けるようになりました。** `hide 1crn 2abc/cartoon1`、
+  `set */simple1.width, 0.7`、`load *.pdb` のように、対象ごとにコマンドが実行されます。
+  行全体は 1 回の Undo のままです
+  → [Console](reference/plugins/console/index.md#複数の対象とワイルドカード)
+- **++tab++ の補完がメニューになりました。** 候補が出ているときにもう一度 ++tab++ を押すと、
+  ++tab++ / ++shift+tab++ / 矢印キーで候補を選べます。tritium_cli でも同じです
+- **`help` の表示が整理されました。** `help` で項目の一覧、`help <項目>` でコマンドの一覧、
+  `help <コマンド>` で書式と引数の表、`help syntax` で書き方の説明が出ます。
+  `props` / `get` の結果も表で表示されます
+- **`quit` で CueMol3 を終了できます。** tritium_cli では `quit` が CueMol3 と CLI を、
+  `exit` が CLI だけを終了します
+
+### アップデート (macOS)
+
+- **macOS (Apple Silicon) 版は、アプリの中から新しいリリースに更新できるようになりました。**
+  起動時に新しいリリースを確認し、あれば通知します。アプリケーションメニューの
+  **Check for Updates...** と **Settings &gt; General &gt; Updates** からも確認できます。
+  新しい版が起動しなかった場合は、元の版に戻ります → [アップデート](install/update.md)
+- **ステータスバーの右端に通知センター (ベル) ができました。** アップデートの通知が
+  まとまります
+- Windows / Linux 版は、これまでどおり配布物をインストールし直してください。
+  2.3.21.544 以前からは、2.4.0.546 を一度手動でインストールする必要があります
+
+### その他
+
+- **アプリケーションのアイコンが新しくなりました**
+- **macOS で、起動時にキーチェーンのパスワードを聞かれなくなりました**
+- **Settings の MCP Server の Port は、++enter++ を押すかフォーカスを外したときに反映される
+  ようになりました。** 範囲外の値は反映されません
+  → [MCP Server](reference/plugins/mcp-server.md)
+- Electron 42.10.0 になりました
+
+!!! warning "以前のバージョンから変わる点"
+    - **空白を含む名前は、Console で引用符が必要になりました。** `"my mol"` または `my\ mol` と
+      書きます (以前は引用符なしで通っていました)
+    - **MCP クライアントは登録し直してください。** 接続のトークンの保存場所が変わり、
+      トークンが作り直されます
+    - **操作の引数の名前が変わりました** (MCP / AI Agent / qax)。着色と Paint の操作は
+      `rendId` の代わりに `nodeId` と `nodeType` を取り、Object を指す `molId` は `objId` に
+      なりました
+    - **書き込めるスタイルセットが無いシーンで作られるスタイルセットの名前が、`style_1` から
+      `default` になりました**
+
 ## 2.3.21.544 (2026-10-10)
 
 ### Console
 
 - **PyM Console は Console になり、既定で有効になりました。** 下部パネルの Output の隣に
   **Console** タブがあります。モードは 2 つあり、ツールバーで切り替えます。
-  既定の **CueMol モード**は CueMol 自身の操作のコマンドで、従来の PyMOL 互換のコマンドは
-  **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console.md)
-- **CueMol モードでは、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
+  既定の **native モード** (ツールバーの表示は **CueMol**) は CueMol 自身の操作のコマンドで、
+  従来の PyMOL 互換のコマンドは **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console/index.md)
+- **native モードでは、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
   切り替え、視点とカメラ、Renderer とスタイル、着色と Paint、密度マップ、重ね合わせなどの
   分子の編集、レンダリング、静電ポテンシャルの計算、分子表面の切断、モーフィングなどです。
   Object は `1crn`、Renderer は `1crn/cartoon1` のように指定し、プロパティは
   `set 1crn/cartoon1.width, 2` で設定します。`help` で項目ごとの一覧が出ます
-  → [Console](reference/plugins/console.md#対応コマンド)
+  → [Console](reference/plugins/console/index.md#対応コマンド)
 - **++tab++ 補完は、引数ごとに候補を出します。** 引数の値、まだ指定していない引数の
   `name=`、Renderer のプロパティ、ファイルのパスなどです。補完はカーソルより前の部分に働き、
   候補の一覧はプロンプトのすぐ上に表示されます
 - **PyMOL 互換モードに `ray` が加わりました。** ビューをレンダリングし、続く `png` でその画像を
-  保存します → [PyMOL 互換モード](reference/plugins/pymconsole.md#対応コマンド)
+  保存します → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
 
 ### 外部からの操作
 
@@ -44,7 +119,7 @@
   対話モードのほか、`-c` やスクリプトのファイルで実行できます。CueMol3 が起動していなければ
   起動します。起動済みの CueMol3 に接続するには **Settings &gt; Plugins &gt; Console** の
   **Command line access** を ON にします
-  → [Console](reference/plugins/console.md#ターミナルから使う-tritium_cli)
+  → [Console](reference/plugins/console/index.md#ターミナルから使う-tritium_cli)
 
 ### AI Agent
 
@@ -94,13 +169,13 @@
 - **PyMOL のスクリプトを実行できるようになりました。** `@file.pml` または `run file.pml`
   で実行し、スクリプト全体が 1 回の Undo にまとまります。`log_open` / `log_close` で
   打ったコマンドを記録でき、記録したファイルは `@` でそのまま再実行できます。
-  実行中は **Stop** で止められます → [PyM Console](reference/plugins/pymconsole.md#スクリプトとログ)
+  実行中は **Stop** で止められます → [PyM Console](reference/plugins/console/pymconsole.md#スクリプトとログ)
 - **使えるコマンドが増えました。** `save` (分子・シーン・画像)、`label`、`spectrum`、
   `set_color`、`align` / `super` / `pair_fit` (RMSD を表示)、`get_view` / `set_view`、
   `orient`、`mplay` / `mstop` / `rewind` / `frame` などです。`load` は `.qsc` / `.pse` /
   `.pml` と URL を、`fetch` は密度マップ (`type=2fofc`) と生物学的集合体 (`type=pdb1`)、
   チェーンの指定 (`1abcA`) を受け付けます
-  → [PyM Console](reference/plugins/pymconsole.md#対応コマンド)
+  → [PyM Console](reference/plugins/console/pymconsole.md#対応コマンド)
 - **書き方が PyMOL に近づきました。** 選択式の中で Object 名が使えます
   (`1abc and chain A`)。`show` / `hide` は引数なしや `everything`、略した表現名も
   受け付け、`quiet=1` のような PyMOL のキーワード引数も通ります。`stick_radius` などの
@@ -144,7 +219,7 @@
 - **PyMOL 互換のコマンドライン PyM Console が追加されました** (既定は無効)。
   `fetch 1crn` や `bg_color white` のような、PyMOL で使っていたコマンドをそのまま打てます。
   コマンドの解析と ++tab++ 補完は PyMOL の実装を移植したものです
-  → [PyM Console](reference/plugins/pymconsole.md)
+  → [PyM Console](reference/plugins/console/pymconsole.md)
 - **MD トラジェクトリの GUI が既定で無効になりました。** **File &gt; Open MD
   Trajectory...** と下部パネルの **Trajectory** タブは **MD Tools** プラグインの
   一部になり、Settings &gt; Plugins &gt; Installed で有効にしないと現れません。
@@ -280,127 +355,17 @@
       同じ絵になり、2 枚以上重なった画素だけが変わります (それが修正の内容です)。
       blendpng や POV-Ray と揃えたいときは Transparency を OFF にしてください
 
-## 2.3.13.523 (2026-09-06)
-
-### 描画 (レンダリング)
-
-- **レンダリングウィンドウの設定がシーンに保存されるようになりました。** これまでは
-  設定がメモリ上にしかなく、すべてのシーンで共有され、ウィンドウを閉じると失われて
-  いました。シーンファイルに書き込まれ、シーンごとに復元されます。設定の変更は Undo の
-  対象で、レンダリングウィンドウ内でも ++cmd+z++ が効きます。結果の履歴からは
-  **Use settings** でそのときの設定に戻せます → [レンダリング](reference/rendering.md#設定の保存)
-- **大域照明の光の配分が見直されました。** Global Illumination では開けた面が明るく平坦に
-  なり、白いチューブの陰影が消えていました。Quality に **GI lighting** の 5 段階が加わり、
-  0 はレイトレースと同じ配光、4 (既定) は正面光をキーライトと照り返しに移した配光です。
-  すべての方式に効く **Lights** (Light intensity / Flash fraction) が加わり、GI intensity /
-  GI environment はウィンドウから外れ、GI quality は GI samples (8 / 32 / 64 / 256) の
-  選択になりました → [レンダリング](reference/rendering.md#gi-lighting)
-- **Renderer どうしが交わる線 (Contact edges) を、エッジ線の設定が異なる Renderer の間に
-  描くようになりました。** ribbon に刺さる ballstick の結合などの交線です。エッジ線の設定
-  (種類・太さ・色) が同じ Renderer はひとまとまりとして扱われ、その間には描かれません。
-  すべての Renderer が同じエッジ設定 (既定のままなど) のシーンでは、これまでどおり交線は
-  描かれません → [レンダリング](reference/rendering.md#edges)
-- **Silhouette の輪郭が、フォグで薄れた面の奥でも描けるようになりました。** Umbreon が
-  分子ビューと同じ奥行きで描画を打ち切るようになり、輪郭を描き始める深さを
-  **Outline far depth** で指定します。**Crease angle** は折れ線として描く角度の段階
-  (Off / 15〜120°) になり、POV-Ray 専用だった Edge rise は Umbreon の設定から外れました
-- **Umbreon のエッジ線で、大きく拡大すると原子の内側に斑点状の線が描かれる不具合が
-  修正されました。** ballstick などの結合の端が原子の球とちょうど同じ面にあったため、
-  エッジ線の検出がそこを細かな段差と誤認していました
-- **コマンドライン (`cuetty --render`) と Python モジュールが、シーンに保存された設定で
-  描画するようになりました。** 設定のないシーンは既定値 (Global Illumination、1200×1200) で
-  描画されます。`--width` / `--height` は保存されたサイズを上書きします
-  → [レンダリング](reference/rendering.md#コマンドラインでのレンダリング)
-
-### 密度マップと分子表面
-
-- **等高線レベルの単位が、マップの種類に応じたものになりました。** 結晶学的マップでは σ、
-  クライオ電子顕微鏡マップでは格子点の値の上位何 % かで、既定はそれぞれ 1.1σ と上位 1 % です。
-  **Reset to default** でクライオ電顕マップの既定に戻るようになり (従来は 1.1σ に戻って
-  いました)、Density map パネルの **Level** はどちらの単位でも絶対値でも指定でき、
-  もう一方の値が下に表示されます。**Map type** を変えると Renderer のスタイル
-  (Default / Cryo-EM) も入れ替わります → [DensityMap](reference/objects/densitymap.md#マップの種類-map-type)
-- **マップを開いても視点が原点に飛ばなくなりました。** モデルの上に 2Fo-Fc マップを開くと、
-  視点が原点に移動してマップも原点の周りにしか描かれませんでした。ファイルを開くダイアログに
-  **View after loading** (Auto / Set map center / Move view center) が加わりました。BRIX /
-  mmCIF / QDF / X-PLOR のマップに、分子と同じ原子選択の欄が出なくなりました
-  → [File メニュー](menu/file.md)
-- **マップの種類がインスペクタに表示されます。** DensityMap の Properties タブに
-  **Density map** セクション (Map type の変更と Effective kind)、マップの Renderer に
-  **Map kind** が加わりました。等値面には **Cap mode** (Auto / On / Off) が付き、既定の色が
-  飽和した青から明るい灰色になりました → [isosurf](reference/renderers/isosurf.md)
-- **dsurface / dsurf2 で Multi-gradient が使えるようになりました。** molsurf と同じく、
-  静電ポテンシャルによる着色、ストップの編集、シーンへの保存ができます
-  → [Coloring](reference/coloring.md#multi-gradient)
-- **APBS elepot calculation... の Charge method** がドロップダウン (**Method**) になりました
-  → [分子表面を静電ポテンシャルで着色する](tutorials/surface-elepot.md)
-
-### 画面と操作
-
-- **アニメーションの時刻を、タイムコードの桁ごとに編集できるようになりました** (Blender /
-  After Effects 風)。桁をクリックしてドラッグ、++up++ / ++down++、数字の打ち込み、++enter++ で
-  式の入力ができます。インスペクタの Start time / Duration はドラッグ中にストリップが追従し、
-  1 回の Undo で戻せます。Animation パネルの現在時刻も打ち込んで移動できます。開始時刻の
-  基準が循環したり、名前が重複・欠落したりする指定は理由を示して拒否され、解決できない要素は
-  斜線付きで表示されて直すまで再生できません → [時刻の入力](ui/inspector.md#時刻の入力)
-- **New Tab ダイアログで、新しいシーンの表示設定を決められるようになりました。**
-  アンチエイリアシング / アンビエントオクルージョン / 背景色 / CMYK プルーフィングを指定でき、
-  確定した値が以後の新しいシーン (起動時やファイルのドロップで作られるものを含む) の既定に
-  なります → [File メニュー](menu/file.md)
-- **重ね合わせたあとに原子のクリックがずれる不具合が修正されました。** tube / ribbon /
-  cartoon で、原子が移動前の位置で選ばれていました
-- **Paint の着色が Renderer に効くようになりました。** Color パネルは Renderer を選んでいても
-  Object に書き込んでいたため、ribbon / cartoon / tube では何も起きませんでした。対象は
-  シーンツリーの選択に追従し、Paint の **Default** が二次構造ごとの標準の塗り分けになりました
-  (従来 "Default" と表示されていたスタイルは **Molecule color**) → [サイドパネル](ui/side-panels.md)
-- **Renderer グループの名前を変えるとアプリケーションが固まる不具合が修正されました。**
-  Generic タブの Name の default チェックを入れると、グループが名無しになっていました。
-  Name と Selection (`sel`) は既定値に戻せなくなり、Generic タブは名前を変えても開いたままに
-  なります → [プロパティインスペクタ](ui/inspector.md#generic-タブ)
-- **選択の履歴が、選択を適用するすべての操作から記録されるようになりました。**
-  インスペクタの選択欄、New Renderer、シーンツリー / 配列パネル / 右クリックメニューの選択、
-  矩形 / 投げ縄選択、Molecular structure パネルが対象です。件数は 100 件 (従来 40 件) に
-  なりました → [選択ビルダー](ui/selection-builder.md#history)
-- **Windows / Linux で、シーンツリーや Paint の表に対する ++ctrl+c++ / ++ctrl+v++ などが
-  効くようになりました。** テキスト入力欄の外ではメニューのショートカットが働いていませんでした
-  → [キーボードショートカット](reference/shortcuts.md)
-- **そのほか:** ダークテーマの補助的な文字が暗すぎて、シーンツリーの開閉マークなどが無効に
-  見えていたのが直りました。atomintr のラベルのフォントは、インストールされているフォントから
-  選ぶ形になりました。Scene のインスペクタはすべてのセクションを同時に表示します。
-  Windows / Linux のアプリケーションアイコンが新しくなりました。
-
-### 配布物
-
-- **パッケージが約 150 MB 小さくなりました。** 同梱済みの npm パッケージが重複して入って
-  いたこと、未使用の libpython、ネイティブバイナリのシンボルテーブルを取り除きました。
-  macOS では `.app` が 580 MB から 414 MB、DMG が 226 MB から 197 MB になりました
-- Electron 42.5.1 になりました
-
-!!! warning "既存のシーンで見え方が変わることがあります"
-    - **2.3.11.507 / 2.3.12.517 で保存したクライオ電子顕微鏡マップの等高線レベル。**
-      レベルの数値が σ ではなく上位 % として読まれます。Density map パネルでレベルを
-      動かしていたシーンは見た目が変わるので、レベルを一度調整してください。動かして
-      いなかったものは既定 (上位 1.1 %) になります。結晶学的マップは変わりません
-    - **エッジ線の設定が同じ Renderer はひとまとまりとして扱われます。** Edge type が
-      Silhouette のとき、まとまりの外周だけが描かれるため、すべてのチェインが同じエッジ設定の
-      シーンでは、チェインどうしが重なる部分の輪郭が描かれなくなります。エッジ設定が異なる
-      Renderer の間には、交線 (Contact edges) が新たに描かれます
-    - **Umbreon は分子ビューと同じ奥行きで描画を打ち切ります。** フォグの終端より奥に
-      あって薄く描かれていたものは描かれなくなります
-    - **`cuetty` / Python は、設定のないシーンを Global Illumination で描画します。**
-      従来のレイトレースだけの描画より時間がかかります
-
 ---
 
-2.3.12.517 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
+2.3.13.523 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
 
 ## 関連項目
 
-- [過去のリリース](releases-archive.md) — 2.3.12.517 以前の更新履歴
+- [過去のリリース](releases-archive.md) — 2.3.13.523 以前の更新履歴
 - [CueMol2 からの変更点](changes/index.md) — CueMol2 と CueMol3 の違い
 - [開発状況と未実装機能](changes/status.md) — 現時点で残っている制限
 - [ダウンロード](install/index.md#ダウンロード) — 配布物の入手方法
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 2.4.0.546*

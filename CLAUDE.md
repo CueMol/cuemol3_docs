@@ -252,7 +252,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **MCP Server**、**tritium_cli**)・**ラベル**・**Color パネルの Paint 表**。
   **ユーザー判断により** `reference/plugins/console.md` (native 方言 + tritium_cli) と
   `reference/plugins/mcp-server.md` を新設し、`pymconsole.md` は「PyMOL 互換モード (Console)」の
-  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「CueMol モード」「PyMOL 互換モード」と書く** (ユーザー指示。コード側の dialect に対応)。`reference/renderers/namelabel.md` も新設
+  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「native モード」「PyMOL 互換モード」と書く** (ユーザー指示。コード側の dialect に対応。2.4.0.546 の同期で「CueMol モード」から改めた。GUI のボタン・プロンプトは今は **CueMol** / `CueMol>` なので、GUI の説明は実際の表示に合わせる。将来 GUI 側も native に変わる予定)。`reference/renderers/namelabel.md` も新設
   (name label のインスペクタページができ、`format` に GUI 行が付いたので前回の保留を解除)。
   **リリースノートとソースの食い違いはソースに従った**: `new_scene` → `create_scene`、
   `obj.rend` → `obj/rend`、native の `ray` → `render` (`ray` は PyMOL 方言)、
@@ -269,6 +269,49 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **未着手の残件**: スクリーンショット全般 (Console / MCP / namelabel を含む)、AI Agent の
   「できること」と PyMOL 互換モードの選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正
   (今回もユーザー指示により e2e には触れていない)。
+- 前回同期: 2026-10-17 / cuemol2 `eb1702e8` (tag `v2.4.0.546`, branch: develop) / CueMol3 `2.4.0.546`。
+  `d3a2038e..eb1702e8` の差分を確認した (リリースノート `docs/release_notes/v2.4.0.546.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、2.3.13.523 を
+  `releases-archive.md` へ移した。
+  今回の主題は **US-align の重ね合わせ**・**Actions ビュー (History / Actions、qax、マクロ)**・
+  **Console の zsh 化 (複数の対象とワイルドカード、補完メニュー、help、quit)**・
+  **macOS の自己アップデート**・新アイコン。
+  **ユーザー判断により** `reference/actions.md` (操作の記録と再生) と `install/update.md`
+  (アップデート) を新設した (nav にも追加)。side-panels / settings / window-help / install には
+  短い記述とリンクだけを置いた。**サイトのロゴと favicon を新アイコン
+  (`tritium/react-gui/build/icon.png`) に差し替えた** (ユーザー判断)。`extra.css` の配色は変えていない。
+  更新履歴は 5 節 + warning (ユーザー判断)。**MCP クライアントの登録し直し**は
+  リリースノートに無いが、トークンが作り直される事実 (`main/localApi/index.ts:31-80`) から warning に入れた。
+  Console の対応コマンド表は、op カタログを tsx で評価して主題ごとに取り直した。
+  **書かなかったもの**: シーンツリーを上にドラッグしたときの修正、Settings の行の幅 (不具合修正・見た目)。
+  **要判断として残したもの**: `pymconsole.md` の「コマンド名が確定しているときは補完せず」
+  (現行ソースで裏取りできず、そのまま)、`mcp-server.md` の「Console のコマンドにあたる操作を
+  すべて」(`set` / `get` は MCP に出ない。今回の差分ではない)、`releases.md` 冒頭の
+  「Help &gt; About CueMol3」(macOS ではアプリケーションメニュー)。
+  PyMOL 互換モードの**選択式の翻訳表を書いた** (`TODO(content)` と「準備中」を解消。根拠は
+  `plugins/console/worker/dialects/pymol/sel/parse.ts` / `emit.ts` と `commands/helpers.ts` の
+  `moleculeSelections`)。**AI Agent の「できること」はユーザー判断により当面更新しない**
+  (MCP の方を優先)。
+  **Console のページを `reference/plugins/console/` の階層にまとめた** (ユーザー判断):
+  `console/index.md` (本体。旧 `console.md`)、`console/commands.md` (native モードのコマンド一覧)、
+  `console/cli.md` (tritium_cli)、`console/pymconsole.md` (PyMOL 互換モード。旧 `plugins/pymconsole.md`)。
+  **旧 URL (`/reference/plugins/console/` 以外の `pymconsole/` など) は変わった** (リダイレクトは無い)。
+  サイト内のリンクは過去の更新履歴を含めて付け替えた。index.md には `## 対応コマンド` /
+  `## ターミナルから使う (tritium_cli)` の見出しを案内として残した。
+  **Tools メニューの 7 項目にツールごとのページを新設した** (ユーザー指示): `reference/tools/`
+  (superpose / interaction / secondary-structure / morphing / mol-surface / surface-cutter / apbs)。
+  **CueMol2 の対応ページ (`~/works/cuemol2_docs/docs/ja/cuemol2/` の MolSuperpose / IntrTool /
+  Prot2ndryStr / Anim_MolMorph / MsmsMolSurface / MolSurfCut / APBS_ElePot) を元に**、ダイアログの
+  ラベル・既定値は tritium のソース (`renderer/dialogs/*Dialog.tsx` と worker の services) で裏取りした。
+  `menu/tools.md` の表は各ページへのリンクにし、関連ページ (molsurf / elepot / molanim / atomintr /
+  ribbon) のリンクも付け替えた。`tutorials/surface-elepot.md` の「Point density の既定 1」は
+  obsolete (2.3.15.530 で 2) なので直した。二次構造の **Ignore β bulge / Helix gap-fill angle の
+  意味**は C++ の実装が見つからず `TODO(content)` にした。
+  **開発側への指摘**: `analyze_interactions` op の既定値 (min 0 / max 4.0 / maxLabels 100 / 炭素を除く) が
+  ダイアログ (2.5 / 3.5 / 30 / 炭素を含む) と違う (`catalog/ops/analysisOps.ts:22-25` のコメントは一致と書いている)。
+  **未着手の残件**: スクリーンショット全般 (Actions / アップデート / Console を含む。
+  `ui/main-window.webp` と `quick-tour/1-startup.webp` は下部パネルのタブの順が古い)、
+  docs-verify の spec 追加と既存 spec の修正 (今回も e2e には触れていない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

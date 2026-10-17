@@ -79,6 +79,17 @@
   変更もされていない) の場合はそのシーンに読み込みます。
 - まとめて開いた複数のファイルは 1 つのシーンを共有します。
 
+### Updates
+
+新しいリリースの確認とアプリ内の更新です。更新できるのは macOS (Apple Silicon) 版のみです。
+
+| 項目 | 既定値 | 説明 |
+|---|---|---|
+| Check for Updates at Startup | ON | 起動後に新しいリリースを確認し、あれば通知します。OFF でも手動の確認はできます |
+| Check for Updates | — | 今の版と状態を表示します。**Check Now** / **Release Page** / **Update** のボタンがあります |
+
+詳しくは [アップデート](../install/update.md) を参照してください。
+
 ## Tools
 
 ### APBS / PDB2PQR
@@ -108,7 +119,7 @@
 |---|---|---|
 | AI Agent | OFF | 文章での指示からシーンを組み立てるチャットパネル (→ [AI Agent](plugins/ai-agent.md)) |
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** と下部パネルの **Trajectory** タブ |
-| Console | ON | CueMol のコマンドライン。PyMOL 互換モードも使えます (→ [Console](plugins/console.md)) |
+| Console | ON | CueMol のコマンドライン。PyMOL 互換モードも使えます (→ [Console](plugins/console/index.md)) |
 | MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md)) |
 | Component Catalog | OFF | 画面部品のカタログ (CueMol3 の UI 開発用) |
 
@@ -128,7 +139,7 @@
 | Command line access | OFF | 起動中のこのウィンドウで、tritium_cli からのコマンドを実行できるようにします。tritium_cli が起動した CueMol3 では、この設定を変えずにその回だけ許可されます |
 | Command line tool | — | 同梱の tritium_cli のパス。**Copy** でコピーでき、PATH に通す方法が併記されます |
 
-詳しくは [Console](plugins/console.md#ターミナルから使う-tritium_cli) を参照してください。
+詳しくは [tritium_cli](plugins/console/cli.md) を参照してください。
 
 ### MCP Server
 
@@ -137,7 +148,7 @@
 | 項目 | 既定値 | 説明 |
 |---|---|---|
 | Accept connections | ON | MCP クライアントからの接続を受け付けます |
-| Port | 27182 | 待ち受けるポート (1024〜65535) |
+| Port | 27182 | 待ち受けるポート (1024〜65535)。++enter++ を押すかフォーカスを外したときに反映されます。範囲外の値は反映されません |
 
 詳しくは [MCP Server](plugins/mcp-server.md) を参照してください。
 
@@ -150,4 +161,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 2.4.0.546*

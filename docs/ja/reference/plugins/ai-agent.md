@@ -53,7 +53,8 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
   キーを保存・消去するとすぐに更新されます。実行中は切り替えられません。
 - ++up++ / ++down++ で、送信済みの指示を呼び戻せます。
 - **1 回の指示が 1 回の Undo にまとまります。** ++cmd+z++ 1 回で、その指示による
-  変更をすべて取り消せます。
+  変更をすべて取り消せます。指示で行われた操作は [Actions ビューの History](../actions.md) に
+  記録されます。
 - パネル右上の **Clear chat** で会話を消去します。
 
 ## できること
@@ -71,17 +72,17 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
   操作します。「新しいシーンで」と指示しても、現在のシーンに読み込まれます。
 - シーンファイル (`.qsc`) は開けません。**File &gt; Open** で開いてください。
 - 実行中に手で加えた変更は、その指示の Undo に巻き込まれます。
-- [Console](console.md) のコマンドや [MCP Server](mcp-server.md) の呼び出しを実行している間は、
+- [Console](console/index.md) のコマンドや [MCP Server](mcp-server.md) の呼び出しを実行している間は、
   指示を送っても実行されません (逆に、指示の実行中は Console と MCP Server の操作が断られます)。
 - 会話はアプリケーションを終了すると失われます。
 - 会話の途中でプロバイダを切り替えた場合の動作は確認できていません。
 
 ## 関連項目
 
-- [プラグイン](index.md) / [Console](console.md) / [MCP Server](mcp-server.md)
+- [プラグイン](index.md) / [Console](console/index.md) / [MCP Server](mcp-server.md)
 - [設定項目](../settings.md#plugins)
 - [サイドパネル](../../ui/side-panels.md)
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 2.4.0.546*

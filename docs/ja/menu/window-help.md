@@ -28,18 +28,20 @@ CueMol3 はメインウィンドウとレンダリングウィンドウの 2 つ
 
 ## Help メニュー
 
-**Windows / Linux のみ**表示されます。macOS では項目が About だけになるため、
-アプリケーションメニューに統合されメニュー自体が表示されません。
+**Windows / Linux のみ**表示されます。macOS では項目 (About と Check for Updates) が
+アプリケーションメニューに統合されるため、メニュー自体が表示されません。
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
 | About CueMol3 | バージョン情報を表示します | |
+| Check for Updates... | 新しいリリースを確認します。アプリ内のアップデートは現在 macOS (Apple Silicon) 版のみの機能で、Windows / Linux では利用できない旨が表示されます (→ [アップデート](../install/update.md)) | |
 
 !!! info "Mozilla 固有の項目は廃止されました"
-    CueMol2 の Help メニューにあった About plugins... / About config... / Addon manager... / Console /
-    Check for updates は、いずれも Mozilla XULRunner に固有の機能だったため、
-    Electron ベースの CueMol3 では廃止されました。
+    CueMol2 の Help メニューにあった About plugins... / About config... / Addon manager... / Console
+    は、いずれも Mozilla XULRunner に固有の機能だったため、
+    Electron ベースの CueMol3 では廃止されました。Check for updates は、CueMol3 独自の
+    仕組みで作り直されています。
 
 ---
 
-*最終確認: 2026-08-10 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.4.0.546*

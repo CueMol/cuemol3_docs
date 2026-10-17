@@ -7,7 +7,7 @@ Renderer です。対象 Object: 分子 (MolCoord)。
     atomintr は、ツールパレットの計測ツール (Distance / Angle / Torsion) や
     Tools メニューの **Interaction...** を使うと自動的に作成されます
     (→ [ツールバーとツールパレット](../../ui/toolbar-tools.md)、
-    [Tools メニュー](../../menu/tools.md))。
+    [相互作用の抽出](../tools/interaction.md))。
     New Renderer ダイアログからも作成できますが、計測を追加するまで何も描かれません。
     ファイルを開くときの Renderer type の一覧には表示されません。
 
@@ -45,4 +45,4 @@ Renderer です。対象 Object: 分子 (MolCoord)。
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 2.4.0.546*
