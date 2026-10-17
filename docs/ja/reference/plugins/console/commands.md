@@ -1,7 +1,7 @@
 # Console のコマンド一覧
 
-[Console](index.md) の **CueMol モード**で使えるコマンドの一覧です。書き方は
-[CueMol モードの書き方](index.md#cuemol-モードの書き方)を、各コマンドの引数は Console で
+[Console](index.md) の **native モード**で使えるコマンドの一覧です。書き方は
+[native モードの書き方](index.md#native-モードの書き方)を、各コマンドの引数は Console で
 `help <コマンド>` を参照してください。
 
 ## 項目ごとの一覧

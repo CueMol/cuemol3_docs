@@ -94,9 +94,9 @@
 
 - **PyM Console は Console になり、既定で有効になりました。** 下部パネルの Output の隣に
   **Console** タブがあります。モードは 2 つあり、ツールバーで切り替えます。
-  既定の **CueMol モード**は CueMol 自身の操作のコマンドで、従来の PyMOL 互換のコマンドは
-  **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console/index.md)
-- **CueMol モードでは、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
+  既定の **native モード** (ツールバーの表示は **CueMol**) は CueMol 自身の操作のコマンドで、
+  従来の PyMOL 互換のコマンドは **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console/index.md)
+- **native モードでは、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
   切り替え、視点とカメラ、Renderer とスタイル、着色と Paint、密度マップ、重ね合わせなどの
   分子の編集、レンダリング、静電ポテンシャルの計算、分子表面の切断、モーフィングなどです。
   Object は `1crn`、Renderer は `1crn/cartoon1` のように指定し、プロパティは

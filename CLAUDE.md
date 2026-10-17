@@ -252,7 +252,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **MCP Server**、**tritium_cli**)・**ラベル**・**Color パネルの Paint 表**。
   **ユーザー判断により** `reference/plugins/console.md` (native 方言 + tritium_cli) と
   `reference/plugins/mcp-server.md` を新設し、`pymconsole.md` は「PyMOL 互換モード (Console)」の
-  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「CueMol モード」「PyMOL 互換モード」と書く** (ユーザー指示。コード側の dialect に対応)。`reference/renderers/namelabel.md` も新設
+  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「native モード」「PyMOL 互換モード」と書く** (ユーザー指示。コード側の dialect に対応。2.4.0.546 の同期で「CueMol モード」から改めた。GUI のボタン・プロンプトは今は **CueMol** / `CueMol>` なので、GUI の説明は実際の表示に合わせる。将来 GUI 側も native に変わる予定)。`reference/renderers/namelabel.md` も新設
   (name label のインスペクタページができ、`format` に GUI 行が付いたので前回の保留を解除)。
   **リリースノートとソースの食い違いはソースに従った**: `new_scene` → `create_scene`、
   `obj.rend` → `obj/rend`、native の `ray` → `render` (`ray` は PyMOL 方言)、
@@ -293,7 +293,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `moleculeSelections`)。**AI Agent の「できること」はユーザー判断により当面更新しない**
   (MCP の方を優先)。
   **Console のページを `reference/plugins/console/` の階層にまとめた** (ユーザー判断):
-  `console/index.md` (本体。旧 `console.md`)、`console/commands.md` (CueMol モードのコマンド一覧)、
+  `console/index.md` (本体。旧 `console.md`)、`console/commands.md` (native モードのコマンド一覧)、
   `console/cli.md` (tritium_cli)、`console/pymconsole.md` (PyMOL 互換モード。旧 `plugins/pymconsole.md`)。
   **旧 URL (`/reference/plugins/console/` 以外の `pymconsole/` など) は変わった** (リダイレクトは無い)。
   サイト内のリンクは過去の更新履歴を含めて付け替えた。index.md には `## 対応コマンド` /
