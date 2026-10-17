@@ -93,7 +93,7 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 ばらばらです。モーフィングの補間は座標をそのまま使うため、まず両者を重ね合わせます。
 
 1. **Tools &gt; Molecular superposition...** を開きます
-2. **Algorithm** で **Secondary Structure Matching** を選びます
+2. **Algorithm** の **Method** で **SSM** を選びます
 3. **Reference** の **Molecule** で 1TND を選び、**Selection** に `c; A` を指定します
 4. **Moving** の **Molecule** で 1TAG を選びます
 5. **OK** を押すと、1TAG が 1TND の chain A に重なる位置へ移動します
@@ -179,4 +179,4 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.4.0.546*

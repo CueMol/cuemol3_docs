@@ -96,6 +96,7 @@ nav:
       - macOS: install/macos.md
       - Windows: install/windows.md
       - Linux: install/linux.md
+      - アップデート: install/update.md
       - 外部ツールの設定: install/external-tools.md
   - 画面構成:
       - ui/index.md
@@ -193,6 +194,7 @@ nav:
           - Console: reference/plugins/console.md
           - PyMOL 互換モード (Console): reference/plugins/pymconsole.md
           - MCP Server: reference/plugins/mcp-server.md
+      - 操作の記録と再生 (Actions): reference/actions.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md
 

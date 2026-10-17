@@ -269,6 +269,29 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **未着手の残件**: スクリーンショット全般 (Console / MCP / namelabel を含む)、AI Agent の
   「できること」と PyMOL 互換モードの選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正
   (今回もユーザー指示により e2e には触れていない)。
+- 前回同期: 2026-10-17 / cuemol2 `eb1702e8` (tag `v2.4.0.546`, branch: develop) / CueMol3 `2.4.0.546`。
+  `d3a2038e..eb1702e8` の差分を確認した (リリースノート `docs/release_notes/v2.4.0.546.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、2.3.13.523 を
+  `releases-archive.md` へ移した。
+  今回の主題は **US-align の重ね合わせ**・**Actions ビュー (History / Actions、qax、マクロ)**・
+  **Console の zsh 化 (複数の対象とワイルドカード、補完メニュー、help、quit)**・
+  **macOS の自己アップデート**・新アイコン。
+  **ユーザー判断により** `reference/actions.md` (操作の記録と再生) と `install/update.md`
+  (アップデート) を新設した (nav にも追加)。side-panels / settings / window-help / install には
+  短い記述とリンクだけを置いた。**サイトのロゴと favicon を新アイコン
+  (`tritium/react-gui/build/icon.png`) に差し替えた** (ユーザー判断)。`extra.css` の配色は変えていない。
+  更新履歴は 5 節 + warning (ユーザー判断)。**MCP クライアントの登録し直し**は
+  リリースノートに無いが、トークンが作り直される事実 (`main/localApi/index.ts:31-80`) から warning に入れた。
+  Console の対応コマンド表は、op カタログを tsx で評価して主題ごとに取り直した。
+  **書かなかったもの**: シーンツリーを上にドラッグしたときの修正、Settings の行の幅 (不具合修正・見た目)。
+  **要判断として残したもの**: `pymconsole.md` の「コマンド名が確定しているときは補完せず」
+  (現行ソースで裏取りできず、そのまま)、`mcp-server.md` の「Console のコマンドにあたる操作を
+  すべて」(`set` / `get` は MCP に出ない。今回の差分ではない)、`releases.md` 冒頭の
+  「Help &gt; About CueMol3」(macOS ではアプリケーションメニュー)。
+  **未着手の残件**: スクリーンショット全般 (Actions / アップデート / Console を含む。
+  `ui/main-window.webp` と `quick-tour/1-startup.webp` は下部パネルのタブの順が古い)、
+  AI Agent の「できること」と PyMOL 互換モードの選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正
+  (今回も e2e には触れていない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

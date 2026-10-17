@@ -10,6 +10,7 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 |---|---|---|
 | Rendering &gt; POV-Ray rendering... | **Rendering &gt; Image rendering...** | バックエンドはレンダリングウィンドウ内で選ぶため、メニューは出力の種類を表す名前になりました。既定は内蔵レイトレーサの Umbreon で、POV-Ray は非推奨です → [レンダリング](../reference/rendering.md) |
 | Rendering &gt; Animation rendering... | **Rendering &gt; Movie rendering...** | 同じレンダリングウィンドウの動画モードになりました |
+| Help &gt; Check for updates | **Check for Updates...** (macOS ではアプリケーションメニュー) | Mozilla の更新機構に代わる CueMol3 独自の仕組みです。アプリ内で更新できるのは現在 macOS (Apple Silicon) 版のみです → [アップデート](../install/update.md) |
 | Tools &gt; Mol bond editor... | ツールパレットの **Add Bond** ツール | モーダルダイアログから、分子ビューを直接クリックする方式に変わりました → [ツールバーとツールパレット](../ui/toolbar-tools.md) |
 | Edit &gt; Options (プリファレンスウィンドウ) | **Settings** タブ | モーダルではなくコンテンツ領域のタブとして開きます。macOS では Preferences... |
 | Renderer 種類ごとのプロパティダイアログ | **プロパティインスペクタ** | ダイアログを廃し、常設パネルでのライブ編集になりました → [プロパティインスペクタ](../ui/inspector.md) |
@@ -31,7 +32,6 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 | 選択パネルの階層型エディタ (Hierarchical / Terminal / Around-Expand) | 選択式を直接書く方法で大半の用途をカバーできるため | Selection パネルの選択式入力欄、または Molecular structure パネルのツリー選択 |
 | キーバインドのカスタマイズ | UXP 版の実装をそのまま移植しない判断のため | 現時点では変更できません |
 | Help &gt; About plugins... / About config... / Addon manager... / Console | Mozilla XULRunner に固有の機能のため | 開発者ツールは **View &gt; Toggle Developer Tools** から開けます |
-| Help &gt; Check for updates | Mozilla の更新機構に依存していたため | 配布物を入手し直してください |
 
 ## 廃止された機能 (代替なし)
 
@@ -56,4 +56,4 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 
 ---
 
-*確認対象: CueMol3 2.3.10.504*
+*確認対象: CueMol3 2.4.0.546*

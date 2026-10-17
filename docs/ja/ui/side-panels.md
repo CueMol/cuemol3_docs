@@ -15,6 +15,7 @@
 | View | カメラと視点の操作 | Camera / View |
 | Selection | 分子の選択 | Molecular structure / Selection |
 | Crystal | 結晶学的な情報 | Symmetry / Density map |
+| Actions | 操作の記録と再生 | History / Actions |
 | 歯車 (最下部) | Settings タブを開きます (サイドパネルではありません) | |
 
 ## Explorer
@@ -228,6 +229,24 @@ Paint の Cut は 1 回の Undo でまとめて戻せます。Paste はクリッ
   **Extent** スライダと **Redraw** は効きません
   (→ [contour](../reference/renderers/contour.md#contour))。
 
+## Actions
+
+行った操作の記録と、その再生を扱います。詳しくは
+[操作の記録と再生 (Actions)](../reference/actions.md) を参照してください。
+
+### History パネル
+
+アクティブなシーンの Undo の履歴を、1 ステップ 1 行で表示します。操作を 2 つ以上含む
+ステップは展開でき、行われた操作が並びます。ツールバーから、選んだ行の状態への移動
+(**Go to step**)、コマンドとしてのコピー (**Copy as commands**)、qax ファイルへの保存
+(**Save as qax**)、Actions パネルへの保存 (**Save to Actions**) を行えます。
+ステップをダブルクリックすると、インスペクタに内容が読み取り専用で表示されます。
+
+### Actions パネル
+
+アプリに同梱の **Presets** と、自分で保存した **User Actions** が並びます。選んで **Run** を
+押すと、シーンツリーで選んでいる Object に適用されます。
+
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 2.4.0.546*

@@ -11,7 +11,7 @@
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
-| Molecular superposition... | 2 つの分子を重ね合わせます (LSQ / SSM)。結果の RMSD が表示されます | |
+| Molecular superposition... | 2 つの分子を重ね合わせます (US-align / SSM / LSQ)。結果の RMSD などは Output パネルのログに表示されます | |
 | Interaction... | 原子間の相互作用 (距離・水素結合) を検出し、ラベルとして表示します。対象分子と選択範囲、距離の範囲、ラベル数の上限を指定できます | |
 | Reassign secondary str... | タンパク質の二次構造を再計算して割り当て直します | |
 | Mol morphing animation... | 2 つの構造間を補間するモーフィングアニメーションを作成します。対象の分子を MorphMol に変換し、フレームとなる構造を追加します | |
@@ -22,6 +22,15 @@
 !!! warning "APBS の利用には設定が必要です"
     APBS と pdb2pqr の実行ファイルのパスが Settings で未設定の場合、ダイアログの **Start** は押せません
     (→ [外部ツールの設定](../install/external-tools.md))。
+
+!!! info "重ね合わせの手法"
+    **Algorithm** の **Method** で *US-align* / *SSM* / *LSQ* を選べます。既定の *US-align* は
+    構造の対応を自分で見つけて重ね合わせ、タンパク質のほか **RNA / DNA** にも使えます。
+    *SSM* は二次構造の対応づけによる方式で、タンパク質どうしにのみ使えます。*LSQ* は
+    選んだ原子を順に対応づけて最小二乗法で重ね合わせます。
+    US-align では **Pivot atom** で残基の代表にする原子を選べます。既定の *Auto (CA / C3')* は、
+    アミノ酸では CA、ヌクレオチド (修飾塩基を含む) では C3' を使います。
+    ダイアログで選んだ設定は、次に開いたときに引き継がれます。
 
 !!! info "分子表面の生成アルゴリズム"
     **Algorithm** では *Auto* / *MeshMS* / *BALL* を選べます。既定の *Auto* は MeshMS を選び、
@@ -35,4 +44,4 @@
 
 ---
 
-*確認対象: CueMol3 2.3.10.504*
+*確認対象: CueMol3 2.4.0.546*

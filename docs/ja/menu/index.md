@@ -14,7 +14,8 @@ CueMol3 のメニューバーにある全項目の一覧です。CueMol2 から�
 | 設定を開く項目 | アプリケーションメニュー &gt; **Preferences...** | **Edit &gt; Options** |
 | 終了 | アプリケーションメニュー &gt; **Quit CueMol3** | **File &gt; Quit** |
 | **About CueMol3** | アプリケーションメニュー内 | **Help** メニュー内 |
-| **Help** メニュー | 表示されない (項目が About だけで、それが App メニューにあるため) | 表示される |
+| **Check for Updates...** | アプリケーションメニュー内 | **Help** メニュー内 |
+| **Help** メニュー | 表示されない (項目が About と Check for Updates だけで、それが App メニューにあるため) | 表示される |
 
 修飾キーの表記は macOS では ++cmd++、Windows / Linux では ++ctrl++ に読み替えてください。
 本リファレンスでは ++cmd++ で表記し、必要に応じて併記します。
@@ -26,6 +27,7 @@ macOS では、アプリケーション名 (**CueMol3**) のメニューに次�
 | 項目 | 説明 | ショートカット |
 |---|---|---|
 | About CueMol3 | バージョン情報を表示します | |
+| Check for Updates... | 新しいリリースを確認し、あればアプリ内で更新します (→ [アップデート](../install/update.md)) | |
 | Preferences... | Settings タブを開きます (すでに開いていればそのタブに切り替えます) | ++cmd+comma++ |
 | Services | macOS の Services メニュー | |
 | Hide CueMol3 | ウィンドウを隠します | ++cmd+h++ |
@@ -62,4 +64,4 @@ CueMol2 にあって CueMol3 のメニューから**なくなった**項目は�
 
 ---
 
-*最終確認: 2026-08-10 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 2.4.0.546*

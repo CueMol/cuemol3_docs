@@ -65,6 +65,11 @@ CI がビルドした macOS 配布物には ffmpeg / APBS・PDB2PQR / POV-Ray �
 
 → [外部ツールの設定](external-tools.md)
 
+## アップデート
+
+2.4.0.546 以降は、新しいリリースをアプリの中から入れ替えられます
+(→ [アップデート](update.md))。
+
 ## アンインストール
 
 `/Applications/CueMol3.app` をゴミ箱に移動してください。
