@@ -197,6 +197,14 @@ nav:
               - tritium_cli: reference/plugins/console/cli.md
               - PyMOL 互換モード: reference/plugins/console/pymconsole.md
           - MCP Server: reference/plugins/mcp-server.md
+      - ツール:
+          - 分子の重ね合わせ: reference/tools/superpose.md
+          - 相互作用の抽出: reference/tools/interaction.md
+          - 二次構造の割り当て: reference/tools/secondary-structure.md
+          - 構造変化のモーフィング: reference/tools/morphing.md
+          - 分子表面の生成: reference/tools/mol-surface.md
+          - 分子表面の切断: reference/tools/surface-cutter.md
+          - 静電ポテンシャルの計算: reference/tools/apbs.md
       - 操作の記録と再生 (Actions): reference/actions.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md

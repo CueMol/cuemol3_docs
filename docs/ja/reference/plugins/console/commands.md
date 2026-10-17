@@ -39,7 +39,7 @@
   アニメーションを作るツールと同じ処理です。
 - `superpose` は既定で US-align により重ね合わせます (`algo` で `SSM` / `LSQ` も選べます)。
   `pivot` で、US-align が残基の代表に使う原子 (`auto` / `CA` / `C3'` / `C4'` / `P`) を指定します
-  (→ [Tools メニュー](../../../menu/tools.md))。
+  (→ [分子の重ね合わせ](../../tools/superpose.md))。
 - `animate` はアニメーションの再生・一時停止・停止・時刻の移動を行います。
 - シーンのコマンド (`create_scene` / `switch_scene` / `close_scene`) はタブを開閉・切り替えます。
   `close_scene` は、変更が保存されていないシーンは閉じません。`discardChanges=true` を付けると

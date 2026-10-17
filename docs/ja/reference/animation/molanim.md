@@ -4,7 +4,8 @@
 アニメーションとして表示します。線形補間による変形で、
 局所的な構造変化のアニメーション化に向いています。
 
-変形の組 (MorphMol) は、Tools メニューの **Mol morphing animation...** で作成します。
+変形の組 (MorphMol) は、Tools メニューの **Mol morphing animation...** で作成します
+(→ [構造変化のモーフィング](../tools/morphing.md))。
 対象の分子を MorphMol に変換し、フレームとなる構造を追加します
 (→ [アニメーションを作って動画に出力する](../../tutorials/animation-movie.md))。
 CueMol2 で作成したシーンのモーフィングも、読み込んでそのまま再生・編集できます。
@@ -33,4 +34,4 @@ Start value
 
 ---
 
-*確認対象: CueMol3 2.3.8.494*
+*確認対象: CueMol3 2.4.0.546*

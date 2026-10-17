@@ -298,6 +298,17 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **旧 URL (`/reference/plugins/console/` 以外の `pymconsole/` など) は変わった** (リダイレクトは無い)。
   サイト内のリンクは過去の更新履歴を含めて付け替えた。index.md には `## 対応コマンド` /
   `## ターミナルから使う (tritium_cli)` の見出しを案内として残した。
+  **Tools メニューの 7 項目にツールごとのページを新設した** (ユーザー指示): `reference/tools/`
+  (superpose / interaction / secondary-structure / morphing / mol-surface / surface-cutter / apbs)。
+  **CueMol2 の対応ページ (`~/works/cuemol2_docs/docs/ja/cuemol2/` の MolSuperpose / IntrTool /
+  Prot2ndryStr / Anim_MolMorph / MsmsMolSurface / MolSurfCut / APBS_ElePot) を元に**、ダイアログの
+  ラベル・既定値は tritium のソース (`renderer/dialogs/*Dialog.tsx` と worker の services) で裏取りした。
+  `menu/tools.md` の表は各ページへのリンクにし、関連ページ (molsurf / elepot / molanim / atomintr /
+  ribbon) のリンクも付け替えた。`tutorials/surface-elepot.md` の「Point density の既定 1」は
+  obsolete (2.3.15.530 で 2) なので直した。二次構造の **Ignore β bulge / Helix gap-fill angle の
+  意味**は C++ の実装が見つからず `TODO(content)` にした。
+  **開発側への指摘**: `analyze_interactions` op の既定値 (min 0 / max 4.0 / maxLabels 100 / 炭素を除く) が
+  ダイアログ (2.5 / 3.5 / 30 / 炭素を含む) と違う (`catalog/ops/analysisOps.ts:22-25` のコメントは一致と書いている)。
   **未着手の残件**: スクリーンショット全般 (Actions / アップデート / Console を含む。
   `ui/main-window.webp` と `quick-tour/1-startup.webp` は下部パネルのタブの順が古い)、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e には触れていない)。

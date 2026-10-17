@@ -42,6 +42,7 @@
 - **[NPR (インク画風レンダリング)](rendering-npr.md)** — Umbreon (NPR) の Hatching と Detail タブ
 - **[設定項目](settings.md)** — Settings タブの全項目
 - **[プラグイン](plugins/index.md)** — 切り替えられる機能と、AI Agent / Console / MCP Server
+- **[ツール](../menu/tools.md)** — 重ね合わせ・相互作用・二次構造・モーフィング・分子表面・静電ポテンシャルの各ツール
 - **[操作の記録と再生 (Actions)](actions.md)** — History / Actions パネル、マクロ、qax ファイル
 - **[キーボードショートカット](shortcuts.md)** — ショートカットの一覧
 - **[メニューリファレンス](../menu/index.md)** — 全メニュー項目の一覧
