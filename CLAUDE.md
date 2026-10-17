@@ -292,6 +292,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `plugins/console/worker/dialects/pymol/sel/parse.ts` / `emit.ts` と `commands/helpers.ts` の
   `moleculeSelections`)。**AI Agent の「できること」はユーザー判断により当面更新しない**
   (MCP の方を優先)。
+  **Console のページを 3 つに分けた** (ユーザー判断): `console.md` (本体)、
+  `console-commands.md` (CueMol モードのコマンド一覧)、`tritium-cli.md`。console.md には
+  `## 対応コマンド` / `## ターミナルから使う (tritium_cli)` の見出しを案内として残した (既存アンカーの維持)。
   **未着手の残件**: スクリーンショット全般 (Actions / アップデート / Console を含む。
   `ui/main-window.webp` と `quick-tour/1-startup.webp` は下部パネルのタブの順が古い)、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e には触れていない)。

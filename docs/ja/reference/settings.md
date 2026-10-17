@@ -139,7 +139,7 @@
 | Command line access | OFF | 起動中のこのウィンドウで、tritium_cli からのコマンドを実行できるようにします。tritium_cli が起動した CueMol3 では、この設定を変えずにその回だけ許可されます |
 | Command line tool | — | 同梱の tritium_cli のパス。**Copy** でコピーでき、PATH に通す方法が併記されます |
 
-詳しくは [Console](plugins/console.md#ターミナルから使う-tritium_cli) を参照してください。
+詳しくは [tritium_cli](plugins/tritium-cli.md) を参照してください。
 
 ### MCP Server
 

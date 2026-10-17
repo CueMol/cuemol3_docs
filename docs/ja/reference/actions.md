@@ -135,7 +135,7 @@ qax は、記録された操作を XML で書いたファイルです (拡張子
   `list_actions` で履歴を表示し、`export_actions file[, first[, last]]` で qax に書き出せます。
   `open_log` も、それ以降の操作を qax に記録します。
 - ターミナルからは `tritium_cli file.qax` で再生できます
-  (→ [ターミナルから使う (tritium_cli)](plugins/console.md#ターミナルから使う-tritium_cli))。
+  (→ [tritium_cli](plugins/tritium-cli.md))。
 - PyMOL 互換モードでは qax を実行できません。
 
 ## 制限事項

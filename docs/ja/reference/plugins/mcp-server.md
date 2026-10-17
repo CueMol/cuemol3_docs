@@ -65,7 +65,7 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
 
 ## できること
 
-- [Console](console.md#対応コマンド) のコマンドにあたる操作を、すべてツールとして呼び出せます。
+- [Console](console-commands.md) のコマンドにあたる操作を、すべてツールとして呼び出せます。
   そのほか、今のビューを画像として返す `capture_view` があります。
 - シーンの一覧・新規作成・切り替え・クローズ (`list_scenes` / `create_scene` / `switch_scene` /
   `close_scene`) ができます。`close_scene` は、変更が保存されていないシーンを閉じません
@@ -90,7 +90,7 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
   読めるファイルとして保存されます。
 - Web ページからの要求は拒否されます。
 - 待ち受け中は、ポートとトークンが `~/.cuemol/local-api.json` (本人だけが読めるファイル) に
-  書かれます。[tritium_cli](console.md#ターミナルから使う-tritium_cli) も同じサーバーを使います。
+  書かれます。[tritium_cli](tritium-cli.md) も同じサーバーを使います。
 
 ## 関連項目
 
