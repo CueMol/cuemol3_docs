@@ -288,10 +288,13 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   (現行ソースで裏取りできず、そのまま)、`mcp-server.md` の「Console のコマンドにあたる操作を
   すべて」(`set` / `get` は MCP に出ない。今回の差分ではない)、`releases.md` 冒頭の
   「Help &gt; About CueMol3」(macOS ではアプリケーションメニュー)。
+  PyMOL 互換モードの**選択式の翻訳表を書いた** (`TODO(content)` と「準備中」を解消。根拠は
+  `plugins/console/worker/dialects/pymol/sel/parse.ts` / `emit.ts` と `commands/helpers.ts` の
+  `moleculeSelections`)。**AI Agent の「できること」はユーザー判断により当面更新しない**
+  (MCP の方を優先)。
   **未着手の残件**: スクリーンショット全般 (Actions / アップデート / Console を含む。
   `ui/main-window.webp` と `quick-tour/1-startup.webp` は下部パネルのタブの順が古い)、
-  AI Agent の「できること」と PyMOL 互換モードの選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正
-  (今回も e2e には触れていない)。
+  docs-verify の spec 追加と既存 spec の修正 (今回も e2e には触れていない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
