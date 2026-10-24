@@ -1,7 +1,8 @@
 # tritium_cli
 
 **tritium_cli** は、Console のコマンドをターミナルから実行するクライアントです。
-CueMol3 に同梱されています。コマンドは起動中の CueMol3 の**アクティブなタブ**に対して実行されます。
+CueMol3 に同梱されているほか、npm から単体でインストールすることもできます
+([npm でインストールする](#npm-でインストールする))。コマンドは起動中の CueMol3 の**アクティブなタブ**に対して実行されます。
 
 ## 使い方
 
@@ -27,6 +28,12 @@ tritium_cli [--dialect native|pymol] [--echo] [--no-launch] [-c COMMANDS | SCRIP
 CueMol3 が起動していなければ、tritium_cli が起動して待ちます (`--no-launch` で抑止)。
 この場合は、その回に限りコマンドラインからの実行が許可されます。
 
+npm でインストールした tritium_cli は、インストール済みの CueMol3 を探して起動します。
+標準のインストール先 (macOS では `/Applications` など、Windows ではインストーラの
+インストール先、Linux では .deb のインストール先) から探し、それ以外の場所にある場合
+(AppImage など) は環境変数 `CUEMOL3_APP` にアプリのパスを指定します。CueMol3 が
+見つからなければ、ダウンロード先を表示して終了します。
+
 すでに起動している CueMol3 に接続するには、**Settings &gt; Plugins &gt; Console** の
 **Command line access** を ON にします (既定は OFF)。接続先のポートとトークンは
 `~/.cuemol/local-api.json` から読み取られます。
@@ -43,6 +50,22 @@ CueMol3 が起動していなければ、tritium_cli が起動して待ちます
 | Linux (.deb) | `/usr/bin/tritium_cli` にインストールされます |
 | Linux (AppImage) | 使えません。tritium_cli を使う場合は .deb をインストールしてください |
 
+## npm でインストールする
+
+Node.js (18 以降) があれば、tritium_cli だけを npm でインストールできます。
+`tritium_cli` のコマンドが PATH に入ります。
+
+```
+npm install -g @cuemol/tritium-cli
+```
+
+npm でインストールした tritium_cli は、CueMol3 とは別に更新されます。CueMol3 との間の
+やり取りの版 (プロトコル) が食い違っていると、対話モードの起動時に古い方を更新するよう警告が表示されます
+(一部のコマンドが動かないことがあります)。
+
+!!! note
+    npm 版は、インストール済みの CueMol3 との組み合わせを macOS でのみ確認しています。
+
 ## ステータスバーの CLI
 
 Console が有効なとき、ステータスバーの右側に **CLI** が表示されます。クリックすると、
@@ -58,4 +81,4 @@ Console が有効なとき、ステータスバーの右側に **CLI** が表示
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 2.4.1.547*
