@@ -312,6 +312,26 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **未着手の残件**: スクリーンショット全般 (Actions / アップデート / Console を含む。
   `ui/main-window.webp` と `quick-tour/1-startup.webp` は下部パネルのタブの順が古い)、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e には触れていない)。
+- 前回同期: 2026-10-24 / cuemol2 `bfad51d8` (tag `v2.4.1.547`, branch: develop) / CueMol3 `2.4.1.547`。
+  `eb1702e8..bfad51d8` の差分を全件確認した (リリースノート `docs/release_notes/v2.4.1.547.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、2.3.14.525 を
+  `releases-archive.md` へ移した。
+  今回の主題は**性能** (tube / ribbon / cartoon / nucl の GPU メッシュとその場での更新、cartoon の
+  スプラインの Reinsch 法、表面の着色の共有、Windows の clang-cl) で、react-gui の画面側の変更は無い。
+  **ユーザー判断により、性能の話も更新履歴に 1 節だけ短く載せた** (2.3.20.539 の前例では書かなかった。
+  主題が性能だけのリリースのため)。更新履歴は 速度 / tritium_cli の 2 節 + warning
+  (dsurface の altloc、molsurf が分子の着色スキームに従う、ballstick の環の板が当たらない、
+  約 2 GB を超える tube / ribbon / cartoon は描かない)。
+  `reference/plugins/console/cli.md` に **npm でのインストール** (`@cuemol/tritium-cli`、
+  `CUEMOL3_APP`、プロトコルの版の不一致の警告) を追加した (`tritium/cli/src/appLocator.ts` /
+  `connection.ts` / `tritium_cli.ts:423-427`)。
+  **書かなかったもの**: Windows の clang-cl ビルド、`coeff not found` のログ、4V6X / 3J3Q の異常終了の
+  修正、molsurf のキャッシュ削除、tritium_cli のバナーのアイコン。
+  **要判断として残したもの** (更新履歴の warning にだけ書き、本体には書いていない):
+  `ui/mouse-input.md` の判定方式の表 (ballstick の環の板が対象外になった)、dsurface / molsurf の
+  ページの別配座の扱い、cartoon ページの 2 GB の制限。
+  **未着手の残件**: スクリーンショット全般、docs-verify の spec 追加と既存 spec の修正
+  (今回も e2e には触れていない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
