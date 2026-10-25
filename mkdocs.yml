@@ -95,6 +95,12 @@ plugins:
                     - Coloring Renderers: tutorials/basic/coloring.md
                     - Saving the camera and the scene: tutorials/basic/camera-scene.md
                     - Measurement and interaction display: tutorials/basic/measure.md
+                - Making a protein ribbon figure: tutorials/ribbon-figure.md
+                - Exporting high-resolution images for publication: tutorials/publication-images.md
+                - Overlaying an electron density map: tutorials/density-map.md
+                - Displaying symmetry mates and the unit cell: tutorials/symmetry.md
+                - Coloring a molecular surface by electrostatic potential: tutorials/surface-elepot.md
+                - Making an animation and exporting a movie: tutorials/animation-movie.md
             - Reference:
                 - reference/index.md
                 - Selection syntax: reference/selection.md
@@ -127,6 +133,23 @@ plugins:
                     - gpu_mapmesh (contour, GPU): reference/renderers/gpu_mapmesh.md
                 - Rendering: reference/rendering.md
                 - Settings: reference/settings.md
+                - Plugins:
+                    - reference/plugins/index.md
+                    - AI Agent: reference/plugins/ai-agent.md
+                    - Console:
+                        - reference/plugins/console/index.md
+                        - Command list: reference/plugins/console/commands.md
+                        - tritium_cli: reference/plugins/console/cli.md
+                        - PyMOL compatibility mode: reference/plugins/console/pymconsole.md
+                    - MCP Server: reference/plugins/mcp-server.md
+                - Tools:
+                    - Superposing molecules: reference/tools/superpose.md
+                    - Extracting interactions: reference/tools/interaction.md
+                    - Assigning secondary structure: reference/tools/secondary-structure.md
+                    - Morphing structural changes: reference/tools/morphing.md
+                    - Generating molecular surfaces: reference/tools/mol-surface.md
+                    - Cutting molecular surfaces: reference/tools/surface-cutter.md
+                    - Calculating electrostatic potential: reference/tools/apbs.md
                 - Keyboard shortcuts: reference/shortcuts.md
 
 markdown_extensions:

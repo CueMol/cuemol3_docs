@@ -15,9 +15,9 @@ while the GUI has been rebuilt from scratch on Electron + React.
 
 !!! note "Documentation language"
     The documentation is written in Japanese first and translated into English section by section.
-    Getting started, Installation, User interface, Menu reference, the basic tutorials and part of
+    Getting started, Installation, User interface, Menu reference, all Tutorials and part of
     the Reference (selection expression syntax, color syntax, Coloring, all Renderers, rendering,
-    settings and keyboard shortcuts) are available in English. The other sections are not translated yet: their links below are marked
+    settings, plugins, tools and keyboard shortcuts) are available in English. The other sections are not translated yet: their links below are marked
     "(Japanese only)" (or "(partly translated)") and open the Japanese pages.
 
 ## Contents
@@ -29,7 +29,7 @@ while the GUI has been rebuilt from scratch on Electron + React.
 | [Installation](install/index.md) | How to obtain and install CueMol3 on each OS |
 | [User interface](ui/index.md) | The parts of the main window and what they do |
 | [Menu reference](menu/index.md) | Every menu item, including which ones do not work yet |
-| [Tutorials](tutorials/index.md) (partly translated) | Step-by-step procedures by purpose |
+| [Tutorials](tutorials/index.md) | Step-by-step procedures by purpose |
 | [Reference](reference/index.md) (partly translated) | Selection syntax, Objects, Renderers, rendering, settings and plugins |
 | [Changes from CueMol2](changes/index.md) (Japanese only) | What changed, what moved, what was removed |
 | [Release history](releases.md) (Japanese only) | Main changes in each release |

@@ -106,8 +106,10 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   チュートリアルの目次と基本チュートリアル (`tutorials/index.md`, `tutorials/basic/*`)・
   リファレンスの中核 (`reference/index.md`, selection / color-syntax / coloring /
   `reference/renderers/*` 全ページ / rendering / settings / shortcuts) まで
-  (2026-10-25、日本語版 `e4bd8cd`)。次はプラグイン (Console / MCP Server / tritium_cli /
-  AI Agent)・ツール (`reference/tools/*`)・応用チュートリアル。
+  (2026-10-25、日本語版 `e4bd8cd`)・プラグイン (`reference/plugins/**`)・ツール
+  (`reference/tools/*`)・応用チュートリアル (`tutorials/*`) まで (2026-10-25、日本語版 `773364a`)。
+  残りはリファレンスの scene / objects / camera / animation / styles / rendering-npr /
+  actions / qsc-format と changes/*。更新履歴は訳さない。
 
 ## 同期記録
 

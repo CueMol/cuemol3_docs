@@ -12,7 +12,7 @@ Target Object: molecule (MolCoord).
 For the ribbon to be drawn correctly, secondary structure must be assigned to the protein molecule.
 Secondary structure is normally assigned automatically when a file is loaded.
 To reassign it manually, use **Reassign secondary str...** in the Tools menu
-(see [Secondary structure assignment](../tools/secondary-structure.md)).
+(see [Assigning secondary structure](../tools/secondary-structure.md)).
 
 If you create a ribbon for a chain polymer other than a protein, such as RNA or DNA,
 it is simply drawn as a tube, the same as [tube](tube.md).

@@ -85,7 +85,7 @@ Colors a molecular surface according to the values of an electrostatic potential
 It can be selected **only for molecular surface Renderers**.
 
 APBS / PDB2PQR are required for the calculation
-(see [External tool settings](../install/external-tools.md)).
+(see [Configuring external tools](../install/external-tools.md)).
 
 <!-- TODO(content): Describe specifying the target map, whether SAS coloring is available, and the low / mid / high values and colors -->
 

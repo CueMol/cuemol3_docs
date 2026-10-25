@@ -130,7 +130,10 @@ grep -rn "TODO(screenshot)" docs/
   <!-- source: ja/ui/inspector.md @ 6cacee7 -->
   ```
 
-- 日本語版にフッタがあれば、英語版にも同じ版番号で付けます (旧書式のページでも英語版は新書式)。
+- 日本語版にフッタがあれば、英語版にも同じ版番号で付けます。日本語版が旧書式
+  (`*最終確認: <日付> / 確認対象: 開発版 (tritium)*`) のページは、英語版も旧書式を訳して
+  `*Last checked: <日付> / Verified against: development build (tritium)*` とします
+  (版番号が無いため)。
 
   ```
   *Verified against: CueMol3 2.4.0.546*
@@ -194,9 +197,8 @@ task i18n:status -- -v   # 未訳ページの一覧も出す
 - スクリーンショットはクイックツアー以外は未撮影 (上記 `TODO(screenshot)` 参照)。
   クイックツアーの画像は `task e2e:shots` で自動生成しており、手動では編集しない。
 - チュートリアル (`docs/ja/tutorials/`) とリファレンス (`docs/ja/reference/`) はスタブ。
-- 英語版ははじめに・インストール・画面構成・メニュー・基本チュートリアル・リファレンスの中核
-  (選択式・色・Coloring・Renderer・レンダリング・設定・ショートカット) のみ。残りの順序は
-  プラグイン・ツール・応用チュートリアル → 残り。更新履歴は訳さない。
+- 英語版は、リファレンスの scene / objects / camera / animation / styles / rendering-npr /
+  actions / qsc-format と CueMol2 からの変更点 (`changes/*`) が未訳。更新履歴は訳さない。
 
 ## ライセンス
 

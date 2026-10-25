@@ -119,7 +119,7 @@ enables or disables it (→ [Plugins](plugins/index.md)).
 |---|---|---|
 | AI Agent | OFF | A chat panel that builds a scene from instructions written in text (→ [AI Agent](plugins/ai-agent.md)) |
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** and the **Trajectory** tab in the bottom panel |
-| Console | ON | The CueMol command line. The PyMOL-compatible mode is also available (→ [Console](plugins/console/index.md)) |
+| Console | ON | The CueMol command line. The PyMOL compatibility mode is also available (→ [Console](plugins/console/index.md)) |
 | MCP Server | OFF | Allows AI clients to operate CueMol3 via MCP (→ [MCP Server](plugins/mcp-server.md)) |
 | Component Catalog | OFF | A catalog of UI components (for CueMol3 UI development) |
 

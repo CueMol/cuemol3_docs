@@ -50,7 +50,7 @@ Types with "—" in the **New Renderer** column do not appear in the list in the
   chosen with **Algorithm** in dsurface. Those contained in existing scenes are loaded as
   dsurface (→ [dsurf2](dsurf2.md))
 
-Internal Renderers (selection highlight, atom labels, symmetry molecules, unit cell, etc.) are also
+Internal Renderers (selection highlight, atom labels, symmetry mates, unit cell, etc.) are also
 not shown in the list. Of these, the atom label Renderer is described in [namelabel](namelabel.md).
 
 ## Property structure
