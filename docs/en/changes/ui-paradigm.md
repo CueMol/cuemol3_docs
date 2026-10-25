@@ -1,4 +1,4 @@
-<!-- source: ja/changes/ui-paradigm.md @ 570ee02 -->
+<!-- source: ja/changes/ui-paradigm.md @ 21e01e2 -->
 
 # Changes in the interaction model
 
@@ -31,7 +31,7 @@ CueMol3 drops "everything is a modal dialog" and **chooses the location accordin
 
 Modal dialogs have not been abolished entirely. They are still used **where interrupting the flow makes sense**.
 
-## "Create immediately with defaults, with Undo as the safety net"
+## Principle: create with default values, adjust afterwards
 
 This is the central principle of CueMol3.
 
