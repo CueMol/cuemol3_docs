@@ -11,7 +11,7 @@ To learn by following the flow of operations, see the
 
 !!! info "Some pages are still being written"
     Only the outline and part of the content are done. Pages marked "In preparation"
-    ("準備中" on pages not yet translated) are skeletons with headings only; their content will be added over time.
+    are skeletons with headings only; their content will be added over time.
 
 ## Notation and syntax
 
@@ -26,13 +26,13 @@ To learn by following the flow of operations, see the
 
 <div class="grid cards" markdown>
 
-- **[Scene](scene.md)** (Japanese only) — Display settings for the whole scene (AO / anti-aliasing / background)
-- **[Object](objects/index.md)** (Japanese only) — Data such as molecules, density maps and molecular surfaces
+- **[Scene](scene.md)** — Display settings for the whole scene (AO / anti-aliasing / background)
+- **[Object](objects/index.md)** — Data such as molecules, density maps and molecular surfaces
 - **[Renderer](renderers/index.md)** — Types of display methods and their settings
 - **[Coloring](coloring.md)** — Types of coloring such as Paint / CPK / Rainbow
-- **[Styles](styles.md)** (Japanese only) — Property presets and the order of precedence of values
-- **[Camera](camera.md)** (Japanese only) — Saving and recalling viewpoints
-- **[Animation](animation/index.md)** (Japanese only) — Types of elements that can be placed on the timeline
+- **[Styles](styles.md)** — Property presets and the order of precedence of values
+- **[Camera](camera.md)** — Saving and recalling viewpoints
+- **[Animation](animation/index.md)** — Types of elements that can be placed on the timeline
 
 </div>
 
@@ -41,11 +41,11 @@ To learn by following the flow of operations, see the
 <div class="grid cards" markdown>
 
 - **[Rendering](rendering.md)** — Umbreon quality settings and individual setting items
-- **[NPR (ink-drawing style rendering)](rendering-npr.md)** (Japanese only) — The Hatching and Detail tabs of Umbreon (NPR)
+- **[NPR (ink-style rendering)](rendering-npr.md)** — The Hatching and Detail tabs of Umbreon (NPR)
 - **[Settings](settings.md)** — All items on the Settings tab
 - **[Plugins](plugins/index.md)** — Switchable features, and AI Agent / Console / MCP Server
 - **[Tools](../menu/tools.md)** — Tools for superposition, interactions, secondary structure, morphing, molecular surfaces and electrostatic potential
-- **[Recording and replaying operations (Actions)](actions.md)** (Japanese only) — The History / Actions panel, macros and qax files
+- **[Recording and replaying operations (Actions)](actions.md)** — The History / Actions panel, macros and qax files
 - **[Keyboard shortcuts](shortcuts.md)** — List of shortcuts
 - **[Menu reference](../menu/index.md)** — List of all menu items
 
@@ -56,7 +56,7 @@ To learn by following the flow of operations, see the
 <div class="grid cards" markdown>
 
 - **[Supported file formats](../getting-started/index.md#supported-file-formats)** — List of formats that can be read and written
-- **[Scene file (`.qsc`)](qsc-format.md)** (Japanese only) — Structure of the scene file
+- **[Scene file (`.qsc`)](qsc-format.md)** — Structure of the scene file
 
 </div>
 

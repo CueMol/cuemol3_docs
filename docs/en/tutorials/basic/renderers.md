@@ -75,7 +75,7 @@ can be reset (→ [Property inspector](../../ui/inspector.md)).
 !!! note "Differences from CueMol2"
     In CueMol2, properties were edited by opening a dialog for each Renderer and confirmed with OK.
     In CueMol3, they are edited in the always-visible inspector while watching the result
-    (→ [Change in the operation paradigm](../../changes/ui-paradigm.md)).
+    (→ [Changes in the interaction model](../../changes/ui-paradigm.md)).
 
 ## Next steps
 

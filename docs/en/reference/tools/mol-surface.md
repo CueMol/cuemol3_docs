@@ -36,7 +36,7 @@ and is displayed by the [molsurf](../renderers/molsurf.md) Renderer.
 
 - For a small molecule of about 10 kDa, raising Point density to about 5 gives a smoother surface.
   For a large molecule over 100 kDa, a lower value calculates faster.
-- For the differences between the **Algorithm** options, see [MolSurfObj generation algorithm](../objects/molsurf.md#生成アルゴリズム-algorithm).
+- For the differences between the **Algorithm** options, see [MolSurfObj generation algorithm](../objects/molsurf.md#generation-algorithm-algorithm).
   The default *Auto* uses MeshMS and switches to BALL if it fails.
 
 ## Running and the result
@@ -59,7 +59,7 @@ dialog. The same surface can be regenerated with a different **Point density (/A
   create a new surface with Mol surface generation.
 - If the source molecule is not in the scene (for example, a surface loaded from a file), the items cannot be selected.
 - Regenerating with only the density changed finishes quickly
-  (→ [MolSurfObj](../objects/molsurf.md#生成アルゴリズム-algorithm)).
+  (→ [MolSurfObj](../objects/molsurf.md#generation-algorithm-algorithm)).
 
 ## Using from the Console
 

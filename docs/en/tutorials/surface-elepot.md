@@ -29,7 +29,7 @@ Open **Tools &gt; Mol surface generation...**.
    the default of 2 is faster)
 4. **Object name** and **Probe radius (A)** (1.4 Å, the radius of a water molecule) can be left at their defaults
 5. **Algorithm** can also be left at the default **Auto** (→
-   [MolSurfObj (molecular surface)](../reference/objects/molsurf.md#生成アルゴリズム-algorithm))
+   [MolSurfObj (molecular surface)](../reference/objects/molsurf.md#generation-algorithm-algorithm))
 6. Click OK. A molecular surface Object and a molsurf Renderer are created, and the surface is displayed
 
 <!-- TODO(screenshot): The Mol surface generation dialog and the molecular surface right after generation -->
