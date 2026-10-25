@@ -1,0 +1,4129 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CueMol3 (tritium) user documentation">
+      
+      
+      
+        <link rel="canonical" href="https://cuemol.github.io/cuemol3_docs/en/tutorials/basic/loading/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../selection/">
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Loading and displaying a structure - CueMol3 &mdash; Molecular Visualization Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#loading-and-displaying-a-structure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../" title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-header__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CueMol3 &mdash; Molecular Visualization Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Loading and displaying a structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../tutorials/basic/loading/" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CueMol/cuemol2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../install/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ui/" class="md-tabs__link">
+          
+  
+    
+  
+  User interface
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changes/" class="md-tabs__link">
+          
+  
+    
+  
+  Changes from CueMol2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference/" class="md-tabs__link">
+          
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-nav__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    CueMol3 &mdash; Molecular Visualization Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CueMol/cuemol2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../getting-started/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/quick-tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick tour
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../install/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/macos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    macOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Updating
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/external-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ui/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    User interface
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User interface
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ui/side-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Side panels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ui/selection-builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selection builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ui/inspector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Property inspector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ui/bottom-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bottom panel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ui/toolbar-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toolbar and tool palette
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ui/rendering-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ui/mouse-input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mouse and trackpad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../menu/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Menus
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Menus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../menu/file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../menu/edit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edit menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../menu/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../menu/scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../menu/view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../menu/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../menu/window-help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window / Help menus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../changes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Changes from CueMol2
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Changes from CueMol2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changes/ui-paradigm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changes in the interaction model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changes/features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merged, renamed and removed features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changes/status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development status and unimplemented features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Loading and displaying a structure
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Loading and displaying a structure
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-load-a-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Load a structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Load a structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renderer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renderer types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-manipulate-the-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Manipulate the view
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manipulate the view">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-atom-names-and-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show atom names and information
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-load-another-molecule" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Load another molecule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scene-object-renderer-and-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Scene, Object, Renderer and View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-get-an-overview-in-the-scene-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Get an overview in the scene tree
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Get an overview in the scene tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eye-icons-and-buttons-at-the-top-of-the-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eye icons and buttons at the top of the panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selecting part of a molecule
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renderers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding, removing and configuring Renderers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coloring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coloring Renderers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camera-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saving the camera and the scene
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measurement and interaction display
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ribbon-figure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Making a protein ribbon figure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publication-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exporting high-resolution images for publication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../density-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overlaying an electron density map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../symmetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displaying symmetry mates and the unit cell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../surface-elepot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coloring a molecular surface by electrostatic potential
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation-movie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Making an animation and exporting a movie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../reference/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selection syntax
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/color-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Color syntax
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/coloring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coloring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../reference/objects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Object
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Object
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/objects/molcoord/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolCoord (molecule)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/objects/densitymap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DensityMap (density map)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/objects/elepot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ElePotMap (electrostatic potential)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/objects/molsurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolSurfObj (molecular surface)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../reference/renderers/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Renderer
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Renderer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/common/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/edge-lines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    simple (bond lines)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/trace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    trace (Cα trace)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/tracestick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tracestick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/spline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/ballstick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ballstick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/cpk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cpk (space-filling model)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/anisou/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    anisou (thermal ellipsoids)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/tube/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tube
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/ribbon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ribbon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/cartoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cartoon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/nucl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nucl (nucleic acids)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/atomintr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    atomintr (measurements)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/namelabel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    namelabel (name labels)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/disorder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    disorder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/molsurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    molsurf (molecular surface, precomputed)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/dsurface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dsurface (molecular surface, direct)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/dsurf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dsurf2 (molecular surface, distance field)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/contour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    contour (contour mesh)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/isosurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    isosurf (isosurface)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/renderers/gpu_mapmesh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gpu_mapmesh (contour, GPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/camera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../reference/animation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Animation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Animation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/animation/simplespin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SimpleSpin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/animation/cammotion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CamMotion (camera motion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/animation/showhide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShowHide (show / hide)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/animation/slideinout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SlideInOut
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/animation/molanim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolAnim (structural change)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/styles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Styles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/rendering-npr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPR (ink-style rendering)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_14" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../reference/plugins/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Plugins
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_14" id="__nav_7_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_14">
+            <span class="md-nav__icon md-icon"></span>
+            Plugins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/plugins/ai-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_14_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../reference/plugins/console/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Console
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_14_3" id="__nav_7_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            Console
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/plugins/console/commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command list
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/plugins/console/cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tritium_cli
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/plugins/console/pymconsole/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyMOL compatibility mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/plugins/mcp-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_15" id="__nav_7_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_15">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/tools/superpose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Superposing molecules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/tools/interaction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extracting interactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/tools/secondary-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assigning secondary structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/tools/morphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Morphing structural changes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/tools/mol-surface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generating molecular surfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/tools/surface-cutter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cutting molecular surfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/tools/apbs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculating electrostatic potential
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording and replaying operations (Actions)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/qsc-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene file (.qsc)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-load-a-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Load a structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Load a structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renderer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renderer types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-manipulate-the-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Manipulate the view
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manipulate the view">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-atom-names-and-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show atom names and information
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-load-another-molecule" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Load another molecule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scene-object-renderer-and-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Scene, Object, Renderer and View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-get-an-overview-in-the-scene-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Get an overview in the scene tree
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Get an overview in the scene tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eye-icons-and-buttons-at-the-top-of-the-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eye icons and buttons at the top of the panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- source: ja/tutorials/basic/loading.md @ 6cacee7 -->
+
+<h1 id="loading-and-displaying-a-structure">Loading and displaying a structure<a class="headerlink" href="#loading-and-displaying-a-structure" title="Permanent link">&para;</a></h1>
+<p>This page covers loading and displaying a molecular structure, and the
+<strong>Scene / Object / Renderer</strong> concepts at the core of CueMol3.
+The example is the 1.2 Å resolution crystal structure of lysozyme (PDB ID: <strong>1QIO</strong>).</p>
+<p>The pages of the basic course carry over the state of the previous page when followed in order.</p>
+<h2 id="1-load-a-structure">1. Load a structure<a class="headerlink" href="#1-load-a-structure" title="Permanent link">&para;</a></h2>
+<p>Open <strong>File &gt; Get PDB...</strong>, enter <code>1QIO</code> in <strong>PDB Accession Code</strong>, and download it.
+To open a local file, use <strong>File &gt; Open File...</strong> (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-o">O</kbd></span>)
+(→ <a href="../../../menu/file/">File menu</a>).</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/1-getpdb.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Get PDB dialog" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/1-getpdb.webp" width="380" /></a></p>
+<p>While downloading, a <code>Downloading 1QIO…</code> progress screen appears. Press <strong>Cancel</strong> to abort.
+If a nonexistent ID is entered, a <strong>Get PDB failed</strong> error is shown.</p>
+<p>When the download finishes, the <strong>Open File Options</strong> screen appears. At the top it shows the
+name of the file to be loaded (<code>1qio.cif</code>) and the file format CueMol3 detected (<code>mmCIF</code>).</p>
+<ol>
+<li>Change <strong>Object name</strong> to <code>lysozyme</code>. The loaded data is called an <strong>Object</strong>, and
+   CueMol identifies it by this name (by default, a name derived from the file name is filled in)</li>
+<li>Choose <strong>simple</strong> from <strong>Renderer type</strong></li>
+<li><strong>Renderer name</strong> is set automatically from the chosen type (<code>simple1</code>). Leave it at the default.
+   This name is used as is in the scene tree and in the rest of the tutorial</li>
+<li>Leave the other options at their defaults and press <strong>Open</strong></li>
+</ol>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/1-open-options.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Open File Options (Object name = lysozyme, Renderer type = simple)" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/1-open-options.webp" width="480" /></a></p>
+<p>The molecule is displayed as a line drawing (stick model).</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/1-loaded.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="1QIO displayed with the simple Renderer under the name lysozyme" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/1-loaded.webp" /></a></p>
+<h3 id="renderer-types">Renderer types<a class="headerlink" href="#renderer-types" title="Permanent link">&para;</a></h3>
+<p>Commonly used display styles include the following.</p>
+<dl>
+<dt>simple</dt>
+<dd>Line-drawing stick model. Second fastest after trace. Suited to viewing details</dd>
+<dt>trace</dt>
+<dd>Line-drawing Cα trace (for proteins) or phosphorus-atom trace (for nucleic acids).
+The fastest. Suited to a rough overview</dd>
+<dt>ballstick</dt>
+<dd>Ball-and-stick model</dd>
+<dt>cpk</dt>
+<dd>CPK model, also called a space-filling model</dd>
+<dt>tube</dt>
+<dd>Tube model of the main chain. A kind of extension of trace</dd>
+<dt>ribbon / cartoon</dt>
+<dd>The so-called ribbon model. cartoon draws helices as cylinders</dd>
+<dt>nucl</dt>
+<dd>An extension of tube for DNA and RNA. Bases are displayed as sticks</dd>
+</dl>
+<p>For the full list and details, see <a href="../../../reference/renderers/">Renderer list</a>.</p>
+<p>At the top of the <strong>Renderer type</strong> list there is a group called <strong>Presets</strong>. Choosing
+<strong>Default preset 1</strong> or similar there creates not a single Renderer but a <strong>group of
+several Renderers</strong> at once, for example ribbon for proteins, nucl for nucleic acids, and
+ballstick for everything else. When a preset is chosen, <strong>Selection</strong> below becomes unavailable.</p>
+<h3 id="other-options">Other options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Renderer name</strong> — The name of the Renderer to be created. It is filled in automatically
+  when a type is chosen (for a preset, it becomes the group name)</li>
+<li><strong>Selection</strong> — When checked, the adjacent field is enabled and the <strong>range to display</strong>
+  can be narrowed with a selection expression. Loading itself is performed on the whole molecule,
+  so the displayed range can be changed later (→ <a href="../selection/">Selecting part of a molecule</a>)</li>
+<li><strong>Center view on molecule after loading</strong> — Moves the view to the loaded molecule.
+  Uncheck it to keep the current view</li>
+<li><strong>&lt;format&gt;-specific options</strong> — A collapsible section at the bottom. When opened, it lists the
+  loading settings specific to that format (for mmCIF / PDB, <strong>Load MODEL records</strong>,
+  <strong>Load anisotropic U (ANISOU)</strong>, <strong>Load alternate conformations</strong>,
+  <strong>Calculate secondary structure</strong>, and so on).
+  <code>(defaults)</code> is shown to the right of the heading when the settings are at their defaults,
+  and <code>(modified)</code> when they have been changed</li>
+</ul>
+<h2 id="2-manipulate-the-view">2. Manipulate the view<a class="headerlink" href="#2-manipulate-the-view" title="Permanent link">&para;</a></h2>
+<p>Look at the loaded molecule from various directions.</p>
+<ol>
+<li><strong>Left-drag</strong> on the molecular view. The molecule rotates in the direction of the drag</li>
+<li>Turn the <strong>wheel</strong> to zoom the display in and out</li>
+<li>
+<p>In the <strong>View &gt; View</strong> panel in the left side panel, click the <strong>Zoom</strong> value under
+   <strong>Zoom / Slab</strong>, enter <code>40</code>, and press <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Zoom is set to 40</p>
+<p><img alt="Zoom in the View panel" src="../../../../assets/images/tutorials/basic/loading/2-view-zoom.webp" width="213" /></p>
+</li>
+</ol>
+<p>Zoom is the height (Å) of the range shown in the molecular view. The smaller the value,
+the larger the molecule appears.</p>
+<p>Each row of the View panel can be operated in three ways.</p>
+<ul>
+<li>Press the <strong>left/right arrows</strong> to increase or decrease the value one step at a time</li>
+<li><strong>Drag left or right</strong> over the number to change it continuously</li>
+<li><strong>Click</strong> the number to make it directly editable, and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm</li>
+</ul>
+<p>The View panel is thus useful when the view needs to be set more precisely than is possible with the mouse.
+<strong>Rotation</strong> (RotX / RotY / RotZ) values are <strong>relative</strong>: the view rotates by the entered angle,
+and the value returns to 0 after the operation. <strong>Translation</strong> (TraX / TraY / TraZ, Å) and
+<strong>Zoom / Slab</strong> (Zoom, Slab, Dist, Å) values are <strong>absolute</strong>: the values of the current view
+are displayed as they are.</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/2-view-pane.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="View panel. Rotation has returned to 0 even after rotating, and Zoom keeps the entered 40" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/2-view-pane.webp" width="237" /></a></p>
+<p>For the full list of operations, including translation and slab (the range displayed by clipping
+the near and far sides), see <a href="../../../ui/mouse-input/">Mouse and trackpad input</a>; for each
+item of the View panel, see <a href="../../../ui/side-panels/">Side panels</a>.</p>
+<h3 id="show-atom-names-and-information">Show atom names and information<a class="headerlink" href="#show-atom-names-and-information" title="Permanent link">&para;</a></h3>
+<p>Click at an atom's position to show the name of that atom in the molecular view
+(click again to hide it).</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/2-atom-label.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="The name is shown for the clicked atom" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/2-atom-label.webp" width="400" /></a></p>
+<p>Detailed information on the atom, such as its coordinates and temperature factor, is also shown in
+the <strong>status bar at the bottom of the window</strong> (the same content remains in the <strong>Output</strong> panel).
+It lists the molecular Object name, chain name, residue name and number, and atom name in that order,
+followed by the occupancy (O), temperature factor (B), and coordinates.</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/2-status-bar.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Bottom of the window. The atom information appears in both the status bar (blue band) and the Output panel" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/2-status-bar.webp" width="640" /></a></p>
+<p>Right-clicking at an atom's position shows a context menu. The top entry shows the same atom
+information as above; selecting it does nothing. Selecting the next entry, <strong>Center at this atom</strong>,
+moves the view so that the atom comes to the center. The Select-related menu items below that are
+described in <a href="../selection/">Selecting part of a molecule</a>.</p>
+<h2 id="3-load-another-molecule">3. Load another molecule<a class="headerlink" href="#3-load-another-molecule" title="Permanent link">&para;</a></h2>
+<p>Multiple Objects can be loaded into the same scene. Here, add <code>1G59</code>
+(a complex of glutamyl-tRNA synthetase and tRNA).</p>
+<ol>
+<li>Open <strong>File &gt; Get PDB...</strong>, enter <code>1G59</code> in <strong>PDB Accession Code</strong>, and press
+   <strong>Download</strong></li>
+<li>
+<p>Choose <strong>trace</strong> from <strong>Renderer type</strong></p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/3-open-options.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Choose trace for Renderer type" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/3-open-options.webp" width="480" /></a></p>
+</li>
+<li>
+<p>Leave <strong>Object name</strong> at the default (<code>1g59</code>) and press <strong>Open</strong></p>
+</li>
+</ol>
+<p>This draws a lightweight display connecting only Cα atoms for the protein and phosphorus atoms for
+the nucleic acid. The asymmetric unit of 1G59 contains two copies of the complex
+(2 protein chains + 2 tRNA chains), so the same shape appears twice.</p>
+<p>After loading, the view moves to the new molecule (<strong>Center view on molecule after loading</strong>
+is on by default), so lysozyme is not visible at this point. To see both at once, operate the
+View panel in the same way as in §2.</p>
+<ol>
+<li>Enter <code>300</code> in <strong>Slab</strong></li>
+<li>Enter <code>150</code> in <strong>Zoom</strong></li>
+<li>Enter <code>90</code> in <strong>RotY</strong></li>
+</ol>
+<p>The key is to widen <strong>Slab</strong> (the thickness displayed along the depth direction). With the default
+50 Å, lysozyme, which lies about 100 Å away from 1G59, is clipped by the depth range no matter how
+far Zoom is widened. Also, the three molecules overlap along the depth direction, so in the loaded
+orientation they overlap front to back and cannot be told apart. Rotating by 90° with <strong>RotY</strong>
+makes them appear side by side.</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/3-two-objects.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Two copies of the 1g59 complex and lysozyme (the small mass on the right)" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/3-two-objects.webp" /></a></p>
+<p>To view only a particular Object, select its row in the scene tree and press the <strong>Focus</strong>
+button at the top of the panel. Zoom and Slab are adjusted automatically to fit that Object.</p>
+<h2 id="4-scene-object-renderer-and-view">4. Scene, Object, Renderer and View<a class="headerlink" href="#4-scene-object-renderer-and-view" title="Permanent link">&para;</a></h2>
+<p>This section summarizes the concepts that have appeared so far.</p>
+<dl>
+<dt>Object</dt>
+<dd><strong>Data</strong> such as molecular coordinates, electron density, or electrostatic potential.
+It does not appear on screen by itself</dd>
+<dt>Renderer</dt>
+<dd>Responsible for <strong>displaying</strong> an Object on screen. Multiple Renderers can be attached to one Object,
+so the same molecule can be displayed as ribbon and ballstick at the same time, for example</dd>
+<dt>Scene</dt>
+<dd>A unit of work that groups Objects and Renderers. The <strong>tabs</strong> at the top of the window
+correspond to scenes, and scenes opened side by side do not interfere with each other</dd>
+<dt>View</dt>
+<dd>The screen that shows a scene (the molecular view). Multiple Views can also be
+connected to one scene (→ New Tab in the <a href="../../../menu/file/">File menu</a>)</dd>
+</dl>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/scene-concept.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Relationship between Scene / Object / Renderer / View" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/scene-concept.png" /></a></p>
+<p>Think of a scene as the whole that contains multiple Objects and the Renderers attached to them.</p>
+<h2 id="5-get-an-overview-in-the-scene-tree">5. Get an overview in the scene tree<a class="headerlink" href="#5-get-an-overview-in-the-scene-tree" title="Permanent link">&para;</a></h2>
+<p>The <strong>Explorer &gt; Scene</strong> tree (scene tree) in the left side panel shows the Objects in the
+scene and their Renderers in a hierarchy (→ <a href="../../../ui/side-panels/">Side panels</a>).</p>
+<p>Rows are written as <strong><code>name (type)</code></strong>. Click the <strong>triangle</strong> to the left of a name to expand or collapse
+the list of Renderers attached to that Object. The current tree reads as follows.</p>
+<ul>
+<li>The scene <code>Untitled 1</code> has two Objects, <code>lysozyme</code> and <code>1g59</code>
+  (when loaded with Get PDB, the Object name is the lowercase PDB ID)</li>
+<li><code>1g59 (MolCoord)</code> — The type of Object <code>1g59</code> is MolCoord (molecular coordinates)</li>
+<li><code>trace1 (trace)</code> — The Renderer <code>trace1</code> attached to <code>1g59</code> is of type trace</li>
+<li><code>(*selection)</code> — A Renderer without a name is shown with only parentheses and its type. This is the
+  Renderer for highlighting the selected part, and it is created automatically when a molecule is loaded</li>
+<li><code>(*namelabel)</code> — The Renderer for labels, created when an atom was clicked to show its name in §2.
+  The row remains even after the label is hidden</li>
+</ul>
+<p><strong>Camera</strong> and <strong>Styles</strong> at the bottom are the places where saved views and styles are kept
+(→ <a href="../camera-scene/">Saving the camera and the scene</a>).</p>
+<h3 id="eye-icons-and-buttons-at-the-top-of-the-panel">Eye icons and buttons at the top of the panel<a class="headerlink" href="#eye-icons-and-buttons-at-the-top-of-the-panel" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The <strong>eye icon</strong> on a row toggles the visibility of a Renderer. Toggling it on an Object row
+  toggles all Renderers under it together</li>
+<li>There are four buttons at the top of the panel (names appear when the pointer is placed over them)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add</strong></td>
+<td>Adds a Renderer to the selected Object (same as New Renderer in the right-click menu)</td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Adjusts the view (Zoom and Slab) to fit the selected Object or Renderer</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Deletes the selected Object or Renderer. It can be restored with Undo</td>
+</tr>
+<tr>
+<td><strong>Property</strong></td>
+<td>Shows the selected item in the property inspector</td>
+</tr>
+</tbody>
+</table>
+<p>Right-clicking the scene row lets you change the background color from <strong>Background color</strong>.</p>
+<p><a class="glightbox" href="../../../../assets/images/tutorials/basic/loading/5-scene-tree.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Scene tree (lysozyme / 1g59 and their Renderers)" class="on-glb" src="../../../../assets/images/tutorials/basic/loading/5-scene-tree.webp" width="253" /></a></p>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../selection/">Selecting part of a molecule</a> — How to choose what to operate on</li>
+<li><a href="../../../ui/mouse-input/">Mouse and trackpad input</a> / <a href="../../../ui/side-panels/">Side panels</a></li>
+</ul>
+<hr />
+<p><em>Verified against: CueMol3 2.3.8.495</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../selection/" class="md-footer__link md-footer__link--next" aria-label="Next: Selecting part of a molecule">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Selecting part of a molecule
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
