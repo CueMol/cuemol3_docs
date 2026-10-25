@@ -130,7 +130,10 @@ grep -rn "TODO(screenshot)" docs/
   <!-- source: ja/ui/inspector.md @ 6cacee7 -->
   ```
 
-- 日本語版にフッタがあれば、英語版にも同じ版番号で付けます (旧書式のページでも英語版は新書式)。
+- 日本語版にフッタがあれば、英語版にも同じ版番号で付けます。日本語版が旧書式
+  (`*最終確認: <日付> / 確認対象: 開発版 (tritium)*`) のページは、英語版も旧書式を訳して
+  `*Last checked: <日付> / Verified against: development build (tritium)*` とします
+  (版番号が無いため)。
 
   ```
   *Verified against: CueMol3 2.4.0.546*
