@@ -1,4 +1,4 @@
-<!-- source: ja/reference/color-syntax.md @ e4bd8cd -->
+<!-- source: ja/reference/color-syntax.md @ 6551fdf -->
 
 # Color syntax
 
@@ -98,9 +98,10 @@ W is the opacity; 0 is fully transparent.
 ## Name notation
 
 ```
-<string of _a-z0-9+- characters>
+NAME
 ```
 
+NAME is a color name made of letters, digits, `_`, `+` and `-`.
 Specifies a color by a color name defined in a style file. Names are case-insensitive.
 The system default style file defines the same kind of color names as those available in HTML / CSS
 ([CSS Color Module Level 3](https://www.w3.org/TR/css3-color/#svg-color)).
