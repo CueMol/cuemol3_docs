@@ -1,4 +1,4 @@
-<!-- source: ja/reference/camera.md @ 570ee02 -->
+<!-- source: ja/reference/camera.md @ f5ac4ed -->
 
 # Camera
 
@@ -6,7 +6,7 @@ A **camera** is a named, saved state of the view (position, orientation, zoom an
 Cameras are listed in **View &gt; Camera** in the side panel, and can be recalled at any time to return to the same view.
 
 !!! info "In preparation"
-    This page is only an outline. Details of each item will be added later.
+    The information a camera holds, loading `.cam` files, and the items for editing display flags will be added later.
 
 ## Working with cameras
 

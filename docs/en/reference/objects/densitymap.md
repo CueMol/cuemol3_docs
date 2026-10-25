@@ -1,11 +1,11 @@
-<!-- source: ja/reference/objects/densitymap.md @ 570ee02 -->
+<!-- source: ja/reference/objects/densitymap.md @ f5ac4ed -->
 
 # DensityMap (density map)
 
 An Object that holds a three-dimensional scalar field such as an electron density map.
 
 !!! info "In preparation"
-    This page is only an outline. The list of properties will be added later.
+    The list of properties will be added later.
 
 ## Creating
 
