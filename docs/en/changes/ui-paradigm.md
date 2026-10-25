@@ -1,4 +1,4 @@
-<!-- source: ja/changes/ui-paradigm.md @ 21e01e2 -->
+<!-- source: ja/changes/ui-paradigm.md @ edeec72 -->
 
 # Changes in the interaction model
 
@@ -56,7 +56,7 @@ The same fields are not duplicated in creation dialogs.
 
 → [Property inspector](../ui/inspector.md)
 
-## One-time processes remember their settings
+## Carrying over the previous settings
 
 For processes that are "one-time but have many fields", such as export and rendering, the settings used last are remembered
 and serve as the initial values the next time. The output destination and frame rate of movie output are examples.
