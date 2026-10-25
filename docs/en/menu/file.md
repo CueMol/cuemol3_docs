@@ -25,7 +25,7 @@ For the list of supported formats, see [Supported file formats](../getting-start
 For files whose format cannot be determined from the extension alone (such as `.cif`, where several formats share the same extension), the format is **determined by reading the contents**. Files whose header is long and whose coordinates start several hundred KB into the file, such as recent PDB mmCIF files, can also be opened.
 
 When opening a CCP4/MRC density map, the options screen shows the grid size and the amount of memory required to load it. **Map type** specifies whether the map is treated as a crystallographic map or a cryo-EM map (the default is *Auto (from header)*, which decides from the file header), and **Subsample** loads the map with the grid thinned out
-(→ [DensityMap](../reference/objects/densitymap.md#マップの種類-map-type)).
+(→ [DensityMap](../reference/objects/densitymap.md#map-type)).
 For maps with too many grid points, a warning is shown and a **Subsample** value that fits in memory is suggested.
 **Subsample** discards grid points at load time, so the map cannot be made finer afterwards.
 **Map type** and **Subsample** are shown only when opening CCP4/MRC. For maps in other formats, Map type can be changed in the inspector after loading.

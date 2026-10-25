@@ -73,7 +73,7 @@ These are loaded with **Open Scene...** in the File menu (they do not appear in 
 | POV-Ray SDL (`.pov`) | Scene description for external POV-Ray (an `.inc` file is also written) |
 | STL (`.stl`) | Shape data for 3D printers, etc. |
 | Metasequoia (`.mqo`) | For 3D modeling software |
-| PDB / MOL・SDF / PQR / XYZR | Saving a single molecular Object (File &gt; Save File As...) |
+| PDB / MOL/SDF / PQR / XYZR | Saving a single molecular Object (File &gt; Save File As...) |
 
 ## System requirements
 
@@ -85,7 +85,7 @@ These are loaded with **Open Scene...** in the File menu (they do not appear in 
 
 An environment where OpenGL is available for 3D display is required.
 
-External tools (ffmpeg / APBS・PDB2PQR / POV-Ray for the legacy backend) are used only by some features.
+External tools (ffmpeg / APBS/PDB2PQR / POV-Ray for the legacy backend) are used only by some features.
 If they are not bundled with the release assets, specify the path to the executable in Settings
 (→ [Configuring external tools](../install/external-tools.md)).
 Ray tracing is done by the built-in Umbreon, so no external program is needed.

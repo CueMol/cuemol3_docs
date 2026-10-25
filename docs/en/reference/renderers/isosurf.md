@@ -23,7 +23,7 @@ For the common properties, see [Common Renderer properties](common.md).
 
 Map kind
 :   The kind of this map (*Crystallographic* / *Cryo-EM*). Read-only; it shows the result of the
-    **Map type** detection of the [DensityMap](../objects/densitymap.md#マップの種類-map-type)
+    **Map type** detection of the [DensityMap](../objects/densitymap.md#map-type)
 
 Region
 :   The range to display. *Auto* (default) becomes *Box around center* for crystallographic maps

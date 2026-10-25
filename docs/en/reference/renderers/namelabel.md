@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/namelabel.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/namelabel.md @ f5ac4ed -->
 
 # namelabel (name label)
 
@@ -12,7 +12,7 @@ A Renderer that attaches name labels to atoms in the molecular view. Target Obje
     It is not listed in the New Renderer dialog.
 
 !!! info "In preparation"
-    This page is a skeleton. Example figures will be added later.
+    Example figures will be added later.
 
 ## Overview
 

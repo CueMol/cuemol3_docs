@@ -22,7 +22,7 @@ For the common properties, see [Common Renderer properties](common.md).
      description) from the contour inspector section and the C++ definition -->
 
 Map kind
-:   The kind of this map (*Crystallographic* / *Cryo-EM*). Read-only; it shows the detected **Map type** of the [DensityMap](../objects/densitymap.md#マップの種類-map-type)
+:   The kind of this map (*Crystallographic* / *Cryo-EM*). Read-only; it shows the detected **Map type** of the [DensityMap](../objects/densitymap.md#map-type)
 
 Region
 :   The range to display. *Auto* (default) becomes *Box around center* for crystallographic maps

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/dsurface.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/dsurface.md @ f5ac4ed -->
 
 # dsurface (molecular surface, direct calculation)
 
@@ -8,7 +8,7 @@ Coloring is set in the Color panel. Besides Solid coloring, electrostatic potent
 Multi-gradient can also be chosen (→ [Coloring](../coloring.md)).
 
 !!! info "In preparation"
-    This page is a skeleton. Example figures will be added later.
+    Example figures will be added later.
 
 ## Overview
 

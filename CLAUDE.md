@@ -107,9 +107,14 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   リファレンスの中核 (`reference/index.md`, selection / color-syntax / coloring /
   `reference/renderers/*` 全ページ / rendering / settings / shortcuts) まで
   (2026-10-25、日本語版 `e4bd8cd`)・プラグイン (`reference/plugins/**`)・ツール
-  (`reference/tools/*`)・応用チュートリアル (`tutorials/*`) まで (2026-10-25、日本語版 `773364a`)。
-  残りはリファレンスの scene / objects / camera / animation / styles / rendering-npr /
-  actions / qsc-format と changes/*。更新履歴は訳さない。
+  (`reference/tools/*`)・応用チュートリアル (`tutorials/*`) (日本語版 `773364a`)・残りの
+  リファレンスと `changes/*` (日本語版 `570ee02`)。**更新履歴 (`releases.md` /
+  `releases-archive.md`) 以外の全ページが訳済み** (2026-10-25)。更新履歴は訳さない。
+  以後は `task i18n:status` の stale を別 PR でまとめて追随させる。追随は該当ページの
+  日本語版の差分 (`git diff <マーカーの hash>..HEAD -- docs/ja/<path>`) を英語版に反映し、
+  マーカーの hash を更新する (全面的な訳し直しはしない)。
+- 新しい日本語ページを足したら、英語版も同じ PR か次の追随 PR で訳し、en の nav に載せる
+  (`task i18n:status -- -v` の untranslated に出る)。
 
 ## 同期記録
 

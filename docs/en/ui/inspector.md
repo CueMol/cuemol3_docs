@@ -57,7 +57,7 @@ Items that have no meaning for a group (opacity, material, edge lines) are not s
 Name / Selection / Visible / Locked / Linked (read-only) can be edited.
 A density map (DensityMap) also shows a **Density map** section
 for handling the map type (Map type / Effective kind)
-(→ [DensityMap](../reference/objects/densitymap.md#マップの種類-map-type)).
+(→ [DensityMap](../reference/objects/densitymap.md#map-type)).
 
 ### Scene
 

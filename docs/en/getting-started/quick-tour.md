@@ -89,7 +89,7 @@ at any time.
 ![Scene tree with simple1 hidden](../../assets/images/getting-started/quick-tour/3-hide-simple.webp){ width="237" .on-glb }
 
 - When a type is chosen, a Renderer is **created immediately with default values**, and detailed settings are adjusted
-  afterward in the inspector (for this policy, see [Changes in the operation paradigm](../changes/ui-paradigm.md))
+  afterward in the inspector (for this policy, see [Changes in the interaction model](../changes/ui-paradigm.md))
 - Choosing a predefined combination (preset) creates a group of multiple Renderers at once
 
 ### Adjust the appearance
