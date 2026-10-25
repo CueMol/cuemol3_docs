@@ -92,6 +92,42 @@ tasks:
         fi
         echo "Wording check done."
 
+  i18n:status:
+    silent: true
+    desc: 'List English pages behind their Japanese source (task i18n:status -- -v lists untranslated pages too)'
+    cmds:
+      # Each English page starts with "<!-- source: ja/<path> @ <hash> -->",
+      # the Japanese commit it was translated from. A page is stale when the
+      # Japanese file changed after that commit. Informational only.
+      - |
+        stale=0; ok=0; bad=0
+        for en in $(cd docs/en && find . -name '*.md' | sed 's|^\./||' | sort); do
+          [ "$en" = "index.md" ] && continue
+          marker=$(head -n 1 "docs/en/$en")
+          hash=$(echo "$marker" | sed -n 's/^<!-- source: ja\/.* @ \([0-9a-f]*\) -->$/\1/p')
+          if [ -z "$hash" ]; then
+            echo "NO MARKER  en/$en"; bad=$((bad+1)); continue
+          fi
+          n=$(git rev-list --count "$hash"..HEAD -- "docs/ja/$en")
+          if [ "$n" -gt 0 ]; then
+            last=$(git log -1 --format=%cs -- "docs/ja/$en")
+            echo "STALE      en/$en  ($n ja commits since $hash, last $last)"
+            stale=$((stale+1))
+          else
+            ok=$((ok+1))
+          fi
+        done
+        total=$(cd docs/ja && find . -name '*.md' | sed 's|^\./||' | while read -r p; do
+          [ -f "../en/$p" ] || echo "$p"; done | wc -l | tr -d ' ')
+        case "{{.CLI_ARGS}}" in
+          *-v*)
+            echo; echo "Untranslated:"
+            (cd docs/ja && find . -name '*.md' | sed 's|^\./||' | sort | while read -r p; do
+              [ -f "../en/$p" ] || echo "  $p"; done) ;;
+        esac
+        echo
+        echo "up to date: $ok, stale: $stale, no marker: $bad, untranslated: $total"
+
   todo:
     silent: true
     desc: List the outstanding TODO markers in the docs

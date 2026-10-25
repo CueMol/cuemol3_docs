@@ -54,8 +54,29 @@ plugins:
         - locale: en
           name: English
           build: true
+          # Only translated pages are listed; the rest fall back to Japanese
+          # and are reached from the English home page.
           nav:
             - Home: index.md
+            - Getting started:
+                - getting-started/index.md
+                - Quick tour: getting-started/quick-tour.md
+            - Installation:
+                - install/index.md
+                - macOS: install/macos.md
+                - Windows: install/windows.md
+                - Linux: install/linux.md
+                - Updating: install/update.md
+                - External tools: install/external-tools.md
+            - User interface:
+                - ui/index.md
+                - Side panels: ui/side-panels.md
+                - Selection builder: ui/selection-builder.md
+                - Property inspector: ui/inspector.md
+                - Bottom panel: ui/bottom-panels.md
+                - Toolbar and tool palette: ui/toolbar-tools.md
+                - Rendering window: ui/rendering-window.md
+                - Mouse and trackpad: ui/mouse-input.md
 
 markdown_extensions:
   - admonition

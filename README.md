@@ -42,6 +42,7 @@ task e2e:shots    # ドキュメント用スクリーンショットを撮影し
 - 日本語が主で、`docs/ja/` 以下に置きます。ファイル名は英語スラッグ、nav の表示名は日本語。
 - 英語版は `docs/en/` に置きます。存在しないページは `fallback_to_default: true` により
   日本語版にフォールバックするので、翻訳できたページだけを追加してください。
+  運用 (出典マーカー・遅れの検出) と訳語は下記「英語版」を参照。
 - 記述内容は **CueMol3 の実装状況** に従います。CueMol2 にあっても CueMol3 で
   未実装・廃止された機能を、動くかのように書かないこと。
 
@@ -112,6 +113,80 @@ CI 帯域の消費と運用事故を避けるため踏襲しません)。次の�
 grep -rn "TODO(screenshot)" docs/
 ```
 
+## 英語版
+
+英語版は日本語版の**翻訳**です。事実の正本は日本語版 (さらにその正本は cuemol2 の実装) で、
+英語版で事実を足したり省いたりしません。
+
+### ページの作り方
+
+- パスは日本語版と同じ (`docs/ja/ui/inspector.md` → `docs/en/ui/inspector.md`)。
+  画像の相対パス (`../../assets/images/...`) もそのまま使えます。
+- 構成 (見出し・表・admonition・画像・`TODO(...)` コメント) は日本語版をそのまま写し、
+  本文と画像の alt テキストを訳します。
+- 1 行目に**出典マーカー**を置きます。訳した (追随させた) 時点の日本語版のコミットです。
+
+  ```
+  <!-- source: ja/ui/inspector.md @ 6cacee7 -->
+  ```
+
+- 日本語版にフッタがあれば、英語版にも同じ版番号で付けます (旧書式のページでも英語版は新書式)。
+
+  ```
+  *Verified against: CueMol3 2.4.0.546*
+  ```
+
+- リンクは英語版の中の相対パスで書きます (`../menu/index.md`)。未訳のページは
+  日本語版にフォールバックして表示されます。**未訳ページへのアンカーは日本語の見出しの slug
+  のまま** (`../reference/settings.md#general`、`cli.md#ステータスバーの-cli`)、訳済みページへの
+  アンカーは英語の見出しの slug にします。
+- 訳したページは `mkdocs.yml` の en の `nav` に英語の表示名で追加します
+  (未訳ページは nav に載せません)。
+
+### 遅れの検出
+
+```sh
+task i18n:status     # 日本語版が出典マーカー以降に変わった英語版ページを列挙
+task i18n:status -- -v   # 未訳ページの一覧も出す
+```
+
+日本語版を直した PR では英語版を直さず、追随は別の PR でまとめて行います。
+追随したら出典マーカーの hash を更新します。
+
+### 訳語
+
+| 日本語 | English |
+|---|---|
+| Renderer / Object / Coloring | Renderer / Object / Coloring (日本語版と同じく大文字始まりの用語として扱う) |
+| シーン / ビュー | scene / view |
+| シーンツリー | scene tree |
+| 分子ビュー (MolView) | molecular view (MolView) |
+| メインウィンドウ / レンダリングウィンドウ | main window / rendering window |
+| ツールバー / ツールパレット | toolbar / tool palette |
+| アクティビティバー | activity bar |
+| サイドパネル / 下部パネル | side panel / bottom panel |
+| プロパティインスペクタ | property inspector |
+| 選択ビルダー | selection builder |
+| タブバー / ステータスバー / 通知センター | tab bar / status bar / notification center |
+| 選択 / 選択式 | selection / selection expression |
+| 名前付き選択 | named selection |
+| 着色 / 色を塗る | coloring / color |
+| 密度マップ / 電子密度マップ | density map / electron density map |
+| 分子表面 | molecular surface |
+| 静電ポテンシャル | electrostatic potential |
+| レイトレース / レイトレーシング | ray tracing (動詞は ray-trace) |
+| 配布物 | release assets (文脈により build / package) |
+| 署名 / 公証 | code signing / notarization |
+| 外部ツール | external tools |
+| 開発版 | development build |
+| 「開発中」バッジ + 「現在のバージョンでは動作しません」 | `<span class="badge-wip">In development</span>` + "This item does not work in the current version." |
+| 〜を参照してください / (→ [X](...)) | see [X](...) / (→ [X](...)) |
+
+- GUI のラベル (メニュー項目・ボタン・プロパティ名) は日本語版でも英語のまま太字で書いているので、
+  そのまま写します。メニューのパスは **File &gt; Open File...** の書式を保ちます。
+- 文体は平叙の現在形、二人称 (you) は必要なときだけ。「〜できます」は "You can ..." より
+  "... can be ..." や命令形の手順で簡潔に書きます。
+
 ## 残タスク
 
 - **ロゴは暫定版** (`docs/assets/images/cuemol3-logo*.png` / `docs/assets/favicon.png`)。
@@ -119,7 +194,8 @@ grep -rn "TODO(screenshot)" docs/
 - スクリーンショットはクイックツアー以外は未撮影 (上記 `TODO(screenshot)` 参照)。
   クイックツアーの画像は `task e2e:shots` で自動生成しており、手動では編集しない。
 - チュートリアル (`docs/ja/tutorials/`) とリファレンス (`docs/ja/reference/`) はスタブ。
-- 英語版は `docs/en/index.md` のみ。
+- 英語版ははじめに・インストール・画面構成のみ。残りの順序はメニュー + 基本チュートリアル →
+  リファレンスの中核 → プラグイン・ツール・応用チュートリアル → 残り。更新履歴は訳さない。
 
 ## ライセンス
 
