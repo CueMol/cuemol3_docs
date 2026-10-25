@@ -102,8 +102,11 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
 - `<!-- keep -->` は日本語版の段落にだけ効く。英語版の対応する段落は日本語版に合わせて訳し直してよい。
 - 訳済みページは mkdocs.yml の en の `nav` に載せる。未訳ページは載せない
   (英語サイトの nav に日本語ページが並ぶため)。
-- 英訳の進捗: はじめに・インストール・画面構成 (`ui/*`、メニューを除く) まで
-  (2026-10-25、日本語版 `6cacee7`)。次はメニュー + 基本チュートリアル。
+- 英訳の進捗: はじめに・インストール・画面構成 (`ui/*`)・メニュー (`menu/*`)・
+  チュートリアルの目次と基本チュートリアル (`tutorials/index.md`, `tutorials/basic/*`) まで
+  (2026-10-25、日本語版 `6cacee7`)。次はリファレンスの中核 (selection / color-syntax /
+  coloring / renderers の index・common・material・edge-lines と主要 Renderer / rendering /
+  settings / shortcuts)。
 
 ## 同期記録
 

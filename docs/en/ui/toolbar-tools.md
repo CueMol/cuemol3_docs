@@ -61,7 +61,7 @@ The cursor shape also changes according to the selected tool.
 At the top of the palette there is a **collapse handle**. Pressing it shrinks the palette to just the handle;
 pressing it again restores the palette. **View &gt; Tool palette**
 (++cmd+shift+p++) toggles it in the same way, and the state is kept for the next launch
-(→ [View menu](../menu/view.md#ツールパレット)).
+(→ [View menu](../menu/view.md#tool-palette)).
 
 ### Selection tools
 

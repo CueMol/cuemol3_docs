@@ -64,7 +64,7 @@ Selecting a Renderer group targets its member Renderers. Copying is not possible
 different types are mixed, or when two or more Objects are selected.
 
 Copy &amp; paste can also be done with the shortcuts of the Edit menu
-(→ [Edit menu](../menu/edit.md#クリップボード)).
+(→ [Edit menu](../menu/edit.md#clipboard)).
 
 #### Creating a Renderer
 
