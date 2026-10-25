@@ -104,7 +104,7 @@ light source spread / intensity), among others. There is no Quality section.
 
 The contents of Render Settings, including the Backend selection, are saved in the scene and restored for each scene.
 Changes are undoable, and ++cmd+z++ also works inside this window
-(→ [Saving settings](../reference/rendering.md#設定の保存)).
+(→ [Saving settings](../reference/rendering.md#saving-settings)).
 
 ## Movie mode
 

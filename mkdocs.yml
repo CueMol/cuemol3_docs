@@ -95,6 +95,39 @@ plugins:
                     - Coloring Renderers: tutorials/basic/coloring.md
                     - Saving the camera and the scene: tutorials/basic/camera-scene.md
                     - Measurement and interaction display: tutorials/basic/measure.md
+            - Reference:
+                - reference/index.md
+                - Selection syntax: reference/selection.md
+                - Color syntax: reference/color-syntax.md
+                - Coloring: reference/coloring.md
+                - Renderer:
+                    - reference/renderers/index.md
+                    - Common properties: reference/renderers/common.md
+                    - Material: reference/renderers/material.md
+                    - Edge lines: reference/renderers/edge-lines.md
+                    - simple (bond lines): reference/renderers/simple.md
+                    - trace (Cα trace): reference/renderers/trace.md
+                    - tracestick: reference/renderers/tracestick.md
+                    - spline: reference/renderers/spline.md
+                    - ballstick: reference/renderers/ballstick.md
+                    - cpk (space-filling model): reference/renderers/cpk.md
+                    - anisou (thermal ellipsoids): reference/renderers/anisou.md
+                    - tube: reference/renderers/tube.md
+                    - ribbon: reference/renderers/ribbon.md
+                    - cartoon: reference/renderers/cartoon.md
+                    - nucl (nucleic acids): reference/renderers/nucl.md
+                    - atomintr (measurements): reference/renderers/atomintr.md
+                    - namelabel (name labels): reference/renderers/namelabel.md
+                    - disorder: reference/renderers/disorder.md
+                    - molsurf (molecular surface, precomputed): reference/renderers/molsurf.md
+                    - dsurface (molecular surface, direct): reference/renderers/dsurface.md
+                    - dsurf2 (molecular surface, distance field): reference/renderers/dsurf2.md
+                    - contour (contour mesh): reference/renderers/contour.md
+                    - isosurf (isosurface): reference/renderers/isosurf.md
+                    - gpu_mapmesh (contour, GPU): reference/renderers/gpu_mapmesh.md
+                - Rendering: reference/rendering.md
+                - Settings: reference/settings.md
+                - Keyboard shortcuts: reference/shortcuts.md
 
 markdown_extensions:
   - admonition

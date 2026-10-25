@@ -103,10 +103,11 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
 - 訳済みページは mkdocs.yml の en の `nav` に載せる。未訳ページは載せない
   (英語サイトの nav に日本語ページが並ぶため)。
 - 英訳の進捗: はじめに・インストール・画面構成 (`ui/*`)・メニュー (`menu/*`)・
-  チュートリアルの目次と基本チュートリアル (`tutorials/index.md`, `tutorials/basic/*`) まで
-  (2026-10-25、日本語版 `6cacee7`)。次はリファレンスの中核 (selection / color-syntax /
-  coloring / renderers の index・common・material・edge-lines と主要 Renderer / rendering /
-  settings / shortcuts)。
+  チュートリアルの目次と基本チュートリアル (`tutorials/index.md`, `tutorials/basic/*`)・
+  リファレンスの中核 (`reference/index.md`, selection / color-syntax / coloring /
+  `reference/renderers/*` 全ページ / rendering / settings / shortcuts) まで
+  (2026-10-25、日本語版 `e4bd8cd`)。次はプラグイン (Console / MCP Server / tritium_cli /
+  AI Agent)・ツール (`reference/tools/*`)・応用チュートリアル。
 
 ## 同期記録
 
