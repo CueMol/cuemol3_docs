@@ -69,7 +69,7 @@ With cartoon / ribbon / tube, clicking anywhere on the band hits that residue.
 **dsurface (a molecular surface computed directly from the molecule) is a target only when the drawing mode is Fill.**
 The atom that owns the point on the surface is picked, and the faces around that atom are highlighted.
 Wireframe and Dots are not targets
-(→ [dsurface](../reference/renderers/dsurface.md#クリックとホバー)).
+(→ [dsurface](../reference/renderers/dsurface.md#click-and-hover)).
 
 **Only dsurface is a target; molsurf is not.** A molecular surface generated with Tools &gt; Mol surface
 generation... is created as an Object (MolSurfObj) separate from the molecule (MolCoord),
