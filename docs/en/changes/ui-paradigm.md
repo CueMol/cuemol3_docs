@@ -1,4 +1,4 @@
-<!-- source: ja/changes/ui-paradigm.md @ edeec72 -->
+<!-- source: ja/changes/ui-paradigm.md @ 4df4524 -->
 
 # Changes in the interaction model
 
@@ -45,7 +45,7 @@ CueMol3 works as follows.
 
 Since mistakes can be reverted with Undo, there is no need to decide everything before creating.
 
-## The property inspector is the only place for settings
+## Settings in the property inspector
 
 For persistent targets (Renderers, Objects and the scene), **the property inspector is the only place** for settings.
 The same fields are not duplicated in creation dialogs.
