@@ -43,7 +43,7 @@ To learn by following the flow of operations, see the
 - **[Rendering](rendering.md)** — Umbreon quality settings and individual setting items
 - **[NPR (ink-drawing style rendering)](rendering-npr.md)** (Japanese only) — The Hatching and Detail tabs of Umbreon (NPR)
 - **[Settings](settings.md)** — All items on the Settings tab
-- **[Plugins](plugins/index.md)** (Japanese only) — Switchable features, and AI Agent / Console / MCP Server
+- **[Plugins](plugins/index.md)** — Switchable features, and AI Agent / Console / MCP Server
 - **[Tools](../menu/tools.md)** — Tools for superposition, interactions, secondary structure, morphing, molecular surfaces and electrostatic potential
 - **[Recording and replaying operations (Actions)](actions.md)** (Japanese only) — The History / Actions panel, macros and qax files
 - **[Keyboard shortcuts](shortcuts.md)** — List of shortcuts

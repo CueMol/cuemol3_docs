@@ -26,12 +26,12 @@ If you proceed in order, each page picks up the state left by the previous one.
 
 <div class="grid cards" markdown>
 
-- **[Making a ribbon figure of a protein](ribbon-figure.md)** (Japanese only) — The basic figure-making course, from fetching a structure to coloring and outlines
+- **[Making a protein ribbon figure](ribbon-figure.md)** (Japanese only) — The basic figure-making course, from fetching a structure to coloring and outlines
 - **[Exporting high-resolution images for publication](publication-images.md)** (Japanese only) — Choosing between Export scene and ray tracing
 - **[Overlaying an electron density map](density-map.md)** (Japanese only) — Fetching a map with Get PDB and the Density map panel
 - **[Displaying symmetry mates and the unit cell](symmetry.md)** (Japanese only) — Showing crystal packing and Create SYMM mol
 - **[Coloring a molecular surface by electrostatic potential](surface-elepot.md)** (Japanese only) — From surface generation to APBS calculation and coloring
-- **[Creating an animation and exporting a movie](animation-movie.md)** (Japanese only) — Timeline editing, morphing, and movie output
+- **[Making an animation and exporting a movie](animation-movie.md)** (Japanese only) — Timeline editing, morphing, and movie output
 
 </div>
 

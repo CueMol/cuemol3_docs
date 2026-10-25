@@ -35,7 +35,7 @@ and the individual settings are shared).
     reproducing past scenes with the same appearance, but use Umbreon for new images.
 
     To use POV-Ray, set the path to the executable in Settings
-    (→ [External tool settings](../install/external-tools.md)).
+    (→ [Configuring external tools](../install/external-tools.md)).
 
 ### Common settings not used by Umbreon
 

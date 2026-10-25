@@ -85,7 +85,7 @@ use **Rendering &gt; Movie rendering...** (→ [Rendering window](rendering-wind
 
 ## Console
 
-A command line for running CueMol operations as commands. Switching to PyMOL-compatible mode on the toolbar
+A command line for running CueMol operations as commands. Switching to PyMOL compatibility mode on the toolbar
 allows PyMOL commands such as `fetch 1crn` to be typed as they are.
 
 This tab is part of the **Console** plugin, which is **enabled by default**

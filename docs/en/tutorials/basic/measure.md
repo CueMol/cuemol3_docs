@@ -6,7 +6,7 @@ This tutorial shows how to measure distances, angles and dihedral angles between
 The example is again lysozyme (`lysozyme`, simple display).
 
 !!! info "Screenshots planned"
-    Screenshots showing the flow of operations will be added to this page.
+    Screenshots showing the workflow will be added to this page.
 
 ## 1. Measure distances
 
@@ -78,7 +78,7 @@ instead of deleting the whole Renderer.
 This is the end of the basic course. From here, follow
 the task-oriented tutorials to see the actual flow of figure making.
 
-- [Making a ribbon figure of a protein](../ribbon-figure.md) — basic course on figure making
+- [Making a protein ribbon figure](../ribbon-figure.md) — basic course on figure making
 - [atomintr](../../reference/renderers/atomintr.md) — settings of the measurement display
 
 ---

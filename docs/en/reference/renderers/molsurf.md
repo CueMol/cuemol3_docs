@@ -6,7 +6,7 @@ A Renderer that draws an existing molecular surface Object.
 Target Object: molecular surface (MolSurfObj). This is the only molecular Renderer whose target is not a molecular Object.
 
 A molecular surface Object is generated with **Mol surface generation...** in the Tools menu
-(→ [Molecular surface generation](../tools/mol-surface.md)).
+(→ [Generating a molecular surface](../tools/mol-surface.md)).
 
 !!! info "In preparation"
     This page is only a skeleton. Details of each property will be added later.

@@ -8,7 +8,7 @@ Continuing from the previous page ([Selecting part of a molecule](selection.md))
 start with Val2 to Phe3 (`A.2:3.*`) of `lysozyme` selected.
 
 !!! info "Screenshots planned"
-    Screenshots showing the flow of operations will be added to this page.
+    Screenshots showing the workflow will be added to this page.
 
 ## 1. Add a Renderer to the selection
 
