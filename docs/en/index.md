@@ -14,20 +14,24 @@ while the GUI has been rebuilt from scratch on Electron + React.
     CueMol2 — see the [CueMol2 documentation site](https://cuemol.github.io/cuemol2_docs/).
 
 !!! note "Documentation language"
-    The documentation is written in Japanese first. Pages that have not been translated yet fall
-    back to the Japanese version automatically, so following any link below may take you to a
-    Japanese page.
+    The documentation is written in Japanese first and translated into English section by section.
+    Getting started, Installation, User interface, Menu reference and the basic tutorials are
+    available in English. The other sections are not translated yet: their links below are marked
+    "(Japanese only)" (or "(partly translated)") and open the Japanese pages.
 
 ## Contents
 
 | Section | Contents |
 |---|---|
-| [はじめに (Getting started)](../ja/getting-started/index.md) | What CueMol3 is, supported file formats, system requirements, license |
-| [クイックツアー (Quick tour)](../ja/getting-started/quick-tour.md) | From launching the app to exporting an image |
-| [インストール (Installation)](../ja/install/index.md) | How to obtain and install CueMol3 on each OS |
-| [画面構成 (User interface)](../ja/ui/index.md) | The parts of the main window and what they do |
-| [メニューリファレンス (Menu reference)](../ja/menu/index.md) | Every menu item, including which ones do not work yet |
-| [CueMol2 からの変更点 (Changes from CueMol2)](../ja/changes/index.md) | What changed, what moved, what was removed |
+| [Getting started](getting-started/index.md) | What CueMol3 is, supported file formats, system requirements, license |
+| [Quick tour](getting-started/quick-tour.md) | From launching the app to exporting an image |
+| [Installation](install/index.md) | How to obtain and install CueMol3 on each OS |
+| [User interface](ui/index.md) | The parts of the main window and what they do |
+| [Menu reference](menu/index.md) | Every menu item, including which ones do not work yet |
+| [Tutorials](tutorials/index.md) (partly translated) | Step-by-step procedures by purpose |
+| [Reference](reference/index.md) (Japanese only) | Selection syntax, Objects, Renderers, rendering, settings and plugins |
+| [Changes from CueMol2](changes/index.md) (Japanese only) | What changed, what moved, what was removed |
+| [Release history](releases.md) (Japanese only) | Main changes in each release |
 
 ## Related links
 
