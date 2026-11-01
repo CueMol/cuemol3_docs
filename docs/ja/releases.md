@@ -56,16 +56,13 @@
   → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
 - **mmCIF を読む `load_mmcif` が加わりました** → [コマンド一覧](reference/plugins/console/commands.md)
 
-### アップデートと About
+### 自動アップデート
 
 - **Windows 版も、アプリの中でアップデートできるようになりました** (macOS と同じく
   **Check for Updates...**)。更新のたびに管理者権限の確認 (UAC) が出ます
   (`CueMol3 Updater.exe`)。新しい版が起動しなかったときは元の版に戻ります。2.4.1.547 以前の
   Windows 版からは、2.4.2.550 を一度手動でインストールしてください
   → [アップデート](install/update.md#windows-の場合)
-- **About CueMol3 に、コミット・ビルド日と Electron / Chromium / Node.js / V8 / OS の版が
-  表示されるようになりました。** **Copy** でまとめてコピーでき、不具合の報告に使えます
-  → [Help メニュー](menu/window-help.md#help-メニュー)
 
 !!! warning "以前のバージョンから変わる点"
     - **Console の `load_pdb` / `load_ccp4` などの形式ごとのコマンドは、ファイルの中身で形式を
