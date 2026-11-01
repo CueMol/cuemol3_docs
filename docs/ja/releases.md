@@ -21,7 +21,8 @@
   パレット (Okabe-Ito) から、シーンに読み込んだ順に 1 色ずつ割り当てます。ヘリックスとシートは
   その色、核酸は色相を少しずらした色、コイルなどは白っぽくした色です。これまでは、どの分子も
   同じ 4 色で塗られていました → [Coloring](reference/coloring.md#paint)
-- 色はシーンに保存されるので、保存したシーンは、あとで既定が変わっても同じ色で開きます
+- 今回の実装では色は qsc ファイル内に保存されるようになったため、もし今後 CueMol3 側の
+  既定色が変更になったとしても、保存時と同じ色で開かれます
 - パレットは、スタイルファイルに `<palette id="default_paint" value="tolbright"/>` と書くと
   切り替えられます (`tolbright` / `tolvibrant` / `tolmuted` / `tollight` / `brewerset2` /
   `brewerdark2` / `tableau10`)。GUI からは切り替えられません
