@@ -22,7 +22,7 @@ CueMol3 には性格の異なる 2 つのボタン列があります。
 | Open Scene | シーンファイルを開きます | File &gt; Open Scene... |
 | Reload Scene | シーンを読み込み直します | File &gt; Reload Scene |
 | Save Scene | シーンを保存します | File &gt; Save Scene |
-| Get PDB | PDB ID を指定して構造を取得します | File &gt; Get PDB... |
+| Get PDB | PDB ID または EMDB ID を指定して構造を取得します | File &gt; Get PDB... |
 | Render | レンダリングウィンドウを開きます | Rendering &gt; Image / Movie rendering... |
 | Undo | 直前の操作を取り消します | Edit &gt; Undo |
 | Redo | 取り消した操作をやり直します | Edit &gt; Redo |
@@ -96,4 +96,4 @@ Distance / Angle / Torsion では、必要な数の原子をクリックする�
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 2.4.2.550*

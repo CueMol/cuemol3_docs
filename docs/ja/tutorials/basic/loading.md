@@ -8,14 +8,14 @@
 
 ## 1. 構造を読み込む
 
-**File &gt; Get PDB...** を開き、**PDB Accession Code** に `1QIO` と入力して取得します。
+**File &gt; Get PDB...** を開き、**PDB or EMDB ID, or keywords** に `1QIO` と入力して取得します。
 手元のファイルを開く場合は **File &gt; Open File...** (++cmd+o++) を使います
 (→ [File メニュー](../../menu/file.md))。
 
 ![Get PDB ダイアログ](../../../assets/images/tutorials/basic/loading/1-getpdb.webp){ width="380" .on-glb }
 
 ダウンロード中は `Downloading 1QIO…` という進捗画面が出ます。**Cancel** を押せば中断できます。
-存在しない ID を入れた場合は **Get PDB failed** というエラーが表示されます。
+存在しない ID を入れた場合は、ダイアログに **No entry ... was found.** と表示され、取得できません。
 
 取得が終わると、**Open File Options** の画面が出ます。いちばん上にはこれから読み込む
 ファイル名 (`1qio.cif`) と、CueMol3 が判別したファイル形式 (`mmCIF`) が表示されます。
@@ -134,7 +134,7 @@ View パネルの各行は、次の 3 通りで操作できます。
 同じシーンには複数の Object を読み込めます。ここでは `1G59`
 (グルタミル tRNA 合成酵素と tRNA の複合体) を追加します。
 
-1. **File &gt; Get PDB...** を開き、**PDB Accession Code** に `1G59` と入力して
+1. **File &gt; Get PDB...** を開き、**PDB or EMDB ID, or keywords** に `1G59` と入力して
    **Download** を押します
 2. **Renderer type** から **trace** を選びます
 
@@ -232,4 +232,4 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 
 ---
 
-*確認対象: CueMol3 2.3.8.495*
+*確認対象: CueMol3 2.4.2.550*

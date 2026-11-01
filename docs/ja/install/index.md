@@ -90,7 +90,7 @@ Linux では `.deb` パッケージが関連付けを登録します。AppImage 
 
 - :material-update: **[アップデート](update.md)**
 
-    新しいリリースへの更新 (macOS はアプリ内で更新できます)。
+    新しいリリースへの更新 (macOS と Windows はアプリ内で更新できます)。
 
 </div>
 

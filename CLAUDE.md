@@ -359,6 +359,33 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   ページの別配座の扱い、cartoon ページの 2 GB の制限。
   **未着手の残件**: スクリーンショット全般、docs-verify の spec 追加と既存 spec の修正
   (今回も e2e には触れていない)。
+- 前回同期: 2026-11-01 / cuemol2 `1a746bab` (tag `v2.4.2.550`, branch: develop) / CueMol3 `2.4.2.550`。
+  `bfad51d8..1a746bab` の差分を全件確認した (リリースノート `docs/release_notes/v2.4.2.550.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、2.3.15.530 を
+  `releases-archive.md` へ移した。
+  今回の主題は **Get PDB の EMDB 対応とキーワード検索**・**分子ごとの既定の色 (Okabe-Ito) と細い
+  ribbon / nucl**・**Console の `fetch_emdb` / `load_mmcif` と PyMOL 風の既定表示**・**Windows の
+  自己アップデート**・**About の詳細化**。
+  **ユーザー判断により** `reference/get-pdb.md` (PDB からの取得) を新設した (ja の nav のリファレンス、
+  Tools の次)。ダイアログのラベルが変わった (`PDB Accession Code` → **PDB or EMDB ID, or keywords**、
+  `Fetch coord file` → **Fetch coordinates** など) ので、quick-tour / loading / density-map /
+  ribbon-figure の手順のラベルを直した。loading の「存在しない ID は Get PDB failed」は、照会で
+  **No entry ... was found.** と出て取得できなくなったので直した。`docs-verify/specs/quick-tour.spec.ts` は
+  本文を引用したコメントだけ追随した (セレクタは `#get-pdb-id` のまま)。
+  **既定のパレットの切り替え (`<palette id="default_paint">`) はユーザー判断により更新履歴にだけ書いた**
+  (GUI が無い。`coloring.md` には分子ごとの色の事実だけを書いた)。
+  `reference/renderers/ribbon.md` の Default の「コイルは**太めの**チューブ」は、coil 0.35 → 0.2、
+  helix / sheet 0.2 → 0.18 で差が小さくなったので、**ユーザー判断により「太めの」を削った**。
+  Windows の自己アップデートに合わせて「アプリ内の更新は macOS のみ」の記述を update / window-help /
+  install/index / changes/features / settings で直した。
+  **書かなかったもの**: CCP4 / MRC が namdcoor と誤判別された件、マスクされた電顕マップの負の既定レベルと
+  Level の範囲、数値ドラッグの端の挙動、Console の help 表の折り返し、枠付きリストのスクロール、
+  Inspector の幅の行の範囲 (0〜1.5 Å / 0.01)、Electron の更新、作業記録に EMDB の取得が残る件
+  (`actions.md` は op ごとに書いていない)。
+  **未着手の残件**: スクリーンショット全般 (Get PDB ダイアログ。既定の色と ribbon / nucl の形が変わったので
+  既存の図はほぼすべて古い。`quick-tour/2-getpdb.webp` / `tutorials/basic/loading/1-getpdb.webp` は
+  旧ダイアログ、`ribbon/01-style-default-1.png` は旧い形)、`get-pdb.md` の英訳、
+  docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

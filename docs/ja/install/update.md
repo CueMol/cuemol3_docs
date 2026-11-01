@@ -1,13 +1,17 @@
 # アップデート
 
-**macOS (Apple Silicon)** 版の CueMol3 は、新しいリリースをアプリの中から確認して
-入れ替えられます。Windows / Linux 版は、新しい配布物をダウンロードしてインストールし直してください
+**macOS (Apple Silicon)** 版と **Windows (x64)** 版の CueMol3 は、新しいリリースをアプリの中から確認して
+入れ替えられます。Linux 版は、新しい配布物をダウンロードしてインストールし直してください
 (→ [ダウンロード](index.md#ダウンロード))。
 
 !!! warning "2.3.21.544 以前からは、一度だけ手動でインストールしてください"
     アプリ内のアップデートは 2.4.0.546 から入った機能です。2.3.21.544 以前の CueMol3 には
     この仕組みが無いため、2.4.0.546 以降の配布物を一度[手動でインストール](macos.md)
     してください。それ以降のリリースは、アプリの中から入れ替えられます。
+
+!!! warning "Windows では、2.4.1.547 以前からは一度だけ手動でインストールしてください"
+    Windows 版のアプリ内のアップデートは 2.4.2.550 から入った機能です。2.4.2.550 以降の配布物を
+    一度[手動でインストール](windows.md)してください。それ以降のリリースは、アプリの中から入れ替えられます。
 
 !!! info "撮影予定"
 
@@ -19,11 +23,11 @@
   あれば通知で知らせます。確認できなかったとき (オフラインなど) は何も表示しません。
   **Settings &gt; General &gt; Updates** の **Check for Updates at Startup** で止められます
   (既定は ON)。
-- **手動の確認**: アプリケーションメニューの **Check for Updates...** か、
+- **手動の確認**: アプリケーションメニュー (Windows では **Help** メニュー) の **Check for Updates...** か、
   **Settings &gt; General &gt; Updates** の **Check Now** で、いつでも確認できます。
   最新版を使っているときは、そのことが表示されます。
 
-Windows / Linux でも **Help &gt; Check for Updates...** はありますが、
+Linux でも **Help &gt; Check for Updates...** はありますが、
 「Updates are not available in this build.」と表示されるだけです。
 
 ## 更新する
@@ -43,14 +47,22 @@ Windows / Linux でも **Help &gt; Check for Updates...** はありますが、
 アプリが取得した配布物には quarantine 属性が付かないため、
 [初回起動時の警告](macos.md#初回起動時の警告を回避する)は出ません。
 
+### Windows の場合
+
+Windows では、更新のたびに管理者権限の確認 (UAC) が出ます。確認の画面には
+`CueMol3 Updater.exe` (発行元: 不明) と表示されるので、許可してください。許可しなかった場合は
+更新を取りやめ、元の版が起動し直します。アプリが取得した配布物には、
+[SmartScreen の警告](windows.md#初回実行時の警告を回避する)は出ません。
+
 ### Update が表示されない場合
 
 次の場合はその場で置き換えられないため、**Update** は表示されず **Release Page** だけになります。
 配布物をダウンロードして、手動でインストールしてください。
 
-- アプリのあるフォルダに書き込む権限がない場合
-- ダウンロードした場所から移動せずに起動している場合 (App Translocation)。
+- アプリのあるフォルダに書き込む権限がない場合 (macOS)
+- ダウンロードした場所から移動せずに起動している場合 (App Translocation、macOS)。
   `CueMol3.app` を `Applications` フォルダに移してから起動してください
+- インストーラーでインストールした場所とは別の場所から起動している場合 (Windows)
 
 ## 通知センター
 
@@ -68,9 +80,10 @@ Windows / Linux でも **Help &gt; Check for Updates...** はありますが、
 ## 関連項目
 
 - [macOS へのインストール](macos.md)
+- [Windows へのインストール](windows.md)
 - [更新履歴](../releases.md) — リリースごとの主な変更点
 - [設定項目](../reference/settings.md#general)
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 2.4.2.550*

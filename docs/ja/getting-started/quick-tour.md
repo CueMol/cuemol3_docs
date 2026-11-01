@@ -20,7 +20,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
     ![ツールバーの Get PDB ボタン](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="94" }
 
-2. **PDB Accession Code** に `1CRN` と入力し、**Download** を押します
+2. **PDB or EMDB ID, or keywords** に `1CRN` と入力し、**Download** を押します
 
     ![Get PDB ダイアログ](../../assets/images/getting-started/quick-tour/2-getpdb.webp){ width="380" .on-glb }
 
@@ -186,4 +186,4 @@ PNG を書き出せます。
 
 ---
 
-*確認対象: CueMol3 2.3.8.495*
+*確認対象: CueMol3 2.4.2.550*

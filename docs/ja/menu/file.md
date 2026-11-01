@@ -15,7 +15,7 @@
 |---|---|---|
 | Open File... | 分子座標・密度マップ・分子表面などのファイルを開きます。読み込み時に Renderer の種類や形式ごとのオプションを指定できます | ++cmd+o++ |
 | Open MD Trajectory... | MD シミュレーションのトラジェクトリを開きます *(CueMol3 で追加)*。**MD Tools** プラグインを有効にすると現れます (→ [プラグイン](../reference/plugins/index.md)) | |
-| Get PDB... | PDB ID を指定して構造をネットワークから取得します。座標 (RCSB の CIF / PDB) と密度マップ (RCSB の cif.gz、EBI の MTZ) に対応します。一時ファイルを介さずに直接読み込み、進捗ダイアログの Cancel で中断できます | |
+| Get PDB... | PDB ID または EMDB ID を指定して構造をネットワークから取得します。座標 (RCSB の CIF / PDB)、密度マップ (RCSB の cif.gz、EBI の MTZ)、電顕マップ (EMDB) に対応し、ID がわからないときはキーワードで探せます。一時ファイルを介さずに直接読み込み、進捗ダイアログの Cancel で中断できます (→ [PDB からの取得](../reference/get-pdb.md)) | |
 | Open Recent | 最近開いたファイルの一覧 (最大 10 件) から選んで開きます。**Clear Menu** で履歴を消去します | |
 
 読み込める形式の一覧は [対応ファイル形式](../getting-started/index.md#対応ファイル形式) を参照してください。
@@ -81,4 +81,4 @@ Settings &gt; Plugins で有効にするよう案内されます)。ファイル
 
 ---
 
-*確認対象: CueMol3 2.3.20.539*
+*確認対象: CueMol3 2.4.2.550*

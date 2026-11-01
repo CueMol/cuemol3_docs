@@ -324,6 +324,7 @@ nav:
           - 分子表面の生成: reference/tools/mol-surface.md
           - 分子表面の切断: reference/tools/surface-cutter.md
           - 静電ポテンシャルの計算: reference/tools/apbs.md
+      - PDB からの取得 (Get PDB): reference/get-pdb.md
       - 操作の記録と再生 (Actions): reference/actions.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md
