@@ -13,6 +13,70 @@
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
 
+## 2.4.2.550 (2026-11-01)
+
+### 既定の見た目
+
+- **読み込んだ分子に、分子ごとに違う色が付くようになりました。** 色覚の多様性に配慮した
+  パレット (Okabe-Ito) から、シーンに読み込んだ順に 1 色ずつ割り当てます。ヘリックスとシートは
+  その色、核酸は色相を少しずらした色、コイルなどは白っぽくした色です。これまでは、どの分子も
+  同じ 4 色で塗られていました → [Coloring](reference/coloring.md#paint)
+- 色はシーンに保存されるので、保存したシーンは、あとで既定が変わっても同じ色で開きます
+- パレットは、スタイルファイルに `<palette id="default_paint" value="tolbright"/>` と書くと
+  切り替えられます (`tolbright` / `tolvibrant` / `tolmuted` / `tollight` / `brewerset2` /
+  `brewerdark2` / `tableau10`)。GUI からは切り替えられません
+- **既定の ribbon と核酸 (nucl) が細くなりました。** ribbon はヘリックスとシートの幅が 0.18、
+  コイルの幅が 0.2 になりました。nucl は塩基が小さくなり、主鎖のチューブの断面が角の丸い四角に
+  なりました
+
+### PDB からの取得 (Get PDB)
+
+- **EMDB の電顕マップを取得できるようになりました。** ID 欄に EMDB ID (`EMD-11638` /
+  `emd_11638`) も入力できます。電顕構造の PDB ID を入れると、2Fo-Fc / Fo-Fc の代わりに、
+  そのエントリの EMDB のマップを選べます (サイズ・格子・推奨レベルを表示、取得元は wwPDB / EBI)。
+  マップは登録者の推奨レベル (無ければ上位 1 %) の等値面で表示されます
+- **入力中に、エントリのタイトル・手法・分解能・EMDB ID が表示されるようになりました**
+- **キーワードでエントリを探せるようになりました。** ID 欄に ID 以外の文字列を入れて
+  ++enter++ (または **Search**) を押します。手法で絞り込み、関連度・分解能・新しい順に
+  並べ替えられ、**More** で続きを読み込めます。行を選ぶと、その ID を入力したのと同じ状態に
+  なります。検索した語も入力の履歴に残ります
+- ID 欄のラベルは **PDB or EMDB ID, or keywords** になり、取得の項目は **Coordinates** /
+  **Density maps** / **Cryo-EM maps** の節に分かれました → [PDB からの取得](reference/get-pdb.md)
+
+### Console と MCP
+
+- **`fetch_emdb` で EMDB の電顕マップを取得できるようになりました** (AI Agent と MCP からも
+  使えます)。EMDB ID か、電顕構造の PDB ID を指定します。PyMOL 互換モードでは
+  `fetch EMD-3489` / `fetch 3489, type=emd` です
+- **Renderer を指定せずに読み込んだ分子が、PyMOL に近い表示で描かれるようになりました**
+  (`load` / `fetch`、PyMOL 互換モード、MCP、AI Agent)。タンパク質は ribbon、核酸は nucl、
+  炭素を含むリガンドは棒 (ballstick)、それ以外のリガンドは球 (cpk)、水は simple です。
+  これまでは simple 1 つでした。**File &gt; Open File...** と **Get PDB** で開くときは従来どおりです
+- PyMOL 互換モードの `show` / `hide` / `as` / `color` は、これらの部分にそれぞれ効きます。
+  PyMOL の `cartoon` は ribbon、`ribbon` は Cα の trace (tracestick) で描きます
+  → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
+- **mmCIF を読む `load_mmcif` が加わりました** → [コマンド一覧](reference/plugins/console/commands.md)
+
+### アップデートと About
+
+- **Windows 版も、アプリの中でアップデートできるようになりました** (macOS と同じく
+  **Check for Updates...**)。更新のたびに管理者権限の確認 (UAC) が出ます
+  (`CueMol3 Updater.exe`)。新しい版が起動しなかったときは元の版に戻ります。2.4.1.547 以前の
+  Windows 版からは、2.4.2.550 を一度手動でインストールしてください
+  → [アップデート](install/update.md#windows-の場合)
+- **About CueMol3 に、コミット・ビルド日と Electron / Chromium / Node.js / V8 / OS の版が
+  表示されるようになりました。** **Copy** でまとめてコピーでき、不具合の報告に使えます
+  → [Help メニュー](menu/window-help.md#help-メニュー)
+
+!!! warning "以前のバージョンから変わる点"
+    - **Console の `load_pdb` / `load_ccp4` などの形式ごとのコマンドは、ファイルの中身で形式を
+      判別しなくなりました。** 常にコマンド名の形式として読みます。形式がわからないファイルは
+      `load` で読んでください。なお `load_pdb` に mmCIF のファイルを渡してもエラーにはなりません
+      (mmCIF は `load_mmcif` で読みます)
+    - **CueMol3 と CueMol2 で、既定の ribbon と nucl の形が違うようになりました。** CueMol2 は
+      以前の形のままです。CueMol3 で保存したシーンを CueMol2 で開くと CueMol2 の形で描かれ、
+      その逆も同じです
+
 ## 2.4.1.547 (2026-10-24)
 
 ### 速度
@@ -235,111 +299,17 @@
 - **Open File... の形式の一覧から、トラジェクトリの形式がなくなりました。**
   選んでも開けなかったためです
 
-## 2.3.15.530 (2026-09-18)
-
-### プラグイン
-
-- **機能ごとに有効・無効を切り替えられるようになりました。** **Settings &gt; Plugins &gt;
-  Installed** に一覧が並び、スイッチで切り替えます。切り替えた結果は自分で触ったものだけが
-  記録されるので、一度も触っていない機能はそのつど既定に従います
-  → [プラグイン](reference/plugins/index.md)
-- **文章で指示するとシーンを組み立てる AI Agent パネルが追加されました** (既定は無効)。
-  「1CRN を読み込んで cartoon で表示して」のように書くと、モデルが GUI と同じ操作を順に
-  呼び出します。1 回の指示は 1 回の Undo で戻せます。OpenAI と Anthropic のどちらでも動き、
-  API キーは OS の安全な保管領域に保存されます
-  → [AI Agent](reference/plugins/ai-agent.md)
-- **PyMOL 互換のコマンドライン PyM Console が追加されました** (既定は無効)。
-  `fetch 1crn` や `bg_color white` のような、PyMOL で使っていたコマンドをそのまま打てます。
-  コマンドの解析と ++tab++ 補完は PyMOL の実装を移植したものです
-  → [PyM Console](reference/plugins/console/pymconsole.md)
-- **MD トラジェクトリの GUI が既定で無効になりました。** **File &gt; Open MD
-  Trajectory...** と下部パネルの **Trajectory** タブは **MD Tools** プラグインの
-  一部になり、Settings &gt; Plugins &gt; Installed で有効にしないと現れません。
-  すでにシーンに入っている Trajectory は今までどおり描画されます
-  → [プラグイン](reference/plugins/index.md)
-
-### 分子表面
-
-- **dsurf2 が dsurface に統合され、メッシュの作り方を選べるようになりました。**
-  2 つは同じプロパティを持つ同じ Renderer で、違いはメッシュの作り方だけだったのに、
-  New Renderer の一覧は両方を並べるだけでどちらを選べばよいかを示していませんでした。
-  dsurface の **Algorithm** で **Distance field** (既定) / **MeshMS (analytic SES)** /
-  **EDTSurf (voxel)** から選びます
-  → [dsurface](reference/renderers/dsurface.md#algorithm)
-- **解析的に溶媒排除表面を作る MeshMS が選べるようになりました。** 格子をたどらずに
-  メッシュを作るため、細かい設定では距離場より大幅に高速です。溶媒排除表面専用なので、
-  それ以外の表面では距離場に切り替わり、理由が Output パネルに出ます
-- **Detail の意味が 3 つのアルゴリズムで揃いました。** 既定の 6 ではどれを選んでも
-  ほぼ同じ細かさになります。選べる段に **24** が加わりました (16 から 32 への跳びが
-  大きすぎたためです) → [dsurface](reference/renderers/dsurface.md#surface)
-- **分子表面の生成ダイアログの Point density の既定が 2 /A になりました** (従来は 1)。
-  1 /A は粗すぎて、そのまま使うことがほとんどなかったためです
-
-### カメラ
-
-- **カメラがシーンツリーから独立し、専用のパネルになりました。** アクティビティバーに
-  **View** が加わり、その中の **Camera** パネルに一覧が表示されます。カメラは視点の
-  一覧であって Object の階層ではないためです。**View** パネル (視点の数値操作) も
-  Explorer からこちらへ移り、Explorer には Scene と Color が残ります
-  → [サイドパネル](ui/side-panels.md#camera-パネル)
-- **カメラの主な操作がツールバーのボタンになりました。** 新規作成・保存・適用
-  (表示フラグ付きを含む)・削除の 6 つです。従来は右クリックメニューからしか行えませんでした
-  → [カメラ](reference/camera.md#カメラの操作)
-- **カメラの順序を行のドラッグで変えられるようになり、シーンファイルに保存されます。**
-  `__current` は先頭に固定されます
-- カメラの右クリックメニューから、選んでも何も起きなかった **Properties** が消えました
-
-### 3D ビュー
-
-- **分子表面 (dsurface) をクリック・ホバーできるようになりました。** 表面はこれまで
-  当たり判定の対象に入っておらず、クリックしても何も起きませんでした。描画モードが
-  **Fill** のときが対象で、網目と点は対象外です。矩形選択・投げ縄選択は従来どおり
-  表面を対象にしません。**Tools &gt; Mol surface generation... で生成した分子表面
-  (molsurf) は対象になりません** — 分子 (MolCoord) とは別の Object (MolSurfObj) を
-  描いているためです → [ピッキングとホバー表示](ui/mouse-input.md#ピッキングとホバー表示)
-- **暗い背景でホバーの強調表示が見えるようになりました。** 縁取りの外側が常に暗い色
-  だったため、黒い背景に simple のような線の Renderer を出していると何も見えませんでした。
-  背景の明るさに応じて白と暗い色を切り替えます
-- **クリックが透過する不透明度のしきい値が 0.6 になりました** (従来は 0.5)。不透明度 0.6
-  の表面は向こう側が見えているのに自分が拾われていました。0.6 ちょうども透過します
-  → [ピッキングとホバー表示](ui/mouse-input.md#ピッキングとホバー表示)
-
-### 画面と操作
-
-- **分子ビューのツールパレットを折りたためるようになりました。** 上端のつまみを押すと
-  つまみだけの形になり、もう一度押すと戻ります。**View &gt; Tool palette**
-  (++cmd+shift+p++) でも切り替えられ、状態は次回の起動にも引き継がれます
-  → [ツールバーとツールパレット](ui/toolbar-tools.md#ツールパレット)
-- **ファイルを新しいシーンで開けるようになりました。** これまで Object のファイルは
-  必ず現在のシーンに加えられていました。**Settings &gt; General &gt; Files** の
-  **Drag and drop opens into** と **File manager opens into** で、経路ごとに選べます
-  (どちらも既定は現在のシーン)。**Open File...** と **Open Recent** は常に現在のシーン、
-  `.qsc` は対象外です → [設定項目](reference/settings.md#files)
-
-!!! warning "既存のシーンで見え方が変わることがあります"
-    - **dsurface で保存したシーンは、距離場によるメッシュで描かれます。** 従来の
-      dsurface はボクセルによる実装でしたが、アルゴリズムの設定はそれ自体が新しいため
-      ファイルに記録されておらず、開くと新しい既定になります。メッシュの見え方と
-      Detail の効き方が変わります。以前の見た目に戻すには、Algorithm に
-      **EDTSurf (voxel)** を指定してください。`dsurf2` で保存したシーンは
-      **Distance field** になるので、見た目は変わりません
-    - **MD トラジェクトリの GUI は、有効にするまで出てきません。**
-      設定を触ったことがない場合は無効になります。Settings &gt; Plugins &gt; Installed の
-      **MD Tools** を有効にしてください
-    - **カメラの順序は CueMol2 (UXP 版) では保たれません。** 順序を付けたシーンを
-      CueMol2 で保存し直すと、カメラは名前順に戻ります
-
 ---
 
-2.3.14.525 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
+2.3.15.530 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
 
 ## 関連項目
 
-- [過去のリリース](releases-archive.md) — 2.3.14.525 以前の更新履歴
+- [過去のリリース](releases-archive.md) — 2.3.15.530 以前の更新履歴
 - [CueMol2 からの変更点](changes/index.md) — CueMol2 と CueMol3 の違い
 - [開発状況と未実装機能](changes/status.md) — 現時点で残っている制限
 - [ダウンロード](install/index.md#ダウンロード) — 配布物の入手方法
 
 ---
 
-*確認対象: CueMol3 2.4.1.547*
+*確認対象: CueMol3 2.4.2.550*
