@@ -26,9 +26,7 @@
 - パレットは、スタイルファイルに `<palette id="default_paint" value="tolbright"/>` と書くと
   切り替えられます (`tolbright` / `tolvibrant` / `tolmuted` / `tollight` / `brewerset2` /
   `brewerdark2` / `tableau10`)。GUI からは切り替えられません
-- **既定の ribbon と核酸 (nucl) が細くなりました。** ribbon はヘリックスとシートの幅が 0.18、
-  コイルの幅が 0.2 になりました。nucl は塩基が小さくなり、主鎖のチューブの断面が角の丸い四角に
-  なりました
+- 既定の ribbon と nucl の表示設定が若干変更となりました
 
 ### PDB からの取得 (Get PDB)
 
