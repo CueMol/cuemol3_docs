@@ -81,7 +81,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             pad: 6,
         });
         await getPdb(harness.app, harness.window, {
-            // 「2. PDB Accession Code に 1CRN と入力し、Download を押します」
+            // 「2. PDB or EMDB ID, or keywords に 1CRN と入力し、Download を押します」
             id: PDB_ID,
             // 「3. Renderer type から simple を選んで Open を押します」
             rendType: 'simple',

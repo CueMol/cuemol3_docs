@@ -13,8 +13,8 @@ X 線結晶構造に電子密度マップを重ねて、モデルと密度の対
 
 **File &gt; Get PDB...** は、座標に加えて電子密度マップも取得できます。
 
-1. **PDB Accession Code** に `1QIO` を入力します
-2. **Fetch coord file** に加えて、**Fetch 2Fo-Fc map** と **Fetch Fo-Fc map** にも
+1. **PDB or EMDB ID, or keywords** に `1QIO` を入力します
+2. **Fetch coordinates** に加えて、**2Fo-Fc map** と **Fo-Fc map** にも
    チェックを入れます
 3. マップの取得元は既定の **RCSB (cif.gz)** のままにします (**EBI (MTZ)** でも取得できます)
 4. 取得が終わると、座標の Object 名と Renderer を指定する画面が出ます。
@@ -98,4 +98,4 @@ Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリ�
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 2.4.2.550*

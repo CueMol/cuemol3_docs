@@ -16,8 +16,8 @@
 
 **File &gt; Get PDB...** で構造をネットワークから取得します。
 
-1. **PDB Accession Code** に `3UG9` を入力します
-2. **Fetch coord file** にチェックが入っていることを確認します (形式は既定の **RCSB (mmCIF)** のまま)
+1. **PDB or EMDB ID, or keywords** に `3UG9` を入力します
+2. **Fetch coordinates** にチェックが入っていることを確認します (形式は既定の **mmCIF (RCSB)** のまま)
 3. 取得が終わると、Object 名と Renderer を指定する画面が出ます
 4. **Renderer type** から **cartoon** を選び、そのほかは既定のまま作成します
 
@@ -152,4 +152,4 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 
 ---
 
-*確認対象: CueMol3 2.3.15.530*
+*確認対象: CueMol3 2.4.2.550*
