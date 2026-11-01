@@ -33,8 +33,8 @@ CueMol3 はメインウィンドウとレンダリングウィンドウの 2 つ
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
-| About CueMol3 | バージョン情報を表示します | |
-| Check for Updates... | 新しいリリースを確認します。アプリ内のアップデートは現在 macOS (Apple Silicon) 版のみの機能で、Windows / Linux では利用できない旨が表示されます (→ [アップデート](../install/update.md)) | |
+| About CueMol3 | バージョン情報 (Version / Commit / Date と、Electron / Chromium / Node.js / V8 / OS の版) を表示します。**Copy** で、その内容をクリップボードにコピーします (不具合の報告に使えます) | |
+| Check for Updates... | 新しいリリースを確認します。アプリ内のアップデートは macOS (Apple Silicon) 版と Windows 版の機能で、Linux では利用できない旨が表示されます (→ [アップデート](../install/update.md)) | |
 
 !!! info "Mozilla 固有の項目は廃止されました"
     CueMol2 の Help メニューにあった About plugins... / About config... / Addon manager... / Console
@@ -44,4 +44,4 @@ CueMol3 はメインウィンドウとレンダリングウィンドウの 2 つ
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 2.4.2.550*

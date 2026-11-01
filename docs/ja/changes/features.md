@@ -10,7 +10,7 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 |---|---|---|
 | Rendering &gt; POV-Ray rendering... | **Rendering &gt; Image rendering...** | バックエンドはレンダリングウィンドウ内で選ぶため、メニューは出力の種類を表す名前になりました。既定は内蔵レイトレーサの Umbreon で、POV-Ray は非推奨です → [レンダリング](../reference/rendering.md) |
 | Rendering &gt; Animation rendering... | **Rendering &gt; Movie rendering...** | 同じレンダリングウィンドウの動画モードになりました |
-| Help &gt; Check for updates | **Check for Updates...** (macOS ではアプリケーションメニュー) | Mozilla の更新機構に代わる CueMol3 独自の仕組みです。アプリ内で更新できるのは現在 macOS (Apple Silicon) 版のみです → [アップデート](../install/update.md) |
+| Help &gt; Check for updates | **Check for Updates...** (macOS ではアプリケーションメニュー) | Mozilla の更新機構に代わる CueMol3 独自の仕組みです。アプリ内で更新できるのは現在 macOS (Apple Silicon) 版と Windows 版です → [アップデート](../install/update.md) |
 | Tools &gt; Mol bond editor... | ツールパレットの **Add Bond** ツール | モーダルダイアログから、分子ビューを直接クリックする方式に変わりました → [ツールバーとツールパレット](../ui/toolbar-tools.md) |
 | Edit &gt; Options (プリファレンスウィンドウ) | **Settings** タブ | モーダルではなくコンテンツ領域のタブとして開きます。macOS では Preferences... |
 | Renderer 種類ごとのプロパティダイアログ | **プロパティインスペクタ** | ダイアログを廃し、常設パネルでのライブ編集になりました → [プロパティインスペクタ](../ui/inspector.md) |
@@ -56,4 +56,4 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 2.4.2.550*
