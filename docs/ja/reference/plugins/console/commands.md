@@ -22,17 +22,23 @@
 | Molecule editing (`molecule`) | `superpose` / `delete_atoms` / `rename_chain` / `renumber_residues` / `merge_molecules` / `set_secondary_structure` / `add_bond` / `remove_bond` / `set_symmetry` / `show_symmetry` / `create_symmetry_copy` / `show_unit_cell` / `set_atom_label` / `set_atom_labels` |
 | Surfaces (`surfaces`) | `create_surface` / `recalc_surface` / `calc_elepot` / `cut_surface` |
 | Measurement and analysis (`analysis`) | `measure_geometry` / `measure_selections` / `analyze_interactions` / `list_interactions` / `remove_interaction` |
-| Density maps (`maps`) | `fetch_map` / `list_map_contours` / `set_map_contour` (`contour`) / `create_surface_from_map` / `recenter_map` / `load_mtz` / `load_ccp4` |
+| Density maps (`maps`) | `fetch_map` / `fetch_emdb` / `list_map_contours` / `set_map_contour` (`contour`) / `create_surface_from_map` / `recenter_map` / `load_mtz` / `load_ccp4` |
 | Animation (`animation`) | `animate` / `list_anims` / `add_anim` / `remove_anim` / `move_anim` / `set_anim_time` / `set_anim_prop` / `set_anim_options` / `reset_anim_prop` / `set_anim_generic_prop` / `list_morph_frames` / `add_morph_frame` / `remove_morph_frame` / `convert_to_morph` |
-| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_msms` / `load_namd` / `load_amber` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
+| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_mmcif` / `load_msms` / `load_namd` / `load_amber` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
 | Console (`console`) | `cd` / `pwd` / `ls` / `run` / `open_log` / `close_log` / `log` / `help` / `quit` / `exit` |
 
 ## コマンドごとの補足
 
 - `load` は **File &gt; Open** と同じように形式を判別して読み込みます。`.qsc` はシーンとして開きます。
   `load_pdb` などの形式ごとのコマンドは、ファイルを開くときのオプションを名前付きの引数で
-  受け付けます (`load_pdb f.pdb, build2ndry=false`)。
+  受け付けます (`load_pdb f.pdb, build2ndry=false`)。形式は判別せず、常にその形式として読み込みます。
+- Renderer を指定せずに分子を読み込むと (`load` / `fetch` など)、PyMOL に近い表示で描きます。
+  タンパク質は ribbon、核酸は nucl、炭素を含むリガンドは ballstick (棒)、それ以外のリガンドは
+  cpk (球)、水は simple です。Renderer を指定したときは、その Renderer 1 つで描きます。
 - `fetch` は既定で mmCIF 形式で取得します。
+- `fetch_emdb` は EMDB の電顕マップを取得します。EMDB ID (`EMD-11638` など) か、電顕構造の
+  PDB ID を指定します (PDB ID の場合は、そのエントリの最初のマップ)。表示は **Get PDB** で
+  取得したときと同じです (→ [PDB からの取得](../../get-pdb.md#cryo-em-maps))。
 - `render` は[レンダリング](../../rendering.md)を実行します (GI または NPR)。実行中は **Stop** で止められます。
 - `calc_elepot` は **Tools** メニューの静電ポテンシャル計算と同じ処理で、Settings に設定した
   APBS のパスを使います。`cut_surface` は分子表面の切断、`add_morph_frame` などはモーフィングの
@@ -55,4 +61,4 @@
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 2.4.2.550*

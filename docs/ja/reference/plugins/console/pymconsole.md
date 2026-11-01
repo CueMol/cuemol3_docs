@@ -70,6 +70,13 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
   `.pml` スクリプトを受け付けます。`.qsc` は、現在のシーンが新規で空でなければ新しいタブに開きます。
 - `fetch` は RCSB から取得します。`type=pdb1` などで生物学的集合体を、`type=2fofc` /
   `type=fofc` で密度マップを取得します。`1abcA` や `1abc_A` と書くと、そのチェーンだけを残します。
+  `fetch EMD-3489` (または `emd_3489`) は EMDB の電顕マップを取得します。数字だけの場合は
+  `fetch 3489, type=emd` と書きます。
+- `load` / `fetch` で読み込んだ分子は、PyMOL と同じように分けて表示されます。タンパク質は
+  cartoon、核酸は nucl、炭素を含むリガンドは sticks、それ以外のリガンドは spheres、水は lines で、
+  続く `show` / `hide` / `as` / `color` はそれぞれの部分に効きます。
+- 表示の名前は PyMOL に合わせています。PyMOL の `cartoon` は CueMol の ribbon で、PyMOL の
+  `ribbon` は Cα を直線でつなぐ表示 (tracestick) です。
 - `save` は拡張子で形式を決めます。分子 (選択の範囲だけも可) は `.pdb` / `.sdf` / `.mol` /
   `.pqr`、シーンは `.qsc`、ビューは `.png` / `.pov` / `.stl` です。
 - `ray` はビューを[レンダリング](../../rendering.md) (GI) で描画します。実行中は **Stop** で止められ、
@@ -176,4 +183,4 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 2.4.2.550*
