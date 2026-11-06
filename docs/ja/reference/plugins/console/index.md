@@ -10,7 +10,7 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 |---|---|---|
 | **native モード** (既定) | `CueMol>` | CueMol 自身の操作のコマンド。選択は CueMol の[選択式](../../selection.md)で書きます。このページで説明します |
 | **PyMOL 互換モード** | `PyM>` | PyMOL 互換のコマンド (→ [PyMOL 互換モード](pymconsole.md)) |
-| **ChimeraX 互換モード** | `ChX>` | ChimeraX 互換のコマンド (→ [ChimeraX 互換モード](chimerax.md)) |
+| **ChX console** | `ChX>` | ChimeraX 互換のコマンド (→ [ChX console](chx_console.md)) |
 
 !!! info "撮影予定"
 
@@ -23,7 +23,7 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 使わない場合は **Settings &gt; Plugins &gt; Installed** で **Console** を無効にします
 (→ [プラグイン](../index.md))。
 
-PyMOL 互換モードと ChimeraX 互換モードは、それぞれ **PyMOL console** と
+PyMOL 互換モードと ChX console は、それぞれ **PyMOL console** と
 **ChimeraX console (ChX)** のプラグインで提供されます。どちらも既定で有効で、
 無効にするとそのモードがパネルの切り替えと tritium_cli から消えます。native モードは
 Console に含まれていて、常に使えます。
@@ -128,7 +128,7 @@ native モードのコマンドは、`help` の項目ごとに [Console のコ�
 - `list_actions` は Undo の各ステップと、その中で行われた操作を古い順に表示します。
   `export_actions file[, first[, last]]` はその範囲を qax に書き出します。
 - `.pml` (PyMOL のスクリプト) と `.cxc` (ChimeraX のスクリプト) は native モードでは実行できません。
-  PyMOL 互換モード・ChimeraX 互換モードに切り替えて実行してください。
+  PyMOL 互換モード・ChX console に切り替えて実行してください。
 
 ## ターミナルから使う (tritium_cli)
 
@@ -146,7 +146,7 @@ CueMol3 に同梱されています。使い方・接続・PATH の通し方は 
 ## 関連項目
 
 - [Console のコマンド一覧](commands.md) / [tritium_cli](cli.md)
-- [PyMOL 互換モード](pymconsole.md) / [ChimeraX 互換モード](chimerax.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
+- [PyMOL 互換モード](pymconsole.md) / [ChX console](chx_console.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
 - [プラグイン](../index.md) / [設定項目](../../settings.md#plugins)
 - [選択式の文法](../../selection.md)
 - [操作の記録と再生](../../actions.md)

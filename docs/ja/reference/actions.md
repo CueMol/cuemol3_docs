@@ -17,7 +17,7 @@ Actions ビューには 2 つのパネルがあります。
 
 ## 記録される操作
 
-GUI での編集のほとんどと、[Console](plugins/console/index.md) (native モード・PyMOL 互換モード・ChimeraX 互換モード)・
+GUI での編集のほとんどと、[Console](plugins/console/index.md) (native モード・PyMOL 互換モード・ChX console)・
 [MCP Server](plugins/mcp-server.md)・[AI Agent](plugins/ai-agent.md) から行った編集が、
 保存して再生できる操作として記録されます。プロパティの変更、ファイルの読み込みと取得、
 Renderer とスタイル、着色と Paint、選択、分子の編集、重ね合わせ、ラベルと計測、
@@ -136,7 +136,7 @@ qax は、記録された操作を XML で書いたファイルです (拡張子
   `open_log` も、それ以降の操作を qax に記録します。
 - ターミナルからは `tritium_cli file.qax` で再生できます
   (→ [tritium_cli](plugins/console/cli.md))。
-- PyMOL 互換モードと ChimeraX 互換モードでは qax を実行できません。
+- PyMOL 互換モードと ChX console では qax を実行できません。
 
 ## 制限事項
 

@@ -17,7 +17,7 @@
 | **MD Tools** | MD シミュレーションのトラジェクトリ (topology + DCD / XTC / TRR) を開いて再生します | OFF | **File &gt; Open MD Trajectory...** と、下部パネルの **Trajectory** タブ |
 | **Console** | CueMol の操作をコマンドで実行するコマンドラインです | **ON** | 下部パネルの先頭の **Console** タブ、ステータスバーの **CLI**、Settings の **Plugins &gt; Console** ページ (→ [Console](console/index.md)) |
 | **PyMOL console** | Console に PyMOL 互換モードを加えます。Console が有効なときだけ働きます | **ON** | Console の切り替えの **PyMOL** (→ [PyMOL 互換モード](console/pymconsole.md)) |
-| **ChimeraX console (ChX)** | Console に ChimeraX 互換モードを加えます。Console が有効なときだけ働きます | **ON** | Console の切り替えの **ChimeraX** (→ [ChimeraX 互換モード](console/chimerax.md)) |
+| **ChimeraX console (ChX)** | Console に ChX console を加えます。Console が有効なときだけ働きます | **ON** | Console の切り替えの **ChimeraX** (→ [ChX console](console/chx_console.md)) |
 | **MCP Server** | 同じコンピュータの AI クライアント (Claude Code など) から MCP で CueMol3 を操作できるようにします | OFF | ステータスバーの **MCP** と、Settings の **Plugins &gt; MCP Server** ページ (→ [MCP Server](mcp-server.md)) |
 | **Component Catalog** | 画面部品のカタログ。CueMol3 の UI を開発・レビューするための内部ツールです | OFF | アクティビティバーの **Component Catalog** ビュー |
 
@@ -55,7 +55,7 @@ Installed で **MD Tools** を有効にしてください。
 
 ## 関連項目
 
-- [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyMOL 互換モード](console/pymconsole.md) / [ChimeraX 互換モード](console/chimerax.md) / [MCP Server](mcp-server.md)
+- [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyMOL 互換モード](console/pymconsole.md) / [ChX console](console/chx_console.md) / [MCP Server](mcp-server.md)
 - [設定項目](../settings.md#plugins)
 - [サイドパネル](../../ui/side-panels.md) / [下部パネル](../../ui/bottom-panels.md)
 

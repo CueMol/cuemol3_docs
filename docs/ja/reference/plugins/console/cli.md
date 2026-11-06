@@ -12,7 +12,7 @@ tritium_cli <command> [ARGS]
 ```
 
 - 引数なしで起動すると対話モードになります。プロンプトは `CueMol <ディレクトリ> ❯`
-  (PyMOL 互換モードでは `PyMOL <ディレクトリ> ❯`、ChimeraX 互換モードでは `ChimeraX <ディレクトリ> ❯`) で、++tab++ で補完、++ctrl+c++ で実行中の
+  (PyMOL 互換モードでは `PyMOL <ディレクトリ> ❯`、ChX console では `ChimeraX <ディレクトリ> ❯`) で、++tab++ で補完、++ctrl+c++ で実行中の
   コマンドを止め、`native` / `pymol` / `chimerax` でモードを切り替え、`exit` または ++ctrl+d++ で終了します。
   `quit` は CueMol3 を終了してから tritium_cli も終了します。
 - ++tab++ の補完はパネルと同じで、2 回目の ++tab++ で候補のメニューになります。`help` の
@@ -26,7 +26,7 @@ tritium_cli <command> [ARGS]
     | 構造・マップなどのデータ (`1crn.pdb` / `map.ccp4` など) | アクティブなタブに開きます。形式は **File &gt; Open** と同じように判別します。複数並べられます |
     | `.qsc` | シーンを新しいタブに開きます。データのファイルや `-c` と組み合わせると、そのシーンに読み込みます |
     | `.qax` | 記録された操作を再生します |
-    | `.pml` / `.cxc` | PyMOL 互換モード / ChimeraX 互換モードのスクリプトとして実行します |
+    | `.pml` / `.cxc` | PyMOL 互換モード / ChX console のスクリプトとして実行します |
     | `.txt` | コマンドを書いたテキストとして、いまのモードで実行します |
 
     データのファイルと `-c` は、まとめて 1 回の Undo になります。スクリプトはほかのファイルや `-c` と
@@ -104,7 +104,7 @@ Console が有効なとき、ステータスバーの右側に **CLI** が表示
 
 ## 関連項目
 
-- [Console](index.md) / [Console のコマンド一覧](commands.md) / [PyMOL 互換モード](pymconsole.md) / [ChimeraX 互換モード](chimerax.md)
+- [Console](index.md) / [Console のコマンド一覧](commands.md) / [PyMOL 互換モード](pymconsole.md) / [ChX console](chx_console.md)
 - [MCP Server](../mcp-server.md) — 同じサーバーを使います
 - [操作の記録と再生](../../actions.md) / [設定項目](../../settings.md#console)
 

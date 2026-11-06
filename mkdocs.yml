@@ -315,7 +315,7 @@ nav:
               - コマンド一覧: reference/plugins/console/commands.md
               - tritium_cli: reference/plugins/console/cli.md
               - PyMOL 互換モード: reference/plugins/console/pymconsole.md
-              - ChimeraX 互換モード: reference/plugins/console/chimerax.md
+              - ChX console: reference/plugins/console/chx_console.md
           - MCP Server: reference/plugins/mcp-server.md
       - ツール:
           - 分子の重ね合わせ: reference/tools/superpose.md

@@ -100,8 +100,8 @@ SSM では `RMSD` (Cα 原子の RMSD)、`Nalgn` (対応づけた残基数)、`N
 `algo` で手法 (`USalign` / `SSM` / `LSQ`)、`pivot` で Pivot atom を指定します。
 PyMOL 互換モードの `align` / `super` は US-align、`pair_fit` は LSQ で重ね合わせます
 (→ [PyMOL 互換モード](../plugins/console/pymconsole.md#対応コマンド))。
-ChimeraX 互換モードの `matchmaker` は US-align、`align` は LSQ で重ね合わせます
-(→ [ChimeraX 互換モード](../plugins/console/chimerax.md#対応コマンド))。
+ChX console の `matchmaker` は US-align、`align` は LSQ で重ね合わせます
+(→ [ChX console](../plugins/console/chx_console.md#対応コマンド))。
 
 ## 関連項目
 

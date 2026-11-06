@@ -1,6 +1,7 @@
-# ChimeraX 互換モード (Console)
+# ChX console
 
-[Console](index.md) の **ChimeraX 互換モード**は、ChimeraX のコマンド言語の一部を解釈します。
+**ChX console** は、[Console](index.md) で使える ChimeraX 互換の console です。
+ChimeraX のコマンド言語の一部を解釈します。
 `open 1crn` や `color byhetero` のような、ChimeraX で使っていたコマンドと原子の指定
 (atom specification) をそのまま打てます。3.0.0.554 で加わりました。
 
@@ -11,13 +12,13 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 
 !!! info "撮影予定"
 
-<!-- TODO(screenshot): Console タブ (ChimeraX 互換モードでコマンドを実行した直後の状態) -->
+<!-- TODO(screenshot): Console タブ (ChX console でコマンドを実行した直後の状態) -->
 
 ## 有効にする
 
 **ChimeraX console (ChX)** プラグインで提供されます。**Console** プラグインとともに
 既定で有効です (→ [プラグイン](../index.md))。ツールバー左端の切り替えで **ChimeraX** を選ぶか、
-行に `chimerax` とだけ打って実行すると、ChimeraX 互換モードになります
+行に `chimerax` とだけ打って実行すると、ChX console になります
 (→ [モードの切り替え](index.md#モードの切り替え))。
 
 **Settings &gt; Plugins &gt; Installed** で **ChimeraX console (ChX)** を無効にすると、
@@ -38,7 +39,7 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 
 - `open file.cxc` で、ChimeraX のコマンドを書いた `.cxc` ファイルを実行します。
 - ターミナルからは `tritium_cli file.cxc` でも実行できます (→ [tritium_cli](cli.md))。
-- 記録した操作のファイル (`.qax`) と PyMOL のスクリプト (`.pml`) は、ChimeraX 互換モードでは
+- 記録した操作のファイル (`.qax`) と PyMOL のスクリプト (`.pml`) は、ChX console では
   実行できません。それぞれ native モード、PyMOL 互換モードに切り替えて実行してください。
 
 ## 対応コマンド
@@ -61,7 +62,7 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
   model 番号が振られます (閉じても番号は詰めません)。
 - `open` で開いた分子は、ChimeraX の自動の表示 (auto style) に倣って描かれます。分子の大きさに応じて、
   cartoon とリガンドの周りの棒、または全原子の球などで表示し、model ごとの色と元素の色で塗ります。
-- `show` / `hide` / `style` / `cartoon` / `color` / `surface` / `label` などは、ChimeraX 互換モードが
+- `show` / `hide` / `style` / `cartoon` / `color` / `surface` / `label` などは、ChX console が
   分子ごとに作る `chx:` で始まる名前の Renderer だけを操作します。GUI で作成した Renderer には
   影響しません。
 - `color` は色の名前、`#rrggbb` などの 16 進表記、`rgb()` / `hsl()` / `gray()` などの関数の形を

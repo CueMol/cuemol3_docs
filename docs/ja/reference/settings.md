@@ -121,7 +121,7 @@
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** と下部パネルの **Trajectory** タブ |
 | Console | ON | CueMol のコマンドライン (→ [Console](plugins/console/index.md)) |
 | PyMOL console | ON | Console の PyMOL 互換モード (→ [PyMOL 互換モード](plugins/console/pymconsole.md)) |
-| ChimeraX console (ChX) | ON | Console の ChimeraX 互換モード (→ [ChimeraX 互換モード](plugins/console/chimerax.md)) |
+| ChimeraX console (ChX) | ON | ChimeraX 互換の console (→ [ChX console](plugins/console/chx_console.md)) |
 | MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md)) |
 | Component Catalog | OFF | 画面部品のカタログ (CueMol3 の UI 開発用) |
 

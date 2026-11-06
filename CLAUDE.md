@@ -392,10 +392,10 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `releases-archive.md` へ移した。**バージョン番号が 3 始まりになり、リポジトリが `CueMol/cuemol3` に
   移った** (旧アドレスは転送される。ローカルの作業ツリーは `~/proj64/cuemol2` のまま)。サイト内の
   GitHub へのリンクと `mkdocs.yml` の `repo_url` を付け替えた (英語版は触っていない)。
-  今回の主題は **ChimeraX 互換モード (ChX)**・**Console のモードのプラグイン化** (PyMOL console /
+  今回の主題は **ChX console (ChimeraX 互換の console)**・**Console のモードのプラグイン化** (PyMOL console /
   ChimeraX console (ChX)、どちらも既定 ON)・**tritium_cli のファイル引数とサブコマンド**
   (`skill` / `mcp` / `status` / `version` / `help`)・**edit lock** (一度に 1 クライアント)。
-  `reference/plugins/console/chimerax.md` (ChimeraX 互換モード) を新設した (ja の nav にも追加。
+  `reference/plugins/console/chx_console.md` (ChX console。ユーザー指示により名前は ChX console、説明は「ChimeraX 互換の console」) を新設した (ja の nav にも追加。
   英訳は未着手)。根拠は cuemol2 の `docs/architecture/console-chimerax-dialect.md` と
   `plugins/chimerax-console/worker/`。native のコマンド表は op カタログを tsx で評価して取り直した
   (`focus_nodes` / `copy_node` / `orient_view` / `set_frame` の追加、`center_view` → `focus_selection`)。
@@ -406,7 +406,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **要判断として残したもの**: Undo / Redo が失敗したときにエラーのアラートが出て履歴が消える件
   (更新履歴にもマニュアルにも書いていない)。`changes/status.md` はリンクだけ直し、
   「2.3.15.530 時点のスナップショット」なのでフッタは据え置いた。
-  **未着手の残件**: スクリーンショット全般 (ChimeraX 互換モードを含む)、`chimerax.md` / `get-pdb.md` の英訳、
+  **未着手の残件**: スクリーンショット全般 (ChX consoleを含む)、`chx_console.md` / `get-pdb.md` の英訳、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)

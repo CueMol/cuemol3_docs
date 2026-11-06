@@ -84,7 +84,7 @@
 ## Console
 
 CueMol の操作をコマンドで実行するコマンドラインです。ツールバーで PyMOL 互換モードに切り替えると、
-`fetch 1crn` のような PyMOL のコマンドもそのまま打てます。ChimeraX 互換モードでは、`open 1crn` のような
+`fetch 1crn` のような PyMOL のコマンドもそのまま打てます。ChX console では、`open 1crn` のような
 ChimeraX のコマンドを打てます。
 
 このタブは **Console** プラグインの一部で、**既定で有効**です

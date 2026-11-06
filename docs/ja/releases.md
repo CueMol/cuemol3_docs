@@ -23,20 +23,20 @@
 - macOS の 2.4.x と Windows の 2.4.2.550 からは、**Check for Updates...** でこのリリースに
   アップデートできます → [アップデート](install/update.md)
 
-### ChimeraX 互換モード (Console)
+### ChX console
 
-- **Console に ChimeraX 互換モードが加わりました** (プロンプトは `ChX>`)。`open` / `show` /
+- **ChimeraX 互換の console、ChX console が Console に加わりました** (プロンプトは `ChX>`)。`open` / `show` /
   `hide` / `cartoon` / `style` / `color` / `rainbow` / `surface` / `label` / `view` / `turn` /
   `select` / `name` / `info` / `distance` / `matchmaker` / `save` などの ChimeraX のコマンドと、
   原子の指定 (`#1/A:10-20@CA`、`@<5`、`@@bfactor>50` など) を使えます
 - コマンドは CueMol の操作に翻訳されて実行されるので、ほかの編集と同じように History に記録され、
   Undo で戻せます。`open` で開いた分子は、ChimeraX の自動の表示に倣って描かれます。
   `.cxc` のスクリプトも実行できます
-  → [ChimeraX 互換モード](reference/plugins/console/chimerax.md)
+  → [ChX console](reference/plugins/console/chx_console.md)
 
 ### Console のモードがプラグインに
 
-- **PyMOL 互換モードと ChimeraX 互換モードは、それぞれ PyMOL console・ChimeraX console (ChX)
+- **PyMOL 互換モードと ChX console は、それぞれ PyMOL console・ChimeraX console (ChX)
   のプラグインになりました。** どちらも既定で有効で、**Settings &gt; Plugins &gt; Installed** で
   無効にすると、そのモードがパネルの切り替えと tritium_cli から消えます。入力の履歴は引き継がれます
   → [プラグイン](reference/plugins/index.md)
