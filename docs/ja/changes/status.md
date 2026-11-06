@@ -49,7 +49,7 @@ CueMol2 (UXP 版) の GUI から移植対象としていた機能は、2.3.10.50
 
 ## 不具合の報告
 
-問題を見つけた場合は [GitHub リポジトリ](https://github.com/CueMol/cuemol2) の Issue でご報告ください。
+問題を見つけた場合は [GitHub リポジトリ](https://github.com/CueMol/cuemol3) の Issue でご報告ください。
 
 ---
 

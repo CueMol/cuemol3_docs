@@ -17,7 +17,7 @@ Actions ビューには 2 つのパネルがあります。
 
 ## 記録される操作
 
-GUI での編集のほとんどと、[Console](plugins/console/index.md) (native モード・PyMOL 互換モード)・
+GUI での編集のほとんどと、[Console](plugins/console/index.md) (native モード・PyMOL 互換モード・ChX console)・
 [MCP Server](plugins/mcp-server.md)・[AI Agent](plugins/ai-agent.md) から行った編集が、
 保存して再生できる操作として記録されます。プロパティの変更、ファイルの読み込みと取得、
 Renderer とスタイル、着色と Paint、選択、分子の編集、重ね合わせ、ラベルと計測、
@@ -35,7 +35,7 @@ Undo / Redo の表示 (ツールバーの Undo / Redo のドロップダウン�
 
 - 先頭の **Initial state** の行は、履歴の始まりです。
 - 操作を 2 つ以上含むステップは展開でき、行われた操作が 1 行ずつ並びます。
-- 行の右には、どこから行った編集かが表示されます (`gui` / `cmd` / `pym` / `mcp` / `ai` / `qax`)。
+- 行の右には、どこから行った編集かが表示されます (`gui` / `cmd` / `pym` / `chx` / `mcp` / `ai` / `qax`)。
 - 取り消したステップ (Redo 側) はグレーの斜体で、現在の位置の行は強調色で表示されます。
 - 行はクリックで選び、++shift++ / ++cmd++ / ++ctrl++ + クリックで複数選べます。
 
@@ -136,7 +136,7 @@ qax は、記録された操作を XML で書いたファイルです (拡張子
   `open_log` も、それ以降の操作を qax に記録します。
 - ターミナルからは `tritium_cli file.qax` で再生できます
   (→ [tritium_cli](plugins/console/cli.md))。
-- PyMOL 互換モードでは qax を実行できません。
+- PyMOL 互換モードと ChX console では qax を実行できません。
 
 ## 制限事項
 
@@ -152,4 +152,4 @@ qax は、記録された操作を XML で書いたファイルです (拡張子
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.0.554*

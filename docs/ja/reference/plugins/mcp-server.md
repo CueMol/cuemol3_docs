@@ -63,6 +63,21 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
 
 トークンやポートを変えたときは、クライアントを登録し直してください。
 
+### tritium_cli mcp で登録する
+
+[tritium_cli](console/cli.md) の `tritium_cli mcp` は、MCP クライアントと標準入出力 (stdio) で
+つなぎ、起動中の CueMol3 の MCP Server に中継します。Claude Code では次のように登録します。
+
+```
+claude mcp add cuemol -- tritium_cli mcp
+```
+
+- CueMol3 が起動していなければ起動します (`--no-launch` で抑止)。
+- **MCP Server プラグインが無効でも、その回に限り MCP Server を開きます。** プラグインの設定は
+  変わりません。
+- ポートとトークンはそのつど `~/.cuemol/local-api.json` から読み取るので、登録にトークンは要らず、
+  トークンやポートを変えても登録し直す必要はありません。
+
 ## できること
 
 - [Console](console/commands.md) のコマンドにあたる操作を、すべてツールとして呼び出せます。
@@ -73,7 +88,9 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
   `.qsc` を開くこともできます。
 - **1 回のツール呼び出しが 1 回の Undo にまとまります** (Undo の名前は `MCP: <ツール名>`)。
   呼び出しは [Actions ビューの History](../actions.md) に記録されます。
-- AI Agent の指示や Console のコマンドを実行している間は、ツールの呼び出しは断られます。
+- AI Agent の指示や Console のコマンドを実行している間は、ツールの呼び出しは拒否されます。
+  一度に編集できるのは 1 つのクライアントだけで、ほかの MCP クライアントや tritium_cli が
+  実行している間も拒否されます (`CueMol is busy`)。
   クライアントが呼び出しを取り消すと、実行中の処理も止まります。
 - エラーは、クライアントが読める形 (`{ok: false, error}`) で返されます。
 
@@ -99,4 +116,4 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.0.554*

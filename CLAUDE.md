@@ -386,6 +386,31 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   既存の図はほぼすべて古い。`quick-tour/2-getpdb.webp` / `tutorials/basic/loading/1-getpdb.webp` は
   旧ダイアログ、`ribbon/01-style-default-1.png` は旧い形)、`get-pdb.md` の英訳、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
+- 前回同期: 2026-11-06 / cuemol2 `794fe4ac` (tag `v3.0.0.554`, branch: develop) / CueMol3 `3.0.0.554`。
+  `1a746bab..794fe4ac` の差分を全件確認した (リリースノート `docs/release_notes/v3.0.0.554.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、2.3.20.539 を
+  `releases-archive.md` へ移した。**バージョン番号が 3 始まりになり、リポジトリが `CueMol/cuemol3` に
+  移った** (旧アドレスは転送される。ローカルの作業ツリーは `~/proj64/cuemol2` のまま)。サイト内の
+  GitHub へのリンクと `mkdocs.yml` の `repo_url` を付け替えた (英語版は触っていない)。
+  今回の主題は **ChX console (ChimeraX 互換の console)**・**Console のモードのプラグイン化** (PyMOL console /
+  ChX console、どちらも既定 ON)・**tritium_cli のファイル引数とサブコマンド**
+  (`skill` / `mcp` / `status` / `version` / `help`)・**edit lock** (一度に 1 クライアント)。
+  `reference/plugins/console/chx_console.md` (ChX console。ユーザー指示により名前は ChX console、説明は「ChimeraX 互換の console」) を新設した (ja の nav にも追加。
+  英訳は未着手)。**ChimeraX のモードの名前は「ChX console」が正式名称** (略称ではない。ユーザー指示)。
+  「ChimeraX console (ChX)」「ChimeraX 互換モード」とは書かない。説明が要るときは「ChimeraX 互換の console」。
+  v3.0.0.554 のプラグインの表示名は `'ChimeraX console (ChX)'` (`plugins/chimerax-console/manifest.ts`) だが、
+  cuemol2 側でも ChX console に変える予定なので、docs は ChX console のまま踏襲する (実装に合わせて戻さない)。根拠は cuemol2 の `docs/architecture/console-chimerax-dialect.md` と
+  `plugins/chimerax-console/worker/`。native のコマンド表は op カタログを tsx で評価して取り直した
+  (`focus_nodes` / `copy_node` / `orient_view` / `set_frame` の追加、`center_view` → `focus_selection`)。
+  tritium_cli のプロンプトはモードのラベル (`CueMol` / `PyMOL` / `ChimeraX`) になった。
+  **書かなかったもの**: 残基の一部を削除したときの Undo の修正、3D ビューの右クリックメニューの
+  Invert / Toggle sidechain / Around の修正 (不具合修正)、`load_file` が File Open で選んだ reader を
+  記録する件 (再生の正しさ)、CI の docs のみの変更でのスキップ。
+  **要判断として残したもの**: Undo / Redo が失敗したときにエラーのアラートが出て履歴が消える件
+  (更新履歴にもマニュアルにも書いていない)。`changes/status.md` はリンクだけ直し、
+  「2.3.15.530 時点のスナップショット」なのでフッタは据え置いた。
+  **未着手の残件**: スクリーンショット全般 (ChX consoleを含む)、`chx_console.md` / `get-pdb.md` の英訳、
+  docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
