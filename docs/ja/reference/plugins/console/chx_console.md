@@ -8,7 +8,7 @@ ChimeraX のコマンド言語の一部を解釈します。
 ChimeraX との完全な互換は目指しておらず、**すでに知っているコマンドが動くこと**が
 目的です。コマンドは CueMol の操作に翻訳されてから実行されるので、ほかの編集と同じように
 [History](../../actions.md) に記録され、Undo で戻せます。ChimeraX と意味が一致しないものは、
-近いもので代用せずに理由を示して断ります。
+近いもので代用せずに、理由を示して拒否します。
 
 !!! info "撮影予定"
 
@@ -99,7 +99,7 @@ ChimeraX の原子の指定は、CueMol の[選択式](../../selection.md)に**�
 - ワイルドカード (`*` / `?` / `[...]`) は、チェーン・残基名・原子名に使えます。
 - 距離による指定 (`@<5`、`:<5` など) が使えます。境界は ChimeraX が「以下」、CueMol が「未満」です。
 - 属性による指定 (`@@bfactor>50`、`@@occupancy`、`::polymer_type`、`::ss_type`、`::number` など) が
-  使えます。CueMol に無い属性は断ります。
+  使えます。CueMol に無い属性は拒否します。
 - sub-model (`#1.2`) や引用符で囲んだ名前などには対応していません。
 
 ## 制限事項
@@ -107,7 +107,7 @@ ChimeraX の原子の指定は、CueMol の[選択式](../../selection.md)に**�
 - CueMol には原子ごとの表示の設定が無いため、**非表示の原子のスタイルは保持されません**。
   `style :ALA sphere` → `hide :ALA atoms` → `show :ALA atoms` とすると、ALA は棒で表示されます
   (ChimeraX では球)。もう一度 `style` を実行すれば直ります。
-- 透明度 (`transparency`) は Renderer ごとに設定されるため、分子の一部だけを指定すると断ります。
+- 透明度 (`transparency`) は Renderer ごとに設定されるため、分子の一部だけを指定すると拒否します。
 - `turn` / `move` などの `frames` はアニメーションせず、一度に動かします。
 - model 番号は、シーンを保存して開き直すと振り直されます。
 - `bypolymer` / `byidentity` の着色、`name frozen`、`.cxs` への保存などには対応していません。
