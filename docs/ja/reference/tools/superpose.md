@@ -98,8 +98,8 @@ SSM では `RMSD` (Cα 原子の RMSD)、`Nalgn` (対応づけた残基数)、`N
 
 [Console](../plugins/console/index.md) の native モードでは `superpose` コマンドで同じ処理を行えます。
 `algo` で手法 (`USalign` / `SSM` / `LSQ`)、`pivot` で Pivot atom を指定します。
-PyMOL 互換モードの `align` / `super` は US-align、`pair_fit` は LSQ で重ね合わせます
-(→ [PyMOL 互換モード](../plugins/console/pymconsole.md#対応コマンド))。
+PyM console の `align` / `super` は US-align、`pair_fit` は LSQ で重ね合わせます
+(→ [PyM console](../plugins/console/pymconsole.md#対応コマンド))。
 ChX console の `matchmaker` は US-align、`align` は LSQ で重ね合わせます
 (→ [ChX console](../plugins/console/chx_console.md#対応コマンド))。
 

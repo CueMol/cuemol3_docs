@@ -66,7 +66,7 @@
 
 ## 関連項目
 
-- [Console](index.md) / [tritium_cli](cli.md) / [PyMOL 互換モード](pymconsole.md) / [ChX console](chx_console.md)
+- [Console](index.md) / [tritium_cli](cli.md) / [PyM console](pymconsole.md) / [ChX console](chx_console.md)
 - [MCP Server](../mcp-server.md) — 同じ操作をツールとして呼び出せます
 - [操作の記録と再生](../../actions.md)
 

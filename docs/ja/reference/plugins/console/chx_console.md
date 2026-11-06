@@ -40,7 +40,7 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 - `open file.cxc` で、ChimeraX のコマンドを書いた `.cxc` ファイルを実行します。
 - ターミナルからは `tritium_cli file.cxc` でも実行できます (→ [tritium_cli](cli.md))。
 - 記録した操作のファイル (`.qax`) と PyMOL のスクリプト (`.pml`) は、ChX console では
-  実行できません。それぞれ native モード、PyMOL 互換モードに切り替えて実行してください。
+  実行できません。それぞれ native モード、PyM console に切り替えて実行してください。
 
 ## 対応コマンド
 
@@ -114,7 +114,7 @@ ChimeraX の原子の指定は、CueMol の[選択式](../../selection.md)に**�
 
 ## 関連項目
 
-- [Console](index.md) / [PyMOL 互換モード](pymconsole.md) / [tritium_cli](cli.md)
+- [Console](index.md) / [PyM console](pymconsole.md) / [tritium_cli](cli.md)
 - [プラグイン](../index.md) / [選択式の文法](../../selection.md)
 - [操作の記録と再生](../../actions.md)
 

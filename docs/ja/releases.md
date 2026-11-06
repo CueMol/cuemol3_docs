@@ -36,9 +36,8 @@
 
 ### Console のモードがプラグインに
 
-- **PyMOL 互換モードと ChX console は、それぞれ PyMOL console・ChX console という
-  プラグインになりました。** どちらも既定で有効で、**Settings &gt; Plugins &gt; Installed** で
-  無効にすると、そのモードがパネルの切り替えと tritium_cli から消えます。入力の履歴は引き継がれます
+- **PyM console と ChX console は、それぞれ同名のプラグインになりました。** どちらも既定で有効で、
+  **Settings &gt; Plugins &gt; Installed** で無効にすると、そのモードがパネルの切り替えと tritium_cli から消えます。入力の履歴は引き継がれます
   → [プラグイン](reference/plugins/index.md)
 
 ### tritium_cli
@@ -68,7 +67,7 @@
       拒否されます
     - **Console の `center_view` は `focus_selection` に変わりました** (`zoom` / `center` はそのまま
       使えます)。分子の選択は変えなくなりました
-    - **tritium_cli の PyMOL 互換モードのプロンプトが `PyMOL <ディレクトリ> ❯` になりました**
+    - **tritium_cli の PyM console のプロンプトが `PyMOL <ディレクトリ> ❯` になりました**
       (以前は `pymol`)
 
 ## 2.4.2.550 (2026-11-01)
@@ -103,15 +102,15 @@
 ### Console と MCP
 
 - **`fetch_emdb` で EMDB の電顕マップを取得できるようになりました** (AI Agent と MCP からも
-  使えます)。EMDB ID か、電顕構造の PDB ID を指定します。PyMOL 互換モードでは
+  使えます)。EMDB ID か、電顕構造の PDB ID を指定します。PyM console では
   `fetch EMD-3489` / `fetch 3489, type=emd` です
 - **Renderer を指定せずに読み込んだ分子が、PyMOL に近い表示で描かれるようになりました**
-  (`load` / `fetch`、PyMOL 互換モード、MCP、AI Agent)。タンパク質は ribbon、核酸は nucl、
+  (`load` / `fetch`、PyM console、MCP、AI Agent)。タンパク質は ribbon、核酸は nucl、
   炭素を含むリガンドは棒 (ballstick)、それ以外のリガンドは球 (cpk)、水は simple です。
   これまでは simple 1 つでした。**File &gt; Open File...** と **Get PDB** で開くときは従来どおりです
-- PyMOL 互換モードの `show` / `hide` / `as` / `color` は、これらの部分にそれぞれ効きます。
+- PyM console の `show` / `hide` / `as` / `color` は、これらの部分にそれぞれ効きます。
   PyMOL の `cartoon` は ribbon、`ribbon` は Cα の trace (tracestick) で描きます
-  → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
+  → [PyM console](reference/plugins/console/pymconsole.md#対応コマンド)
 - **mmCIF を読む `load_mmcif` が加わりました** → [コマンド一覧](reference/plugins/console/commands.md)
 
 ### 自動アップデート
@@ -173,9 +172,9 @@
   → [Tools メニュー](menu/tools.md)
 - **US-align では Pivot atom で残基の代表にする原子を選べます。** 既定の Auto (CA / C3') は
   アミノ酸に CA、ヌクレオチドに C3' を使います。ダイアログの設定は次回に引き継がれます
-- **Console の `superpose` は `pivot` を取ります。** PyMOL 互換モードの `align` / `super` も
+- **Console の `superpose` は `pivot` を取ります。** PyM console の `align` / `super` も
   US-align になり、RMSD とあわせて対応づけた残基の数と TM-score を表示します
-  → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
+  → [PyM console](reference/plugins/console/pymconsole.md#対応コマンド)
 
 ### 操作の記録と再生 (Actions)
 
@@ -245,7 +244,7 @@
 - **PyM Console は Console になり、既定で有効になりました。** 下部パネルの Output の隣に
   **Console** タブがあります。モードは 2 つあり、ツールバーで切り替えます。
   既定の **native モード** (ツールバーの表示は **CueMol**) は CueMol 自身の操作のコマンドで、
-  従来の PyMOL 互換のコマンドは **PyMOL 互換モード**でそのまま使えます → [Console](reference/plugins/console/index.md)
+  従来の PyMOL 互換のコマンドは **PyM console** でそのまま使えます → [Console](reference/plugins/console/index.md)
 - **native モードでは、GUI で行う編集の大部分をコマンドで行えます。** シーン (タブ) の作成と
   切り替え、視点とカメラ、Renderer とスタイル、着色と Paint、密度マップ、重ね合わせなどの
   分子の編集、レンダリング、静電ポテンシャルの計算、分子表面の切断、モーフィングなどです。
@@ -255,8 +254,8 @@
 - **++tab++ 補完は、引数ごとに候補を出します。** 引数の値、まだ指定していない引数の
   `name=`、Renderer のプロパティ、ファイルのパスなどです。補完はカーソルより前の部分に働き、
   候補の一覧はプロンプトのすぐ上に表示されます
-- **PyMOL 互換モードに `ray` が加わりました。** ビューをレンダリングし、続く `png` でその画像を
-  保存します → [PyMOL 互換モード](reference/plugins/console/pymconsole.md#対応コマンド)
+- **PyM console に `ray` が加わりました。** ビューをレンダリングし、続く `png` でその画像を
+  保存します → [PyM console](reference/plugins/console/pymconsole.md#対応コマンド)
 
 ### 外部からの操作
 
@@ -302,7 +301,7 @@
 !!! warning "Console プラグインを無効にしていた場合"
     - **PyM Console を無効にしていても、Console は有効になります。** プラグインの識別子が
       変わったためです。使わない場合は Settings &gt; Plugins &gt; Installed で **Console** を
-      無効にしてください。PyMOL 互換モードの入力の履歴は引き継がれます
+      無効にしてください。PyM console の入力の履歴は引き継がれます
 
 ---
 

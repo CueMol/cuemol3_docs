@@ -9,7 +9,7 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 | モード | プロンプト | 内容 |
 |---|---|---|
 | **native モード** (既定) | `CueMol>` | CueMol 自身の操作のコマンド。選択は CueMol の[選択式](../../selection.md)で書きます。このページで説明します |
-| **PyMOL 互換モード** | `PyM>` | PyMOL 互換のコマンド (→ [PyMOL 互換モード](pymconsole.md)) |
+| **PyM console** | `PyM>` | PyMOL 互換のコマンド (→ [PyM console](pymconsole.md)) |
 | **ChX console** | `ChX>` | ChimeraX 互換のコマンド (→ [ChX console](chx_console.md)) |
 
 !!! info "撮影予定"
@@ -23,15 +23,15 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 使わない場合は **Settings &gt; Plugins &gt; Installed** で **Console** を無効にします
 (→ [プラグイン](../index.md))。
 
-PyMOL 互換モードと ChX console は、それぞれ **PyMOL console** と
-**ChX console** というプラグインで提供されます。どちらも既定で有効で、
+PyM console と ChX console は、それぞれ同名のプラグイン (**PyM console** と
+**ChX console**) で提供されます。どちらも既定で有効で、
 無効にするとそのモードがパネルの切り替えと tritium_cli から消えます。native モードは
 Console に含まれていて、常に使えます。
 
 !!! note "PyM Console から名前が変わりました"
     2.3.20.539 までの **PyM Console** プラグインは、2.3.21.544 で **Console** に
     変わりました。PyM Console を無効にしていた場合も Console は有効になっているので、
-    使わない場合はもう一度無効にしてください。PyMOL 互換モードの入力の履歴は引き継がれます。
+    使わない場合はもう一度無効にしてください。PyM console の入力の履歴は引き継がれます。
 
 ## モードの切り替え
 
@@ -128,7 +128,7 @@ native モードのコマンドは、`help` の項目ごとに [Console のコ�
 - `list_actions` は Undo の各ステップと、その中で行われた操作を古い順に表示します。
   `export_actions file[, first[, last]]` はその範囲を qax に書き出します。
 - `.pml` (PyMOL のスクリプト) と `.cxc` (ChimeraX のスクリプト) は native モードでは実行できません。
-  PyMOL 互換モード・ChX console に切り替えて実行してください。
+  PyM console・ChX console に切り替えて実行してください。
 
 ## ターミナルから使う (tritium_cli)
 
@@ -146,7 +146,7 @@ CueMol3 に同梱されています。使い方・接続・PATH の通し方は 
 ## 関連項目
 
 - [Console のコマンド一覧](commands.md) / [tritium_cli](cli.md)
-- [PyMOL 互換モード](pymconsole.md) / [ChX console](chx_console.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
+- [PyM console](pymconsole.md) / [ChX console](chx_console.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
 - [プラグイン](../index.md) / [設定項目](../../settings.md#plugins)
 - [選択式の文法](../../selection.md)
 - [操作の記録と再生](../../actions.md)
