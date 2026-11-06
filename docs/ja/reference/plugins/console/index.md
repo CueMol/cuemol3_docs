@@ -28,9 +28,9 @@ PyM console と ChX console は、それぞれ同名のプラグイン (**PyM co
 無効にするとそのモードがパネルの切り替えと tritium_cli から消えます。native モードは
 Console に含まれていて、常に使えます。
 
-!!! note "PyM Console から名前が変わりました"
-    2.3.20.539 までの **PyM Console** プラグインは、2.3.21.544 で **Console** に
-    変わりました。PyM Console を無効にしていた場合も Console は有効になっているので、
+!!! note "PyM console から名前が変わりました"
+    2.3.20.539 までの **PyM console** プラグインは、2.3.21.544 で **Console** に
+    変わりました。PyM console を無効にしていた場合も Console は有効になっているので、
     使わない場合はもう一度無効にしてください。PyM console の入力の履歴は引き継がれます。
 
 ## モードの切り替え

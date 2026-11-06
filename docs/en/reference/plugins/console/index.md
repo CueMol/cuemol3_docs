@@ -20,8 +20,8 @@ There are two command modes, switched in the panel.
 Because it is enabled by default, the **Console** tab is the first tab of the bottom panel. This tab stays in front until another tab is selected.
 To stop using it, disable **Console** in **Settings &gt; Plugins &gt; Installed** (→ [Plugins](../index.md)).
 
-!!! note "Renamed from PyM Console"
-    The **PyM Console** plugin up to 2.3.20.539 became **Console** in 2.3.21.544. If you had disabled PyM Console, Console is enabled anyway, so disable it again if you do not use it. The input history of PyM console is carried over.
+!!! note "Renamed from PyM console"
+    The **PyM console** plugin up to 2.3.20.539 became **Console** in 2.3.21.544. If you had disabled PyM console, Console is enabled anyway, so disable it again if you do not use it. The input history of PyM console is carried over.
 
 ## Switching modes
 

@@ -241,7 +241,7 @@
 
 ### Console
 
-- **PyM Console は Console になり、既定で有効になりました。** 下部パネルの Output の隣に
+- **PyM console は Console になり、既定で有効になりました。** 下部パネルの Output の隣に
   **Console** タブがあります。モードは 2 つあり、ツールバーで切り替えます。
   既定の **native モード** (ツールバーの表示は **CueMol**) は CueMol 自身の操作のコマンドで、
   従来の PyMOL 互換のコマンドは **PyM console** でそのまま使えます → [Console](reference/plugins/console/index.md)
@@ -299,7 +299,7 @@
   ようになりました**
 
 !!! warning "Console プラグインを無効にしていた場合"
-    - **PyM Console を無効にしていても、Console は有効になります。** プラグインの識別子が
+    - **PyM console を無効にしていても、Console は有効になります。** プラグインの識別子が
       変わったためです。使わない場合は Settings &gt; Plugins &gt; Installed で **Console** を
       無効にしてください。PyM console の入力の履歴は引き継がれます
 

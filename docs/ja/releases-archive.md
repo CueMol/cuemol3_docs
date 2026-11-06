@@ -18,18 +18,18 @@
   **Thick** / **Ball &amp; stick** / **Thick ball &amp; stick** の 4 つです
   → [tracestick](reference/renderers/tracestick.md)
 
-### PyM Console
+### PyM console
 
 - **PyMOL のスクリプトを実行できるようになりました。** `@file.pml` または `run file.pml`
   で実行し、スクリプト全体が 1 回の Undo にまとまります。`log_open` / `log_close` で
   打ったコマンドを記録でき、記録したファイルは `@` でそのまま再実行できます。
-  実行中は **Stop** で止められます → [PyM Console](reference/plugins/console/pymconsole.md#スクリプトとログ)
+  実行中は **Stop** で止められます → [PyM console](reference/plugins/console/pymconsole.md#スクリプトとログ)
 - **使えるコマンドが増えました。** `save` (分子・シーン・画像)、`label`、`spectrum`、
   `set_color`、`align` / `super` / `pair_fit` (RMSD を表示)、`get_view` / `set_view`、
   `orient`、`mplay` / `mstop` / `rewind` / `frame` などです。`load` は `.qsc` / `.pse` /
   `.pml` と URL を、`fetch` は密度マップ (`type=2fofc`) と生物学的集合体 (`type=pdb1`)、
   チェーンの指定 (`1abcA`) を受け付けます
-  → [PyM Console](reference/plugins/console/pymconsole.md#対応コマンド)
+  → [PyM console](reference/plugins/console/pymconsole.md#対応コマンド)
 - **書き方が PyMOL に近づきました。** 選択式の中で Object 名が使えます
   (`1abc and chain A`)。`show` / `hide` は引数なしや `everything`、略した表現名も
   受け付け、`quiet=1` のような PyMOL のキーワード引数も通ります。`stick_radius` などの
@@ -70,10 +70,10 @@
   呼び出します。1 回の指示は 1 回の Undo で戻せます。OpenAI と Anthropic のどちらでも動き、
   API キーは OS の安全な保管領域に保存されます
   → [AI Agent](reference/plugins/ai-agent.md)
-- **PyMOL 互換のコマンドライン PyM Console が追加されました** (既定は無効)。
+- **PyMOL 互換のコマンドライン PyM console が追加されました** (既定は無効)。
   `fetch 1crn` や `bg_color white` のような、PyMOL で使っていたコマンドをそのまま打てます。
   コマンドの解析と ++tab++ 補完は PyMOL の実装を移植したものです
-  → [PyM Console](reference/plugins/console/pymconsole.md)
+  → [PyM console](reference/plugins/console/pymconsole.md)
 - **MD トラジェクトリの GUI が既定で無効になりました。** **File &gt; Open MD
   Trajectory...** と下部パネルの **Trajectory** タブは **MD Tools** プラグインの
   一部になり、Settings &gt; Plugins &gt; Installed で有効にしないと現れません。

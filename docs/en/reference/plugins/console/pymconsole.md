@@ -5,7 +5,7 @@
 **PyM console** is a PyMOL-compatible console available in [Console](index.md).
 It interprets a subset of the PyMOL command language.
 Commands you used in PyMOL, such as `fetch 1crn` or `bg_color white`, can be typed as they are.
-Up to 2.3.20.539 this was a separate plugin called **PyM Console**.
+Up to 2.3.20.539 this was a separate plugin called **PyM console**.
 
 Full compatibility with PyMOL is not a goal. The aim is that **commands you already know work**.
 Command parsing and ++tab++ completion are ported from the PyMOL implementation,
