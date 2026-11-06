@@ -279,7 +279,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **MCP Server**、**tritium_cli**)・**ラベル**・**Color パネルの Paint 表**。
   **ユーザー判断により** `reference/plugins/console.md` (native 方言 + tritium_cli) と
   `reference/plugins/mcp-server.md` を新設し、`pymconsole.md` は「PyMOL 互換モード (Console)」の
-  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「native モード」「PyMOL 互換モード」と書く** (ユーザー指示。コード側の dialect に対応。2.4.0.546 の同期で「CueMol モード」から改めた。GUI のボタン・プロンプトは今は **CueMol** / `CueMol>` なので、GUI の説明は実際の表示に合わせる。将来 GUI 側も native に変わる予定)。`reference/renderers/namelabel.md` も新設
+  ページとして残した (ファイル名・既存の URL は維持)。**マニュアルでは「方言」と書かず「native モード」と書く** (PyMOL の方は 3.0.0.554 以後 **PyM console** と書く。下記) (ユーザー指示。コード側の dialect に対応。2.4.0.546 の同期で「CueMol モード」から改めた。GUI のボタン・プロンプトは今は **CueMol** / `CueMol>` なので、GUI の説明は実際の表示に合わせる。将来 GUI 側も native に変わる予定)。`reference/renderers/namelabel.md` も新設
   (name label のインスペクタページができ、`format` に GUI 行が付いたので前回の保留を解除)。
   **リリースノートとソースの食い違いはソースに従った**: `new_scene` → `create_scene`、
   `obj.rend` → `obj/rend`、native の `ray` → `render` (`ray` は PyMOL 方言)、
@@ -398,6 +398,10 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `reference/plugins/console/chx_console.md` (ChX console。ユーザー指示により名前は ChX console、説明は「ChimeraX 互換の console」) を新設した (ja の nav にも追加。
   英訳は未着手)。**ChimeraX のモードの名前は「ChX console」が正式名称** (略称ではない。ユーザー指示)。
   「ChimeraX console (ChX)」「ChimeraX 互換モード」とは書かない。説明が要るときは「ChimeraX 互換の console」。
+  **PyMOL のモードも同様に「PyM console」が正式名称** (ユーザー指示、3.0.0.554 の同期の後)。「PyMOL 互換モード」とは
+  書かない。説明が要るときは「PyMOL 互換の console」。プラグインの表示名 `'PyMOL console'`
+  (`plugins/pymol-console/manifest.ts`) も docs では PyM console と書く。2.3.20.539 までの
+  独立したプラグイン **PyM Console** (大文字 C) は歴史的な名前なので、その時代の記述は書き換えない。
   v3.0.0.554 のプラグインの表示名は `'ChimeraX console (ChX)'` (`plugins/chimerax-console/manifest.ts`) だが、
   cuemol2 側でも ChX console に変える予定なので、docs は ChX console のまま踏襲する (実装に合わせて戻さない)。根拠は cuemol2 の `docs/architecture/console-chimerax-dialect.md` と
   `plugins/chimerax-console/worker/`。native のコマンド表は op カタログを tsx で評価して取り直した

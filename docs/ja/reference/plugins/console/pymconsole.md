@@ -1,6 +1,7 @@
-# PyMOL 互換モード (Console)
+# PyM console
 
-[Console](index.md) の **PyMOL 互換モード**は、PyMOL のコマンド言語の一部を解釈します。
+**PyM console** は、[Console](index.md) で使える PyMOL 互換の console です。
+PyMOL のコマンド言語の一部を解釈します。
 `fetch 1crn` や `bg_color white` のような、PyMOL で使っていたコマンドをそのまま打てます。
 2.3.20.539 までは **PyM Console** という独立したプラグインでした。
 
@@ -10,15 +11,15 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 
 !!! info "撮影予定"
 
-<!-- TODO(screenshot): Console タブ (PyMOL 互換モードでコマンドを実行した直後の状態) -->
+<!-- TODO(screenshot): Console タブ (PyM console でコマンドを実行した直後の状態) -->
 
 ## 有効にする
 
-**PyMOL console** プラグインで提供されます。**Console** プラグインとともに既定で有効で、
+**PyM console** プラグインで提供されます。**Console** プラグインとともに既定で有効で、
 下部パネルの先頭に **Console** タブがあります (→ [プラグイン](../index.md))。ツールバー左端の切り替えで **PyMOL** を選ぶか、
-行に `pymol` とだけ打って実行すると、PyMOL 互換モードになります (→ [モードの切り替え](index.md#モードの切り替え))。
+行に `pymol` とだけ打って実行すると、PyM console になります (→ [モードの切り替え](index.md#モードの切り替え))。
 
-**Settings &gt; Plugins &gt; Installed** で **PyMOL console** を無効にすると、
+**Settings &gt; Plugins &gt; Installed** で **PyM console** を無効にすると、
 切り替えの **PyMOL** と tritium_cli の `--dialect pymol` が使えなくなります。
 
 ## 入力と補完
@@ -36,7 +37,7 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
   該当するものが無い場合はファイル名の展開にフォールバックします。
 - 日本語入力の変換を ++enter++ で確定したときは、コマンドは実行されません。
 - **1 回の実行が 1 回の Undo にまとまります。**
-- ツールバーの **Clear** で記録領域を消去、**Help** で PyMOL 互換モードのコマンドの一覧を表示します。
+- ツールバーの **Clear** で記録領域を消去、**Help** で PyM console のコマンドの一覧を表示します。
 - 実行中は「Running...」の横に **Stop** が表示されます。押すと次のコマンドの前で止まり、
   ダウンロード中であれば取り消します。それまでに実行した分は残ります。
 
@@ -47,7 +48,7 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 - `log_open` でファイル (既定は `log.pml`) を開くと、それ以降にプロンプトで打ったコマンドが
   記録されます。`log_close` で記録を終えます。記録したファイルは `@` でそのまま再実行できます。
   スクリプトから実行されたコマンドは記録されません。
-- native モードで記録した操作のファイル (`.qax`) は、PyMOL 互換モードでは実行できません。
+- native モードで記録した操作のファイル (`.qax`) は、PyM console では実行できません。
   native モードに切り替えて実行してください (→ [操作の記録と再生](../../actions.md))。
 
 ## 対応コマンド

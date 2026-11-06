@@ -17,7 +17,7 @@ Plugins are toggled in **Settings &gt; Plugins &gt; Installed**
 |---|---|---|---|
 | **AI Agent** | A chat panel that builds a scene from instructions written in text. It uses OpenAI, Anthropic, and Google (Gemini) models; you provide your own API key | OFF | The **AI Agent** view in the activity bar and the **Plugins &gt; AI Agent** page in Settings (→ [AI Agent](ai-agent.md)) |
 | **MD Tools** | Opens and plays MD simulation trajectories (topology + DCD / XTC / TRR) | OFF | **File &gt; Open MD Trajectory...** and the **Trajectory** tab in the bottom panel |
-| **Console** | A command line that runs CueMol operations as commands. The PyMOL compatibility mode is also available | **ON** | The **Console** tab at the left end of the bottom panel, **CLI** in the status bar, and the **Plugins &gt; Console** page in Settings (→ [Console](console/index.md)) |
+| **Console** | A command line that runs CueMol operations as commands. PyM console is also available | **ON** | The **Console** tab at the left end of the bottom panel, **CLI** in the status bar, and the **Plugins &gt; Console** page in Settings (→ [Console](console/index.md)) |
 | **MCP Server** | Allows AI clients on the same computer (such as Claude Code) to operate CueMol3 via MCP | OFF | **MCP** in the status bar and the **Plugins &gt; MCP Server** page in Settings (→ [MCP Server](mcp-server.md)) |
 | **Component Catalog** | A catalog of UI components. An internal tool for developing and reviewing the CueMol3 UI | OFF | The **Component Catalog** view in the activity bar |
 
@@ -55,7 +55,7 @@ If the plugin is disabled during playback, the tab closes and playback stops.
 
 ## See also
 
-- [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyMOL compatibility mode](console/pymconsole.md) / [MCP Server](mcp-server.md)
+- [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyM console](console/pymconsole.md) / [MCP Server](mcp-server.md)
 - [Settings](../settings.md#plugins)
 - [Side panels](../../ui/side-panels.md) / [Bottom panels](../../ui/bottom-panels.md)
 

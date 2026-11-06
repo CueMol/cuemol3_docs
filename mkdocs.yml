@@ -162,7 +162,7 @@ plugins:
                         - reference/plugins/console/index.md
                         - Command list: reference/plugins/console/commands.md
                         - tritium_cli: reference/plugins/console/cli.md
-                        - PyMOL compatibility mode: reference/plugins/console/pymconsole.md
+                        - PyM console: reference/plugins/console/pymconsole.md
                     - MCP Server: reference/plugins/mcp-server.md
                 - Tools:
                     - Superposing molecules: reference/tools/superpose.md
@@ -314,7 +314,7 @@ nav:
               - reference/plugins/console/index.md
               - コマンド一覧: reference/plugins/console/commands.md
               - tritium_cli: reference/plugins/console/cli.md
-              - PyMOL 互換モード: reference/plugins/console/pymconsole.md
+              - PyM console: reference/plugins/console/pymconsole.md
               - ChX console: reference/plugins/console/chx_console.md
           - MCP Server: reference/plugins/mcp-server.md
       - ツール:

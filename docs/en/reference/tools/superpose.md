@@ -85,7 +85,7 @@ SSM outputs `RMSD` (RMSD of the Cα atoms), `Nalgn` (number of matched residues)
 
 ## Using it from the Console
 
-In the native mode of the [Console](../plugins/console/index.md), the `superpose` command performs the same operation. `algo` specifies the method (`USalign` / `SSM` / `LSQ`) and `pivot` specifies the Pivot atom. In PyMOL compatibility mode, `align` / `super` superpose with US-align and `pair_fit` with LSQ (→ [PyMOL compatibility mode](../plugins/console/pymconsole.md#supported-commands)).
+In the native mode of the [Console](../plugins/console/index.md), the `superpose` command performs the same operation. `algo` specifies the method (`USalign` / `SSM` / `LSQ`) and `pivot` specifies the Pivot atom. In PyM console, `align` / `super` superpose with US-align and `pair_fit` with LSQ (→ [PyM console](../plugins/console/pymconsole.md#supported-commands)).
 
 ## See also
 

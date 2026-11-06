@@ -51,7 +51,7 @@ Commands are grouped by `help` topic. Names in parentheses are short aliases for
 
 ## See also
 
-- [Console](index.md) / [tritium_cli](cli.md) / [PyMOL compatibility mode](pymconsole.md)
+- [Console](index.md) / [tritium_cli](cli.md) / [PyM console](pymconsole.md)
 - [MCP Server](../mcp-server.md) — the same operations can be called as tools
 - [Recording and replaying operations](../../actions.md)
 

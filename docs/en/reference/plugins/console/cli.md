@@ -13,7 +13,7 @@ tritium_cli [--dialect native|pymol] [--echo] [--no-launch] [-c COMMANDS | SCRIP
 ```
 
 - Started without arguments, it enters interactive mode. The prompt is `CueMol <directory> ❯`
-  (`pymol <directory> ❯` in PyMOL compatibility mode). ++tab++ completes, ++ctrl+c++ stops the running
+  (`pymol <directory> ❯` in PyM console). ++tab++ completes, ++ctrl+c++ stops the running
   command, `native` / `pymol` switches the mode, and `exit` or ++ctrl+d++ quits.
   `quit` quits CueMol3 first and then tritium_cli as well.
 - ++tab++ completion works the same as in the panel, and a second ++tab++ opens the candidate menu. The
@@ -76,7 +76,7 @@ toggle switch as **Command line access**, and a button to copy the tritium_cli p
 
 ## See also
 
-- [Console](index.md) / [Console command list](commands.md) / [PyMOL compatibility mode](pymconsole.md)
+- [Console](index.md) / [Console command list](commands.md) / [PyM console](pymconsole.md)
 - [MCP Server](../mcp-server.md) — uses the same server
 - [Recording and replaying operations](../../actions.md) / [Settings](../../settings.md#console)
 
