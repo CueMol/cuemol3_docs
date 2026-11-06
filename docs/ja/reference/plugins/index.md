@@ -7,7 +7,7 @@
 
 !!! info "撮影予定"
 
-<!-- TODO(screenshot): Settings > Plugins > Installed (5 つのスイッチが並んだ状態) -->
+<!-- TODO(screenshot): Settings > Plugins > Installed (7 つのスイッチが並んだ状態) -->
 
 ## 切り替えられるプラグイン
 
@@ -15,11 +15,13 @@
 |---|---|---|---|
 | **AI Agent** | 文章で指示するとシーンを組み立てるチャットパネル。OpenAI・Anthropic・Google (Gemini) のモデルを使い、API キーは自分で用意します | OFF | アクティビティバーの **AI Agent** ビューと、Settings の **Plugins &gt; AI Agent** ページ (→ [AI Agent](ai-agent.md)) |
 | **MD Tools** | MD シミュレーションのトラジェクトリ (topology + DCD / XTC / TRR) を開いて再生します | OFF | **File &gt; Open MD Trajectory...** と、下部パネルの **Trajectory** タブ |
-| **Console** | CueMol の操作をコマンドで実行するコマンドラインです。PyMOL 互換モードも使えます | **ON** | 下部パネルの先頭の **Console** タブ、ステータスバーの **CLI**、Settings の **Plugins &gt; Console** ページ (→ [Console](console/index.md)) |
+| **Console** | CueMol の操作をコマンドで実行するコマンドラインです | **ON** | 下部パネルの先頭の **Console** タブ、ステータスバーの **CLI**、Settings の **Plugins &gt; Console** ページ (→ [Console](console/index.md)) |
+| **PyMOL console** | Console に PyMOL 互換モードを加えます。Console が有効なときだけ働きます | **ON** | Console の切り替えの **PyMOL** (→ [PyMOL 互換モード](console/pymconsole.md)) |
+| **ChimeraX console (ChX)** | Console に ChimeraX 互換モードを加えます。Console が有効なときだけ働きます | **ON** | Console の切り替えの **ChimeraX** (→ [ChimeraX 互換モード](console/chimerax.md)) |
 | **MCP Server** | 同じコンピュータの AI クライアント (Claude Code など) から MCP で CueMol3 を操作できるようにします | OFF | ステータスバーの **MCP** と、Settings の **Plugins &gt; MCP Server** ページ (→ [MCP Server](mcp-server.md)) |
 | **Component Catalog** | 画面部品のカタログ。CueMol3 の UI を開発・レビューするための内部ツールです | OFF | アクティビティバーの **Component Catalog** ビュー |
 
-**MD Tools** / **Console** / **MCP Server** の 3 つは実験的な機能で、
+**MD Tools** / **Console** / **PyMOL console** / **ChimeraX console (ChX)** / **MCP Server** の 5 つは実験的な機能で、
 説明文が *Experimental.* で始まります。
 
 !!! note "常に有効な機能は一覧に出ません"
@@ -53,10 +55,10 @@ Installed で **MD Tools** を有効にしてください。
 
 ## 関連項目
 
-- [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyMOL 互換モード](console/pymconsole.md) / [MCP Server](mcp-server.md)
+- [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyMOL 互換モード](console/pymconsole.md) / [ChimeraX 互換モード](console/chimerax.md) / [MCP Server](mcp-server.md)
 - [設定項目](../settings.md#plugins)
 - [サイドパネル](../../ui/side-panels.md) / [下部パネル](../../ui/bottom-panels.md)
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.0.554*

@@ -1,7 +1,7 @@
 site_name: CueMol3 &mdash; Molecular Visualization Framework
 site_description: CueMol3 (tritium) user documentation
 site_url: https://cuemol.github.io/cuemol3_docs/
-repo_url: https://github.com/CueMol/cuemol2
+repo_url: https://github.com/CueMol/cuemol3
 edit_uri: ""
 
 theme:
@@ -315,6 +315,7 @@ nav:
               - コマンド一覧: reference/plugins/console/commands.md
               - tritium_cli: reference/plugins/console/cli.md
               - PyMOL 互換モード: reference/plugins/console/pymconsole.md
+              - ChimeraX 互換モード: reference/plugins/console/chimerax.md
           - MCP Server: reference/plugins/mcp-server.md
       - ツール:
           - 分子の重ね合わせ: reference/tools/superpose.md

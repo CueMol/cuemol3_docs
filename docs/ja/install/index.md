@@ -29,16 +29,16 @@
 CueMol3 の配布物は、GitHub の **Releases** ページで公開されています
 (CueMol2 の配布物と同じリリースに並んでいます)。
 
-- **[最新リリース](https://github.com/CueMol/cuemol2/releases/latest)** —
+- **[最新リリース](https://github.com/CueMol/cuemol3/releases/latest)** —
   ページ下部の **Assets** 欄から、ファイル名が `CueMol3-` で始まるものをダウンロードしてください
   (`cuemol2_...` で始まるファイルは CueMol2 の配布物です)
-- **[リリース一覧・リリースノート](https://github.com/CueMol/cuemol2/releases)** —
+- **[リリース一覧・リリースノート](https://github.com/CueMol/cuemol3/releases)** —
   過去のバージョンのダウンロードと、リリースごとの詳細な変更点
   (要点だけを知りたい場合は → [更新履歴](../releases.md))
 
 そのほか、開発版の入手経路として次の方法もあります。
 
-- [GitHub リポジトリ](https://github.com/CueMol/cuemol2) の CI (`build2.yml`) が生成したアーティファクト
+- [GitHub リポジトリ](https://github.com/CueMol/cuemol3) の CI (`build2.yml`) が生成したアーティファクト
   (GitHub へのログインが必要)
 - 自分でソースからパッケージをビルドする
 

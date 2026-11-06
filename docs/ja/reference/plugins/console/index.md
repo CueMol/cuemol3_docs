@@ -4,12 +4,13 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 下部パネルの **Console** タブから使います。ターミナルから同じコマンドを実行する
 **tritium_cli** も同梱されています (→ [tritium_cli](cli.md))。
 
-コマンドのモードは 2 つあり、パネルで切り替えます。
+コマンドのモードは 3 つあり、パネルで切り替えます。
 
 | モード | プロンプト | 内容 |
 |---|---|---|
 | **native モード** (既定) | `CueMol>` | CueMol 自身の操作のコマンド。選択は CueMol の[選択式](../../selection.md)で書きます。このページで説明します |
 | **PyMOL 互換モード** | `PyM>` | PyMOL 互換のコマンド (→ [PyMOL 互換モード](pymconsole.md)) |
+| **ChimeraX 互換モード** | `ChX>` | ChimeraX 互換のコマンド (→ [ChimeraX 互換モード](chimerax.md)) |
 
 !!! info "撮影予定"
 
@@ -22,6 +23,11 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 使わない場合は **Settings &gt; Plugins &gt; Installed** で **Console** を無効にします
 (→ [プラグイン](../index.md))。
 
+PyMOL 互換モードと ChimeraX 互換モードは、それぞれ **PyMOL console** と
+**ChimeraX console (ChX)** のプラグインで提供されます。どちらも既定で有効で、
+無効にするとそのモードがパネルの切り替えと tritium_cli から消えます。native モードは
+Console に含まれていて、常に使えます。
+
 !!! note "PyM Console から名前が変わりました"
     2.3.20.539 までの **PyM Console** プラグインは、2.3.21.544 で **Console** に
     変わりました。PyM Console を無効にしていた場合も Console は有効になっているので、
@@ -29,8 +35,8 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 
 ## モードの切り替え
 
-- ツールバー左端の **CueMol** | **PyMOL** で切り替えます。**CueMol** が native モードです。
-- 行に `native` または `pymol` とだけ打って実行しても切り替わります。
+- ツールバー左端の **CueMol** | **PyMOL** | **ChimeraX** で切り替えます。**CueMol** が native モードです。
+- 行に `native` / `pymol` / `chimerax` とだけ打って実行しても切り替わります。
 - 選んだモードは記憶され、次に起動したときもそのモードで始まります。
 - 入力の履歴はモードごとに別々です。
 
@@ -121,8 +127,8 @@ native モードのコマンドは、`help` の項目ごとに [Console のコ�
   メモとして入ります。`close_log` で記録を終えます。
 - `list_actions` は Undo の各ステップと、その中で行われた操作を古い順に表示します。
   `export_actions file[, first[, last]]` はその範囲を qax に書き出します。
-- `.pml` (PyMOL のスクリプト) は native モードでは実行できません。PyMOL 互換モードに切り替えて
-  実行してください。
+- `.pml` (PyMOL のスクリプト) と `.cxc` (ChimeraX のスクリプト) は native モードでは実行できません。
+  PyMOL 互換モード・ChimeraX 互換モードに切り替えて実行してください。
 
 ## ターミナルから使う (tritium_cli)
 
@@ -140,7 +146,7 @@ CueMol3 に同梱されています。使い方・接続・PATH の通し方は 
 ## 関連項目
 
 - [Console のコマンド一覧](commands.md) / [tritium_cli](cli.md)
-- [PyMOL 互換モード](pymconsole.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
+- [PyMOL 互換モード](pymconsole.md) / [ChimeraX 互換モード](chimerax.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
 - [プラグイン](../index.md) / [設定項目](../../settings.md#plugins)
 - [選択式の文法](../../selection.md)
 - [操作の記録と再生](../../actions.md)
@@ -148,4 +154,4 @@ CueMol3 に同梱されています。使い方・接続・PATH の通し方は 
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.0.554*

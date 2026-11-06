@@ -14,9 +14,12 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 
 ## 有効にする
 
-**Console** プラグインは既定で有効で、下部パネルの先頭に **Console** タブが
-あります (→ [プラグイン](../index.md))。ツールバー左端の切り替えで **PyMOL** を選ぶか、
+**PyMOL console** プラグインで提供されます。**Console** プラグインとともに既定で有効で、
+下部パネルの先頭に **Console** タブがあります (→ [プラグイン](../index.md))。ツールバー左端の切り替えで **PyMOL** を選ぶか、
 行に `pymol` とだけ打って実行すると、PyMOL 互換モードになります (→ [モードの切り替え](index.md#モードの切り替え))。
+
+**Settings &gt; Plugins &gt; Installed** で **PyMOL console** を無効にすると、
+切り替えの **PyMOL** と tritium_cli の `--dialect pymol` が使えなくなります。
 
 ## 入力と補完
 
@@ -177,10 +180,10 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 
 ## 関連項目
 
-- [Console](index.md) / [プラグイン](../index.md) / [AI Agent](../ai-agent.md)
+- [Console](index.md) / [ChimeraX 互換モード](chimerax.md) / [プラグイン](../index.md) / [AI Agent](../ai-agent.md)
 - [選択式の文法](../../selection.md)
 - [下部パネル](../../../ui/bottom-panels.md)
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.0.554*

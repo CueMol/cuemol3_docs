@@ -6,7 +6,56 @@
 !!! info "完全な記録は GitHub にあります"
     このページも更新履歴と同じく、ふだん使ううえで知っておくとよい点だけをまとめたものです。
     修正の一件一件や内部の変更まで含む完全な記録は
-    [GitHub の Releases](https://github.com/CueMol/cuemol2/releases) にあります。
+    [GitHub の Releases](https://github.com/CueMol/cuemol3/releases) にあります。
+
+## 2.3.20.539 (2026-09-29)
+
+### Renderer
+
+- **主鎖を球と円柱で描く tracestick が追加されました。** pivot 原子 (タンパク質では Cα、
+  核酸では P) を球で描き、つながった残基のあいだを円柱で結びます。[trace](reference/renderers/trace.md)
+  を ballstick の形にしたもので、途切れる場所も trace と同じです。スタイルは **Default** /
+  **Thick** / **Ball &amp; stick** / **Thick ball &amp; stick** の 4 つです
+  → [tracestick](reference/renderers/tracestick.md)
+
+### PyM Console
+
+- **PyMOL のスクリプトを実行できるようになりました。** `@file.pml` または `run file.pml`
+  で実行し、スクリプト全体が 1 回の Undo にまとまります。`log_open` / `log_close` で
+  打ったコマンドを記録でき、記録したファイルは `@` でそのまま再実行できます。
+  実行中は **Stop** で止められます → [PyM Console](reference/plugins/console/pymconsole.md#スクリプトとログ)
+- **使えるコマンドが増えました。** `save` (分子・シーン・画像)、`label`、`spectrum`、
+  `set_color`、`align` / `super` / `pair_fit` (RMSD を表示)、`get_view` / `set_view`、
+  `orient`、`mplay` / `mstop` / `rewind` / `frame` などです。`load` は `.qsc` / `.pse` /
+  `.pml` と URL を、`fetch` は密度マップ (`type=2fofc`) と生物学的集合体 (`type=pdb1`)、
+  チェーンの指定 (`1abcA`) を受け付けます
+  → [PyM Console](reference/plugins/console/pymconsole.md#対応コマンド)
+- **書き方が PyMOL に近づきました。** 選択式の中で Object 名が使えます
+  (`1abc and chain A`)。`show` / `hide` は引数なしや `everything`、略した表現名も
+  受け付け、`quiet=1` のような PyMOL のキーワード引数も通ります。`stick_radius` などの
+  PyMOL の設定は、CueMol に同じ量があるものが対応するプロパティに割り当てられます
+
+### AI Agent
+
+- **Google Gemini が使えるようになりました。** モデルは `google:<モデル名>` と書き、
+  API キーは **Settings &gt; Plugins &gt; AI Agent** の **Google AI API key**
+  (または環境変数 `GEMINI_API_KEY`) に設定します
+  → [AI Agent](reference/plugins/ai-agent.md#モデルと-api-キーの設定)
+- **パネル上端でモデルを切り替えられるようになりました。** 一覧には、API キーを
+  保存したプロバイダのモデルのうち、そのキーで使えるものだけが並びます
+  → [AI Agent](reference/plugins/ai-agent.md#使い方)
+- **モデルが今のビューを見られるようになりました。** 操作の結果を画像にして確かめながら
+  進めます。その画像は記録のツールの行に縮小表示されます
+
+### ファイルを開く
+
+- **MD トラジェクトリのファイルをドロップしたときの案内が正しくなりました。**
+  `.xtc` / `.dcd` / `.trr` はフレームしか持たず単独では開けませんが、これまでは
+  「壊れているか、対応していない形式」と表示されていました。今は **File &gt; Open MD
+  Trajectory...** で開くよう案内し、MD Tools が無効のときは先に **Settings &gt; Plugins**
+  で有効にするよう案内します → [File メニュー](menu/file.md#object-の読み込み)
+- **Open File... の形式の一覧から、トラジェクトリの形式がなくなりました。**
+  選んでも開けなかったためです
 
 ## 2.3.15.530 (2026-09-18)
 
@@ -501,7 +550,7 @@
 ---
 
 これ以前のリリース (2.3.7.484 など) については、
-[GitHub の Releases](https://github.com/CueMol/cuemol2/releases) を参照してください。
+[GitHub の Releases](https://github.com/CueMol/cuemol3/releases) を参照してください。
 
 ## 関連項目
 
@@ -511,4 +560,4 @@
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.0.554*

@@ -6,7 +6,7 @@ CueMol2 の可視化エンジン (libcuemol2) をそのまま受け継ぎつつ�
 ![CueMol3 の画面例。メインウィンドウでクライオ電顕マップを表示し、レンダリングウィンドウで Umbreon によるレイトレーシングを実行しているところ](assets/images/index/app-example2.webp){ .on-glb }
 
 !!! warning "現在のバージョンは開発版です"
-    CueMol3 の配布物は [GitHub の Releases](https://github.com/CueMol/cuemol2/releases/latest)
+    CueMol3 の配布物は [GitHub の Releases](https://github.com/CueMol/cuemol3/releases/latest)
     からダウンロードできますが、**開発途上のバージョン**です
     (→ [ダウンロード](install/index.md#ダウンロード))。
     実務で安定して使いたい場合は、CueMol2 の安定版
@@ -49,7 +49,7 @@ CueMol3 では GUI が大きく変わり、一部の機能が統合・改名・�
 | リンク | 内容 |
 |---|---|
 | [更新履歴](releases.md) | リリースごとの主な変更点 |
-| [GitHub Releases](https://github.com/CueMol/cuemol2/releases) | 配布物のダウンロードと詳細なリリースノート (→ [ダウンロード](install/index.md#ダウンロード)) |
+| [GitHub Releases](https://github.com/CueMol/cuemol3/releases) | 配布物のダウンロードと詳細なリリースノート (→ [ダウンロード](install/index.md#ダウンロード)) |
 | [CueMol2 ドキュメント](https://cuemol.github.io/cuemol2_docs/) | CueMol2 (安定版) のドキュメント。CueMol2 向けに凍結維持されています |
 | [ギャラリー](https://cuemol.github.io/cuemol2_docs/en/Gallery/) | CueMol で作成された画像の作例 (CueMol2 サイト内) |
-| [GitHub: CueMol/cuemol2](https://github.com/CueMol/cuemol2) | ソースコードリポジトリ (CueMol3 は `tritium/` 以下) |
+| [GitHub: CueMol/cuemol3](https://github.com/CueMol/cuemol3) | ソースコードリポジトリ (CueMol3 は `tritium/` 以下) |

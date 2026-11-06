@@ -5,13 +5,71 @@
 !!! info "詳細は GitHub のリリースノートにあります"
     このページは、ふだん使ううえで知っておくとよい点だけをまとめたものです。
     修正の一件一件や内部の変更まで含む完全な記録は
-    [GitHub の Releases](https://github.com/CueMol/cuemol2/releases) にあります。
+    [GitHub の Releases](https://github.com/CueMol/cuemol3/releases) にあります。
 
     CueMol3 と CueMol2 は同じリリースで一緒に配布されるため、リリースノートには
     CueMol2 (UXP 版) の変更も含まれています。
 
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
+
+## 3.0.0.554 (2026-11-06)
+
+### バージョン番号とリポジトリ
+
+- **このリリースから、バージョン番号がアプリの名前に合わせて 3 から始まります。**
+- **ソースコードと配布物のリポジトリが [CueMol/cuemol3](https://github.com/CueMol/cuemol3) に
+  移りました。** 以前の `CueMol/cuemol2` のアドレスは転送されます
+- macOS の 2.4.x と Windows の 2.4.2.550 からは、**Check for Updates...** でこのリリースに
+  アップデートできます → [アップデート](install/update.md)
+
+### ChimeraX 互換モード (Console)
+
+- **Console に ChimeraX 互換モードが加わりました** (プロンプトは `ChX>`)。`open` / `show` /
+  `hide` / `cartoon` / `style` / `color` / `rainbow` / `surface` / `label` / `view` / `turn` /
+  `select` / `name` / `info` / `distance` / `matchmaker` / `save` などの ChimeraX のコマンドと、
+  原子の指定 (`#1/A:10-20@CA`、`@<5`、`@@bfactor>50` など) を使えます
+- コマンドは CueMol の操作に翻訳されて実行されるので、ほかの編集と同じように History に記録され、
+  Undo で戻せます。`open` で開いた分子は、ChimeraX の自動の表示に倣って描かれます。
+  `.cxc` のスクリプトも実行できます
+  → [ChimeraX 互換モード](reference/plugins/console/chimerax.md)
+
+### Console のモードがプラグインに
+
+- **PyMOL 互換モードと ChimeraX 互換モードは、それぞれ PyMOL console・ChimeraX console (ChX)
+  のプラグインになりました。** どちらも既定で有効で、**Settings &gt; Plugins &gt; Installed** で
+  無効にすると、そのモードがパネルの切り替えと tritium_cli から消えます。入力の履歴は引き継がれます
+  → [プラグイン](reference/plugins/index.md)
+
+### tritium_cli
+
+- **ファイルを渡して、起動中の CueMol3 に開けるようになりました** (`tritium_cli 1crn.pdb map.ccp4`)。
+  `-i` を付けると、開いたあと対話モードに入ります。`.qax` / `.pml` / `.cxc` / `.txt` はスクリプトとして
+  実行します
+- **`tritium_cli mcp` で、MCP クライアントと標準入出力でつなげるようになりました**
+  (`claude mcp add cuemol -- tritium_cli mcp`)。MCP Server プラグインが無効でも、その回に限り
+  MCP Server を開きます → [MCP Server](reference/plugins/mcp-server.md#tritium_cli-mcp-で登録する)
+- **`tritium_cli skill install` で、Claude Code から tritium_cli を使うための skill を
+  インストールできるようになりました。** そのほか `status` / `version` / `help <コマンド>` が加わりました
+- npm の `@cuemol/tritium-cli` も 3.0.0 になりました
+  → [tritium_cli](reference/plugins/console/cli.md)
+
+### シーンツリーと選択
+
+- **シーンツリーで複数の行を選んで Focus を押すと、すべてが収まるように表示するようになりました**
+  → [サイドパネル](ui/side-panels.md#explorer)
+- **選択を少しずつ足していったときに、選択式が長くならないようになりました。** shift + クリックや
+  矩形・投げ縄での追加、Selection Builder、Console で作った選択式は、同じ原子を選ぶ短い式に
+  書き直されます。自分で打った選択式はそのままです
+
+!!! warning "以前のバージョンから変わる点"
+    - **一度に編集できるのは 1 つのクライアントだけになりました。** tritium_cli や MCP クライアントが
+      実行している間に、ほかの tritium_cli や MCP クライアントから送った操作は `CueMol is busy` で
+      断られます
+    - **Console の `center_view` は `focus_selection` に変わりました** (`zoom` / `center` はそのまま
+      使えます)。分子の選択は変えなくなりました
+    - **tritium_cli の PyMOL 互換モードのプロンプトが `PyMOL <ディレクトリ> ❯` になりました**
+      (以前は `pymol`)
 
 ## 2.4.2.550 (2026-11-01)
 
@@ -246,66 +304,17 @@
       変わったためです。使わない場合は Settings &gt; Plugins &gt; Installed で **Console** を
       無効にしてください。PyMOL 互換モードの入力の履歴は引き継がれます
 
-## 2.3.20.539 (2026-09-29)
-
-### Renderer
-
-- **主鎖を球と円柱で描く tracestick が追加されました。** pivot 原子 (タンパク質では Cα、
-  核酸では P) を球で描き、つながった残基のあいだを円柱で結びます。[trace](reference/renderers/trace.md)
-  を ballstick の形にしたもので、途切れる場所も trace と同じです。スタイルは **Default** /
-  **Thick** / **Ball &amp; stick** / **Thick ball &amp; stick** の 4 つです
-  → [tracestick](reference/renderers/tracestick.md)
-
-### PyM Console
-
-- **PyMOL のスクリプトを実行できるようになりました。** `@file.pml` または `run file.pml`
-  で実行し、スクリプト全体が 1 回の Undo にまとまります。`log_open` / `log_close` で
-  打ったコマンドを記録でき、記録したファイルは `@` でそのまま再実行できます。
-  実行中は **Stop** で止められます → [PyM Console](reference/plugins/console/pymconsole.md#スクリプトとログ)
-- **使えるコマンドが増えました。** `save` (分子・シーン・画像)、`label`、`spectrum`、
-  `set_color`、`align` / `super` / `pair_fit` (RMSD を表示)、`get_view` / `set_view`、
-  `orient`、`mplay` / `mstop` / `rewind` / `frame` などです。`load` は `.qsc` / `.pse` /
-  `.pml` と URL を、`fetch` は密度マップ (`type=2fofc`) と生物学的集合体 (`type=pdb1`)、
-  チェーンの指定 (`1abcA`) を受け付けます
-  → [PyM Console](reference/plugins/console/pymconsole.md#対応コマンド)
-- **書き方が PyMOL に近づきました。** 選択式の中で Object 名が使えます
-  (`1abc and chain A`)。`show` / `hide` は引数なしや `everything`、略した表現名も
-  受け付け、`quiet=1` のような PyMOL のキーワード引数も通ります。`stick_radius` などの
-  PyMOL の設定は、CueMol に同じ量があるものが対応するプロパティに割り当てられます
-
-### AI Agent
-
-- **Google Gemini が使えるようになりました。** モデルは `google:<モデル名>` と書き、
-  API キーは **Settings &gt; Plugins &gt; AI Agent** の **Google AI API key**
-  (または環境変数 `GEMINI_API_KEY`) に設定します
-  → [AI Agent](reference/plugins/ai-agent.md#モデルと-api-キーの設定)
-- **パネル上端でモデルを切り替えられるようになりました。** 一覧には、API キーを
-  保存したプロバイダのモデルのうち、そのキーで使えるものだけが並びます
-  → [AI Agent](reference/plugins/ai-agent.md#使い方)
-- **モデルが今のビューを見られるようになりました。** 操作の結果を画像にして確かめながら
-  進めます。その画像は記録のツールの行に縮小表示されます
-
-### ファイルを開く
-
-- **MD トラジェクトリのファイルをドロップしたときの案内が正しくなりました。**
-  `.xtc` / `.dcd` / `.trr` はフレームしか持たず単独では開けませんが、これまでは
-  「壊れているか、対応していない形式」と表示されていました。今は **File &gt; Open MD
-  Trajectory...** で開くよう案内し、MD Tools が無効のときは先に **Settings &gt; Plugins**
-  で有効にするよう案内します → [File メニュー](menu/file.md#object-の読み込み)
-- **Open File... の形式の一覧から、トラジェクトリの形式がなくなりました。**
-  選んでも開けなかったためです
-
 ---
 
-2.3.15.530 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
+2.3.20.539 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
 
 ## 関連項目
 
-- [過去のリリース](releases-archive.md) — 2.3.15.530 以前の更新履歴
+- [過去のリリース](releases-archive.md) — 2.3.20.539 以前の更新履歴
 - [CueMol2 からの変更点](changes/index.md) — CueMol2 と CueMol3 の違い
 - [開発状況と未実装機能](changes/status.md) — 現時点で残っている制限
 - [ダウンロード](install/index.md#ダウンロード) — 配布物の入手方法
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.0.554*

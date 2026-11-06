@@ -119,7 +119,9 @@
 |---|---|---|
 | AI Agent | OFF | 文章での指示からシーンを組み立てるチャットパネル (→ [AI Agent](plugins/ai-agent.md)) |
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** と下部パネルの **Trajectory** タブ |
-| Console | ON | CueMol のコマンドライン。PyMOL 互換モードも使えます (→ [Console](plugins/console/index.md)) |
+| Console | ON | CueMol のコマンドライン (→ [Console](plugins/console/index.md)) |
+| PyMOL console | ON | Console の PyMOL 互換モード (→ [PyMOL 互換モード](plugins/console/pymconsole.md)) |
+| ChimeraX console (ChX) | ON | Console の ChimeraX 互換モード (→ [ChimeraX 互換モード](plugins/console/chimerax.md)) |
 | MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md)) |
 | Component Catalog | OFF | 画面部品のカタログ (CueMol3 の UI 開発用) |
 
@@ -161,4 +163,4 @@
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.0.554*
