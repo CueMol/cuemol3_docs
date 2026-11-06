@@ -162,7 +162,7 @@ plugins:
                         - reference/plugins/console/index.md
                         - Command list: reference/plugins/console/commands.md
                         - tritium_cli: reference/plugins/console/cli.md
-                        - PyMOL compatibility mode: reference/plugins/console/pymconsole.md
+                        - PyM console: reference/plugins/console/pymconsole.md
                     - MCP Server: reference/plugins/mcp-server.md
                 - Tools:
                     - Superposing molecules: reference/tools/superpose.md

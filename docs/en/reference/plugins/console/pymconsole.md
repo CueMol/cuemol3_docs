@@ -1,8 +1,9 @@
 <!-- source: ja/reference/plugins/console/pymconsole.md @ 773364a -->
 
-# PyMOL compatibility mode (Console)
+# PyM console
 
-The **PyMOL compatibility mode** of [Console](index.md) interprets a subset of the PyMOL command language.
+**PyM console** is a PyMOL-compatible console available in [Console](index.md).
+It interprets a subset of the PyMOL command language.
 Commands you used in PyMOL, such as `fetch 1crn` or `bg_color white`, can be typed as they are.
 Up to 2.3.20.539 this was a separate plugin called **PyM Console**.
 
@@ -12,13 +13,13 @@ and the error messages are the same.
 
 !!! info "Screenshot planned"
 
-<!-- TODO(screenshot): Console tab (state right after running a command in PyMOL compatibility mode) -->
+<!-- TODO(screenshot): Console tab (state right after running a command in PyM console) -->
 
 ## Enabling it
 
 The **Console** plugin is enabled by default, and the **Console** tab is the first tab of the bottom panel
 (→ [Plugins](../index.md)). Choose **PyMOL** with the switch at the left end of the toolbar,
-or type just `pymol` on a line and run it, to enter PyMOL compatibility mode (→ [Switching modes](index.md#switching-modes)).
+or type just `pymol` on a line and run it, to switch to PyM console (→ [Switching modes](index.md#switching-modes)).
 
 ## Input and completion
 
@@ -35,7 +36,7 @@ The prompt is `PyM&gt;`.
   and falls back to file name expansion when nothing matches.
 - Confirming a Japanese input conversion with ++enter++ does not run the command.
 - **One run is grouped into one Undo step.**
-- **Clear** on the toolbar clears the log area, and **Help** shows the list of PyMOL compatibility mode commands.
+- **Clear** on the toolbar clears the log area, and **Help** shows the list of PyM console commands.
 - While a command is running, **Stop** appears next to "Running...". Pressing it stops before the next command
   and cancels a download in progress. Whatever has already been executed is kept.
 
@@ -46,7 +47,7 @@ The prompt is `PyM&gt;`.
 - `log_open` opens a file (`log.pml` by default), and the commands typed at the prompt afterwards are
   recorded. `log_close` ends the recording. The recorded file can be re-run as it is with `@`.
   Commands run from a script are not recorded.
-- A file of operations recorded in native mode (`.qax`) cannot be run in PyMOL compatibility mode.
+- A file of operations recorded in native mode (`.qax`) cannot be run in PyM console.
   Switch to native mode to run it (→ [Recording and replaying operations](../../actions.md)).
 
 ## Supported commands

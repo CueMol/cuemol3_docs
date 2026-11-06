@@ -9,7 +9,7 @@ There are two command modes, switched in the panel.
 | Mode | Prompt | Description |
 |---|---|---|
 | **native mode** (default) | `CueMol>` | Commands for operating CueMol itself. Selections are written with CueMol's [selection expressions](../../selection.md). Described on this page |
-| **PyMOL compatibility mode** | `PyM>` | PyMOL-compatible commands (→ [PyMOL compatibility mode](pymconsole.md)) |
+| **PyM console** | `PyM>` | PyMOL-compatible commands (→ [PyM console](pymconsole.md)) |
 
 !!! info "Screenshot planned"
 
@@ -21,7 +21,7 @@ Because it is enabled by default, the **Console** tab is the first tab of the bo
 To stop using it, disable **Console** in **Settings &gt; Plugins &gt; Installed** (→ [Plugins](../index.md)).
 
 !!! note "Renamed from PyM Console"
-    The **PyM Console** plugin up to 2.3.20.539 became **Console** in 2.3.21.544. If you had disabled PyM Console, Console is enabled anyway, so disable it again if you do not use it. The input history of the PyMOL compatibility mode is carried over.
+    The **PyM Console** plugin up to 2.3.20.539 became **Console** in 2.3.21.544. If you had disabled PyM Console, Console is enabled anyway, so disable it again if you do not use it. The input history of PyM console is carried over.
 
 ## Switching modes
 
@@ -90,7 +90,7 @@ The native-mode commands are collected by `help` topic in the [Console command l
 - `run file.qax` (or `@file.qax`) replays a file of recorded operations (qax). When it is the only thing on the line, each recorded operation becomes one Undo, and replay stops at an operation that fails. When run from inside a script, it is included in the Undo of the whole script (→ [Recording and replaying operations](../../actions.md)).
 - `open_log` opens a file (`log.qax` by default), and from then on the operations performed by subsequent executions are recorded as qax. Executions that did not change the scene are not recorded. A statement written with `log` is included as a note. `close_log` ends the recording.
 - `list_actions` displays each Undo step and the operations performed in it, oldest first. `export_actions file[, first[, last]]` writes that range to a qax file.
-- A `.pml` file (a PyMOL script) cannot be run in native mode. Switch to PyMOL compatibility mode to run it.
+- A `.pml` file (a PyMOL script) cannot be run in native mode. Switch to PyM console to run it.
 
 ## Using from a terminal (tritium_cli)
 
@@ -105,7 +105,7 @@ The native-mode commands are collected by `help` topic in the [Console command l
 ## See also
 
 - [Console command list](commands.md) / [tritium_cli](cli.md)
-- [PyMOL compatibility mode](pymconsole.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
+- [PyM console](pymconsole.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
 - [Plugins](../index.md) / [Settings reference](../../settings.md#plugins)
 - [Selection expression syntax](../../selection.md)
 - [Recording and replaying operations](../../actions.md)

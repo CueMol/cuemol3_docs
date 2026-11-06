@@ -19,7 +19,7 @@ The Actions view has two panels.
 
 ## Recorded operations
 
-Most edits made in the GUI, and edits made from the [Console](plugins/console/index.md) (native mode and PyMOL-compatible mode),
+Most edits made in the GUI, and edits made from the [Console](plugins/console/index.md) (native mode and PyM console),
 the [MCP Server](plugins/mcp-server.md) and the [AI Agent](plugins/ai-agent.md), are recorded
 as operations that can be saved and replayed. These include property changes, file loading and fetching,
 Renderers and styles, coloring and Paint, selections, molecular editing, superposition, labels and measurements,
@@ -138,7 +138,7 @@ A qax file is a file in which recorded operations are written in XML (extension 
   `open_log` also records subsequent operations to a qax file.
 - From a terminal, replay it with `tritium_cli file.qax`
   (→ [tritium_cli](plugins/console/cli.md)).
-- qax files cannot be run in PyMOL-compatible mode.
+- qax files cannot be run in PyM console.
 
 ## Limitations
 
