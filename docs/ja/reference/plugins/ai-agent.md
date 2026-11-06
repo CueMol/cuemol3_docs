@@ -73,7 +73,7 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
 - シーンファイル (`.qsc`) は開けません。**File &gt; Open** で開いてください。
 - 実行中に手で加えた変更は、その指示の Undo に巻き込まれます。
 - [Console](console/index.md) のコマンドや [MCP Server](mcp-server.md) の呼び出しを実行している間は、
-  指示を送っても実行されません (逆に、指示の実行中は Console と MCP Server の操作が断られます)。
+  指示を送っても実行されません (逆に、指示の実行中は Console と MCP Server の操作が拒否されます)。
 - 会話はアプリケーションを終了すると失われます。
 - 会話の途中でプロバイダを切り替えた場合の動作は確認できていません。
 

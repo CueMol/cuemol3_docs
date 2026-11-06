@@ -65,7 +65,7 @@
 !!! warning "以前のバージョンから変わる点"
     - **一度に編集できるのは 1 つのクライアントだけになりました。** tritium_cli や MCP クライアントが
       実行している間に、ほかの tritium_cli や MCP クライアントから送った操作は `CueMol is busy` で
-      断られます
+      拒否されます
     - **Console の `center_view` は `focus_selection` に変わりました** (`zoom` / `center` はそのまま
       使えます)。分子の選択は変えなくなりました
     - **tritium_cli の PyMOL 互換モードのプロンプトが `PyMOL <ディレクトリ> ❯` になりました**

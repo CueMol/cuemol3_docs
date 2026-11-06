@@ -88,9 +88,9 @@ claude mcp add cuemol -- tritium_cli mcp
   `.qsc` を開くこともできます。
 - **1 回のツール呼び出しが 1 回の Undo にまとまります** (Undo の名前は `MCP: <ツール名>`)。
   呼び出しは [Actions ビューの History](../actions.md) に記録されます。
-- AI Agent の指示や Console のコマンドを実行している間は、ツールの呼び出しは断られます。
+- AI Agent の指示や Console のコマンドを実行している間は、ツールの呼び出しは拒否されます。
   一度に編集できるのは 1 つのクライアントだけで、ほかの MCP クライアントや tritium_cli が
-  実行している間も断られます (`CueMol is busy`)。
+  実行している間も拒否されます (`CueMol is busy`)。
   クライアントが呼び出しを取り消すと、実行中の処理も止まります。
 - エラーは、クライアントが読める形 (`{ok: false, error}`) で返されます。
 
