@@ -3,7 +3,7 @@
 **PyM console** は、[Console](index.md) で使える PyMOL 互換の console です。
 PyMOL のコマンド言語の一部を解釈します。
 `fetch 1crn` や `bg_color white` のような、PyMOL で使っていたコマンドをそのまま打てます。
-2.3.20.539 までは **PyM Console** という独立したプラグインでした。
+2.3.20.539 までは **PyM console** という独立したプラグインでした。
 
 PyMOL との完全な互換は目指しておらず、**すでに知っているコマンドが動くこと**が
 目的です。コマンドの解析と ++tab++ 補完は PyMOL の実装を移植したもので、

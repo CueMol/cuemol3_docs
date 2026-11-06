@@ -214,11 +214,11 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **ユーザー指示: 不具合修正・「本来の動作が正しくなった」類は更新履歴にだけ書き、
   マニュアル本体には新機能として書かない。** これに従い、名前付き選択がどこでも
   解決するようになった件 (と入れ子参照)、空の選択での Zoom / Center、暗い背景での
-  ホバー強調、IME の Enter、スタイルセット名 `user` → `style_N`、PyM Console の
+  ホバー強調、IME の Enter、スタイルセット名 `user` → `style_N`、PyM console の
   map renderer、New Renderer のプリセット行の重複、カメラの死んだ `Properties` の
   削除は、リファレンス・チュートリアルに書いていない。
   **角度・二面角の「選択による定義」は書かなかった** (通常 GUI に経路が無く
-  PyM Console のコマンドのみ。`egroup` / `hover_hl_color` と同じ基準)。
+  PyM console のコマンドのみ。`egroup` / `hover_hl_color` と同じ基準)。
   **dsurface の `proberad` / `cullface` / `showsel` / `target` も書いていない**
   (Properties タブに行が無く Generic タブのみ)。旧 `dsurf2.md` の note が
   `Probe radius` を共有プロパティとして挙げていたが、案内ページ化で落ちた。
@@ -229,13 +229,13 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   空の選択での Zoom / Center (いずれも内部的な話か純粋な不具合修正で、読み手が
   何かする余地が無い)。**不具合修正は更新履歴にも載せない**のが今回確認できた基準。
   `docs/ja/ui/bottom-panels.md` のタブ表にあった「Output = ログ表示とコマンド入力」の
-  「コマンド入力」は、Output にその欄が無く PyM Console と紛らわしいので落とした。
+  「コマンド入力」は、Output にその欄が無く PyM console と紛らわしいので落とした。
   **要判断として残したもの**: Mol Struct パネルの名称 (実装は `Mol Struct`、
   ドキュメントは「Molecular structure パネル」。今回の差分ではない)、
   名前付き選択の定義方法 (Selection パネルの **Define name** ボタン) がどこにも
   書かれていないこと。
   **未着手の残件**: スクリーンショット全般 (Camera パネル / Settings &gt; Plugins /
-  PyM Console / AI Agent / dsurface の図を含む)、AI Agent と PyM Console ページの本文、
+  PyM console / AI Agent / dsurface の図を含む)、AI Agent と PyM console ページの本文、
   docs-verify の spec 追加 (NPR / 分子表面ダイアログ / 密度マップ / ピッキングとホバー)
   と、**View パネルがアクティビティビューを移ったことによる既存 spec の修正**
   (`specs/basic/loading.spec.ts` / `helpers/viewPane.ts`。ユーザー判断により今回は触っていない)。
@@ -249,7 +249,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `docs/release_notes/v2.3.20.539.md` を含む。2.3.16〜2.3.19 は未リリースなので
   更新履歴は 2.3.15.530 から直接飛ばした)。次回はこの hash から差分確認を行う。
   更新履歴は 6 本目になったので、2.3.11.507 を `releases-archive.md` へ移した。
-  今回の主題は **MD トラジェクトリの大規模化**・**PyM Console の拡張**・
+  今回の主題は **MD トラジェクトリの大規模化**・**PyM console の拡張**・
   **AI Agent の Gemini 対応**・**新 Renderer tracestick**。
   `docs/ja/reference/renderers/tracestick.md` を新設した (nav と一覧表にも追加)。
   `docs/ja/reference/plugins/pymconsole.md` の「対応コマンド」の TODO を**ユーザー指示により
@@ -267,7 +267,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   重ね合わせダイアログは以前からトラジェクトリを出していない)、座標の単精度化 (スクリプトからしか
   見えない)。
   **未着手の残件**: スクリーンショット全般 (tracestick を含む)、AI Agent の「できること」と
-  PyM Console の選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正。
+  PyM console の選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正。
   **`task e2e` は 2.3.20.539 でも 5 件すべてが起動の時点で失敗する** (前回と同じ
   `READY_LINES` の待ちでタイムアウトする)。次回はここから。
 - 前回同期: 2026-10-10 / cuemol2 `d3a2038e` (tag `v2.3.21.544`, branch: develop) / CueMol3 `2.3.21.544`。
@@ -275,7 +275,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   次回はこの hash から差分確認を行う。cuemol2 のローカル作業ツリーは古いままだったので、
   根拠は `git show d3a2038e:<path>` で取った。更新履歴は 6 本目になったので、2.3.12.517 を
   `releases-archive.md` へ移した。
-  今回の主題は **外部からの操作** (PyM Console → **Console** プラグインと native 方言、
+  今回の主題は **外部からの操作** (PyM console → **Console** プラグインと native 方言、
   **MCP Server**、**tritium_cli**)・**ラベル**・**Color パネルの Paint 表**。
   **ユーザー判断により** `reference/plugins/console.md` (native 方言 + tritium_cli) と
   `reference/plugins/mcp-server.md` を新設し、`pymconsole.md` は「PyMOL 互換モード (Console)」の
@@ -401,7 +401,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **PyMOL のモードも同様に「PyM console」が正式名称** (ユーザー指示、3.0.0.554 の同期の後)。「PyMOL 互換モード」とは
   書かない。説明が要るときは「PyMOL 互換の console」。プラグインの表示名 `'PyMOL console'`
   (`plugins/pymol-console/manifest.ts`) も docs では PyM console と書く。2.3.20.539 までの
-  独立したプラグイン **PyM Console** (大文字 C) は歴史的な名前なので、その時代の記述は書き換えない。
+  独立したプラグイン (当時の表記は大文字 C) も、ユーザー指示により PyM console に統一する。大文字 C は使わない。
   v3.0.0.554 のプラグインの表示名は `'ChimeraX console (ChX)'` (`plugins/chimerax-console/manifest.ts`) だが、
   cuemol2 側でも ChX console に変える予定なので、docs は ChX console のまま踏襲する (実装に合わせて戻さない)。根拠は cuemol2 の `docs/architecture/console-chimerax-dialect.md` と
   `plugins/chimerax-console/worker/`。native のコマンド表は op カタログを tsx で評価して取り直した
