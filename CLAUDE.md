@@ -393,7 +393,7 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   移った** (旧アドレスは転送される。ローカルの作業ツリーは `~/proj64/cuemol2` のまま)。サイト内の
   GitHub へのリンクと `mkdocs.yml` の `repo_url` を付け替えた (英語版は触っていない)。
   今回の主題は **ChX console (ChimeraX 互換の console)**・**Console のモードのプラグイン化** (PyMOL console /
-  ChimeraX console (ChX)、どちらも既定 ON)・**tritium_cli のファイル引数とサブコマンド**
+  ChX console、どちらも既定 ON)・**tritium_cli のファイル引数とサブコマンド**
   (`skill` / `mcp` / `status` / `version` / `help`)・**edit lock** (一度に 1 クライアント)。
   `reference/plugins/console/chx_console.md` (ChX console。ユーザー指示により名前は ChX console、説明は「ChimeraX 互換の console」) を新設した (ja の nav にも追加。
   英訳は未着手)。根拠は cuemol2 の `docs/architecture/console-chimerax-dialect.md` と

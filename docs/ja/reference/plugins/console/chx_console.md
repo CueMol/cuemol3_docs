@@ -16,12 +16,12 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 
 ## 有効にする
 
-**ChimeraX console (ChX)** プラグインで提供されます。**Console** プラグインとともに
+**ChX console** プラグインで提供されます。**Console** プラグインとともに
 既定で有効です (→ [プラグイン](../index.md))。ツールバー左端の切り替えで **ChimeraX** を選ぶか、
 行に `chimerax` とだけ打って実行すると、ChX console になります
 (→ [モードの切り替え](index.md#モードの切り替え))。
 
-**Settings &gt; Plugins &gt; Installed** で **ChimeraX console (ChX)** を無効にすると、
+**Settings &gt; Plugins &gt; Installed** で **ChX console** を無効にすると、
 切り替えの **ChimeraX** と tritium_cli の `--dialect chimerax` が使えなくなります。
 
 ## 入力と補完

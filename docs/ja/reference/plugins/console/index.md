@@ -24,7 +24,7 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 (→ [プラグイン](../index.md))。
 
 PyMOL 互換モードと ChX console は、それぞれ **PyMOL console** と
-**ChimeraX console (ChX)** のプラグインで提供されます。どちらも既定で有効で、
+**ChX console** というプラグインで提供されます。どちらも既定で有効で、
 無効にするとそのモードがパネルの切り替えと tritium_cli から消えます。native モードは
 Console に含まれていて、常に使えます。
 

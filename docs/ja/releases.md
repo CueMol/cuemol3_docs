@@ -36,8 +36,8 @@
 
 ### Console のモードがプラグインに
 
-- **PyMOL 互換モードと ChX console は、それぞれ PyMOL console・ChimeraX console (ChX)
-  のプラグインになりました。** どちらも既定で有効で、**Settings &gt; Plugins &gt; Installed** で
+- **PyMOL 互換モードと ChX console は、それぞれ PyMOL console・ChX console という
+  プラグインになりました。** どちらも既定で有効で、**Settings &gt; Plugins &gt; Installed** で
   無効にすると、そのモードがパネルの切り替えと tritium_cli から消えます。入力の履歴は引き継がれます
   → [プラグイン](reference/plugins/index.md)
 
