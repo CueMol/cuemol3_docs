@@ -396,7 +396,10 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   ChX console、どちらも既定 ON)・**tritium_cli のファイル引数とサブコマンド**
   (`skill` / `mcp` / `status` / `version` / `help`)・**edit lock** (一度に 1 クライアント)。
   `reference/plugins/console/chx_console.md` (ChX console。ユーザー指示により名前は ChX console、説明は「ChimeraX 互換の console」) を新設した (ja の nav にも追加。
-  英訳は未着手)。根拠は cuemol2 の `docs/architecture/console-chimerax-dialect.md` と
+  英訳は未着手)。**ChimeraX のモードの名前は「ChX console」が正式名称** (略称ではない。ユーザー指示)。
+  「ChimeraX console (ChX)」「ChimeraX 互換モード」とは書かない。説明が要るときは「ChimeraX 互換の console」。
+  v3.0.0.554 のプラグインの表示名は `'ChimeraX console (ChX)'` (`plugins/chimerax-console/manifest.ts`) だが、
+  cuemol2 側でも ChX console に変える予定なので、docs は ChX console のまま踏襲する (実装に合わせて戻さない)。根拠は cuemol2 の `docs/architecture/console-chimerax-dialect.md` と
   `plugins/chimerax-console/worker/`。native のコマンド表は op カタログを tsx で評価して取り直した
   (`focus_nodes` / `copy_node` / `orient_view` / `set_frame` の追加、`center_view` → `focus_selection`)。
   tritium_cli のプロンプトはモードのラベル (`CueMol` / `PyMOL` / `ChimeraX`) になった。
