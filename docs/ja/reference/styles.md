@@ -49,6 +49,9 @@ Coloring のスタイル
 !!! warning "Edit style / Create style に不具合が報告されています"
     現在調査中です → [開発状況と未実装機能](../changes/status.md)
 
+`~/.cuemol/styles/` に置いたスタイルファイルは、起動時に読み取り専用のスタイルセットとして
+読み込まれます (→ [ユーザーディレクトリ (~/.cuemol)](dotfiles.md#スタイルファイル))。
+
 <!-- TODO(content): スタイルセットの読み書き (Style file, .xml) と、
      ユーザー定義スタイルの保存先を tritium の実装で確認して記載 -->
 
@@ -58,7 +61,8 @@ Coloring のスタイル
 - [Coloring](coloring.md)
 - [プロパティインスペクタ](../ui/inspector.md)
 - [サイドパネル](../ui/side-panels.md)
+- [ユーザーディレクトリ (~/.cuemol)](dotfiles.md)
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 3.0.1.555*

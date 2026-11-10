@@ -327,6 +327,7 @@ nav:
           - 静電ポテンシャルの計算: reference/tools/apbs.md
       - PDB からの取得 (Get PDB): reference/get-pdb.md
       - 操作の記録と再生 (Actions): reference/actions.md
+      - ユーザーディレクトリ (~/.cuemol): reference/dotfiles.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンファイル (.qsc): reference/qsc-format.md
 

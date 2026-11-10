@@ -415,6 +415,31 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   「2.3.15.530 時点のスナップショット」なのでフッタは据え置いた。
   **未着手の残件**: スクリーンショット全般 (ChX consoleを含む)、`chx_console.md` / `get-pdb.md` の英訳、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
+- 前回同期: 2026-11-10 / cuemol2 `f5061ea8` (tag `v3.0.1.555`, branch: develop) / CueMol3 `3.0.1.555`。
+  `794fe4ac..f5061ea8` の差分を全件確認した (リリースノート `docs/release_notes/v3.0.1.555.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、2.4.0.546 を
+  `releases-archive.md` へ移した。
+  今回の主題は **Get PDB の取得先の拡大** (Database: PDB / EMDB・AlphaFold DB・PubChem、PDB の Server:
+  RCSB / PDBe / PDBj / PDB-REDO、EMDB の PDBj)・**B-factor の多色グラデーション** (AlphaFold pLDDT)・
+  **視点の fit** (Focus / Center view が表示中のものに合わせる、最小 15 Å)・**ChX console の拡張**・
+  **native モードは完全なコマンド名のみ**・**`~/.cuemol/` の起動スクリプトとスタイルファイル**。
+  **ユーザー判断により** `reference/dotfiles.md` (ユーザーディレクトリ (~/.cuemol)) を新設した (ja の nav の
+  リファレンス、Actions の次。英訳は未着手)。`coloring.md` の Bfac/Occ の `TODO(content)` を埋めた (ユーザー判断)。
+  更新履歴は 5 節 + warning (ユーザー判断)。**native モードで省略形が実行されなくなった件は、ユーザー指示により
+  更新履歴に書かず**、Console のページ (index / commands) にだけ書いた。
+  ChX console のページは obsolete を直した (拒否 → 警告して飛ばす、`c` は `camera`、model 番号の再利用、
+  非表示の原子のスタイルの保持、`color random` の拒否) ほか、コマンド表に新コマンドを足した。
+  **書かなかったもの**: Linux の 3D ビューが黒くなる件の修正 (`4a1acbd9` / `edd3b495` / `4b75c147`。
+  リリースノートにも無い)、同名の分子とマップの取り違え、繰り返しの着色が遅い件、EDS のメッシュの線幅
+  (いずれも不具合修正)。
+  **要判断として残したもの**: `changes/status.md` の「密度マップの Renderer 行を Focus すると原点に飛ぶ」
+  (Renderer 行の Focus は `DensityMap::fitView` を使い、単位胞ではなくデータの範囲に合わせるようになったが、
+  直ったとは確認していない)、`~/.cuemol/styles/*.xml` のスタイルが GUI のどこに現れるか (未確認なので書いていない)、
+  AlphaFold pLDDT が Renderer の右クリックの Coloring に並ぶか (未確認)。
+  **開発側への指摘**: `plugins/chimerax-console/worker/commands/registry.ts:6` のコメントが `c` = `cartoon` のまま。
+  **未着手の残件**: スクリーンショット全般 (Get PDB の Database / Server、Bfac/Occ のグラデーション、
+  起動スクリプトのステータスバー)、`dotfiles.md` / `chx_console.md` / `get-pdb.md` の英訳、
+  docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

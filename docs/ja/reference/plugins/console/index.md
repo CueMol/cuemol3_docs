@@ -60,6 +60,8 @@ Console に含まれていて、常に使えます。
   Object・Renderer の名前、名前付き選択、色の名前、Renderer の種類、プロパティのパス、
   まだ指定していない引数の `name=`、ファイルのパス (パスを取る引数のみ) を補完します。
 - **1 回の実行が 1 回の Undo にまとまります。**
+- いまのモードが対応していないコマンドは、`Warning: <理由>; skipped` と表示して飛ばし、
+  残りのコマンドを実行します。そのほかのエラーでは、そこで止まります。
 - ツールバーの **Clear** で記録領域を消去し、**Help** でいまのモードの `help` を実行します。
 - 実行中は「Running...」の横に **Stop** が表示されます。押すと次のコマンドの前で止まります。
   それまでに実行した分は残ります。
@@ -74,6 +76,8 @@ create_renderer 1crn, ballstick, name=bs1
 
 - コマンド名のあとに引数を**カンマ**で区切って並べます。`name=value` の形で引数の名前を
   指定することもできます。
+- コマンド名は省略せずに打ちます。省略形は、`unknown command: "open" (did you mean open_log?)`
+  のように候補を示して実行されません (++tab++ で補完できます)。
 - コマンド名は「動詞_対象」の形です (`list_cameras` / `add_paint` など)。`props` / `view` /
   `slab` のように名詞だけのコマンドは、値を付けずに打つとその内容を表示し、値を付けると設定します。
 - Object は名前 (`1crn`)、Renderer は `Object名/Renderer名` (`1crn/cartoon1`) で指定します。
@@ -129,6 +133,8 @@ native モードのコマンドは、`help` の項目ごとに [Console のコ�
   `export_actions file[, first[, last]]` はその範囲を qax に書き出します。
 - `.pml` (PyMOL のスクリプト) と `.cxc` (ChimeraX のスクリプト) は native モードでは実行できません。
   PyM console・ChX console に切り替えて実行してください。
+- 起動するたびに自動で実行するスクリプト (`~/.cuemol/startup.txt` など) を置けます
+  (→ [ユーザーディレクトリ (~/.cuemol)](../../dotfiles.md))。
 
 ## ターミナルから使う (tritium_cli)
 
@@ -154,4 +160,4 @@ CueMol3 に同梱されています。使い方・接続・PATH の通し方は 
 
 ---
 
-*確認対象: CueMol3 3.0.0.554*
+*確認対象: CueMol3 3.0.1.555*
