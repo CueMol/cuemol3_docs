@@ -73,7 +73,8 @@ nucl、それ以外は ballstick、というように**複数の Renderer をま
 - **Selection** — チェックを入れると隣の欄が有効になり、**表示する範囲**を選択式で
   絞れます。読み込み自体は分子全体に対して行われるので、後から表示範囲を
   変更できます (→ [分子の一部を選択する](selection.md))
-- **Center view on molecule after loading** — 読み込んだ分子へ視点を移動します。
+- **Center view on molecule after loading** — 読み込んだ分子が収まるように視点を合わせます
+  (**Focus** を押したときと同じです)。
   現在の視点を変更したくないときはチェックを外します
 - **&lt;形式&gt;-specific options** — いちばん下の折りたたみです。開くと、その形式に固有の
   読み込み設定 (mmCIF / PDB なら **Load MODEL records**、**Load anisotropic U (ANISOU)**、
@@ -232,4 +233,4 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.1.555*

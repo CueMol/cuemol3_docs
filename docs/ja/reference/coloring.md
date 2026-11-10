@@ -69,8 +69,41 @@ C / N / O / S / P / H とその他について、それぞれ色を指定でき�
 
 温度因子 (B-factor) や占有率などの値に応じて、色を連続的に変化させます。
 
-<!-- TODO(content): モード (B-factor / 占有率 / 距離)、下限・上限の色と値、
-     Auto / Manual の切り替えを記載 -->
+| 項目 | 説明 |
+|---|---|
+| **Mode** | 色を決める値。**B-factor** / **Occupancy** (占有率) / **Distance from center** (分子の中心からの距離) |
+| **Multi-colour gradient** | 複数の色を経由するグラデーションに切り替えます (下記) |
+| **Low** / **High** (色) | 値の下限・上限での色。その間は 2 色を補間します |
+| **Auto** | 下限・上限の値の決め方。**Manual** (下の Low / High の値) / **Auto (by mol)** (分子全体の値の範囲) / **Auto (by rend)** (その Renderer が描く原子の値の範囲) |
+| **Low** / **High** (値) | 下限・上限の値。**Auto** が **Manual** のときだけ編集できます |
+
+### 多色のグラデーション
+
+**Multi-colour gradient** を ON にすると、2 色の補間の代わりに、複数の色を経由する
+グラデーションで塗ります。ON にした直後は、いまの 2 色と同じ両端の 2 点のグラデーションになるので、
+見た目は変わりません。ON の間は **Low** / **High** 以下の行が隠れ、代わりにグラデーションの
+編集欄が表示されます。OFF に戻すと、2 色の補間に戻ります。
+
+編集欄の操作は [Multi-gradient](#multi-gradient) と同じです。ヒストグラムには原子の値
+(B-factor か占有率) の分布が表示されます。**Distance from center** ではヒストグラムは表示されません。
+
+- ストップの値は B-factor・占有率・距離そのものの値です。**Auto** の設定は使われません。
+  範囲の外の値は、近い端のストップの色になります
+- プリセットには、Rainbow / Resmap / Heatmap に加えて **AlphaFold pLDDT** があります。
+  AlphaFold の予測の信頼度 (pLDDT、0〜100) を ChimeraX と同じ色で塗ります
+
+| pLDDT | 色 |
+|---|---|
+| 0 | 赤 |
+| 50 | 橙 |
+| 70 | 黄 |
+| 90 | 水色がかった青 |
+| 100 | 青 |
+
+[Get PDB](get-pdb.md#alphafold-db) で AlphaFold DB から取得した構造は、この色で表示されます
+(AlphaFold のモデルは B-factor の欄に pLDDT を持っています)。
+
+編集は 1 回の操作ごとに Undo で戻せ、シーンに保存されます。
 
 ## Rainbow
 
@@ -127,4 +160,4 @@ Renderer ごとではなく分子 Object 側に着色を持たせ、複数の Re
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.1.555*

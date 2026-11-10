@@ -35,8 +35,8 @@ CCP4/MRC の密度マップを開くときは、オプション画面に格子�
 マップでは、読み込んだあとにインスペクタで Map type を変えられます。
 
 密度マップを開くときは、Renderer のオプションに原子選択の代わりに **View after loading**
-が表示されます。*Auto (by map kind)* (既定) は、クライオ電子顕微鏡マップではマップ全体が
-収まるように視点を動かし (*Move view center (fit the map)*)、結晶学的マップでは視点を
+が表示されます。*Auto (by map kind)* (既定) は、クライオ電子顕微鏡マップでは表示している
+等値面が収まるように視点を動かし (*Move view center (fit the map)*)、結晶学的マップでは視点を
 動かさずにマップの表示中心を現在のビュー中心に合わせます (*Set map center (keep the view)*)。
 どちらの動作も明示的に選べます。
 
@@ -81,4 +81,4 @@ Settings &gt; Plugins で有効にするよう案内されます)。ファイル
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.1.555*

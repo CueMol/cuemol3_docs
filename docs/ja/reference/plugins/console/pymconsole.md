@@ -89,6 +89,9 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 - `align` / `super` / `pair_fit` は RMSD を表示します。`align` / `super` はどちらも US-align による
   重ね合わせで、配列アラインメントは行いません。RMSD とあわせて、対応づけた残基の数と
   TM-score も表示します。`pair_fit` は原子を順に対応づける最小二乗法の重ね合わせです。
+- `spectrum b` / `spectrum q` に 3 色以上のパレット (`rainbow`、`blue_white_red` など) を指定すると、
+  PyMOL と同じく、値の範囲に色を等間隔に並べた多色のグラデーションで塗ります
+  (→ [Coloring](../../coloring.md#多色のグラデーション))。
 - `get_view` / `set_view` は PyMOL と同じ 18 個の数値の形式です。
 - `label` は PyMOL の式 (`"%s%s" % (resn, resi)` など) を受け付けます。
 - `distance` に `cutoff` か `mode` を付けると、2 つの選択のあいだの接触を一覧してラベルを付けます。
@@ -187,4 +190,4 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 
 ---
 
-*確認対象: CueMol3 3.0.0.554*
+*確認対象: CueMol3 3.0.1.555*

@@ -1,6 +1,7 @@
 # PDB からの取得 (Get PDB)
 
 PDB のエントリの座標と密度マップを、ネットワークから取得して読み込みます。
+AlphaFold DB の予測構造と、PubChem の化合物も取得できます。
 **File &gt; Get PDB...** (またはツールバーの **Get PDB** ボタン) で **Get PDB** ダイアログを開き、
 PDB ID か EMDB ID を入力して **Download** を押します。ID がわからないときは、キーワードで
 エントリを探せます。
@@ -14,7 +15,16 @@ PDB ID か EMDB ID を入力して **Download** を押します。ID がわか�
 
 ## ID を入力する
 
-**Entry** の **PDB or EMDB ID, or keywords** に、次のどちらかを入力します。
+**Entry** の **Database** で取得元のデータベースを選びます。既定は **PDB / EMDB** で、
+ダイアログを開くたびにこれに戻ります。
+
+| Database | 入力欄 | 説明 |
+|---|---|---|
+| **PDB / EMDB** | **PDB or EMDB ID, or keywords** | PDB のエントリと EMDB のマップ (この節) |
+| **AlphaFold DB** | **UniProt accession or AlphaFold ID** | AlphaFold DB の予測構造 (→ [AlphaFold DB](#alphafold-db)) |
+| **PubChem** | **PubChem compound ID (CID)** | PubChem の化合物 (→ [PubChem](#pubchem)) |
+
+**PDB / EMDB** では、**PDB or EMDB ID, or keywords** に次のどちらかを入力します。
 
 | 入力 | 例 | 取得できるもの |
 |---|---|---|
@@ -48,7 +58,11 @@ EMDB ID には `EMD` を付けてください。数字だけ (`1234`) は PDB ID
 | 項目 | 説明 |
 |---|---|
 | **Fetch coordinates** | 座標を取得します (既定は ON) |
-| **Format** | **mmCIF (RCSB)** (既定) か **PDB (RCSB)**。PDB 形式に収まらない大きなエントリでは mmCIF だけになります |
+| **Server** | 取得元。**RCSB** (既定) / **PDBe** / **PDBj** / **PDB-REDO** |
+| **Format** | **mmCIF** (既定) か **PDB**。PDB 形式に収まらない大きなエントリでは mmCIF だけになります |
+
+**PDB-REDO** は、PDB-REDO が再精密化した X 線構造のエントリだけを取得できます。
+**Server** は座標の取得元だけを決めます。密度マップの取得元は次の節の **Source** で選びます。
 
 座標を取得すると、ファイルを開くときと同じく、Object 名と Renderer を指定する画面が出ます。
 Object 名の既定は PDB ID の小文字です。
@@ -72,7 +86,7 @@ Object 名の既定は PDB ID の小文字です。
 | 項目 | 説明 |
 |---|---|
 | **&lt;EMDB ID&gt; map** | そのマップを取得します (既定は ON)。エントリに複数のマップがあれば、マップごとに行が並びます。行の下に、ファイルのサイズ・格子の大きさ・推奨レベルが表示されます |
-| **Source** | 取得元。**wwPDB** (既定) か **EBI** |
+| **Source** | 取得元。**wwPDB** (既定) / **EBI** / **PDBj** |
 
 取得したマップは等値面 (isosurf) で表示されます。レベルは、登録者が推奨する等高線レベルです。
 推奨レベルが無いマップは、格子点の値の上位 1 % を囲むレベルになります
@@ -84,6 +98,7 @@ Object 名の既定は PDB ID の小文字です。
 
 ## キーワードで探す
 
+キーワードで探せるのは、**Database** が **PDB / EMDB** のときだけです。
 入力欄に ID 以外の文字列を入れると、「Press Enter to search the PDB for these keywords.」と
 表示されます。++enter++ を押すか **Search** を押すと、RCSB の全文検索でエントリを探します。
 
@@ -102,10 +117,43 @@ Method や Sort を変えると、同じキーワードで検索し直します�
 入力欄にフォーカスを置いたまま、++arrow-up++ / ++arrow-down++ でも行を選べます。
 ID を入力し直すと、一覧は閉じます。
 
+## AlphaFold DB
+
+**Database** で **AlphaFold DB** を選ぶと、AlphaFold DB の予測構造を取得できます。
+入力欄には次のどれかを入力します。
+
+| 入力 | 例 |
+|---|---|
+| UniProt accession | `P29474` |
+| UniProt accession とアイソフォーム番号 | `Q8N9C0-2` |
+| AlphaFold ID | `AF-P29474-F1-v6` |
+
+`NOS3_HUMAN` のような UniProt のエントリ名は使えません。accession (`P29474`) を入力してください。
+
+入力すると、エントリの情報が入力欄の下に表示されます。タイトルはタンパク質の名前で、
+その下に「遺伝子 | 生物種 | 残基数 | mean pLDDT」が表示されます。
+取得の項目は **Model** の **Format** (**mmCIF** (既定) か **PDB**) だけです。
+
+座標を取得すると、PDB のエントリと同じく Object 名と Renderer を指定する画面が出ます。
+Object 名の既定は `AF-<accession>-F1` です。読み込んだ構造は、予測の信頼度 (pLDDT) に応じた色で
+表示されます (→ [Coloring](coloring.md#bfacocc))。
+
+## PubChem
+
+**Database** で **PubChem** を選ぶと、PubChem の化合物の 3D 配座を SDF 形式で取得できます。
+入力欄には化合物の ID (CID、数字) を入力します (例: `2244`)。化合物名では取得できません。
+
+入力すると、化合物の名前と「分子式 | 分子量 | IUPAC 名」が入力欄の下に表示されます。
+
+取得した化合物は、Object 名と Renderer を指定する画面を出さずに、`pubchem_<CID>` という名前の
+Object として ball &amp; stick ([ballstick](renderers/ballstick.md)) で表示されます。
+
 ## Console から取得する
 
 [Console](plugins/console/index.md) の native モードでは、`fetch_pdb` (`fetch`) で座標を、
-`fetch_map` で結晶構造の密度マップを、`fetch_emdb` で電顕マップを取得できます
+`fetch_map` で結晶構造の密度マップを、`fetch_emdb` で電顕マップを取得できます。
+PDBe / PDBj / PDB-REDO / AlphaFold DB / PubChem からは `fetch_entry` で、URL にある
+CCP4 / MRC 形式のマップは `fetch_map_url` で取得できます
 (→ [コマンド一覧](plugins/console/commands.md))。
 
 ## 関連項目
@@ -117,4 +165,4 @@ ID を入力し直すと、一覧は閉じます。
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.1.555*
