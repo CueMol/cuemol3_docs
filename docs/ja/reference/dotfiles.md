@@ -70,6 +70,48 @@ CueMol3 を起動すると、最初のシーンができたあとに、次のフ
 - ルートの `<styles id="...">` に id が無いファイル、id が `user` のファイル、読み込みに失敗した
   ファイルは読み込みません (この場合、画面にはメッセージは出ず、ログにだけ記録されます)。
 
+## 例: CueMol2 と同じ既定の色を使う
+
+CueMol2 では、読み込んだ分子はどれも同じ 4 色 (sheet が SteelBlue、helix が khaki、
+nucleic が yellow、それ以外が FloralWhite) で塗られていました。CueMol3 では分子ごとに
+違う色が付きます (→ [Coloring](coloring.md#paint))。CueMol2 と同じ色で表示したいときは、
+次のファイルを `~/.cuemol/styles/cuemol2_colors.xml` として置き、CueMol3 を起動し直します。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<styles id="cuemol2_colors">
+  <!-- ribbon / cartoon / tube / spline / tracestick -->
+  <style id="DefaultHSCPaint" type="renderer">
+    <coloring type="PaintColoring">
+      <paint sel="sheet" color="SteelBlue"/>
+      <paint sel="helix" color="khaki"/>
+      <paint sel="nucleic" color="yellow"/>
+      <paint sel="*" color="FloralWhite"/>
+    </coloring>
+  </style>
+  <!-- nucl -->
+  <style id="DefaultNucl" type="renderer" defaultcolor="yellow"/>
+</styles>
+```
+
+ribbon / cartoon / tube / spline / tracestick は、既定で `DefaultHSCPaint` というスタイルで
+分子の色に従って塗られます。このファイルはそのスタイルを、CueMol2 の 4 色で塗る Paint に
+置き換えます。nucl は `DefaultNucl` の色を yellow にします。
+
+- 色が付くのは Renderer の側です。分子の側の着色 (Paint の **Default** や、`$molcol` で
+  分子の色に従う分子表面など) は、CueMol3 の分子ごとの色のままです。
+- Color パネルの Paint のサブメニューの **Molecule color** を選んだときも、分子の色ではなく
+  この 4 色になります。
+- スタイルで決まる色はシーンファイルに保存されません。このファイルを置く前に保存したシーンも
+  4 色で開きます。逆に、このファイルの無い環境で開くと、分子ごとの色で表示されます。
+- Renderer ごとに色を指定し直した場合は、そちらが優先されます (→ [スタイル](styles.md#値の優先順位))。
+- 元に戻すには、ファイルを削除して CueMol3 を起動し直します。
+
+!!! note
+    スタイルファイルの `<palette id="default_paint" value="..."/>` で分子の色のパレットを
+    切り替えることもできますが、どのパレットでも helix と sheet は同じ色になるので、
+    CueMol2 の配色にはなりません。
+
 ## 関連項目
 
 - [Console](plugins/console/index.md) / [PyM console](plugins/console/pymconsole.md) /
