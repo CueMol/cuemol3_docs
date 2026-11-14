@@ -9,9 +9,7 @@ CueMol3 には性格の異なる 2 つのボタン列があります。
 
 ![ウィンドウ上部のツールバー (ラベルが表示されている状態)](../../assets/images/ui/toolbar-tools/toolbar.webp){ .on-glb }
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): 分子ビュー左端のツールパレット (Distance ツール選択中、オプションのポップオーバーを開いた状態) -->
+![分子ビュー左端のツールパレット。Distance ツールを選び、計測ツールのオプションのつまみを開いたところ](../../assets/images/ui/toolbar-tools/tool-palette.webp){ width="292" .on-glb }
 
 ## ツールバー
 

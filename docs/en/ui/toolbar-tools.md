@@ -11,9 +11,7 @@ CueMol3 has two rows of buttons with different roles.
 
 ![The toolbar at the top of the window, with labels shown](../../assets/images/ui/toolbar-tools/toolbar.webp){ .on-glb }
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): the tool palette at the left edge of the molecular view (Distance tool selected, option popover open) -->
+![The tool palette at the left edge of the molecular view, with the Distance tool selected and the measurement tools' option handle open](../../assets/images/ui/toolbar-tools/tool-palette.webp){ width="292" .on-glb }
 
 ## Toolbar
 
