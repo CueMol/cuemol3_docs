@@ -14,8 +14,6 @@
 !!! info "撮影予定"
     このページには各タブのスクリーンショットを追加予定です。
 
-<!-- TODO(screenshot): Selection パネル内の選択ビルダー全景 (Named タブ) -->
-
 ## タブの構成
 
 | タブ | 役割 |
@@ -29,6 +27,8 @@ Named / History は「できあいの式を選ぶ」操作、Term / Mod は「�
 加工する」操作です。
 
 ## Named
+
+![Selection パネルの選択ビルダー。Named タブを開いたところ](../../assets/images/ui/selection-builder/named.webp){ width="267" .on-glb }
 
 先頭の **`all (*)`** (全原子) に続いて、定義済みの選択が 3 つの節に分かれて並びます。
 クリックすると**現在の選択を置き換えて**即座に適用されます

@@ -12,8 +12,6 @@ The result of an operation in the builder is always reflected in the input field
 !!! info "Screenshots planned"
     Screenshots of each tab will be added to this page.
 
-<!-- TODO(screenshot): The whole selection builder in the Selection panel (Named tab) -->
-
 ## Tab layout
 
 | Tab | Role |
@@ -26,6 +24,8 @@ The result of an operation in the builder is always reflected in the input field
 Named and History are for choosing a ready-made expression; Term and Mod are for building or modifying a selection.
 
 ## Named
+
+![The selection builder in the Selection panel, with the Named tab open](../../assets/images/ui/selection-builder/named.webp){ width="267" .on-glb }
 
 After **`all (*)`** (all atoms) at the top, the defined selections are listed in three sections. A click **replaces the current selection** and applies it immediately (in a popover, the popover then closes).
 
