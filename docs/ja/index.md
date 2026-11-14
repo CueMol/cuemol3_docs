@@ -12,6 +12,12 @@ CueMol2 の可視化エンジン (libcuemol2) をそのまま受け継ぎつつ�
     実務で安定して使いたい場合は、CueMol2 の安定版
     ([CueMol2 ドキュメントサイト](https://cuemol.github.io/cuemol2_docs/)) をご利用ください。
 
+!!! note "論文での引用"
+    CueMol3 を使った成果を論文などで発表する場合は、
+    [CueMol3 の論文](https://doi.org/10.26434/chemrxiv.15012002/v2)
+    (doi: 10.26434/chemrxiv.15012002/v2) を引用してください
+    (→ [引用の書式](getting-started/index.md#論文での引用))。
+
 ## はじめての方へ
 
 <div class="grid cards" markdown>

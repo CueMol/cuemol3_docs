@@ -108,6 +108,27 @@ CueMol は **MIT License** のもとで配布されています。**無保証**�
 - 非営利 (アカデミック) 組織のユーザーは、バイナリ・ソースコードともに無償で利用できます。
 - 営利組織のユーザーも無償で利用できますが、主な用途をご連絡いただけると幸いです。
 
+## 論文での引用
+
+CueMol3 を使って作成した図や解析結果を論文などで発表する場合は、次の論文を引用してください。
+
+> Ishitani, R. CueMol3: combining a web-based GUI with a native engine for high-performance
+> molecular visualization. *ChemRxiv* (2026).
+> doi: [10.26434/chemrxiv.15012002/v2](https://doi.org/10.26434/chemrxiv.15012002/v2)
+
+BibTeX:
+
+```bibtex
+@article{Ishitani2026CueMol3,
+  author  = {Ishitani, Ryuichiro},
+  title   = {{CueMol3}: combining a web-based {GUI} with a native engine for high-performance molecular visualization},
+  journal = {ChemRxiv},
+  year    = {2026},
+  doi     = {10.26434/chemrxiv.15012002/v2},
+  url     = {https://doi.org/10.26434/chemrxiv.15012002/v2}
+}
+```
+
 ## 次のステップ
 
 - [クイックツアー](quick-tour.md) — 起動から画像出力までの最短の流れ
