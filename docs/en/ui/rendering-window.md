@@ -18,7 +18,7 @@ If the window is already open, Image / Movie rendering... only switches the mode
 
 ## Window layout
 
-![The rendering window: the result image at the upper left, Render Settings on the right, and the run bar and log at the bottom](../../assets/images/ui/rendering-window/overview.webp){ .on-glb }
+![The rendering window: the result image at the upper left, Render Settings on the right, and the run bar and log at the bottom](../../assets/images/ui/rendering-window/overview.webp){ width="446" .on-glb }
 
 | Area | Contents |
 |---|---|

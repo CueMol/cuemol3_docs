@@ -16,7 +16,7 @@
 
 ## ウィンドウの構成
 
-![レンダリングウィンドウ。左上に結果の画像、右に Render Settings、下に実行バーとログ](../../assets/images/ui/rendering-window/overview.webp){ .on-glb }
+![レンダリングウィンドウ。左上に結果の画像、右に Render Settings、下に実行バーとログ](../../assets/images/ui/rendering-window/overview.webp){ width="446" .on-glb }
 
 | 領域 | 内容 |
 |---|---|
