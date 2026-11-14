@@ -1,9 +1,9 @@
-<!-- source: ja/reference/renderers/edge-lines.md @ 8d54764 -->
+<!-- source: ja/reference/renderers/edge-lines.md @ 777582f -->
 
 # Edge lines
 
 Edge lines draw lines (edge lines) along the outlines of rendered objects.
-This is a common property of all Renderers, set in the **Common**
+This is a common property of all Renderers, set in the **Edge lines**
 section of the property inspector. However, this setting is not shown for Renderers
 that have no faces and therefore no outline to draw
 (simple / trace / spline / contour / gpu_mapmesh, selection highlights, unit cells,
@@ -97,4 +97,4 @@ and can be applied together from the right-click menu of the scene tree
 
 ---
 
-*Verified against: CueMol3 2.3.21.544*
+*Verified against: CueMol3 3.0.2.560*

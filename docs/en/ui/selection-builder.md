@@ -9,11 +9,6 @@ The **selection builder** is a widget for assembling a selection through GUI ope
 
 The result of an operation in the builder is always reflected in the input field as a **selection expression**. The generated expression can be edited by hand as it is, so the builder is also a shortcut for learning the syntax.
 
-!!! info "Screenshots planned"
-    Screenshots of each tab will be added to this page.
-
-<!-- TODO(screenshot): The whole selection builder in the Selection panel (Named tab) -->
-
 ## Tab layout
 
 | Tab | Role |
@@ -26,6 +21,8 @@ The result of an operation in the builder is always reflected in the input field
 Named and History are for choosing a ready-made expression; Term and Mod are for building or modifying a selection.
 
 ## Named
+
+![The selection builder in the Selection panel, with the Named tab open](../../assets/images/ui/selection-builder/named.webp){ width="267" .on-glb }
 
 After **`all (*)`** (all atoms) at the top, the defined selections are listed in three sections. A click **replaces the current selection** and applies it immediately (in a popover, the popover then closes).
 
@@ -47,6 +44,8 @@ The history of previously applied selection expressions (up to 100 entries). A c
 The height of the Named / History lists depends on where they are placed. In the Selection panel the lists fill the rest of the panel; in a popover they fit into the free space on the side where it opened.
 
 ## Term
+
+![The Term tab with the keyword resid and the value 2:7. Each apply button shows the number of atoms the selection would have](../../assets/images/ui/selection-builder/term.webp){ width="262" .on-glb }
 
 Build a single condition (term) from a keyword and a value, then combine it with the current selection using the **apply buttons**.
 
@@ -74,8 +73,6 @@ The keywords include the following. The value field changes according to the key
 | all / none | Everything / empty | No value |
 
 Using Named / History as a keyword allows combinations such as "take the intersection with a defined selection" or "remove a history expression from the current selection".
-
-<!-- TODO(screenshot): Term tab (keyword resid, value 2:7, Set/Add/Sub/Intsec buttons) -->
 
 ## Mod
 

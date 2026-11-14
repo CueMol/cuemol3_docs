@@ -3,9 +3,7 @@
 ウィンドウ右側の**プロパティインスペクタ**は、シーンツリーで選んだ要素の設定を表示・編集する常設パネルです。
 CueMol2 の各種プロパティダイアログを置き換えるものです。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Renderer を選択した状態のインスペクタ (Properties タブ、Common セクション展開) -->
+![cartoon の Renderer を選んだときのインスペクタ (Properties タブ)](../../assets/images/ui/inspector/properties.webp){ width="206" .on-glb }
 
 ## CueMol2 との違い
 
@@ -34,7 +32,7 @@ CueMol2 の各種プロパティダイアログを置き換えるものです。
 
 ### Renderer
 
-Properties タブに **Common** セクション (基本設定とエッジライン) が表示されます。
+Properties タブの先頭に **Basic settings** と **Edge lines** のセクションが表示されます。
 不透明度・マテリアル・エッジラインの設定などをここで調整します。
 面を持たない Renderer (simple / trace / spline / contour など) では、エッジラインの設定は
 表示されません (→ [エッジライン](../reference/renderers/edge-lines.md))。
@@ -124,4 +122,4 @@ View メニューの **View property...** から開きます。Generic タブで
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 3.0.2.560*

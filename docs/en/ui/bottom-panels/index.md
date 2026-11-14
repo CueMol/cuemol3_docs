@@ -4,9 +4,7 @@
 
 The panel at the bottom of the window has four tabs by default.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): The four bottom panel tabs (Console / Output / Sequence / Animation), with residues selected in the Sequence tab -->
+![The bottom panel, with residues selected in the Sequence tab (the Trajectory tab at the right end is added by the MD Tools plugin)](../../../assets/images/ui/bottom-panels/sequence-tab.webp){ width="598" .on-glb }
 
 | Tab | Contents |
 |---|---|

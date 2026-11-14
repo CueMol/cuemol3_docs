@@ -7,10 +7,6 @@
 Settings &gt; Plugins &gt; Installed で有効にしてください
 (→ [プラグイン](../../reference/plugins/index.md))。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Trajectory パネル (ブロックが数個並び、再生位置が途中にある状態) -->
-
 ## トラジェクトリを開く
 
 **File &gt; Open MD Trajectory...** では、トポロジーのファイル (`.gro` / `.prmtop` / `.psf`) と、
@@ -27,6 +23,8 @@ Settings &gt; Plugins &gt; Installed で有効にしてください
   座標は、そのあと座標やトラジェクトリのファイルをドロップして付けます。
 
 ## パネルの構成
+
+![Trajectory パネル。3 つの XTC ファイルがブロックとして並び、再生位置が 2 つ目のブロックの途中にある](../../../assets/images/ui/bottom-panels/trajectory.webp){ width="854" .on-glb }
 
 | 場所 | 内容 |
 |---|---|

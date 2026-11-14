@@ -1,7 +1,7 @@
 # Renderer 共通プロパティ
 
 すべての Renderer が持つプロパティです。プロパティインスペクタの **Properties** タブの
-先頭にある **Common** セクションに表示されます
+先頭にある **Basic settings** と **Edge lines** のセクションに表示されます
 (→ [プロパティインスペクタ](../../ui/inspector.md))。
 
 ## 基本設定
@@ -58,4 +58,4 @@ Color
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 3.0.2.560*

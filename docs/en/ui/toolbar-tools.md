@@ -9,12 +9,9 @@ CueMol3 has two rows of buttons with different roles.
 | Position | Top of the window | Floats at the left edge of the molecular view |
 | Role | Commands that are **executed immediately** when pressed | Switch the **operation mode** of the molecular view |
 
-!!! info "Screenshots planned"
-
-<!-- TODO(screenshot): the whole toolbar (with labels shown) -->
-<!-- TODO(screenshot): the tool palette at the left edge of the molecular view (Distance tool selected, option popover open) -->
-
 ## Toolbar
+
+![The toolbar at the top of the window, with labels shown](../../assets/images/ui/toolbar-tools/toolbar.webp){ .on-glb }
 
 | Button | Action | Corresponding menu item |
 |---|---|---|
@@ -41,6 +38,8 @@ The text of each entry is generated from the recorded operations and shows, for 
 (→ [Recording and replaying operations](../reference/actions.md)).
 
 ## Tool palette
+
+![The tool palette at the left edge of the molecular view, with the Distance tool selected and the measurement tools' option handle open](../../assets/images/ui/toolbar-tools/tool-palette.webp){ width="292" .on-glb }
 
 A vertical row of buttons at the left edge of the molecular view. It switches the meaning of clicks and drags in the molecular view.
 The cursor shape also changes according to the selected tool.

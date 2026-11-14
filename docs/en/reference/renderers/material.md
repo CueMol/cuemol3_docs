@@ -1,9 +1,9 @@
-<!-- source: ja/reference/renderers/material.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/material.md @ 777582f -->
 
 # Material
 
 Separately from color, you can specify a **material** (surface finish) for the 3D objects drawn by a Renderer.
-It is a common property of all Renderers, and is set in the **Common**
+It is a common property of all Renderers, and is set in the **Basic settings**
 section of the property inspector.
 
 !!! note "Effective only in ray tracing"
@@ -54,7 +54,7 @@ If a material name that does not exist is specified, `default` is used.
 
 ### For the whole Renderer
 
-Specify it in **Material** in the **Common** section of the property inspector.
+Specify it in **Material** in the **Basic settings** section of the property inspector.
 It is empty (unspecified) by default, in which case the `default` material is applied.
 
 ### Per color
@@ -102,4 +102,4 @@ A material cannot be specified on its own, so always specify it together with a 
 
 ---
 
-*Verified against: CueMol3 2.3.7.489*
+*Verified against: CueMol3 3.0.2.560*

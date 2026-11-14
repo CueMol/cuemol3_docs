@@ -14,7 +14,7 @@ If you need stable behavior, use CueMol2
 
 | Feature | Status |
 |---|---|
-| **Detailed settings for each Renderer type** | The Properties tab of the property inspector has a Common section and a dedicated section for each Renderer type. Nested properties that do not appear there (such as the cross-section shape of cartoon) can be edited in the **Generic** tab |
+| **Detailed settings for each Renderer type** | The Properties tab of the property inspector has the common sections (Basic settings / Edge lines) and a dedicated section for each Renderer type. Nested properties that do not appear there (such as the cross-section shape of cartoon) can be edited in the **Generic** tab |
 | **Code signing** | macOS builds are ad-hoc signed only (no Developer ID signing or notarization), and Windows builds are unsigned. Both require a manual workaround on first launch → [Installation](../install/index.md#code-signing-status-of-the-release-assets) |
 
 ## Known issues
