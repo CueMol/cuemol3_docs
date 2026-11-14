@@ -19,8 +19,8 @@ Pattern
     | Pattern | 動き |
     |---|---|
     | **Rock** | Axis のまわりの揺動 |
-    | **Nutate** | 視線が円を描くように回る |
-    | **Wobble** | 8 の字を描くように揺れる |
+    | **Nutate** | 視線が円を描くように回転 |
+    | **Wobble** | 8 の字を描くように揺動 |
 
 Axis
 :   揺らす軸。**X axis** / **Y axis** (既定) / **Z axis** か、**Cartesian** で
