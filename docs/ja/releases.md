@@ -39,14 +39,11 @@
   → [ChX console](reference/plugins/console/chx_console.md) /
   [PyM console](reference/plugins/console/pymconsole.md)
 
-### Styles ビューと Explorer
+### Styles ビュー
 
 - **アクティビティバーに Styles ビューが加わりました。** シーンから見えるスタイルセットを名前を探す順に
   並べ、選んだスタイルセットの名前付きの色 (**Colors**) と名前付き選択 (**Selections**) をその場で
   編集できます。スタイルセットはシーンツリーに表示されなくなりました
-- アプリに同梱のスタイルセットは読み取り専用になりました。`user` のスタイルセットは編集できます
-- **Explorer に Camera パネルと View パネルが入りました** (上から Scene / Camera / Color / View)。
-  アクティビティバーの View は無くなりました
   → [サイドパネル](ui/side-panels.md#styles)
 
 ### MD トラジェクトリ (MD Tools)
@@ -79,8 +76,6 @@
       PSF を開き、`.coor` をドロップして付け直してください
     - **Console の native モードの `load_namd` は `load_psf` になりました** (PSF を開き、`coordFile` で
       `.coor` を指定します)
-    - アプリに同梱のスタイルセットは編集できなくなりました。色や選択を足すときは、シーンのスタイルセットか
-      `user` のスタイルセットに書いてください
 
 ## 3.0.1.555 (2026-11-10)
 
