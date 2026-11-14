@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/symmetry.md @ 773364a -->
+<!-- source: ja/tutorials/symmetry.md @ 8d54764 -->
 
 # Displaying symmetry mates and the unit cell
 

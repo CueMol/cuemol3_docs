@@ -21,33 +21,33 @@
 
 Map kind
 :   このマップの種類 (*Crystallographic* / *Cryo-EM*)。読み取り専用で、
-    [DensityMap](../objects/densitymap.md#マップの種類-map-type) の **Map type** の判別結果です
+    [DensityMap](../objects/densitymap.md#マップの種類-map-type) の **Map type** の判別結果です。
 
 Region
 :   表示する範囲。*Auto* (既定) は、結晶学的マップでは *Box around center*、
     クライオ電子顕微鏡マップでは *Full map* になります。
     *Box around center* はビュー中心の周りだけを描き、視点の移動に追従します。
-    *Full map* はマップ全体を描きます
+    *Full map* はマップ全体を描きます。
 
 Level of detail
 :   格子を何点おきに読むか。*Auto* (既定) は、*Full map* のときは描く範囲の格子数が
     **LoD budget** に収まる最小の値 (2 の冪) を選び、*Box around center* のときは
-    全格子点を使います。*1 (full resolution)* から *8* までを直接指定することもできます
+    全格子点を使います。*1 (full resolution)* から *8* までを直接指定することもできます。
 
 LoD budget
 :   *Auto* の **Level of detail** が収めようとする格子数。単位の 1 Mcell は
     約 100 万格子点です。大きくすると細かくなりますが描画が重くなります
-    (既定は 16 Mcell)。**Region** が *Full map* のときだけ表示されます
+    (既定は 16 Mcell)。**Region** が *Full map* のときだけ表示されます。
 
 Refine on zoom
 :   ON (既定) にすると、描く範囲を視点の周りに絞り込み、その分だけ細かく描き直します。
     引いて見ているときはマップ全体が粗く、拡大した部分は細かくなります。
-    **Region** が *Full map* のときだけ表示されます
+    **Region** が *Full map* のときだけ表示されます。
 
 Cap mode
 :   等値面が表示範囲の境界で切れる箇所を、面で閉じるかどうか。*Auto* (既定) は、
     **Region** が *Full map* のときと生成した表面 Object では閉じ、*Box around center* の
-    ときは開いたままにします。*On* で常に閉じ、*Off* で常に開いたままにします
+    ときは開いたままにします。*On* で常に閉じ、*Off* で常に開いたままにします。
 
 **Max grid size** と **Use periodic boundary** は、**Region** が
 *Box around center* のときだけ表示されます。

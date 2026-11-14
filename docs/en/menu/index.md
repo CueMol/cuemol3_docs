@@ -1,4 +1,4 @@
-<!-- source: ja/menu/index.md @ 6cacee7 -->
+<!-- source: ja/menu/index.md @ 8d54764 -->
 
 # Menu reference
 

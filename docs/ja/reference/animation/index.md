@@ -20,7 +20,7 @@ Animation パネルの追加メニューから、次の要素を追加できま�
 | Show / Hide | [ShowHideAnim](showhide.md) | Renderer をフェードイン / フェードアウトさせる |
 | Slide in / Slide out | [SlideInOutAnim](slideinout.md) | Renderer をスライドさせて出し入れする |
 | Mol morphing | [MolAnim](molanim.md) | 2 つの構造の間を補間して変形させる |
-| No operation | — | 何もしない要素。時間の間隔を空けるために使います |
+| No operation | — | 何もしない要素。時間の間隔を空けるために使います。 |
 
 ## 共通のプロパティ
 
@@ -28,10 +28,10 @@ Animation パネルの追加メニューから、次の要素を追加できま�
 シーンツリーまたはタイムラインで要素を選ぶと、インスペクタに表示されます。
 
 Name
-:   要素の名前。空にしたり、ほかの要素と同じ名前にしたりすることはできません
+:   要素の名前。空にしたり、ほかの要素と同じ名前にしたりすることはできません。
 
 Disabled
-:   ON にするとその要素は再生されません
+:   ON にするとその要素は再生されません。
 
 Relative to
 :   開始時刻の基準。*(absolute)* でタイムラインの先頭からの絶対時刻になり、ほかの要素を
@@ -41,14 +41,14 @@ Relative to
 
 Start time
 :   開始時刻。ドラッグしている間はタイムラインのストリップが追従し、離した時点で
-    1 回の Undo になります (→ [時刻の入力](../../ui/inspector.md#時刻の入力))
+    1 回の Undo になります (→ [時刻の入力](../../ui/inspector.md#時刻の入力))。
 
 Duration
-:   継続時間。入力の仕方は Start time と同じです
+:   継続時間。入力の仕方は Start time と同じです。
 
 Quadric
 :   時間に対する変化の加減速の度合い。値を変えると、
-    等速ではなく緩やかに始まって緩やかに終わるような動きになります
+    等速ではなく緩やかに始まって緩やかに終わるような動きになります。
 
 要素は Animation パネルで Cut / Copy / Paste できます
 (→ [Animation パネル](../../ui/bottom-panels/animation.md#コピー--ペースト))。

@@ -26,14 +26,14 @@ macOS では、アプリケーション名 (**CueMol3**) のメニューに次�
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
-| About CueMol3 | バージョン情報を表示します | |
-| Check for Updates... | 新しいリリースを確認し、あればアプリ内で更新します (→ [アップデート](../install/update.md)) | |
-| Preferences... | Settings タブを開きます (すでに開いていればそのタブに切り替えます) | ++cmd+comma++ |
+| About CueMol3 | バージョン情報を表示します。 | |
+| Check for Updates... | 新しいリリースを確認し、あればアプリ内で更新します (→ [アップデート](../install/update.md))。 | |
+| Preferences... | Settings タブを開きます (すでに開いていればそのタブに切り替えます)。 | ++cmd+comma++ |
 | Services | macOS の Services メニュー | |
-| Hide CueMol3 | ウィンドウを隠します | ++cmd+h++ |
-| Hide Others | 他のアプリのウィンドウを隠します | ++cmd+opt+h++ |
-| Show All | すべてのウィンドウを再表示します | |
-| Quit CueMol3 | CueMol3 を終了します。未保存のシーンがある場合は確認します | ++cmd+q++ |
+| Hide CueMol3 | ウィンドウを隠します。 | ++cmd+h++ |
+| Hide Others | 他のアプリのウィンドウを隠します。 | ++cmd+opt+h++ |
+| Show All | すべてのウィンドウを再表示します。 | |
+| Quit CueMol3 | CueMol3 を終了します。未保存のシーンがある場合は確認します。 | ++cmd+q++ |
 
 ## 各メニュー
 
@@ -55,7 +55,7 @@ macOS では、アプリケーション名 (**CueMol3**) のメニューに次�
 
 | 記号 | 意味 |
 |---|---|
-| <span class="badge-wip">開発中</span> | メニューには存在しますが、**現在のバージョンでは動作しません**。選んでも何も起こりません |
+| <span class="badge-wip">開発中</span> | メニューには存在しますが、**現在のバージョンでは動作しません**。選んでも何も起こりません。 |
 | *(CueMol3 で追加)* | CueMol2 にはなく、CueMol3 で新設された項目 |
 | *(CueMol3 で改名)* | CueMol2 から名前が変わった項目 |
 

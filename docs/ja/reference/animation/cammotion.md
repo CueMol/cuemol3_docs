@@ -13,19 +13,19 @@
 
 Target camera
 :   移動先のカメラ。あらかじめ Camera パネルにカメラとして
-保存しておく必要があります (→ [カメラ](../camera.md))
+保存しておく必要があります (→ [カメラ](../camera.md))。
 
 Ignore rotation
-:   ON にすると視点の向きを変化させません
+:   ON にすると視点の向きを変化させません。
 
 Ignore center
-:   ON にすると視点の中心を変化させません
+:   ON にすると視点の中心を変化させません。
 
 Ignore zoom
-:   ON にすると拡大率を変化させません
+:   ON にすると拡大率を変化させません。
 
 Ignore slab
-:   ON にするとスラブ (表示する奥行きの範囲) を変化させません
+:   ON にするとスラブ (表示する奥行きの範囲) を変化させません。
 
 <!-- TODO(content): cammotion の各項目の値の範囲・既定値を
      AnimElementInspector.tsx と C++ の qif 定義から起こす -->

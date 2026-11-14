@@ -26,11 +26,11 @@
 
 まず、分子がその場で回り続ける定番のアニメーションを作ります。
 
-1. パネルの追加メニューから **Simple spin** を選びます
-2. ストリップが追加されるので、選択して右側のインスペクタを確認します
+1. パネルの追加メニューから **Simple spin** を選びます。
+2. ストリップが追加されるので、選択して右側のインスペクタを確認します。
 3. **Rotation angle** (回転角) と **Spin axis** (回転軸) を調整します。
-   360° にすると 1 周して元の向きに戻ります (→ [SimpleSpin](../reference/animation/simplespin.md))
-4. 帯をドラッグすると開始位置を、端をドラッグすると長さ (回転にかける時間) を変えられます
+   360° にすると 1 周して元の向きに戻ります (→ [SimpleSpin](../reference/animation/simplespin.md))。
+4. 帯をドラッグすると開始位置を、端をドラッグすると長さ (回転にかける時間) を変えられます。
 
 <!-- TODO(screenshot): Simple spin のストリップとインスペクタ (Rotation angle / Spin axis) -->
 
@@ -46,12 +46,12 @@
 といった演出に使います。
 
 1. 分子ビューで始点にしたい視点に合わせ、左サイドパネルの **Explorer &gt; Camera** パネルで
-   **New camera from view** を押して保存します (→ [カメラ](../reference/camera.md))
-2. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します
-3. タイムラインのヘッダで、**開始カメラ**に始点のカメラを指定します
-4. 追加メニューから **Camera motion** を選びます
+   **New camera from view** を押して保存します (→ [カメラ](../reference/camera.md))。
+2. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します。
+3. タイムラインのヘッダで、**開始カメラ**に始点のカメラを指定します。
+4. 追加メニューから **Camera motion** を選びます。
 5. 追加されたストリップを選び、インスペクタの **Target camera** に終点のカメラを
-   指定します (→ [CamMotion](../reference/animation/cammotion.md))
+   指定します (→ [CamMotion](../reference/animation/cammotion.md))。
 
 再生すると、ストリップの区間で視点が始点から終点へ補間されます。開始カメラを
 指定しておくと、再生を押したときの視点にかかわらず、常にそのカメラの視点から
@@ -64,9 +64,9 @@
 Show / Hide は、ストリップの区間で Renderer が徐々に**フェードイン / フェードアウト**
 するアニメーションです。
 
-1. 追加メニューから **Show** (フェードイン) または **Hide** (フェードアウト) を選びます
+1. 追加メニューから **Show** (フェードイン) または **Hide** (フェードアウト) を選びます。
 2. インスペクタで、対象の Renderer をチェックリストから選びます
-   (→ [Show / Hide](../reference/animation/showhide.md))
+   (→ [Show / Hide](../reference/animation/showhide.md))。
 
 画面外からの移動を伴って出し入れする **Slide in / Slide out** もあります
 (→ [SlideInOutAnim](../reference/animation/slideinout.md))。また、要素を置いて
@@ -80,23 +80,23 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 
 ### 2 つの構造を読み込む
 
-1. **File &gt; New Tab** を選び、**New Scene** で新しいシーンを作ります
+1. **File &gt; New Tab** を選び、**New Scene** で新しいシーンを作ります。
 2. **File &gt; Get PDB...** で `1TND` を取得します。Renderer の指定画面では **trace** を選び、
    **Selection** に `c; A` を指定します (1TND には同じ分子が 3 つ (chain A / B / C)
-   含まれているため、chain A だけを表示します)
+   含まれているため、chain A だけを表示します)。
 3. 同様に **File &gt; Get PDB...** で `1TAG` も取得します (Renderer は **trace**。
-   こちらは chain A のみなので Selection の指定は不要です)
+   こちらは chain A のみなので Selection の指定は不要です)。
 
 ### 1TAG を 1TND に重ね合わせる
 
 2 つの構造は分子としてはほとんど同じですが、PDB エントリに含まれる分子の位置は
 ばらばらです。モーフィングの補間は座標をそのまま使うため、まず両者を重ね合わせます。
 
-1. **Tools &gt; Molecular superposition...** を開きます
-2. **Algorithm** の **Method** で **SSM** を選びます
-3. **Reference** の **Molecule** で 1TND を選び、**Selection** に `c; A` を指定します
-4. **Moving** の **Molecule** で 1TAG を選びます
-5. **OK** を押すと、1TAG が 1TND の chain A に重なる位置へ移動します
+1. **Tools &gt; Molecular superposition...** を開きます。
+2. **Algorithm** の **Method** で **SSM** を選びます。
+3. **Reference** の **Molecule** で 1TND を選び、**Selection** に `c; A` を指定します。
+4. **Moving** の **Molecule** で 1TAG を選びます。
+5. **OK** を押すと、1TAG が 1TND の chain A に重なる位置へ移動します。
 
 重ね合わせの結果 (RMSD や対応づけられた残基数) は、下部パネルの **Output** のログで
 確認できます。なお SSM は二次構造の対応づけで重ね合わせる方式のため、
@@ -104,24 +104,24 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 
 ### MorphMol に変換してフレームを追加する
 
-1. **Tools &gt; Mol morphing animation...** を開きます
-2. **Target** で、変化の始点にする 1TND を選びます
+1. **Tools &gt; Mol morphing animation...** を開きます。
+2. **Target** で、変化の始点にする 1TND を選びます。
 3. **Convert to MorphMol** を押します。分子が、複数のフレーム (構造) を保持できる
-   **MorphMol** に変換されます
+   **MorphMol** に変換されます。
 4. **Add mol...** を押し、変化の終点となる 1TAG を選びます。座標がフレームとして
-   コピーされます
+   コピーされます。
 5. フレームの一覧に、元の構造 (`(this)`) と追加した構造が並んだことを確認して、
-   ダイアログを閉じます
+   ダイアログを閉じます。
 
 コピー元の 1TAG の Object はもう使わないので、シーンツリーで削除するか
 非表示にして構いません。
 
 ### タイムラインに載せて再生する
 
-1. Animation パネルの追加メニューから **Mol morphing** を選びます
+1. Animation パネルの追加メニューから **Mol morphing** を選びます。
 2. 追加されたストリップを選び、インスペクタの **Target MorphMol** で
-   変換した 1TND を指定します (→ [MolAnim](../reference/animation/molanim.md))
-3. 再生すると、GTP 結合型と GDP 結合型の間で分子が変形します
+   変換した 1TND を指定します (→ [MolAnim](../reference/animation/molanim.md))。
+3. 再生すると、GTP 結合型と GDP 結合型の間で分子が変形します。
 
 1TND 側にしかない chain B・C やリガンド・水分子は、対応が取れないため
 静止したままですが、chain A の trace しか表示していないため見えません。
@@ -154,13 +154,13 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 **Rendering &gt; Movie rendering...** を選ぶと、レンダリングウィンドウが
 動画 (Movie) モードで開きます (→ [レンダリングウィンドウ](../ui/rendering-window.md))。
 
-1. **Target** に対象のビューを選びます。**Backend** は既定の **Umbreon** のままで構いません
-2. **Image** タブでサイズ (例: **HD1080 (1920×1080)**) を選びます
+1. **Target** に対象のビューを選びます。**Backend** は既定の **Umbreon** のままで構いません。
+2. **Image** タブでサイズ (例: **HD1080 (1920×1080)**) を選びます。
 3. **Start Render** を押すと、フレームを 1 枚ずつレンダリングし、完了すると
    ffmpeg で動画ファイルにエンコードされます (macOS / Windows の配布物には同梱、
    → [外部ツールの設定](../install/external-tools.md))
 4. 出力は既定では一時フォルダに作られます。**Save movie as...** で
-   完成した動画を好きな場所に保存します
+   完成した動画を好きな場所に保存します。
 
 **Frame rate** は通常 24〜30 で十分です。動画のレンダリングには
 「フレーム数 × 静止画 1 枚の時間」がかかるため、サイズや品質は先に静止画 1 枚で

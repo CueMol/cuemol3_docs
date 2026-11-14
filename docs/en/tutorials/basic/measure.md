@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/measure.md @ 6cacee7 -->
+<!-- source: ja/tutorials/basic/measure.md @ 8d54764 -->
 
 # Measurement and interaction display
 

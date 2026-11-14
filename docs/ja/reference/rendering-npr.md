@@ -27,11 +27,11 @@ Detail タブでスタイルの中身を編集します。
 |---|---|---|
 | Style | richardson | 描き味のテンプレート (下記) |
 | Coloring | Style default | インクと紙の色の組み合わせ方 (下記) |
-| Mark density | 1.0 (0.25〜4) | 線・点の間隔をまとめて割る倍率。2 にすると本数・点の数が倍になります |
+| Mark density | 1.0 (0.25〜4) | 線・点の間隔をまとめて割る倍率。2 にすると本数・点の数が倍になります。 |
 | Mark width | 1.0 (0.25〜4) | 線の太さと点の大きさの倍率 |
-| Custom ink color / Ink color | OFF / `#000000` | ON のときだけインクの色を明示します |
-| Custom paper color / Paper color | OFF / `#ffffff` | ON のときだけ紙の色を明示します |
-| Default contour edges | ON | エッジラインを設定していない Renderer にも輪郭線を描きます |
+| Custom ink color / Ink color | OFF / `#000000` | ON のときだけインクの色を明示します。 |
+| Custom paper color / Paper color | OFF / `#ffffff` | ON のときだけ紙の色を明示します。 |
+| Default contour edges | ON | エッジラインを設定していない Renderer にも輪郭線を描きます。 |
 
 Mark density と Mark width は、スタイルが持つレイヤごとの値に**一律に掛かる倍率**です。
 複数のレイヤからなるスタイルでも、レイヤ間の間隔の比は保たれます。
@@ -115,7 +115,7 @@ Render タブで選んだ Style を**テンプレートとして読み込み**�
 | Width | 1.1 | 0.1〜8 px | 線の太さ (Line のみ) |
 | Dot scale | 1 | 0.1〜8 | 点の大きさ (Dot screen / Stipple のみ) |
 | Tone high | 0.95 | 0〜1 | 最初のマークが現れる明るさ |
-| Tone low | 0.55 | 0〜1 | 最後のマークが現れる明るさ。これより暗くてもマークは増えません |
+| Tone low | 0.55 | 0〜1 | 最後のマークが現れる明るさ。これより暗くてもマークは増えません。 |
 | Fade (0 = auto) | 16 | 0〜64 | マークが現れてから最大の大きさになるまでの速さ。0 で自動 |
 | Opacity | 1 | 0〜1 | レイヤの不透明度 |
 | Ink darkness | 1 | 0〜1 | インクの濃さ |
@@ -141,7 +141,7 @@ Render タブで選んだ Style を**テンプレートとして読み込み**�
 
 | 項目 | 既定値 | 範囲 | 説明 |
 |---|---|---|---|
-| Strength | 1 | 0.25〜3 | インク量の全体的な増減。上げると全体が濃くなります |
+| Strength | 1 | 0.25〜3 | インク量の全体的な増減。上げると全体が濃くなります。 |
 | Curve | 1 | 0.5〜2 | 中間調の寄せ方 |
 
 **Advanced** には、階調の作り方 (Diffuse weight / Ambient / Wrap / Contour darkening /

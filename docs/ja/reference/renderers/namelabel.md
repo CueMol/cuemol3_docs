@@ -26,10 +26,10 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Format | (空) | ラベルの文字の書式。空のときは `{chain} {resn}{resi} {name}` の形になります |
+| Format | (空) | ラベルの文字の書式。空のときは `{chain} {resn}{resi} {name}` の形になります。 |
 | Color | 黄 | ラベルの文字の色 |
-| Label on top | OFF | ON にすると、手前にある形状に隠されず、常にラベルが見えます |
-| Max labels | 50 | ラベルの数の上限 (1〜1000)。超えると古いものから消えます |
+| Label on top | OFF | ON にすると、手前にある形状に隠されず、常にラベルが見えます。 |
+| Max labels | 50 | ラベルの数の上限 (1〜1000)。超えると古いものから消えます。 |
 | Horizontal align | Left | ラベルのどの位置を原子に合わせるか (横方向: Left / Center / Right) |
 | Vertical align | Bottom | ラベルのどの位置を原子に合わせるか (縦方向: Top / Middle / Bottom) |
 | Offset X / Offset Y | 0 px | ラベルを原子の位置から画面上でずらす量 (-100〜100 px) |
@@ -49,7 +49,7 @@
 | 項目 | 既定値 | 説明 |
 |---|---|---|
 | Font size | 12 pt | 文字の大きさ (1〜72 pt) |
-| Font name | sans-serif | システムにインストールされているフォントの一覧から選びます |
+| Font name | sans-serif | システムにインストールされているフォントの一覧から選びます。 |
 | Font style | Normal | Normal / Italic |
 | Font weight | Normal | Normal / Bold |
 

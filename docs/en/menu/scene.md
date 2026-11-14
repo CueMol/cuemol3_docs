@@ -1,4 +1,4 @@
-<!-- source: ja/menu/scene.md @ 6cacee7 -->
+<!-- source: ja/menu/scene.md @ 8d54764 -->
 
 # Scene menu
 

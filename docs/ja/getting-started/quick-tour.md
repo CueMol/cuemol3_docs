@@ -20,12 +20,12 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
     ![ツールバーの Get PDB ボタン](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="94" }
 
-2. **PDB or EMDB ID, or keywords** に `1CRN` と入力し、**Download** を押します
+2. **PDB or EMDB ID, or keywords** に `1CRN` と入力し、**Download** を押します。
 
     ![Get PDB ダイアログ](../../assets/images/getting-started/quick-tour/2-getpdb.webp){ width="380" .on-glb }
 
 3. 読み込みのオプション画面が出るので、**Renderer type** から **simple** を選んで
-   **Open** を押します
+   **Open** を押します。
 
     ![読み込みのオプション画面 (Open File Options)](../../assets/images/getting-started/quick-tour/2-open-options.webp){ width="480" .on-glb }
 
@@ -48,11 +48,11 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 二次構造がわかるように、**ribbon** を追加してみます。
 
 1. 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー) で Object (`1crn`) を
-   右クリックし、**New Renderer** を選びます
+   右クリックし、**New Renderer** を選びます。
 
     ![シーンツリーの Object 行](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="237" .on-glb }
 
-2. **Renderer type** から **ribbon** を選び、**Create** を押します
+2. **Renderer type** から **ribbon** を選び、**Create** を押します。
 
     ![New Renderer ダイアログ](../../assets/images/getting-started/quick-tour/3-new-renderer.webp){ width="480" .on-glb }
 
@@ -64,17 +64,17 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 (→ [選択式の文法](../reference/selection.md))。ここでは式を手で書くかわりに、
 [選択ビルダー](../ui/selection-builder.md)で組み立てます。
 
-1. 同じ手順で Object (`1crn`) を右クリックし、**New Renderer** を選びます
-2. **Renderer type** から **ballstick** を選びます
-3. **Selection** にチェックを入れます
-4. 選択式の欄の右端の ▼ を押して、選択ビルダーを開きます
-5. **Term** タブに切り替え、キーワードから **resn** (残基名) を選びます
-6. 値の欄の ▼ から候補を開き、**CYS** を選びます
-7. **Set** を押します。選択式の欄に `resn CYS` と入力されます
+1. 同じ手順で Object (`1crn`) を右クリックし、**New Renderer** を選びます。
+2. **Renderer type** から **ballstick** を選びます。
+3. **Selection** にチェックを入れます。
+4. 選択式の欄の右端の ▼ を押して、選択ビルダーを開きます。
+5. **Term** タブに切り替え、キーワードから **resn** (残基名) を選びます。
+6. 値の欄の ▼ から候補を開き、**CYS** を選びます。
+7. **Set** を押します。選択式の欄に `resn CYS` と入力されます。
 
     ![選択ビルダーの Term タブで resn CYS を組み立てたところ](../../assets/images/getting-started/quick-tour/3-selection-builder.webp){ width="228" .on-glb }
 
-8. **Create** を押します
+8. **Create** を押します。
 
     ![Selection を指定した New Renderer ダイアログ](../../assets/images/getting-started/quick-tour/3-ballstick-selection.webp){ width="480" .on-glb }
 
@@ -89,7 +89,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
 - Renderer は種類を選ぶと**すぐに既定値で作成**され、細かい設定は後から
   インスペクタで調整します (この方針は [操作パラダイムの変更](../changes/ui-paradigm.md) を参照)
-- 定義済みの組み合わせ (プリセット) を選ぶと、複数の Renderer をまとめたグループが一度に作られます
+- 定義済みの組み合わせ (プリセット) を選ぶと、複数の Renderer をまとめたグループが一度に作られます。
 
 ### 見た目を調整する
 
@@ -108,11 +108,11 @@ Renderer ごとにも、分子 Object 側にも設定できます。Renderer の
 Object の色 (`$molcol`) を参照するため、Object 側を塗り替えると、それを参照して
 いるすべての Renderer に反映されます。ここでは Object 側を塗り替えます。
 
-1. 上部で `1crn (object)` を選びます
+1. 上部で `1crn (object)` を選びます。
 
     ![Color パネルの対象選択](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="233" }
 
-2. 隣の **Coloring** ボタンを押し、**Rainbow coloring** を選びます
+2. 隣の **Coloring** ボタンを押し、**Rainbow coloring** を選びます。
 
     ![Coloring メニュー](../../assets/images/getting-started/quick-tour/3-coloring-menu.webp){ width="196" .on-glb }
 
@@ -152,7 +152,7 @@ PNG を書き出せます。
 
 ![レンダリングウィンドウ (Still モード)](../../assets/images/getting-started/quick-tour/4-rendering-window.webp){ .on-glb }
 
-1. 対象のビュー (Target) を選ぶ。バックエンドは既定の **Umbreon** のままで構いません
+1. 対象のビュー (Target) を選ぶ。バックエンドは既定の **Umbreon** のままで構いません。
 
     ![Still モードの操作列](../../assets/images/getting-started/quick-tour/4-render-controls.webp){ width="561" .on-glb }
 
@@ -160,7 +160,7 @@ PNG を書き出せます。
 
     ![Render Settings パネル](../../assets/images/getting-started/quick-tour/4-render-settings.webp){ width="307" .on-glb }
 
-3. **Start Render** を押すと、進捗が表示され、完了すると結果画像が同じウィンドウに表示されます
+3. **Start Render** を押すと、進捗が表示され、完了すると結果画像が同じウィンドウに表示されます。
 
     ![レンダリングが完了したところ](../../assets/images/getting-started/quick-tour/4-render-result.webp){ .on-glb }
 

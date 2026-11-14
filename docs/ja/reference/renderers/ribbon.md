@@ -46,11 +46,11 @@ Round
 
 Section detail
 :   断面方向のポリゴン分割数。大きい値を指定するほど細かく分割されて表示がきれいに
-    なりますが、描画速度は低下します
+    なりますが、描画速度は低下します。
 
 Axial detail
 :   鎖方向のポリゴン分割数。大きい値を指定するほど細かく分割されて表示がきれいに
-    なりますが、描画速度は低下します
+    なりますが、描画速度は低下します。
 
 Smooth color
 :   隣り合う残基間で色が異なる場合、ON だと残基間の着色がグラデーションになり (下図左)、
@@ -60,7 +60,7 @@ Smooth color
 
 Pivot atom name
 :   リボンやチューブが通る原子の名前。タンパク質の場合は既定で CA (Cα 炭素原子) に
-    なっており、通常変更する必要はありません
+    なっており、通常変更する必要はありません。
 
 Cap type
 :   末端の形状。**sphere** で球状 (下図左)、**flat** で平ら (下図中央)、
@@ -92,7 +92,7 @@ Width
 :   ヘリックスの厚さ。単位は Å
 
 Tuber
-:   ヘリックスの幅。Width の何倍にするかで指定します
+:   ヘリックスの幅。Width の何倍にするかで指定します。
 
 Sharpness
 :   Section type により意味が変わります。<br/>
@@ -107,7 +107,7 @@ Sharpness
 
 Smoothness
 :   0 だとヘリックスが pivot atom (既定は Cα 原子) の位置を通る曲線になり、
-    それ以下だと pivot atom を通らずになめらかな曲線になります
+    それ以下だと pivot atom を通らずになめらかな曲線になります。
 
 Head type / Tail type
 :   ヘリックスの終了 (Head) / 開始 (Tail) 部分の形状。
@@ -117,7 +117,7 @@ Head type / Tail type
     ![Head type = flat](../../../assets/images/reference/renderers/ribbon/18-prop-hhead-type2.png){ .on-glb }
     ![Head type = arrow](../../../assets/images/reference/renderers/ribbon/19-prop-hhead-type3.png){ .on-glb }<br/>
     ヘリックスの末端を arrow にすることはほとんどありません。arrow 関連の設定は
-    後述の [Sheet](#sheet) を参照してください
+    後述の [Sheet](#sheet) を参照してください。
 
 Head power / Tail power
 :   接続の滑らかさ。下図は type が round の場合に値を 1、1.5、3 と変化させたもの
@@ -127,7 +127,7 @@ Head power / Tail power
     ![power = 3](../../../assets/images/reference/renderers/ribbon/22-prop-hhead-pow3.png){ .on-glb }
 
 Head arrow height / width
-:   type が arrow の場合のみ有効。矢の高さ・幅を指定します (→ [Sheet](#sheet))
+:   type が arrow の場合のみ有効。矢の高さ・幅を指定します (→ [Sheet](#sheet))。
 
 ### Sheet
 
@@ -156,7 +156,7 @@ Head type = Arrow
 
 Head arrow width
 :   矢の先端部分の幅。100% にすると矢の幅はシート本体の幅の 3 倍になり、
-    0% にすると幅はシート本体と同じ (= 矢の先端部分なし) になります
+    0% にすると幅はシート本体と同じ (= 矢の先端部分なし) になります。
 
 Head arrow height
 :   矢の先端部分の高さ。値を減少させると矢の先端部の高さが減少します<br/>

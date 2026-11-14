@@ -29,7 +29,7 @@
      説明) を gpu_mapmesh のインスペクタセクションと C++ 定義から起こす -->
 
 マップの種類の表示 (**Map kind**) と、表示範囲と細かさの設定 (**Region** /
-**Level of detail** / **LoD budget** / **Refine on zoom**) も contour と同じです
+**Level of detail** / **LoD budget** / **Refine on zoom**) も contour と同じです。
 → [contour](contour.md#contour)
 
 ## 関連項目

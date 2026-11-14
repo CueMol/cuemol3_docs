@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/namelabel.md @ f5ac4ed -->
+<!-- source: ja/reference/renderers/namelabel.md @ 8d54764 -->
 
 # namelabel (name label)
 

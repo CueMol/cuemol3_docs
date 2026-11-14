@@ -1,4 +1,4 @@
-<!-- source: ja/reference/selection.md @ e4bd8cd -->
+<!-- source: ja/reference/selection.md @ 8d54764 -->
 
 # Selection expression syntax
 

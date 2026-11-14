@@ -61,7 +61,7 @@ Windows では、更新のたびに管理者権限の確認 (UAC) が出ます�
 
 - アプリのあるフォルダに書き込む権限がない場合 (macOS)
 - ダウンロードした場所から移動せずに起動している場合 (App Translocation、macOS)。
-  `CueMol3.app` を `Applications` フォルダに移してから起動してください
+  `CueMol3.app` を `Applications` フォルダに移してから起動してください。
 - インストーラーでインストールした場所とは別の場所から起動している場合 (Windows)
 
 ## 通知センター
@@ -74,8 +74,8 @@ Windows では、更新のたびに管理者権限の確認 (UAC) が出ます�
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Check for Updates at Startup | ON | 起動後に新しいリリースを確認し、あれば通知します。OFF でも、手動の確認はできます |
-| Check for Updates | — | 今の版と状態を表示します。**Check Now** / **Release Page** / **Update** のボタンがあり、ここから更新できます |
+| Check for Updates at Startup | ON | 起動後に新しいリリースを確認し、あれば通知します。OFF でも、手動の確認はできます。 |
+| Check for Updates | — | 今の版と状態を表示します。**Check Now** / **Release Page** / **Update** のボタンがあり、ここから更新できます。 |
 
 ## 関連項目
 

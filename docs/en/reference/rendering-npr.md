@@ -1,4 +1,4 @@
-<!-- source: ja/reference/rendering-npr.md @ 570ee02 -->
+<!-- source: ja/reference/rendering-npr.md @ 8d54764 -->
 
 # NPR (ink-style rendering)
 

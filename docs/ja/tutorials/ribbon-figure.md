@@ -16,10 +16,10 @@
 
 **File &gt; Get PDB...** で構造をネットワークから取得します。
 
-1. **PDB or EMDB ID, or keywords** に `3UG9` を入力します
+1. **PDB or EMDB ID, or keywords** に `3UG9` を入力します。
 2. **Fetch coordinates** にチェックが入っていることを確認します (**Server** は既定の **RCSB**、**Format** は既定の **mmCIF** のまま)
-3. 取得が終わると、Object 名と Renderer を指定する画面が出ます
-4. **Renderer type** から **cartoon** を選び、そのほかは既定のまま作成します
+3. 取得が終わると、Object 名と Renderer を指定する画面が出ます。
+4. **Renderer type** から **cartoon** を選び、そのほかは既定のまま作成します。
 
 タンパク質部分が、二次構造を反映した cartoon 表示で描かれます
 (→ [cartoon](../reference/renderers/cartoon.md))。
@@ -56,10 +56,10 @@ Object (3UG9) を選び、パネル上部の **Focus** ボタンを押します�
 3UG9 に含まれる分子は 1 つ (chain A) です。N 末端ドメイン・膜貫通部・C 末端ドメインの
 3 つの領域を、残基番号の範囲で塗り分けます。
 
-1. 左サイドパネルの **Explorer &gt; Color** パネルを開きます
-2. 上部で cartoon の Renderer を選びます
-3. Coloring の種類から **Paint** を選びます
-4. 表に次の 3 行を作り、それぞれ好みの色を指定します
+1. 左サイドパネルの **Explorer &gt; Color** パネルを開きます。
+2. 上部で cartoon の Renderer を選びます。
+3. Coloring の種類から **Paint** を選びます。
+4. 表に次の 3 行を作り、それぞれ好みの色を指定します。
 
 | 領域 | 選択式 |
 |---|---|
@@ -91,10 +91,10 @@ Paint は上の行から順に評価され、最初にマッチした行の色�
 cartoon は主鎖の走行だけを描くため、リガンドは表示されません。
 3UG9 が持つレチナール (残基名 `RET`) を、ballstick (棒と球のモデル) で重ねて表示します。
 
-1. シーンツリーで Object (3UG9) を右クリックし、**New Renderer** を選びます
-2. **Renderer type** から **ballstick** を選びます
-3. **Selection** にチェックを入れ、選択式に `r; RET` を入力します
-4. **Create** を押すと、cartoon に重ねてレチナールが ballstick で描かれます
+1. シーンツリーで Object (3UG9) を右クリックし、**New Renderer** を選びます。
+2. **Renderer type** から **ballstick** を選びます。
+3. **Selection** にチェックを入れ、選択式に `r; RET` を入力します。
+4. **Create** を押すと、cartoon に重ねてレチナールが ballstick で描かれます。
 
 1 つの Object には、このように複数の Renderer を重ねられます。各 Renderer の表示対象は
 選択式で絞り込みます (`r;` は残基名による選択の省略形です →
@@ -112,10 +112,10 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 論文の図では、白い背景に輪郭線 (エッジライン) を組み合わせるのが定番です。
 エッジラインを付けると、白背景でも各要素の境界がはっきりします。
 
-1. **Scene &gt; Background &gt; White** で背景を白にします
-2. シーンツリーで cartoon の Renderer を右クリックします
-3. **Style &gt; Edge line (normal)** を選びます。エッジ線の種類と太さがまとめて設定されます
-4. ballstick の Renderer にも、同じ操作 (手順 2〜3) を繰り返します
+1. **Scene &gt; Background &gt; White** で背景を白にします。
+2. シーンツリーで cartoon の Renderer を右クリックします。
+3. **Style &gt; Edge line (normal)** を選びます。エッジ線の種類と太さがまとめて設定されます。
+4. ballstick の Renderer にも、同じ操作 (手順 2〜3) を繰り返します。
 
 線を太く / 細くしたいときは、同じメニューから **Edge line (thick)** /
 **Edge line (thin)** を選び直します。外すときは **No edge line** を選びます
@@ -132,8 +132,8 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 
 視点が決まったら、カメラとして保存しておくと、後で同じ構図に戻せます。
 
-1. アクティビティバーの **Explorer** をクリックし、**Camera** パネルを開きます
-2. **New camera from view** ボタンを押し、名前を付けて作成します
+1. アクティビティバーの **Explorer** をクリックし、**Camera** パネルを開きます。
+2. **New camera from view** ボタンを押し、名前を付けて作成します。
 
 カメラ行のダブルクリックで、いつでもその視点に戻れます
 (→ [カメラ](../reference/camera.md))。

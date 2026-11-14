@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/index.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/index.md @ 8d54764 -->
 
 # Renderer
 

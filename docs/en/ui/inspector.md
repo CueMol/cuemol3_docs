@@ -1,4 +1,4 @@
-<!-- source: ja/ui/inspector.md @ 6cacee7 -->
+<!-- source: ja/ui/inspector.md @ 8d54764 -->
 
 # Property inspector
 

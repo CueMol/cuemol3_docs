@@ -43,7 +43,7 @@ Anchor selection
     ![Anchor あり](../../../assets/images/reference/renderers/cartoon/cartoon_anchor_sel1.png){ .on-glb }<br/>
     ループやシート中に 1 残基程度なら効果的に働きますが、多くなると結局
     Smoothing を小さくした場合と同じになるので、多くの Cα 原子を通らせたい場合は
-    Smoothing を調整するほうが適しています
+    Smoothing を調整するほうが適しています。
 
 Anchor weight
 :   Anchor selection で指定した残基を Cα に引き寄せる強さ
@@ -61,12 +61,12 @@ Smoothing
     ![Smoothing = 2.0](../../../assets/images/reference/renderers/cartoon/cartoon_helix_smooth_2.png){ .on-glb }
     ![Smoothing = 4.0](../../../assets/images/reference/renderers/cartoon/cartoon_helix_smooth_4.png){ .on-glb }<br/>
     4 以上になるとほぼ直線であまり違いは出ません。1 以下にするとおひねりのような
-    形状になります。負の値や小数値も指定できますが、妥当な使用範囲は 2〜4 程度です
+    形状になります。負の値や小数値も指定できますが、妥当な使用範囲は 2〜4 程度です。
 
 Width mode
 :   既定ではシリンダーの太さは平均値で一定になります。
     これを切り替えると、シリンダーの中心線から Cα 原子のはずれ具合に合わせて
-    太さが変わるようになります
+    太さが変わるようになります。
 
 Width smooth
 :   Width mode を可変にした場合のみ有効で、シリンダーの太さの滑らかさを指定します。
@@ -76,7 +76,7 @@ Width smooth
     ![Width smooth = 0.0](../../../assets/images/reference/renderers/cartoon/cartoon_helix_wsmooth_0.png){ .on-glb }
     ![Width smooth = 1.0](../../../assets/images/reference/renderers/cartoon/cartoon_helix_wsmooth_1.png){ .on-glb }
     ![Width smooth = 2.0](../../../assets/images/reference/renderers/cartoon/cartoon_helix_wsmooth_2.png){ .on-glb }<br/>
-    Smoothing の値によっても見え方が大きく変わります
+    Smoothing の値によっても見え方が大きく変わります。
 
 Add width
 :   構造によっては、ヘリックスのシリンダーとコイルのつなぎ目でコイル部分が
@@ -86,7 +86,7 @@ Add width
     ![Add width = 0.0](../../../assets/images/reference/renderers/cartoon/cartoon_helix_wplus_0.png){ .on-glb }
     ![Add width = 0.5](../../../assets/images/reference/renderers/cartoon/cartoon_helix_wplus_1.png){ .on-glb }<br/>
     既定値はコイルの太さ 0.2 と同じで、たいていの場合は隠れます。
-    意図的に負の値を指定して細いシリンダー表示にすることもできます
+    意図的に負の値を指定して細いシリンダー表示にすることもできます。
 
 Extend
 :   ヘリックス区間を前後に延長する量

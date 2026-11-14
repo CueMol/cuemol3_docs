@@ -36,17 +36,17 @@ Renderer はシーンツリーで Object 行または Renderer グループ行�
 **New Renderer** 列が「—」の型は、New Renderer ダイアログの一覧に表示されません。
 
 - **atomintr** は、ツールパレットの計測ツール (Distance / Angle / Torsion) や
-  Tools メニューの **Interaction...** を使うと自動的に作成されます
+  Tools メニューの **Interaction...** を使うと自動的に作成されます。
 - **atomintr** と **disorder** は、ファイルを開くときの Renderer type の一覧には
   表示されません。読み込んだ直後は描くものがない (計測はまだ作られておらず、
   disorder が追従する主鎖 Renderer もまだない) ためです。Object がシーンに入ってから
-  New Renderer で作成します
+  New Renderer で作成します。
 - **gpu_mapmesh** は、線の太さを変えられず [contour](contour.md) より遅いため、
   新規作成の選択肢から外されました。既存のシーンに含まれるものは今までどおり
-  表示され、設定も変更できます
+  表示され、設定も変更できます。
 - **dsurf2** は [dsurface](dsurface.md) に統合されました。距離場によるメッシュは
   dsurface の **Algorithm** で選びます。既存のシーンに含まれるものは dsurface として
-  読み込まれます (→ [dsurf2](dsurf2.md))
+  読み込まれます (→ [dsurf2](dsurf2.md))。
 
 また、内部処理用の Renderer (選択のハイライト、原子ラベル、対称分子、単位格子など) は
 一覧に表示されません。このうち原子ラベルの Renderer は [namelabel](namelabel.md) で説明しています。
@@ -57,7 +57,7 @@ Renderer のプロパティは、種類によらず共通のものと、種類�
 
 - **共通プロパティ** — 名前・選択範囲・表示 / 非表示・マテリアル・不透明度・エッジライン
   (エッジラインは面を持つ Renderer のみ) → [Renderer 共通プロパティ](common.md)
-- **種類固有のプロパティ** — 各 Renderer のページを参照してください
+- **種類固有のプロパティ** — 各 Renderer のページを参照してください。
 
 インスペクタの **Properties** タブに現れないプロパティは、
 **Generic** タブから編集できます。

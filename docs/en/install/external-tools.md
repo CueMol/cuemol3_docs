@@ -1,4 +1,4 @@
-<!-- source: ja/install/external-tools.md @ 6cacee7 -->
+<!-- source: ja/install/external-tools.md @ 8d54764 -->
 
 # Configuring external tools
 

@@ -1,4 +1,4 @@
-<!-- source: ja/menu/rendering.md @ 6cacee7 -->
+<!-- source: ja/menu/rendering.md @ 8d54764 -->
 
 # Rendering menu
 

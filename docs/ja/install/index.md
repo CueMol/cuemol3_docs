@@ -14,9 +14,9 @@
 
 | OS | 署名 | 起動時の警告 |
 |---|---|---|
-| macOS | **アドホック署名のみ** (`codesign --sign -`)。Developer ID 署名・notarization なし | Gatekeeper の警告が出ます → [回避手順](macos.md#初回起動時の警告を回避する) |
-| Windows | なし (Authenticode 署名は今後の作業) | SmartScreen の警告が出ます → [回避手順](windows.md#初回実行時の警告を回避する) |
-| Linux | なし | 警告はありません |
+| macOS | **アドホック署名のみ** (`codesign --sign -`)。Developer ID 署名・notarization なし | Gatekeeper の警告が出ます。→ [回避手順](macos.md#初回起動時の警告を回避する) |
+| Windows | なし (Authenticode 署名は今後の作業) | SmartScreen の警告が出ます。→ [回避手順](windows.md#初回実行時の警告を回避する) |
+| Linux | なし | 警告はありません。 |
 
 !!! info "アドホック署名では Gatekeeper は通りません"
     macOS の配布物にはビルド時にアドホック署名が付きます。これは Apple Silicon で
@@ -31,7 +31,7 @@ CueMol3 の配布物は、GitHub の **Releases** ページで公開されてい
 
 - **[最新リリース](https://github.com/CueMol/cuemol3/releases/latest)** —
   ページ下部の **Assets** 欄から、ファイル名が `CueMol3-` で始まるものをダウンロードしてください
-  (`cuemol2_...` で始まるファイルは CueMol2 の配布物です)
+  (`cuemol2_...` で始まるファイルは CueMol2 の配布物です)。
 - **[リリース一覧・リリースノート](https://github.com/CueMol/cuemol3/releases)** —
   過去のバージョンのダウンロードと、リリースごとの詳細な変更点
   (要点だけを知りたい場合は → [更新履歴](../releases.md))

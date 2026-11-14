@@ -12,7 +12,7 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Dark Mode | ON | ダークテーマとライトテーマを切り替えます |
+| Dark Mode | ON | ダークテーマとライトテーマを切り替えます。 |
 
 ### Atom Labels
 
@@ -20,11 +20,11 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Atom Label Font | sans-serif | ラベルのフォント。システムにインストールされているフォントから選びます |
+| Atom Label Font | sans-serif | ラベルのフォント。システムにインストールされているフォントから選びます。 |
 | Atom Label Size | 12 px | フォントサイズ (6〜72 px) |
 | Atom Label Color | `#FFFF00` | ラベル文字の色 |
-| Atom Label Bold | OFF | 太字にします |
-| Atom Label Italic | OFF | 斜体にします |
+| Atom Label Bold | OFF | 太字にします。 |
+| Atom Label Italic | OFF | 斜体にします。 |
 
 ### Rendering
 
@@ -51,12 +51,12 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Pointing device | Auto-detect | スクロール入力を視点操作にどう対応づけるか。**Mouse** はホイールでズーム、**Mac trackpad** は 2 本指スクロールで平行移動・ピンチでズーム、**Auto-detect** はスクロールの特徴から推定します |
+| Pointing device | Auto-detect | スクロール入力を視点操作にどう対応づけるか。**Mouse** はホイールでズーム、**Mac trackpad** は 2 本指スクロールで平行移動・ピンチでズーム、**Auto-detect** はスクロールの特徴から推定します。 |
 | XY Rotation Sensitivity | 0.8 | X / Y 軸まわりの回転の感度 (0.1〜5.0) |
 | Pick Precision | 10 px | 原子や Object をクリックで拾うときの許容半径 (1〜50 px) |
-| GPU Picking | ON | 描かれた形状そのものから当たり判定を行います。OFF にすると従来の原子の位置による判定に戻ります。動作の遅いマシン向けの逃げ道です。切り替えは即時に効きます |
-| Hover Info | ON | ポインタの下にあるものを分子ビューの隅に表示します。OFF にすると当たり判定の呼び出し自体が止まります |
-| Hover Highlight | ON | ポインタの下の要素を分子ビュー上で強調します。GPU Picking と Hover Info の両方が必要です |
+| GPU Picking | ON | 描かれた形状そのものから当たり判定を行います。OFF にすると従来の原子の位置による判定に戻ります。動作の遅いマシン向けの逃げ道です。切り替えは即時に効きます。 |
+| Hover Info | ON | ポインタの下にあるものを分子ビューの隅に表示します。OFF にすると当たり判定の呼び出し自体が止まります。 |
+| Hover Highlight | ON | ポインタの下の要素を分子ビュー上で強調します。GPU Picking と Hover Info の両方が必要です。 |
 
 → [ピッキングとホバー表示](../ui/mouse-input.md#ピッキングとホバー表示)
 
@@ -68,7 +68,7 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Drag and drop opens into | Current scene | ウィンドウにドラッグ &amp; ドロップしたファイルの読み込み先。**Current scene** はアクティブなタブのシーンに加えます。**New scene** は専用のタブで開きます |
+| Drag and drop opens into | Current scene | ウィンドウにドラッグ &amp; ドロップしたファイルの読み込み先。**Current scene** はアクティブなタブのシーンに加えます。**New scene** は専用のタブで開きます。 |
 | File manager opens into | Current scene | ファイルマネージャ (Finder / エクスプローラ) からの「開く」、コマンドラインでの指定、起動中に別のインスタンスから渡されたファイルの読み込み先 |
 
 - **File &gt; Open File... と Open Recent は、この設定によらず常に現在のシーンに
@@ -85,8 +85,8 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Check for Updates at Startup | ON | 起動後に新しいリリースを確認し、あれば通知します。OFF でも手動の確認はできます |
-| Check for Updates | — | 今の版と状態を表示します。**Check Now** / **Release Page** / **Update** のボタンがあります |
+| Check for Updates at Startup | ON | 起動後に新しいリリースを確認し、あれば通知します。OFF でも手動の確認はできます。 |
+| Check for Updates | — | 今の版と状態を表示します。**Check Now** / **Release Page** / **Update** のボタンがあります。 |
 
 詳しくは [アップデート](../install/update.md) を参照してください。
 
@@ -122,7 +122,7 @@
 | Console | ON | CueMol のコマンドライン (→ [Console](plugins/console/index.md)) |
 | PyM console | ON | Console の PyMOL 互換の console (→ [PyM console](plugins/console/pymconsole.md)) |
 | ChX console | ON | ChimeraX 互換の console (→ [ChX console](plugins/console/chx_console.md)) |
-| MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md)) |
+| MCP Server | OFF | AI クライアントから MCP で CueMol3 を操作できるようにします (→ [MCP Server](plugins/mcp-server.md))。 |
 | Component Catalog | OFF | 画面部品のカタログ (CueMol3 の UI 開発用) |
 
 切り替えられないプラグイン (Get PDB / Sequence Panel) は、この一覧には並びません。
@@ -138,8 +138,8 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Command line access | OFF | 起動中のこのウィンドウで、tritium_cli からのコマンドを実行できるようにします。tritium_cli が起動した CueMol3 では、この設定を変えずにその回だけ許可されます |
-| Command line tool | — | 同梱の tritium_cli のパス。**Copy** でコピーでき、PATH に通す方法が併記されます |
+| Command line access | OFF | 起動中のこのウィンドウで、tritium_cli からのコマンドを実行できるようにします。tritium_cli が起動した CueMol3 では、この設定を変えずにその回だけ許可されます。 |
+| Command line tool | — | 同梱の tritium_cli のパス。**Copy** でコピーでき、PATH に通す方法が併記されます。 |
 
 詳しくは [tritium_cli](plugins/console/cli.md) を参照してください。
 
@@ -149,8 +149,8 @@
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Accept connections | ON | MCP クライアントからの接続を受け付けます |
-| Port | 27182 | 待ち受けるポート (1024〜65535)。++enter++ を押すかフォーカスを外したときに反映されます。範囲外の値は反映されません |
+| Accept connections | ON | MCP クライアントからの接続を受け付けます。 |
+| Port | 27182 | 待ち受けるポート (1024〜65535)。++enter++ を押すかフォーカスを外したときに反映されます。範囲外の値は反映されません。 |
 
 詳しくは [MCP Server](plugins/mcp-server.md) を参照してください。
 

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/isosurf.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/isosurf.md @ 8d54764 -->
 
 # isosurf (isosurface)
 
