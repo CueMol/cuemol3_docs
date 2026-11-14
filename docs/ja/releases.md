@@ -13,6 +13,65 @@
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
 
+## 3.0.2.560 (2026-11-14)
+
+### アニメーション
+
+- **アニメーションの要素に Rock が追加されました。** 視点を振動させるアニメーションです。
+  **Pattern** で Rock (1 軸の往復) / Nutate (視線が円を描く) / Wobble (8 の字) を選択し、振れ幅・回数・
+  位相・振れ幅の時間変化 (Grow / Shrink) 等を設定することが可能です。
+  → [RockSpin](reference/animation/rockspin.md)
+- **Animation パネルで、要素を Cut / Copy / Paste できるようになりました** (**Edit** メニューと
+  ++cmd+x++ / ++cmd+c++ / ++cmd+v++)。貼り付けた要素は、選んでいる要素の直後に
+  挿入されます (長さはコピー元と同じです)。別のシーンへの貼り付けも可能です。→ [Animation パネル](ui/bottom-panels/animation.md)
+- **Simple spin の Rotation angle に範囲が無くなりました。** 負の値で逆向きに回り、360° で 1 周します。
+
+### Console からの視点の動き
+
+- **ChX console の `turn` に `frames` を付けると、その回転をアニメーションの要素として追加し、
+  1 回再生するようになりました。** `roll` / `rock` / `wobble` は `stop` までループで再生します
+  (`stop` でループの設定は元に戻ります)。
+- **PyM console の `movie.add_roll` / `movie.add_rock` / `movie.add_nutate` / `movie.roll` /
+  `movie.rock` / `movie.nutate` / `movie.tdroll` が、アニメーションに要素を追加するようになりました**
+  (`mplay` で再生します)。`rock` で揺れを開始・停止できます。
+- 速さや位相は ChimeraX / PyMOL とおおよそ合わせてあるだけで、同じではありません。
+  → [ChX console](reference/plugins/console/chx_console.md) /
+  [PyM console](reference/plugins/console/pymconsole.md)
+
+### Styles ビュー
+
+- **アクティビティバーに Styles ビューが加わりました。** シーンから見えるスタイルセットを名前を探す順に
+  並べ、選んだスタイルセットの名前付きの色 (**Colors**) と名前付き選択 (**Selections**) をその場で
+  編集できます。スタイルセットはシーンツリーに表示されなくなりました。
+  → [サイドパネル](ui/side-panels.md#styles)
+
+### MD トラジェクトリ (MD Tools)
+
+- **トラジェクトリのファイル (`.xtc` / `.dcd` / `.trr` / `.nc`) をドロップすると、開いている分子に
+  付けられるようになりました。** 原子数の合う分子から付け先を選ぶと、その分子はトラジェクトリになり、
+  元の座標が最初のフレームになります。
+- **トポロジーだけのファイル (prmtop / PSF) を、座標の無い分子として開けるようになりました。**
+  座標 (AMBER の restart、NAMD の `.coor`) やトラジェクトリは、あとからドロップして付けます。
+  **File &gt; Open MD Trajectory...** でもトポロジーに prmtop / PSF を選択できます。
+  → [Trajectory パネル](ui/bottom-panels/trajectory.md)
+
+### 画面と操作
+
+- **Get PDB で、リガンドを CCD コードで取得できるようになりました** (**CCD (ligand)**、RCSB の理想座標)。
+  ChX console では `open ccd:ATP` で取得できます。→ [PDB からの取得](reference/get-pdb.md#ccd-ligand)
+- nucl の **Base type** に、塩基を表示せずチューブだけを残す **None** が加わりました。
+  → [nucl](reference/renderers/nucl.md)
+- **履歴が 20 ステップを超えると、GUI で同じ値を続けて編集したステップが 1 つにまとめられるように
+  なりました** (History パネルでは `×N` と表示されます)。
+  → [操作の記録と再生](reference/actions.md#history-パネル)
+- ChX console で、`alphafold` / `pae` などの AlphaFold のパレットを使えるようになりました。
+
+!!! warning "以前のバージョンから変わる点"
+    - **NAMD の `.coor` を PSF と一緒に開いたシーン (`srctype="namdcoor"`) は読み込めなくなりました。**
+      PSF を開き、`.coor` をドロップして付け直してください。
+    - **Console の native モードの `load_namd` は `load_psf` になりました** (PSF を開き、`coordFile` で
+      `.coor` を指定します)。
+
 ## 3.0.1.555 (2026-11-10)
 
 ### PDB からの取得
@@ -192,49 +251,17 @@
       以前の形のままです。CueMol3 で保存したシーンを CueMol2 で開くと CueMol2 の形で描かれ、
       その逆も同じです
 
-## 2.4.1.547 (2026-10-24)
-
-### 速度
-
-- **tube / ribbon / cartoon / 核酸 (nucl) の再生が速くなりました。** MD トラジェクトリや
-  モーフィングで原子が動いたとき、形状を作り直さずにその場で書き換えるようになりました。
-  Windows ではさらに大きく速くなっています
-- **大きな構造の cartoon の作成が速くなりました。** 4V6X (ヒト 80S リボソーム) では
-  約 32 秒かかっていたものが約 1 秒になりました
-- **分子表面 (molsurf / dsurface) とマップの等値面の、原子による着色が速くなりました**
-- いずれも描かれる絵は以前と変わりません
-
-### tritium_cli
-
-- **tritium_cli を npm から単体でインストールできるようになりました。**
-  `npm install -g @cuemol/tritium-cli` でインストールします。インストール済みの CueMol3
-  (または環境変数 `CUEMOL3_APP` で指定したもの) を探して起動し、見つからなければ
-  ダウンロード先を表示します。CueMol3 との間のやり取りの版が食い違っていると警告が
-  表示されます。npm 版は macOS でのみ確認しています
-  → [tritium_cli](reference/plugins/console/cli.md#npm-でインストールする)
-
-!!! warning "以前のバージョンから変わる点"
-    - **dsurface は、別配座 (altloc) のうち ID の無いものと `A` だけを使うようになりました**
-      (molsurf と同じです)。`B` / `C` の配座しか無い残基は表面に含まれません
-    - **molsurf の色が、分子に設定した着色スキームに従うようになりました** (ほかの Renderer と
-      同じです)。rainbow のように状態を持つスキームを分子に設定していると、molsurf の色が
-      ほかの Renderer に合わせて変わることがあります
-    - **ballstick の環の板は、クリックとホバーの対象ではなくなりました。** 板は特定の 1 原子を
-      表さないためです
-    - **形状のデータが約 2 GB を超える tube / ribbon / cartoon は描かれません。** 以前は
-      CueMol3 が異常終了していました。描かれなかったことはログに表示されます
-
 ---
 
-2.4.0.546 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
+2.4.1.547 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
 
 ## 関連項目
 
-- [過去のリリース](releases-archive.md) — 2.4.0.546 以前の更新履歴
+- [過去のリリース](releases-archive.md) — 2.4.1.547 以前の更新履歴
 - [CueMol2 からの変更点](changes/index.md) — CueMol2 と CueMol3 の違い
 - [開発状況と未実装機能](changes/status.md) — 現時点で残っている制限
 - [ダウンロード](install/index.md#ダウンロード) — 配布物の入手方法
 
 ---
 
-*確認対象: CueMol3 3.0.1.555*
+*確認対象: CueMol3 3.0.2.560*

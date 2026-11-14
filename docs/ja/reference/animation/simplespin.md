@@ -12,7 +12,7 @@
 [アニメーション](index.md#共通のプロパティ) を参照してください。
 
 Rotation angle
-:   回転する角度
+:   回転する角度。範囲は無く、負の値では逆向きに回り、360° で 1 周します。
 
 Spin axis
 :   回転軸のベクトル (X / Y / Z)
@@ -26,8 +26,9 @@ Spin axis
 ## 関連項目
 
 - [アニメーションの一覧](index.md)
-- [下部パネル](../../ui/bottom-panels.md)
+- [RockSpin](rockspin.md)
+- [下部パネル](../../ui/bottom-panels/index.md)
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 3.0.2.560*

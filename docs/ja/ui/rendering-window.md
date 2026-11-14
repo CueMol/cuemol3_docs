@@ -123,7 +123,7 @@ Render Settings の内容は Backend の選択も含めてシーンに保存さ�
     (→ [外部ツールの設定](../install/external-tools.md))。
 
 アニメーションの内容そのものは、メインウィンドウの下部パネルの **Animation** タブで作ります
-(→ [下部パネル](bottom-panels.md))。
+(→ [下部パネル](bottom-panels/index.md))。
 
 ## CueMol2 との違い
 

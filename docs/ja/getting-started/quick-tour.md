@@ -36,7 +36,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
 座標に加えて、電子密度マップ (RCSB の cif.gz、EBI の MTZ) も取得できます。
 ダウンロードは進捗ダイアログの Cancel で中断できます。手元のファイルを開く場合は
-**File &gt; Open File...** を使います (同じオプション画面が出ます)。
+**File &gt; Open File...** を使用してください (同じオプション画面が出ます)。
 
 ## 3. 表示を整える
 
@@ -164,7 +164,7 @@ PNG を書き出せます。
 
     ![レンダリングが完了したところ](../../assets/images/getting-started/quick-tour/4-render-result.webp){ .on-glb }
 
-動画を作る場合は **Rendering &gt; Movie rendering...** で同じウィンドウの Movie モードを使います
+動画を作る場合は **Rendering &gt; Movie rendering...** で同じウィンドウの Movie モードを使用してください
 (→ [レンダリングウィンドウ](../ui/rendering-window.md))。
 
 ## 5. シーンを保存する

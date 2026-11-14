@@ -156,7 +156,7 @@ CueMol3 に同梱されています。使い方・接続・PATH の通し方は 
 - [プラグイン](../index.md) / [設定項目](../../settings.md#plugins)
 - [選択式の文法](../../selection.md)
 - [操作の記録と再生](../../actions.md)
-- [下部パネル](../../../ui/bottom-panels.md)
+- [下部パネル](../../../ui/bottom-panels/index.md)
 
 ---
 

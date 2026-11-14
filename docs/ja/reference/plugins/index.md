@@ -57,7 +57,7 @@ Installed で **MD Tools** を有効にしてください。
 
 - [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyM console](console/pymconsole.md) / [ChX console](console/chx_console.md) / [MCP Server](mcp-server.md)
 - [設定項目](../settings.md#plugins)
-- [サイドパネル](../../ui/side-panels.md) / [下部パネル](../../ui/bottom-panels.md)
+- [サイドパネル](../../ui/side-panels.md) / [下部パネル](../../ui/bottom-panels/index.md)
 
 ---
 

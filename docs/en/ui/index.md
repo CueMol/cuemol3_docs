@@ -20,7 +20,7 @@ The numbers in the figure correspond to the # column in the table below.
 | 5 | **Molecular view (MolView)** | The main 3D display. The viewpoint is moved with the mouse | [Mouse and trackpad input](mouse-input.md) |
 | 6 | **Tool palette** | A vertical column of tool buttons floating at the left edge of the molecular view. Switches between the viewpoint / region selection / measurement / bond editing modes | [Toolbar and tool palette](toolbar-tools.md) |
 | 7 | **Property inspector (right)** | Displays and edits the settings of the element selected in the scene tree. Changes are reflected immediately in the molecular view | [Property inspector](inspector.md) |
-| 8 | **Bottom panel** | Tabs for Console (command line) / Output (log) / Sequence (sequence) / Animation (timeline). Enabling a plugin adds more tabs | [Bottom panel](bottom-panels.md) |
+| 8 | **Bottom panel** | Tabs for Console (command line) / Output (log) / Sequence (sequence) / Animation (timeline). Enabling a plugin adds more tabs | [Bottom panel](bottom-panels/index.md) |
 | 9 | **Status bar** | Status display. Plugin items (**CLI** for Console, **MCP** for MCP Server) are also listed here. The bell at the right end opens the notification center | [tritium_cli](../reference/plugins/console/cli.md#cli-in-the-status-bar) / [MCP Server](../reference/plugins/mcp-server.md#mcp-in-the-status-bar) / [Notification center](../install/update.md#notification-center) |
 | — | **Menu bar** | Menus such as File / Edit. On macOS it is in the system menu bar at the top of the screen, so it does not appear in the figure. On Windows / Linux it is at the top of the window | [Menus](../menu/index.md) |
 

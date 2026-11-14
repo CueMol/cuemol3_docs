@@ -28,7 +28,7 @@ whose rotation direction or speed changes partway through can be created.
 ## See also
 
 - [List of animations](index.md)
-- [Bottom panel](../../ui/bottom-panels.md)
+- [Bottom panel](../../ui/bottom-panels/index.md)
 
 ---
 

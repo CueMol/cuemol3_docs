@@ -1,4 +1,4 @@
-<!-- source: ja/ui/bottom-panels.md @ 6cacee7 -->
+<!-- source: ja/ui/bottom-panels/index.md @ 6cacee7 -->
 
 # Bottom panel
 
@@ -10,12 +10,12 @@ The panel at the bottom of the window has four tabs by default.
 
 | Tab | Contents |
 |---|---|
-| **Console** | Command line (→ [Console](../reference/plugins/console/index.md)) |
+| **Console** | Command line (→ [Console](../../reference/plugins/console/index.md)) |
 | **Output** | Log display |
 | **Sequence** | Display and selection of the amino acid / nucleotide sequences of molecules |
 | **Animation** | Timeline editing for animations |
 
-Enabling a [plugin](../reference/plugins/index.md) adds the following tab.
+Enabling a [plugin](../../reference/plugins/index.md) adds the following tab.
 The **Console** tab is also part of the Console plugin, and it disappears when the plugin is disabled.
 
 | Tab | Contents | Plugin |
@@ -69,7 +69,7 @@ with each animation element shown as one strip.
 - Strips can be added, deleted and reordered.
 - The play button plays the animation in the molecular view.
 - The current time display is editable. Type a time and press ++enter++ to jump to that point
-  (→ [Entering times](inspector.md#entering-times)).
+  (→ [Entering times](../inspector.md#entering-times)).
 - Selecting a strip shows the detailed settings of that element in the inspector on the right
   (type-specific settings and the generic property list).
 - The start camera can be chosen in the timeline header.
@@ -77,7 +77,7 @@ with each animation element shown as one strip.
   and cannot be played until this is fixed.
 
 To export the created animation as a movie file,
-use **Rendering &gt; Movie rendering...** (→ [Rendering window](rendering-window.md)).
+use **Rendering &gt; Movie rendering...** (→ [Rendering window](../rendering-window.md)).
 
 !!! note
     While animation properties are being edited, the molecular view does not follow in real time.
@@ -89,7 +89,7 @@ A command line for running CueMol operations as commands. Switching to PyM conso
 allows PyMOL commands such as `fetch 1crn` to be typed as they are.
 
 This tab is part of the **Console** plugin, which is **enabled by default**
-(→ [Console](../reference/plugins/console/index.md)). It is the first tab of the bottom panel and
+(→ [Console](../../reference/plugins/console/index.md)). It is the first tab of the bottom panel and
 stays in front until another tab is selected.
 
 ## Trajectory
@@ -99,7 +99,7 @@ Frame blocks are shown on the timeline, with playback, frame stepping and seekin
 
 This tab is part of the **MD Tools** plugin, which is **disabled by default**.
 Enable it in Settings &gt; Plugins &gt; Installed
-(→ [Plugins](../reference/plugins/index.md)).
+(→ [Plugins](../../reference/plugins/index.md)).
 
 ---
 

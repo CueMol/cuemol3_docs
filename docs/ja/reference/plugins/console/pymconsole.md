@@ -65,7 +65,7 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 | 計測 | `distance` / `angle` / `dihedral` |
 | 重ね合わせ | `align` / `super` / `pair_fit` |
 | ビュー | `zoom` / `center` / `orient` / `reset` / `turn` / `move` / `view` / `get_view` / `set_view` / `refresh` |
-| アニメーション | `mplay` / `mstop` / `rewind` / `frame` / `count_states` |
+| アニメーション | `mplay` / `mstop` / `rewind` / `frame` / `count_states` / `movie.add_roll` / `movie.add_rock` / `movie.add_nutate` / `movie.roll` / `movie.rock` / `movie.nutate` / `movie.tdroll` / `rock` |
 | 設定 | `set` / `get` / `unset` |
 | スクリプトとログ | `@` / `run` / `log_open` / `log_close` / `log` |
 | その他 | `undo` / `redo` / `cd` / `pwd` / `ls` / `help` / `quit` / `exit` |
@@ -93,6 +93,14 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
   PyMOL と同じく、値の範囲に色を等間隔に並べた多色のグラデーションで塗ります
   (→ [Coloring](../../coloring.md#多色のグラデーション))。
 - `get_view` / `set_view` は PyMOL と同じ 18 個の数値の形式です。
+- `movie.add_roll` / `movie.add_rock` / `movie.add_nutate` / `movie.roll` / `movie.rock` /
+  `movie.nutate` / `movie.tdroll` は、視点の動きをアニメーションの要素
+  ([SimpleSpin](../../animation/simplespin.md) / [RockSpin](../../animation/rockspin.md)) として
+  タイムラインの末尾に追加します。PyMOL と同じく、追加するだけで再生はしません (`mplay` で再生します)。
+  `movie.roll 1, 120` のように空白区切りで書きます (`movie.roll(1, 120)` の書き方はできません)。
+- `rock` は揺れの開始と停止を切り替えます (`rock 1` で開始、`rock 0` で停止)。`mstop` でも止まり、
+  ループの設定は元に戻ります。
+- 速さや位相は PyMOL とおおよそ合わせてあるだけで、同じではありません。
 - `label` は PyMOL の式 (`"%s%s" % (resn, resi)` など) を受け付けます。
 - `distance` に `cutoff` か `mode` を付けると、2 つの選択のあいだの接触を一覧してラベルを付けます。
 - `quiet=1` や `async=0` のような PyMOL のキーワード引数・位置引数も受け付けます。
@@ -178,6 +186,7 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 - `show` / `hide` は、GUI で作成した Renderer には影響しません。これらのコマンドは
   `pym:` で始まる名前の Renderer だけを操作します。
 - `zoom` / `center` / `orient` と、マップの切り出しは 1 つの分子に対して働きます。
+- `movie.screw` と、PyMOL の `sweep_*` の設定には対応していません。
 - 未対応: MD トラジェクトリのコマンド (`load_traj` / `intra_fit` / `smooth` など)、
   ピッキングに依存するコマンド (`edit` / `drag` など)、`h_add` / `cealign` など。
   `.cif` と `.pse` には保存できません。
@@ -186,8 +195,8 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 
 - [Console](index.md) / [ChX console](chx_console.md) / [プラグイン](../index.md) / [AI Agent](../ai-agent.md)
 - [選択式の文法](../../selection.md)
-- [下部パネル](../../../ui/bottom-panels.md)
+- [下部パネル](../../../ui/bottom-panels/index.md)
 
 ---
 
-*確認対象: CueMol3 3.0.1.555*
+*確認対象: CueMol3 3.0.2.560*

@@ -109,7 +109,7 @@ The native-mode commands are collected by `help` topic in the [Console command l
 - [Plugins](../index.md) / [Settings reference](../../settings.md#plugins)
 - [Selection expression syntax](../../selection.md)
 - [Recording and replaying operations](../../actions.md)
-- [Bottom panel](../../../ui/bottom-panels.md)
+- [Bottom panel](../../../ui/bottom-panels/index.md)
 
 ---
 

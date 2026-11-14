@@ -3,7 +3,7 @@
 シーンの見せ方を時間に沿って変化させるしくみです。
 下部パネルの **Animation** パネルにタイムラインが表示され、
 そこにアニメーション要素 (anim obj) を並べて構成します
-(→ [下部パネル](../../ui/bottom-panels.md))。
+(→ [Animation パネル](../../ui/bottom-panels/animation.md))。
 
 作成したアニメーションは、レンダリングウィンドウの動画モードで
 動画として書き出せます (→ [レンダリングウィンドウ](../../ui/rendering-window.md))。
@@ -15,6 +15,7 @@ Animation パネルの追加メニューから、次の要素を追加できま�
 | 追加メニュー | クラス | 内容 |
 |---|---|---|
 | Simple spin | [SimpleSpin](simplespin.md) | 視点を指定軸まわりに回転させる |
+| Rock | [RockSpin](rockspin.md) | 視点を振動させる (往復・円・8 の字) |
 | Camera motion | [CamMotion](cammotion.md) | 保存したカメラへ視点を移動させる |
 | Show / Hide | [ShowHideAnim](showhide.md) | Renderer をフェードイン / フェードアウトさせる |
 | Slide in / Slide out | [SlideInOutAnim](slideinout.md) | Renderer をスライドさせて出し入れする |
@@ -35,8 +36,8 @@ Disabled
 Relative to
 :   開始時刻の基準。*(absolute)* でタイムラインの先頭からの絶対時刻になり、ほかの要素を
     選ぶとその要素の終了時刻が基準になります。基準が循環するような指定は、理由を示して
-    拒否されます。基準にしていた要素が無くなると *(missing: 名前)* と表示され、直すまで
-    そのアニメーションは再生できません
+    拒否されます。基準にしていた要素が無くなると *(missing: 名前)* と表示され、修正されるまで
+    そのアニメーションは再生できません。
 
 Start time
 :   開始時刻。ドラッグしている間はタイムラインのストリップが追従し、離した時点で
@@ -49,12 +50,15 @@ Quadric
 :   時間に対する変化の加減速の度合い。値を変えると、
     等速ではなく緩やかに始まって緩やかに終わるような動きになります
 
+要素は Animation パネルで Cut / Copy / Paste できます
+(→ [Animation パネル](../../ui/bottom-panels/animation.md#コピー--ペースト))。
+
 ## 関連項目
 
-- [下部パネル](../../ui/bottom-panels.md) — Animation パネルの操作
+- [Animation パネル](../../ui/bottom-panels/animation.md) — タイムラインの操作
 - [レンダリングウィンドウ](../../ui/rendering-window.md) — 動画としての書き出し
 - [カメラ](../camera.md)
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 3.0.2.560*

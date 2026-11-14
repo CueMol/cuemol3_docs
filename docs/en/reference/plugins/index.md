@@ -57,7 +57,7 @@ If the plugin is disabled during playback, the tab closes and playback stops.
 
 - [AI Agent](ai-agent.md) / [Console](console/index.md) / [PyM console](console/pymconsole.md) / [MCP Server](mcp-server.md)
 - [Settings](../settings.md#plugins)
-- [Side panels](../../ui/side-panels.md) / [Bottom panels](../../ui/bottom-panels.md)
+- [Side panels](../../ui/side-panels.md) / [Bottom panels](../../ui/bottom-panels/index.md)
 
 ---
 

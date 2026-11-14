@@ -125,7 +125,7 @@ rebuilds the movie from the frames in the output folder.
     (→ [Configuring external tools](../install/external-tools.md)).
 
 The animation itself is created in the **Animation** tab of the bottom panel in the main window
-(→ [Bottom panel](bottom-panels.md)).
+(→ [Bottom panel](bottom-panels/index.md)).
 
 ## Differences from CueMol2
 

@@ -55,6 +55,10 @@ APBS の計算条件です。通常は変える必要はありません。詳し
 | **Water dielectric** | 78.54 | 溶媒の誘電率 |
 | **Protein dielectric** | 2.0 | 分子内部の誘電率 |
 
+選択と計算の条件 (Elepot name と Force field を除く) は、次にダイアログを開いたとき (CueMol3 を
+再起動した後も) に引き継がれます。選択以外の値は、ダイアログ左下の **Defaults** で上の既定値に
+戻すことができます (計算中は使用できません)。
+
 ## 実行と結果
 
 **Start** を押すと計算が始まり、進捗が表示されます (pdb2pqr → APBS の順に実行されます)。
@@ -89,4 +93,4 @@ Color パネルで molsurf Renderer を選び、Coloring の種類から **Elect
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.2.560*

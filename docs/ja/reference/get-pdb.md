@@ -1,7 +1,7 @@
 # PDB からの取得 (Get PDB)
 
 PDB のエントリの座標と密度マップを、ネットワークから取得して読み込みます。
-AlphaFold DB の予測構造と、PubChem の化合物も取得できます。
+AlphaFold DB の予測構造と、PubChem の化合物、CCD のリガンドも取得できます。
 **File &gt; Get PDB...** (またはツールバーの **Get PDB** ボタン) で **Get PDB** ダイアログを開き、
 PDB ID か EMDB ID を入力して **Download** を押します。ID がわからないときは、キーワードで
 エントリを探せます。
@@ -23,6 +23,7 @@ PDB ID か EMDB ID を入力して **Download** を押します。ID がわか�
 | **PDB / EMDB** | **PDB or EMDB ID, or keywords** | PDB のエントリと EMDB のマップ (この節) |
 | **AlphaFold DB** | **UniProt accession or AlphaFold ID** | AlphaFold DB の予測構造 (→ [AlphaFold DB](#alphafold-db)) |
 | **PubChem** | **PubChem compound ID (CID)** | PubChem の化合物 (→ [PubChem](#pubchem)) |
+| **CCD (ligand)** | **CCD code (Chemical Component Dictionary)** | リガンド (低分子) の理想座標 (→ [CCD (ligand)](#ccd-ligand)) |
 
 **PDB / EMDB** では、**PDB or EMDB ID, or keywords** に次のどちらかを入力します。
 
@@ -148,11 +149,24 @@ Object 名の既定は `AF-<accession>-F1` です。読み込んだ構造は、�
 取得した化合物は、Object 名と Renderer を指定する画面を出さずに、`pubchem_<CID>` という名前の
 Object として ball &amp; stick ([ballstick](renderers/ballstick.md)) で表示されます。
 
+## CCD (ligand)
+
+**Database** で **CCD (ligand)** を選ぶと、PDB の Chemical Component Dictionary (CCD) にある
+リガンドの理想座標 (水素を含む) を、RCSB から SDF 形式で取得できます。入力欄には 1〜5 文字の
+CCD コードを入力します (例: `ATP`、`HEM`、`NAG`)。
+
+入力すると、化合物の名前と「分子式 | 分子量 | 種類」が入力欄の下に表示されます。
+
+取得したリガンドは、PubChem と同じく Object 名と Renderer を指定する画面を出さずに、CCD コードを
+名前とする Object として ball &amp; stick で表示されます。
+
+ChX console では `open ccd:ATP` で取得できます (→ [ChX console](plugins/console/chx_console.md))。
+
 ## Console から取得する
 
 [Console](plugins/console/index.md) の native モードでは、`fetch_pdb` (`fetch`) で座標を、
 `fetch_map` で結晶構造の密度マップを、`fetch_emdb` で電顕マップを取得できます。
-PDBe / PDBj / PDB-REDO / AlphaFold DB / PubChem からは `fetch_entry` で、URL にある
+PDBe / PDBj / PDB-REDO / AlphaFold DB / PubChem / CCD からは `fetch_entry` で、URL にある
 CCP4 / MRC 形式のマップは `fetch_map_url` で取得できます
 (→ [コマンド一覧](plugins/console/commands.md))。
 
@@ -165,4 +179,4 @@ CCP4 / MRC 形式のマップは `fetch_map_url` で取得できます
 
 ---
 
-*確認対象: CueMol3 3.0.1.555*
+*確認対象: CueMol3 3.0.2.560*

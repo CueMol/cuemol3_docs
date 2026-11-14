@@ -146,7 +146,7 @@ Renderer の着色を、既定のスタイルで定義された状態に戻し�
 ## 分子側の着色 (`$molcol`)
 
 Renderer ごとではなく分子 Object 側に着色を持たせ、複数の Renderer で共有することも
-できます。この場合、Renderer 側の色指定に `$molcol` を使います
+できます。この場合、Renderer 側の色指定に `$molcol` を使用してください
 (→ [色の記法](color-syntax.md#分子色表記))。
 
 分子表面の Renderer では、[Solid](#solid) の色として `$molcol` を選ぶとこの形になります。

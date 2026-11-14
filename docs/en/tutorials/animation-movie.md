@@ -18,7 +18,7 @@ An animation is built by placing **animation elements** (rotation, camera moveme
 ## 2. Open the Animation panel
 
 With the 3UG9 scene open, open the **Animation** tab in the bottom panel
-(→ [Bottom panels](../ui/bottom-panels.md)).
+(→ [Bottom panels](../ui/bottom-panels/index.md)).
 
 ## 3. Rotate the molecule
 

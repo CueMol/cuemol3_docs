@@ -45,7 +45,7 @@ give almost the same number of vertices.
 !!! note "If MeshMS cannot be used, it falls back to the distance field"
     Even if **MeshMS (analytic SES)** is selected, the mesh is built with the distance field instead
     when Surface type is anything other than **Solvent excluded**, or when generation fails.
-    The switch and its reason appear in the [Output panel](../../ui/bottom-panels.md#output) as lines
+    The switch and its reason appear in the [Output panel](../../ui/bottom-panels/index.md#output) as lines
     starting with `DirectSurfRend&gt;`. **The values you set are not changed.**
 
 ### Atom radii
