@@ -9,9 +9,6 @@ The **selection builder** is a widget for assembling a selection through GUI ope
 
 The result of an operation in the builder is always reflected in the input field as a **selection expression**. The generated expression can be edited by hand as it is, so the builder is also a shortcut for learning the syntax.
 
-!!! info "Screenshots planned"
-    Screenshots of each tab will be added to this page.
-
 ## Tab layout
 
 | Tab | Role |
@@ -48,6 +45,8 @@ The height of the Named / History lists depends on where they are placed. In the
 
 ## Term
 
+![The Term tab with the keyword resid and the value 2:7. Each apply button shows the number of atoms the selection would have](../../assets/images/ui/selection-builder/term.webp){ width="262" .on-glb }
+
 Build a single condition (term) from a keyword and a value, then combine it with the current selection using the **apply buttons**.
 
 | Button | Meaning |
@@ -74,8 +73,6 @@ The keywords include the following. The value field changes according to the key
 | all / none | Everything / empty | No value |
 
 Using Named / History as a keyword allows combinations such as "take the intersection with a defined selection" or "remove a history expression from the current selection".
-
-<!-- TODO(screenshot): Term tab (keyword resid, value 2:7, Set/Add/Sub/Intsec buttons) -->
 
 ## Mod
 
