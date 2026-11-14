@@ -25,7 +25,7 @@
 | Measurement and analysis (`analysis`) | `measure_geometry` / `measure_selections` / `analyze_interactions` / `list_interactions` / `remove_interaction` |
 | Density maps (`maps`) | `fetch_map` / `fetch_emdb` / `fetch_map_url` / `list_map_contours` / `set_map_contour` (`contour`) / `create_surface_from_map` / `recenter_map` / `load_mtz` / `load_ccp4` |
 | Animation (`animation`) | `animate` / `list_anims` / `add_anim` / `remove_anim` / `move_anim` / `set_anim_time` / `set_anim_prop` / `set_anim_options` / `reset_anim_prop` / `set_anim_generic_prop` / `list_morph_frames` / `add_morph_frame` / `remove_morph_frame` / `convert_to_morph` / `set_frame` |
-| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_entry` / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_mmcif` / `load_msms` / `load_namd` / `load_amber` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
+| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_entry` / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_mmcif` / `load_msms` / `load_psf` / `load_amber` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
 | Console (`console`) | `cd` / `pwd` / `ls` / `run` / `open_log` / `close_log` / `log` / `help` / `quit` / `exit` |
 
 ## コマンドごとの補足
@@ -45,15 +45,19 @@
   は、選択式に一致する原子に合わせて表示します。Object の選択は変えません。
 - `orient_view` は、選択式に一致する原子の主軸が画面の軸に沿うように向きを変えて表示します。
 - `copy_node` は Object・Renderer・Renderer グループの内容を取り出し、`paste_node` で別の Object に
-  貼り付けられます (GUI のコピー &amp; ペーストと同じです)。
+  貼り付けられます (GUI のコピー &amp; ペーストと同じです)。`paste_node` はアニメーションの要素も
+  貼り付けられます (`before` で挿入位置の要素を指定します。省略すると末尾)。
+- `load_psf` は CHARMM / NAMD のトポロジー (`.psf`) を開きます。`coordFile` で NAMD の座標 (`.coor`) を
+  指定でき、省略すると座標の無い分子になります。
+- `add_anim` の `type` に `rock` を指定すると、[RockSpin](../../animation/rockspin.md) の要素を追加します。
 - `set_frame` は、モーフィングや MD トラジェクトリの 1 フレームを表示します (Undo には残りません)。
 - `fetch_emdb` は EMDB の電顕マップを取得します。EMDB ID (`EMD-11638` など) か、電顕構造の
   PDB ID を指定します (PDB ID の場合は、そのエントリの最初のマップ)。取得元は wwPDB (既定) /
   EBI / PDBj から選べます。表示は **Get PDB** で取得したときと同じです
   (→ [PDB からの取得](../../get-pdb.md#cryo-em-maps))。
 - `fetch_entry` は、データベース (`pdb` (RCSB) / `pdbe` / `pdbj` / `redo` (PDB-REDO) / `alphafold` /
-  `pubchem`) と ID を指定して構造を取得します。`alphafold` は UniProt accession、`pubchem` は
-  化合物の ID (CID) で指定します (→ [PDB からの取得](../../get-pdb.md))。
+  `pubchem` / `ccd`) と ID を指定して構造を取得します。`alphafold` は UniProt accession、`pubchem` は
+  化合物の ID (CID)、`ccd` はリガンドの CCD コード (`ATP` など) で指定します (→ [PDB からの取得](../../get-pdb.md))。
 - `fetch_map_url` は、URL にある CCP4 / MRC 形式のマップ (`.map` / `.mrc` / `.ccp4`、`.gz` で
   圧縮したものも可) を取得します。電顕マップは等値面で、結晶学的マップは等高線で表示します。
 - `render` は[レンダリング](../../rendering.md)を実行します (GI または NPR)。実行中は **Stop** で止められます。
@@ -79,4 +83,4 @@
 
 ---
 
-*確認対象: CueMol3 3.0.1.555*
+*確認対象: CueMol3 3.0.2.560*

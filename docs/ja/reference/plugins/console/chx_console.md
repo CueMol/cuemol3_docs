@@ -56,6 +56,7 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 | 表示 | `show` / `hide` (`display` / `~show` / `~display`) / `cartoon` (`cartoon hide` / `cartoon style`) / `ribbon` / `~ribbon` / `nucleotides` / `style` / `size` / `surface` (`surface hidePatches` / `surface close` / `surface zone` / `surface unzone` / `~surface`) / `transparency` / `label` (`label delete` / `~label`) / `volume` (`volume zone` / `volume unzone`) / `unitcell` (`unitcell outline` / `unitcell delete`) |
 | 色 | `color` (`colour`) / `color byattribute` / `color bfactor` / `color modify` / `color list` / `rainbow` |
 | ビュー | `view` (`view name` / `view list` / `view delete` / `view matrix` / `view initial`) / `turn` / `move` / `zoom` / `cofr` / `camera` / `lighting` / `graphics` (`graphics silhouettes`) / `set` / `preset` / `wait` |
+| 動き (アニメーション) | `turn` (`frames` 付き) / `roll` / `rock` / `wobble` / `stop` |
 | 選択 | `select` (`select add` / `select subtract` / `select intersect` / `select clear` / `select zone` / `select up` / `select down` / `~select`) / `name` (`name list` / `name delete`) |
 | 情報と計測 | `info` (`info models` / `chains` / `residues` / `atoms`) / `distance` (`distance delete` / `~distance`) / `dssp` |
 | 重ね合わせ | `align` / `matchmaker` (`mmaker`) |
@@ -63,7 +64,7 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 
 - `open` は構造・マップのファイル、PDB ID (4 文字、または `pdb:1abc`)、URL、`.cxc` スクリプト、
   `.qsc` のシーンを受け付けます。PDB ID は mmCIF 形式で取得します。`pdbe:` / `pdbj:` / `redo:` /
-  `alphafold:` / `pubchem:` / `emdb:` などのデータベースの接頭辞 (または `fromDatabase`)、
+  `alphafold:` / `pubchem:` / `ccd:` / `emdb:` などのデータベースの接頭辞 (または `fromDatabase`)、
   `from eds` (結晶構造の 2Fo-Fc マップ)、`from rcsb_bio` / `pdbe_bio` (生物学的集合体) も使えます。
   1 つの `open` に複数の名前を並べられます。開いたものには **#1**, **#2**, ... の
   model 番号が振られます (ChimeraX と同じく、閉じた番号は次に開いたものに再び使われます)。
@@ -78,8 +79,15 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 - `color` は色の名前、`#rrggbb` などの 16 進表記、`rgb()` / `hsl()` / `gray()` などの関数の形を
   受け付けます。`byhetero` / `byelement` / `bychain` / `bymodel` / `bynucleotide` / `fromatoms` /
   `fromcartoons` も使えます。`rainbow` と `color byattribute` は `palette` で色の並びを指定できます
-  (ColorBrewer のパレット名も使えます)。
+  (ColorBrewer のパレット名も使えます)。`alphafold` / `esmfold` / `pae` / `paegreen` / `paecontacts` の
+  パレットは、ChimeraX と同じく決まった値 (pLDDT の 0〜100 など) に色を置きます。
 - `surface` は ChimeraX と同じくチェーンごとに分子表面 (dsurface) を作ります。
+- `turn` に `frames` を付けると、その回転をアニメーションの要素としてタイムラインの末尾に追加し、
+  1 回再生します。`roll` / `rock` / `wobble` (と `turn ... rock N` / `turn ... wobble N`) は、
+  `frames` を指定しなければ 1 周期分の要素を追加し、`stop` までループで再生します (`stop` で
+  ループの設定は元に戻ります)。ループはタイムライン全体を繰り返すので、ほかの要素があると警告が出ます。
+  回転は [SimpleSpin](../../animation/simplespin.md)、揺らしは [RockSpin](../../animation/rockspin.md)
+  の要素になります。速さや位相は ChimeraX とおおよそ合わせてあるだけで、同じではありません。
 - `view` は向きを変えずに、指定したもの (省略すると全体) が収まるように表示します。
   `view name` で保存したビューは CueMol のカメラとして保存されます。
 - `distance` はちょうど 2 原子の距離を測ります。
@@ -123,7 +131,7 @@ ChimeraX の原子の指定は、CueMol の[選択式](../../selection.md)に**�
   `show :ALA atoms` で、ALA は球で表示されます)。ただし、シーンを保存して開き直すと、非表示の原子の
   スタイルは自動の表示 (auto style) のものに戻ります。
 - 透明度 (`transparency`) は Renderer ごとに設定されるため、分子の一部だけを指定すると拒否します。
-- `turn` / `move` などの `frames` はアニメーションせず、一度に動かします。
+- `move` / `zoom` などの `frames` はアニメーションせず、一度に動かします (`turn` は上記のとおりアニメーションになります)。
 - model 番号は、シーンを保存して開き直すと振り直されます。
 - `bypolymer` / `byidentity` の着色、`color random`、`color zone`、`lighting model`、`volume` によるマップの演算
   (`volume gaussian` など)、`name frozen`、`.cxs` への保存などには対応していません。
@@ -136,4 +144,4 @@ ChimeraX の原子の指定は、CueMol の[選択式](../../selection.md)に**�
 
 ---
 
-*確認対象: CueMol3 3.0.1.555*
+*確認対象: CueMol3 3.0.2.560*

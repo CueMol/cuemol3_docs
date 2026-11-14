@@ -31,7 +31,9 @@
 | **Hydrogen bond (N, O) only** | OFF | ON にすると、炭素原子が関わるものを除きます (タンパク質では N・O などの原子の組だけが残ります) |
 | **Label set name** | `measure` | 相互作用を追加する atomintr Renderer の名前。無ければ作られます |
 
-ダイアログを開くたびに、分子以外の項目は既定値に戻ります。
+2 つの選択 (Second selection のスイッチを含む) と、Label set name を除く Parameters の値は、次にダイアログを開いたとき (CueMol3 を
+再起動した後も) に引き継がれます。Label set name を除く Parameters の値は、ダイアログ左下の
+**Defaults** で上の既定値に戻せます。
 
 !!! note "水素結合の向きは考慮されません"
     抽出されるのは距離の条件を満たす原子の組で、水素結合の向きなどは考慮されていません。
@@ -72,4 +74,4 @@ A 鎖と B 鎖の間の、相互作用の候補が `measure` に追加されま�
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.2.560*

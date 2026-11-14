@@ -15,6 +15,7 @@ Animation パネルの追加メニューから、次の要素を追加できま�
 | 追加メニュー | クラス | 内容 |
 |---|---|---|
 | Simple spin | [SimpleSpin](simplespin.md) | 視点を指定軸まわりに回転させる |
+| Rock | [RockSpin](rockspin.md) | 視点を揺らす (往復・円・8 の字) |
 | Camera motion | [CamMotion](cammotion.md) | 保存したカメラへ視点を移動させる |
 | Show / Hide | [ShowHideAnim](showhide.md) | Renderer をフェードイン / フェードアウトさせる |
 | Slide in / Slide out | [SlideInOutAnim](slideinout.md) | Renderer をスライドさせて出し入れする |
@@ -49,6 +50,9 @@ Quadric
 :   時間に対する変化の加減速の度合い。値を変えると、
     等速ではなく緩やかに始まって緩やかに終わるような動きになります
 
+要素は Animation パネルで Cut / Copy / Paste できます
+(→ [下部パネル](../../ui/bottom-panels.md#animation))。
+
 ## 関連項目
 
 - [下部パネル](../../ui/bottom-panels.md) — Animation パネルの操作
@@ -57,4 +61,4 @@ Quadric
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 3.0.2.560*

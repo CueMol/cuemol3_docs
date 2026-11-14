@@ -62,8 +62,8 @@ Reference と Moving の Selection について、次の点に注意して指定
 | **Auto recenter** | ON (既定) にすると、重ね合わせたあと Moving 分子の選択部分に視点を合わせます |
 | **Use xformMat property** | ON にすると、座標を書き換えずに、重ね合わせの変換を分子の xformMat プロパティとして保存します (既定は OFF) |
 
-- Method・Pivot atom・2 つのスイッチと分子の指定は、次にダイアログを開いたときに引き継がれます。
-  Selection は毎回空になります。
+- Method・Pivot atom・2 つのスイッチ・分子の指定と Selection は、次にダイアログを開いたとき
+  (CueMol3 を再起動した後も) に引き継がれます。分子は、シーンに残っている場合に使われます。
 - Selection の入力欄では、右端の ▼ から名前付き選択・入力の履歴・選択ビルダーを使えます
   (→ [選択ビルダー](../../ui/selection-builder.md))。
 
@@ -111,4 +111,4 @@ ChX console の `matchmaker` は US-align、`align` は LSQ で重ね合わせ�
 
 ---
 
-*確認対象: CueMol3 3.0.0.554*
+*確認対象: CueMol3 3.0.2.560*

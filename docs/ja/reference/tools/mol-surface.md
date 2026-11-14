@@ -36,6 +36,9 @@
   100 kDa を超える大きな分子では、低めの値の方が速く計算できます。
 - **Algorithm** の違いは [MolSurfObj の生成アルゴリズム](../objects/molsurf.md#生成アルゴリズム-algorithm)
   を参照してください。既定の *Auto* では MeshMS を使い、失敗したときは BALL に切り替わります。
+- 選択と Surface の値 (Object name を除く) は、次にダイアログを開いたとき (CueMol3 を再起動した後も) に
+  引き継がれます。Point density・Probe radius・Algorithm は、ダイアログ左下の **Defaults** で
+  上の既定値に戻せます。
 
 ## 実行と結果
 
@@ -73,4 +76,4 @@
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.2.560*

@@ -440,6 +440,32 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **未着手の残件**: スクリーンショット全般 (Get PDB の Database / Server、Bfac/Occ のグラデーション、
   起動スクリプトのステータスバー)、`dotfiles.md` / `chx_console.md` / `get-pdb.md` の英訳、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
+- 前回同期: 2026-11-14 / cuemol2 `aad7cb52` (tag `v3.0.2.560`, branch: develop) / CueMol3 `3.0.2.560`。
+  `f5061ea8..aad7cb52` の差分を全件確認した (リリースノート `docs/release_notes/v3.0.2.560.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、2.4.1.547 を
+  `releases-archive.md` へ移した。
+  今回の主題は **アニメーションの Rock 要素 (RockSpin) と要素の Cut / Copy / Paste**・**Console からの
+  視点の動き** (ChX `turn ... frames` / `roll` / `rock` / `wobble` / `stop`、PyM `movie.*` / `rock`)・
+  **Styles ビュー** (スタイルセットがシーンツリーから外れた)・**Explorer に Camera / View パネル**
+  (View アクティビティの廃止)・**MD トラジェクトリのドロップでの付加とトポロジーだけの読み込み**・
+  **ダイアログの設定の記憶と Defaults ボタン**・**Get PDB の CCD**・**nucl の Base type None**・
+  **Undo のステップのまとめ**。
+  `reference/animation/rockspin.md` を新設した (ja の nav の SimpleSpin の次。英訳は未着手)。
+  `ui/side-panels.md` に `## Styles` を新設し、`## View` の見出しを外して Camera / View パネルを Explorer の
+  下に入れた (節の並びは Scene / Color / Camera / View のまま。実際のパネルの順は Scene / Camera / Color / View で、
+  表にはそちらを書いた)。「View &gt; Camera」「アクティビティバーの View」を Explorer に直した
+  (camera / camera-scene / ribbon-figure / animation-movie / loading / mouse-input)。
+  Console の `load_namd` → `load_psf` をコマンド一覧と更新履歴の warning に書いた。
+  **書かなかったもの**: renderer を足すとほかの renderer の色が戻る件、名前付きの色の変更で ribbon が
+  描き直されない件、Trajectory が分子として扱われるようになった件 (palette の色・分子の一覧・重ね合わせなどでの拒否)、
+  重ね合わせの既定の moving 分子、`Untitled 1.qsc` のシーン名、Mol Struct パネルの大きなチェインの段階的な表示
+  (いずれも不具合修正か性能)、スクリプトの `iter.setTarget(mol)` (スクリプトからしか見えない)、
+  History のインスペクタの **Merged** 行。
+  **要判断として残したもの**: **PyMOL 2.x (Python 3) の `.pse` が開けるようになった件** (リリースノートの主な変更の
+  1 つだが、不具合修正の形なので更新履歴にも本体にも書いていない)。
+  **未着手の残件**: スクリーンショット全般 (Styles ビュー、Rock のインスペクタ、Attach Trajectory、
+  `ui/side-panels.md` の Explorer の図を含む)、`rockspin.md` / `dotfiles.md` / `chx_console.md` / `get-pdb.md` の英訳、
+  docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

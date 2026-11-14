@@ -54,10 +54,16 @@ CueMol3 では File メニューの **Open MD Trajectory...** から MD シミ�
 | 形式 | 拡張子 |
 |---|---|
 | AMBER トポロジー | `.prmtop` / `.parm7` / `.top` |
+| AMBER restart (座標) | `.rst7` / `.inpcrd` / `.restrt` |
 | AMBER NetCDF トラジェクトリ | `.nc` |
 | DCD バイナリトラジェクトリ | `.dcd` |
 | GROMACS 座標 / XTC / TRR | `.gro` / `.xtc` / `.trr` |
+| CHARMM / NAMD トポロジー (PSF) | `.psf` |
 | NAMD 座標 | `.coor` |
+
+トポロジーだけのファイル (`.prmtop` / `.psf`) は **Open File...** でも座標の無い分子として開け、
+あとから座標やトラジェクトリのファイルをドロップして付けられます
+(→ [下部パネル](../ui/bottom-panels.md#trajectory))。
 
 ### シーン (読み込み)
 

@@ -47,6 +47,10 @@ Base type
         ![detail2](../../../assets/images/reference/renderers/nucl/nucl-basetype-detail2.png){ width="220" .on-glb }
         ![detail2 拡大](../../../assets/images/reference/renderers/nucl/nucl-basetype-detail2-2.png){ width="220" .on-glb }
 
+    **None**
+    :   塩基を表示せず、主鎖のチューブだけを残します。None から別の形状に戻すと、
+        Base size と Base thick は既定値になります
+
 Detail
 :   残基の表示の緻密さ。大きいほど滑らかな表示になりますが、ポリゴン数が増え
     処理が重くなります。レイトレーシング時には、
@@ -91,4 +95,4 @@ nucl Renderer は、読み込み時に塩基対を形成していると判定さ
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 3.0.2.560*
