@@ -1,0 +1,4115 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CueMol3 (tritium) user documentation">
+      
+      
+      
+        <link rel="canonical" href="https://cuemol.github.io/cuemol3_docs/en/releases/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>更新履歴 - CueMol3 &mdash; Molecular Visualization Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#更新履歴" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-header__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CueMol3 &mdash; Molecular Visualization Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              更新履歴
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../releases/" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CueMol/cuemol3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../install/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ui/" class="md-tabs__link">
+          
+  
+    
+  
+  User interface
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../changes/" class="md-tabs__link">
+          
+  
+    
+  
+  Changes from CueMol2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tutorials/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/" class="md-tabs__link">
+          
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="CueMol3 &amp;mdash; Molecular Visualization Framework" class="md-nav__button md-logo" aria-label="CueMol3 &mdash; Molecular Visualization Framework" data-md-component="logo">
+      
+  <img src="../../assets/images/cuemol3-logo-160px.png" alt="logo">
+
+    </a>
+    CueMol3 &mdash; Molecular Visualization Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CueMol/cuemol3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../getting-started/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/quick-tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick tour
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../install/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/macos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    macOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Updating
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/external-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ui/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    User interface
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User interface
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/side-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Side panels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/selection-builder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selection builder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/inspector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Property inspector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/bottom-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bottom panel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/toolbar-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toolbar and tool palette
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/rendering-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/mouse-input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mouse and trackpad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../menu/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Menus
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Menus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/edit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edit menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/window-help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window / Help menus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../changes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Changes from CueMol2
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Changes from CueMol2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changes/ui-paradigm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changes in the interaction model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changes/features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merged, renamed and removed features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changes/status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development status and unimplemented features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../tutorials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/basic/loading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading and displaying a structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/basic/selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selecting part of a molecule
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/basic/renderers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding, removing and configuring Renderers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/basic/coloring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coloring Renderers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/basic/camera-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saving the camera and the scene
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/basic/measure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measurement and interaction display
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/ribbon-figure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Making a protein ribbon figure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/publication-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exporting high-resolution images for publication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/density-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overlaying an electron density map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/symmetry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displaying symmetry mates and the unit cell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/surface-elepot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coloring a molecular surface by electrostatic potential
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/animation-movie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Making an animation and exporting a movie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selection syntax
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/color-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Color syntax
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/coloring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coloring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/objects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Object
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Object
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/objects/molcoord/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolCoord (molecule)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/objects/densitymap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DensityMap (density map)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/objects/elepot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ElePotMap (electrostatic potential)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/objects/molsurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolSurfObj (molecular surface)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/renderers/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Renderer
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Renderer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/common/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/edge-lines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge lines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    simple (bond lines)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/trace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    trace (Cα trace)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/tracestick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tracestick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/spline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/ballstick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ballstick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/cpk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cpk (space-filling model)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/anisou/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    anisou (thermal ellipsoids)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/tube/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tube
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/ribbon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ribbon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/cartoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cartoon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/nucl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nucl (nucleic acids)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/atomintr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    atomintr (measurements)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/namelabel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    namelabel (name labels)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/disorder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    disorder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/molsurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    molsurf (molecular surface, precomputed)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/dsurface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dsurface (molecular surface, direct)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/dsurf2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dsurf2 (molecular surface, distance field)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/contour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    contour (contour mesh)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/isosurf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    isosurf (isosurface)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/renderers/gpu_mapmesh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gpu_mapmesh (contour, GPU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/camera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/animation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Animation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Animation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/animation/simplespin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SimpleSpin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/animation/cammotion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CamMotion (camera motion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/animation/showhide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShowHide (show / hide)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/animation/slideinout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SlideInOut
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/animation/molanim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolAnim (structural change)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/styles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Styles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/rendering-npr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NPR (ink-style rendering)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_14" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/plugins/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Plugins
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_14" id="__nav_7_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_14">
+            <span class="md-nav__icon md-icon"></span>
+            Plugins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/plugins/ai-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_14_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/plugins/console/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Console
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_14_3" id="__nav_7_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            Console
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/plugins/console/commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command list
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/plugins/console/cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tritium_cli
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/plugins/console/pymconsole/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyM console
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/plugins/mcp-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MCP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_15" id="__nav_7_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_15">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tools/superpose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Superposing molecules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tools/interaction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extracting interactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tools/secondary-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assigning secondary structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tools/morphing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Morphing structural changes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tools/mol-surface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generating molecular surfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tools/surface-cutter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cutting molecular surfaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/tools/apbs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculating electrostatic potential
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording and replaying operations (Actions)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keyboard shortcuts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/qsc-format/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scene file (.qsc)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#302560-2026-11-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.0.2.560 (2026-11-14)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0.2.560 (2026-11-14)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#アニメーション" class="md-nav__link">
+    <span class="md-ellipsis">
+      アニメーション
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-からの視点の動き" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console からの視点の動き
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styles-ビュー" class="md-nav__link">
+    <span class="md-ellipsis">
+      Styles ビュー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#md-トラジェクトリ-md-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      MD トラジェクトリ (MD Tools)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#画面と操作" class="md-nav__link">
+    <span class="md-ellipsis">
+      画面と操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301555-2026-11-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.0.1.555 (2026-11-10)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0.1.555 (2026-11-10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pdb-からの取得" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDB からの取得
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-factor-の多色のグラデーション" class="md-nav__link">
+    <span class="md-ellipsis">
+      B-factor の多色のグラデーション
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#視点の合わせ方" class="md-nav__link">
+    <span class="md-ellipsis">
+      視点の合わせ方
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chx-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChX console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#起動スクリプトとスタイルファイル" class="md-nav__link">
+    <span class="md-ellipsis">
+      起動スクリプトとスタイルファイル
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#300554-2026-11-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.0.0.554 (2026-11-06)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0.0.554 (2026-11-06)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#バージョン番号とリポジトリ" class="md-nav__link">
+    <span class="md-ellipsis">
+      バージョン番号とリポジトリ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chx-console_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChX console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-のモードがプラグインに" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console のモードがプラグインに
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tritium_cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      tritium_cli
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#シーンツリーと選択" class="md-nav__link">
+    <span class="md-ellipsis">
+      シーンツリーと選択
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#242550-2026-11-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2.550 (2026-11-01)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.2.550 (2026-11-01)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#既定の見た目" class="md-nav__link">
+    <span class="md-ellipsis">
+      既定の見た目
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdb-からの取得-get-pdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      PDB からの取得 (Get PDB)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-と-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console と MCP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自動アップデート" class="md-nav__link">
+    <span class="md-ellipsis">
+      自動アップデート
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#関連項目" class="md-nav__link">
+    <span class="md-ellipsis">
+      関連項目
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="更新履歴">更新履歴<a class="headerlink" href="#更新履歴" title="Permanent link">&para;</a></h1>
+<p>リリースごとの主な変更点です。お使いのバージョンは <strong>Help &gt; About CueMol3</strong> で確認できます。</p>
+<div class="admonition info">
+<p class="admonition-title">詳細は GitHub のリリースノートにあります</p>
+<p>このページは、ふだん使ううえで知っておくとよい点だけをまとめたものです。
+修正の一件一件や内部の変更まで含む完全な記録は
+<a href="https://github.com/CueMol/cuemol3/releases">GitHub の Releases</a> にあります。</p>
+<p>CueMol3 と CueMol2 は同じリリースで一緒に配布されるため、リリースノートには
+CueMol2 (UXP 版) の変更も含まれています。</p>
+</div>
+<p>このページには直近の 5 リリースを載せています。それより前は
+<a href="../releases-archive/">過去のリリース</a>を参照してください。</p>
+<h2 id="302560-2026-11-14">3.0.2.560 (2026-11-14)<a class="headerlink" href="#302560-2026-11-14" title="Permanent link">&para;</a></h2>
+<h3 id="アニメーション">アニメーション<a class="headerlink" href="#アニメーション" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>アニメーションの要素に Rock が追加されました。</strong> 視点を振動させるアニメーションです。
+  <strong>Pattern</strong> で Rock (1 軸の往復) / Nutate (視線が円を描く) / Wobble (8 の字) を選択し、振れ幅・回数・
+  位相・振れ幅の時間変化 (Grow / Shrink) 等を設定することが可能です。
+  → <a href="../reference/animation/rockspin/">RockSpin</a></li>
+<li><strong>Animation パネルで、要素を Cut / Copy / Paste できるようになりました</strong> (<strong>Edit</strong> メニューと
+  <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-x">X</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-c">C</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-v">V</kbd></span>)。貼り付けた要素は、選んでいる要素の直後に
+  挿入されます (長さはコピー元と同じです)。別のシーンへの貼り付けも可能です。→ <a href="../ui/bottom-panels/animation/">Animation パネル</a></li>
+<li><strong>Simple spin の Rotation angle に範囲が無くなりました。</strong> 負の値で逆向きに回り、360° で 1 周します。</li>
+</ul>
+<h3 id="console-からの視点の動き">Console からの視点の動き<a class="headerlink" href="#console-からの視点の動き" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ChX console の <code>turn</code> に <code>frames</code> を付けると、その回転をアニメーションの要素として追加し、
+  1 回再生するようになりました。</strong> <code>roll</code> / <code>rock</code> / <code>wobble</code> は <code>stop</code> までループで再生します
+  (<code>stop</code> でループの設定は元に戻ります)。</li>
+<li><strong>PyM console の <code>movie.add_roll</code> / <code>movie.add_rock</code> / <code>movie.add_nutate</code> / <code>movie.roll</code> /
+  <code>movie.rock</code> / <code>movie.nutate</code> / <code>movie.tdroll</code> が、アニメーションに要素を追加するようになりました</strong>
+  (<code>mplay</code> で再生します)。<code>rock</code> で揺れを開始・停止できます。</li>
+<li>速さや位相は ChimeraX / PyMOL とおおよそ合わせてあるだけで、同じではありません。
+  → <a href="../reference/plugins/console/chx_console/">ChX console</a> /
+  <a href="../reference/plugins/console/pymconsole/">PyM console</a></li>
+</ul>
+<h3 id="styles-ビュー">Styles ビュー<a class="headerlink" href="#styles-ビュー" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>アクティビティバーに Styles ビューが加わりました。</strong> シーンから見えるスタイルセットを名前を探す順に
+  並べ、選んだスタイルセットの名前付きの色 (<strong>Colors</strong>) と名前付き選択 (<strong>Selections</strong>) をその場で
+  編集できます。スタイルセットはシーンツリーに表示されなくなりました。
+  → <a href="../ui/side-panels/#styles">サイドパネル</a></li>
+</ul>
+<h3 id="md-トラジェクトリ-md-tools">MD トラジェクトリ (MD Tools)<a class="headerlink" href="#md-トラジェクトリ-md-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>トラジェクトリのファイル (<code>.xtc</code> / <code>.dcd</code> / <code>.trr</code> / <code>.nc</code>) をドロップすると、開いている分子に
+  付けられるようになりました。</strong> 原子数の合う分子から付け先を選ぶと、その分子はトラジェクトリになり、
+  元の座標が最初のフレームになります。</li>
+<li><strong>トポロジーだけのファイル (prmtop / PSF) を、座標の無い分子として開けるようになりました。</strong>
+  座標 (AMBER の restart、NAMD の <code>.coor</code>) やトラジェクトリは、あとからドロップして付けます。
+  <strong>File &gt; Open MD Trajectory...</strong> でもトポロジーに prmtop / PSF を選択できます。
+  → <a href="../ui/bottom-panels/trajectory/">Trajectory パネル</a></li>
+</ul>
+<h3 id="画面と操作">画面と操作<a class="headerlink" href="#画面と操作" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Get PDB で、リガンドを CCD コードで取得できるようになりました</strong> (<strong>CCD (ligand)</strong>、RCSB の理想座標)。
+  ChX console では <code>open ccd:ATP</code> で取得できます。→ <a href="../reference/get-pdb/#ccd-ligand">PDB からの取得</a></li>
+<li>nucl の <strong>Base type</strong> に、塩基を表示せずチューブだけを残す <strong>None</strong> が加わりました。
+  → <a href="../reference/renderers/nucl/">nucl</a></li>
+<li><strong>履歴が 20 ステップを超えると、GUI で同じ値を続けて編集したステップが 1 つにまとめられるように
+  なりました</strong> (History パネルでは <code>×N</code> と表示されます)。
+  → <a href="../reference/actions/#history-パネル">操作の記録と再生</a></li>
+<li>ChX console で、<code>alphafold</code> / <code>pae</code> などの AlphaFold のパレットを使えるようになりました。</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">以前のバージョンから変わる点</p>
+<ul>
+<li><strong>NAMD の <code>.coor</code> を PSF と一緒に開いたシーン (<code>srctype="namdcoor"</code>) は読み込めなくなりました。</strong>
+  PSF を開き、<code>.coor</code> をドロップして付け直してください。</li>
+<li><strong>Console の native モードの <code>load_namd</code> は <code>load_psf</code> になりました</strong> (PSF を開き、<code>coordFile</code> で
+  <code>.coor</code> を指定します)。</li>
+</ul>
+</div>
+<h2 id="301555-2026-11-10">3.0.1.555 (2026-11-10)<a class="headerlink" href="#301555-2026-11-10" title="Permanent link">&para;</a></h2>
+<h3 id="pdb-からの取得">PDB からの取得<a class="headerlink" href="#pdb-からの取得" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Get PDB で、取得元のデータベースを選べるようになりました</strong> (<strong>Database</strong>)。PDB / EMDB に加えて、
+  <strong>AlphaFold DB</strong> (UniProt accession で予測構造を取得) と <strong>PubChem</strong> (CID で化合物の 3D 配座を取得) を選べます。
+  入力すると、タンパク質名・生物種・平均の pLDDT や、化合物名・分子式・分子量が表示されます。</li>
+<li><strong>PDB のエントリの座標を、RCSB のほか PDBe / PDBj / PDB-REDO から取得できるようになりました</strong> (<strong>Server</strong>)。
+  電顕マップの取得元にも <strong>PDBj</strong> が加わりました。</li>
+<li>AlphaFold DB から取得した構造は、予測の信頼度 (pLDDT) の色で表示されます。PubChem の化合物は
+  ball &amp; stick で表示されます。</li>
+<li>Console の native モードに、<code>fetch_entry</code> (上記のデータベースからの取得) と <code>fetch_map_url</code>
+  (URL にある CCP4 / MRC のマップの取得) が加わりました。
+  → <a href="../reference/get-pdb/">PDB からの取得</a></li>
+</ul>
+<h3 id="b-factor-の多色のグラデーション">B-factor の多色のグラデーション<a class="headerlink" href="#b-factor-の多色のグラデーション" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Color パネルの Bfac/Occ で、複数の色を経由するグラデーションを使えるようになりました</strong>
+  (<strong>Multi-colour gradient</strong>)。原子の値のヒストグラムを見ながら、色の区切りを編集できます。
+  編集は Undo で戻せ、シーンに保存されます。</li>
+<li>プリセットに、AlphaFold の pLDDT を ChimeraX と同じ色で塗る <strong>AlphaFold pLDDT</strong> が加わりました。</li>
+<li>PyM console の <code>spectrum b</code> / <code>spectrum q</code> に 3 色以上のパレット (<code>rainbow</code> など) を指定すると、
+  PyMOL と同じく多色のグラデーションで塗るようになりました。
+  → <a href="../reference/coloring/#bfacocc">Coloring</a></li>
+</ul>
+<h3 id="視点の合わせ方">視点の合わせ方<a class="headerlink" href="#視点の合わせ方" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>シーンツリーの Focus で、表示しているものに合わせるようになりました。</strong> 分子は表示中の Renderer が
+  描いている原子に、密度マップは表示中の等高線に合わせます。小さなものでも、表示の幅は 15 Å より
+  狭くしません。</li>
+<li><strong>読み込んだときの視点 (Center view on molecule after loading) も、Focus と同じく大きさまで合わせる
+  ようになりました</strong> (以前は中心だけを移していました)。電顕マップは、表示している等値面に合わせます。
+  → <a href="../ui/side-panels/#explorer">サイドパネル</a></li>
+</ul>
+<h3 id="chx-console">ChX console<a class="headerlink" href="#chx-console" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>対応していないコマンドや書き方は、警告を出して飛ばし、スクリプトの残りを実行するようになりました</strong>
+  (ChimeraX の公式チュートリアルや図のスクリプトを最後まで流せます)。</li>
+<li><code>open</code> で、<code>pdbe:</code> / <code>pdbj:</code> / <code>redo:</code> / <code>alphafold:</code> / <code>pubchem:</code> / <code>emdb:</code> などのデータベースの接頭辞、
+  URL、複数の名前、<code>from eds</code> (2Fo-Fc マップ) を使えるようになりました。視点を合わせるのは、空のシーンに
+  最初に開いたときだけです (ChimeraX と同じ)</li>
+<li><code>volume</code> / <code>lighting</code> / <code>camera</code> / <code>nucleotides</code> / <code>ribbon</code> / <code>unitcell</code> / <code>dssp</code> / <code>preset</code> / <code>wait</code> /
+  <code>color modify</code> / <code>color bfactor</code> / <code>color byattribute</code> などのコマンドと、ColorBrewer のパレットが加わりました。</li>
+<li>隠した原子をもう一度表示すると、隠す前のスタイルで表示されるようになりました。</li>
+<li>Settings &gt; Plugins の表示名が <strong>PyM console</strong> / <strong>ChX console</strong> になりました。
+  → <a href="../reference/plugins/console/chx_console/">ChX console</a></li>
+</ul>
+<h3 id="起動スクリプトとスタイルファイル">起動スクリプトとスタイルファイル<a class="headerlink" href="#起動スクリプトとスタイルファイル" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>~/.cuemol/</code> に置いたスクリプト (<code>startup.txt</code> / <code>.qax</code> / <code>.pml</code> / <code>.cxc</code>) を、起動のたびに
+  Console で実行するようになりました。</strong> 1 つのファイルが 1 回の Undo にまとまります。実行中は
+  ステータスバーに表示が出て、そこから止められます。</li>
+<li><code>~/.cuemol/styles/</code> に置いたスタイルファイル (<code>.xml</code>) を、起動時に読み取り専用のスタイルセットとして
+  読み込むようになりました。
+  → <a href="../reference/dotfiles/">ユーザーディレクトリ (~/.cuemol)</a></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">以前のバージョンから変わる点 (ChX console)</p>
+<ul>
+<li><strong>コマンド名の <code>c</code> は <code>camera</code> の省略になりました</strong> (以前は <code>cartoon</code>)。<code>cartoon</code> は <code>car</code> などと
+  打ってください。</li>
+<li><strong><code>color random</code> は拒否されるようになりました</strong> (警告を出して飛ばします)。</li>
+<li><strong>閉じた model の番号は、次に開いたものに再び使われるようになりました</strong> (ChimeraX と同じ)</li>
+</ul>
+</div>
+<h2 id="300554-2026-11-06">3.0.0.554 (2026-11-06)<a class="headerlink" href="#300554-2026-11-06" title="Permanent link">&para;</a></h2>
+<h3 id="バージョン番号とリポジトリ">バージョン番号とリポジトリ<a class="headerlink" href="#バージョン番号とリポジトリ" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>このリリースから、バージョン番号がアプリの名前に合わせて 3 から始まります。</strong></li>
+<li><strong>ソースコードと配布物のリポジトリが <a href="https://github.com/CueMol/cuemol3">CueMol/cuemol3</a> に
+  移りました。</strong> 以前の <code>CueMol/cuemol2</code> のアドレスは転送されます。</li>
+<li>macOS の 2.4.x と Windows の 2.4.2.550 からは、<strong>Check for Updates...</strong> でこのリリースに
+  アップデートできます。→ <a href="../install/update/">アップデート</a></li>
+</ul>
+<h3 id="chx-console_1">ChX console<a class="headerlink" href="#chx-console_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ChimeraX 互換の console、ChX console が Console に加わりました</strong> (プロンプトは <code>ChX&gt;</code>)。<code>open</code> / <code>show</code> /
+  <code>hide</code> / <code>cartoon</code> / <code>style</code> / <code>color</code> / <code>rainbow</code> / <code>surface</code> / <code>label</code> / <code>view</code> / <code>turn</code> /
+  <code>select</code> / <code>name</code> / <code>info</code> / <code>distance</code> / <code>matchmaker</code> / <code>save</code> などの ChimeraX のコマンドと、
+  原子の指定 (<code>#1/A:10-20@CA</code>、<code>@&lt;5</code>、<code>@@bfactor&gt;50</code> など) を使えます。</li>
+<li>コマンドは CueMol の操作に翻訳されて実行されるので、ほかの編集と同じように History に記録され、
+  Undo で戻せます。<code>open</code> で開いた分子は、ChimeraX の自動の表示に倣って描かれます。
+  <code>.cxc</code> のスクリプトも実行できます。
+  → <a href="../reference/plugins/console/chx_console/">ChX console</a></li>
+</ul>
+<h3 id="console-のモードがプラグインに">Console のモードがプラグインに<a class="headerlink" href="#console-のモードがプラグインに" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>PyM console と ChX console は、それぞれ同名のプラグインになりました。</strong> どちらも既定で有効で、
+  <strong>Settings &gt; Plugins &gt; Installed</strong> で無効にすると、そのモードがパネルの切り替えと tritium_cli から消えます。入力の履歴は引き継がれます。
+  → <a href="../reference/plugins/">プラグイン</a></li>
+</ul>
+<h3 id="tritium_cli">tritium_cli<a class="headerlink" href="#tritium_cli" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ファイルを渡して、起動中の CueMol3 に開けるようになりました</strong> (<code>tritium_cli 1crn.pdb map.ccp4</code>)。
+  <code>-i</code> を付けると、開いたあと対話モードに入ります。<code>.qax</code> / <code>.pml</code> / <code>.cxc</code> / <code>.txt</code> はスクリプトとして
+  実行します。</li>
+<li><strong><code>tritium_cli mcp</code> で、MCP クライアントと標準入出力でつなげるようになりました</strong>
+  (<code>claude mcp add cuemol -- tritium_cli mcp</code>)。MCP Server プラグインが無効でも、その回に限り
+  MCP Server を開きます。→ <a href="../reference/plugins/mcp-server/#tritium_cli-mcp-で登録する">MCP Server</a></li>
+<li><strong><code>tritium_cli skill install</code> で、Claude Code から tritium_cli を使うための skill を
+  インストールできるようになりました。</strong> そのほか <code>status</code> / <code>version</code> / <code>help &lt;コマンド&gt;</code> が加わりました。</li>
+<li>npm の <code>@cuemol/tritium-cli</code> も 3.0.0 になりました。
+  → <a href="../reference/plugins/console/cli/">tritium_cli</a></li>
+</ul>
+<h3 id="シーンツリーと選択">シーンツリーと選択<a class="headerlink" href="#シーンツリーと選択" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>シーンツリーで複数の行を選んで Focus を押すと、すべてが収まるように表示するようになりました。</strong>
+  → <a href="../ui/side-panels/#explorer">サイドパネル</a></li>
+<li><strong>選択を少しずつ足していったときに、選択式が長くならないようになりました。</strong> shift + クリックや
+  矩形・投げ縄での追加、Selection Builder、Console で作った選択式は、同じ原子を選ぶ短い式に
+  書き直されます。自分で打った選択式はそのままです。</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">以前のバージョンから変わる点</p>
+<ul>
+<li><strong>一度に編集できるのは 1 つのクライアントだけになりました。</strong> tritium_cli や MCP クライアントが
+  実行している間に、ほかの tritium_cli や MCP クライアントから送った操作は <code>CueMol is busy</code> で
+  拒否されます。</li>
+<li><strong>Console の <code>center_view</code> は <code>focus_selection</code> に変わりました</strong> (<code>zoom</code> / <code>center</code> はそのまま
+  使えます)。分子の選択は変えなくなりました。</li>
+<li><strong>tritium_cli の PyM console のプロンプトが <code>PyMOL &lt;ディレクトリ&gt; ❯</code> になりました</strong>
+  (以前は <code>pymol</code>)。</li>
+</ul>
+</div>
+<h2 id="242550-2026-11-01">2.4.2.550 (2026-11-01)<a class="headerlink" href="#242550-2026-11-01" title="Permanent link">&para;</a></h2>
+<h3 id="既定の見た目">既定の見た目<a class="headerlink" href="#既定の見た目" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>読み込んだ分子に、分子ごとに違う色が付くようになりました。</strong> 色覚の多様性に配慮した
+  パレット (Okabe-Ito) から、シーンに読み込んだ順に 1 色ずつ割り当てます。ヘリックスとシートは
+  その色、核酸は色相を少しずらした色、コイルなどは白っぽくした色です。これまでは、どの分子も
+  同じ 4 色で塗られていました。→ <a href="../reference/coloring/#paint">Coloring</a></li>
+<li>今回の実装では色は qsc ファイル内に保存されるようになったため、もし今後 CueMol3 側の
+  既定色が変更になったとしても、保存時と同じ色で開かれます。</li>
+<li>パレットは、スタイルファイルに <code>&lt;palette id="default_paint" value="tolbright"/&gt;</code> と書くと
+  切り替えられます (<code>tolbright</code> / <code>tolvibrant</code> / <code>tolmuted</code> / <code>tollight</code> / <code>brewerset2</code> /
+  <code>brewerdark2</code> / <code>tableau10</code>)。GUI からは切り替えられません。</li>
+<li>既定の ribbon と nucl の表示設定が若干変更となりました。</li>
+</ul>
+<h3 id="pdb-からの取得-get-pdb">PDB からの取得 (Get PDB)<a class="headerlink" href="#pdb-からの取得-get-pdb" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>EMDB の電顕マップを取得できるようになりました。</strong> ID 欄に EMDB ID (<code>EMD-11638</code> /
+  <code>emd_11638</code>) も入力できます。電顕構造の PDB ID を入れると、2Fo-Fc / Fo-Fc の代わりに、
+  そのエントリの EMDB のマップを選べます (サイズ・格子・推奨レベルを表示、取得元は wwPDB / EBI)。
+  マップは登録者の推奨レベル (無ければ上位 1 %) の等値面で表示されます。</li>
+<li><strong>入力中に、エントリのタイトル・手法・分解能・EMDB ID が表示されるようになりました。</strong></li>
+<li><strong>キーワードでエントリを探せるようになりました。</strong> ID 欄に ID 以外の文字列を入れて
+  <span class="keys"><kbd class="key-enter">Enter</kbd></span> (または <strong>Search</strong>) を押します。手法で絞り込み、関連度・分解能・新しい順に
+  並べ替えられ、<strong>More</strong> で続きを読み込めます。行を選ぶと、その ID を入力したのと同じ状態に
+  なります。検索した語も入力の履歴に残ります。</li>
+<li>ID 欄のラベルは <strong>PDB or EMDB ID, or keywords</strong> になり、取得の項目は <strong>Coordinates</strong> /
+  <strong>Density maps</strong> / <strong>Cryo-EM maps</strong> の節に分かれました。→ <a href="../reference/get-pdb/">PDB からの取得</a></li>
+</ul>
+<h3 id="console-と-mcp">Console と MCP<a class="headerlink" href="#console-と-mcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>fetch_emdb</code> で EMDB の電顕マップを取得できるようになりました</strong> (AI Agent と MCP からも
+  使えます)。EMDB ID か、電顕構造の PDB ID を指定します。PyM console では
+  <code>fetch EMD-3489</code> / <code>fetch 3489, type=emd</code> です。</li>
+<li><strong>Renderer を指定せずに読み込んだ分子が、PyMOL に近い表示で描かれるようになりました</strong>
+  (<code>load</code> / <code>fetch</code>、PyM console、MCP、AI Agent)。タンパク質は ribbon、核酸は nucl、
+  炭素を含むリガンドは棒 (ballstick)、それ以外のリガンドは球 (cpk)、水は simple です。
+  これまでは simple 1 つでした。<strong>File &gt; Open File...</strong> と <strong>Get PDB</strong> で開くときは従来どおりです。</li>
+<li>PyM console の <code>show</code> / <code>hide</code> / <code>as</code> / <code>color</code> は、これらの部分にそれぞれ効きます。
+  PyMOL の <code>cartoon</code> は ribbon、<code>ribbon</code> は Cα の trace (tracestick) で描きます。
+  → <a href="../reference/plugins/console/pymconsole/#対応コマンド">PyM console</a></li>
+<li><strong>mmCIF を読む <code>load_mmcif</code> が加わりました</strong> → <a href="../reference/plugins/console/commands/">コマンド一覧</a></li>
+</ul>
+<h3 id="自動アップデート">自動アップデート<a class="headerlink" href="#自動アップデート" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Windows 版も、アプリの中でアップデートできるようになりました</strong> (macOS と同じく
+  <strong>Check for Updates...</strong>)。更新のたびに管理者権限の確認 (UAC) が出ます
+  (<code>CueMol3 Updater.exe</code>)。新しい版が起動しなかったときは元の版に戻ります。2.4.1.547 以前の
+  Windows 版からは、2.4.2.550 を一度手動でインストールしてください。
+  → <a href="../install/update/#windows-の場合">アップデート</a></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">以前のバージョンから変わる点</p>
+<ul>
+<li><strong>Console の <code>load_pdb</code> / <code>load_ccp4</code> などの形式ごとのコマンドは、ファイルの中身で形式を
+  判別しなくなりました。</strong> 常にコマンド名の形式として読みます。形式がわからないファイルは
+  <code>load</code> で読んでください。なお <code>load_pdb</code> に mmCIF のファイルを渡してもエラーにはなりません
+  (mmCIF は <code>load_mmcif</code> で読みます)。</li>
+<li><strong>CueMol3 と CueMol2 で、既定の ribbon と nucl の形が違うようになりました。</strong> CueMol2 は
+  以前の形のままです。CueMol3 で保存したシーンを CueMol2 で開くと CueMol2 の形で描かれ、
+  その逆も同じです。</li>
+</ul>
+</div>
+<hr />
+<p>2.4.1.547 以前のリリースは<a href="../releases-archive/">過去のリリース</a>にまとめてあります。</p>
+<h2 id="関連項目">関連項目<a class="headerlink" href="#関連項目" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../releases-archive/">過去のリリース</a> — 2.4.1.547 以前の更新履歴</li>
+<li><a href="../changes/">CueMol2 からの変更点</a> — CueMol2 と CueMol3 の違い</li>
+<li><a href="../changes/status/">開発状況と未実装機能</a> — 現時点で残っている制限</li>
+<li><a href="../install/#ダウンロード">ダウンロード</a> — 配布物の入手方法</li>
+</ul>
+<hr />
+<p><em>確認対象: CueMol3 3.0.2.560</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
