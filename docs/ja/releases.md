@@ -58,10 +58,6 @@
 
 ### 画面と操作
 
-- **ダイアログが、最後に確定した設定で開くようになりました** (CueMol3 を再起動した後も)。File Open の
-  オプション、New Renderer、分子の統合、重ね合わせ、分子表面、APBS、PNG の書き出しなどが対象です。
-  数値を記憶するダイアログ (分子表面 / APBS / 相互作用 / 二次構造) には、既定値に戻す **Defaults**
-  ボタンがあります → [Tools メニュー](menu/tools.md)
 - **Get PDB で、リガンドを CCD コードで取得できるようになりました** (**CCD (ligand)**、RCSB の理想座標)。
   ChX console では `open ccd:ATP` で取得できます → [PDB からの取得](reference/get-pdb.md#ccd-ligand)
 - nucl の **Base type** に、塩基を表示せずチューブだけを残す **None** が加わりました
