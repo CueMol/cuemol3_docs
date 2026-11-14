@@ -3,7 +3,7 @@
 シーンの見せ方を時間に沿って変化させるしくみです。
 下部パネルの **Animation** パネルにタイムラインが表示され、
 そこにアニメーション要素 (anim obj) を並べて構成します
-(→ [下部パネル](../../ui/bottom-panels.md))。
+(→ [Animation パネル](../../ui/animation-panel.md))。
 
 作成したアニメーションは、レンダリングウィンドウの動画モードで
 動画として書き出せます (→ [レンダリングウィンドウ](../../ui/rendering-window.md))。
@@ -51,11 +51,11 @@ Quadric
     等速ではなく緩やかに始まって緩やかに終わるような動きになります
 
 要素は Animation パネルで Cut / Copy / Paste できます
-(→ [下部パネル](../../ui/bottom-panels.md#animation))。
+(→ [Animation パネル](../../ui/animation-panel.md#コピー--ペースト))。
 
 ## 関連項目
 
-- [下部パネル](../../ui/bottom-panels.md) — Animation パネルの操作
+- [Animation パネル](../../ui/animation-panel.md) — タイムラインの操作
 - [レンダリングウィンドウ](../../ui/rendering-window.md) — 動画としての書き出し
 - [カメラ](../camera.md)
 

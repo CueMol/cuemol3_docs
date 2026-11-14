@@ -20,7 +20,7 @@
 ## 2. Animation パネルを開く
 
 3UG9 のシーンを開いた状態で、下部パネルの **Animation** タブを開きます
-(→ [下部パネル](../ui/bottom-panels.md))。
+(→ [Animation パネル](../ui/animation-panel.md))。
 
 ## 3. 分子を回転させる
 

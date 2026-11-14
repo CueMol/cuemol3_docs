@@ -55,7 +55,7 @@ Envelope
 
 - [アニメーションの一覧](index.md)
 - [SimpleSpin](simplespin.md)
-- [下部パネル](../../ui/bottom-panels.md#animation)
+- [Animation パネル](../../ui/animation-panel.md)
 - [ChX console](../plugins/console/chx_console.md) / [PyM console](../plugins/console/pymconsole.md) —
   `rock` などのコマンドでこの要素を追加できます
 
