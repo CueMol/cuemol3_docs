@@ -33,7 +33,7 @@
 
 2 つの選択 (Second selection のスイッチを含む) と、Label set name を除く Parameters の値は、次にダイアログを開いたとき (CueMol3 を
 再起動した後も) に引き継がれます。Label set name を除く Parameters の値は、ダイアログ左下の
-**Defaults** で上の既定値に戻せます。
+**Defaults** で上の既定値に戻すことができます。
 
 !!! note "水素結合の向きは考慮されません"
     抽出されるのは距離の条件を満たす原子の組で、水素結合の向きなどは考慮されていません。

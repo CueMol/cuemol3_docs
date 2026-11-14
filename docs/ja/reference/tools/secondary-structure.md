@@ -40,7 +40,7 @@ OFF にすると、ファイル中の HELIX / SHEET レコードに従って二�
 <!-- TODO(content): Ignore β bulge と Helix gap-fill angle の判定の詳細 (C++ の calcProt2ndry2 の実装から起こす) -->
 
 Mode・選択・Type と上の値は、次にダイアログを開いたとき (CueMol3 を再起動した後も) に引き継がれます。
-上の値は、ダイアログ左下の **Defaults** で既定値に戻せます。
+上の値は、ダイアログ左下の **Defaults** で既定値に戻すことができます。
 
 
 ### Assign (手動での割り当て)

@@ -45,8 +45,8 @@
   は、選択式に一致する原子に合わせて表示します。Object の選択は変えません。
 - `orient_view` は、選択式に一致する原子の主軸が画面の軸に沿うように向きを変えて表示します。
 - `copy_node` は Object・Renderer・Renderer グループの内容を取り出し、`paste_node` で別の Object に
-  貼り付けられます (GUI のコピー &amp; ペーストと同じです)。`paste_node` はアニメーションの要素も
-  貼り付けられます (`before` で挿入位置の要素を指定します。省略すると末尾)。
+  貼り付けることができます (GUI のコピー &amp; ペーストと同じです)。`paste_node` はアニメーションの要素の
+  貼り付けにも対応しています (`before` で挿入位置の要素を指定します。省略すると末尾)。
 - `load_psf` は CHARMM / NAMD のトポロジー (`.psf`) を開きます。`coordFile` で NAMD の座標 (`.coor`) を
   指定でき、省略すると座標の無い分子になります。
 - `add_anim` の `type` に `rock` を指定すると、[RockSpin](../../animation/rockspin.md) の要素を追加します。

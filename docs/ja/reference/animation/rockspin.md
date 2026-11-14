@@ -2,7 +2,7 @@
 
 要素を置いた時点の向きを中心に、視点を揺らすアニメーションです。
 Animation パネルの追加メニューの **Rock** で追加します。PyMOL や ChimeraX の
-rock / nutate / wobble にあたる動きを、1 つの要素で作れます。
+rock / nutate / wobble にあたる動きを、1 つの要素で作ることができます。
 
 !!! info "撮影予定"
 

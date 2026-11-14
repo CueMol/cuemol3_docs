@@ -24,7 +24,7 @@
   → [RockSpin](reference/animation/rockspin.md)
 - **Animation パネルで、要素を Cut / Copy / Paste できるようになりました** (**Edit** メニューと
   ++cmd+x++ / ++cmd+c++ / ++cmd+v++)。貼り付けた要素は長さを保ったまま、選んでいる要素の直後に
-  続けて並びます。別のシーンにも貼り付けられます。→ [Animation パネル](ui/bottom-panels/animation.md)
+  続けて並びます。別のシーンへの貼り付けも可能です。→ [Animation パネル](ui/bottom-panels/animation.md)
 - **Simple spin の Rotation angle に範囲が無くなりました。** 負の値で逆向きに回り、360° で 1 周します。
 
 ### Console からの視点の動き
@@ -53,7 +53,7 @@
   元の座標が最初のフレームになります。
 - **トポロジーだけのファイル (prmtop / PSF) を、座標の無い分子として開けるようになりました。**
   座標 (AMBER の restart、NAMD の `.coor`) やトラジェクトリは、あとからドロップして付けます。
-  **File &gt; Open MD Trajectory...** でもトポロジーに prmtop / PSF を選べます。
+  **File &gt; Open MD Trajectory...** でもトポロジーに prmtop / PSF を選択できます。
   → [Trajectory パネル](ui/bottom-panels/trajectory.md)
 
 ### 画面と操作

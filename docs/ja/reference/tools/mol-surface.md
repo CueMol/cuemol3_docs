@@ -38,7 +38,7 @@
   を参照してください。既定の *Auto* では MeshMS を使い、失敗したときは BALL に切り替わります。
 - 選択と Surface の値 (Object name を除く) は、次にダイアログを開いたとき (CueMol3 を再起動した後も) に
   引き継がれます。Point density・Probe radius・Algorithm は、ダイアログ左下の **Defaults** で
-  上の既定値に戻せます。
+  上の既定値に戻すことができます。
 
 ## 実行と結果
 

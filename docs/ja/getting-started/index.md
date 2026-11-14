@@ -61,8 +61,8 @@ CueMol3 では File メニューの **Open MD Trajectory...** から MD シミ�
 | CHARMM / NAMD トポロジー (PSF) | `.psf` |
 | NAMD 座標 | `.coor` |
 
-トポロジーだけのファイル (`.prmtop` / `.psf`) は **Open File...** でも座標の無い分子として開け、
-あとから座標やトラジェクトリのファイルをドロップして付けられます
+トポロジーだけのファイル (`.prmtop` / `.psf`) は **Open File...** でも座標の無い分子として開いておき、
+あとから座標やトラジェクトリのファイルをドロップして付けることができます
 (→ [Trajectory パネル](../ui/bottom-panels/trajectory.md))。
 
 ### シーン (読み込み)
