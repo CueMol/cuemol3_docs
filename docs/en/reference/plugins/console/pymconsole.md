@@ -175,7 +175,7 @@ The following terms cause an error that names them.
 
 - [Console](index.md) / [Plugins](../index.md) / [AI Agent](../ai-agent.md)
 - [Selection expression syntax](../../selection.md)
-- [Bottom panels](../../../ui/bottom-panels.md)
+- [Bottom panels](../../../ui/bottom-panels/index.md)
 
 ---
 

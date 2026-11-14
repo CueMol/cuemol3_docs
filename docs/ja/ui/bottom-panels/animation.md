@@ -2,7 +2,7 @@
 
 下部パネルの **Animation** タブで、アニメーションのタイムラインを編集します。
 Blender のようなストリップ形式で、1 つのアニメーション要素が 1 本の帯として表示されます。
-要素の種類と設定は [アニメーション](../reference/animation/index.md) を参照してください。
+要素の種類と設定は [アニメーション](../../reference/animation/index.md) を参照してください。
 
 !!! info "撮影予定"
 
@@ -37,7 +37,7 @@ Blender のようなストリップ形式で、1 つのアニメーション要�
 - ヘッダの再生ボタンで、アニメーションを実際に分子ビュー上で再生できます。
   ボタンは左から **Skip to start** / **Play** (再生中は **Pause**) / **Stop** / **Skip to end** です。
 - 現在時刻の表示は編集できます。時刻を打ち込んで ++enter++ を押すとその時点へ移動します
-  (→ [時刻の入力](inspector.md#時刻の入力))。
+  (→ [時刻の入力](../inspector.md#時刻の入力))。
 - **Loop** を ON にすると、タイムライン全体を繰り返し再生します。
 - **Fit** でタイムライン全体をパネルの幅に収め、**-** / **+** で表示を縮小・拡大します。
 
@@ -50,19 +50,19 @@ Blender のようなストリップ形式で、1 つのアニメーション要�
 ヘッダの **Start cam** で開始カメラを選べます。開始カメラが無いときに要素を追加・貼り付けすると、
 そのときの視点が `__current` に保存され、開始カメラになります。タイムラインが空になってから
 作り直したときも、`__current` はそのときの視点で保存し直されます
-(→ [カメラ](../reference/camera.md))。
+(→ [カメラ](../../reference/camera.md))。
 
 ## 動画に書き出す
 
 作成したアニメーションを動画ファイルとして出力するには、
-**Rendering &gt; Movie rendering...** を使います (→ [レンダリングウィンドウ](rendering-window.md))。
+**Rendering &gt; Movie rendering...** を使います (→ [レンダリングウィンドウ](../rendering-window.md))。
 
 ## 関連項目
 
-- [アニメーション](../reference/animation/index.md) — 要素の種類と共通プロパティ
-- [アニメーションを作って動画に出力する](../tutorials/animation-movie.md)
-- [下部パネル](bottom-panels.md)
-- [プロパティインスペクタ](inspector.md)
+- [アニメーション](../../reference/animation/index.md) — 要素の種類と共通プロパティ
+- [アニメーションを作って動画に出力する](../../tutorials/animation-movie.md)
+- [下部パネル](index.md)
+- [プロパティインスペクタ](../inspector.md)
 
 ---
 

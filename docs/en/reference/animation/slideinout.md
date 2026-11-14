@@ -28,7 +28,7 @@ Distance
 ## See also
 
 - [List of animations](index.md)
-- [Bottom panel](../../ui/bottom-panels.md)
+- [Bottom panel](../../ui/bottom-panels/index.md)
 
 ---
 

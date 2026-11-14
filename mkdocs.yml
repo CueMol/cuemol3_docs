@@ -73,7 +73,7 @@ plugins:
                 - Side panels: ui/side-panels.md
                 - Selection builder: ui/selection-builder.md
                 - Property inspector: ui/inspector.md
-                - Bottom panel: ui/bottom-panels.md
+                - Bottom panel: ui/bottom-panels/index.md
                 - Toolbar and tool palette: ui/toolbar-tools.md
                 - Rendering window: ui/rendering-window.md
                 - Mouse and trackpad: ui/mouse-input.md
@@ -223,10 +223,10 @@ nav:
       - 選択ビルダー: ui/selection-builder.md
       - プロパティインスペクタ: ui/inspector.md
       - 下部パネル:
-          - ui/bottom-panels.md
-          - Sequence パネル: ui/sequence-panel.md
-          - Trajectory パネル: ui/trajectory-panel.md
-          - Animation パネル: ui/animation-panel.md
+          - ui/bottom-panels/index.md
+          - Sequence パネル: ui/bottom-panels/sequence.md
+          - Trajectory パネル: ui/bottom-panels/trajectory.md
+          - Animation パネル: ui/bottom-panels/animation.md
       - ツールバーとツールパレット: ui/toolbar-tools.md
       - レンダリングウィンドウ: ui/rendering-window.md
       - マウス・トラックパッド操作: ui/mouse-input.md

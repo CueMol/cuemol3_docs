@@ -43,7 +43,7 @@ Multi-gradient も選べます (→ [Coloring](../coloring.md))。
 !!! note "MeshMS が使えない場合は距離場に切り替わります"
     **MeshMS (analytic SES)** を選んでいても、Surface type が **Solvent excluded**
     以外の場合や、生成に失敗した場合は距離場に切り替えてメッシュを作ります。
-    切り替えたことと理由は [Output パネル](../../ui/bottom-panels.md#output)に
+    切り替えたことと理由は [Output パネル](../../ui/bottom-panels/index.md#output)に
     `DirectSurfRend&gt;` で始まる行として出ます。**設定した値そのものは変わりません。**
 
 ### Atom radii

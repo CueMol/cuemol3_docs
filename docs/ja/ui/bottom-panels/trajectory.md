@@ -5,7 +5,7 @@
 
 このタブは **MD Tools** プラグインの一部で、**既定では無効**です。
 Settings &gt; Plugins &gt; Installed で有効にしてください
-(→ [プラグイン](../reference/plugins/index.md))。
+(→ [プラグイン](../../reference/plugins/index.md))。
 
 !!! info "撮影予定"
 
@@ -53,9 +53,9 @@ Settings &gt; Plugins &gt; Installed で有効にしてください
 
 ## 関連項目
 
-- [下部パネル](bottom-panels.md)
-- [File メニュー](../menu/file.md)
-- [プラグイン](../reference/plugins/index.md)
+- [下部パネル](index.md)
+- [File メニュー](../../menu/file.md)
+- [プラグイン](../../reference/plugins/index.md)
 
 ---
 

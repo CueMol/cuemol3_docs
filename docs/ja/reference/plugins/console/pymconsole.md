@@ -195,7 +195,7 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 
 - [Console](index.md) / [ChX console](chx_console.md) / [プラグイン](../index.md) / [AI Agent](../ai-agent.md)
 - [選択式の文法](../../selection.md)
-- [下部パネル](../../../ui/bottom-panels.md)
+- [下部パネル](../../../ui/bottom-panels/index.md)
 
 ---
 

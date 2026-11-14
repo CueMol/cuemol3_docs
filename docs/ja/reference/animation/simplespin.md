@@ -27,7 +27,7 @@ Spin axis
 
 - [アニメーションの一覧](index.md)
 - [RockSpin](rockspin.md)
-- [下部パネル](../../ui/bottom-panels.md)
+- [下部パネル](../../ui/bottom-panels/index.md)
 
 ---
 

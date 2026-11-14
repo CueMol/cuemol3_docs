@@ -36,7 +36,7 @@ Ignore slab
 ## 関連項目
 
 - [アニメーションの一覧](index.md)
-- [下部パネル](../../ui/bottom-panels.md)
+- [下部パネル](../../ui/bottom-panels/index.md)
 
 ---
 

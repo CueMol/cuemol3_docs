@@ -5,7 +5,7 @@
 Animation changes how the scene looks over time.
 The timeline is shown in the **Animation** panel in the bottom panel,
 and an animation is built by arranging animation elements (anim obj) on it
-(→ [Bottom panel](../../ui/bottom-panels.md)).
+(→ [Bottom panel](../../ui/bottom-panels/index.md)).
 
 The finished animation can be exported as a movie in the movie mode of the rendering window
 (→ [Rendering window](../../ui/rendering-window.md)).
@@ -53,7 +53,7 @@ Quadric
 
 ## See also
 
-- [Bottom panel](../../ui/bottom-panels.md) — Using the Animation panel
+- [Bottom panel](../../ui/bottom-panels/index.md) — Using the Animation panel
 - [Rendering window](../../ui/rendering-window.md) — Exporting as a movie
 - [Camera](../camera.md)
 

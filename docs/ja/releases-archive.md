@@ -698,7 +698,7 @@
 
 - **MD トラジェクトリの読み込みと再生**に対応しました。DCD / GROMACS XTC・TRR /
   AMBER NetCDF を読み込めます。**File &gt; Open MD Trajectory...** で開き、下部パネルの
-  **Trajectory** タブで再生します → [下部パネル](ui/bottom-panels.md)
+  **Trajectory** タブで再生します → [下部パネル](ui/bottom-panels/index.md)
 
 ### 表示と着色
 
