@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/common.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/common.md @ 8d54764 -->
 
 # Common Renderer properties
 

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/edge-lines.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/edge-lines.md @ 8d54764 -->
 
 # Edge lines
 

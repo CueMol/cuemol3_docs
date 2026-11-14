@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/tube.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/tube.md @ 8d54764 -->
 
 # tube
 

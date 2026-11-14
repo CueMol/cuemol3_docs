@@ -1,4 +1,4 @@
-<!-- source: ja/ui/selection-builder.md @ 6cacee7 -->
+<!-- source: ja/ui/selection-builder.md @ 8d54764 -->
 
 # Selection builder
 

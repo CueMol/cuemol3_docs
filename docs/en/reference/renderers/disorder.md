@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/disorder.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/disorder.md @ 8d54764 -->
 
 # disorder
 

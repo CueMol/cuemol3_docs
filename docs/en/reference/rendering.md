@@ -1,4 +1,4 @@
-<!-- source: ja/reference/rendering.md @ e4bd8cd -->
+<!-- source: ja/reference/rendering.md @ 8d54764 -->
 
 # Rendering
 

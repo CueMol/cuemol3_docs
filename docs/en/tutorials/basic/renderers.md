@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/renderers.md @ 6cacee7 -->
+<!-- source: ja/tutorials/basic/renderers.md @ 8d54764 -->
 
 # Adding, removing and configuring Renderers
 

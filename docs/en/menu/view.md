@@ -1,4 +1,4 @@
-<!-- source: ja/menu/view.md @ 6cacee7 -->
+<!-- source: ja/menu/view.md @ 8d54764 -->
 
 # View menu
 

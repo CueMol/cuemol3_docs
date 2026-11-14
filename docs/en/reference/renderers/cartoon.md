@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/cartoon.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/cartoon.md @ 8d54764 -->
 
 # cartoon
 

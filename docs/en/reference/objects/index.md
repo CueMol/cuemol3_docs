@@ -1,4 +1,4 @@
-<!-- source: ja/reference/objects/index.md @ 570ee02 -->
+<!-- source: ja/reference/objects/index.md @ 8d54764 -->
 
 # Object
 
