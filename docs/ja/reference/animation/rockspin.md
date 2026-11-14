@@ -1,6 +1,6 @@
 # RockSpin (揺れ)
 
-視点を揺らすアニメーションです。
+視点を振動させるアニメーションです。
 Animation パネルの追加メニューの **Rock** で追加します。PyMOL や ChimeraX の
 rock / nutate / wobble にあたる動きを、1 つの要素で作ることができます。
 

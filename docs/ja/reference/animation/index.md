@@ -15,7 +15,7 @@ Animation パネルの追加メニューから、次の要素を追加できま�
 | 追加メニュー | クラス | 内容 |
 |---|---|---|
 | Simple spin | [SimpleSpin](simplespin.md) | 視点を指定軸まわりに回転させる |
-| Rock | [RockSpin](rockspin.md) | 視点を揺らす (往復・円・8 の字) |
+| Rock | [RockSpin](rockspin.md) | 視点を振動させる (往復・円・8 の字) |
 | Camera motion | [CamMotion](cammotion.md) | 保存したカメラへ視点を移動させる |
 | Show / Hide | [ShowHideAnim](showhide.md) | Renderer をフェードイン / フェードアウトさせる |
 | Slide in / Slide out | [SlideInOutAnim](slideinout.md) | Renderer をスライドさせて出し入れする |
