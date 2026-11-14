@@ -22,8 +22,8 @@
   位相・振れ幅の時間変化 (Grow / Shrink) 等を設定することが可能です。
   → [RockSpin](reference/animation/rockspin.md)
 - **Animation パネルで、要素を Cut / Copy / Paste できるようになりました** (**Edit** メニューと
-  ++cmd+x++ / ++cmd+c++ / ++cmd+v++)。貼り付けた要素は長さを保ったまま、選んでいる要素の直後に
-  続けて並びます。別のシーンへの貼り付けも可能です。→ [Animation パネル](ui/bottom-panels/animation.md)
+  ++cmd+x++ / ++cmd+c++ / ++cmd+v++)。貼り付けた要素は、選んでいる要素の直後に
+  挿入され、その要素が終わる時刻から始まります (長さはコピー元と同じです)。別のシーンへの貼り付けも可能です。→ [Animation パネル](ui/bottom-panels/animation.md)
 - **Simple spin の Rotation angle に範囲が無くなりました。** 負の値で逆向きに回り、360° で 1 周します。
 
 ### Console からの視点の動き
