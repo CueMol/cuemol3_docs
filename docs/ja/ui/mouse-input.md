@@ -23,9 +23,9 @@ CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを�
 
 | 設定値 | 動作 |
 |---|---|
-| **Auto-detect** (既定) | スクロールの特徴からマウスかトラックパッドかを自動判別します |
-| **Mouse** | ホイールでズームします |
-| **Mac trackpad** | 2 本指スクロールで平行移動、ピンチでズームします |
+| **Auto-detect** (既定) | スクロールの特徴からマウスかトラックパッドかを自動判別します。 |
+| **Mouse** | ホイールでズームします。 |
+| **Mac trackpad** | 2 本指スクロールで平行移動、ピンチでズームします。 |
 
 <!-- TODO(screenshot): Settings > Input > Mouse & Navigation の画面 -->
 
@@ -96,9 +96,9 @@ generation... で生成した分子表面は、分子 (MolCoord) とは別の Ob
 
 - 1 行目は、チェイン名のバッジと残基 (`ALA 10`)。原子単位の Renderer では原子名が続きます
   (`ALA 10 CA`)。cartoon / ribbon / tube / spline / nucl / trace は帯が残基のものなので、
-  原子名は出ません (tracestick も同じです)
+  原子名は出ません (tracestick も同じです)。
 - 2 行目は、その要素が属する Object と Renderer (`1crn | cartoon1`)。対称操作で生成した
-  分子では、対称操作の名前も続きます
+  分子では、対称操作の名前も続きます。
 
 チップはクリックを透かすので、その下にあるものの操作を妨げません。
 右クリックでメニューを開いている間は表示が保たれ、メニューを閉じたときに拾い直されます。
@@ -124,9 +124,9 @@ generation... で生成した分子表面は、分子 (MolCoord) とは別の Ob
 
 | 設定項目 | OFF にしたときの動作 |
 |---|---|
-| GPU Picking | 従来の原子の位置による判定に戻ります。切り替えは即時に効きます |
-| Hover Info | チップが出なくなり、ポインタを追う当たり判定そのものが止まります |
-| Hover Highlight | 強調表示だけが出なくなります。GPU Picking と Hover Info の両方が ON のときに働きます |
+| GPU Picking | 従来の原子の位置による判定に戻ります。切り替えは即時に効きます。 |
+| Hover Info | チップが出なくなり、ポインタを追う当たり判定そのものが止まります。 |
+| Hover Highlight | 強調表示だけが出なくなります。GPU Picking と Hover Info の両方が ON のときに働きます。 |
 
 <!-- TODO(screenshot): cartoon の残基にポインタを載せたところ (左下のチップと帯のハイライト) -->
 

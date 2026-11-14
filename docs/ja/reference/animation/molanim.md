@@ -19,7 +19,7 @@ CueMol2 で作成したシーンのモーフィングも、読み込んでその
 [アニメーション](index.md#共通のプロパティ) を参照してください。
 
 Target MorphMol
-:   変形を表す MorphMol Object。補間する構造の組を保持します
+:   変形を表す MorphMol Object。補間する構造の組を保持します。
 
 Start value
 :   補間パラメータの開始値

@@ -26,8 +26,8 @@ APBS / PDB2PQR** で実行ファイルのパスを指定します (→ [外部�
 | 項目 | 既定値 | 説明 |
 |---|---|---|
 | **Molecule** | — | 計算する分子 |
-| **Use selection** / 選択 | OFF | ON にすると、選択式で指定した部分だけで計算します。水分子やイオンを除くには `protein` などを指定します |
-| **Elepot name** | `pot_<分子名>` | 作られる静電ポテンシャルマップの Object の名前。分子を選ぶと自動で入ります |
+| **Use selection** / 選択 | OFF | ON にすると、選択式で指定した部分だけで計算します。水分子やイオンを除くには `protein` などを指定します。 |
+| **Elepot name** | `pot_<分子名>` | 作られる静電ポテンシャルマップの Object の名前。分子を選ぶと自動で入ります。 |
 
 ### Charge method
 
@@ -35,7 +35,7 @@ APBS / PDB2PQR** で実行ファイルのパスを指定します (→ [外部�
 |---|---|---|
 | **Method** | Use PDB2PQR | 電荷の割り当て方法 (下記) |
 | **Force field** | Settings の値 (既定は `charmm`) | Use PDB2PQR のとき、電荷の割り当てに使う力場 (`charmm` / `amber` / `tyl06` / `peoepb` / `swanson`) |
-| **Use hydrogen atoms** | OFF | Use internal のとき、分子中の水素原子を使います |
+| **Use hydrogen atoms** | OFF | Use internal のとき、分子中の水素原子を使います。 |
 
 - **Use PDB2PQR**: pdb2pqr で電荷と原子半径を割り当ててから計算します。
 - **Use internal**: CueMol の電荷割り当てを使います。pdb2pqr は不要ですが、タンパク質の
@@ -49,7 +49,7 @@ APBS の計算条件です。通常は変える必要はありません。詳し
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| **Solve non-linear PBE** | OFF | 非線形の Poisson-Boltzmann 方程式を解きます |
+| **Solve non-linear PBE** | OFF | 非線形の Poisson-Boltzmann 方程式を解きます。 |
 | **Temperature (K)** | 298.15 | 温度 |
 | **Max grid size (A)** | 1.0 | グリッドの間隔 (Å) |
 | **Water dielectric** | 78.54 | 溶媒の誘電率 |

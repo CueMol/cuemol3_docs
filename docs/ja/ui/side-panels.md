@@ -16,7 +16,7 @@
 | Selection | 分子の選択 | Molecular structure / Selection |
 | Crystal | 結晶学的な情報 | Symmetry / Density map |
 | Actions | 操作の記録と再生 | History / Actions |
-| 歯車 (最下部) | Settings タブを開きます (サイドパネルではありません) | |
+| 歯車 (最下部) | Settings タブを開きます (サイドパネルではありません)。 | |
 
 ## Explorer
 
@@ -84,13 +84,13 @@ Rainbow / Potential / Multi-gradient) が表示されます。
 
 | 種類 | 設定内容 |
 |---|---|
-| Solid | 既定色を 1 色指定します |
-| Paint | 選択範囲と色の組を表で指定します。行の追加・削除・全削除・並べ替えと、Cut / Copy / Paste ができます |
+| Solid | 既定色を 1 色指定します。 |
+| Paint | 選択範囲と色の組を表で指定します。行の追加・削除・全削除・並べ替えと、Cut / Copy / Paste ができます。 |
 | CPK | 元素ごとの色 (C / N / O / S / P / H / その他) |
 | Rainbow | モード、変化させる基準、開始・終了の色相、明度、彩度 |
 | B-factor | モード (B-factor / 占有率 / 距離)、下限・上限の色、下限値・上限値 (Auto が Manual のときのみ入力可) |
 | 静電ポテンシャル | 対象のポテンシャルマップ、SAS で色付けするか、低 / 中 / 高の値と色 |
-| Multi-gradient | マップのヒストグラムとグラデーションバー上で、ストップ (色の区切り) を直接編集します |
+| Multi-gradient | マップのヒストグラムとグラデーションバー上で、ストップ (色の区切り) を直接編集します。 |
 
 Paint の表は複数選択できます。++cmd++ / ++ctrl++ + クリックで行を選択に加える / 外す、
 ++shift++ + クリックで範囲を選びます。削除・Cut・Copy は選んだ行すべてに効きます。
@@ -128,12 +128,12 @@ Paint の Cut は 1 回の Undo でまとめて戻せます。Paste はクリッ
 
 | ボタン | 動作 |
 |---|---|
-| New camera from view | 現在の視点から新しいカメラを作ります。名前を入力するダイアログが出ます |
-| Save from view | 選んでいるカメラに現在の視点を上書きします |
-| Save from view with show/hide | 同上。表示・非表示の状態も一緒に保存します |
-| Apply to view | 選んでいるカメラの視点に戻します |
-| Apply to view with show/hide | 同上。保存されている表示・非表示の状態も復元します |
-| Delete | 選んでいるカメラを削除します |
+| New camera from view | 現在の視点から新しいカメラを作ります。名前を入力するダイアログが出ます。 |
+| Save from view | 選んでいるカメラに現在の視点を上書きします。 |
+| Save from view with show/hide | 同上。表示・非表示の状態も一緒に保存します。 |
+| Apply to view | 選んでいるカメラの視点に戻します。 |
+| Apply to view with show/hide | 同上。保存されている表示・非表示の状態も復元します。 |
+| Delete | 選んでいるカメラを削除します。 |
 
 - **ダブルクリック**: 表示・非表示の状態も含めてカメラを適用します。
 - **名前の変更**: ++f2++ か、右クリックメニューの **Rename...** でその場で編集します。
@@ -161,7 +161,7 @@ Paint の Cut は 1 回の Undo でまとめて戻せます。Paste はクリッ
 
 | セクション | 内容 |
 |---|---|
-| Rotation | X / Y / Z の回転。ドラッグで相対的に回します |
+| Rotation | X / Y / Z の回転。ドラッグで相対的に回します。 |
 | Translation | 平行移動 |
 | Zoom / Slab | ズーム、スラブ (表示する奥行きの幅)、距離 |
 | Projection | 投影方式 (Perspective / Orthographic) と中心マーク |

@@ -49,11 +49,11 @@ Undo / Redo の表示 (ツールバーの Undo / Redo のドロップダウン�
 
 | 操作 | 内容 |
 |---|---|
-| **Go to step** (右クリックでは **Go to This Step** / **Go to Initial State**) | Undo / Redo を繰り返して、選んだ行の状態まで移ります |
-| **Copy as commands** | 選んだステップの操作を、[Console](plugins/console/index.md) (native モード) のコマンドとしてコピーします。パネルで **Edit &gt; Copy** (++cmd+c++ / ++ctrl+c++) を使っても同じです |
-| **Save as qax** | 選んだステップを qax ファイルに保存します |
-| **Save to Actions** | 選んだステップを Actions パネルの User Actions に保存します (→ [マクロとして保存する](#マクロとして保存する)) |
-| **Show in Inspector** (右クリックのみ) | 選んだステップを[プロパティインスペクタ](../ui/inspector.md)に表示します |
+| **Go to step** (右クリックでは **Go to This Step** / **Go to Initial State**) | Undo / Redo を繰り返して、選んだ行の状態まで移ります。 |
+| **Copy as commands** | 選んだステップの操作を、[Console](plugins/console/index.md) (native モード) のコマンドとしてコピーします。パネルで **Edit &gt; Copy** (++cmd+c++ / ++ctrl+c++) を使っても同じです。 |
+| **Save as qax** | 選んだステップを qax ファイルに保存します。 |
+| **Save to Actions** | 選んだステップを Actions パネルの User Actions に保存します (→ [マクロとして保存する](#マクロとして保存する))。 |
+| **Show in Inspector** (右クリックのみ) | 選んだステップを[プロパティインスペクタ](../ui/inspector.md)に表示します。 |
 
 ### インスペクタでの表示
 
@@ -70,7 +70,7 @@ Undo / Redo の表示 (ツールバーの Undo / Redo のドロップダウン�
 
 - **Presets** — アプリに同梱されたプリセット
 - **User Actions** — 自分で保存した qax ファイル。ユーザーデータのフォルダの `actions`
-  フォルダに置かれます
+  フォルダに置かれます。
 
 ### 実行する
 
@@ -88,28 +88,28 @@ Undo / Redo の表示 (ツールバーの Undo / Redo のドロップダウン�
 
 | 項目 | 内容 |
 |---|---|
-| **Run** | 実行します |
-| **Copy to User Actions** | プリセットのマクロを User Actions にコピーします |
-| **Rename...** / **Move to Trash** | User Actions のファイルの名前を変える / ゴミ箱に移します |
-| **Open in Editor** | qax ファイルをエディタで開きます |
-| **Reveal in Finder** | qax ファイルの場所を開きます |
+| **Run** | 実行します。 |
+| **Copy to User Actions** | プリセットのマクロを User Actions にコピーします。 |
+| **Rename...** / **Move to Trash** | User Actions のファイルの名前を変える / ゴミ箱に移します。 |
+| **Open in Editor** | qax ファイルをエディタで開きます。 |
+| **Reveal in Finder** | qax ファイルの場所を開きます。 |
 
 ### プリセット
 
 | プリセット | 内容 |
 |---|---|
-| Cartoon + ligand | タンパク質を rainbow の cartoon で、リガンドとイオンを ball &amp; stick で表示します (水は描きません) |
-| Ligand site | リガンドと、その 5 Å 以内の残基を ball &amp; stick で表示し、その部位に視点を合わせます |
-| B-factor cartoon | タンパク質を B-factor で着色した cartoon で表示します |
-| Transparent surface | タンパク質に半透明の分子表面を重ねます |
-| Electrostatic surface | 静電ポテンシャル (APBS) で着色した分子表面を表示します。APBS と pdb2pqr の設定が必要です (→ [外部ツールの設定](../install/external-tools.md)) |
-| Ligand contacts | リガンドとそれ以外との接触・水素結合を、ラベル付きの線で表示します |
-| Symmetry mates | 単位胞を埋める対称分子と単位胞の枠を表示します。結晶の情報を持つ Object が対象です |
+| Cartoon + ligand | タンパク質を rainbow の cartoon で、リガンドとイオンを ball &amp; stick で表示します (水は描きません)。 |
+| Ligand site | リガンドと、その 5 Å 以内の残基を ball &amp; stick で表示し、その部位に視点を合わせます。 |
+| B-factor cartoon | タンパク質を B-factor で着色した cartoon で表示します。 |
+| Transparent surface | タンパク質に半透明の分子表面を重ねます。 |
+| Electrostatic surface | 静電ポテンシャル (APBS) で着色した分子表面を表示します。APBS と pdb2pqr の設定が必要です (→ [外部ツールの設定](../install/external-tools.md))。 |
+| Ligand contacts | リガンドとそれ以外との接触・水素結合を、ラベル付きの線で表示します。 |
+| Symmetry mates | 単位胞を埋める対称分子と単位胞の枠を表示します。結晶の情報を持つ Object が対象です。 |
 | White background | 背景を白にします (印刷用の図向け) |
 | Black background | 背景を黒にします (スライド向け) |
-| Render image | ビューをシーンのレンダリングサイズでレンダリングし、デスクトップに `cuemol_render.png` として保存します |
-| 360 degree spin | ビューを 1 回転させるアニメーションを加えて再生します |
-| Front, side and top cameras | 今のビューを `front`、y 軸・x 軸のまわりに 90° 回したビューを `side` / `top` としてカメラに保存します |
+| Render image | ビューをシーンのレンダリングサイズでレンダリングし、デスクトップに `cuemol_render.png` として保存します。 |
+| 360 degree spin | ビューを 1 回転させるアニメーションを加えて再生します。 |
+| Front, side and top cameras | 今のビューを `front`、y 軸・x 軸のまわりに 90° 回したビューを `side` / `top` としてカメラに保存します。 |
 
 Cartoon + ligand から Symmetry mates までの 7 つは Object に適用するマクロで、
 White background 以降の 5 つは Object を選ばずに実行できます。
@@ -127,7 +127,7 @@ History パネルでステップを選んで **Save to Actions** を押すと、
 
 - 選んだステップが 2 つの Object にまたがっている
 - 選んだステップの中で作っていない Renderer を操作している
-  (その Renderer を作るステップも選んでください)
+  (その Renderer を作るステップも選んでください)。
 
 ## qax ファイル
 

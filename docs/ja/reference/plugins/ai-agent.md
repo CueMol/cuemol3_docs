@@ -25,9 +25,9 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Model | `openai:gpt-5.6` | 使用するモデルを `プロバイダ:モデル名` の形式で指定します。候補から選ぶほか、自分のアカウントで使える ID を直接入力できます。プロバイダ (`openai` / `anthropic` / `google`) の部分で、下のどの API キーを使うかが決まります |
-| Reasoning effort | low | 回答前に考える時間の長さ。上げるほど遅くなり、費用も増えます |
-| Pressing Enter | start a new line | メッセージ入力欄で ++enter++ を押したときの動作。*start a new line* (改行) のときは ++cmd+enter++ / ++ctrl+enter++ で送信します。*send the message* を選ぶと逆になります |
+| Model | `openai:gpt-5.6` | 使用するモデルを `プロバイダ:モデル名` の形式で指定します。候補から選ぶほか、自分のアカウントで使える ID を直接入力できます。プロバイダ (`openai` / `anthropic` / `google`) の部分で、下のどの API キーを使うかが決まります。 |
+| Reasoning effort | low | 回答前に考える時間の長さ。上げるほど遅くなり、費用も増えます。 |
+| Pressing Enter | start a new line | メッセージ入力欄で ++enter++ を押したときの動作。*start a new line* (改行) のときは ++cmd+enter++ / ++ctrl+enter++ で送信します。*send the message* を選ぶと逆になります。 |
 | OpenAI API key | (未設定) | `openai:` のモデルを使うときのキー |
 | Anthropic API key | (未設定) | `anthropic:` のモデルを使うときのキー |
 | Google AI API key | (未設定) | `google:` のモデルを使うときのキー (Google AI Studio で発行する Gemini API キー) |

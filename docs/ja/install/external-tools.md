@@ -35,7 +35,7 @@ Settings は独立したウィンドウではなく、コンテンツ領域の**
 | POV-Ray Executable | POV-Ray 本体 | POV-Ray バックエンドによるレイトレーシング |
 | POV-Ray Include Directory | POV-Ray の標準インクルードファイルのディレクトリ | 同上 |
 | blendpng Executable | blendpng | POV-Ray バックエンドでのレンダリング結果のレイヤ合成 |
-| ffmpeg Executable | ffmpeg | 動画 (Movie) 出力のエンコード。バックエンドによらず必要です |
+| ffmpeg Executable | ffmpeg | 動画 (Movie) 出力のエンコード。バックエンドによらず必要です。 |
 
 ### Tools &gt; APBS / PDB2PQR
 

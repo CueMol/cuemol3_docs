@@ -13,13 +13,13 @@
 
 | プラグイン | 内容 | 既定 | 有効にすると増えるもの |
 |---|---|---|---|
-| **AI Agent** | 文章で指示するとシーンを組み立てるチャットパネル。OpenAI・Anthropic・Google (Gemini) のモデルを使い、API キーは自分で用意します | OFF | アクティビティバーの **AI Agent** ビューと、Settings の **Plugins &gt; AI Agent** ページ (→ [AI Agent](ai-agent.md)) |
-| **MD Tools** | MD シミュレーションのトラジェクトリ (topology + DCD / XTC / TRR) を開いて再生します | OFF | **File &gt; Open MD Trajectory...** と、下部パネルの **Trajectory** タブ |
-| **Console** | CueMol の操作をコマンドで実行するコマンドラインです | **ON** | 下部パネルの先頭の **Console** タブ、ステータスバーの **CLI**、Settings の **Plugins &gt; Console** ページ (→ [Console](console/index.md)) |
-| **PyM console** | Console に PyMOL 互換の console を加えます。Console が有効なときだけ働きます | **ON** | Console の切り替えの **PyMOL** (→ [PyM console](console/pymconsole.md)) |
-| **ChX console** | Console に ChimeraX 互換の console を加えます。Console が有効なときだけ働きます | **ON** | Console の切り替えの **ChimeraX** (→ [ChX console](console/chx_console.md)) |
-| **MCP Server** | 同じコンピュータの AI クライアント (Claude Code など) から MCP で CueMol3 を操作できるようにします | OFF | ステータスバーの **MCP** と、Settings の **Plugins &gt; MCP Server** ページ (→ [MCP Server](mcp-server.md)) |
-| **Component Catalog** | 画面部品のカタログ。CueMol3 の UI を開発・レビューするための内部ツールです | OFF | アクティビティバーの **Component Catalog** ビュー |
+| **AI Agent** | 文章で指示するとシーンを組み立てるチャットパネル。OpenAI・Anthropic・Google (Gemini) のモデルを使い、API キーは自分で用意します。 | OFF | アクティビティバーの **AI Agent** ビューと、Settings の **Plugins &gt; AI Agent** ページ (→ [AI Agent](ai-agent.md)) |
+| **MD Tools** | MD シミュレーションのトラジェクトリ (topology + DCD / XTC / TRR) を開いて再生します。 | OFF | **File &gt; Open MD Trajectory...** と、下部パネルの **Trajectory** タブ |
+| **Console** | CueMol の操作をコマンドで実行するコマンドラインです。 | **ON** | 下部パネルの先頭の **Console** タブ、ステータスバーの **CLI**、Settings の **Plugins &gt; Console** ページ (→ [Console](console/index.md)) |
+| **PyM console** | Console に PyMOL 互換の console を加えます。Console が有効なときだけ働きます。 | **ON** | Console の切り替えの **PyMOL** (→ [PyM console](console/pymconsole.md)) |
+| **ChX console** | Console に ChimeraX 互換の console を加えます。Console が有効なときだけ働きます。 | **ON** | Console の切り替えの **ChimeraX** (→ [ChX console](console/chx_console.md)) |
+| **MCP Server** | 同じコンピュータの AI クライアント (Claude Code など) から MCP で CueMol3 を操作できるようにします。 | OFF | ステータスバーの **MCP** と、Settings の **Plugins &gt; MCP Server** ページ (→ [MCP Server](mcp-server.md)) |
+| **Component Catalog** | 画面部品のカタログ。CueMol3 の UI を開発・レビューするための内部ツールです。 | OFF | アクティビティバーの **Component Catalog** ビュー |
 
 **MD Tools** / **Console** / **PyM console** / **ChX console** / **MCP Server** の 5 つは実験的な機能で、
 説明文が *Experimental.* で始まります。

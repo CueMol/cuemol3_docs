@@ -50,6 +50,6 @@ CueMol3 では GUI が大きく変わり、一部の機能が統合・改名・�
 |---|---|
 | [更新履歴](releases.md) | リリースごとの主な変更点 |
 | [GitHub Releases](https://github.com/CueMol/cuemol3/releases) | 配布物のダウンロードと詳細なリリースノート (→ [ダウンロード](install/index.md#ダウンロード)) |
-| [CueMol2 ドキュメント](https://cuemol.github.io/cuemol2_docs/) | CueMol2 (安定版) のドキュメント。CueMol2 向けに凍結維持されています |
+| [CueMol2 ドキュメント](https://cuemol.github.io/cuemol2_docs/) | CueMol2 (安定版) のドキュメント。CueMol2 向けに凍結維持されています。 |
 | [ギャラリー](https://cuemol.github.io/cuemol2_docs/en/Gallery/) | CueMol で作成された画像の作例 (CueMol2 サイト内) |
 | [GitHub: CueMol/cuemol3](https://github.com/CueMol/cuemol3) | ソースコードリポジトリ (CueMol3 は `tritium/` 以下) |

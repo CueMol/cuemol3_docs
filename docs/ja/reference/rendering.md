@@ -42,10 +42,10 @@ Umbreon を選んでいるあいだは設定欄そのものが隠れます。
 
 | 項目 | 隠れる理由 |
 |---|---|
-| Stereo mode / Stereo depth | Umbreon は立体視出力に対応していません |
-| CPU threads | Umbreon はプロセス内で並列に描画するため、スレッド数の指定を受け付けません |
-| Post-render alpha blending | 半透明の合成を Umbreon 自身が行うため、外部の blendpng を使いません |
-| Pixel labels | POV-Ray 専用の機能です |
+| Stereo mode / Stereo depth | Umbreon は立体視出力に対応していません。 |
+| CPU threads | Umbreon はプロセス内で並列に描画するため、スレッド数の指定を受け付けません。 |
+| Post-render alpha blending | 半透明の合成を Umbreon 自身が行うため、外部の blendpng を使いません。 |
+| Pixel labels | POV-Ray 専用の機能です。 |
 
 ## Quality (品質)
 
@@ -59,10 +59,10 @@ Supersampling
 :   基本画質。既定は **3x**
 
 AO quality
-:   アンビエントオクルージョンの品質。Lighting が Ambient Occlusion のときだけ表示されます
+:   アンビエントオクルージョンの品質。Lighting が Ambient Occlusion のときだけ表示されます。
 
 GI lighting
-:   大域照明の光の配分。Lighting が Global Illumination のときだけ表示されます
+:   大域照明の光の配分。Lighting が Global Illumination のときだけ表示されます。
 
 Shadows
 :   影の落とし方。既定は **Off**
@@ -76,8 +76,8 @@ Shadows
 
 | Lighting | 内容 |
 |---|---|
-| Raytrace only | 陰影付けなし。もっとも高速で、平坦な見た目になります |
-| Ambient Occlusion | 周囲の遮蔽から陰影を求めます |
+| Raytrace only | 陰影付けなし。もっとも高速で、平坦な見た目になります。 |
+| Ambient Occlusion | 周囲の遮蔽から陰影を求めます。 |
 | Global Illumination | 光の跳ね返りを追跡して陰影を求めます (**既定**) |
 
 Ambient Occlusion と Global Illumination は**どちらか一方**しか選べません。
@@ -112,7 +112,7 @@ Lighting が **Ambient Occlusion** のときに表示されます。
 |---|---|
 | Low | サンプル数を抑えた下書き向け |
 | Medium | 標準 (**既定**) |
-| High | 陰影を 1 点ごとに厳密に計算します |
+| High | 陰影を 1 点ごとに厳密に計算します。 |
 
 !!! warning "High は極端に時間がかかります"
     Low と Medium は出力ピクセル単位でまとめて計算しますが、High は描画点ごとに
@@ -127,7 +127,7 @@ Lighting が **Global Illumination** のときに表示されます。正面か�
 
 | GI lighting | 内容 |
 |---|---|
-| 0 (raytrace match) | Raytrace only と同じ配光。大域照明の照り返しは最小になります |
+| 0 (raytrace match) | Raytrace only と同じ配光。大域照明の照り返しは最小になります。 |
 | 1 | |
 | 2 | |
 | 3 | |
@@ -163,7 +163,7 @@ Quality セクションの下にあるアコーディオンです。プリセッ
 
 | 項目 | 既定値 | 範囲 | 説明 |
 |---|---|---|---|
-| Supersampling | 3 | 1〜8 | Quality の Supersampling と同じ値です |
+| Supersampling | 3 | 1〜8 | Quality の Supersampling と同じ値です。 |
 
 ### Lights
 
@@ -172,7 +172,7 @@ Lighting の方式によらず効く光源の設定です。Umbreon (NPR) にも
 | 項目 | 既定値 | 範囲 | 説明 |
 |---|---|---|---|
 | Light intensity | 1.3 | 0〜3 | 光源全体の強さ |
-| Flash fraction | 0 | 0〜1 | 直接光のうち、視点方向からのヘッドライトに割り当てる割合。残りが斜め上からのキーライトになります。小さいほど陰影がはっきりします |
+| Flash fraction | 0 | 0〜1 | 直接光のうち、視点方向からのヘッドライトに割り当てる割合。残りが斜め上からのキーライトになります。小さいほど陰影がはっきりします。 |
 
 Lighting が Global Illumination のときは **GI lighting** の段がこの 2 つを書き換えます。
 Raytrace only か Ambient Occlusion を選ぶと 1.55 / 0.6 に戻ります。Umbreon (NPR) の既定も
@@ -186,12 +186,12 @@ Lighting が Ambient Occlusion のときだけ表示されます。
 | 項目 | 既定値 | 範囲 | 説明 |
 |---|---|---|---|
 | AO samples | 64 | 1〜256 | 1 点あたりのサンプル数。多いほど滑らかで低速 |
-| AO distance (0 = auto) | 0 | 0〜1000 | 遮蔽を探す半径。0 でシーンの大きさから自動的に決めます |
+| AO distance (0 = auto) | 0 | 0〜1000 | 遮蔽を探す半径。0 でシーンの大きさから自動的に決めます。 |
 | AO intensity | 1.0 | 0〜1 | 陰影の強さ |
-| AO on direct light | 1.0 | 0〜1 | 直接光にも陰影を掛ける割合。0 にすると陰影がほとんど見えなくなります |
-| Multi-scale AO | ON | | 大小の半径を組み合わせ、細かい凹凸と全体の形の両方を強調します |
-| Bent normal | ON | | 遮蔽の方向を考慮して環境光を当てます |
-| Low-discrepancy sampling | ON | | サンプルを均等に散らしてノイズを減らします |
+| AO on direct light | 1.0 | 0〜1 | 直接光にも陰影を掛ける割合。0 にすると陰影がほとんど見えなくなります。 |
+| Multi-scale AO | ON | | 大小の半径を組み合わせ、細かい凹凸と全体の形の両方を強調します。 |
+| Bent normal | ON | | 遮蔽の方向を考慮して環境光を当てます。 |
+| Low-discrepancy sampling | ON | | サンプルを均等に散らしてノイズを減らします。 |
 | AO gather | Per output pixel | | 陰影の計算単位。**Per output pixel** は出力ピクセル単位 (高速)、**Per shading hit** は描画点ごと (厳密・低速) |
 
 !!! tip "AO distance は 0 (自動) のままで構いません"
@@ -204,7 +204,7 @@ Lighting が Ambient Occlusion のときだけ表示されます。
 |---|---|---|---|
 | Cast shadows | OFF | | 影の有無 |
 | Shadow samples | 1 | 1〜64 | 影のサンプル数。多いほど滑らかで低速 |
-| Light radius (deg) | 0.0 | 0〜30 | 光源の見かけの大きさ (度)。0 より大きくするとぼけた影になります |
+| Light radius (deg) | 0.0 | 0〜30 | 光源の見かけの大きさ (度)。0 より大きくするとぼけた影になります。 |
 
 Light radius を大きくするほど影の縁が広くぼけ、ノイズも出やすくなるため、
 あわせて Shadow samples を増やしてください。
@@ -216,9 +216,9 @@ Light radius を大きくするほど影の縁が広くぼけ、ノイズも出�
 
 | 項目 | 既定値 | 範囲 | 説明 |
 |---|---|---|---|
-| Crease angle (deg) | Off | Off / 15 / 30 / 45 / 60 / 90 / 120 | 折れ線として描く面の折れ角の下限 (度)。Edge type が Edges のときに効き、角度を大きくするほど、はっきりした折れ目だけが描かれます。Off で折れ線を描きません |
+| Crease angle (deg) | Off | Off / 15 / 30 / 45 / 60 / 90 / 120 | 折れ線として描く面の折れ角の下限 (度)。Edge type が Edges のときに効き、角度を大きくするほど、はっきりした折れ目だけが描かれます。Off で折れ線を描きません。 |
 | Contact edges | ON | | エッジ線の設定が異なる Renderer が交わる線を描きます (下記) |
-| Outline far depth | 0.2 | 0〜1 | Edge type が Silhouette のとき、フォグで薄れた面の奥にある輪郭を描き始める深さ。フォグの範囲に対する割合で、0 がビュー中心、1 がフォグの終端です |
+| Outline far depth | 0.2 | 0〜1 | Edge type が Silhouette のとき、フォグで薄れた面の奥にある輪郭を描き始める深さ。フォグの範囲に対する割合で、0 がビュー中心、1 がフォグの終端です。 |
 
 **Contact edges** は、ある Renderer の形状が別の Renderer の表面に突き刺さっている箇所
 (たとえば ribbon に入り込む ballstick の結合) の交線を描きます。エッジ線の設定
@@ -235,7 +235,7 @@ Edge type が Silhouette の Renderer では、他の Renderer と接する部�
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|
-| Per-pixel transparency | ON | 半透明の合成を画素ごとに行います |
+| Per-pixel transparency | ON | 半透明の合成を画素ごとに行います。 |
 
 半透明の Renderer は、それぞれを不透明として描いてから合成されます。ON のときは、
 その画素を実際に覆っている層だけで重みを決めるため、背景の重みが負になりません。
@@ -255,8 +255,8 @@ Lighting が Global Illumination のときだけ表示されます。
 |---|---|---|---|
 | GI samples | 32 | 8 / 32 / 64 / 256 | 1 ピクセルあたりのサンプル数。多いほどノイズが減り低速 |
 | Denoise | OIDN | | ノイズ除去の方法。**OIDN** / **A-trous** / **None** |
-| Ambient fraction | 0.6 | 0〜1 | 光全体のうち、大域照明の照り返しとして集める割合。**GI lighting** の段が書き換えます |
-| Sky gradient | ON | | 照り返しの光源となる空を、上が白く下が Ground color に近づくグラデーションにします。面の向きによって照り返しの明るさが変わるようになります (全体の明るさは変わりません) |
+| Ambient fraction | 0.6 | 0〜1 | 光全体のうち、大域照明の照り返しとして集める割合。**GI lighting** の段が書き換えます。 |
+| Sky gradient | ON | | 照り返しの光源となる空を、上が白く下が Ground color に近づくグラデーションにします。面の向きによって照り返しの明るさが変わるようになります (全体の明るさは変わりません)。 |
 | Ground color | #666666 | | Sky gradient の地面側の色 |
 
 Denoise を None にすると、GI samples を大きくしない限りざらついた画像になります。
@@ -267,14 +267,14 @@ Denoise を None にすると、GI samples を大きくしない限りざらつ�
 Renderer 側の共通プロパティのうち、レイトレーシング出力にだけ効くものがあります。
 
 [マテリアル](renderers/material.md)
-:   Umbreon はマテリアル名から質感を解決します。POV-Ray とは一部の質感が異なります
+:   Umbreon はマテリアル名から質感を解決します。POV-Ray とは一部の質感が異なります。
 
 [エッジライン](renderers/edge-lines.md)
 :   Edge type の **Silhouette** は、Umbreon では**外周の輪郭だけ**を描くモードになります。
     エッジ線の設定 (種類・太さ・色) が同じ Renderer はひとまとまりとして 1 つの外周になり、
     重なり合う部分には線が入りません。
     **Edges** は輪郭に加えて内側の折れ線も描きます。
-    エッジ線は分子ビューにも描かれ、できるだけ同じ見た目になるよう調整されています
+    エッジ線は分子ビューにも描かれ、できるだけ同じ見た目になるよう調整されています。
 
 ## コマンドラインでのレンダリング
 

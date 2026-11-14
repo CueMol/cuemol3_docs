@@ -23,11 +23,11 @@ tritium_cli <command> [ARGS]
 
     | ファイル | 動作 |
     |---|---|
-    | 構造・マップなどのデータ (`1crn.pdb` / `map.ccp4` など) | アクティブなタブに開きます。形式は **File &gt; Open** と同じように判別します。複数並べられます |
-    | `.qsc` | シーンを新しいタブに開きます。データのファイルや `-c` と組み合わせると、そのシーンに読み込みます |
-    | `.qax` | 記録された操作を再生します |
-    | `.pml` / `.cxc` | PyM console / ChX console のスクリプトとして実行します |
-    | `.txt` | コマンドを書いたテキストとして、いまのモードで実行します |
+    | 構造・マップなどのデータ (`1crn.pdb` / `map.ccp4` など) | アクティブなタブに開きます。形式は **File &gt; Open** と同じように判別します。複数並べられます。 |
+    | `.qsc` | シーンを新しいタブに開きます。データのファイルや `-c` と組み合わせると、そのシーンに読み込みます。 |
+    | `.qax` | 記録された操作を再生します。 |
+    | `.pml` / `.cxc` | PyM console / ChX console のスクリプトとして実行します。 |
+    | `.txt` | コマンドを書いたテキストとして、いまのモードで実行します。 |
 
     データのファイルと `-c` は、まとめて 1 回の Undo になります。スクリプトはほかのファイルや `-c` と
     一緒には渡せません。
@@ -42,11 +42,11 @@ tritium_cli <command> [ARGS]
 
 | コマンド | 動作 |
 |---|---|
-| `tritium_cli status` | CueMol3 が起動しているか、どのポートで何を受け付けているかを表示します。CueMol3 は起動しません。起動していれば終了ステータス 0、していなければ 1 です |
+| `tritium_cli status` | CueMol3 が起動しているか、どのポートで何を受け付けているかを表示します。CueMol3 は起動しません。起動していれば終了ステータス 0、していなければ 1 です。 |
 | `tritium_cli version` | tritium_cli と、起動中の CueMol3 のバージョンを表示します (`--version` / `-V` と同じ) |
-| `tritium_cli help [コマンド]` | 使い方、またはサブコマンドの使い方を表示します |
-| `tritium_cli skill` | AI エージェント向けの説明 (skill) を表示します。`skill install` で Claude Code の `~/.claude/skills/cuemol/SKILL.md` に書き込みます (`--dir` で書き込み先を変えられます。内容の違うファイルがあれば、`--force` を付けない限り上書きしません) |
-| `tritium_cli mcp` | MCP クライアントと標準入出力 (stdio) でつなぎます (→ [MCP Server](../mcp-server.md#tritium_cli-mcp-で登録する)) |
+| `tritium_cli help [コマンド]` | 使い方、またはサブコマンドの使い方を表示します。 |
+| `tritium_cli skill` | AI エージェント向けの説明 (skill) を表示します。`skill install` で Claude Code の `~/.claude/skills/cuemol/SKILL.md` に書き込みます (`--dir` で書き込み先を変えられます。内容の違うファイルがあれば、`--force` を付けない限り上書きしません)。 |
+| `tritium_cli mcp` | MCP クライアントと標準入出力 (stdio) でつなぎます (→ [MCP Server](../mcp-server.md#tritium_cli-mcp-で登録する))。 |
 
 ## 接続
 
@@ -75,9 +75,9 @@ npm でインストールした tritium_cli は、インストール済みの Cu
 | OS | 方法 |
 |---|---|
 | macOS | 表示されたパスを PATH 上のディレクトリにリンクします (`ln -s "<パス>" ~/.local/bin/tritium_cli`) |
-| Windows | 表示された `tritium_cli.cmd` のあるディレクトリを PATH に加えます |
-| Linux (.deb) | `/usr/bin/tritium_cli` にインストールされます |
-| Linux (AppImage) | 使えません。tritium_cli を使う場合は .deb をインストールしてください |
+| Windows | 表示された `tritium_cli.cmd` のあるディレクトリを PATH に加えます。 |
+| Linux (.deb) | `/usr/bin/tritium_cli` にインストールされます。 |
+| Linux (AppImage) | 使えません。tritium_cli を使う場合は .deb をインストールしてください。 |
 
 ## npm でインストールする
 
@@ -105,7 +105,7 @@ Console が有効なとき、ステータスバーの右側に **CLI** が表示
 ## 関連項目
 
 - [Console](index.md) / [Console のコマンド一覧](commands.md) / [PyM console](pymconsole.md) / [ChX console](chx_console.md)
-- [MCP Server](../mcp-server.md) — 同じサーバーを使います
+- [MCP Server](../mcp-server.md) — 同じサーバーを使います。
 - [操作の記録と再生](../../actions.md) / [設定項目](../../settings.md#console)
 
 ---

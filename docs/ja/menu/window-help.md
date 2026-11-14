@@ -9,8 +9,8 @@ CueMol3 はメインウィンドウとレンダリングウィンドウの 2 つ
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
-| Main Window | メインウィンドウを前面に出します。最小化・非表示になっている場合は復帰させます | |
-| Rendering Window | レンダリングウィンドウを前面に出します。開いていない場合は開いてから前面に出します | |
+| Main Window | メインウィンドウを前面に出します。最小化・非表示になっている場合は復帰させます。 | |
+| Rendering Window | レンダリングウィンドウを前面に出します。開いていない場合は開いてから前面に出します。 | |
 
 !!! note "OS による違い"
     macOS ではメニューバーが OS 側 (アプリ全体で共有) にあるため、レンダリングウィンドウが前面のときも
@@ -33,8 +33,8 @@ CueMol3 はメインウィンドウとレンダリングウィンドウの 2 つ
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
-| About CueMol3 | バージョン情報 (Version / Commit / Date と、Electron / Chromium / Node.js / V8 / OS の版) を表示します。**Copy** で、その内容をクリップボードにコピーします (不具合の報告に使えます) | |
-| Check for Updates... | 新しいリリースを確認します。アプリ内のアップデートは macOS (Apple Silicon) 版と Windows 版の機能で、Linux では利用できない旨が表示されます (→ [アップデート](../install/update.md)) | |
+| About CueMol3 | バージョン情報 (Version / Commit / Date と、Electron / Chromium / Node.js / V8 / OS の版) を表示します。**Copy** で、その内容をクリップボードにコピーします (不具合の報告に使えます)。 | |
+| Check for Updates... | 新しいリリースを確認します。アプリ内のアップデートは macOS (Apple Silicon) 版と Windows 版の機能で、Linux では利用できない旨が表示されます (→ [アップデート](../install/update.md))。 | |
 
 !!! info "Mozilla 固有の項目は廃止されました"
     CueMol2 の Help メニューにあった About plugins... / About config... / Addon manager... / Console

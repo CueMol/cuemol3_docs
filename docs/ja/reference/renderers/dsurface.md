@@ -21,7 +21,7 @@ Multi-gradient も選べます (→ [Coloring](../coloring.md))。
 | 項目 | 既定値 | 説明 |
 |---|---|---|
 | Drawing mode | Fill | 面で塗る (**Fill**) / 網目 (**Wireframe**) / 点 (**Dots**) |
-| Line/Point size | 1.2 px | Wireframe の線幅と Dots の点の大きさ。Fill のときは使いません |
+| Line/Point size | 1.2 px | Wireframe の線幅と Dots の点の大きさ。Fill のときは使いません。 |
 | Algorithm | Distance field | メッシュの作り方 (下記) |
 | Surface type | Solvent excluded | 表面の種類。**van der Waals** (ファンデルワールス面) / **Solvent accessible** (溶媒接触表面) / **Solvent excluded** (溶媒排除表面) |
 | Detail | 6 | メッシュの細かさ。段階から選びます (`1` / `2` / `4` / `6` / `8` / `16` / `24` / `32`) |
@@ -34,8 +34,8 @@ Multi-gradient も選べます (→ [Coloring](../coloring.md))。
 | Algorithm | 対応する Surface type | 内容 |
 |---|---|---|
 | Distance field | vdW / SAS / SES | 距離場を格子に載せてメッシュ化します (**既定**) |
-| MeshMS (analytic SES) | SES のみ | 溶媒排除表面を解析的にメッシュ化します。細かい設定では距離場より大幅に高速です |
-| EDTSurf (voxel) | vdW / SAS / SES | ボクセルと距離変換を使う従来の実装です |
+| MeshMS (analytic SES) | SES のみ | 溶媒排除表面を解析的にメッシュ化します。細かい設定では距離場より大幅に高速です。 |
+| EDTSurf (voxel) | vdW / SAS / SES | ボクセルと距離変換を使う従来の実装です。 |
 
 **Detail の目盛りは 3 つで揃えてあります。** 既定の 6 では、どのアルゴリズムでも
 ほぼ同じ頂点数になります。

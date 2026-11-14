@@ -6,8 +6,8 @@
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
-| Image rendering... *(CueMol3 で改名)* | レンダリングウィンドウを開き、**静止画 (Still) モード**にします | |
-| Movie rendering... *(CueMol3 で改名)* | レンダリングウィンドウを開き、**動画 (Movie) モード**にします | |
+| Image rendering... *(CueMol3 で改名)* | レンダリングウィンドウを開き、**静止画 (Still) モード**にします。 | |
+| Movie rendering... *(CueMol3 で改名)* | レンダリングウィンドウを開き、**動画 (Movie) モード**にします。 | |
 
 !!! info "CueMol2 からの変更"
     CueMol2 では「POV-Ray rendering...」「Animation rendering...」という、Renderer の名前を冠した
@@ -26,11 +26,11 @@
 
 | 項目 | 説明 |
 |---|---|
-| PNG image... | 画面表示と同じ描画で PNG 画像を書き出します。サイズ・解像度 (DPI)・背景の透過を指定できます |
-| Umbreon ray-traced image... | 内蔵レイトレーサ Umbreon でレイトレースした PNG を書き出します。オプションは PNG image... と共通です |
-| POV-Ray SDL... | 外部の POV-Ray で描画するためのシーン記述ファイル (`.pov`) を書き出します。同じ場所に `.inc` ファイルも生成されます。画像は出力されません |
-| STL... | STL 形式 (`.stl`) の形状データを書き出します |
-| Metasequoia (MQO)... | Metasequoia のオブジェクトファイル (`.mqo`) を書き出します |
+| PNG image... | 画面表示と同じ描画で PNG 画像を書き出します。サイズ・解像度 (DPI)・背景の透過を指定できます。 |
+| Umbreon ray-traced image... | 内蔵レイトレーサ Umbreon でレイトレースした PNG を書き出します。オプションは PNG image... と共通です。 |
+| POV-Ray SDL... | 外部の POV-Ray で描画するためのシーン記述ファイル (`.pov`) を書き出します。同じ場所に `.inc` ファイルも生成されます。画像は出力されません。 |
+| STL... | STL 形式 (`.stl`) の形状データを書き出します。 |
+| Metasequoia (MQO)... | Metasequoia のオブジェクトファイル (`.mqo`) を書き出します。 |
 
 !!! note "表示されない項目がある場合"
     使用中のライブラリに組み込まれていないエクスポータの項目は、起動時の判定により

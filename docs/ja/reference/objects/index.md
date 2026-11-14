@@ -27,7 +27,7 @@ DensityMap と ElePotMap はどちらもスカラー場 (ScalarObject) の一種
 - **作成** — File メニューからファイルを読み込む、または Tools メニューの生成系ツールを使う
   (→ [File メニュー](../../menu/file.md)、[Tools メニュー](../../menu/tools.md))
 - **保存** — File &gt; Save File As... で Object 単体をファイルに書き出せます。
-  対象になるのは対応する保存形式を持つ Object だけです
+  対象になるのは対応する保存形式を持つ Object だけです。
 - **削除・名前の変更・コピー** — シーンツリーの右クリックメニュー
   (→ [サイドパネル](../../ui/side-panels.md))
 - **プロパティの編集** — プロパティインスペクタ

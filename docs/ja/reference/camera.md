@@ -16,16 +16,16 @@
 
 | 右クリックメニュー | ツールバー | 内容 |
 |---|---|---|
-| New Camera... | New camera from view | 現在の視点から新しいカメラを作ります。同じ名前のカメラがあると確認なしで上書きされます |
-| Save from view | Save from view | 選んでいるカメラに現在の視点を上書きします |
-| Save from scene (with vis flags) | Save from view with show/hide | 同上。表示フラグも一緒に保存します |
-| Apply to view | Apply to view | 保存した視点に戻します |
-| Apply to scene (with vis flags) | Apply to view with show/hide | 同上。表示フラグも復元します。行のダブルクリックでも行えます |
-| Delete | Delete | カメラを削除します。++delete++ / ++backspace++ キーでも行えます |
-| Rename... | — | 名前を変更します。++f2++ でも行えます |
-| Copy / Paste Camera | — | カメラをコピー・貼り付けます。Edit メニューと ++cmd+c++ / ++cmd+v++ でも行えます |
-| Camera file &gt; Load... / Reload / Save / Save As... | — | カメラファイル (`.cam`) を読み書きします。**Reload** はファイルから読み込んだカメラでのみ選べます |
-| Edit vis flags... / Clear vis flags | — | 表示フラグを編集・消去します。**Clear vis flags** はフラグを持つカメラでのみ選べます |
+| New Camera... | New camera from view | 現在の視点から新しいカメラを作ります。同じ名前のカメラがあると確認なしで上書きされます。 |
+| Save from view | Save from view | 選んでいるカメラに現在の視点を上書きします。 |
+| Save from scene (with vis flags) | Save from view with show/hide | 同上。表示フラグも一緒に保存します。 |
+| Apply to view | Apply to view | 保存した視点に戻します。 |
+| Apply to scene (with vis flags) | Apply to view with show/hide | 同上。表示フラグも復元します。行のダブルクリックでも行えます。 |
+| Delete | Delete | カメラを削除します。++delete++ / ++backspace++ キーでも行えます。 |
+| Rename... | — | 名前を変更します。++f2++ でも行えます。 |
+| Copy / Paste Camera | — | カメラをコピー・貼り付けます。Edit メニューと ++cmd+c++ / ++cmd+v++ でも行えます。 |
+| Camera file &gt; Load... / Reload / Save / Save As... | — | カメラファイル (`.cam`) を読み書きします。**Reload** はファイルから読み込んだカメラでのみ選べます。 |
+| Edit vis flags... / Clear vis flags | — | 表示フラグを編集・消去します。**Clear vis flags** はフラグを持つカメラでのみ選べます。 |
 
 一覧の順序は行をドラッグして変更でき、シーンファイルに保存されます。
 `__current` は先頭に固定され、並べ替えの対象外です。
@@ -55,7 +55,7 @@
 
 ## 関連項目
 
-- [アニメーション](animation/index.md) — [CamMotion](animation/cammotion.md) はカメラを対象にします
+- [アニメーション](animation/index.md) — [CamMotion](animation/cammotion.md) はカメラを対象にします。
 - [File メニュー](../menu/file.md)
 - [サイドパネル](../ui/side-panels.md#camera-パネル)
 

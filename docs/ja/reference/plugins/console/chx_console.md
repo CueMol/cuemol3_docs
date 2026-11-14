@@ -103,7 +103,7 @@ ChimeraX の原子の指定は、CueMol の[選択式](../../selection.md)に**�
 
 | ChimeraX | CueMol |
 |---|---|
-| `#1`、`#1,3-5` (model) | model 番号で分子を選びます |
+| `#1`、`#1,3-5` (model) | model 番号で分子を選びます。 |
 | `/A,B` | `chain A,B` |
 | `:10-20,30`、`:10A` | `resi 10:20`、`resi 30`、`resi 10A` |
 | `:ALA` | `resn ALA` |

@@ -28,10 +28,10 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 
 | 操作 | 動作 |
 |---|---|
-| ++enter++ | コマンドを実行します |
-| ++shift+enter++ | 改行します |
-| ++tab++ | カーソルより前の部分を補完します。カーソルより後ろはそのまま残ります。候補が複数あるときは、プロンプトのすぐ上に一覧が表示されます。一覧が出ているときにもう一度押すと、候補を選ぶメニューになります (→ [入力と補完](index.md#入力と補完)) |
-| ++up++ / ++down++ | 入力の履歴をたどります (履歴は native モードとは別です) |
+| ++enter++ | コマンドを実行します。 |
+| ++shift+enter++ | 改行します。 |
+| ++tab++ | カーソルより前の部分を補完します。カーソルより後ろはそのまま残ります。候補が複数あるときは、プロンプトのすぐ上に一覧が表示されます。一覧が出ているときにもう一度押すと、候補を選ぶメニューになります (→ [入力と補完](index.md#入力と補完))。 |
+| ++up++ / ++down++ | 入力の履歴をたどります (履歴は native モードとは別です)。 |
 
 - ++tab++ の挙動は PyMOL に合わせてあります。コマンド名がすでに確定しているときは補完せず、
   該当するものが無い場合はファイル名の展開にフォールバックします。
@@ -170,7 +170,7 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 | 演算子 | `in` / `like` / `neighbor` (`nbr.`) / `extend` / `first` / `last` / `bound_to` / `byobject` / `bysegi` / `bychain` / `bycalpha` / `bymolecule` / `gap` |
 | 性質 | `segi` (`s.`) / `index` (代わりに `id`) / `model` (`m.`。代わりに Object 名) / `x` / `y` / `z` / `flag` (`f`) / `rep` / `color` / `pepseq` (`ps`) / `text_type` / `numeric_type` / `stereo` / `rank` / `partial_charge` / `formal_charge` |
 | マクロ | `inorganic` / `metals` / `donors` / `acceptors` / `visible` / `enabled` / `bonded` / `masked` / `protected` / `center` / `origin` |
-| 比較 | `<=` / `>=` / `!=` (CueMol の比較は `<` / `>` / `=` だけです) |
+| 比較 | `<=` / `>=` / `!=` (CueMol の比較は `<` / `>` / `=` だけです)。 |
 | 書き方 | `/1abc//A/10/CA` のようなスラッシュ記法 (`chain A and resi 10 and name CA` と書きます)、左側の選択が無い `within`、距離の無い `around`、`of` の無い `within` |
 
 ## 制限事項

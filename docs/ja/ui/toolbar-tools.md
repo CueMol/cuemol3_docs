@@ -16,16 +16,16 @@ CueMol3 には性格の異なる 2 つのボタン列があります。
 
 | ボタン | 動作 | 対応するメニュー項目 |
 |---|---|---|
-| New Tab | 新しいタブを作ります | File &gt; New Tab |
-| Open File | ファイルを開きます | File &gt; Open File... |
-| Save As | Object をファイルに保存します | File &gt; Save File As... |
-| Open Scene | シーンファイルを開きます | File &gt; Open Scene... |
-| Reload Scene | シーンを読み込み直します | File &gt; Reload Scene |
-| Save Scene | シーンを保存します | File &gt; Save Scene |
-| Get PDB | PDB ID または EMDB ID を指定して構造を取得します | File &gt; Get PDB... |
-| Render | レンダリングウィンドウを開きます | Rendering &gt; Image / Movie rendering... |
-| Undo | 直前の操作を取り消します | Edit &gt; Undo |
-| Redo | 取り消した操作をやり直します | Edit &gt; Redo |
+| New Tab | 新しいタブを作ります。 | File &gt; New Tab |
+| Open File | ファイルを開きます。 | File &gt; Open File... |
+| Save As | Object をファイルに保存します。 | File &gt; Save File As... |
+| Open Scene | シーンファイルを開きます。 | File &gt; Open Scene... |
+| Reload Scene | シーンを読み込み直します。 | File &gt; Reload Scene |
+| Save Scene | シーンを保存します。 | File &gt; Save Scene |
+| Get PDB | PDB ID または EMDB ID を指定して構造を取得します。 | File &gt; Get PDB... |
+| Render | レンダリングウィンドウを開きます。 | Rendering &gt; Image / Movie rendering... |
+| Undo | 直前の操作を取り消します。 | Edit &gt; Undo |
+| Redo | 取り消した操作をやり直します。 | Edit &gt; Redo |
 
 - ウィンドウ幅が足りないときは、ラベルが省略されアイコンのみになります (ツールチップに名前が出ます)。
 - シーンが開かれていないときは、シーンを必要とするボタンが無効になります。
@@ -46,12 +46,12 @@ Undo / Redo ボタンには履歴のドロップダウンが付いています�
 | グループ | ツール | ショートカット | 動作 |
 |---|---|---|---|
 | Navigate | Navigate | ++n++ | 視点操作 (既定のモード) |
-| Select | Rect Select | ++b++ | 矩形範囲で選択します |
-| | Lasso | ++l++ | 投げ縄で選択します |
-| Measure | Distance | ++d++ | 2 原子をクリックして距離を計測します |
-| | Angle | ++a++ | 3 原子をクリックして角度を計測します |
-| | Torsion | ++t++ | 4 原子をクリックして二面角を計測します |
-| Edit | Add Bond | ++e++ | 同じ分子内の 2 原子をクリックして結合を追加します |
+| Select | Rect Select | ++b++ | 矩形範囲で選択します。 |
+| | Lasso | ++l++ | 投げ縄で選択します。 |
+| Measure | Distance | ++d++ | 2 原子をクリックして距離を計測します。 |
+| | Angle | ++a++ | 3 原子をクリックして角度を計測します。 |
+| | Torsion | ++t++ | 4 原子をクリックして二面角を計測します。 |
+| Edit | Add Bond | ++e++ | 同じ分子内の 2 原子をクリックして結合を追加します。 |
 
 - ++esc++ を押すと、それまでのクリックの蓄積がリセットされます。
 - ツールを切り替えたときやビューを切り替えたときもリセットされます。
@@ -67,8 +67,8 @@ Rect Select は矩形、Lasso は自由な多角形で囲んだ範囲の原子�
 
 | 操作 | 動作 |
 |---|---|
-| ドラッグ | 囲んだ範囲で選択を**置き換え**ます |
-| ++shift++ + ドラッグ | 囲んだ範囲を現在の選択に**追加**します (カーソルの形が変わります) |
+| ドラッグ | 囲んだ範囲で選択を**置き換え**ます。 |
+| ++shift++ + ドラッグ | 囲んだ範囲を現在の選択に**追加**します (カーソルの形が変わります)。 |
 
 Rect Select ツールの選択中は、視点操作 (Navigate) も引き続き行えます。
 
