@@ -1,7 +1,7 @@
 # エッジライン
 
 描画された物体の輪郭に線 (エッジ線) を描き加える設定です。
-すべての Renderer の共通プロパティとして、プロパティインスペクタの **Common**
+すべての Renderer の共通プロパティとして、プロパティインスペクタの **Edge lines**
 セクションから設定します。ただし、面を持たず輪郭の描きようがない Renderer
 (simple / trace / spline / contour / gpu_mapmesh、選択のハイライト、単位格子、
 [namelabel](namelabel.md)) には、この設定は表示されません。
@@ -93,4 +93,4 @@ ballstick の detail 既定値は 5 ですが、上の例からは、線の太�
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 3.0.2.560*

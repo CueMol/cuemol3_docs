@@ -12,7 +12,7 @@ CueMol3 の配布物は GitHub の Releases からダウンロードできます
 
 | 機能 | 現状 |
 |---|---|
-| **Renderer 種類ごとの詳細設定** | プロパティインスペクタの Properties タブには共通設定 (Common) のセクションと、Renderer 種類ごとの専用セクションがあります。そこに現れない入れ子のプロパティ (cartoon の断面形状など) は **Generic** タブから編集してください。 |
+| **Renderer 種類ごとの詳細設定** | プロパティインスペクタの Properties タブには共通設定のセクション (Basic settings / Edge lines) と、Renderer 種類ごとの専用セクションがあります。そこに現れない入れ子のプロパティ (cartoon の断面形状など) は **Generic** タブから編集してください。 |
 | **コード署名** | macOS はアドホック署名のみ (Developer ID 署名・notarization なし)、Windows は未署名です。いずれも初回起動時に手動での回避操作が必要です。→ [インストール](../install/index.md#配布物の署名状況) |
 
 ## 既知の問題

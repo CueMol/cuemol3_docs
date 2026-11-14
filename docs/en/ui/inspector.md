@@ -5,7 +5,7 @@
 The **property inspector** on the right side of the window is a permanent panel that shows and edits the settings of the element selected in the scene tree.
 It replaces the various property dialogs of CueMol2.
 
-![The inspector with a cartoon Renderer selected (Properties tab)](../../assets/images/ui/inspector/properties.webp){ width="137" .on-glb }
+![The inspector with a cartoon Renderer selected (Properties tab)](../../assets/images/ui/inspector/properties.webp){ width="206" .on-glb }
 
 ## Differences from CueMol2
 
