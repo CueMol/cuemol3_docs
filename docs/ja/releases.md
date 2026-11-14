@@ -24,10 +24,8 @@
   → [RockSpin](reference/animation/rockspin.md)
 - **Animation パネルで、要素を Cut / Copy / Paste できるようになりました** (**Edit** メニューと
   ++cmd+x++ / ++cmd+c++ / ++cmd+v++)。貼り付けた要素は長さを保ったまま、選んでいる要素の直後に
-  続けて並びます。別のシーンにも貼り付けられます
+  続けて並びます。別のシーンにも貼り付けられます → [下部パネル](ui/bottom-panels.md#animation)
 - **Simple spin の Rotation angle に範囲が無くなりました。** 負の値で逆向きに回り、720° で 2 周します
-- パネルの幅が狭いときは、ヘッダに収まらない項目が **...** のメニューに移ります
-  → [下部パネル](ui/bottom-panels.md#animation)
 
 ### Console からの視点の動き
 
