@@ -46,7 +46,7 @@ Envelope
 
 ## 動きの特徴
 
-- どの Pattern・Phase・Envelope でも、要素は直前の向きから跳ばずに始まります。
+- どの Pattern・Phase・Envelope でも、向きが急に変わることなく、要素は直前の向きから連続して動き始めます。
   そのため Nutate の円は、直前の向きを通る円になります (直前の向きを円の中心にしたいときは、
   Envelope を Grow にします)。
 - Envelope が None で Cycles が整数なら、要素が終わったときに元の向きに戻ります。
