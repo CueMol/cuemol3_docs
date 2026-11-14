@@ -13,6 +13,12 @@ while the GUI has been rebuilt from scratch on Electron + React.
     app is ad-hoc signed only). If you need a stable version for day-to-day work, please use
     CueMol2 — see the [CueMol2 documentation site](https://cuemol.github.io/cuemol2_docs/).
 
+!!! note "Citing CueMol3"
+    If you publish work produced with CueMol3, please cite
+    [the CueMol3 paper](https://doi.org/10.26434/chemrxiv.15012002/v2)
+    (doi: 10.26434/chemrxiv.15012002/v2)
+    (see [how to cite](getting-started/index.md#citing-cuemol3)).
+
 !!! note "Documentation language"
     The documentation is written in Japanese first and translated into English.
     The whole manual is available in English except the release history, which is
