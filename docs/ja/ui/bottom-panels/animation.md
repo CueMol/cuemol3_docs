@@ -55,7 +55,7 @@ Blender のようなストリップ形式で、1 つのアニメーション要�
 ## 動画に書き出す
 
 作成したアニメーションを動画ファイルとして出力するには、
-**Rendering &gt; Movie rendering...** を使います (→ [レンダリングウィンドウ](../rendering-window.md))。
+**Rendering &gt; Movie rendering...** を使用してください (→ [レンダリングウィンドウ](../rendering-window.md))。
 
 ## 関連項目
 
