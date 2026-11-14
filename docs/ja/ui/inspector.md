@@ -3,9 +3,7 @@
 ウィンドウ右側の**プロパティインスペクタ**は、シーンツリーで選んだ要素の設定を表示・編集する常設パネルです。
 CueMol2 の各種プロパティダイアログを置き換えるものです。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Renderer を選択した状態のインスペクタ (Properties タブ、Common セクション展開) -->
+![cartoon の Renderer を選んだときのインスペクタ (Properties タブ)](../../assets/images/ui/inspector/properties.webp){ width="137" .on-glb }
 
 ## CueMol2 との違い
 
