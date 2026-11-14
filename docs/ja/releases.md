@@ -34,7 +34,7 @@
   (`stop` でループの設定は元に戻ります)
 - **PyM console の `movie.add_roll` / `movie.add_rock` / `movie.add_nutate` / `movie.roll` /
   `movie.rock` / `movie.nutate` / `movie.tdroll` が、アニメーションに要素を追加するようになりました**
-  (`mplay` で再生します)。`rock` で揺らしを開始・停止できます
+  (`mplay` で再生します)。`rock` で揺れを開始・停止できます
 - 速さや位相は ChimeraX / PyMOL とおおよそ合わせてあるだけで、同じではありません
   → [ChX console](reference/plugins/console/chx_console.md) /
   [PyM console](reference/plugins/console/pymconsole.md)

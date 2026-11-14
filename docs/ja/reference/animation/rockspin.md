@@ -1,4 +1,4 @@
-# RockSpin (揺らし)
+# RockSpin (揺れ)
 
 要素を置いた時点の向きを中心に、視点を揺らすアニメーションです。
 Animation パネルの追加メニューの **Rock** で追加します。PyMOL や ChimeraX の
@@ -14,7 +14,7 @@ rock / nutate / wobble にあたる動きを、1 つの要素で作れます。
 [アニメーション](index.md#共通のプロパティ) を参照してください。
 
 Pattern
-:   揺らし方。既定は Rock です。
+:   揺れ方。既定は Rock です。
 
     | Pattern | 動き |
     |---|---|

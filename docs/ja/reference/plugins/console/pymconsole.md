@@ -98,7 +98,7 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
   ([SimpleSpin](../../animation/simplespin.md) / [RockSpin](../../animation/rockspin.md)) として
   タイムラインの末尾に追加します。PyMOL と同じく、追加するだけで再生はしません (`mplay` で再生します)。
   `movie.roll 1, 120` のように空白区切りで書きます (`movie.roll(1, 120)` の書き方はできません)。
-- `rock` は揺らしの開始と停止を切り替えます (`rock 1` で開始、`rock 0` で停止)。`mstop` でも止まり、
+- `rock` は揺れの開始と停止を切り替えます (`rock 1` で開始、`rock 0` で停止)。`mstop` でも止まり、
   ループの設定は元に戻ります。
 - 速さや位相は PyMOL とおおよそ合わせてあるだけで、同じではありません。
 - `label` は PyMOL の式 (`"%s%s" % (resn, resi)` など) を受け付けます。

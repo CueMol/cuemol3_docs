@@ -86,7 +86,7 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
   1 回再生します。`roll` / `rock` / `wobble` (と `turn ... rock N` / `turn ... wobble N`) は、
   `frames` を指定しなければ 1 周期分の要素を追加し、`stop` までループで再生します (`stop` で
   ループの設定は元に戻ります)。ループはタイムライン全体を繰り返すので、ほかの要素があると警告が出ます。
-  回転は [SimpleSpin](../../animation/simplespin.md)、揺らしは [RockSpin](../../animation/rockspin.md)
+  回転は [SimpleSpin](../../animation/simplespin.md)、揺れは [RockSpin](../../animation/rockspin.md)
   の要素になります。速さや位相は ChimeraX とおおよそ合わせてあるだけで、同じではありません。
 - `view` は向きを変えずに、指定したもの (省略すると全体) が収まるように表示します。
   `view name` で保存したビューは CueMol のカメラとして保存されます。

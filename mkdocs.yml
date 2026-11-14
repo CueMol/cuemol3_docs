@@ -303,7 +303,7 @@ nav:
       - アニメーション:
           - reference/animation/index.md
           - SimpleSpin: reference/animation/simplespin.md
-          - RockSpin (揺らし): reference/animation/rockspin.md
+          - RockSpin (揺れ): reference/animation/rockspin.md
           - CamMotion (カメラ移動): reference/animation/cammotion.md
           - ShowHide (表示・非表示): reference/animation/showhide.md
           - SlideInOut: reference/animation/slideinout.md
