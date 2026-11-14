@@ -24,24 +24,24 @@ Pattern
 
 Axis
 :   揺らす軸。**X axis** / **Y axis** (既定) / **Z axis** か、**Cartesian** で
-    (x, y, z) を指定します。軸は画面の座標系 (x が右、y が上、z が手前) で表します
+    (x, y, z) を指定します。軸は画面の座標系 (x が右、y が上、z が手前) で表します。
 
 Swing angle
 :   振れ幅の全体 (度)。既定は 30° で、実際にはその半分ずつ両側に振れます。
-    範囲は無く、負の値では逆方向に振動します
+    範囲は無く、負の値では逆方向に振動します。
 
 Cycles
-:   要素の継続時間の中で繰り返す回数。既定は 1 で、小数も指定できます
+:   要素の継続時間の中で繰り返す回数。既定は 1 で、小数も指定できます。
 
 Phase
-:   揺れの始まりの位相 (度)。既定は 0° です
+:   揺れの始まりの位相 (度)。既定は 0° です。
 
 Aspect
 :   Nutate / Wobble のときだけ表示されます。2 つ目の向きの振れ幅の比です。
-    Pattern を切り替えると、その Pattern の既定 (Nutate は 1、Wobble は 0.3) に戻ります
+    Pattern を切り替えると、その Pattern の既定 (Nutate は 1、Wobble は 0.3) に戻ります。
 
 Envelope
-:   振れ幅の時間変化。**None** (既定) は一定、**Grow** は 0 から広がり、**Shrink** は 0 へ縮みます
+:   振れ幅の時間変化。**None** (既定) は一定、**Grow** は 0 から広がり、**Shrink** は 0 へ縮みます。
 
 ## 動きの特徴
 
@@ -57,7 +57,7 @@ Envelope
 - [SimpleSpin](simplespin.md)
 - [Animation パネル](../../ui/bottom-panels/animation.md)
 - [ChX console](../plugins/console/chx_console.md) / [PyM console](../plugins/console/pymconsole.md) —
-  `rock` などのコマンドでこの要素を追加できます
+  `rock` などのコマンドでこの要素を追加できます。
 
 ---
 

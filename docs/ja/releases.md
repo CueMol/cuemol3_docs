@@ -20,22 +20,22 @@
 - **アニメーションの要素に Rock が加わりました。** 要素を置いた時点の向きを中心に視点を揺らします。
   **Pattern** で Rock (1 軸の往復) / Nutate (視線が円を描く) / Wobble (8 の字) を選び、振れ幅・回数・
   位相・振れ幅の時間変化 (Grow / Shrink) を設定できます。どこに置いても直前の向きから跳ばずに始まり、
-  Simple spin と同じ時間に置くと回りながら揺れます
+  Simple spin と同じ時間に置くと回りながら揺れます。
   → [RockSpin](reference/animation/rockspin.md)
 - **Animation パネルで、要素を Cut / Copy / Paste できるようになりました** (**Edit** メニューと
   ++cmd+x++ / ++cmd+c++ / ++cmd+v++)。貼り付けた要素は長さを保ったまま、選んでいる要素の直後に
-  続けて並びます。別のシーンにも貼り付けられます → [Animation パネル](ui/bottom-panels/animation.md)
-- **Simple spin の Rotation angle に範囲が無くなりました。** 負の値で逆向きに回り、360° で 1 周します
+  続けて並びます。別のシーンにも貼り付けられます。→ [Animation パネル](ui/bottom-panels/animation.md)
+- **Simple spin の Rotation angle に範囲が無くなりました。** 負の値で逆向きに回り、360° で 1 周します。
 
 ### Console からの視点の動き
 
 - **ChX console の `turn` に `frames` を付けると、その回転をアニメーションの要素として追加し、
   1 回再生するようになりました。** `roll` / `rock` / `wobble` は `stop` までループで再生します
-  (`stop` でループの設定は元に戻ります)
+  (`stop` でループの設定は元に戻ります)。
 - **PyM console の `movie.add_roll` / `movie.add_rock` / `movie.add_nutate` / `movie.roll` /
   `movie.rock` / `movie.nutate` / `movie.tdroll` が、アニメーションに要素を追加するようになりました**
-  (`mplay` で再生します)。`rock` で揺れを開始・停止できます
-- 速さや位相は ChimeraX / PyMOL とおおよそ合わせてあるだけで、同じではありません
+  (`mplay` で再生します)。`rock` で揺れを開始・停止できます。
+- 速さや位相は ChimeraX / PyMOL とおおよそ合わせてあるだけで、同じではありません。
   → [ChX console](reference/plugins/console/chx_console.md) /
   [PyM console](reference/plugins/console/pymconsole.md)
 
@@ -43,35 +43,35 @@
 
 - **アクティビティバーに Styles ビューが加わりました。** シーンから見えるスタイルセットを名前を探す順に
   並べ、選んだスタイルセットの名前付きの色 (**Colors**) と名前付き選択 (**Selections**) をその場で
-  編集できます。スタイルセットはシーンツリーに表示されなくなりました
+  編集できます。スタイルセットはシーンツリーに表示されなくなりました。
   → [サイドパネル](ui/side-panels.md#styles)
 
 ### MD トラジェクトリ (MD Tools)
 
 - **トラジェクトリのファイル (`.xtc` / `.dcd` / `.trr` / `.nc`) をドロップすると、開いている分子に
   付けられるようになりました。** 原子数の合う分子から付け先を選ぶと、その分子はトラジェクトリになり、
-  元の座標が最初のフレームになります
+  元の座標が最初のフレームになります。
 - **トポロジーだけのファイル (prmtop / PSF) を、座標の無い分子として開けるようになりました。**
   座標 (AMBER の restart、NAMD の `.coor`) やトラジェクトリは、あとからドロップして付けます。
-  **File &gt; Open MD Trajectory...** でもトポロジーに prmtop / PSF を選べます
+  **File &gt; Open MD Trajectory...** でもトポロジーに prmtop / PSF を選べます。
   → [Trajectory パネル](ui/bottom-panels/trajectory.md)
 
 ### 画面と操作
 
 - **Get PDB で、リガンドを CCD コードで取得できるようになりました** (**CCD (ligand)**、RCSB の理想座標)。
-  ChX console では `open ccd:ATP` で取得できます → [PDB からの取得](reference/get-pdb.md#ccd-ligand)
-- nucl の **Base type** に、塩基を表示せずチューブだけを残す **None** が加わりました
+  ChX console では `open ccd:ATP` で取得できます。→ [PDB からの取得](reference/get-pdb.md#ccd-ligand)
+- nucl の **Base type** に、塩基を表示せずチューブだけを残す **None** が加わりました。
   → [nucl](reference/renderers/nucl.md)
 - **履歴が 20 ステップを超えると、GUI で同じ値を続けて編集したステップが 1 つにまとめられるように
-  なりました** (History パネルでは `×N` と表示されます)
+  なりました** (History パネルでは `×N` と表示されます)。
   → [操作の記録と再生](reference/actions.md#history-パネル)
-- ChX console で、`alphafold` / `pae` などの AlphaFold のパレットを使えるようになりました
+- ChX console で、`alphafold` / `pae` などの AlphaFold のパレットを使えるようになりました。
 
 !!! warning "以前のバージョンから変わる点"
     - **NAMD の `.coor` を PSF と一緒に開いたシーン (`srctype="namdcoor"`) は読み込めなくなりました。**
-      PSF を開き、`.coor` をドロップして付け直してください
+      PSF を開き、`.coor` をドロップして付け直してください。
     - **Console の native モードの `load_namd` は `load_psf` になりました** (PSF を開き、`coordFile` で
-      `.coor` を指定します)
+      `.coor` を指定します)。
 
 ## 3.0.1.555 (2026-11-10)
 

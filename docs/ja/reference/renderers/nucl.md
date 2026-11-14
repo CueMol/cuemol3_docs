@@ -49,7 +49,7 @@ Base type
 
     **None**
     :   塩基を表示せず、主鎖のチューブだけを残します。None から別の形状に戻すと、
-        Base size と Base thick は既定値になります
+        Base size と Base thick は既定値になります。
 
 Detail
 :   残基の表示の緻密さ。大きいほど滑らかな表示になりますが、ポリゴン数が増え
