@@ -3,7 +3,7 @@
 ウィンドウ左側のサイドパネルは、左端の**アクティビティバー**で用途を切り替えます。
 選択中のアイコンをもう一度クリックするとサイドパネルが閉じます。
 
-![アクティビティバーと Explorer ビュー。上から Scene / Camera / Color / View パネルが並ぶ](../../assets/images/ui/side-panels/explorer.webp){ width="310" .on-glb }
+![アクティビティバーと Explorer ビュー。上から Scene / Camera / Color / View パネルが並ぶ](../../assets/images/ui/side-panels/explorer.webp){ width="155" .on-glb }
 
 ## アクティビティバーの構成
 
