@@ -45,7 +45,7 @@ CCP4/MRC の密度マップを開くときは、オプション画面に格子�
 (`.xtc` / `.dcd` / `.trr` / `.nc`) や座標だけのファイル (AMBER の restart `.rst7` / `.inpcrd` /
 `.restrt`、NAMD の `.coor`) はフレームしか持たず単独では開けないため、ドロップすると、開いている
 分子のうち原子数の合うものを選ぶダイアログ (**Attach Trajectory**) が出て、その分子に付けられます
-(→ [下部パネル](../ui/bottom-panels.md#trajectory))。MD Tools が無効のときは、先に
+(→ [Trajectory パネル](../ui/trajectory-panel.md))。MD Tools が無効のときは、先に
 Settings &gt; Plugins で有効にするよう案内されます。ファイルマネージャで
 ダブルクリックしたり、コマンドラインで渡したりして開くこともできます
 (→ [ファイルの関連付け](../install/index.md#ファイルの関連付け))。

@@ -54,7 +54,7 @@
 - **トポロジーだけのファイル (prmtop / PSF) を、座標の無い分子として開けるようになりました。**
   座標 (AMBER の restart、NAMD の `.coor`) やトラジェクトリは、あとからドロップして付けます。
   **File &gt; Open MD Trajectory...** でもトポロジーに prmtop / PSF を選べます
-  → [下部パネル](ui/bottom-panels.md#trajectory)
+  → [Trajectory パネル](ui/trajectory-panel.md)
 
 ### 画面と操作
 
