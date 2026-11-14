@@ -2,9 +2,7 @@
 
 ウィンドウ下部のパネルは、既定では 4 つのタブを持ちます。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): 下部パネルの 4 タブ (Console / Output / Sequence / Animation)。Sequence タブで残基が選択されている状態 -->
+![下部パネル。Sequence タブで残基を選択したところ (右端の Trajectory タブは MD Tools プラグインを有効にしたときに加わる)](../../../assets/images/ui/bottom-panels/sequence-tab.webp){ width="598" .on-glb }
 
 | タブ | 内容 |
 |---|---|
