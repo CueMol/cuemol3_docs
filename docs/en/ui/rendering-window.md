@@ -5,10 +5,6 @@
 A separate window for producing high-quality ray-traced still images and movies.
 It is **modeless** (non-modal), so you can keep it open and work with the molecular view in the main window.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): Overall view of the rendering window. Result image at upper left, Render Settings on the right, run bar and log at the bottom -->
-
 ## Opening the window
 
 | Action | Result |
@@ -21,6 +17,8 @@ It is **modeless** (non-modal), so you can keep it open and work with the molecu
 If the window is already open, Image / Movie rendering... only switches the mode.
 
 ## Window layout
+
+![The rendering window: the result image at the upper left, Render Settings on the right, and the run bar and log at the bottom](../../assets/images/ui/rendering-window/overview.webp){ .on-glb }
 
 | Area | Contents |
 |---|---|
