@@ -466,6 +466,14 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **未着手の残件**: スクリーンショット全般 (Styles ビュー、Rock のインスペクタ、Attach Trajectory、
   `ui/side-panels.md` の Explorer の図を含む)、`rockspin.md` / `dotfiles.md` / `chx_console.md` / `get-pdb.md` の英訳、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
+  **同期の後、ユーザー指示により次も行った**: 下部パネルを `ui/bottom-panels/` の階層にし
+  (`index.md` + `sequence.md` / `trajectory.md` / `animation.md`。旧 URL `ui/bottom-panels/` の
+  index は変わらないが、en も同じ場所へ移した)、更新履歴から ... メニュー・同梱スタイルセットの読み取り専用・
+  Explorer の Camera / View パネル・ダイアログの設定の記憶の項目を落とした (本体には残っている。
+  ... メニューは本体からも削除)。**文になっている文末には「。」を付ける** (箇条書き・表・定義リストでも。
+  見出しと体言止めの語句には付けない)、**可能の表現は「作れます」ではなく「作ることができます」
+  「可能です」「選択できます」などにする** (ユーザー指示)。どちらも今回は このブランチで書いた文だけを直した。
+  サイト全体 (ja で文末約 500 + 表のセル約 290、en も約 270 + 200) は**未着手**で、別 PR で行う。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
