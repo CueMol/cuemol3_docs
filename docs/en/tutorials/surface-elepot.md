@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/surface-elepot.md @ 8d54764 -->
+<!-- source: ja/tutorials/surface-elepot.md @ 777582f -->
 
 # Coloring a molecular surface by electrostatic potential
 
@@ -88,7 +88,7 @@ To show the structure inside the surface as well, make the surface translucent a
 
 1. Select the molsurf Renderer in the **Explorer &gt; Scene** tree (scene tree)
    in the left side panel
-2. In the **Common** section of the property inspector, lower **Opacity** to about 0.5
+2. In the **Basic settings** section of the property inspector, lower **Opacity** to about 0.5
 
 This gives the classic overlay in which the path of the main chain is visible through the surface.
 For finishing and export, see [Exporting high-resolution images for publication](publication-images.md).
@@ -103,4 +103,4 @@ For finishing and export, see [Exporting high-resolution images for publication]
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*

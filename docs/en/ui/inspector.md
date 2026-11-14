@@ -34,7 +34,7 @@ The tab that opens by default depends on the type of the selected element.
 
 ### Renderer
 
-The Properties tab shows a **Common** section (basic settings and edge lines).
+The Properties tab begins with the **Basic settings** and **Edge lines** sections.
 Opacity, material, edge line settings and so on are adjusted here.
 For Renderers without faces (simple / trace / spline / contour, etc.), the edge line settings are
 not shown (→ [Edge lines](../reference/renderers/edge-lines.md)).
@@ -124,4 +124,4 @@ Shows the properties of the element as a list of names and values.
 
 ---
 
-*Verified against: CueMol3 2.3.21.544*
+*Verified against: CueMol3 3.0.2.560*

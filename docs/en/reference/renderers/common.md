@@ -1,8 +1,8 @@
-<!-- source: ja/reference/renderers/common.md @ 8d54764 -->
+<!-- source: ja/reference/renderers/common.md @ 777582f -->
 
 # Common Renderer properties
 
-These properties are shared by all Renderers. They appear in the **Common** section
+These properties are shared by all Renderers. They appear in the **Basic settings** and **Edge lines** sections
 at the top of the **Properties** tab of the property inspector
 (→ [Property inspector](../../ui/inspector.md)).
 
@@ -60,4 +60,4 @@ unit cell, [namelabel](namelabel.md)) do not show the edge line settings.
 
 ---
 
-*Verified against: CueMol3 2.3.21.544*
+*Verified against: CueMol3 3.0.2.560*
