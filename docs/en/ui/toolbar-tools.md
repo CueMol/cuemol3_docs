@@ -9,9 +9,10 @@ CueMol3 has two rows of buttons with different roles.
 | Position | Top of the window | Floats at the left edge of the molecular view |
 | Role | Commands that are **executed immediately** when pressed | Switch the **operation mode** of the molecular view |
 
-!!! info "Screenshots planned"
+![The toolbar at the top of the window, with labels shown](../../assets/images/ui/toolbar-tools/toolbar.webp){ .on-glb }
 
-<!-- TODO(screenshot): the whole toolbar (with labels shown) -->
+!!! info "Screenshot planned"
+
 <!-- TODO(screenshot): the tool palette at the left edge of the molecular view (Distance tool selected, option popover open) -->
 
 ## Toolbar
