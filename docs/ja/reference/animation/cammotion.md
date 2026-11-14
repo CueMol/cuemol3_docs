@@ -31,7 +31,7 @@ Ignore slab
      AnimElementInspector.tsx と C++ の qif 定義から起こす -->
 
 アニメーションの開始時の視点を決めたい場合は、Animation パネルの
-開始カメラの設定を使います。
+開始カメラの設定を使用してください。
 
 ## 関連項目
 

@@ -9,7 +9,7 @@
 ## 1. 構造を読み込む
 
 **File &gt; Get PDB...** を開き、**PDB or EMDB ID, or keywords** に `1QIO` と入力して取得します。
-手元のファイルを開く場合は **File &gt; Open File...** (++cmd+o++) を使います
+手元のファイルを開く場合は **File &gt; Open File...** (++cmd+o++) を使用してください
 (→ [File メニュー](../../menu/file.md))。
 
 ![Get PDB ダイアログ](../../../assets/images/tutorials/basic/loading/1-getpdb.webp){ width="380" .on-glb }

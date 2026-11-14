@@ -39,7 +39,7 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 ## 3. Molecular structure パネルで選択する
 
 残基番号や原子名から選びたいときは、左サイドパネルの
-**Selection &gt; Molecular structure** パネルを使います
+**Selection &gt; Molecular structure** パネルを使用してください
 (→ [サイドパネル](../../ui/side-panels.md))。
 
 1. パネル上部で対象の分子 (`lysozyme`) を選びます
