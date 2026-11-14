@@ -3,9 +3,7 @@
 ウィンドウ左側のサイドパネルは、左端の**アクティビティバー**で用途を切り替えます。
 選択中のアイコンをもう一度クリックするとサイドパネルが閉じます。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): アクティビティバーと Explorer ビュー (Scene / Camera / Color / View の 4 パネル) -->
+![アクティビティバーと Explorer ビュー。上から Scene / Camera / Color / View パネルが並ぶ](../../assets/images/ui/side-panels/explorer.webp){ width="310" .on-glb }
 
 ## アクティビティバーの構成
 

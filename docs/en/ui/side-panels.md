@@ -5,9 +5,7 @@
 The side panel on the left of the window switches between views using the **activity bar** at the far left.
 Clicking the selected icon again closes the side panel.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): Activity bar and the Explorer view (two panels: Scene / Color) -->
+![The activity bar and the Explorer view, with the Scene / Camera / Color / View panels from top to bottom](../../assets/images/ui/side-panels/explorer.webp){ width="310" .on-glb }
 
 ## Activity bar layout
 
