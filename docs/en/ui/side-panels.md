@@ -117,13 +117,11 @@ Pasted rows keep the order in which they were copied.
 
 ### Camera panel
 
+![The Camera panel: six buttons along the top, and row badges for a camera with show/hide states (eye) and a camera loaded from a camera file (link)](../../assets/images/ui/side-panels/camera-panel.webp){ width="270" .on-glb }
+
 A list of [cameras](../reference/camera.md) (saved named viewpoints).
 Click a row to select it, and use the toolbar or the right-click menu to operate on it.
 When there are no cameras, `(no cameras)` is shown.
-
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): Camera panel (several cameras listed, with the toolbar visible) -->
 
 The toolbar at the top of the panel has six buttons.
 
