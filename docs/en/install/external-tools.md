@@ -8,6 +8,8 @@ you need to specify the path to each executable in **Settings**.
 
 ## Opening the Settings tab
 
+![The Settings tab with Tools &gt; APBS / PDB2PQR selected in the category tree on the left (the path fields are blurred)](../../assets/images/install/external-tools/settings-tools.webp){ width="443" .on-glb }
+
 Settings does not open as a separate window. It opens as a **tab** in the content area.
 
 | OS | Action |
@@ -17,8 +19,6 @@ Settings does not open as a separate window. It opens as a **tab** in the conten
 | All | Gear icon at the bottom of the activity bar on the far left |
 
 If a Settings tab is already open, that tab becomes active.
-
-<!-- TODO(screenshot): Settings tab (category tree on the left and settings on the right) -->
 
 ## External tools and settings
 
