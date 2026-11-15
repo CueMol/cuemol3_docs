@@ -5,11 +5,9 @@
 切り替えは **Settings &gt; Plugins &gt; Installed** で行います
 (→ [設定項目](../settings.md#plugins))。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Settings > Plugins > Installed (7 つのスイッチが並んだ状態) -->
-
 ## 切り替えられるプラグイン
+
+![Settings &gt; Plugins &gt; Installed。7 つのプラグインのスイッチが並ぶ (この画像では MD Tools を有効にしている)](../../assets/images/reference/plugins/settings-installed.webp){ width="484" .on-glb }
 
 | プラグイン | 内容 | 既定 | 有効にすると増えるもの |
 |---|---|---|---|

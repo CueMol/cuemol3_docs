@@ -7,11 +7,9 @@ Experimental features and features used by only a few people are provided this w
 Plugins are toggled in **Settings &gt; Plugins &gt; Installed**
 (→ [Settings](../settings.md#plugins)).
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): Settings > Plugins > Installed (with the five switches listed) -->
-
 ## Switchable plugins
+
+![Settings &gt; Plugins &gt; Installed, listing the switches of the seven plugins (MD Tools is enabled in this image)](../../assets/images/reference/plugins/settings-installed.webp){ width="484" .on-glb }
 
 | Plugin | Description | Default | What is added when enabled |
 |---|---|---|---|
