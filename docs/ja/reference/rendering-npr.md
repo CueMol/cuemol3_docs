@@ -97,7 +97,7 @@ Render タブで選んだ Style を**テンプレートとして読み込み**�
     (→ [設定の保存](rendering.md#設定の保存))。未編集のスタイルは、この機能が無かったときと
     まったく同じ経路で描画されます。
 
-<!-- TODO(screenshot): Detail タブ (Layers セクションを展開し、Edited バッジが出た状態) -->
+![Detail タブ。スタイルを編集したので Style に Edited と表示されている。Layers の先頭のレイヤを開いたところ](../../assets/images/reference/rendering-npr/detail.webp){ width="260" .on-glb }
 
 ### Layers
 
