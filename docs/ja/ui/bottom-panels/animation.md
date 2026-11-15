@@ -6,7 +6,7 @@ Blender のようなストリップ形式で、1 つのアニメーション要�
 
 ## パネルの構成
 
-![Animation パネル。3 つの要素が時間をずらして並び、RockSpin0 を選択したところ](../../../assets/images/ui/bottom-panels/animation.webp){ width="598" .on-glb }
+![Animation パネル。3 つの要素が時間をずらして並び、RockSpin0 を選択したところ](../../../assets/images/ui/bottom-panels/animation.webp){ width="816" .on-glb }
 
 | 場所 | 内容 |
 |---|---|
