@@ -7,9 +7,7 @@
 内蔵の Umbreon をそのまま使うため、[レンダリング](rendering.md)と同じく
 外部プログラムの用意もパスの設定も不要です。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Umbreon (NPR) で出力したタンパク質の図 (richardson スタイル) -->
+![Umbreon (NPR) の richardson スタイルで出力した図 (部分)](../../assets/images/reference/rendering-npr/richardson.webp){ width="300" .on-glb }
 
 ## 使い方
 

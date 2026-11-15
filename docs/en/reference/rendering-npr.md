@@ -9,9 +9,7 @@ a figure drawn in ink on paper.
 Because it uses the built-in Umbreon, no external program or path setting is needed,
 just as with [Rendering](rendering.md).
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): A protein figure rendered with Umbreon (NPR) (richardson style) -->
+![A figure rendered with Umbreon (NPR) in the richardson style (detail)](../../assets/images/reference/rendering-npr/richardson.webp){ width="300" .on-glb }
 
 ## Usage
 
