@@ -10,7 +10,7 @@ The **macOS (Apple Silicon)** version of CueMol3 can check for new releases and 
 
 !!! info "Screenshot planned"
 
-<!-- TODO(screenshot): the new-release notification, and the Check for Updates row in Settings > General > Updates -->
+<!-- TODO(screenshot): the new-release notification -->
 
 ## Checking for new releases
 
@@ -42,6 +42,8 @@ In the following cases the app cannot be replaced in place, so **Update** is not
 Update notifications are collected in the notification center, opened from the **bell** icon at the right end of the status bar. The bell is marked when there are unread notifications, and during a download its progress is shown next to the bell. New notifications also appear at the lower right of the screen.
 
 ## Settings &gt; General &gt; Updates
+
+![Settings &gt; General &gt; Updates, when the latest version is in use](../../assets/images/install/update/settings-updates.webp){ width="474" .on-glb }
 
 | Item | Default | Description |
 |---|---|---|
