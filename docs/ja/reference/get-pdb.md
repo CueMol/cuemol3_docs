@@ -9,11 +9,9 @@ PDB ID か EMDB ID を入力して **Download** を押します。ID がわか�
 ファイルは一時ファイルを介さずに直接読み込まれます。取得中は進捗ダイアログが表示され、
 **Cancel** で中断できます。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Get PDB ダイアログ (結晶構造のエントリを入力し、エントリの情報と Coordinates / Density maps が表示された状態) -->
-
 ## ID を入力する
+
+![Get PDB ダイアログ。結晶構造の PDB ID (1qio) を入力すると、エントリの情報と Coordinates / Density maps の項目が表示される](../../assets/images/reference/get-pdb/dialog.webp){ width="296" .on-glb }
 
 **Entry** の **Database** で取得元のデータベースを選びます。既定は **PDB / EMDB** で、
 ダイアログを開くたびにこれに戻ります。
