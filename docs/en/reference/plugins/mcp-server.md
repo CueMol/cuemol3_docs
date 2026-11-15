@@ -8,10 +8,6 @@ It is **disabled by default**.
 The client can call the same operations as the [Console](console/index.md) commands as tools.
 No API key is needed on the CueMol3 side; model usage follows the client's own settings.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): the Connect a client dialog -->
-
 ## Enabling it
 
 Enable **MCP Server** in **Settings &gt; Plugins &gt; Installed**
@@ -49,6 +45,8 @@ The popover that opens when you click it contains the following.
   must be registered again
 
 ## Registering a client
+
+![The Connect a client dialog. With Claude Code selected, it shows the command to run in a terminal](../../../assets/images/reference/plugins/mcp-server/connect-a-client.webp){ width="485" .on-glb }
 
 In the **Connect a client** dialog opened with **Set up...**, choose the client type
 (**Claude Code** / **Codex** / **Antigravity** / **Other**) to see the command or the
