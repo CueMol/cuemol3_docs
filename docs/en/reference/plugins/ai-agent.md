@@ -7,10 +7,6 @@ A chat panel in which a model builds a scene by calling CueMol3 operations in se
 !!! info "In preparation"
     This page is a skeleton. How to write instructions and a list of what the agent can do will be added later.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): AI Agent panel (an instruction entered and the progress of execution shown) -->
-
 ## Enabling the plugin
 
 Enable **AI Agent** in **Settings &gt; Plugins &gt; Installed** (→ [Plugins](index.md)). Once enabled, an **AI Agent** icon is added to the activity bar. The panel can be opened only from this activity view (not from a menu or a command).
@@ -34,6 +30,8 @@ The settings are in **Settings &gt; Plugins &gt; AI Agent** (this page appears w
     Leaving a field empty does not delete a stored key. To delete it, press **Clear**. In environments where the OS cannot encrypt keys, keys are not stored and you are directed to use environment variables.
 
 ## Usage
+
+![The AI Agent panel. After an instruction is sent, the operations called are listed one per row, followed by the reply](../../../assets/images/reference/plugins/ai-agent/panel.webp){ width="180" .on-glb }
 
 - Type an instruction such as "Load 1CRN and show it as a cartoon" in the input box and send it. By default, ++enter++ inserts a line break and ++cmd+enter++ / ++ctrl+enter++ sends (this can be swapped with **Pressing Enter** above).
 - While a task is running, **Send** changes to **Stop**, which stops it midway.
