@@ -11,10 +11,6 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 近いもので代用せずに、理由を示して拒否します (`lighting` だけは例外で、近似して警告を出します)。
 拒否したコマンドは `Warning: <理由>; skipped` と表示して飛ばし、スクリプトの残りを実行します。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Console タブ (ChX console でコマンドを実行した直後の状態) -->
-
 ## 有効にする
 
 **ChX console** プラグインで提供されます。**Console** プラグインとともに
@@ -26,6 +22,8 @@ ChimeraX との完全な互換は目指しておらず、**すでに知ってい
 切り替えの **ChimeraX** と tritium_cli の `--dialect chimerax` が使えなくなります。
 
 ## 入力と補完
+
+![ChX console。ツールバーで ChimeraX を選び、プロンプト `ChX>` で `help` を実行したところ](../../../../assets/images/reference/plugins/console/chx_console.webp){ width="649" .on-glb }
 
 プロンプトは `ChX&gt;` です。入力の履歴はほかのモードとは別です。
 
