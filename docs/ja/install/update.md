@@ -15,7 +15,7 @@
 
 !!! info "撮影予定"
 
-<!-- TODO(screenshot): 新しいリリースの通知と、Settings > General > Updates の Check for Updates の行 -->
+<!-- TODO(screenshot): 新しいリリースの通知 -->
 
 ## 新しいリリースを確認する
 
@@ -71,6 +71,8 @@ Windows では、更新のたびに管理者権限の確認 (UAC) が出ます�
 表示されます。新しい通知は画面の右下にも表示されます。
 
 ## Settings &gt; General &gt; Updates
+
+![Settings &gt; General &gt; Updates。最新版を使っているときの表示](../../assets/images/install/update/settings-updates.webp){ width="474" .on-glb }
 
 | 項目 | 既定値 | 説明 |
 |---|---|---|

@@ -4,11 +4,9 @@
 Blender のようなストリップ形式で、1 つのアニメーション要素が 1 本の帯として表示されます。
 要素の種類と設定は [アニメーション](../../reference/animation/index.md) を参照してください。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Animation パネル (要素が数本並んだタイムラインと、ヘッダ・左の要素一覧・ツールバー) -->
-
 ## パネルの構成
+
+![Animation パネル。3 つの要素が時間をずらして並び、RockSpin0 を選択したところ](../../../assets/images/ui/bottom-panels/animation.webp){ width="816" .on-glb }
 
 | 場所 | 内容 |
 |---|---|

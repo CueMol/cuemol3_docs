@@ -17,17 +17,17 @@
 
 ## ポインティングデバイスの設定
 
+![Settings &gt; Input &gt; Mouse &amp; Navigation。先頭に Pointing device の行がある](../../assets/images/ui/mouse-input/settings-mouse-navigation.webp){ width="797" .on-glb }
+
 マウスとトラックパッドでは、スクロール操作に期待する動作が逆になります
 (マウスホイールはズームしてほしいが、トラックパッドの 2 本指スクロールは平行移動してほしい)。
-CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを指定します。
+CueMol3 では **Settings &gt; Input &gt; Mouse &amp; Navigation** の **Pointing device** で使い分けを指定します。
 
 | 設定値 | 動作 |
 |---|---|
 | **Auto-detect** (既定) | スクロールの特徴からマウスかトラックパッドかを自動判別します。 |
 | **Mouse** | ホイールでズームします。 |
 | **Mac trackpad** | 2 本指スクロールで平行移動、ピンチでズームします。 |
-
-<!-- TODO(screenshot): Settings > Input > Mouse & Navigation の画面 -->
 
 !!! warning "自動判別は推定です"
     OS からデバイスの種類を知る手段がないため、Auto-detect はスクロールイベントの特徴
@@ -92,6 +92,8 @@ generation... で生成した分子表面は、分子 (MolCoord) とは別の Ob
 
 ### ポインタの下にあるものを表示する
 
+![ribbon の残基にポインタを載せたところ。左下のチップに残基と Object / Renderer が表示され、その残基の帯が強調される](../../assets/images/ui/mouse-input/hover.webp){ width="276" .on-glb }
+
 ポインタを分子ビュー上で動かすと、その下にあるものが**左下の小さなチップ**に表示されます。
 
 - 1 行目は、チェイン名のバッジと残基 (`ALA 10`)。原子単位の Renderer では原子名が続きます
@@ -127,8 +129,6 @@ generation... で生成した分子表面は、分子 (MolCoord) とは別の Ob
 | GPU Picking | 従来の原子の位置による判定に戻ります。切り替えは即時に効きます。 |
 | Hover Info | チップが出なくなり、ポインタを追う当たり判定そのものが止まります。 |
 | Hover Highlight | 強調表示だけが出なくなります。GPU Picking と Hover Info の両方が ON のときに働きます。 |
-
-<!-- TODO(screenshot): cartoon の残基にポインタを載せたところ (左下のチップと帯のハイライト) -->
 
 ## 視点を数値で操作する
 

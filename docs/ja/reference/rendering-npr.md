@@ -7,9 +7,7 @@
 内蔵の Umbreon をそのまま使うため、[レンダリング](rendering.md)と同じく
 外部プログラムの用意もパスの設定も不要です。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Umbreon (NPR) で出力したタンパク質の図 (richardson スタイル) -->
+![Umbreon (NPR) の richardson スタイルで出力した図 (部分)](../../assets/images/reference/rendering-npr/richardson.webp){ width="300" .on-glb }
 
 ## 使い方
 
@@ -99,7 +97,7 @@ Render タブで選んだ Style を**テンプレートとして読み込み**�
     (→ [設定の保存](rendering.md#設定の保存))。未編集のスタイルは、この機能が無かったときと
     まったく同じ経路で描画されます。
 
-<!-- TODO(screenshot): Detail タブ (Layers セクションを展開し、Edited バッジが出た状態) -->
+![Detail タブ。スタイルを編集したので Style に Edited と表示されている。Layers の先頭のレイヤを開いたところ](../../assets/images/reference/rendering-npr/detail.webp){ width="260" .on-glb }
 
 ### Layers
 

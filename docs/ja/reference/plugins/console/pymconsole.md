@@ -9,10 +9,6 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 目的です。コマンドの解析と ++tab++ 補完は PyMOL の実装を移植したもので、
 エラーの文言も同じです。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Console タブ (PyM console でコマンドを実行した直後の状態) -->
-
 ## 有効にする
 
 **PyM console** プラグインで提供されます。**Console** プラグインとともに既定で有効で、
@@ -23,6 +19,8 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 切り替えの **PyMOL** と tritium_cli の `--dialect pymol` が使えなくなります。
 
 ## 入力と補完
+
+![PyM console。ツールバーで PyMOL を選び、プロンプト `PyM>` で `help` を実行したところ](../../../../assets/images/reference/plugins/console/pymconsole.webp){ width="604" .on-glb }
 
 プロンプトは `PyM&gt;` です。
 

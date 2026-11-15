@@ -11,10 +11,6 @@ Full compatibility with PyMOL is not a goal. The aim is that **commands you alre
 Command parsing and ++tab++ completion are ported from the PyMOL implementation,
 and the error messages are the same.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): Console tab (state right after running a command in PyM console) -->
-
 ## Enabling it
 
 The **Console** plugin is enabled by default, and the **Console** tab is the first tab of the bottom panel
@@ -22,6 +18,8 @@ The **Console** plugin is enabled by default, and the **Console** tab is the fir
 or type just `pymol` on a line and run it, to switch to PyM console (→ [Switching modes](index.md#switching-modes)).
 
 ## Input and completion
+
+![PyM console: PyMOL selected in the toolbar, with `help` run at the `PyM>` prompt](../../../../assets/images/reference/plugins/console/pymconsole.webp){ width="604" .on-glb }
 
 The prompt is `PyM&gt;`.
 

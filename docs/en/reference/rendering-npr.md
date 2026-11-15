@@ -9,9 +9,7 @@ a figure drawn in ink on paper.
 Because it uses the built-in Umbreon, no external program or path setting is needed,
 just as with [Rendering](rendering.md).
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): A protein figure rendered with Umbreon (NPR) (richardson style) -->
+![A figure rendered with Umbreon (NPR) in the richardson style (detail)](../../assets/images/reference/rendering-npr/richardson.webp){ width="300" .on-glb }
 
 ## Usage
 
@@ -101,7 +99,7 @@ The Style selected in the Render tab is **loaded as a template**, and its conten
     (→ [Saving settings](rendering.md#saving-settings)). An unedited style is rendered through
     exactly the same path as before this feature existed.
 
-<!-- TODO(screenshot): Detail tab (with the Layers section expanded and the Edited badge shown) -->
+![The Detail tab. The style has been edited, so Style shows Edited. The first layer under Layers is open](../../assets/images/reference/rendering-npr/detail.webp){ width="260" .on-glb }
 
 ### Layers
 

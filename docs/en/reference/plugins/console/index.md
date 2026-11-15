@@ -11,10 +11,6 @@ There are two command modes, switched in the panel.
 | **native mode** (default) | `CueMol>` | Commands for operating CueMol itself. Selections are written with CueMol's [selection expressions](../../selection.md). Described on this page |
 | **PyM console** | `PyM>` | PyMOL-compatible commands (→ [PyM console](pymconsole.md)) |
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): Console tab (right after running a command in native mode) -->
-
 ## Enabling the plugin
 
 Because it is enabled by default, the **Console** tab is the first tab of the bottom panel. This tab stays in front until another tab is selected.
@@ -24,6 +20,8 @@ To stop using it, disable **Console** in **Settings &gt; Plugins &gt; Installed*
     The **PyM console** plugin up to 2.3.20.539 became **Console** in 2.3.21.544. If you had disabled PyM console, Console is enabled anyway, so disable it again if you do not use it. The input history of PyM console is carried over.
 
 ## Switching modes
+
+![The Console tab. Switch the mode at the left end of the toolbar. Here `help` has been run in native mode (CueMol)](../../../../assets/images/reference/plugins/console/native.webp){ width="625" .on-glb }
 
 - Use **CueMol** | **PyMOL** at the left end of the toolbar. **CueMol** is the native mode.
 - Typing just `native` or `pymol` on a line and running it also switches the mode.

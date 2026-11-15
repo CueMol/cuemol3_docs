@@ -6,6 +6,8 @@ CueMol3 の一部の機能は、外部プログラムを呼び出して実行し
 
 ## Settings タブを開く
 
+![Settings タブ。左のカテゴリツリーで Tools &gt; APBS / PDB2PQR を選んだところ (パスの欄はぼかしています)](../../assets/images/install/external-tools/settings-tools.webp){ width="443" .on-glb }
+
 Settings は独立したウィンドウではなく、コンテンツ領域の**タブ**として開きます。
 
 | OS | 操作 |
@@ -15,8 +17,6 @@ Settings は独立したウィンドウではなく、コンテンツ領域の**
 | 共通 | 左端アクティビティバー下部の歯車アイコン |
 
 すでに Settings タブが開いている場合は、そのタブがアクティブになります。
-
-<!-- TODO(screenshot): Settings タブ (左のカテゴリツリーと右の設定項目) -->
 
 ## 外部ツールと設定項目
 

@@ -8,10 +8,6 @@ It is **disabled by default**.
 The client can call the same operations as the [Console](console/index.md) commands as tools.
 No API key is needed on the CueMol3 side; model usage follows the client's own settings.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): the MCP popover in the status bar and the Connect a client dialog -->
-
 ## Enabling it
 
 Enable **MCP Server** in **Settings &gt; Plugins &gt; Installed**
@@ -26,6 +22,8 @@ The settings are in **Settings &gt; Plugins &gt; MCP Server**.
 | Port | 27182 | The port to listen on (1024-65535). The value is applied when you press ++enter++ or move focus away (++esc++ restores the original value). A value out of range shows an error and is not applied. The listening state is shown below the field, and when the value is not the default you can restore it with **Reset to 27182**. After changing it, register the client again |
 
 ## MCP in the status bar
+
+![The popover opened by clicking MCP in the status bar (Ready)](../../../assets/images/reference/plugins/mcp-server/popover.webp){ width="354" .on-glb }
 
 **MCP** in the status bar shows the state of the server. While a tool is running,
 it shows **MCP: &lt;tool name&gt;**.
@@ -47,6 +45,8 @@ The popover that opens when you click it contains the following.
   must be registered again
 
 ## Registering a client
+
+![The Connect a client dialog. With Claude Code selected, it shows the command to run in a terminal](../../../assets/images/reference/plugins/mcp-server/connect-a-client.webp){ width="485" .on-glb }
 
 In the **Connect a client** dialog opened with **Set up...**, choose the client type
 (**Claude Code** / **Codex** / **Antigravity** / **Other**) to see the command or the

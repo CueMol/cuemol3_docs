@@ -7,10 +7,6 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
 !!! info "準備中"
     このページは骨組みです。指示の書き方や、できることの一覧は今後追加されます。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): AI Agent パネル (指示を入力し、実行の経過が表示されている状態) -->
-
 ## 有効にする
 
 **Settings &gt; Plugins &gt; Installed** で **AI Agent** を有効にします
@@ -43,6 +39,8 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
     案内されます。
 
 ## 使い方
+
+![AI Agent パネル。指示を送ると、呼び出された操作が 1 行ずつ並び、最後に返答が表示される](../../../assets/images/reference/plugins/ai-agent/panel.webp){ width="180" .on-glb }
 
 - 入力欄に「1CRN を読み込んで cartoon で表示して」のように書いて送信します。
   既定では ++enter++ が改行、++cmd+enter++ / ++ctrl+enter++ が送信です

@@ -11,9 +11,7 @@ Actions ビューには 2 つのパネルがあります。
 | **History** | アクティブなシーンの Undo の履歴と、各ステップで行われた操作 |
 | **Actions** | アプリに同梱のプリセットと、自分で保存した操作 (User Actions) |
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Actions ビュー (History パネルでステップを展開した状態と、Actions パネルのプリセット一覧) -->
+![Actions ビュー。上の History パネルで qax から再生したステップを展開し、下の Actions パネルに同梱のプリセットが並ぶ](../../assets/images/reference/actions/actions-view.webp){ width="169" .on-glb }
 
 ## 記録される操作
 

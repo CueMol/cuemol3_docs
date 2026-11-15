@@ -19,17 +19,17 @@ These are the operations when the **Navigate** tool (the default) is selected in
 
 ## Pointing device setting
 
+![Settings &gt; Input &gt; Mouse &amp; Navigation, with the Pointing device row at the top](../../assets/images/ui/mouse-input/settings-mouse-navigation.webp){ width="797" .on-glb }
+
 Mice and trackpads call for opposite behavior from scrolling
 (a mouse wheel should zoom, but a two-finger scroll on a trackpad should translate).
-In CueMol3, specify which to use with **Settings &gt; Input &gt; Pointing device**.
+In CueMol3, specify which to use with **Pointing device** in **Settings &gt; Input &gt; Mouse &amp; Navigation**.
 
 | Setting | Behavior |
 |---|---|
 | **Auto-detect** (default) | Automatically determines whether the device is a mouse or a trackpad from the characteristics of the scrolling |
 | **Mouse** | The wheel zooms |
 | **Mac trackpad** | Two-finger scroll translates; pinch zooms |
-
-<!-- TODO(screenshot): Settings > Input > Mouse & Navigation screen -->
 
 !!! warning "Auto-detection is an estimate"
     The OS provides no way to know the device type, so Auto-detect is an estimate based on the characteristics
@@ -94,6 +94,8 @@ The value of **Pick Precision** is used as the search range around the pointer i
 
 ### Showing what is under the pointer
 
+![The pointer over a ribbon residue: the chip at the lower left shows the residue and the Object / Renderer, and the residue's band is highlighted](../../assets/images/ui/mouse-input/hover.webp){ width="276" .on-glb }
+
 When the pointer moves over the molecular view, what is under it is shown in a **small chip at the lower left**.
 
 - The first line shows a chain-name badge and the residue (`ALA 10`). For atom-level Renderers, the atom name follows
@@ -129,8 +131,6 @@ Three switches in **Settings &gt; Input &gt; Mouse &amp; Navigation** control th
 | GPU Picking | Reverts to the previous atom-position hit-testing. The change takes effect immediately |
 | Hover Info | The chip is no longer shown, and the hit-testing that follows the pointer stops altogether |
 | Hover Highlight | Only the highlight is no longer shown. It works when both GPU Picking and Hover Info are ON |
-
-<!-- TODO(screenshot): Pointer over a cartoon residue (chip at the lower left and band highlight) -->
 
 ## Controlling the view numerically
 

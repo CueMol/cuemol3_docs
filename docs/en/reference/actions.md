@@ -13,9 +13,7 @@ The Actions view has two panels.
 | **History** | The Undo history of the active scene and the operations performed in each step |
 | **Actions** | Presets bundled with the app and operations you have saved (User Actions) |
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): Actions view (History panel with a step expanded, and the preset list in the Actions panel) -->
+![The Actions view: a step replayed from a qax file is expanded in the History panel at the top, and the bundled presets are listed in the Actions panel below](../../assets/images/reference/actions/actions-view.webp){ width="169" .on-glb }
 
 ## Recorded operations
 

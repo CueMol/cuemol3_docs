@@ -12,10 +12,6 @@ CueMol の操作をコマンドで実行するコマンドラインです。**�
 | **PyM console** | `PyM>` | PyMOL 互換のコマンド (→ [PyM console](pymconsole.md)) |
 | **ChX console** | `ChX>` | ChimeraX 互換のコマンド (→ [ChX console](chx_console.md)) |
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): Console タブ (native モードでコマンドを実行した直後の状態) -->
-
 ## 有効にする
 
 既定で有効なので、下部パネルの先頭に **Console** タブがあります。ほかのタブを選ぶまでは、
@@ -34,6 +30,8 @@ Console に含まれていて、常に使えます。
     使わない場合はもう一度無効にしてください。PyM console の入力の履歴は引き継がれます。
 
 ## モードの切り替え
+
+![Console タブ。ツールバー左端でモードを切り替える。native モード (CueMol) で `help` を実行したところ](../../../../assets/images/reference/plugins/console/native.webp){ width="625" .on-glb }
 
 - ツールバー左端の **CueMol** | **PyMOL** | **ChimeraX** で切り替えます。**CueMol** が native モードです。
 - 行に `native` / `pymol` / `chimerax` とだけ打って実行しても切り替わります。

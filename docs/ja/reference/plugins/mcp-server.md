@@ -7,10 +7,6 @@
 クライアントからは、[Console](console/index.md) のコマンドと同じ操作をツールとして呼び出せます。
 API キーは CueMol3 側では不要で、モデルの利用はクライアント側の設定に従います。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): ステータスバーの MCP のポップオーバーと Connect a client ダイアログ -->
-
 ## 有効にする
 
 **Settings &gt; Plugins &gt; Installed** で **MCP Server** を有効にします
@@ -25,6 +21,8 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
 | Port | 27182 | 待ち受けるポート (1024〜65535)。++enter++ を押すかフォーカスを外したときに反映されます (++esc++ で元の値に戻ります)。範囲外の値はエラーを表示して反映しません。欄の下に待ち受けの状態が表示され、既定値でないときは **Reset to 27182** で戻せます。変えたときは、クライアントを登録し直してください。 |
 
 ## ステータスバーの MCP
+
+![ステータスバーの MCP をクリックして開いたポップオーバー (Ready の状態)](../../../assets/images/reference/plugins/mcp-server/popover.webp){ width="354" .on-glb }
 
 ステータスバーの **MCP** は、サーバーの状態を表示します。ツールを実行している間は
 **MCP: &lt;ツール名&gt;** と表示されます。
@@ -46,6 +44,8 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
   クライアントは、登録し直す必要があります。
 
 ## クライアントの登録
+
+![Connect a client ダイアログ。Claude Code を選ぶと、ターミナルで実行するコマンドが表示される](../../../assets/images/reference/plugins/mcp-server/connect-a-client.webp){ width="485" .on-glb }
 
 **Set up...** で開く **Connect a client** ダイアログで、クライアントの種類
 (**Claude Code** / **Codex** / **Antigravity** / **Other**) を選ぶと、登録に使うコマンドや
