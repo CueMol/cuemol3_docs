@@ -19,17 +19,17 @@ These are the operations when the **Navigate** tool (the default) is selected in
 
 ## Pointing device setting
 
+![Settings &gt; Input &gt; Mouse &amp; Navigation, with the Pointing device row at the top](../../assets/images/ui/mouse-input/settings-mouse-navigation.webp){ width="797" .on-glb }
+
 Mice and trackpads call for opposite behavior from scrolling
 (a mouse wheel should zoom, but a two-finger scroll on a trackpad should translate).
-In CueMol3, specify which to use with **Settings &gt; Input &gt; Pointing device**.
+In CueMol3, specify which to use with **Pointing device** in **Settings &gt; Input &gt; Mouse &amp; Navigation**.
 
 | Setting | Behavior |
 |---|---|
 | **Auto-detect** (default) | Automatically determines whether the device is a mouse or a trackpad from the characteristics of the scrolling |
 | **Mouse** | The wheel zooms |
 | **Mac trackpad** | Two-finger scroll translates; pinch zooms |
-
-<!-- TODO(screenshot): Settings > Input > Mouse & Navigation screen -->
 
 !!! warning "Auto-detection is an estimate"
     The OS provides no way to know the device type, so Auto-detect is an estimate based on the characteristics

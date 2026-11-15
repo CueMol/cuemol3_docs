@@ -17,17 +17,17 @@
 
 ## ポインティングデバイスの設定
 
+![Settings &gt; Input &gt; Mouse &amp; Navigation。先頭に Pointing device の行がある](../../assets/images/ui/mouse-input/settings-mouse-navigation.webp){ width="797" .on-glb }
+
 マウスとトラックパッドでは、スクロール操作に期待する動作が逆になります
 (マウスホイールはズームしてほしいが、トラックパッドの 2 本指スクロールは平行移動してほしい)。
-CueMol3 では **Settings &gt; Input &gt; Pointing device** で使い分けを指定します。
+CueMol3 では **Settings &gt; Input &gt; Mouse &amp; Navigation** の **Pointing device** で使い分けを指定します。
 
 | 設定値 | 動作 |
 |---|---|
 | **Auto-detect** (既定) | スクロールの特徴からマウスかトラックパッドかを自動判別します。 |
 | **Mouse** | ホイールでズームします。 |
 | **Mac trackpad** | 2 本指スクロールで平行移動、ピンチでズームします。 |
-
-<!-- TODO(screenshot): Settings > Input > Mouse & Navigation の画面 -->
 
 !!! warning "自動判別は推定です"
     OS からデバイスの種類を知る手段がないため、Auto-detect はスクロールイベントの特徴
