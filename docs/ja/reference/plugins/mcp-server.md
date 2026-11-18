@@ -82,9 +82,6 @@ claude mcp add cuemol -- tritium_cli mcp
 
 - [Console](console/commands.md) のコマンドにあたる操作を、すべてツールとして呼び出せます。
   そのほか、今のビューを画像として返す `capture_view` があります。
-- 操作の対象は、前面にある分子ビューのタブです。Settings タブが前面にあるときやタブが 1 つも
-  無いときは、直前に使っていた分子ビューのタブに切り替えてから実行します (分子ビューのタブが
-  無ければ、新しいシーンを作ります)。
 - シーンの一覧・新規作成・切り替え・クローズ (`list_scenes` / `create_scene` / `switch_scene` /
   `close_scene`) ができます。`close_scene` は、変更が保存されていないシーンを閉じません
   (`discardChanges` を指定すると変更を捨てて閉じます)。`save_scene` での保存や、
@@ -119,4 +116,4 @@ claude mcp add cuemol -- tritium_cli mcp
 
 ---
 
-*確認対象: CueMol3 3.0.3.565*
+*確認対象: CueMol3 3.0.0.554*

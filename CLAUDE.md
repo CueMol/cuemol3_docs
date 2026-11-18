@@ -484,12 +484,15 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **カメラのインスペクタ (表示フラグのダイアログの廃止) と `__current` の常設**・**時間のかかる処理の表示**・
   **前面のタブによる GUI の有効・無効 (GUI gate)** と外部からの操作の対象のタブ。
   `reference/scene.md` に `## Compatibility`、`reference/settings.md` に Display &gt; Compatibility、
-  `menu/index.md` に `## 前面のタブと操作`、`ui/index.md` に `## 時間のかかる処理`、`reference/camera.md` に
+  `ui/index.md` に `## 時間のかかる処理`、`reference/camera.md` に
   `## __current` を新設した。`camera.md` の「カメラが保持する情報」と「表示フラグ」の `TODO(content)`、
   `qsc-format.md` の「CueMol2 との互換性」の TODO (保存オプションの Compatibility の部分) を埋めた
   (前者は削除されたダイアログを指していたため。各プロパティの意味の TODO は残した)。
   更新履歴は 3 節 + warning (3.0.2.560 以前の CueMol3 のシーンは Legacy mode で開く、Ver 3.0 の qsc は古い
   CueMol2 で開けない)。
+  **ユーザー指示: タブが無いときや Settings タブが前面のときに無効になる操作 (GUI gate)、ようこそ画面、
+  その場合に tritium_cli / MCP / AI Agent が直前の分子ビューのタブに切り替える件は、見ればわかるので
+  マニュアルにも更新履歴にも書かない。** (一度書いたが削除した。)
   **書かなかったもの**: メインウィンドウ・レンダリングウィンドウのリサイズでパネルの幅が保たれる件と
   Render Settings の横スクロールバー (不具合修正)、ツールバーのアイコンの変更、ようこそ画面のアイコン。
   **未着手の残件**: スクリーンショット全般 (カメラのインスペクタ、Camera パネルのボタンが 7 つになった
