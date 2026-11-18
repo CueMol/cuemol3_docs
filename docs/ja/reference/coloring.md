@@ -42,6 +42,10 @@ Renderer の色を分子側の着色に従わせるスタイルで、Paint で�
 分子を読み込んだときに付く着色もこの Default です。使った色はシーンに保存されるので、
 保存したシーンを開き直しても色は変わりません。
 
+[Legacy mode](scene.md#compatibility) のシーン (CueMol2 で作ったシーンを含む) では、Default は
+CueMol2 と同じ 4 色 (sheet が SteelBlue、helix が khaki、nucleic が yellow、それ以外が FloralWhite) で、
+分子ごとには変わりません。
+
 <!-- TODO(content): 行の追加・削除・並べ替え、選択式の指定、色の指定、
      マテリアル修飾子との組み合わせを記載 (ColorPane.tsx の Paint 表を参照) -->
 
@@ -160,4 +164,4 @@ Renderer ごとではなく分子 Object 側に着色を持たせ、複数の Re
 
 ---
 
-*確認対象: CueMol3 3.0.1.555*
+*確認対象: CueMol3 3.0.3.565*

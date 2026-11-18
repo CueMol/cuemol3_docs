@@ -13,6 +13,51 @@
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
 
+## 3.0.3.565 (2026-11-18)
+
+### シーンの見た目 (CueMol3 / Legacy mode)
+
+- **シーンごとに、CueMol3 の見た目と CueMol2 の見た目 (Legacy mode) を持つようになりました。**
+  CueMol2 で作ったシーンファイルは、CueMol2 で表示したときと同じ見た目 (ribbon と nucl の形、
+  既定の色) で開きます。新しいシーンは CueMol3 の見た目で作られます。
+- 開いているシーンは、Scene のプロパティの **Compatibility &gt; Legacy mode (CueMol2 look)** で
+  切り替えることができます (1 回の Undo で戻せます)。既にある Renderer の形もすぐに変わり、以後に
+  読み込む分子の色も見た目に従います。→ [Scene](reference/scene.md#compatibility)
+- New Tab ダイアログと **Settings &gt; Display &gt; Compatibility** で、新しいシーンを Legacy mode で
+  作るように設定できます。→ [設定項目](reference/settings.md#compatibility)
+- シーンの保存オプションの **Compatibility** に **Ver 3.0 or later** (既定) が加わりました。
+  → [シーンの保存](reference/save-scene.md#互換性-compatibility)
+
+### カメラ
+
+- **カメラをインスペクタに表示できるようになりました。** Camera パネルの **Property** ボタンか、
+  右クリックメニューの **Properties...** で開き、名前・読み込み元・保存した視点・表示フラグを
+  確認できます。行のダブルクリックは今までどおり適用です。
+- **表示フラグはインスペクタの Visibility で編集するようになりました** (専用のダイアログは
+  無くなりました)。1 回の変更が 1 回の Undo になり、**Capture** でシーンの現在の表示状態を
+  記録できます。→ [カメラ](reference/camera.md#表示フラグ)
+- **`__current` カメラは、どのシーンにも作成時からあるようになりました。** 現在の視点を表し、
+  削除・名前の変更・上書き・適用はできません。Undo の対象ではなく、**Save current view...** で
+  シーンが変更ありになることも無くなりました。→ [カメラ](reference/camera.md#__current)
+
+### 画面と操作
+
+- **時間のかかる処理 (シーンの保存・読み込み、ファイルの読み込み、分子表面の生成、書き出し、
+  MD トラジェクトリの読み込み) の間、処理の名前と経過秒数が表示されるようになりました。**
+  ステータスバーには「Busy」の代わりに同じ内容が表示され、5 秒以上かかった処理はかかった時間が残ります。
+  → [画面構成](ui/index.md#時間のかかる処理)
+- Animation パネルで帯をドラッグすると、長さと開始・終了の時刻が表示され、端が目盛りの 1/10 に
+  揃うようになりました (++alt++ / ++option++ で自由に動かせます)。
+  → [Animation パネル](ui/bottom-panels/animation.md#要素を編集する)
+- ツールバーの **Save As** ボタンは **Save File As** になりました。
+
+!!! warning "以前のバージョンから変わる点"
+    - **3.0.2.560 以前の CueMol3 で保存したシーンは、Legacy mode (CueMol2 の見た目) で開きます。**
+      CueMol3 の見た目に戻すには、Scene のプロパティで **Legacy mode** を OFF にしてください。
+    - **Ver 3.0 or later で保存したシーンファイルは、3.0.3.565 より前の CueMol2 では開けません。**
+      古い CueMol2 で開く必要があるときは、保存オプションで **Ver 2.3 or later** を選んでください。
+      また、このシーンを CueMol2 で保存し直すと、Ver 3.0 の形式のまま保存されることがあります。
+
 ## 3.0.2.560 (2026-11-14)
 
 ### アニメーション
@@ -264,4 +309,4 @@
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.3.565*

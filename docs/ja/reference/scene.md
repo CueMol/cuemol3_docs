@@ -8,8 +8,8 @@
 シーンは 1 つのタブに 1 つ表示されます。同じシーンを複数のタブ (ビュー) から
 表示することもできます (→ [File メニュー](../menu/file.md) の New Tab)。
 新しいシーンの表示設定 (アンチエイリアシング / アンビエントオクルージョン / 背景色 /
-カラープルーフィング) は New Tab ダイアログの **Scene settings** で指定でき、確定した値が
-以後の新しいシーンの既定になります。以下で「既定」と書いているのは、出荷時の値です。
+カラープルーフィング / [Legacy mode](#compatibility)) は New Tab ダイアログの **New Scene** の
+下で指定でき、確定した値が以後の新しいシーンの既定になります。以下で「既定」と書いているのは、出荷時の値です。
 
 ## プロパティの開き方
 
@@ -117,6 +117,29 @@ Intent
 
 無効に戻してもプロファイルとインテントの設定は保持されます。
 
+## Compatibility
+
+シーンの見た目を、CueMol3 のものにするか CueMol2 と同じもの (Legacy mode) にするかを切り替えます。
+
+Legacy mode (CueMol2 look)
+:   ON にすると、シーンが CueMol2 と同じ見た目になります。OFF (CueMol3 の見た目) では、
+    ribbon が細く、nucl の塩基が小さく、nucl の骨格のチューブが角の丸い四角の断面になります。
+    切り替えは 1 回の Undo で戻すことができます。
+
+- 新しいシーンは CueMol3 の見た目で作られます。New Tab ダイアログの
+  **Legacy mode (CueMol2 look)** か、Settings &gt; Display &gt; Compatibility の
+  **Legacy mode for new scenes** を ON にすると、以後の新しいシーンが Legacy mode で作られます
+  (どちらも同じ設定です。開いているシーンは変わりません)。
+- CueMol2 で作ったシーンファイルは Legacy mode で開き、CueMol2 で表示したときと同じ見た目になります。
+- 見た目はスタイルで決まるので、切り替えると既にある Renderer の見た目もすぐに変わります
+  (Renderer ごとに値を設定し直した項目はそのままです)。
+- 分子を読み込んだときや Paint の **Default** を選んだときの色も見た目に従い、CueMol3 の見た目では
+  分子ごとの色、Legacy mode では CueMol2 の 4 色 (sheet が SteelBlue、helix が khaki、nucleic が
+  yellow、それ以外が FloralWhite) になります。すでに塗ってある分子の色は変わりません
+  (→ [Coloring](coloring.md#paint))。
+- CueMol3 の見た目は、シーンの読み取り専用のスタイルセット `cuemol3_look` として持ちます
+  (→ [スタイル](styles.md))。
+
 ## シーンの情報
 
 次の項目は読み取り専用で、Generic タブに表示されます。
@@ -137,4 +160,4 @@ Intent
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 3.0.3.565*

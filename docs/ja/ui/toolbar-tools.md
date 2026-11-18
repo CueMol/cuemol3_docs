@@ -15,7 +15,7 @@ CueMol3 には性格の異なる 2 つのボタン列があります。
 |---|---|---|
 | New Tab | 新しいタブを作ります。 | File &gt; New Tab |
 | Open File | ファイルを開きます。 | File &gt; Open File... |
-| Save As | Object をファイルに保存します。 | File &gt; Save File As... |
+| Save File As | Object をファイルに保存します。 | File &gt; Save File As... |
 | Open Scene | シーンファイルを開きます。 | File &gt; Open Scene... |
 | Reload Scene | シーンを読み込み直します。 | File &gt; Reload Scene |
 | Save Scene | シーンを保存します。 | File &gt; Save Scene |
@@ -95,4 +95,4 @@ Distance / Angle / Torsion では、必要な数の原子をクリックする�
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.3.565*
