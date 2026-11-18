@@ -39,15 +39,17 @@ Linux でも **Help &gt; Check for Updates...** はありますが、
 
     ![ダウンロード中の通知。進み具合と Cancel ボタンが表示される](../../assets/images/install/update/downloading.webp){ width="346" .on-glb }
 
-3. **Install Update** ダイアログにリリースノートが表示されます。**Restart and Update** を押すと、
-   保存していないシーンの確認を経て CueMol3 が終了し、新しい版に置き換わってから起動し直します。
+3. **Install Update** ダイアログにリリースノートが表示されます。**Restart and Update** を押すと更新に進みます。
    **Later** を押した場合は、あとで通知の **Restart to Update** から続けられます。
 
     ![Install Update ダイアログ。リリースノートと Later / Restart and Update ボタン](../../assets/images/install/update/install-dialog.webp){ width="410" .on-glb }
 
+4. **Installing CueMol3 &lt;バージョン&gt;** の画面に、新しい版を準備する進み具合が表示されます (この間は操作できません)。
+   準備が終わると、保存していないシーンの確認を経て CueMol3 が終了し、新しい版に置き換わってから起動し直します。
+
     ![Restart and Update を押したあと、新しい版の準備中に表示される進み具合](../../assets/images/install/update/installing.webp){ width="370" .on-glb }
 
-4. 起動すると、「CueMol3 has been updated to &lt;バージョン&gt;.」と表示されます。
+5. 起動すると、「CueMol3 has been updated to &lt;バージョン&gt;.」と表示されます。
 
     ![更新後の起動時に表示される通知](../../assets/images/install/update/updated.webp){ width="352" .on-glb }
 

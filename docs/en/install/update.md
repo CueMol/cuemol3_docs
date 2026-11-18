@@ -26,13 +26,15 @@ On Windows / Linux, **Help &gt; Check for Updates...** is also present, but it o
 
     ![The notification while downloading, with the progress and the Cancel button](../../assets/images/install/update/downloading.webp){ width="346" .on-glb }
 
-3. The **Install Update** dialog shows the release notes. Click **Restart and Update**: after the check for unsaved scenes, CueMol3 quits, is replaced with the new version, and restarts. If you click **Later**, you can continue afterward from **Restart to Update** in the notification.
+3. The **Install Update** dialog shows the release notes. Click **Restart and Update** to proceed with the update. If you click **Later**, you can continue afterward from **Restart to Update** in the notification.
 
     ![The Install Update dialog, with the release notes and the Later / Restart and Update buttons](../../assets/images/install/update/install-dialog.webp){ width="410" .on-glb }
 
+4. The **Installing CueMol3 &lt;version&gt;** screen shows the progress of preparing the new version (the app cannot be operated during this step). When it finishes, after the check for unsaved scenes, CueMol3 quits, is replaced with the new version, and restarts.
+
     ![The progress shown while the new version is prepared, after clicking Restart and Update](../../assets/images/install/update/installing.webp){ width="370" .on-glb }
 
-4. After startup, "CueMol3 has been updated to &lt;version&gt;." is displayed.
+5. After startup, "CueMol3 has been updated to &lt;version&gt;." is displayed.
 
     ![The notification shown at startup after the update](../../assets/images/install/update/updated.webp){ width="352" .on-glb }
 
