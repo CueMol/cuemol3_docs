@@ -18,6 +18,11 @@
 |---|---|---|
 | **Trajectory** | MD トラジェクトリの再生 (→ [Trajectory パネル](trajectory.md)) | MD Tools |
 
+**Console** / **Sequence** / **Animation** / **Trajectory** の各タブは、分子ビューのタブが前面に
+無いとき (Settings タブが前面のときや、タブが 1 つも無いとき) は中身を表示せず、
+`Switch to a molecule view tab to use this panel.` と表示します。Console に入力した内容や履歴は残ります。
+**Output** はいつでも使うことができます。
+
 ## Output
 
 アプリケーションのログを表示します。ファイルの読み込み結果やエラーメッセージがここに出ます。
@@ -55,4 +60,4 @@ MD トラジェクトリを再生します。タイムライン上にフレー�
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.3.565*

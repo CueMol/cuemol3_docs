@@ -34,8 +34,18 @@ CueMol2 と互換で、CueMol2 で作成したシーンを CueMol3 で開けま�
 
 ## CueMol2 との互換性
 
-<!-- TODO(content): 互換性オプションの選択肢と、CueMol3 で追加された要素を
-     CueMol2 で開いた場合の挙動 -->
+保存オプションの **Compatibility** で、どのバージョンで開けるファイルにするかを選びます。
+
+| Compatibility | 内容 |
+|---|---|
+| Ver 3.0 or later (既定) | CueMol3 の見た目 (→ [Scene](scene.md#compatibility)) を、アプリに同梱のスタイルファイルへの参照として書きます。 |
+| Ver 2.3 or later | CueMol3 の見た目をシーンファイルに埋め込みます。 |
+| Ver 2.2 or later | 同上。データの埋め込みには旧形式 (QDF0) を使います。 |
+
+Ver 3.0 or later で保存したシーンファイルは、3.0.3.565 より前の CueMol2 では開けません。
+古い CueMol2 で開く必要があるときは、Ver 2.3 or later 以前を選んで保存します。
+
+<!-- TODO(content): CueMol3 で追加された要素を CueMol2 で開いた場合の挙動 -->
 
 ## 関連項目
 
@@ -44,4 +54,4 @@ CueMol2 と互換で、CueMol2 で作成したシーンを CueMol3 で開けま�
 
 ---
 
-*最終確認: 2026-08-11 / 確認対象: 開発版 (tritium)*
+*確認対象: CueMol3 3.0.3.565*

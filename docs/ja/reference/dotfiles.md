@@ -73,9 +73,11 @@ CueMol3 を起動すると、最初のシーンができたあとに、次のフ
 ## 例: CueMol2 と同じ既定の色を使う
 
 CueMol2 では、読み込んだ分子はどれも同じ 4 色 (sheet が SteelBlue、helix が khaki、
-nucleic が yellow、それ以外が FloralWhite) で塗られていました。CueMol3 では分子ごとに
+nucleic が yellow、それ以外が FloralWhite) で塗られていました。CueMol3 の見た目のシーンでは分子ごとに
 違う色が付きます (→ [Coloring](coloring.md#paint))。CueMol2 と同じ色で表示したいときは、
 次のファイルを `~/.cuemol/styles/cuemol2_colors.xml` として置き、CueMol3 を起動し直します。
+色だけでなく ribbon や nucl の形も CueMol2 と同じにしたいときは、シーンを
+[Legacy mode](scene.md#compatibility) にします。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -122,4 +124,4 @@ ribbon / cartoon / tube / spline / tracestick は、既定で `DefaultHSCPaint` 
 
 ---
 
-*確認対象: CueMol3 3.0.1.555*
+*確認対象: CueMol3 3.0.3.565*

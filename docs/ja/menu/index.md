@@ -35,6 +35,24 @@ macOS では、アプリケーション名 (**CueMol3**) のメニューに次�
 | Show All | すべてのウィンドウを再表示します。 | |
 | Quit CueMol3 | CueMol3 を終了します。未保存のシーンがある場合は確認します。 | ++cmd+q++ |
 
+## 前面のタブと操作
+
+メニューの項目が使えるかどうかは、前面にあるタブの種類で決まります。Settings タブが前面のときや、
+タブが 1 つも無いときは、シーンを必要とする項目 (保存・Undo / Redo・編集・Rendering・Scene・View・
+Tools など) が無効になり、ショートカットキーも効きません。裏に分子ビューのタブがあっても同じです。
+
+| 項目 | 分子ビューのタブが前面 | Settings タブが前面 | タブが無い |
+|---|---|---|---|
+| New Tab、Open Scene...、Close Tab、Cut / Copy / Paste / Select All、設定・About・Check for Updates、Window メニュー、Tool palette など | ○ | ○ | ○ |
+| Open File...、Open Recent のファイル、Get PDB...、Open MD Trajectory...、ファイルのドロップ | ○ | × | ○ (新しいシーンを作って読み込みます) |
+| それ以外 | ○ | × | × |
+
+ツールバーのボタンと、下部パネルの Console / Sequence / Animation / Trajectory も同じ規則に従います。
+Settings だけが開いている状態から作業を始めるには、Settings タブを閉じます。
+
+tritium_cli・MCP・AI Agent からの操作と、OS から開いたファイルは、この規則によらず、
+直前に使っていた分子ビューのタブに切り替えて実行します。
+
 ## 各メニュー
 
 <div class="grid cards" markdown>
@@ -64,4 +82,4 @@ CueMol2 にあって CueMol3 のメニューから**なくなった**項目は�
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.3.565*

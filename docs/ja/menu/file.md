@@ -6,7 +6,7 @@
 
 | 項目 | 説明 | ショートカット |
 |---|---|---|
-| New Tab | 新しいタブを作ります。ダイアログで **New Scene** (新規シーン) か **New View** (既存シーンの別ビュー) を選びます。New Scene では新しいシーンの表示設定 (**Scene settings**: Anti-aliasing / Ambient occlusion / Background / CMYK color proofing) も指定でき、確定した値が以後の新しいシーン (起動時やファイルのドロップで作られるものを含む) の既定になります。New View では現在のカメラを引き継ぐかどうかも指定できます。 | ++cmd+t++ |
+| New Tab | 新しいタブを作ります。ダイアログで **New Scene** (新規シーン) か **New View** (既存シーンの別ビュー) を選びます。New Scene では新しいシーンの表示設定 (Anti-aliasing / Ambient occlusion / Background / CMYK color proofing / **Legacy mode (CueMol2 look)**) も指定でき、確定した値が以後の新しいシーン (起動時やファイルのドロップで作られるものを含む) の既定になります。New View では現在のカメラを引き継ぐかどうかも指定できます。 | ++cmd+t++ |
 | Close Tab | 現在のタブを閉じます。シーンが未保存で、そのシーンを表示しているビューが 1 つだけの場合は、保存するかどうかを確認します。 | ++cmd+w++ |
 
 ## Object の読み込み
@@ -70,7 +70,7 @@ Settings &gt; Plugins で有効にするよう案内されます。ファイル�
 | Open Scene... | CueMol シーンファイル (`.qsc`) を開きます。PyMOL セッション (`.pse`) もここから読み込めます。 | ++cmd+shift+o++ |
 | Reload Scene | シーンを元のファイルから読み込み直します。未保存の変更がある場合は先に確認します。 | ++cmd+r++ |
 | Save Scene | シーンを上書き保存します。保存先が未設定の場合は Save Scene As... と同じ動作になります。上書き前に `<ファイル名>.bak` のバックアップが自動で作成されます。 | ++cmd+s++ |
-| Save Scene As... | 保存先を指定してシーンを保存します。保存オプション (データの埋め込み / 互換性 / 圧縮 / 文字エンコーディング) を指定できます。 | ++cmd+shift+s++ |
+| Save Scene As... | 保存先を指定してシーンを保存します。保存オプション (データの埋め込み / 互換性 / 圧縮 / 文字エンコーディング) を指定できます。互換性 (**Compatibility**) の既定は **Ver 3.0 or later** です (→ [シーンファイル](../reference/qsc-format.md#cuemol2-との互換性))。 | ++cmd+shift+s++ |
 
 ## 終了
 
@@ -83,4 +83,4 @@ Settings &gt; Plugins で有効にするよう案内されます。ファイル�
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.3.565*

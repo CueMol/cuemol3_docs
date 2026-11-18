@@ -15,7 +15,7 @@ CueMol3 には性格の異なる 2 つのボタン列があります。
 |---|---|---|
 | New Tab | 新しいタブを作ります。 | File &gt; New Tab |
 | Open File | ファイルを開きます。 | File &gt; Open File... |
-| Save As | Object をファイルに保存します。 | File &gt; Save File As... |
+| Save File As | Object をファイルに保存します。 | File &gt; Save File As... |
 | Open Scene | シーンファイルを開きます。 | File &gt; Open Scene... |
 | Reload Scene | シーンを読み込み直します。 | File &gt; Reload Scene |
 | Save Scene | シーンを保存します。 | File &gt; Save Scene |
@@ -25,7 +25,9 @@ CueMol3 には性格の異なる 2 つのボタン列があります。
 | Redo | 取り消した操作をやり直します。 | Edit &gt; Redo |
 
 - ウィンドウ幅が足りないときは、ラベルが省略されアイコンのみになります (ツールチップに名前が出ます)。
-- シーンが開かれていないときは、シーンを必要とするボタンが無効になります。
+- 分子ビューのタブが前面に無いとき (Settings タブが前面のときや、タブが 1 つも無いとき) は、
+  シーンを必要とするボタンが無効になります。**Open File** と **Get PDB** はタブが 1 つも無いときにも
+  使うことができ、新しいシーンを作って読み込みます (→ [前面のタブと操作](../menu/index.md#前面のタブと操作))。
 - **Render** ボタンはレンダリングウィンドウを開きますが、出力モード (静止画 / 動画) は変更しません。
 
 ### Undo / Redo の履歴ドロップダウン
@@ -95,4 +97,4 @@ Distance / Angle / Torsion では、必要な数の原子をクリックする�
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.3.565*

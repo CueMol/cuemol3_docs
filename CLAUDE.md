@@ -477,6 +477,25 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **その後、ja の文末の「。」はサイト全体に適用した** (`docs/sentence-final-period`。です・ます形の文末のみ。
   手順の「〜する」や表の「〜する」のような常体の語句、見出し、体言止めには付けていない)。
   `→ [リンク]` が文に続くときは「。→ [リンク]」と書く。en のピリオドと可能の表現の統一は未着手。
+- 前回同期: 2026-11-18 / cuemol2 `7c11844a` (tag `v3.0.3.565`, branch: develop) / CueMol3 `3.0.3.565`。
+  `aad7cb52..7c11844a` の差分を全件確認した (リリースノート `docs/release_notes/v3.0.3.565.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 5 本目なので、アーカイブへの移動はしていない。
+  今回の主題は **シーンの見た目 (CueMol3 / Legacy mode、`cuemol3_look` のシーンごとのスタイルセット)**・
+  **カメラのインスペクタ (表示フラグのダイアログの廃止) と `__current` の常設**・**時間のかかる処理の表示**・
+  **前面のタブによる GUI の有効・無効 (GUI gate)** と外部からの操作の対象のタブ。
+  `reference/scene.md` に `## Compatibility`、`reference/settings.md` に Display &gt; Compatibility、
+  `menu/index.md` に `## 前面のタブと操作`、`ui/index.md` に `## 時間のかかる処理`、`reference/camera.md` に
+  `## __current` を新設した。`camera.md` の「カメラが保持する情報」と「表示フラグ」の `TODO(content)`、
+  `qsc-format.md` の「CueMol2 との互換性」の TODO (保存オプションの Compatibility の部分) を埋めた
+  (前者は削除されたダイアログを指していたため。各プロパティの意味の TODO は残した)。
+  更新履歴は 3 節 + warning (3.0.2.560 以前の CueMol3 のシーンは Legacy mode で開く、Ver 3.0 の qsc は古い
+  CueMol2 で開けない)。
+  **書かなかったもの**: メインウィンドウ・レンダリングウィンドウのリサイズでパネルの幅が保たれる件と
+  Render Settings の横スクロールバー (不具合修正)、ツールバーのアイコンの変更、ようこそ画面のアイコン。
+  **未着手の残件**: スクリーンショット全般 (カメラのインスペクタ、Camera パネルのボタンが 7 つになった
+  `ui/side-panels/camera-panel.webp`、New Tab ダイアログ、Scene の Compatibility、時間のかかる処理のカード、
+  NPR の Detail タブ `reference/rendering-npr/detail.webp`)、英語版の追随、docs-verify の spec 追加と既存 spec の
+  修正 (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

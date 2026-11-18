@@ -45,6 +45,12 @@
     旧バックエンドの POV-Ray を選んだ場合にだけ使われます
     (→ [レンダリング](rendering.md))。
 
+### Compatibility
+
+| 項目 | 既定値 | 説明 |
+|---|---|---|
+| Legacy mode for new scenes | OFF | 新しいシーンを CueMol2 の見た目 (Legacy mode) で作ります。New Tab ダイアログの **Legacy mode (CueMol2 look)** と同じ設定です。開いているシーンは Scene のプロパティで切り替えます (→ [Scene](scene.md#compatibility))。 |
+
 ## Input
 
 ### Mouse & Navigation
@@ -163,4 +169,4 @@
 
 ---
 
-*確認対象: CueMol3 3.0.0.554*
+*確認対象: CueMol3 3.0.3.565*

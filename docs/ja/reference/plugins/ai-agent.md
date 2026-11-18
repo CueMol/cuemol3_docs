@@ -68,6 +68,7 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
 
 - **対象は 1 つのシーンだけ**です。指示を始めた時点のアクティブなシーンに対して
   操作します。「新しいシーンで」と指示しても、現在のシーンに読み込まれます。
+  Settings タブが前面にあるときは、直前に使っていた分子ビューのタブに切り替えて操作します。
 - シーンファイル (`.qsc`) は開けません。**File &gt; Open** で開いてください。
 - 実行中に手で加えた変更は、その指示の Undo に巻き込まれます。
 - [Console](console/index.md) のコマンドや [MCP Server](mcp-server.md) の呼び出しを実行している間は、
@@ -83,4 +84,4 @@ OpenAI・Anthropic・Google (Gemini) のいずれかの API キーが必要で�
 
 ---
 
-*確認対象: CueMol3 2.4.0.546*
+*確認対象: CueMol3 3.0.3.565*
