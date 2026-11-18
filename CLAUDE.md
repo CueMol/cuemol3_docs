@@ -485,9 +485,14 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **前面のタブによる GUI の有効・無効 (GUI gate)** と外部からの操作の対象のタブ。
   `reference/scene.md` に `## Compatibility`、`reference/settings.md` に Display &gt; Compatibility、
   `ui/index.md` に `## 時間のかかる処理`、`reference/camera.md` に
-  `## __current` を新設した。`camera.md` の「カメラが保持する情報」と「表示フラグ」の `TODO(content)`、
-  `qsc-format.md` の「CueMol2 との互換性」の TODO (保存オプションの Compatibility の部分) を埋めた
-  (前者は削除されたダイアログを指していたため。各プロパティの意味の TODO は残した)。
+  `## __current` を新設した。`camera.md` の「カメラが保持する情報」と「表示フラグ」の `TODO(content)` を埋めた
+  (削除されたダイアログを指していたため。各プロパティの意味の TODO は残した)。
+  **ユーザー指示により `reference/save-scene.md` (シーンの保存 (Save Scene)) を新設した** (ja の nav の
+  リファレンス、qsc-format の前。英訳は未着手)。Save Scene / Save Scene As の動作と Scene options ダイアログ
+  (Embed possible / Compatibility / Compression / Enable text encoding)、QDF0 と QDF1 の違いを、
+  `QscWriterOptionDialog.tsx` / `useEditCommands.ts` / `saveScene.ts` と C++ の `SceneXMLWriter.cpp` /
+  `QdfStream.cpp` / `MolCoord.cpp` で裏取りして書いた。`qsc-format.md` はファイル形式のページなので、
+  ダイアログの説明は置かない (一度 Compatibility の表を書いたが main の内容に戻した)。
   更新履歴は 3 節 + warning (3.0.2.560 以前の CueMol3 のシーンは Legacy mode で開く、Ver 3.0 の qsc は古い
   CueMol2 で開けない)。
   **ユーザー指示: タブが無いときや Settings タブが前面のときに無効になる操作 (GUI gate)、ようこそ画面、

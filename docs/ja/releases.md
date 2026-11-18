@@ -26,7 +26,7 @@
 - New Tab ダイアログと **Settings &gt; Display &gt; Compatibility** で、新しいシーンを Legacy mode で
   作るように設定できます。→ [設定項目](reference/settings.md#compatibility)
 - シーンの保存オプションの **Compatibility** に **Ver 3.0 or later** (既定) が加わりました。
-  → [シーンファイル](reference/qsc-format.md#cuemol2-との互換性)
+  → [シーンの保存](reference/save-scene.md#互換性-compatibility)
 
 ### カメラ
 

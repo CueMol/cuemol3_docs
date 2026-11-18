@@ -334,6 +334,7 @@ nav:
       - 操作の記録と再生 (Actions): reference/actions.md
       - ユーザーディレクトリ (~/.cuemol): reference/dotfiles.md
       - キーボードショートカット: reference/shortcuts.md
+      - シーンの保存 (Save Scene): reference/save-scene.md
       - シーンファイル (.qsc): reference/qsc-format.md
 
 extra_css:

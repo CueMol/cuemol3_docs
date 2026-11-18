@@ -70,7 +70,7 @@ Settings &gt; Plugins で有効にするよう案内されます。ファイル�
 | Open Scene... | CueMol シーンファイル (`.qsc`) を開きます。PyMOL セッション (`.pse`) もここから読み込めます。 | ++cmd+shift+o++ |
 | Reload Scene | シーンを元のファイルから読み込み直します。未保存の変更がある場合は先に確認します。 | ++cmd+r++ |
 | Save Scene | シーンを上書き保存します。保存先が未設定の場合は Save Scene As... と同じ動作になります。上書き前に `<ファイル名>.bak` のバックアップが自動で作成されます。 | ++cmd+s++ |
-| Save Scene As... | 保存先を指定してシーンを保存します。保存オプション (データの埋め込み / 互換性 / 圧縮 / 文字エンコーディング) を指定できます。互換性 (**Compatibility**) の既定は **Ver 3.0 or later** です (→ [シーンファイル](../reference/qsc-format.md#cuemol2-との互換性))。 | ++cmd+shift+s++ |
+| Save Scene As... | 保存先を指定してシーンを保存します。保存オプション (データの埋め込み / 互換性 / 圧縮 / 文字エンコーディング) を指定できます。互換性 (**Compatibility**) の既定は **Ver 3.0 or later** です (→ [シーンの保存](../reference/save-scene.md))。 | ++cmd+shift+s++ |
 
 ## 終了
 
