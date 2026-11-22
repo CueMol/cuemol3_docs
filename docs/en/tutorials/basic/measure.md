@@ -52,11 +52,12 @@ to a three-dimensional display suited to figures in papers.
 1. Right-click `measure` (atomintr) in the scene tree
 2. Choose **Style &gt; Dashed stick1**
 
-The dotted lines change to a dashed three-dimensional display (**Dashed stick2** is a preset with a different thickness).
+The dotted lines change to a yellow dashed three-dimensional display, and the distance labels are no longer shown (**Dashed stick2** is a cyan preset with a different dash pattern).
 To adjust the line thickness or the dash spacing individually, edit the atomintr
 properties in the inspector (→ [atomintr](../../reference/renderers/atomintr.md)).
 
-<!-- TODO(screenshot): Comparison of the measurement display before and after applying Dashed stick1 -->
+![Before: the default thin dotted line and the distance label](../../../assets/images/tutorials/basic/measure/distance.webp){ width="282" .on-glb }
+![After applying Dashed stick1: a yellow three-dimensional dashed line, without the label](../../../assets/images/tutorials/basic/measure/dashed-stick1.webp){ width="282" .on-glb }
 
 ## 5. Delete individual measurements
 
@@ -83,4 +84,4 @@ the task-oriented tutorials to see the actual flow of figure making.
 
 ---
 
-*Verified against: CueMol3 2.3.8.494*
+*Verified against: CueMol3 3.0.2.560*
