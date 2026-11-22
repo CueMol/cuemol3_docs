@@ -113,6 +113,65 @@ CI 帯域の消費と運用事故を避けるため踏襲しません)。次の�
 grep -rn "TODO(screenshot)" docs/
 ```
 
+## 注目の機能 (features/)
+
+CueMol3 の目玉の機能を 1 回に 1 つ紹介する、ブログ風のページです
+(`docs/ja/features/`、`docs/en/features/`)。記事ごとに YouTube の動画を埋め込み、
+同じ動画を付けて X に投稿します。動画の作成・YouTube へのアップロード・X への投稿は手作業です。
+
+### 運用
+
+- **1 記事 = 1 ページ**。ファイル名は機能を表す英語の slug (`rockspin.md` など)。
+  日付はファイル名に入れず、本文の冒頭に書く (URL を短く保つため)。
+- **ja と en を同じ PR で書く** (X の投稿と揃えるため。英語版を別 PR にする通常の運用の例外)。
+- **記事は書いた時点のスナップショット**。cuemol2 との同期作業では書き換えない
+  (`changes/status.md` と同じ扱い)。最新の動作はリンク先のマニュアルに任せる。
+  記事の事実の裏取りは、書くときにマニュアル本体と同じ基準 (cuemol2 のソース) で行う。
+- 一覧 (`features/index.md`) の先頭に 1 行足し、`mkdocs.yml` の ja / en の nav の
+  「注目の機能」/「Feature highlights」の `features/index.md` の下にも足す (新しい記事を上に)。
+- 動画はリポジトリに入れない (→ 上記「画像」)。YouTube に上げて埋め込む。
+  限定公開でも埋め込める。
+
+### 記事のひな形
+
+```markdown
+# <機能の名前>: <何ができるかを一言で>
+
+*YYYY-MM-DD / CueMol3 <version>*
+
+<div class="video-embed">
+<iframe src="https://www.youtube-nocookie.com/embed/<VIDEO_ID>"
+  title="<動画の説明>" loading="lazy"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<この機能で何ができるか、どんな場面で役に立つかを 2〜3 文で。>
+
+## 使ってみる
+
+1. <操作の要点を 3〜5 手順で。詳しい説明はマニュアルに任せる。>
+
+## もっと詳しく
+
+- [<マニュアルのページ>](../<path>.md)
+
+---
+
+*確認対象: CueMol3 <version>*
+```
+
+英語版は 1 行目に出典マーカー (`<!-- source: ja/features/<slug>.md @ <hash> -->`) を付け、
+日付の行は `*YYYY-MM-DD / CueMol3 <version>*` のまま、フッタは `*Verified against: CueMol3 <version>*`。
+
+### 公開の手順
+
+1. 動画を作る (16:9、30〜60 秒程度、字幕かテロップで操作を示す)。
+2. YouTube にアップロードし、動画の ID を控える。
+3. ja / en の記事・一覧・nav を書いて PR を出し、main にマージする (公開される)。
+4. 公開されたページの URL を付けて、同じ mp4 を X に直接アップロードして投稿する
+   (日本語と英語の 2 本)。
+
 ## 英語版
 
 英語版は日本語版の**翻訳**です。事実の正本は日本語版 (さらにその正本は cuemol2 の実装) で、
