@@ -4,9 +4,9 @@
 Animation パネルの追加メニューの **Rock** で追加します。PyMOL や ChimeraX の
 rock / nutate / wobble にあたる動きを、1 つの要素で作ることができます。
 
-!!! info "撮影予定"
+![Animation パネルに追加した Rock 要素 (RockSpin0) のストリップ](../../../assets/images/reference/animation/rockspin/strip.webp){ width="605" .on-glb }
 
-<!-- TODO(screenshot): Rock のストリップとインスペクタ (Pattern / Axis / Swing angle / Cycles / Phase / Envelope) -->
+![Rock 要素のインスペクタ。ROCKSPIN セクションに Pattern / Axis / Swing angle / Cycles / Phase / Envelope が並ぶ](../../../assets/images/reference/animation/rockspin/inspector.webp){ width="200" .on-glb }
 
 ## プロパティ
 
