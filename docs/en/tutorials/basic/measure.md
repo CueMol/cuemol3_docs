@@ -5,9 +5,6 @@
 This tutorial shows how to measure distances, angles and dihedral angles between atoms, and how to adjust their display as part of a figure.
 The example is again lysozyme (`lysozyme`, simple display).
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
 ## 1. Measure distances
 
 Measurements use the Measure group in the **tool palette** at the left edge of the molecular view
