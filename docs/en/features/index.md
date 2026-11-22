@@ -1,4 +1,4 @@
-<!-- source: ja/features/index.md @ 5a0e1f6 -->
+<!-- source: ja/features/index.md @ 8cca1d1 -->
 # Feature highlights
 
 Each article introduces one of CueMol3's key features with a short video.
@@ -12,4 +12,4 @@ For detailed instructions, see the manual pages linked from each article.
 
 Newest first.
 
-<!-- Add new articles at the top of the list below. Format: - **YYYY-MM-DD** [Title](<slug>.md) — one-line description -->
+<!-- Add new articles at the top of the list below. Format: - **YYYY-MM-DD** [Title](YYYY-MM-DD-<slug>.md) — one-line description -->
