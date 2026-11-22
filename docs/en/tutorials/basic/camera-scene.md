@@ -5,9 +5,6 @@
 This page shows how to keep a favorite viewpoint as a **camera**, and how to save the whole working state to a **scene file** (`.qsc`) and resume from it.
 It continues from the previous page ([Coloring Renderers](coloring.md)).
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
 ## 1. Save a viewpoint as a camera
 
 While examining a molecule, you often want to come back to a particular view later.
