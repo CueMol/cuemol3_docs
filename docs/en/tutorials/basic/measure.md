@@ -20,7 +20,7 @@ Measurements use the Measure group in the **tool palette** at the left edge of t
 Keep clicking to measure several distances in succession.
 To stop partway, press ++esc++ or switch to another tool such as Navigate.
 
-<!-- TODO(screenshot): Two atoms selected with the Distance tool and the distance label displayed -->
+![Two atoms clicked with the Distance tool. A dotted line is drawn between them and the distance label (6.59) is shown](../../../assets/images/tutorials/basic/measure/distance.webp){ width="282" .on-glb }
 
 ## 2. Measure angles and dihedral angles
 

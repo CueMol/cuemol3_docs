@@ -18,7 +18,7 @@
 続けてクリックしていけば、複数の距離を次々に測れます。
 途中でやめたいときは ++esc++ を押すか、Navigate など他のツールに切り替えます。
 
-<!-- TODO(screenshot): Distance ツールで 2 原子を選び、距離ラベルが表示された状態 -->
+![Distance ツールで 2 原子をクリックしたところ。原子間に点線が引かれ、距離のラベル (6.59) が表示される](../../../assets/images/tutorials/basic/measure/distance.webp){ width="282" .on-glb }
 
 ## 2. 角度と二面角を測る
 
