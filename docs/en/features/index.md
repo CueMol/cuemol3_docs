@@ -1,4 +1,4 @@
-<!-- source: ja/features/index.md @ 8cca1d1 -->
+<!-- source: ja/features/index.md @ d36d8f9 -->
 # Feature highlights
 
 Each article introduces one of CueMol3's key features with a short video.
@@ -13,3 +13,4 @@ For detailed instructions, see the manual pages linked from each article.
 Newest first.
 
 <!-- Add new articles at the top of the list below. Format: - **YYYY-MM-DD** [Title](YYYY-MM-DD-<slug>.md) — one-line description -->
+- **2026-11-22** [RockSpin: rock the molecule to show its depth](2026-11-22-rockspin.md) — a rocking view from a single animation element
