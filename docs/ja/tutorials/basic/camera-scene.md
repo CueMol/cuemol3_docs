@@ -24,7 +24,7 @@
 カメラファイル (`.cam`) の読み書き・表示フラグの編集などができます
 (→ [カメラ](../../reference/camera.md))。
 
-<!-- TODO(screenshot): Camera パネルのツールバーと、作成されたカメラ -->
+![Camera パネル。見出しの右にツールバーのボタンが並び、作成したカメラ camera_0 が一覧に加わっている](../../../assets/images/tutorials/basic/camera-scene/camera-created.webp){ width="266" .on-glb }
 
 ## 2. シーンを保存する
 

@@ -25,7 +25,7 @@ The right-click menu of a camera row offers renaming, deleting, copy &amp; paste
 reading and writing camera files (`.cam`), editing display flags, and more
 (→ [Camera](../../reference/camera.md)).
 
-<!-- TODO(screenshot): The toolbar of the Camera panel and a newly created camera -->
+![The Camera panel. The toolbar buttons are to the right of the header, and the new camera camera_0 has been added to the list](../../../assets/images/tutorials/basic/camera-scene/camera-created.webp){ width="266" .on-glb }
 
 ## 2. Save the scene
 
