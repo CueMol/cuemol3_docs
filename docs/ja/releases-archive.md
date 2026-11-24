@@ -46,7 +46,7 @@
   (`load` / `fetch`、PyM console、MCP、AI Agent)。タンパク質は ribbon、核酸は nucl、
   炭素を含むリガンドは棒 (ballstick)、それ以外のリガンドは球 (cpk)、水は simple です。
   これまでは simple 1 つでした。**File &gt; Open File...** と **Get PDB** で開くときは従来どおりです。
-- PyM console の `show` / `hide` / `as` / `color` は、これらの部分にそれぞれ効きます。
+- PyM console の `show` / `hide` / `as` / `color` は、これらの部分ごとに適用されます。
   PyMOL の `cartoon` は ribbon、`ribbon` は Cα の trace (tracestick) で描きます。
   → [PyM console](reference/plugins/console/pymconsole.md#対応コマンド)
 - **mmCIF を読む `load_mmcif` が加わりました** → [コマンド一覧](reference/plugins/console/commands.md)
@@ -374,8 +374,8 @@
 !!! warning "既存のシーンで見え方が変わることがあります"
     - **dsurface で保存したシーンは、距離場によるメッシュで描かれます。** 従来の
       dsurface はボクセルによる実装でしたが、アルゴリズムの設定はそれ自体が新しいため
-      ファイルに記録されておらず、開くと新しい既定になります。メッシュの見え方と
-      Detail の効き方が変わります。以前の見た目に戻すには、Algorithm に
+      ファイルに記録されておらず、開くと新しい既定になります。メッシュの見え方と、
+      Detail を変えたときの見え方が変わります。以前の見た目に戻すには、Algorithm に
       **EDTSurf (voxel)** を指定してください。`dsurf2` で保存したシーンは
       **Distance field** になるので、見た目は変わりません。
     - **MD トラジェクトリの GUI は、有効にするまで出てきません。**
@@ -419,7 +419,7 @@
 
 ### 画面と操作
 
-- **分子表面で Solid coloring が効くようになりました。** 色に `$molcol` を選んでも半透明の
+- **分子表面で Solid coloring が反映されるようになりました。** 色に `$molcol` を選んでも半透明の
   灰色になり、dsurface / dsurf2 では Solid coloring を選んでも CPK のままでした。
   → [Coloring](reference/coloring.md#solid)
 - **リストの行をクリックしても、名前の変更やセルの編集に入らなくなりました。**
@@ -428,7 +428,7 @@
   ++cmd+z++ がそちらに吸われていました。編集は ++f2++ ・ダブルクリック・右クリック
   メニューから始めます。シーンツリーの右クリックメニューに **Rename...** が加わりました。
   → [サイドパネル](ui/side-panels.md)
-- **Paint の行のコピー &amp; ペーストが、選んだ行に効くようになりました。** 複数行を選んでから
+- **Paint の行のコピー &amp; ペーストが、選んだ行に対して行われるようになりました。** 複数行を選んでから
   右クリックすると、選択が 1 行に戻ってしまっていました。
 - **選択の Named の先頭に `all (*)` が並ぶようになりました。** 一覧の高さは、Selection
   パネルではパネルの残りいっぱい、ポップオーバーでは開いた側の空きに合わせます。
@@ -449,12 +449,12 @@
 - **レンダリングウィンドウの設定がシーンに保存されるようになりました。** これまでは
   設定がメモリ上にしかなく、すべてのシーンで共有され、ウィンドウを閉じると失われて
   いました。シーンファイルに書き込まれ、シーンごとに復元されます。設定の変更は Undo の
-  対象で、レンダリングウィンドウ内でも ++cmd+z++ が効きます。結果の履歴からは
+  対象で、レンダリングウィンドウ内でも ++cmd+z++ で取り消すことができます。結果の履歴からは
   **Use settings** でそのときの設定に戻せます。→ [レンダリング](reference/rendering.md#設定の保存)
 - **大域照明の光の配分が見直されました。** Global Illumination では開けた面が明るく平坦に
   なり、白いチューブの陰影が消えていました。Quality に **GI lighting** の 5 段階が加わり、
   0 はレイトレースと同じ配光、4 (既定) は正面光をキーライトと照り返しに移した配光です。
-  すべての方式に効く **Lights** (Light intensity / Flash fraction) が加わり、GI intensity /
+  すべての方式に共通の **Lights** (Light intensity / Flash fraction) が加わり、GI intensity /
   GI environment はウィンドウから外れ、GI quality は GI samples (8 / 32 / 64 / 256) の
   選択になりました。→ [レンダリング](reference/rendering.md#gi-lighting)
 - **Renderer どうしが交わる線 (Contact edges) を、エッジ線の設定が異なる Renderer の間に
@@ -511,7 +511,7 @@
   なります。→ [File メニュー](menu/file.md)
 - **重ね合わせたあとに原子のクリックがずれる不具合が修正されました。** tube / ribbon /
   cartoon で、原子が移動前の位置で選ばれていました。
-- **Paint の着色が Renderer に効くようになりました。** Color パネルは Renderer を選んでいても
+- **Paint の着色が Renderer に反映されるようになりました。** Color パネルは Renderer を選んでいても
   Object に書き込んでいたため、ribbon / cartoon / tube では何も起きませんでした。対象は
   シーンツリーの選択に追従し、Paint の **Default** が二次構造ごとの標準の塗り分けになりました
   (従来 "Default" と表示されていたスタイルは **Molecule color**)。→ [サイドパネル](ui/side-panels.md)
@@ -524,7 +524,7 @@
   矩形 / 投げ縄選択、Molecular structure パネルが対象です。件数は 100 件 (従来 40 件) に
   なりました。→ [選択ビルダー](ui/selection-builder.md#history)
 - **Windows / Linux で、シーンツリーや Paint の表に対する ++ctrl+c++ / ++ctrl+v++ などが
-  効くようになりました。** テキスト入力欄の外ではメニューのショートカットが働いていませんでした。
+  動作するようになりました。** テキスト入力欄の外ではメニューのショートカットが働いていませんでした。
   → [キーボードショートカット](reference/shortcuts.md)
 - **そのほか:** ダークテーマの補助的な文字が暗すぎて、シーンツリーの開閉マークなどが無効に
   見えていたのが直りました。atomintr のラベルのフォントは、インストールされているフォントから
@@ -597,7 +597,7 @@
 - **ノードの名前を変更している途中の ++backspace++ で、そのノードが削除される
   不具合が修正されました。**
 - **New Renderer やファイルを開くダイアログで、シーンに定義した名前付きの選択が
-  効くようになりました。** これまでは選択が無視され、全原子を表示する Renderer が
+  正しく適用されるようになりました。** これまでは選択が無視され、全原子を表示する Renderer が
   作られていました。→ [選択式の文法](reference/selection.md)
 - **Scene メニューの Background に色見本が付き、Use color proofing にチェックが
   付くようになりました** → [Scene メニュー](menu/scene.md)
@@ -664,7 +664,7 @@
   これまで反応していませんでした。**Delete** ボタンは選んだノードすべてを削除するようになり、
   ++delete++ / ++backspace++ キーでも削除できます。→ [サイドパネル](ui/side-panels.md)
 - **Paint の表も複数選択できるようになりました。** ++cmd++ / ++ctrl++ + クリックと
-  ++shift++ + クリックで選び、削除・Cut・Copy が選んだ行すべてに効きます。ツールバーは
+  ++shift++ + クリックで選び、削除・Cut・Copy は選んだ行すべてが対象になります。ツールバーは
   行の追加・削除と並べ替えの 4 つになり、**Delete all** と **Cut / Copy / Paste** は
   行の右クリックメニューに移りました。→ [サイドパネル](ui/side-panels.md)
 - **ダイアログの中でコピー &amp; ペーストができるようになりました (macOS)。** ダイアログを
@@ -685,7 +685,7 @@
 - **インク画風のレンダリングを作り込めるようになりました。** Umbreon (NPR)
   バックエンドに **Detail** タブが加わり、ハッチングのレイヤ (線の角度・間隔・太さ、
   点の大きさなど) と陰影の付き方を編集できます。**Mark width** が網点や点描の
-  スタイルにも効くようになりました。→ [NPR (インク画風レンダリング)](reference/rendering-npr.md)
+  スタイルにも反映されるようになりました。→ [NPR (インク画風レンダリング)](reference/rendering-npr.md)
 
 ### 分子表面
 

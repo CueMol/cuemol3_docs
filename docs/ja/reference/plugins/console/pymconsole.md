@@ -76,7 +76,7 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
   `fetch 3489, type=emd` と書きます。
 - `load` / `fetch` で読み込んだ分子は、PyMOL と同じように分けて表示されます。タンパク質は
   cartoon、核酸は nucl、炭素を含むリガンドは sticks、それ以外のリガンドは spheres、水は lines で、
-  続く `show` / `hide` / `as` / `color` はそれぞれの部分に効きます。
+  続く `show` / `hide` / `as` / `color` はそれぞれの部分ごとに適用されます。
 - 表示の名前は PyMOL に合わせています。PyMOL の `cartoon` は CueMol の ribbon で、PyMOL の
   `ribbon` は Cα を直線でつなぐ表示 (tracestick) です。
 - `save` は拡張子で形式を決めます。分子 (選択の範囲だけも可) は `.pdb` / `.sdf` / `.mol` /
@@ -102,10 +102,10 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 - `label` は PyMOL の式 (`"%s%s" % (resn, resi)` など) を受け付けます。
 - `distance` に `cutoff` か `mode` を付けると、2 つの選択のあいだの接触を一覧してラベルを付けます。
 - `quiet=1` や `async=0` のような PyMOL のキーワード引数・位置引数も受け付けます。
-  効かない引数は警告を出して無視します。
+  CueMol で意味を持たない引数は警告を出して無視します。
 - `stick_radius` / `transparency` / `line_width` / `solvent_radius` / `label_size` /
   `label_color` など、CueMol に同じ量がある PyMOL の設定は対応するプロパティに割り当てられます。
-  `show` の前に設定したものは、あとから表示されたものにも効きます。
+  `show` の前に設定したものは、あとから表示されたものにも適用されます。
 - `quit` / `exit` は CueMol3 を終了します。保存していない変更があれば確認が出ます。
   `quit force=true` (または `quit -f`) では確認せずに終了します。
 

@@ -91,7 +91,7 @@ Rainbow / Potential / Multi-gradient) が表示されます。
 | Multi-gradient | マップのヒストグラムとグラデーションバー上で、ストップ (色の区切り) を直接編集します。 |
 
 Paint の表は複数選択できます。++cmd++ / ++ctrl++ + クリックで行を選択に加える / 外す、
-++shift++ + クリックで範囲を選びます。削除・Cut・Copy は選んだ行すべてに効きます。
+++shift++ + クリックで範囲を選びます。削除・Cut・Copy は選んだ行すべてが対象になります。
 並べ替え (Move up / Move down) は 1 行だけ選んでいるときに使えます。
 行をドラッグして並べ替えることもできます。最後の行より下に落とすと末尾に移ります。
 行の移動と選択は、シーンツリーと同じキー (++up++ / ++down++ / ++home++ / ++end++ と
@@ -262,7 +262,7 @@ Style Sets パネルで選んだスタイルセットの、名前付きの色 (C
   クライオ電子顕微鏡マップは、読み込んだ時点で絶対値になっています。
 - **Redraw** で表示の中心を現在のビュー中心に更新します。**Cell** で単位格子を表示します。
 - マップ全体を表示している場合 (Renderer の **Region** が *Full map*) は、
-  **Extent** スライダと **Redraw** は効きません
+  **Extent** スライダと **Redraw** を操作しても表示は変わりません
   (→ [contour](../reference/renderers/contour.md#contour))。
 
 <!-- TODO(screenshot): Density map パネル。Level の入力欄と密度のヒストグラム (マーカー) -->
