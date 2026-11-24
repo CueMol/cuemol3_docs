@@ -13,9 +13,7 @@
     Windows 版のアプリ内のアップデートは 2.4.2.550 から入った機能です。2.4.2.550 以降の配布物を
     一度[手動でインストール](windows.md)してください。それ以降のリリースは、アプリの中から入れ替えられます。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): 新しいリリースの通知 -->
+![新しいリリースの通知。Release Page / Update ボタンが表示される](../../assets/images/install/update/available.webp){ width="341" .on-glb }
 
 ## 新しいリリースを確認する
 
@@ -36,10 +34,22 @@ Linux でも **Help &gt; Check for Updates...** はありますが、
    **Release Page** を押すと、そのリリースの GitHub のページを開きます。
 2. ダウンロードが始まり、進み具合が表示されます (**Cancel** で取り消せます)。
    ダウンロードしたファイルは検証されます。
-3. **Install Update** ダイアログにリリースノートが表示されます。**Restart and Update** を押すと、
-   保存していないシーンの確認を経て CueMol3 が終了し、新しい版に置き換わってから起動し直します。
+
+    ![ダウンロード中の通知。進み具合と Cancel ボタンが表示される](../../assets/images/install/update/downloading.webp){ width="346" .on-glb }
+
+3. **Install Update** ダイアログにリリースノートが表示されます。**Restart and Update** を押すと更新に進みます。
    **Later** を押した場合は、あとで通知の **Restart to Update** から続けられます。
-4. 起動すると、「CueMol3 has been updated to &lt;バージョン&gt;.」と表示されます。
+
+    ![Install Update ダイアログ。リリースノートと Later / Restart and Update ボタン](../../assets/images/install/update/install-dialog.webp){ width="410" .on-glb }
+
+4. **Installing CueMol3 &lt;バージョン&gt;** の画面に、新しい版を準備する進み具合が表示されます (この間は操作できません)。
+   準備が終わると、保存していないシーンの確認を経て CueMol3 が終了し、新しい版に置き換わってから起動し直します。
+
+    ![Restart and Update を押したあと、新しい版の準備中に表示される進み具合](../../assets/images/install/update/installing.webp){ width="370" .on-glb }
+
+5. 起動すると、「CueMol3 has been updated to &lt;バージョン&gt;.」と表示されます。
+
+    ![更新後の起動時に表示される通知](../../assets/images/install/update/updated.webp){ width="352" .on-glb }
 
 新しい版が起動しなかった場合は、元の版に戻して起動し直し、そのことを通知で知らせます。
 戻した版は、起動時の確認では再び案内されません。

@@ -3,9 +3,6 @@
 原子間の距離・角度・二面角を測り、その表示を図の一部として整える方法を学びます。
 題材は引き続きリゾチーム (`lysozyme`、simple 表示) です。
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
 ## 1. 距離を測る
 
 計測には、分子ビュー左端の**ツールパレット**の Measure グループを使います
@@ -18,7 +15,7 @@
 続けてクリックしていけば、複数の距離を次々に測れます。
 途中でやめたいときは ++esc++ を押すか、Navigate など他のツールに切り替えます。
 
-<!-- TODO(screenshot): Distance ツールで 2 原子を選び、距離ラベルが表示された状態 -->
+![Distance ツールで 2 原子をクリックしたところ。原子間に点線が引かれ、距離のラベル (6.59) が表示される](../../../assets/images/tutorials/basic/measure/distance.webp){ width="282" .on-glb }
 
 ## 2. 角度と二面角を測る
 
@@ -51,11 +48,13 @@ atomintr Renderer になるため、「活性部位の距離」「配位結合�
 1. シーンツリーで `measure` (atomintr) を右クリックします。
 2. **Style &gt; Dashed stick1** を選びます。
 
-点線が破線状の立体表示に変わります (**Dashed stick2** は別の太さのプリセットです)。
+点線が黄色の破線状の立体表示に変わり、距離のラベルは表示されなくなります
+(**Dashed stick2** は水色で、破線の模様が異なるプリセットです)。
 線の太さや破線の間隔などを個別に調整したい場合は、インスペクタで atomintr の
 プロパティを編集します (→ [atomintr](../../reference/renderers/atomintr.md))。
 
-<!-- TODO(screenshot): Dashed stick1 適用前後の計測表示の比較 -->
+![適用前。既定の細い点線と距離のラベル](../../../assets/images/tutorials/basic/measure/distance.webp){ width="282" .on-glb }
+![Dashed stick1 の適用後。黄色の立体的な破線になり、ラベルは消える](../../../assets/images/tutorials/basic/measure/dashed-stick1.webp){ width="282" .on-glb }
 
 ## 5. 計測項目を個別に削除する
 
@@ -82,4 +81,4 @@ atomintr Renderer になるため、「活性部位の距離」「配位結合�
 
 ---
 
-*確認対象: CueMol3 2.3.8.494*
+*確認対象: CueMol3 3.0.2.560*

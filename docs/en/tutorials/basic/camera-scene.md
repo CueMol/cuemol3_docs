@@ -5,9 +5,6 @@
 This page shows how to keep a favorite viewpoint as a **camera**, and how to save the whole working state to a **scene file** (`.qsc`) and resume from it.
 It continues from the previous page ([Coloring Renderers](coloring.md)).
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
 ## 1. Save a viewpoint as a camera
 
 While examining a molecule, you often want to come back to a particular view later.
@@ -25,7 +22,7 @@ The right-click menu of a camera row offers renaming, deleting, copy &amp; paste
 reading and writing camera files (`.cam`), editing display flags, and more
 (→ [Camera](../../reference/camera.md)).
 
-<!-- TODO(screenshot): The toolbar of the Camera panel and a newly created camera -->
+![The Camera panel. The toolbar buttons are to the right of the header, and the new camera camera_0 has been added to the list](../../../assets/images/tutorials/basic/camera-scene/camera-created.webp){ width="266" .on-glb }
 
 ## 2. Save the scene
 
