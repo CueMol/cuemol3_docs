@@ -8,9 +8,7 @@ The **macOS (Apple Silicon)** version of CueMol3 can check for new releases and 
 !!! warning "From 2.3.21.544 or earlier, install manually once"
     In-app updating was introduced in 2.4.0.546. CueMol3 2.3.21.544 and earlier do not have this mechanism, so [install manually](macos.md) a build of 2.4.0.546 or later once. Subsequent releases can be installed from within the app.
 
-!!! info "Screenshot planned"
-
-<!-- TODO(screenshot): the new-release notification -->
+![The new-release notification, with the Release Page and Update buttons](../../assets/images/install/update/available.webp){ width="341" .on-glb }
 
 ## Checking for new releases
 

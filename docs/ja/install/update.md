@@ -13,9 +13,7 @@
     Windows 版のアプリ内のアップデートは 2.4.2.550 から入った機能です。2.4.2.550 以降の配布物を
     一度[手動でインストール](windows.md)してください。それ以降のリリースは、アプリの中から入れ替えられます。
 
-!!! info "撮影予定"
-
-<!-- TODO(screenshot): 新しいリリースの通知 -->
+![新しいリリースの通知。Release Page / Update ボタンが表示される](../../assets/images/install/update/available.webp){ width="341" .on-glb }
 
 ## 新しいリリースを確認する
 
