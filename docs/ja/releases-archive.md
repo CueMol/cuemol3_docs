@@ -8,6 +8,66 @@
     修正の一件一件や内部の変更まで含む完全な記録は
     [GitHub の Releases](https://github.com/CueMol/cuemol3/releases) にあります。
 
+## 2.4.2.550 (2026-11-01)
+
+### 既定の見た目
+
+- **読み込んだ分子に、分子ごとに違う色が付くようになりました。** 色覚の多様性に配慮した
+  パレット (Okabe-Ito) から、シーンに読み込んだ順に 1 色ずつ割り当てます。ヘリックスとシートは
+  その色、核酸は色相を少しずらした色、コイルなどは白っぽくした色です。これまでは、どの分子も
+  同じ 4 色で塗られていました。→ [Coloring](reference/coloring.md#paint)
+- 今回の実装では色は qsc ファイル内に保存されるようになったため、もし今後 CueMol3 側の
+  既定色が変更になったとしても、保存時と同じ色で開かれます。
+- パレットは、スタイルファイルに `<palette id="default_paint" value="tolbright"/>` と書くと
+  切り替えられます (`tolbright` / `tolvibrant` / `tolmuted` / `tollight` / `brewerset2` /
+  `brewerdark2` / `tableau10`)。GUI からは切り替えられません。
+- 既定の ribbon と nucl の表示設定が若干変更となりました。
+
+### PDB からの取得 (Get PDB)
+
+- **EMDB の電顕マップを取得できるようになりました。** ID 欄に EMDB ID (`EMD-11638` /
+  `emd_11638`) も入力できます。電顕構造の PDB ID を入れると、2Fo-Fc / Fo-Fc の代わりに、
+  そのエントリの EMDB のマップを選べます (サイズ・格子・推奨レベルを表示、取得元は wwPDB / EBI)。
+  マップは登録者の推奨レベル (無ければ上位 1 %) の等値面で表示されます。
+- **入力中に、エントリのタイトル・手法・分解能・EMDB ID が表示されるようになりました。**
+- **キーワードでエントリを探せるようになりました。** ID 欄に ID 以外の文字列を入れて
+  ++enter++ (または **Search**) を押します。手法で絞り込み、関連度・分解能・新しい順に
+  並べ替えられ、**More** で続きを読み込めます。行を選ぶと、その ID を入力したのと同じ状態に
+  なります。検索した語も入力の履歴に残ります。
+- ID 欄のラベルは **PDB or EMDB ID, or keywords** になり、取得の項目は **Coordinates** /
+  **Density maps** / **Cryo-EM maps** の節に分かれました。→ [PDB からの取得](reference/get-pdb.md)
+
+### Console と MCP
+
+- **`fetch_emdb` で EMDB の電顕マップを取得できるようになりました** (AI Agent と MCP からも
+  使えます)。EMDB ID か、電顕構造の PDB ID を指定します。PyM console では
+  `fetch EMD-3489` / `fetch 3489, type=emd` です。
+- **Renderer を指定せずに読み込んだ分子が、PyMOL に近い表示で描かれるようになりました**
+  (`load` / `fetch`、PyM console、MCP、AI Agent)。タンパク質は ribbon、核酸は nucl、
+  炭素を含むリガンドは棒 (ballstick)、それ以外のリガンドは球 (cpk)、水は simple です。
+  これまでは simple 1 つでした。**File &gt; Open File...** と **Get PDB** で開くときは従来どおりです。
+- PyM console の `show` / `hide` / `as` / `color` は、これらの部分にそれぞれ効きます。
+  PyMOL の `cartoon` は ribbon、`ribbon` は Cα の trace (tracestick) で描きます。
+  → [PyM console](reference/plugins/console/pymconsole.md#対応コマンド)
+- **mmCIF を読む `load_mmcif` が加わりました** → [コマンド一覧](reference/plugins/console/commands.md)
+
+### 自動アップデート
+
+- **Windows 版も、アプリの中でアップデートできるようになりました** (macOS と同じく
+  **Check for Updates...**)。更新のたびに管理者権限の確認 (UAC) が出ます
+  (`CueMol3 Updater.exe`)。新しい版が起動しなかったときは元の版に戻ります。2.4.1.547 以前の
+  Windows 版からは、2.4.2.550 を一度手動でインストールしてください。
+  → [アップデート](install/update.md#windows-の場合)
+
+!!! warning "以前のバージョンから変わる点"
+    - **Console の `load_pdb` / `load_ccp4` などの形式ごとのコマンドは、ファイルの中身で形式を
+      判別しなくなりました。** 常にコマンド名の形式として読みます。形式がわからないファイルは
+      `load` で読んでください。なお `load_pdb` に mmCIF のファイルを渡してもエラーにはなりません
+      (mmCIF は `load_mmcif` で読みます)。
+    - **CueMol3 と CueMol2 で、既定の ribbon と nucl の形が違うようになりました。** CueMol2 は
+      以前の形のままです。CueMol3 で保存したシーンを CueMol2 で開くと CueMol2 の形で描かれ、
+      その逆も同じです。
+
 ## 2.4.1.547 (2026-10-24)
 
 ### 速度

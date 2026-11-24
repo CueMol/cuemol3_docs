@@ -247,6 +247,9 @@ OFF は従来の層単位の合成で、不透明度の和が 1 を超える半�
 重なった部分だけです。レンダリングにかかる時間はどちらでも変わりません。
 blendpng や POV-Ray と同じ結果が必要なときだけ OFF にしてください。
 
+分子ビューでも、ON のときと同じ方式で半透明の Renderer を重ねます
+(→ [半透明の Renderer の重なり方](renderers/common.md#半透明の-renderer-の重なり方))。
+
 ### Global Illumination
 
 Lighting が Global Illumination のときだけ表示されます。
@@ -327,4 +330,4 @@ Global Illumination、1200×1200 px) で描画され、投影方式はカメラ�
 
 ---
 
-*確認対象: CueMol3 2.3.14.525*
+*確認対象: CueMol3 3.0.5.576*

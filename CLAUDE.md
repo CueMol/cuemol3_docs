@@ -504,6 +504,35 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `ui/side-panels/camera-panel.webp`、New Tab ダイアログ、Scene の Compatibility、時間のかかる処理のカード、
   NPR の Detail タブ `reference/rendering-npr/detail.webp`)、英語版の追随、docs-verify の spec 追加と既存 spec の
   修正 (今回も e2e は実行していない)。
+- 前回同期: 2026-11-24 / cuemol2 `def5cc44` (tag `v3.0.5.576`, branch: develop) / CueMol3 `3.0.5.576`。
+  `7c11844a..def5cc44` の差分を全件確認した (リリースノート `docs/release_notes/v3.0.5.576.md` を含む。
+  3.0.4.570 / 571 は未リリースなので更新履歴は 3.0.3.565 から直接飛ばした)。次回はこの hash から差分確認を行う。
+  更新履歴は 6 本目になったので、2.4.2.550 を `releases-archive.md` へ移した。cuemol2 のローカル作業ツリーは
+  別ブランチだったので、根拠は `git show def5cc44:<path>` で取った。
+  今回の主題は **Fast GI (AO の新方式、既定)**・**分子ビューへのマテリアルの反映**・**半透明の Renderer の合成**
+  (ユーザー指示によりアピールする。`reference/renderers/common.md` に「半透明の Renderer の重なり方」を新設)・
+  **密度マップの Level のヒストグラム**・**動画の Quality**。`reference/scene.md` の Ambient occlusion を
+  Method / Fast GI / GTAO に分け、`## Lighting` (Brightness) を新設した。
+  **ユーザー指示により `reference/renderers/material.md` を解説ページとして拡充した** (場所は renderers の下のまま)。
+  表に「分子ビュー」列を足し、`## 見え方の比較` に分子ビューと Umbreon の図を系統ごとに並べた。図は
+  `~/Desktop/files/1crn_material.qsc` (ユーザー提供) を起動中の CueMol3 で開き、tritium_cli で
+  `set_prop 1crn/dsurface1.material, <名前>` → 分子ビューは `export_image <path>, 800, 600`、Umbreon は
+  `render_image <path>, 800, 600` で撮った (toon の分子ビューだけ `aoEnabled` を false にして撮影)。
+  **docShot ではない手作りの図** (`docs/assets/images/reference/renderers/material/{view,umbreon}-*.webp`)。
+  **ユーザー指示により図に入れなかったもの**: `default` (`matte_plastic` と同じ。本文にそう書いた)、
+  `metallic_chrome` / `metallic_copper` / `stone35` / `wood31` (Umbreon 側の対応が不十分。分子ビューでは
+  `default` と同じ見た目)。「レイトレーシングのみ」という書き方はしない (ユーザー指示。出力先で
+  分子ビュー / レンダリングウィンドウと書き分ける)。色ごとのマテリアル (`{material:...}`) は分子ビューに
+  反映されない (cuemol2 `docs/architecture/renderer-material.md` §7)。例は ceramic / diff_metal / matte に差し替えた。
+  **書かなかったもの**: Umbreon のエッジの新設定 (`umbreon.edgeMethod` / `screenEdgeDepth` / `screenEdgeJump`。
+  GUI が無い) と回転中のエッジの点滅の解消 (不具合修正)、フォーカスリングとパネルの見出しの見た目、CueMol2 の
+  py312 ビルドの廃止、Fast GI のベイクの性能改善、透明背景での書き出しの修正。
+  **開発側への指摘**: Fast GI が有効のとき、白い背景の書き出し (`export_image`) が RGB 231 の灰色になる
+  (AO を無効にすると 255)。material の比較図の分子ビューの背景が揃っていないのはこのため。
+  **未着手の残件**: スクリーンショット (Scene インスペクタの AO / Lighting、Density map パネルの
+  ヒストグラム、動画の出力設定。既定の AO と `default` マテリアルが変わったので分子ビューの既存の図は
+  ほぼすべて見た目が古い。今ある図は差し替えまで残す (ユーザー指示))、英語版の追随 (material.md の図も)、
+  docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
