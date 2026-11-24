@@ -13,6 +13,63 @@
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
 
+## 3.0.5.576 (2026-11-24)
+
+### 分子ビューの陰影 (Fast GI)
+
+- **アンビエントオクルージョンに新しい方式 Fast GI が加わり、既定になりました。** 分子表面・CPK・
+  cartoon の凹みやサブユニットの間がはっきり暗くなり、奥行き感が強く出ます。Scene のプロパティの
+  **Ambient occlusion &gt; Method** で、以前からの GTAO と切り替えることができます。
+  → [Scene](reference/scene.md#ambient-occlusion)
+- Fast GI では、照り返しの強さ (**Indirect light**) と大きな凹みの陰影の強さ (**Baked occlusion**) を
+  調整できます。
+- Scene のプロパティに **Lighting &gt; Brightness** が加わりました。陰影の付き方を保ったまま、
+  シーン全体の明るさを変えることができます。→ [Scene](reference/scene.md#lighting)
+- 新しいシーンは、アンチエイリアシングが **High**、アンビエントオクルージョンが**有効**
+  (Preset は **Medium**) で作られるようになりました。New Tab ダイアログで保存した既定はそのまま使われます。
+
+### マテリアル
+
+- **Renderer のマテリアル (質感) が分子ビューにも反映されるようになりました。** 以前は
+  レンダリングウィンドウで書き出す画像にだけ反映されていました。レンダリングウィンドウの見え方も、
+  分子ビューに合わせて調整されています。→ [マテリアル](reference/renderers/material.md)
+- 釉薬のかかった陶器のような **`ceramic`**、磨いたプラスチックの **`plastic`**、つや消しの
+  **`matte_plastic`** が加わりました。既定 (`default`) は `matte_plastic` と同じ、つや消しの
+  プラスチックになりました。
+- 金属 (`diff_metal` / `spec_metal`) は空のグラデーションを映し、ハイライトに地の色が付くように
+  なりました。`toon1` / `toon2` は、アンビエントオクルージョンが無効のとき POV-Ray に近い平らな
+  階調になります。
+
+### 半透明の Renderer
+
+- **半透明の Renderer が、分子ビューでもレンダリングウィンドウと同じ方式で重なるようになりました。**
+  1 つの Renderer の中ではいちばん手前の面だけが見え、半透明の Renderer どうしが重なっても
+  描く順番によらず同じ色になります。**Label on top** のラベルは上に表示されたままです。
+- 半透明の表面で分子を包んでも、Fast GI で中の構造が暗くならなくなりました。
+  → [半透明の Renderer の重なり方](reference/renderers/common.md#半透明の-renderer-の重なり方)
+
+### 密度マップ
+
+- **Density map パネルの Level が、マップの密度のヒストグラムになりました。** ヒストグラム上の
+  マーカーをドラッグするかクリックしてレベルを決めます (++shift++ で細かく、++esc++ で取り消し)。
+  値を入力欄に打ち込むこともできます。→ [サイドパネル](ui/side-panels.md#density-map-パネル)
+
+### 動画
+
+- **H.264 / H.265 の動画を、画質の段階 (Quality: High / Standard / Small file) で
+  エンコードするようになりました。** 以前の既定の 1024 kbps では、細い線や輪郭がブロック状に
+  崩れていました。一定のビットレートで指定する場合は **Rate control** で Bit rate を選びます
+  (既定 10240 kbps)。→ [レンダリングウィンドウ](ui/rendering-window.md#動画-movie-モード)
+
+!!! warning "以前のバージョンから変わる点"
+    - **新しいシーンの見た目が変わります。** アンビエントオクルージョン (Fast GI) が有効になり、
+      既定のマテリアルにも弱いハイライトが付きます。以前のように陰影なしで始めたいときは、
+      New Tab ダイアログでアンビエントオクルージョンを無効にしてください。
+    - **3.0.3.565 以前に保存したシーンは、GTAO と当時の設定で開きます。** 保存し直しても
+      同じ見た目のままです。Fast GI にするには、Scene のプロパティで **Method** を切り替えてください。
+    - **マテリアルを指定していない Renderer も、レンダリングウィンドウでの見え方が変わります。**
+      既定のマテリアルが、つや消しのプラスチックになったためです。
+
 ## 3.0.3.565 (2026-11-18)
 
 ### シーンの見た目 (CueMol3 / Legacy mode)
@@ -236,73 +293,13 @@
     - **tritium_cli の PyM console のプロンプトが `PyMOL <ディレクトリ> ❯` になりました**
       (以前は `pymol`)。
 
-## 2.4.2.550 (2026-11-01)
-
-### 既定の見た目
-
-- **読み込んだ分子に、分子ごとに違う色が付くようになりました。** 色覚の多様性に配慮した
-  パレット (Okabe-Ito) から、シーンに読み込んだ順に 1 色ずつ割り当てます。ヘリックスとシートは
-  その色、核酸は色相を少しずらした色、コイルなどは白っぽくした色です。これまでは、どの分子も
-  同じ 4 色で塗られていました。→ [Coloring](reference/coloring.md#paint)
-- 今回の実装では色は qsc ファイル内に保存されるようになったため、もし今後 CueMol3 側の
-  既定色が変更になったとしても、保存時と同じ色で開かれます。
-- パレットは、スタイルファイルに `<palette id="default_paint" value="tolbright"/>` と書くと
-  切り替えられます (`tolbright` / `tolvibrant` / `tolmuted` / `tollight` / `brewerset2` /
-  `brewerdark2` / `tableau10`)。GUI からは切り替えられません。
-- 既定の ribbon と nucl の表示設定が若干変更となりました。
-
-### PDB からの取得 (Get PDB)
-
-- **EMDB の電顕マップを取得できるようになりました。** ID 欄に EMDB ID (`EMD-11638` /
-  `emd_11638`) も入力できます。電顕構造の PDB ID を入れると、2Fo-Fc / Fo-Fc の代わりに、
-  そのエントリの EMDB のマップを選べます (サイズ・格子・推奨レベルを表示、取得元は wwPDB / EBI)。
-  マップは登録者の推奨レベル (無ければ上位 1 %) の等値面で表示されます。
-- **入力中に、エントリのタイトル・手法・分解能・EMDB ID が表示されるようになりました。**
-- **キーワードでエントリを探せるようになりました。** ID 欄に ID 以外の文字列を入れて
-  ++enter++ (または **Search**) を押します。手法で絞り込み、関連度・分解能・新しい順に
-  並べ替えられ、**More** で続きを読み込めます。行を選ぶと、その ID を入力したのと同じ状態に
-  なります。検索した語も入力の履歴に残ります。
-- ID 欄のラベルは **PDB or EMDB ID, or keywords** になり、取得の項目は **Coordinates** /
-  **Density maps** / **Cryo-EM maps** の節に分かれました。→ [PDB からの取得](reference/get-pdb.md)
-
-### Console と MCP
-
-- **`fetch_emdb` で EMDB の電顕マップを取得できるようになりました** (AI Agent と MCP からも
-  使えます)。EMDB ID か、電顕構造の PDB ID を指定します。PyM console では
-  `fetch EMD-3489` / `fetch 3489, type=emd` です。
-- **Renderer を指定せずに読み込んだ分子が、PyMOL に近い表示で描かれるようになりました**
-  (`load` / `fetch`、PyM console、MCP、AI Agent)。タンパク質は ribbon、核酸は nucl、
-  炭素を含むリガンドは棒 (ballstick)、それ以外のリガンドは球 (cpk)、水は simple です。
-  これまでは simple 1 つでした。**File &gt; Open File...** と **Get PDB** で開くときは従来どおりです。
-- PyM console の `show` / `hide` / `as` / `color` は、これらの部分にそれぞれ効きます。
-  PyMOL の `cartoon` は ribbon、`ribbon` は Cα の trace (tracestick) で描きます。
-  → [PyM console](reference/plugins/console/pymconsole.md#対応コマンド)
-- **mmCIF を読む `load_mmcif` が加わりました** → [コマンド一覧](reference/plugins/console/commands.md)
-
-### 自動アップデート
-
-- **Windows 版も、アプリの中でアップデートできるようになりました** (macOS と同じく
-  **Check for Updates...**)。更新のたびに管理者権限の確認 (UAC) が出ます
-  (`CueMol3 Updater.exe`)。新しい版が起動しなかったときは元の版に戻ります。2.4.1.547 以前の
-  Windows 版からは、2.4.2.550 を一度手動でインストールしてください。
-  → [アップデート](install/update.md#windows-の場合)
-
-!!! warning "以前のバージョンから変わる点"
-    - **Console の `load_pdb` / `load_ccp4` などの形式ごとのコマンドは、ファイルの中身で形式を
-      判別しなくなりました。** 常にコマンド名の形式として読みます。形式がわからないファイルは
-      `load` で読んでください。なお `load_pdb` に mmCIF のファイルを渡してもエラーにはなりません
-      (mmCIF は `load_mmcif` で読みます)。
-    - **CueMol3 と CueMol2 で、既定の ribbon と nucl の形が違うようになりました。** CueMol2 は
-      以前の形のままです。CueMol3 で保存したシーンを CueMol2 で開くと CueMol2 の形で描かれ、
-      その逆も同じです。
-
 ---
 
-2.4.1.547 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
+2.4.2.550 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
 
 ## 関連項目
 
-- [過去のリリース](releases-archive.md) — 2.4.1.547 以前の更新履歴
+- [過去のリリース](releases-archive.md) — 2.4.2.550 以前の更新履歴
 - [CueMol2 からの変更点](changes/index.md) — CueMol2 と CueMol3 の違い
 - [開発状況と未実装機能](changes/status.md) — 現時点で残っている制限
 - [ダウンロード](install/index.md#ダウンロード) — 配布物の入手方法

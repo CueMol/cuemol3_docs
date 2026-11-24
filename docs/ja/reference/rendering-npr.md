@@ -77,7 +77,7 @@ Umbreon (NPR) の **Quality** セクションは、写実側の Umbreon から�
 - **Lighting** は **Raytrace only** (**既定**) と **Ambient Occlusion** の 2 つだけです。
   ハッチングを行うと大域照明は無効になるため、**GI lighting の軸はありません**。
 - **Supersampling** の意味は同じです。ハッチングの最小間隔は出力ピクセルではなく
-  スーパーサンプリング後の格子で決まるため、細かいスタイルではここを上げると効きます。
+  スーパーサンプリング後の格子で決まるため、細かいスタイルではここを上げてください。
 
 そのほかの個別設定 (Lights / Ambient Occlusion / Shadows / Edges / Transparency) は
 [レンダリング](rendering.md#個別の設定)と共通です (Lights の既定値だけは Light intensity 1.55 /
@@ -154,7 +154,7 @@ Tone fog / Fill posterize) が入っています。
     分子ビューの照明は明るく平坦なため、スタイルによっては既定のままだと
     ハッチングが疎になります。まず Strength、次に Curve を調整してください。
 
-### 効かない設定は出ません
+### 使われない設定は表示されません
 
 画に影響しない項目は、**隠れる**か**無効**になります。
 
