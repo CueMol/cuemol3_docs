@@ -28,6 +28,13 @@ CueMol2 のようなモーダルダイアログはありません。
 画面空間アンビエントオクルージョンの設定です。
 分子の凹んだ部分に陰影を落として立体感を強調します。
 
+| アンビエントオクルージョンなし | GTAO | Fast GI |
+|---|---|---|
+| ![アンビエントオクルージョンなしで表示した分子表面](../../assets/images/reference/scene/ao-off.webp){ width="200" .on-glb } | ![GTAO で表示した分子表面](../../assets/images/reference/scene/ao-gtao.webp){ width="200" .on-glb } | ![Fast GI で表示した分子表面](../../assets/images/reference/scene/ao-fastgi.webp){ width="200" .on-glb } |
+
+同じ分子表面を、アンビエントオクルージョンなし・GTAO・Fast GI で表示した図です。Fast GI では、
+中央の穴やサブユニットの間の大きな凹みまで暗くなり、奥行きがはっきりします。
+
 Enabled
 :   アンビエントオクルージョンの有効・無効。既定は**無効**です。
 
