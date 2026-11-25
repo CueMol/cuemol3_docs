@@ -11,7 +11,9 @@ cuetty --input scene.qsc --render out.png --width 1920 --height 1080
 
 ## 入手
 
-cuetty 単体の配布物は、Linux (x86-64) 用の `cuetty-<version>-linux-x64.tar.gz` です。
+cuetty は Linux (x86-64) 用の `cuetty-<version>-linux-x64.tar.gz` として配布しています。
+macOS / Windows の CueMol3 には含まれていません。起動中の CueMol3 に画像を書き出させる場合は
+[tritium_cli](plugins/console/cli.md) を使います。
 [GitHub の Releases](https://github.com/CueMol/cuemol3/releases) から入手します。
 展開した場所で、パスを指定して実行します。root 権限や `LD_LIBRARY_PATH` の設定は要りません。
 
@@ -95,7 +97,7 @@ ffmpeg -r 30 -i frames/movie_frm_%04d.png -an -crf 23 -c:v libx264 -f mp4 \
     -vf "fps=30,format=yuv420p" -y movie.mp4
 ```
 
-### クラスタで分けて描く
+### PC クラスタを使った分散レンダリング
 
 フレームを複数のジョブに分けて、別々のノードで並行して描くことができます。
 Slurm の array job の例です。

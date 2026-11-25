@@ -554,8 +554,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `rendering.md` の「コマンドラインでのレンダリング」は案内と Python の経路だけにした。旧記述は
   `--camera` (`-c`)・`-W` / `-H` を cuetty と Python の共通のように書いていたが、cuetty の `-c` は
   `--config` で `-W` / `-H` は無い (Python 側の短縮形) ので、Python の経路の説明として直した。
-  cuetty が macOS / Windows のアプリに同梱されているかは未確認 (パッケージに cuetty が無いので
-  「単体の配布物は Linux 用の tarball」とだけ書いた)。`install/index.md` の配布物一覧には載せていない (ユーザー判断)。
+  **cuetty は macOS / Windows の CueMol3 には含まれない** (ユーザー確認。tritium_cli があるので実用上は
+  不要)。cuetty.md の「入手」にそう書き、tritium_cli へ案内した。動画のフレームを分ける節の見出しは
+  ユーザー指示により「PC クラスタを使った分散レンダリング」。`install/index.md` の配布物一覧には載せていない (ユーザー判断)。
   チュートリアル (`tutorials/basic/coloring.md`) の Paint の手順は、ユーザー指示により読み込み時の色に
   揃えて **Paint coloring &gt; Okabe-Ito &gt; Orange** にした (lysozyme がシーンの最初の分子のため)。
   **ユーザー指示により更新履歴に書かなかったもの**: 背景・線・ラベル・エッジ線が指定した色そのままで出る件
