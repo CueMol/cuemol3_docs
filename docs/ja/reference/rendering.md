@@ -149,11 +149,6 @@ Flash fraction / Ambient fraction をまとめて書き換えるもので、こ�
 | Soft | ぼけた影 |
 | Very soft | よりぼけた影 |
 
-!!! note "影はメッシュにのみ落ちます"
-    球や円柱で描かれる部分 ([cpk](renderers/cpk.md) や [ballstick](renderers/ballstick.md) の
-    原子・結合) には影が落ちません。分子の表現では Lighting だけで立体感が出るため、
-    既定は Off です。
-
 ## 個別の設定
 
 Quality セクションの下にあるアコーディオンです。プリセットで足りない場合にここを開きます。
@@ -282,26 +277,7 @@ Renderer 側の共通プロパティのうち、レンダリングウィンド�
 ## コマンドラインでのレンダリング
 
 GUI を使わずにシーンファイル (`.qsc`) から画像を書き出すこともできます。
-どちらの経路も Umbreon を使います。
-
-```sh
-cuetty --input scene.qsc --render out.png --width 1920 --height 1080
-```
-
-```sh
-python -m cuemol.umbreon_render scene.qsc out.png -W 1920 -H 1080
-```
-
-`--camera` (`-c`) でシーンに保存されたカメラを指定できます。省略した場合は、
-GUI がシーン保存時に書き込む現在のビュー (`__current`) を使います。
-
-どちらも、シーンに保存されたレンダリングウィンドウの設定 (→ [設定の保存](#設定の保存))
-をそのまま使って描画します。設定が保存されていないシーンは既定値 (Lighting が
-Global Illumination、1200×1200 px) で描画され、投影方式はカメラのものに従います。
-`--width` / `--height` (`-W` / `-H`) は保存されたサイズを上書きします。
-
-!!! warning "原子ラベルなどの文字は描画されません"
-    ラベルの入った図が必要な場合はレンダリングウィンドウをお使いください。
+→ [コマンドラインでのレンダリング (cuetty)](cuetty.md)
 
 ## 設定の保存
 
@@ -323,6 +299,7 @@ Global Illumination、1200×1200 px) で描画され、投影方式はカメラ�
 
 - [レンダリングウィンドウ](../ui/rendering-window.md) — ウィンドウの構成と操作
 - [NPR (インク画風レンダリング)](rendering-npr.md) — Umbreon (NPR) バックエンドの設定
+- [コマンドラインでのレンダリング (cuetty)](cuetty.md) — GUI を使わない画像・動画のフレームの書き出し
 - [Rendering メニュー](../menu/rendering.md) — メニュー項目と Export scene
 - [マテリアル](renderers/material.md) / [エッジライン](renderers/edge-lines.md)
 - [Scene](scene.md) — 分子ビュー側のアンビエントオクルージョンとアンチエイリアシング
@@ -330,4 +307,4 @@ Global Illumination、1200×1200 px) で描画され、投影方式はカメラ�
 
 ---
 
-*確認対象: CueMol3 3.0.5.576*
+*確認対象: CueMol3 3.0.6.577*

@@ -8,6 +8,63 @@
     修正の一件一件や内部の変更まで含む完全な記録は
     [GitHub の Releases](https://github.com/CueMol/cuemol3/releases) にあります。
 
+## 3.0.0.554 (2026-11-06)
+
+### バージョン番号とリポジトリ
+
+- **このリリースから、バージョン番号がアプリの名前に合わせて 3 から始まります。**
+- **ソースコードと配布物のリポジトリが [CueMol/cuemol3](https://github.com/CueMol/cuemol3) に
+  移りました。** 以前の `CueMol/cuemol2` のアドレスは転送されます。
+- macOS の 2.4.x と Windows の 2.4.2.550 からは、**Check for Updates...** でこのリリースに
+  アップデートできます。→ [アップデート](install/update.md)
+
+### ChX console
+
+- **ChimeraX 互換の console、ChX console が Console に加わりました** (プロンプトは `ChX>`)。`open` / `show` /
+  `hide` / `cartoon` / `style` / `color` / `rainbow` / `surface` / `label` / `view` / `turn` /
+  `select` / `name` / `info` / `distance` / `matchmaker` / `save` などの ChimeraX のコマンドと、
+  原子の指定 (`#1/A:10-20@CA`、`@<5`、`@@bfactor>50` など) を使えます。
+- コマンドは CueMol の操作に翻訳されて実行されるので、ほかの編集と同じように History に記録され、
+  Undo で戻せます。`open` で開いた分子は、ChimeraX の自動の表示に倣って描かれます。
+  `.cxc` のスクリプトも実行できます。
+  → [ChX console](reference/plugins/console/chx_console.md)
+
+### Console のモードがプラグインに
+
+- **PyM console と ChX console は、それぞれ同名のプラグインになりました。** どちらも既定で有効で、
+  **Settings &gt; Plugins &gt; Installed** で無効にすると、そのモードがパネルの切り替えと tritium_cli から消えます。入力の履歴は引き継がれます。
+  → [プラグイン](reference/plugins/index.md)
+
+### tritium_cli
+
+- **ファイルを渡して、起動中の CueMol3 に開けるようになりました** (`tritium_cli 1crn.pdb map.ccp4`)。
+  `-i` を付けると、開いたあと対話モードに入ります。`.qax` / `.pml` / `.cxc` / `.txt` はスクリプトとして
+  実行します。
+- **`tritium_cli mcp` で、MCP クライアントと標準入出力でつなげるようになりました**
+  (`claude mcp add cuemol -- tritium_cli mcp`)。MCP Server プラグインが無効でも、その回に限り
+  MCP Server を開きます。→ [MCP Server](reference/plugins/mcp-server.md#tritium_cli-mcp-で登録する)
+- **`tritium_cli skill install` で、Claude Code から tritium_cli を使うための skill を
+  インストールできるようになりました。** そのほか `status` / `version` / `help <コマンド>` が加わりました。
+- npm の `@cuemol/tritium-cli` も 3.0.0 になりました。
+  → [tritium_cli](reference/plugins/console/cli.md)
+
+### シーンツリーと選択
+
+- **シーンツリーで複数の行を選んで Focus を押すと、すべてが収まるように表示するようになりました。**
+  → [サイドパネル](ui/side-panels.md#explorer)
+- **選択を少しずつ足していったときに、選択式が長くならないようになりました。** shift + クリックや
+  矩形・投げ縄での追加、Selection Builder、Console で作った選択式は、同じ原子を選ぶ短い式に
+  書き直されます。自分で打った選択式はそのままです。
+
+!!! warning "以前のバージョンから変わる点"
+    - **一度に編集できるのは 1 つのクライアントだけになりました。** tritium_cli や MCP クライアントが
+      実行している間に、ほかの tritium_cli や MCP クライアントから送った操作は `CueMol is busy` で
+      拒否されます。
+    - **Console の `center_view` は `focus_selection` に変わりました** (`zoom` / `center` はそのまま
+      使えます)。分子の選択は変えなくなりました。
+    - **tritium_cli の PyM console のプロンプトが `PyMOL <ディレクトリ> ❯` になりました**
+      (以前は `pymol`)。
+
 ## 2.4.2.550 (2026-11-01)
 
 ### 既定の見た目
