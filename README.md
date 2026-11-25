@@ -113,6 +113,71 @@ CI 帯域の消費と運用事故を避けるため踏襲しません)。次の�
 grep -rn "TODO(screenshot)" docs/
 ```
 
+## 注目の機能 (features/)
+
+CueMol3 の目玉の機能を 1 回に 1 つ紹介する、ブログ風のページです
+(`docs/ja/features/`、`docs/en/features/`)。記事ごとに YouTube の動画を埋め込み、
+同じ動画を付けて X に投稿します。動画の作成・YouTube へのアップロード・X への投稿は手作業です。
+
+### 運用
+
+- **1 記事 = 1 ページ**。ファイル名は `YYYY-MM-DD-<slug>.md` (例: `2026-11-29-rockspin.md`)。
+  slug は機能を表す英語。日付を入れるのは、フォルダの中で時系列に並び、同じ機能を
+  再び取り上げても名前がぶつからず、URL から記事の時点がわかるようにするため。
+  日付は本文の冒頭の行にも書く。
+- **ja と en を同じ PR で書く** (X の投稿と揃えるため。英語版を別 PR にする通常の運用の例外)。
+- **記事は書いた時点のスナップショット**。cuemol2 との同期作業では書き換えない
+  (`changes/status.md` と同じ扱い)。最新の動作はリンク先のマニュアルに任せる。
+  記事の事実の裏取りは、書くときにマニュアル本体と同じ基準 (cuemol2 のソース) で行う。
+- 一覧 (`features/index.md`) の先頭に 1 行足し、`mkdocs.yml` の ja / en の nav の
+  「注目の機能」/「Feature highlights」の `features/index.md` の下にも足す (新しい記事を上に)。
+- 動画はリポジトリに入れない (→ 上記「画像」)。YouTube に上げて埋め込む。
+  限定公開でも埋め込める。
+
+### 記事のひな形
+
+```markdown
+# <機能の名前>: <何ができるかを一言で>
+
+*YYYY-MM-DD / CueMol3 <version>*
+
+<div class="video-embed">
+<iframe src="https://www.youtube-nocookie.com/embed/<VIDEO_ID>?loop=1&playlist=<VIDEO_ID>"
+  title="<動画の説明>" loading="lazy"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<この機能で何ができるか、どんな場面で役に立つかを 2〜3 文で。>
+
+## 使ってみる
+
+1. <操作の要点を 3〜5 手順で。詳しい説明はマニュアルに任せる。>
+
+## もっと詳しく
+
+- [<マニュアルのページ>](../<path>.md)
+
+---
+
+*確認対象: CueMol3 <version>*
+```
+
+英語版は 1 行目に出典マーカー (`<!-- source: ja/features/YYYY-MM-DD-<slug>.md @ <hash> -->`) を付け、
+日付の行は `*YYYY-MM-DD / CueMol3 <version>*` のまま、フッタは `*Verified against: CueMol3 <version>*`。
+
+埋め込みの `?loop=1&playlist=<VIDEO_ID>` は、再生が終わっても繰り返すための指定
+(YouTube は `loop=1` だけでは繰り返さず、同じ ID を `playlist` にも渡す必要がある)。
+`<VIDEO_ID>` は 3 か所とも同じ ID にする。
+
+### 公開の手順
+
+1. 動画を作る (16:9、30〜60 秒程度、字幕かテロップで操作を示す)。
+2. YouTube にアップロードし、動画の ID を控える。
+3. ja / en の記事・一覧・nav を書いて PR を出し、main にマージする (公開される)。
+4. 公開されたページの URL を付けて、同じ mp4 を X に直接アップロードして投稿する
+   (日本語と英語の 2 本)。
+
 ## 英語版
 
 英語版は日本語版の**翻訳**です。事実の正本は日本語版 (さらにその正本は cuemol2 の実装) で、

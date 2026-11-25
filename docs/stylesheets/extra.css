@@ -77,3 +77,17 @@
   vertical-align: 0.05rem;
   white-space: nowrap;
 }
+
+/* YouTube embed in the feature highlights (the features/ pages). The wrapper
+ * keeps the player at 16:9 at any page width. */
+.md-typeset .video-embed {
+  aspect-ratio: 16 / 9;
+  margin: 1em 0;
+  max-width: 100%;
+}
+
+.md-typeset .video-embed iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}

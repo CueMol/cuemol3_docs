@@ -91,6 +91,9 @@ plugins:
                 - Changes in the interaction model: changes/ui-paradigm.md
                 - Merged, renamed and removed features: changes/features.md
                 - Development status and unimplemented features: changes/status.md
+            - Feature highlights:
+                - features/index.md
+                - RockSpin: features/2026-11-25-rockspin.md
             - Tutorials:
                 - tutorials/index.md
                 - Basics:
@@ -247,6 +250,9 @@ nav:
   - 更新履歴:
       - releases.md
       - 過去のリリース: releases-archive.md
+  - 注目の機能:
+      - features/index.md
+      - RockSpin: features/2026-11-25-rockspin.md
   - チュートリアル:
       - tutorials/index.md
       - 基本操作:
