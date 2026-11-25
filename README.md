@@ -142,7 +142,7 @@ CueMol3 の目玉の機能を 1 回に 1 つ紹介する、ブログ風のペー
 *YYYY-MM-DD / CueMol3 <version>*
 
 <div class="video-embed">
-<iframe src="https://www.youtube-nocookie.com/embed/<VIDEO_ID>"
+<iframe src="https://www.youtube-nocookie.com/embed/<VIDEO_ID>?loop=1&playlist=<VIDEO_ID>"
   title="<動画の説明>" loading="lazy"
   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -165,6 +165,10 @@ CueMol3 の目玉の機能を 1 回に 1 つ紹介する、ブログ風のペー
 
 英語版は 1 行目に出典マーカー (`<!-- source: ja/features/YYYY-MM-DD-<slug>.md @ <hash> -->`) を付け、
 日付の行は `*YYYY-MM-DD / CueMol3 <version>*` のまま、フッタは `*Verified against: CueMol3 <version>*`。
+
+埋め込みの `?loop=1&playlist=<VIDEO_ID>` は、再生が終わっても繰り返すための指定
+(YouTube は `loop=1` だけでは繰り返さず、同じ ID を `playlist` にも渡す必要がある)。
+`<VIDEO_ID>` は 3 か所とも同じ ID にする。
 
 ### 公開の手順
 
