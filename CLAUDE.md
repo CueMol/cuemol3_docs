@@ -568,6 +568,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   誤りだった (ユーザーの指摘。球・円柱 (cpk / ballstick) も影を受け・落とし、対象外はエッジ線だけ。
   umbreon `hit_shader.hpp` の `primShadows = !fromEdge && shadowsActive`)。**当たり前のことなので書かない**
   (ユーザー指示) ため、注記ごと削除した。en は未追随 (次の追随 PR で同じ注記を削除する)。
+  `reference/dotfiles.md` の「例: CueMol2 と同じ既定の色を使う」は、Legacy mode があるので意味がなく
+  誤解を招く (ユーザー指示) ため、「例: 読み込んだ分子の色のパレットを変える」(`<palette id="default_paint">`
+  とテーマ名の表) に差し替えた。根拠は `data/cuemol3_style.xml` と `docs/architecture/default-paint-palette.md`。
   3.0.5.576 の同期で挙げた**開発側への指摘 (Fast GI で白い背景が RGB 231 前後になる) は解消した**
   (`ao_composite_frag.glsl` が法線の無い画素にトーンカーブを掛けなくなった)。
   **未着手の残件**: スクリーンショット (`reference/renderers/material.md` の分子ビューの比較図は背景を揃えて
