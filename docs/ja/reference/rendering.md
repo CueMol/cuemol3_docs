@@ -292,13 +292,16 @@ cuetty --input scene.qsc --render out.png --width 1920 --height 1080
 python -m cuemol.umbreon_render scene.qsc out.png -W 1920 -H 1080
 ```
 
-`--camera` (`-c`) でシーンに保存されたカメラを指定できます。省略した場合は、
+cuetty のオプション、動画のフレームの書き出し、クラスタでの使い方は
+[コマンドラインでのレンダリング (cuetty)](cuetty.md) を参照してください。
+
+Python の経路では、`-c` でシーンに保存されたカメラを指定できます。省略した場合は、
 GUI がシーン保存時に書き込む現在のビュー (`__current`) を使います。
 
 どちらも、シーンに保存されたレンダリングウィンドウの設定 (→ [設定の保存](#設定の保存))
 をそのまま使って描画します。設定が保存されていないシーンは既定値 (Lighting が
 Global Illumination、1200×1200 px) で描画され、投影方式はカメラのものに従います。
-`--width` / `--height` (`-W` / `-H`) は保存されたサイズを上書きします。
+`-W` / `-H` は保存されたサイズを上書きします。
 
 !!! warning "原子ラベルなどの文字は描画されません"
     ラベルの入った図が必要な場合はレンダリングウィンドウをお使いください。
@@ -323,6 +326,7 @@ Global Illumination、1200×1200 px) で描画され、投影方式はカメラ�
 
 - [レンダリングウィンドウ](../ui/rendering-window.md) — ウィンドウの構成と操作
 - [NPR (インク画風レンダリング)](rendering-npr.md) — Umbreon (NPR) バックエンドの設定
+- [コマンドラインでのレンダリング (cuetty)](cuetty.md) — GUI を使わない画像・動画のフレームの書き出し
 - [Rendering メニュー](../menu/rendering.md) — メニュー項目と Export scene
 - [マテリアル](renderers/material.md) / [エッジライン](renderers/edge-lines.md)
 - [Scene](scene.md) — 分子ビュー側のアンビエントオクルージョンとアンチエイリアシング
@@ -330,4 +334,4 @@ Global Illumination、1200×1200 px) で描画され、投影方式はカメラ�
 
 ---
 
-*確認対象: CueMol3 3.0.5.576*
+*確認対象: CueMol3 3.0.6.577*

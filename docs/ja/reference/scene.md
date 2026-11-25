@@ -191,7 +191,7 @@ Legacy mode (CueMol2 look)
 - CueMol2 で作ったシーンファイルは Legacy mode で開き、CueMol2 で表示したときと同じ見た目になります。
 - 見た目はスタイルで決まるので、切り替えると既にある Renderer の見た目もすぐに変わります
   (Renderer ごとに値を設定し直した項目はそのままです)。
-- 分子を読み込んだときや Paint の **Default** を選んだときの色も見た目に従い、CueMol3 の見た目では
+- 分子を読み込んだときの色も見た目に従い、CueMol3 の見た目では
   分子ごとの色、Legacy mode では CueMol2 の 4 色 (sheet が SteelBlue、helix が khaki、nucleic が
   yellow、それ以外が FloralWhite) になります。すでに塗ってある分子の色は変わりません
   (→ [Coloring](coloring.md#paint))。
@@ -218,4 +218,4 @@ Legacy mode (CueMol2 look)
 
 ---
 
-*確認対象: CueMol3 3.0.5.576*
+*確認対象: CueMol3 3.0.6.577*

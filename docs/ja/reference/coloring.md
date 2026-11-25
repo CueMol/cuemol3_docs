@@ -10,6 +10,7 @@ Renderer をどのような規則で着色するかを決める設定です。
 
 | 種類 | 内容 | 対象 |
 |---|---|---|
+| [Molecule color](#分子側の着色-molcol) | 分子側の着色に従う | Renderer のみ |
 | [Paint](#paint) | 選択範囲と色の組を表で指定する | すべて |
 | [Solid](#solid) | 単一の色で塗る | すべて |
 | [CPK](#cpk) | 元素ごとに色を割り当てる | すべて |
@@ -30,21 +31,32 @@ Renderer をどのような規則で着色するかを決める設定です。
 選択範囲と色の組を表で指定します。上の行から順に評価され、
 最初にマッチした行の色が使われます。
 
-Coloring の種類で **Paint** を選ぶとサブメニューが開きます。**Default** は二次構造ごとの
-標準の塗り分け (sheet / helix / nucleic / `*` の 4 行) で始める Paint で、そのほかに
-スタイルとして定義された配色 (Woody / Red など) が並びます。**Molecule color** は
-Renderer の色を分子側の着色に従わせるスタイルで、Paint ではありません
-(→ [分子側の着色](#分子側の着色-molcol))。
+Coloring の種類で **Paint coloring** を選ぶとサブメニューが開き、どの配色の Paint で始めるかを選びます。
+どれを選んでも、二次構造ごとの塗り分けの行が入った表で始まります。
 
-**Default** の色は分子ごとに決まります。シーンに読み込んだ順に、色覚の多様性に配慮した
-パレット (Okabe-Ito) の色を 1 つずつ分子に割り当て、その色を主色にして、helix と sheet は
-主色そのまま、nucleic は色相を少しずらした色、`*` (コイルなど) は白っぽくした色で塗ります。
-分子を読み込んだときに付く着色もこの Default です。使った色はシーンに保存されるので、
-保存したシーンを開き直しても色は変わりません。
+| 項目 | 内容 |
+|---|---|
+| **CueMol2 default** | CueMol2 と同じ 4 色 (sheet が SteelBlue、helix が khaki、nucleic が yellow、それ以外が FloralWhite) |
+| **CueMol1 (woody)** | CueMol1 の既定の 3 色 (sheet が薄い緑、helix が薄い赤、それ以外が薄い黄) |
+| パレットのテーマ | テーマごとのサブメニューから、分子の主色にする色を選びます (下記)。 |
+| 単色のプリセット | Red / Orange / Yellow / Green / Cyan / Blue / Purple (色相の順)。**Renderer のみ** |
 
-[Legacy mode](scene.md#compatibility) のシーン (CueMol2 で作ったシーンを含む) では、Default は
-CueMol2 と同じ 4 色 (sheet が SteelBlue、helix が khaki、nucleic が yellow、それ以外が FloralWhite) で、
-分子ごとには変わりません。
+パレットのテーマには、色覚の多様性に配慮した **Okabe-Ito**、Paul Tol の **Tol bright** /
+**Tol vibrant** / **Tol muted** / **Tol light**、ColorBrewer の **Brewer Set2** / **Brewer Dark2**、
+**Tableau 10** があり、各色が名前と色見本付きで並びます。選んだ色を主色にして、helix と sheet は
+主色そのまま、nucleic は色相を少しずらした色、`*` (コイルなど) は白っぽくした色で塗ります
+(sheet / helix / nucleic / `*` の 4 行)。
+
+**Molecule color** は Renderer の色を分子側の着色に従わせるスタイルで、Paint ではありません
+(→ [分子側の着色](#分子側の着色-molcol))。Coloring の種類の先頭にあり、ribbon / cartoon / tube の
+Renderer はこの状態で作られます。
+
+分子を読み込んだときには、分子ごとに色が自動で付きます。シーンに読み込んだ順に、Okabe-Ito の
+色を 1 つずつ分子に割り当て、上と同じ規則で塗ります (同じ色をメニューから選んだときと同じ結果です)。
+使った色はシーンに保存されるので、保存したシーンを開き直しても色は変わりません。
+
+[Legacy mode](scene.md#compatibility) のシーン (CueMol2 で作ったシーンを含む) では、読み込んだときの
+着色は CueMol2 default と同じ 4 色で、分子ごとには変わりません。
 
 <!-- TODO(content): 行の追加・削除・並べ替え、選択式の指定、色の指定、
      マテリアル修飾子との組み合わせを記載 (ColorPane.tsx の Paint 表を参照) -->
@@ -164,4 +176,4 @@ Renderer ごとではなく分子 Object 側に着色を持たせ、複数の Re
 
 ---
 
-*確認対象: CueMol3 3.0.3.565*
+*確認対象: CueMol3 3.0.6.577*

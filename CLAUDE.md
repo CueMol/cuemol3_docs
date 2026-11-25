@@ -541,6 +541,34 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   ヒストグラム、動画の出力設定。既定の AO と `default` マテリアルが変わったので分子ビューの既存の図は
   ほぼすべて見た目が古い。今ある図は差し替えまで残す (ユーザー指示))、英語版の追随 (material.md の図も)、
   docs-verify の spec 追加と既存 spec の修正 (今回も e2e は実行していない)。
+- 前回同期: 2026-11-25 / cuemol2 `3c59b72f` (tag `v3.0.6.577`, branch: develop) / CueMol3 `3.0.6.577`。
+  `def5cc44..3c59b72f` の差分を全件確認した (リリースノート `docs/release_notes/v3.0.6.577.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、3.0.0.554 を
+  `releases-archive.md` へ移した。
+  今回の主題は **Paint coloring の配色の選択** (パレットのテーマの色 / CueMol2 default / CueMol1 (woody)、
+  Molecule color が Coloring の種類の先頭に、Default の項目の廃止)・**Fast GI の明るさ**・
+  **dsurface の Algorithm の既定が MeshMS**・**cuetty の Linux 版と動画のフレームの書き出し**・
+  **核酸の bysidech / bymainch**。
+  **ユーザー判断により `reference/cuetty.md` (コマンドラインでのレンダリング (cuetty)) を新設した**
+  (ja の nav のリファレンス、NPR の次。英訳は未着手)。根拠は cuemol2 の `cli/README.md` と `cli/cli_main.cpp`。
+  `rendering.md` の「コマンドラインでのレンダリング」は案内と Python の経路だけにした。旧記述は
+  `--camera` (`-c`)・`-W` / `-H` を cuetty と Python の共通のように書いていたが、cuetty の `-c` は
+  `--config` で `-W` / `-H` は無い (Python 側の短縮形) ので、Python の経路の説明として直した。
+  cuetty が macOS / Windows のアプリに同梱されているかは未確認 (パッケージに cuetty が無いので
+  「単体の配布物は Linux 用の tarball」とだけ書いた)。`install/index.md` の配布物一覧には載せていない (ユーザー判断)。
+  チュートリアル (`tutorials/basic/coloring.md`) の Paint の手順は、ユーザー指示により読み込み時の色に
+  揃えて **Paint coloring &gt; Okabe-Ito &gt; Orange** にした (lysozyme がシーンの最初の分子のため)。
+  **ユーザー指示により更新履歴に書かなかったもの**: 背景・線・ラベル・エッジ線が指定した色そのままで出る件
+  (Fast GI の白い背景が灰色になる件の修正) と `nolighting` が約 1.2 倍明るかった件。
+  **bysidech / bymainch は事実だけ `selection.md` に反映し、更新履歴には書いていない** (ユーザー指示)。
+  **書かなかったもの**: macOS で Coloring のドロップダウンがネイティブメニューになった件 (見た目)、
+  Windows のビルドの LLVM、半解像度 GTAO の既知の制限、線や label が AO を落とさなくなった件。
+  3.0.5.576 の同期で挙げた**開発側への指摘 (Fast GI で白い背景が RGB 231 前後になる) は解消した**
+  (`ao_composite_frag.glsl` が法線の無い画素にトーンカーブを掛けなくなった)。
+  **未着手の残件**: スクリーンショット (`reference/renderers/material.md` の分子ビューの比較図は背景を揃えて
+  撮り直せる。`reference/scene.md` の AO の比較図は Fast GI が明るくなったので古い。Color パネルの
+  Paint coloring のメニュー)、英語版の追随 (`cuetty.md` を含む)、docs-verify の spec 追加と既存 spec の修正
+  (今回も e2e は実行していない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 

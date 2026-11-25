@@ -100,9 +100,9 @@ ribbon / cartoon / tube / spline / tracestick は、既定で `DefaultHSCPaint` 
 分子の色に従って塗られます。このファイルはそのスタイルを、CueMol2 の 4 色で塗る Paint に
 置き換えます。nucl は `DefaultNucl` の色を yellow にします。
 
-- 色が付くのは Renderer の側です。分子の側の着色 (Paint の **Default** や、`$molcol` で
+- 色が付くのは Renderer の側です。分子の側の着色 (読み込んだときに付く色や、`$molcol` で
   分子の色に従う分子表面など) は、CueMol3 の分子ごとの色のままです。
-- Color パネルの Paint のサブメニューの **Molecule color** を選んだときも、分子の色ではなく
+- Color パネルの Coloring の種類で **Molecule color** を選んだときも、分子の色ではなく
   この 4 色になります。
 - スタイルで決まる色はシーンファイルに保存されません。このファイルを置く前に保存したシーンも
   4 色で開きます。逆に、このファイルの無い環境で開くと、分子ごとの色で表示されます。
@@ -124,4 +124,4 @@ ribbon / cartoon / tube / spline / tracestick は、既定で `DefaultHSCPaint` 
 
 ---
 
-*確認対象: CueMol3 3.0.3.565*
+*確認対象: CueMol3 3.0.6.577*
