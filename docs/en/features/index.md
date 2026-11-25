@@ -1,4 +1,4 @@
-<!-- source: ja/features/index.md @ d36d8f9 -->
+<!-- source: ja/features/index.md @ 064d24e -->
 # Feature highlights
 
 Each article introduces one of CueMol3's key features with a short video.
