@@ -13,4 +13,4 @@ For detailed instructions, see the manual pages linked from each article.
 Newest first.
 
 <!-- Add new articles at the top of the list below. Format: - **YYYY-MM-DD** [Title](YYYY-MM-DD-<slug>.md) — one-line description -->
-- **2026-11-22** [RockSpin: rock the molecule to show its depth](2026-11-22-rockspin.md) — a rocking view from a single animation element
+- **2026-11-25** [RockSpin: rock the molecule to show its depth](2026-11-25-rockspin.md) — a rocking view from a single animation element
