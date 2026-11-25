@@ -149,11 +149,6 @@ Flash fraction / Ambient fraction をまとめて書き換えるもので、こ�
 | Soft | ぼけた影 |
 | Very soft | よりぼけた影 |
 
-!!! note "影はメッシュにのみ落ちます"
-    球や円柱で描かれる部分 ([cpk](renderers/cpk.md) や [ballstick](renderers/ballstick.md) の
-    原子・結合) には影が落ちません。分子の表現では Lighting だけで立体感が出るため、
-    既定は Off です。
-
 ## 個別の設定
 
 Quality セクションの下にあるアコーディオンです。プリセットで足りない場合にここを開きます。

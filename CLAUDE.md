@@ -564,6 +564,10 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   **bysidech / bymainch は事実だけ `selection.md` に反映し、更新履歴には書いていない** (ユーザー指示)。
   **書かなかったもの**: macOS で Coloring のドロップダウンがネイティブメニューになった件 (見た目)、
   Windows のビルドの LLVM、半解像度 GTAO の既知の制限、線や label が AO を落とさなくなった件。
+  `reference/rendering.md` の Shadows の注記「影はメッシュにのみ落ちます」は、書いた時点 (umbreon `169ab1c`) から
+  誤りだった (ユーザーの指摘。球・円柱 (cpk / ballstick) も影を受け・落とし、対象外はエッジ線だけ。
+  umbreon `hit_shader.hpp` の `primShadows = !fromEdge && shadowsActive`)。**当たり前のことなので書かない**
+  (ユーザー指示) ため、注記ごと削除した。en は未追随 (次の追随 PR で同じ注記を削除する)。
   3.0.5.576 の同期で挙げた**開発側への指摘 (Fast GI で白い背景が RGB 231 前後になる) は解消した**
   (`ao_composite_frag.glsl` が法線の無い画素にトーンカーブを掛けなくなった)。
   **未着手の残件**: スクリーンショット (`reference/renderers/material.md` の分子ビューの比較図は背景を揃えて
