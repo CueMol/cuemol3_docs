@@ -93,6 +93,29 @@ Object と同じように Renderer の追加や色の設定ができます。操
 - 対称分子や単位格子を消すには、シーンツリーで `*symm` / `*unitcell` の Renderer を
   削除するか、目のアイコンで非表示にします。
 
+## 同じことをコマンドで
+
+本文の操作を [Console](../../reference/plugins/console/index.md) の native モードのコマンドで書くと、
+次のようになります。Console に 1 行ずつ入力します ([tritium_cli](../../reference/plugins/console/cli.md)
+からも実行できます)。各コマンドの引数は Console で `help <コマンド>` を実行すると確認できます
+(→ [Console のコマンド一覧](../../reference/plugins/console/commands.md))。
+
+```
+# 1. 結晶構造を読み込む
+fetch_pdb 1QIO, mmcif, cartoon
+# 2. 結晶学的情報を確認する (GUI のみ)
+# 3. 単位格子を表示する
+show_unit_cell 1qio
+# 4. 対称分子を表示する (ビュー中心から 20 Å 以内)
+show_symmetry 1qio, 20
+# 5. 対称分子を独立した Object にする (GUI のみ)
+# 6. 表示を調整・解除する (単位格子 1 つ分に切り替えてから、両方を削除する)
+show_symmetry 1qio
+delete 1qio/symm 1qio/unitcell
+```
+
+- `show_symmetry` で距離を省くと、Symm mol の **Unit cell** と同じく単位格子 1 つ分を表示します。
+
 ## 次のステップ
 
 - [電子密度マップの表示](density-map.md) — 同じ 1QIO で密度を確かめる
@@ -101,4 +124,4 @@ Object と同じように Renderer の追加や色の設定ができます。操
 
 ---
 
-*確認対象: CueMol3 2.3.8.494*
+*確認対象: CueMol3 3.0.6.577*

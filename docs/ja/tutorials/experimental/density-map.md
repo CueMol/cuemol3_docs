@@ -96,6 +96,35 @@ Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリ�
 密度マップ入りの図も、通常のシーンと同じ手順で書き出せます
 (→ [論文用の高解像度画像の書き出し](../figures/publication-images.md))。
 
+## 同じことをコマンドで
+
+本文の操作を [Console](../../reference/plugins/console/index.md) の native モードのコマンドで書くと、
+次のようになります。Console に 1 行ずつ入力します ([tritium_cli](../../reference/plugins/console/cli.md)
+からも実行できます)。各コマンドの引数は Console で `help <コマンド>` を実行すると確認できます
+(→ [Console のコマンド一覧](../../reference/plugins/console/commands.md))。
+
+```
+# 1. 座標と密度マップをまとめて取得する
+fetch_pdb 1QIO, mmcif, simple
+fetch_map 1QIO, 2fofc
+fetch_map 1QIO, fofc
+# 2. 表示を確認する (マップの Renderer とレベルの一覧を表示する)
+list_map_contours
+# 3. レベルと範囲を調整する
+set_map_contour 1qio_2fofc/contour1, level=1.5, alpha=0.6
+# 4. 注目部位に絞って表示する (活性部位の Glu35 と Asp52)
+zoom 1qio, "A.35,52.*"
+set_map_contour 1qio_*/*, extent=10
+recenter_map 1qio_*/*
+set_view slab=8
+hide 1qio_2fofc
+# 5. 図として仕上げる (→ 論文用の高解像度画像の書き出し)
+```
+
+- `1qio_*/*` は、2 つのマップ Object の contour Renderer (3 つ) をまとめて指定するワイルドカードです。
+- `set_map_contour` の `alpha` は、Density map パネルの **Transp** にあたる不透明度 (0〜1) です。
+- カンマを含む選択式 (`A.35,52.*`) は、引用符で囲みます。
+
 ## 次のステップ
 
 - [対称分子・単位格子の表示](symmetry.md) — 同じ 1QIO で結晶パッキングを見る
@@ -104,4 +133,4 @@ Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリ�
 
 ---
 
-*確認対象: CueMol3 3.0.5.576*
+*確認対象: CueMol3 3.0.6.577*

@@ -149,6 +149,43 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 分子データも `.qsc` に取り込まれ、ファイル単体で持ち運べるようになります
 (→ [File メニュー](../../menu/file.md))。
 
+## 同じことをコマンドで
+
+本文の操作を [Console](../../reference/plugins/console/index.md) の native モードのコマンドで書くと、
+次のようになります。Console に 1 行ずつ入力します ([tritium_cli](../../reference/plugins/console/cli.md)
+からも実行できます)。各コマンドの引数は Console で `help <コマンド>` を実行すると確認できます
+(→ [Console のコマンド一覧](../../reference/plugins/console/commands.md))。
+
+```
+# 1. 構造を取得する
+fetch_pdb 3UG9, mmcif, cartoon
+# 2. 視点を合わせる
+focus 3ug9
+# 3. cartoon の見た目を調整する (設定できるプロパティの一覧を表示する)
+props 3ug9/cartoon1
+# 4. ドメインごとに色を塗り分ける
+set_renderer_coloring 3ug9/cartoon1, paint-type-paint
+add_paint 3ug9/cartoon1, A.49:83.*, #E69F00
+add_paint 3ug9/cartoon1, A.84:317.*, #56B4E9
+add_paint 3ug9/cartoon1, A.318:342.*, #009E73
+set_mol_selection 3ug9, ""
+# 5. リガンドを ballstick で表示
+create_renderer 3ug9, ballstick, selection="r; RET"
+# 6. 背景と輪郭線で仕上げる
+set bgcolor, #FFFFFF
+apply_renderer_style 3ug9/cartoon1, EgLineNormal
+apply_renderer_style 3ug9/ballstick1, EgLineNormal
+# 7. カメラとシーンを保存する
+save_camera view1
+save_scene ~/3ug9.qsc, embedAll=true
+```
+
+- `add_paint` は、塗った範囲を分子の選択にもします。選択のハイライトが図に残らないように、
+  最後に `set_mol_selection` で選択を解除しています。
+- `;` やカンマを含む選択式 (`r; RET` など) は、引用符で囲みます。
+- `save_scene` は、スクリプトファイルにまとめて実行すると実行されません。1 行ずつ入力するか、
+  単独で実行します。
+
 ## 次のステップ
 
 - [論文用の高解像度画像の書き出し](publication-images.md) — この図をレイトレースで仕上げる
@@ -157,4 +194,4 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.6.577*

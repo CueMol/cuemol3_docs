@@ -88,6 +88,27 @@ DPI は画像のピクセル数には影響しません。書き出した PNG �
     設定の変更は Undo で戻せます。過去の設定に戻りたいときは結果の履歴の
     **Use settings** を使ってください (→ [レンダリング](../../reference/rendering.md#設定の保存))。
 
+## 同じことをコマンドで
+
+本文の操作を [Console](../../reference/plugins/console/index.md) の native モードのコマンドで書くと、
+次のようになります。Console に 1 行ずつ入力します ([tritium_cli](../../reference/plugins/console/cli.md)
+からも実行できます)。各コマンドの引数は Console で `help <コマンド>` を実行すると確認できます
+(→ [Console のコマンド一覧](../../reference/plugins/console/commands.md))。
+
+```
+# 2. 画面のまま PNG に書き出す (1200×1200 ピクセル、600 DPI)
+export_scene ~/3ug9.png, png, 1200, 1200, dpi=600
+# 3. レイトレースで仕上げる (Lighting を Raytrace only にして、1200×1200 で書き出す)
+set_render_settings "umbreon.useGI=false; umbreon.aoEnabled=false; umbreon.lightIntensity=1.55; umbreon.flashFraction=0.6; umbreon.ambientFraction=0.16"
+render_image ~/3ug9-rt.png, 1200, 1200
+# 4. 結果を確認して保存する (GUI のみ)
+```
+
+- `export_scene` に `transparent=true` を付けると、背景が透明な PNG になります。
+- `set_render_settings` の値は、レンダリングウィンドウの **Lighting** で **Raytrace only** を
+  選んだときと同じです。設定はシーンに保存され、レンダリングウィンドウにも反映されます。
+- `render_image` は結果をファイルに直接書き出します。レンダリングウィンドウの結果の履歴には残りません。
+
 ## 次のステップ
 
 - [レンダリング](../../reference/rendering.md) — 品質項目の詳細と既定値
@@ -95,4 +116,4 @@ DPI は画像のピクセル数には影響しません。書き出した PNG �
 
 ---
 
-*確認対象: CueMol3 2.3.13.523*
+*確認対象: CueMol3 3.0.6.577*
