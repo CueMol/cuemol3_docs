@@ -31,3 +31,14 @@ export async function checkField(scope: Locator, label: string): Promise<void> {
     const input = box.locator('input[type="checkbox"]');
     if (!(await input.isChecked())) await box.click();
 }
+
+/**
+ * Turn a labelled switch row (`SwitchField`) on or off. The input under the
+ * Blueprint switch does not take clicks, so the switch itself is clicked.
+ */
+export async function setSwitchField(scope: Locator, label: string, on: boolean): Promise<void> {
+    const row = fieldRow(scope, label);
+    const input = row.locator('input[type="checkbox"]').first();
+    if ((await input.isChecked()) !== on) await row.locator('.h3-form-switch').first().click();
+    if ((await input.isChecked()) !== on) throw new Error(`[docs-verify] switch "${label}" did not turn ${on ? 'on' : 'off'}`);
+}

@@ -9,10 +9,7 @@
     - **学ぶこと**: 画面のままの PNG の書き出しと、レイトレースによる仕上げの使い分け
     - **前提**: [タンパク質のリボン図の表示](ribbon-figure.md)
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。同じ構図の画面キャプチャとレイトレース結果の比較 -->
+![完成イメージ。レンダリングウィンドウに表示されたレイトレースの結果](../../../assets/images/tutorials/figures/publication-images/4-result.webp){ .on-glb }
 
 ## 1. 2 つの出力方法と使い分け
 
@@ -30,8 +27,10 @@
 **Rendering &gt; Export scene &gt; PNG image...** を選ぶと、保存先の指定に続いて
 オプション画面が出ます。
 
-- **サイズ**と**解像度 (DPI)** を指定できます。
-- **背景の透過**を有効にすると、背景が透明な PNG になります (スライドの重ね合わせに便利です)。
+- **サイズ** (**Width** / **Height**) と**解像度** (**Resolution (DPI)**) を指定できます。
+- **Transparent PNG** を有効にすると、背景が透明な PNG になります (スライドの重ね合わせに便利です)。
+
+![PNG options ダイアログ (1200×1200 ピクセル、600 DPI、Transparent PNG を有効)](../../../assets/images/tutorials/figures/publication-images/2-png-options.webp){ width="360" .on-glb }
 
 DPI は画像のピクセル数には影響しません。書き出した PNG を他のソフトウェアに貼り付けて
 印刷するときの**紙面上の実寸**を決める値です (例: 1200×1200 ピクセルを 600 DPI で
@@ -55,7 +54,8 @@ DPI は画像のピクセル数には影響しません。書き出した PNG �
    **Supersampling** (輪郭を滑らかにする設定) は既定のままで構いません。
 4. **Start Render** を押すとレンダリングが始まり、進捗が表示されます。
 
-<!-- TODO(screenshot): レンダリングウィンドウ。Image タブでサイズ選択 → Render タブの Quality セクション (Lighting = Raytrace only) -->
+![Image タブの Preset で 1200×1200 (600dpi) を選んだところ](../../../assets/images/tutorials/figures/publication-images/3-image-tab.webp){ width="380" .on-glb }
+![Render タブの Quality セクションで Lighting を Raytrace only にしたところ](../../../assets/images/tutorials/figures/publication-images/3-render-tab.webp){ width="380" .on-glb }
 
 !!! tip "陰影に奥行き感を出すなら Global Illumination"
     **Lighting** を **Global Illumination** (既定) にすると、大域照明による陰影づけで
