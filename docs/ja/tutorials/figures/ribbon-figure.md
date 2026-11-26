@@ -12,10 +12,7 @@
     - **学ぶこと**: cartoon の調整、ドメインごとの塗り分け、リガンドの ballstick、背景と輪郭線による仕上げ
     - **前提**: [クイックツアー](../../getting-started/quick-tour.md)
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。3UG9 の cartoon (ドメインごとに塗り分け) + レチナールの ballstick、白背景 + エッジライン -->
+![完成イメージ。3UG9 の cartoon をドメインごとに塗り分け、白背景にエッジラインを付けた](../../../assets/images/tutorials/figures/ribbon-figure/6-finished.webp){ .on-glb }
 
 ## 1. 構造を取得する
 
@@ -26,10 +23,11 @@
 3. 取得が終わると、Object 名と Renderer を指定する画面が出ます。
 4. **Renderer type** から **cartoon** を選び、そのほかは既定のまま作成します。
 
+    ![Get PDB ダイアログ (3UG9 を入力)](../../../assets/images/tutorials/figures/ribbon-figure/1-getpdb.webp){ width="380" .on-glb }
+    ![取得後の Open File Options ダイアログ](../../../assets/images/tutorials/figures/ribbon-figure/1-open-options.webp){ width="480" .on-glb }
+
 タンパク質部分が、二次構造を反映した cartoon 表示で描かれます
 (→ [cartoon](../../reference/renderers/cartoon.md))。
-
-<!-- TODO(screenshot): Get PDB ダイアログ (3UG9 入力済み) と、取得後の Renderer 指定画面 -->
 
 !!! tip "プリセットなら一度で作れます"
     **Renderer type** の Presets にある **Default preset 2** を選ぶと、タンパク質の cartoon・
@@ -63,20 +61,25 @@ Object (3UG9) を選び、パネル上部の **Focus** ボタンを押します�
 
 1. 左サイドパネルの **Explorer &gt; Color** パネルを開きます。
 2. 上部で cartoon の Renderer を選びます。
-3. Coloring の種類から **Paint** を選びます。
-4. 表に次の 3 行を作り、それぞれ好みの色を指定します。
+3. Coloring の種類から **Paint coloring** &gt; **Okabe-Ito** &gt; **Orange** を選びます。
+   二次構造ごとの標準の塗り分け (sheet / helix / nucleic / `*` の 4 行) が入った表が現れます。
+4. 表の一番上に次の 3 行を追加し、選択式と色を指定します (一番上の行を選んで追加ボタンを押すと、
+   その上に行が入ります)。
 
-| 領域 | 選択式 |
-|---|---|
-| N 末端ドメイン | `A.49:83.*` |
-| 膜貫通部 | `A.84:317.*` |
-| C 末端ドメイン | `A.318:342.*` |
+| 領域 | 選択式 | 色の例 |
+|---|---|---|
+| N 末端ドメイン | `A.49:83.*` | `#E69F00` (オレンジ) |
+| 膜貫通部 | `A.84:317.*` | `#56B4E9` (空色) |
+| C 末端ドメイン | `A.318:342.*` | `#009E73` (青緑) |
 
 Paint は上の行から順に評価され、最初にマッチした行の色が使われます
-(→ [Coloring](../../reference/coloring.md))。`A.49:83.*` は「chain A の残基番号 49〜83 の
+(→ [Coloring](../../reference/coloring.md))。3 行は二次構造の行より上にあるので、
+この範囲では領域の色が使われます。範囲は重ならないので、3 行どうしの順序は問いません。`A.49:83.*` は「chain A の残基番号 49〜83 の
 全原子」を表す書き方です (→ [選択式の文法](../../reference/selection.md))。
 
-<!-- TODO(screenshot): Color パネルで Paint にドメイン 3 行を設定した状態と、塗り分け後の分子ビュー -->
+![Paint の表の一番上にドメインの 3 行を追加した](../../../assets/images/tutorials/figures/ribbon-figure/4-paint-table.webp){ width="310" .on-glb }
+
+![ドメインごとに塗り分けた cartoon](../../../assets/images/tutorials/figures/ribbon-figure/4-painted.webp){ .on-glb }
 
 !!! note "CueMol2 との違い"
     CueMol2 にも Paint のパネルはありましたが、行 (エントリ) の編集は別のダイアログで
@@ -100,6 +103,9 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 2. **Renderer type** から **ballstick** を選びます。
 3. **Selection** にチェックを入れ、選択式に `r; RET` を入力します。
 4. **Create** を押すと、cartoon に重ねてレチナールが ballstick で描かれます。
+   ダイアログの **Center view on molecule after loading** が既定でオンなので、視点は新しい
+   Renderer (レチナール) に合います。
+5. 分子全体を見るには、手順 2 と同じく Object (3UG9) を選んで **Focus** を押します。
 
 1 つの Object には、このように複数の Renderer を重ねられます。各 Renderer の表示対象は
 選択式で絞り込みます (`r;` は残基名による選択の省略形です →
@@ -110,7 +116,9 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 また、全体図でリガンドが小さすぎて見えにくい場合は、ballstick の代わりに
 **cpk** (空間充填モデル) で表示するのも定番です。
 
-<!-- TODO(screenshot): New Renderer ダイアログ (ballstick + r; RET) と、レチナールが重なった分子ビュー -->
+![New Renderer ダイアログ。ballstick で Selection に r; RET を入力した](../../../assets/images/tutorials/figures/ribbon-figure/5-new-renderer.webp){ width="480" .on-glb }
+
+![レチナールが ballstick で重なった表示 (膜貫通部のヘリックスの内側にある)](../../../assets/images/tutorials/figures/ribbon-figure/5-ligand.webp){ .on-glb }
 
 ## 6. 背景と輪郭線で仕上げる
 
@@ -131,7 +139,7 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
     気になるときは **Color** パネルの **CPK** で炭素の色を暗め (例: `#404040`) にします
     (→ [色の記法](../../reference/color-syntax.md))。
 
-<!-- TODO(screenshot): 白背景 + エッジライン適用後の完成図 (適用前後の比較でも可) -->
+![白背景にし、cartoon と ballstick に Edge line (normal) を付けた完成図](../../../assets/images/tutorials/figures/ribbon-figure/6-finished.webp){ .on-glb }
 
 ## 7. カメラとシーンを保存する
 
@@ -145,7 +153,7 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 
 最後に **File &gt; Save Scene** (++cmd+s++ / ++ctrl+s++) でシーンを `.qsc` ファイルに
 保存します。保存すると、そのときの視点も `__current` という名前のカメラとして記録され、
-次に開いたときに適用されます。また、保存オプションの**データの埋め込み**を有効にすると、
+次に開いたときに適用されます。また、保存時に開く **Scene options** ダイアログで **Embed possible** を有効にすると、
 分子データも `.qsc` に取り込まれ、ファイル単体で持ち運べるようになります
 (→ [File メニュー](../../menu/file.md))。
 
