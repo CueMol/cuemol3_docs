@@ -7,7 +7,7 @@
 変形の組 (MorphMol) は、Tools メニューの **Mol morphing animation...** で作成します
 (→ [構造変化のモーフィング](../tools/morphing.md))。
 対象の分子を MorphMol に変換し、フレームとなる構造を追加します
-(→ [アニメーションと動画の出力](../../tutorials/animation/animation-movie.md))。
+(→ [アニメーションの作成と動画の出力](../../tutorials/animation/animation-movie.md))。
 CueMol2 で作成したシーンのモーフィングも、読み込んでそのまま再生・編集できます。
 
 !!! info "準備中"

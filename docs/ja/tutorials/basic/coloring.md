@@ -1,4 +1,4 @@
-# Renderer を着色する
+# Renderer の着色
 
 Renderer の色は、設定のうち着色 (Coloring) だけを独立して扱う
 **Color パネル**で変更します。代表的な Coloring の種類を順に試します。

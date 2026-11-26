@@ -11,7 +11,7 @@
    変形させるかを決めます (→ [MolAnim (構造変化)](../animation/molanim.md))。
 
 具体的な手順の例は
-[アニメーションと動画の出力](../../tutorials/animation/animation-movie.md) を参照してください。
+[アニメーションの作成と動画の出力](../../tutorials/animation/animation-movie.md) を参照してください。
 
 !!! info "撮影予定"
 
@@ -85,7 +85,7 @@ MorphMol をあとから編集するときも、同じダイアログで Target 
 
 - [Tools メニュー](../../menu/tools.md)
 - [MolAnim (構造変化)](../animation/molanim.md) — モーフィングのアニメーション要素
-- [アニメーションと動画の出力](../../tutorials/animation/animation-movie.md)
+- [アニメーションの作成と動画の出力](../../tutorials/animation/animation-movie.md)
 
 ---
 

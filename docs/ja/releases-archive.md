@@ -781,7 +781,7 @@
   → [対称分子・単位格子の表示](tutorials/experimental/symmetry.md)
 - **Mol morphing animation** のダイアログが使えるようになりました。対象を MorphMol に
   変換してから、PDB ファイルやシーン中の分子をフレームとして追加します。
-  → [アニメーションと動画の出力](tutorials/animation/animation-movie.md)
+  → [アニメーションの作成と動画の出力](tutorials/animation/animation-movie.md)
 
 ### 配布物
 

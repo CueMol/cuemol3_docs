@@ -15,9 +15,9 @@
 <div class="grid cards" markdown>
 
 - **[構造の読み込みと表示](basic/loading.md)** — 読み込み・視点操作・Scene / Object / Renderer の考え方
-- **[分子の一部を選択する](basic/selection.md)** — クリック・パネル・選択式による選択
+- **[分子の一部の選択](basic/selection.md)** — クリック・パネル・選択式による選択
 - **[Renderer の追加・削除と設定](basic/renderers.md)** — 表示の重ね方とインスペクタ
-- **[Renderer を着色する](basic/coloring.md)** — CPK / B-factor / Rainbow / Paint
+- **[Renderer の着色](basic/coloring.md)** — CPK / B-factor / Rainbow / Paint
 - **[カメラとシーンの保存](basic/camera-scene.md)** — 視点とシーンファイルの扱い
 - **[計測と相互作用の表示](basic/measure.md)** — 距離・角度の測定と atomintr
 
@@ -53,7 +53,7 @@
 
 <div class="grid cards" markdown>
 
-- **[アニメーションと動画の出力](animation/animation-movie.md)** — タイムライン編集・モーフィング・動画出力
+- **[アニメーションの作成と動画の出力](animation/animation-movie.md)** — タイムライン編集・モーフィング・動画出力
 
 </div>
 

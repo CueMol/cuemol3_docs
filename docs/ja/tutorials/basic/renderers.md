@@ -2,13 +2,13 @@
 
 1 つの Object に複数の Renderer を付けて表示を重ねる操作と、
 インスペクタでの設定変更を練習します。
-前のページ ([分子の一部を選択する](selection.md)) に続けて、
+前のページ ([分子の一部の選択](selection.md)) に続けて、
 `lysozyme` の Val2〜Phe3 (`A.2:3.*`) が選択された状態から始めます。
 
 !!! abstract "このチュートリアルについて"
     - **題材**: リゾチーム (`lysozyme`)
     - **学ぶこと**: Renderer の追加・削除、表示する範囲の変更、インスペクタでのプロパティの調整
-    - **前提**: [分子の一部を選択する](selection.md)
+    - **前提**: [分子の一部の選択](selection.md)
 
 !!! info "撮影予定"
     このページには操作の流れを示すスクリーンショットを追加予定です。
@@ -83,7 +83,7 @@ Renderer の見た目の細部は**プロパティ**で決まっており、右�
 
 ## 次のステップ
 
-- [Renderer を着色する](coloring.md) — Coloring の種類と塗り分け
+- [Renderer の着色](coloring.md) — Coloring の種類と塗り分け
 - [Renderer 一覧](../../reference/renderers/index.md) — 各種類のプロパティの詳細
 
 ---

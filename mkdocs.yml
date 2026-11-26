@@ -271,9 +271,9 @@ nav:
       - tutorials/index.md
       - 基本操作:
           - 構造の読み込みと表示: tutorials/basic/loading.md
-          - 分子の一部を選択する: tutorials/basic/selection.md
+          - 分子の一部の選択: tutorials/basic/selection.md
           - Renderer の追加・削除と設定: tutorials/basic/renderers.md
-          - Renderer を着色する: tutorials/basic/coloring.md
+          - Renderer の着色: tutorials/basic/coloring.md
           - カメラとシーンの保存: tutorials/basic/camera-scene.md
           - 計測と相互作用の表示: tutorials/basic/measure.md
       - 作図:
@@ -285,7 +285,7 @@ nav:
           - 電子密度マップの表示: tutorials/experimental/density-map.md
           - 対称分子・単位格子の表示: tutorials/experimental/symmetry.md
       - 動画:
-          - アニメーションと動画の出力: tutorials/animation/animation-movie.md
+          - アニメーション動画の作成: tutorials/animation/animation-movie.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md
