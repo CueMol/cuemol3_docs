@@ -44,7 +44,7 @@ simple の線画・2 残基の ballstick・全体の ribbon が重なった状�
 
 ballstick1 の表示範囲を、Val2〜Phe3 から Val2〜Glu7 に広げてみます。
 
-1. **Molecular structure** パネルで残基 2〜7 を範囲選択し、**Select atoms** を押します
+1. **Mol Struct** パネルで残基 2〜7 を範囲選択し、**Select atoms** を押します
    (選択式 `A.2:7.*` を Selection パネルで適用しても同じです)。
 2. シーンツリーで `ballstick1` を右クリックし、**Change sel &gt; Current** を選びます。
 

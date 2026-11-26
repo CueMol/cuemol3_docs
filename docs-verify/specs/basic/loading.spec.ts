@@ -9,7 +9,7 @@
  * the molecular view's right-click menu (Center at this atom). The context
  * menu is a native Electron menu on macOS, and which atom a click lands on
  * depends on the viewpoint, so neither can be driven deterministically.
- * Selecting a named residue is covered by selection.md's Molecular structure
+ * Selecting a named residue is covered by selection.md's Mol Struct
  * panel instead.
  */
 import { test, expect } from '@playwright/test';

@@ -136,7 +136,7 @@ test.describe.serial('分子の一部の選択', { tag: '@net' }, () => {
         const labels = await lastContextLabels(harness.app);
         for (const l of ['Select Atom', 'Select Residue', 'Select Chain', 'Select Molecule',
             'Add Select Atom', 'Add Select Residue', 'Add Select Chain',
-            'Unselect', 'Invert Selection', 'Around', 'Around Byres']) {
+            'Unselect', 'Invert Selection', 'Toggle Sidechain', 'Around', 'Around Byres', 'Center at this atom']) {
             expect(labels).toContain(l);
         }
         // 「ともかく分子全体を選択したいときは Select Molecule」
@@ -151,7 +151,7 @@ test.describe.serial('分子の一部の選択', { tag: '@net' }, () => {
         await clearConsole(w);
     });
 
-    test('3. Molecular structure パネルで選択する', async () => {
+    test('3. Mol Struct パネルで選択する', async () => {
         const w = harness.window;
         await openSidebarView(w, 'selection');
         const pane = molStructPane(w);

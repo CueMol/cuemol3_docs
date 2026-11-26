@@ -7,7 +7,7 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 
 !!! abstract "このチュートリアルについて"
     - **題材**: リゾチーム (`lysozyme`)
-    - **学ぶこと**: ダブルクリック・右クリックメニュー・Molecular structure パネル・選択ビルダー・選択式による選択
+    - **学ぶこと**: ダブルクリック・右クリックメニュー・Mol Struct パネル・選択ビルダー・選択式による選択
     - **前提**: [構造の読み込みと表示](loading.md)
 
 選択された部分は、分子ビュー上で半透明のハイライトで強調表示されます。
@@ -23,6 +23,8 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 ## 2. 右クリックメニューで選択する
 
 原子の上で右クリックすると、選択に関する項目が並んだメニューが開きます。
+メニューの先頭には、クリックした原子の情報と、その原子をビューの中心に移す **Center at this atom**
+もあります (→ [構造の読み込みと表示](loading.md))。
 
 | 項目 | 選択されるもの |
 |---|---|
@@ -31,6 +33,7 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 | **Add Select Atom / Residue / Chain** | 現在の選択を保ったまま追加 |
 | **Unselect** | 選択をすべて解除 |
 | **Invert Selection** | 選択を反転 |
+| **Toggle Sidechain** | 現在の選択を側鎖だけに限定 (もう一度選ぶと元に戻る。→ [BYSIDECH 演算子](../../reference/selection.md#bysidech-演算子)) |
 | **Around** / **Around Byres** | クリックした位置の周囲 (3〜10 Å) を原子単位 / 残基単位で |
 
 「ともかく分子全体を選択したい」ときは **Select Molecule**、
@@ -38,10 +41,10 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 
 <!-- TODO(screenshot): 分子ビューの右クリックメニュー (Select 系の項目) -->
 
-## 3. Molecular structure パネルで選択する
+## 3. Mol Struct パネルで選択する
 
 残基番号や原子名から選びたいときは、左サイドパネルの
-**Selection &gt; Molecular structure** パネルを使用してください
+**Selection &gt; Mol Struct** パネルを使用してください
 (→ [サイドパネル](../../ui/side-panels.md))。
 
 1. パネル上部で対象の分子 (`lysozyme`) を選びます。
@@ -49,7 +52,7 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
    選びます (++cmd++ / ++ctrl++ + クリックで複数選択、++shift++ + クリックで範囲選択)
 3. パネルの見出しの右にある **Select atoms** ボタンを押すと、分子の対応する部分が選択されます。
 
-    ![Molecular structure パネルで Val2 と Phe3 を選び、Select atoms ボタンを押す](../../../assets/images/tutorials/basic/selection/3-molstruct.webp){ width="304" .on-glb }
+    ![Mol Struct パネルで Val2 と Phe3 を選び、Select atoms ボタンを押す](../../../assets/images/tutorials/basic/selection/3-molstruct.webp){ width="304" .on-glb }
 
 ツリーで項目を選んだだけでは、分子はまだ選択されていません。
 **Select atoms** を押して初めて選択に反映される点に注意してください。

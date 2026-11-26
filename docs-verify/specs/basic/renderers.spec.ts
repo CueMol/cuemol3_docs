@@ -82,7 +82,7 @@ test.describe.serial('Renderer の追加・削除と設定', { tag: '@net' }, ()
 
     test('3. 表示する範囲を後から変える', async () => {
         const w = harness.window;
-        // 「1. Molecular structure パネルで残基 2〜7 を範囲選択し、Select atoms を押します」
+        // 「1. Mol Struct パネルで残基 2〜7 を範囲選択し、Select atoms を押します」
         // 「2. シーンツリーで ballstick1 を右クリックし、Change sel > Current を選びます」
         await setupRenderersPage.widenBallstick(harness.app, w);
         // 「Renderer の表示範囲が現在の選択に置き換わり、Glu7 まで広がります」

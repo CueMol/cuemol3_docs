@@ -11,7 +11,7 @@
 |---|---|---|
 | Explorer | シーンの構成と表示設定 | Scene / Camera / Color / View |
 | Styles | スタイルセットと、その名前付きの色・選択 | Style Sets / Colors / Selections |
-| Selection | 分子の選択 | Molecular structure / Selection |
+| Selection | 分子の選択 | Mol Struct / Selection |
 | Crystal | 結晶学的な情報 | Symmetry / Density map |
 | Actions | 操作の記録と再生 | History / Actions |
 | 歯車 (最下部) | Settings タブを開きます (サイドパネルではありません)。 | |
@@ -204,15 +204,16 @@ Style Sets パネルで選んだスタイルセットの、名前付きの色 (C
 
 ## Selection
 
-### Molecular structure パネル
+### Mol Struct パネル
 
 分子をチェイン → 残基 → 原子の階層ツリーで表示し、選択を作ります。
 
 - 上部で対象の分子を選びます。
 - ツリーは展開したときに読み込まれます。
 - 複数選択に対応しています (++cmd++ / ++ctrl++ + クリック、++shift++ + クリック)。
-- ツールバーの **Select** / **Center** / **Zoom** で、選んだ範囲を選択状態にする / 中心に持ってくる /
-  拡大表示する、といった操作ができます。
+- 見出しの右のボタン **Select atoms** / **Center at** / **Zoom at** で、ツリーで選んだ範囲を
+  分子の選択にする / 中心に持ってくる / 中心に寄せて拡大表示する、といった操作ができます。ボタンはアイコンで、
+  ポインタを重ねると名前が表示されます。ツリーで選んだだけでは、分子の選択は変わりません。
 
 ### Selection パネル
 
@@ -226,7 +227,11 @@ Style Sets パネルで選んだスタイルセットの、名前付きの色 (C
   Arnd / Expn) ができ、各操作には適用した場合の原子数が表示されます
   (→ [選択ビルダー](selection-builder.md))。
 - **Selection** 欄は手でも編集できます。入力中に式の妥当性が検証され、誤りがあれば
-  警告表示になります。手入力した式は **Select** ボタンで適用します。
+  警告表示になります。手入力した式は、欄の下の **Apply selection** ボタンを押すか ++enter++ を押して
+  適用します。
+- 欄の下のボタンは、左から **Apply selection** (式を適用)、**Center view on selection** (選択を中心に表示)、
+  **Clear selection** (選択を解除)、**Define name** (選択に名前を付けて、シーン内で再利用できる名前付き選択にする)
+  です。ボタンはアイコンで、ポインタを重ねると説明が表示されます。
 - 履歴はアプリケーションに保存され、Renderer の選択欄などと共有されます。
 
 !!! note "CueMol2 との違い"
@@ -287,4 +292,4 @@ Style Sets パネルで選んだスタイルセットの、名前付きの色 (C
 
 ---
 
-*確認対象: CueMol3 3.0.5.576*
+*確認対象: CueMol3 3.0.6.577*
