@@ -127,8 +127,8 @@ test.describe.serial('分子表面の静電ポテンシャル表示', { tag: '@n
         const sas = pane.locator('.color-field-row').filter({ hasText: 'By SAS' }).locator('input[type="checkbox"]');
         if (!(await sas.isChecked())) await sas.click();
         await expect(sas).toBeChecked();
-        // 「6. High を 2、Low を -2 程度にします」(既定は ±10)
-        for (const [label, v] of [['High', '2'], ['Low', '-2']] as const) {
+        // 「6. High を 5、Low を -5 程度にします」(既定は ±10)
+        for (const [label, v] of [['High', '5'], ['Low', '-5']] as const) {
             const input = pane.locator('.color-elepot-ramp-row')
                 .filter({ has: w.locator('.color-elepot-ramp-label', { hasText: new RegExp(`^${label}$`) }) })
                 .locator('input').first();

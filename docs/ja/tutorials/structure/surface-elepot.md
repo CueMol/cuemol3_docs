@@ -76,13 +76,14 @@ Settings でパスを指定します (→ [外部ツールの設定](../../insta
 5. **By SAS** を有効にします。表面 (SES) 上の値そのままでは電荷のある原子に近すぎて
    まだらな着色になりがちなので、表面から水分子の半径 (1.4 Å) だけ外側の
    溶媒接触表面 (SAS) 上の値で着色します。
-6. **High** を **2**、**Low** を **-2** 程度にします。値の単位は kT/e で、
-   既定の ±10 のままでは色がほとんど付きません。範囲を狭めるほど
-   コントラストが強くなります。
+6. **High** を **5**、**Low** を **-5** 程度にします。値の単位は kT/e です。
+   範囲を狭めるほどコントラストが強くなりますが、狭めすぎると表面のほとんどが
+   濃い青や赤になり、分布がわからなくなります (この例では ±2〜3 で青に偏ります)。
+   既定の ±10 では色が薄くなります。いくつか試して、分布がわかる範囲にしてください。
 
 設定項目の詳細は [Coloring](../../reference/coloring.md) を参照してください。
 
-![Color パネルの Electrostatic potential の設定。By SAS を有効にし、High を 2、Low を -2 にした](../../../assets/images/tutorials/structure/surface-elepot/4-color-pane.webp){ width="318" .on-glb }
+![Color パネルの Electrostatic potential の設定。By SAS を有効にし、High を 5、Low を -5 にした](../../../assets/images/tutorials/structure/surface-elepot/4-color-pane.webp){ width="318" .on-glb }
 
 ![静電ポテンシャルで着色した表面](../../../assets/images/tutorials/structure/surface-elepot/4-colored.webp){ .on-glb }
 
@@ -117,7 +118,7 @@ create_surface 1qio, protein, density=5
 calc_elepot 1qio, protein
 hide pot_1qio/unitcell
 # 4. 表面を静電ポテンシャルで着色する
-set_elepot_coloring sf_1qio/molsurf, pot_1qio, -2, 2
+set_elepot_coloring sf_1qio/molsurf, pot_1qio, -5, 5
 set sf_1qio/molsurf.ramp_above, true
 # 5. 半透明の表面と cartoon を重ねる
 set sf_1qio/molsurf.alpha, 0.5
