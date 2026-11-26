@@ -48,9 +48,9 @@ Immediately after conversion, only the reference frame `(this)` is present.
 
 | Button | Description |
 |---|---|
-| **Add PDB file...** | Choose PDB files (`.pdb` / `.ent` / `.pdb.gz`) and add them as frames. You can choose several. The files are not loaded into the scene |
-| **Add mol...** | Add another molecule in the scene as a frame. Choose the molecule in **Molecule to add** and press **Add as frame** |
-| **Delete** | Delete the selected frame. `(this)` cannot be deleted |
+| **Add PDB file...** | Choose PDB files (`.pdb` / `.ent` / `.pdb.gz`) and add them as frames. You can choose several. The files are not loaded into the scene. |
+| **Add mol...** | Add another molecule in the scene as a frame. Choose the molecule in **Molecule to add** and press **Add as frame**. |
+| **Delete** | Delete the selected frame. `(this)` cannot be deleted. |
 
 An added frame is inserted after the row selected in the list. If no row is selected, it is added at the end.
 The first frame in the list is the start of the interpolation, and the last frame is the end.

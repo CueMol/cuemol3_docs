@@ -15,7 +15,7 @@ while the GUI has been rebuilt from scratch on Electron + React.
 !!! note "Documentation language"
     The documentation is written in Japanese first and translated into English.
     The whole manual is available in English except the release history, which is
-    Japanese only (see [GitHub Releases](https://github.com/CueMol/cuemol2/releases) for
+    Japanese only (see [GitHub Releases](https://github.com/CueMol/cuemol3/releases) for
     English release notes).
 
 ## Contents
@@ -36,10 +36,10 @@ while the GUI has been rebuilt from scratch on Electron + React.
 
 | Link | Contents |
 |---|---|
-| [GitHub Releases](https://github.com/CueMol/cuemol2/releases) | Downloads and release notes (CueMol3 assets are the `CueMol3-*` files) |
+| [GitHub Releases](https://github.com/CueMol/cuemol3/releases) | Downloads and release notes (CueMol3 assets are the `CueMol3-*` files) |
 | [CueMol2 documentation](https://cuemol.github.io/cuemol2_docs/) | Documentation for CueMol2. Frozen for CueMol2 |
 | [Gallery](https://cuemol.github.io/cuemol2_docs/en/Gallery/) | Example images made with CueMol (on the CueMol2 site) |
-| [GitHub: CueMol/cuemol2](https://github.com/CueMol/cuemol2) | Source repository (CueMol3 lives under `tritium/`) |
+| [GitHub: CueMol/cuemol3](https://github.com/CueMol/cuemol3) | Source repository (CueMol3 lives under `tritium/`) |
 
 ## License
 

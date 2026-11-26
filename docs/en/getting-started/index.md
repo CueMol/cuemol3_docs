@@ -1,4 +1,4 @@
-<!-- source: ja/getting-started/index.md @ 9bed3ea -->
+<!-- source: ja/getting-started/index.md @ e45fed5 -->
 
 # Getting started
 
@@ -49,10 +49,16 @@ In CueMol3, MD simulation trajectories can be loaded with **Open MD Trajectory..
 | Format | Extensions |
 |---|---|
 | AMBER topology | `.prmtop` / `.parm7` / `.top` |
+| AMBER restart (coordinates) | `.rst7` / `.inpcrd` / `.restrt` |
 | AMBER NetCDF trajectory | `.nc` |
 | DCD binary trajectory | `.dcd` |
 | GROMACS coordinates / XTC / TRR | `.gro` / `.xtc` / `.trr` |
+| CHARMM / NAMD topology (PSF) | `.psf` |
 | NAMD coordinates | `.coor` |
+
+A topology-only file (`.prmtop` / `.psf`) can also be opened with **Open File...** as a molecule without coordinates,
+and coordinate or trajectory files can be dropped onto it afterwards to attach them
+(→ [Trajectory panel](../ui/bottom-panels/trajectory.md)).
 
 ### Scenes (read)
 

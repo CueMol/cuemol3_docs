@@ -15,13 +15,13 @@ See the page linked from each item name for details.
 
 | Item | Description | Shortcut |
 |---|---|---|
-| [Molecular superposition...](../reference/tools/superpose.md) | Superposes two molecules (US-align / SSM / LSQ). The RMSD and other results are shown in the log of the Output panel | |
-| [Interaction...](../reference/tools/interaction.md) | Detects interactions between atoms (distances and hydrogen bonds) and displays them as labels. You can specify the target molecule and selection, the distance range, and the maximum number of labels | |
-| [Reassign secondary str...](../reference/tools/secondary-structure.md) | Recalculates and reassigns the secondary structure of proteins | |
-| [Mol morphing animation...](../reference/tools/morphing.md) | Creates a morphing animation that interpolates between two structures. Converts the target molecule to a MorphMol and adds the structures that serve as frames | |
-| [Mol surface generation...](../reference/tools/mol-surface.md) | Generates a molecular surface (SES) Object. You specify the target molecule, selection, mesh density (Point density), probe radius, and generation algorithm (Algorithm) | |
-| [Mol surface cutter...](../reference/tools/surface-cutter.md) | Cuts a molecular surface with a plane. You can choose how the cut face is handled (main body only / cut face only / split into two Objects) | |
-| [APBS elepot calculation...](../reference/tools/apbs.md) | Calculates an electrostatic potential map using APBS. Assigns charges and radii with pdb2pqr, runs APBS, and loads the result | |
+| [Molecular superposition...](../reference/tools/superpose.md) | Superposes two molecules (US-align / SSM / LSQ). The RMSD and other results are shown in the log of the Output panel. | |
+| [Interaction...](../reference/tools/interaction.md) | Detects interactions between atoms (distances and hydrogen bonds) and displays them as labels. You can specify the target molecule and selection, the distance range, and the maximum number of labels. | |
+| [Reassign secondary str...](../reference/tools/secondary-structure.md) | Recalculates and reassigns the secondary structure of proteins. | |
+| [Mol morphing animation...](../reference/tools/morphing.md) | Creates a morphing animation that interpolates between two structures. Converts the target molecule to a MorphMol and adds the structures that serve as frames. | |
+| [Mol surface generation...](../reference/tools/mol-surface.md) | Generates a molecular surface (SES) Object. You specify the target molecule, selection, mesh density (Point density), probe radius, and generation algorithm (Algorithm). | |
+| [Mol surface cutter...](../reference/tools/surface-cutter.md) | Cuts a molecular surface with a plane. You can choose how the cut face is handled (main body only / cut face only / split into two Objects). | |
+| [APBS elepot calculation...](../reference/tools/apbs.md) | Calculates an electrostatic potential map using APBS. Assigns charges and radii with pdb2pqr, runs APBS, and loads the result. | |
 
 !!! warning "APBS requires configuration"
     If the paths to the APBS and pdb2pqr executables are not set in Settings, the dialog's **Start** button cannot be pressed

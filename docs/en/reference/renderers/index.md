@@ -38,17 +38,17 @@ Settings are edited in the property inspector
 Types with "—" in the **New Renderer** column do not appear in the list in the New Renderer dialog.
 
 - **atomintr** is created automatically when you use the measurement tools in the tool palette
-  (Distance / Angle / Torsion) or **Interaction...** in the Tools menu
+  (Distance / Angle / Torsion) or **Interaction...** in the Tools menu.
 - **atomintr** and **disorder** do not appear in the Renderer type list shown when opening a file.
   Right after loading there is nothing for them to draw (no measurements have been created yet, and
   there is no main-chain Renderer for disorder to follow). Create them with
-  New Renderer after the Object has been added to the scene
+  New Renderer after the Object has been added to the scene.
 - **gpu_mapmesh** was removed from the choices for new Renderers because its line width cannot be changed
   and it is slower than [contour](contour.md). Those contained in existing scenes are
-  displayed as before, and their settings can still be changed
+  displayed as before, and their settings can still be changed.
 - **dsurf2** has been merged into [dsurface](dsurface.md). Distance-field meshes are
   chosen with **Algorithm** in dsurface. Those contained in existing scenes are loaded as
-  dsurface (→ [dsurf2](dsurf2.md))
+  dsurface (→ [dsurf2](dsurf2.md)).
 
 Internal Renderers (selection highlight, atom labels, symmetry mates, unit cell, etc.) are also
 not shown in the list. Of these, the atom label Renderer is described in [namelabel](namelabel.md).
@@ -59,7 +59,7 @@ Renderer properties are divided into those common to all types and those specifi
 
 - **Common properties** — name, selection, show / hide, material, opacity, and edge lines
   (edge lines only for Renderers that have faces) → [Common Renderer properties](common.md)
-- **Type-specific properties** — see the page for each Renderer
+- **Type-specific properties** — see the page for each Renderer.
 
 Properties that do not appear in the **Properties** tab of the inspector
 can be edited in the **Generic** tab.

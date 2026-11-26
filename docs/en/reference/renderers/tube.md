@@ -14,14 +14,14 @@ For the common properties, see [Common Renderer properties](common.md).
 ### Tube
 
 Axial detail
-:   Number of polygon subdivisions along the chain. Larger values give a smoother tube but slow down rendering
+:   Number of polygon subdivisions along the chain. Larger values give a smoother tube but slow down rendering.
 
 Smoothness
 :   At 0, the tube is a curve passing through the positions of the pivot atoms.
-    Below that, it is a smooth curve that does not pass through the pivot atoms
+    Below that, it is a smooth curve that does not pass through the pivot atoms.
 
 Smooth color
-:   When the colors of adjacent residues differ, ON makes the coloring between residues a gradient
+:   When the colors of adjacent residues differ, ON makes the coloring between residues a gradient.
 
 Pivot atom name
 :   Name of the atom the tube passes through. The default for proteins is CA (Cα carbon atom).
@@ -44,7 +44,7 @@ Type
 Detail
 :   Number of polygon subdivisions around the cross section. Larger values give a smoother surface but increase the load
     (minimum 2). If the rendered image looks angular, increasing this
-    together with Axial detail fixes it
+    together with Axial detail fixes it.
 
 Width1, Width2
 :   Thickness of the tube in Å. Width1 is the radius in the horizontal direction and Width2 is the radius in the vertical direction.<br/>
@@ -78,10 +78,10 @@ Parts with values in between change continuously (linear interpolation).
 
 Mode
 :   **off** does not use putty (constant thickness). **Linear** and **Scaling** vary the thickness
-    according to the parameter specified in Target
+    according to the parameter specified in Target.
 
 Target
-:   The parameter that drives the thickness. B-factor or Occupancy can be selected
+:   The parameter that drives the thickness. B-factor or Occupancy can be selected.
 
 Low scale
 :   Thickness scaling value at the minimum value of the parameter. At the residue with the smallest parameter value,

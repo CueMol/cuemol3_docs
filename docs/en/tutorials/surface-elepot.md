@@ -21,16 +21,16 @@ Select **cartoon** as the Renderer.
 
 Open **Tools &gt; Mol surface generation...**.
 
-1. Select 1QIO in **Molecule** under **Target**
+1. Select 1QIO in **Molecule** under **Target**.
 2. Enable **Use selection** and enter `protein` as the selection expression. Crystal structures
-   contain water molecules, and without this the surface would be calculated around the waters as well
+   contain water molecules, and without this the surface would be calculated around the waters as well.
 3. Raise **Point density (/A)** to **5**. This sets the fineness of the surface, and raising it
    gives a smoother surface for a small protein such as 1QIO (for very large molecules,
-   the default of 2 is faster)
-4. **Object name** and **Probe radius (A)** (1.4 Å, the radius of a water molecule) can be left at their defaults
+   the default of 2 is faster).
+4. **Object name** and **Probe radius (A)** (1.4 Å, the radius of a water molecule) can be left at their defaults.
 5. **Algorithm** can also be left at the default **Auto** (→
    [MolSurfObj (molecular surface)](../reference/objects/molsurf.md#generation-algorithm-algorithm))
-6. Click OK. A molecular surface Object and a molsurf Renderer are created, and the surface is displayed
+6. Click OK. A molecular surface Object and a molsurf Renderer are created, and the surface is displayed.
 
 <!-- TODO(screenshot): The Mol surface generation dialog and the molecular surface right after generation -->
 
@@ -45,14 +45,14 @@ For details, see [MolSurf](../reference/objects/molsurf.md) /
 
 Open **Tools &gt; APBS elepot calculation...**.
 
-1. Select 1QIO in **Molecule** under **Target**
+1. Select 1QIO in **Molecule** under **Target**.
 2. Enable **Use selection** here as well and enter `protein`
-   (the calculation is normally done without water and ions)
-3. **Elepot name** (the name of the electrostatic potential map Object to be created) can be left at the default
-4. Leave **Method** under **Charge method** at the default **Use PDB2PQR**
+   (the calculation is normally done without water and ions).
+3. **Elepot name** (the name of the electrostatic potential map Object to be created) can be left at the default.
+4. Leave **Method** under **Charge method** at the default **Use PDB2PQR**.
 5. Click **Start**. The calculation runs in the order pdb2pqr, then apbs, and the progress is displayed.
    It takes time for large molecules. When it finishes, an electrostatic potential map (ElePotMap)
-   Object is added to the scene
+   Object is added to the scene.
 
 APBS and pdb2pqr are bundled with the macOS / Windows release assets, so installation and
 configuration are normally not needed. For builds that do not bundle them (such as Linux), install them
@@ -67,16 +67,16 @@ For details on the electrostatic potential map Object, see [ElePotMap](../refere
 
 ## 4. Color the surface by electrostatic potential
 
-1. Open the **Explorer &gt; Color** panel in the left side panel
-2. Select the molsurf Renderer at the top
-3. Select **Electrostatic potential** as the Coloring type
-4. In **Potential**, select the electrostatic potential map created in step 3
+1. Open the **Explorer &gt; Color** panel in the left side panel.
+2. Select the molsurf Renderer at the top.
+3. Select **Electrostatic potential** as the Coloring type.
+4. In **Potential**, select the electrostatic potential map created in step 3.
 5. Enable **By SAS**. The values on the surface itself (SES) are too close to the charged atoms
    and tend to give a mottled coloring, so the surface is colored with the values on the
-   solvent-accessible surface (SAS), which lies outside the surface by the radius of a water molecule (1.4 Å)
+   solvent-accessible surface (SAS), which lies outside the surface by the radius of a water molecule (1.4 Å).
 6. Set **High** to about **2** and **Low** to about **-2**. The unit of the values is kT/e, and
    with the default of ±10 hardly any color appears. The narrower the range,
-   the stronger the contrast
+   the stronger the contrast.
 
 For details on the settings, see [Coloring](../reference/coloring.md).
 
@@ -87,8 +87,8 @@ For details on the settings, see [Coloring](../reference/coloring.md).
 To show the structure inside the surface as well, make the surface translucent and overlay it on the cartoon.
 
 1. Select the molsurf Renderer in the **Explorer &gt; Scene** tree (scene tree)
-   in the left side panel
-2. In the **Basic settings** section of the property inspector, lower **Opacity** to about 0.5
+   in the left side panel.
+2. In the **Basic settings** section of the property inspector, lower **Opacity** to about 0.5.
 
 This gives the classic overlay in which the path of the main chain is visible through the surface.
 For finishing and export, see [Exporting high-resolution images for publication](publication-images.md).

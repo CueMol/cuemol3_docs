@@ -67,7 +67,7 @@ Smoothing
 Width mode
 :   By default the cylinder has a constant thickness equal to the average.
     If you switch this, the thickness varies according to how far the Cα atoms deviate
-    from the center line of the cylinder
+    from the center line of the cylinder.
 
 Width smooth
 :   Effective only when Width mode is set to variable; specifies the smoothness of the cylinder thickness.

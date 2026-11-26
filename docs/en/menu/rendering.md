@@ -8,8 +8,8 @@ Output high-quality images and movies, and export the scene to various file form
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Image rendering... *(renamed in CueMol3)* | Opens the rendering window in **still image (Still) mode** | |
-| Movie rendering... *(renamed in CueMol3)* | Opens the rendering window in **movie (Movie) mode** | |
+| Image rendering... *(renamed in CueMol3)* | Opens the rendering window in **still image (Still) mode**. | |
+| Movie rendering... *(renamed in CueMol3)* | Opens the rendering window in **movie (Movie) mode**. | |
 
 !!! info "Changes from CueMol2"
     In CueMol2, these were separate windows named after the Renderer: "POV-Ray rendering..." and
@@ -28,11 +28,11 @@ Writes the current scene to various file formats. Select the format from the sub
 
 | Item | Description |
 |---|---|
-| PNG image... | Writes a PNG image using the same rendering as the screen display. Size, resolution (DPI) and background transparency can be specified |
+| PNG image... | Writes a PNG image using the same rendering as the screen display. Size, resolution (DPI) and background transparency can be specified. |
 | Umbreon ray-traced image... | Writes a PNG ray-traced with Umbreon, the built-in ray tracer. The options are the same as for PNG image... |
-| POV-Ray SDL... | Writes a scene description file (`.pov`) for rendering with external POV-Ray. An `.inc` file is also generated in the same location. No image is output |
-| STL... | Writes shape data in STL format (`.stl`) |
-| Metasequoia (MQO)... | Writes a Metasequoia object file (`.mqo`) |
+| POV-Ray SDL... | Writes a scene description file (`.pov`) for rendering with external POV-Ray. An `.inc` file is also generated in the same location. No image is output. |
+| STL... | Writes shape data in STL format (`.stl`). |
+| Metasequoia (MQO)... | Writes a Metasequoia object file (`.mqo`). |
 
 !!! note "When some items are not displayed"
     Items for exporters that are not built into the library in use are

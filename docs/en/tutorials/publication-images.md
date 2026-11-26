@@ -27,8 +27,8 @@ into presentation software or figure-making software to assemble a composite fig
 When **Rendering &gt; Export scene &gt; PNG image...** is selected, an options screen appears
 after the destination is specified.
 
-- **Size** and **resolution (DPI)** can be specified
-- Enabling **background transparency** produces a PNG with a transparent background (useful for overlaying on slides)
+- **Size** and **resolution (DPI)** can be specified.
+- Enabling **background transparency** produces a PNG with a transparent background (useful for overlaying on slides).
 
 DPI does not affect the number of pixels in the image. It determines the **physical size on paper**
 when the exported PNG is pasted into other software and printed (for example, a 1200×1200 pixel
@@ -50,7 +50,7 @@ it stays open (→ [Rendering window](../ui/rendering-window.md)).
 3. In the **Quality** section of the **Render** tab, set **Lighting** (how shading is applied) to
    **Raytrace only**. This is sufficient to give a clean result for a cartoon figure like this one.
    **Supersampling** (the setting that smooths outlines) can be left at the default
-4. Press **Start Render** to start rendering. Progress is displayed
+4. Press **Start Render** to start rendering. Progress is displayed.
 
 <!-- TODO(screenshot): Rendering window. Size selection in the Image tab -> Quality section of the Render tab (Lighting = Raytrace only) -->
 
@@ -73,10 +73,10 @@ For the meaning of each quality item and how to choose among them, see [Renderin
 When rendering completes, the resulting image is displayed in the image area at the upper left
 of the window.
 
-- **Save** in the image area toolbar saves it as a PNG file
-- **Copy** copies it to the clipboard
+- **Save** in the image area toolbar saves it as a PNG file.
+- **Copy** copies it to the clipboard.
 - The arrow buttons step back through the history of past rendering results. The history also
-  records the settings used at the time, and pressing **Use settings** restores them
+  records the settings used at the time, and pressing **Use settings** restores them.
 
 If the composition or quality is not satisfactory, adjust in the main window and run
 **Start Render** again. Settings remain in the result history, so results can be compared

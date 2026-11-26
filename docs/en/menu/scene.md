@@ -6,10 +6,10 @@ Settings that affect the whole scene.
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Background &gt; White | Sets the background color to white. A color swatch is shown next to the item, and the check mark follows the current background color | |
-| Background &gt; Black | Sets the background color to black. A color swatch is shown next to the item, and the check mark follows the current background color | |
-| Use color proofing | Toggles color proofing (simulation of color reproduction in CMYK output). The check mark follows the current state. If no ICC profile is set, enabling it assigns the default profile; disabling it keeps the profile setting | |
-| Properties... | Opens the current scene in the property inspector | |
+| Background &gt; White | Sets the background color to white. A color swatch is shown next to the item, and the check mark follows the current background color. | |
+| Background &gt; Black | Sets the background color to black. A color swatch is shown next to the item, and the check mark follows the current background color. | |
+| Use color proofing | Toggles color proofing (simulation of color reproduction in CMYK output). The check mark follows the current state. If no ICC profile is set, enabling it assigns the default profile; disabling it keeps the profile setting. | |
+| Properties... | Opens the current scene in the property inspector. | |
 
 !!! tip "The background color can also be changed from the right-click menu"
     Right-click the scene row in the scene tree to use the Background submenu and

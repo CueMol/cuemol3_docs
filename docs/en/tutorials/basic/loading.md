@@ -91,7 +91,7 @@ Look at the loaded molecule from various directions.
 
 1. **Left-drag** on the molecular view. The molecule rotates in the direction of the drag.
 2. Turn the **wheel** to zoom the display in and out.
-3. In the **Explorer &gt; View** panel in the left side panel, click the **Zoom** value under
+3. In the **Explorer &gt; View** panel in the left side panel, click the **Zoom** value under.
    **Zoom / Slab**, enter `40`, and press ++enter++. Zoom is set to 40.
 
     ![Zoom in the View panel](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="213" }
@@ -178,19 +178,19 @@ This section summarizes the concepts that have appeared so far.
 
 Object
 :   **Data** such as molecular coordinates, electron density, or electrostatic potential.
-    It does not appear on screen by itself
+    It does not appear on screen by itself.
 
 Renderer
 :   Responsible for **displaying** an Object on screen. Multiple Renderers can be attached to one Object,
-    so the same molecule can be displayed as ribbon and ballstick at the same time, for example
+    so the same molecule can be displayed as ribbon and ballstick at the same time, for example.
 
 Scene
 :   A unit of work that groups Objects and Renderers. The **tabs** at the top of the window
-    correspond to scenes, and scenes opened side by side do not interfere with each other
+    correspond to scenes, and scenes opened side by side do not interfere with each other.
 
 View
 :   The screen that shows a scene (the molecular view). Multiple Views can also be
-    connected to one scene (→ New Tab in the [File menu](../../menu/file.md))
+    connected to one scene (→ New Tab in the [File menu](../../menu/file.md)).
 
 ![Relationship between Scene / Object / Renderer / View](../../../assets/images/tutorials/basic/loading/scene-concept.png){ .on-glb }
 
