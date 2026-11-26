@@ -1,4 +1,4 @@
-<!-- source: ja/ui/bottom-panels/sequence.md @ f8502b6 -->
+<!-- source: ja/ui/bottom-panels/sequence.md @ dcf70c1 -->
 
 # Sequence panel
 

@@ -1,10 +1,15 @@
-<!-- source: ja/tutorials/figures/publication-images.md @ 8d54764 -->
+<!-- source: ja/tutorials/figures/publication-images.md @ dcf70c1 -->
 
 # Exporting high-resolution images for publication
 
 This tutorial walks through exporting a scene as an image of publication or presentation quality.
 It uses the scene finished in [Making a protein ribbon figure](ribbon-figure.md) as the example,
 but the procedure is the same for any scene.
+
+!!! abstract "About this tutorial"
+    - **Subject**: The scene finished in [Making a protein ribbon figure](ribbon-figure.md) (any scene will do)
+    - **What you learn**: When to export a PNG as shown on screen and when to finish with ray tracing
+    - **Prerequisites**: [Making a protein ribbon figure](ribbon-figure.md)
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.
@@ -87,6 +92,24 @@ while experimenting.
     scene is opened. Changes to the settings can be reverted with Undo. To return to past
     settings, use **Use settings** in the result history (→ [Rendering](../../reference/rendering.md#saving-settings)).
 
+## The same with commands
+
+The steps on this page can be written as native-mode commands of the [Console](../../reference/plugins/console/index.md) as follows. Enter them in the Console one line at a time (they can also be run from [tritium_cli](../../reference/plugins/console/cli.md)). To check the arguments of each command, run `help <command>` in the Console (→ [Console command list](../../reference/plugins/console/commands.md)).
+
+```
+# 2. Export a PNG as shown on screen (1200×1200 pixels, 600 DPI)
+export_scene ~/3ug9.png, png, 1200, 1200, dpi=600
+# 3. Finish with ray tracing (set Lighting to Raytrace only and export at 1200×1200)
+set_render_settings "umbreon.useGI=false; umbreon.aoEnabled=false; umbreon.lightIntensity=1.55; umbreon.flashFraction=0.6; umbreon.ambientFraction=0.16"
+render_image ~/3ug9-rt.png, 1200, 1200
+# 4. Check and save the result (GUI only)
+```
+
+- Adding `transparent=true` to `export_scene` gives a PNG with a transparent background.
+- The values of `set_render_settings` are the same as choosing **Raytrace only** for **Lighting** in the
+  rendering window. The settings are saved in the scene and are also reflected in the rendering window.
+- `render_image` writes the result directly to a file. It does not appear in the result history of the rendering window.
+
 ## Next steps
 
 - [Rendering](../../reference/rendering.md) — Details and default values of the quality items
@@ -94,4 +117,4 @@ while experimenting.
 
 ---
 
-*Verified against: CueMol3 2.3.13.523*
+*Verified against: CueMol3 3.0.6.577*

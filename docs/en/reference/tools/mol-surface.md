@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/mol-surface.md @ d6bebaf -->
+<!-- source: ja/reference/tools/mol-surface.md @ dcf70c1 -->
 
 # Generating a molecular surface (Mol surface generation)
 

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/get-pdb.md @ f8502b6 -->
+<!-- source: ja/reference/get-pdb.md @ dcf70c1 -->
 
 # Fetching from the PDB (Get PDB)
 
@@ -78,7 +78,7 @@ Shown for crystal structure entries.
 | **Source** | Where to fetch from: **RCSB (cif.gz)** (default) or **EBI (MTZ)**. |
 
 No screen for specifying the Renderer appears for maps; they are shown as contours with a fixed color and level
-(→ [Overlaying an electron density map](../tutorials/experimental/density-map.md)).
+(→ [Displaying an electron density map](../tutorials/experimental/density-map.md)).
 
 ## Cryo-EM maps
 
@@ -174,7 +174,7 @@ a CCP4 / MRC map at a URL
 
 - [File menu](../menu/file.md)
 - [DensityMap (density map)](objects/densitymap.md)
-- [Overlaying an electron density map](../tutorials/experimental/density-map.md)
+- [Displaying an electron density map](../tutorials/experimental/density-map.md)
 - [Loading and displaying a structure](../tutorials/basic/loading.md)
 
 ---

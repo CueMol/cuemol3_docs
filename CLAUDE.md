@@ -124,6 +124,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   最後に reference の stale 36 ページを追随させ (マーカー `d6bebaf`。camera / coloring / material /
   scene は全面的に訳し直した)、定義リストのピリオドも同じ方法で揃えた。これで**更新履歴以外の
   全ページが日本語版 `d6bebaf` に追随済み** (2026-11-26)。
+- 2026-11-27 (日本語版 `dcf70c1`) に、目的別の新しい 6 本を訳し、チュートリアルの階層化・冒頭の
+  「このチュートリアルについて」(`About this tutorial`)・「同じことをコマンドで」(`The same with commands`) に
+  追随させた。stale は 0 件。en の nav の表示名は 1 行に収まる名詞句にしている (`Ligand binding site` など)。
 - 新しい日本語ページを足したら、英語版も同じ PR か次の追随 PR で訳し、en の nav に載せる
   (`task i18n:status -- -v` の untranslated に出る)。
 

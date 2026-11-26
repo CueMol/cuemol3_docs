@@ -1,4 +1,4 @@
-<!-- source: ja/reference/animation/molanim.md @ d6bebaf -->
+<!-- source: ja/reference/animation/molanim.md @ dcf70c1 -->
 
 # MolAnim (structural change)
 

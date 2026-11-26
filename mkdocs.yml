@@ -108,15 +108,23 @@ plugins:
                     - Saving the camera and the scene: tutorials/basic/camera-scene.md
                     - Measurement and interaction display: tutorials/basic/measure.md
                 - Figures:
-                    - Making a protein ribbon figure: tutorials/figures/ribbon-figure.md
-                    - Exporting high-resolution images for publication: tutorials/figures/publication-images.md
+                    - Protein ribbon figure: tutorials/figures/ribbon-figure.md
+                    - Images for publication: tutorials/figures/publication-images.md
+                    - Protein-DNA complex: tutorials/figures/protein-dna.md
                 - Structure analysis:
-                    - Coloring a molecular surface by electrostatic potential: tutorials/structure/surface-elepot.md
+                    - Ligand binding site: tutorials/structure/binding-site.md
+                    - Surface electrostatics: tutorials/structure/surface-elepot.md
+                    - Superposition and comparison: tutorials/structure/superpose.md
                 - Experimental data:
-                    - Overlaying an electron density map: tutorials/experimental/density-map.md
-                    - Displaying symmetry mates and the unit cell: tutorials/experimental/symmetry.md
+                    - Electron density map: tutorials/experimental/density-map.md
+                    - Symmetry mates and unit cell: tutorials/experimental/symmetry.md
+                    - Cryo-EM map and model: tutorials/experimental/cryoem-map.md
+                - Predicted structures:
+                    - AlphaFold predicted structure: tutorials/prediction/alphafold.md
                 - Animation:
-                    - Making an animation and exporting a movie: tutorials/animation/animation-movie.md
+                    - Animation movie: tutorials/animation/animation-movie.md
+                - Scripting:
+                    - Figures with the ChX console: tutorials/scripting/chx-console.md
             - Reference:
                 - reference/index.md
                 - Selection syntax: reference/selection.md

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/superpose.md @ d6bebaf -->
+<!-- source: ja/reference/tools/superpose.md @ dcf70c1 -->
 
 # Superposing molecules (Molecular superposition)
 

@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/loading.md @ c730ead -->
+<!-- source: ja/tutorials/basic/loading.md @ dcf70c1 -->
 
 # Loading and displaying a structure
 
@@ -7,6 +7,11 @@ This page covers loading and displaying a molecular structure, and the
 The example is the 1.2 Å resolution crystal structure of lysozyme (PDB ID: **1QIO**).
 
 The pages of the basic course carry over the state of the previous page when followed in order.
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (PDB ID: 1QIO), and also 1G59
+    - **What you learn**: Loading structures, manipulating the view, the concepts of Scene / Object / Renderer, the scene tree
+    - **Prerequisites**: Being able to start CueMol3 (→ [Installation](../../install/index.md))
 
 ## 1. Load a structure
 
@@ -215,8 +220,9 @@ the list of Renderers attached to that Object. The current tree reads as follows
 
 ![Scene tree (lysozyme / 1g59 and their Renderers)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="304" .on-glb }
 
-**Camera** and **Styles** at the bottom are the places where saved views and styles are kept
-(→ [Saving the camera and the scene](camera-scene.md)).
+The **Camera** panel below the scene tree is where saved views are kept
+(→ [Saving the camera and the scene](camera-scene.md)). Styles are handled in **Styles** on the activity bar
+(→ [Side panels](../../ui/side-panels.md#styles)).
 
 ### Eye icons and buttons at the top of the panel
 
@@ -240,4 +246,4 @@ Right-clicking the scene row lets you change the background color from **Backgro
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.6.577*

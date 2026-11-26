@@ -1,4 +1,4 @@
-<!-- source: ja/getting-started/quick-tour.md @ c730ead -->
+<!-- source: ja/getting-started/quick-tour.md @ dcf70c1 -->
 
 # Quick tour
 
@@ -113,7 +113,7 @@ Renderers that refer to it. Here, recolor the Object.
 
     ![Target selection in the Color panel](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="304" .on-glb }
 
-2. Press the adjacent **Coloring** button and choose **Rainbow coloring**.
+2. Press the adjacent button (it shows the current Coloring type) and choose **Rainbow coloring**.
 
     ![Coloring menu](../../assets/images/getting-started/quick-tour/3-coloring-menu.webp){ width="196" .on-glb }
 
@@ -186,4 +186,4 @@ On the first save, as with **Save Scene As...**, a dialog appears for specifying
 
 ---
 
-*Verified against: CueMol3 2.4.2.550*
+*Verified against: CueMol3 3.0.6.577*
