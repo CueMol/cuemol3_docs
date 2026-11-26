@@ -85,7 +85,7 @@ task e2e:shots    # ドキュメント用スクリーンショットを撮影し
 |---|---|
 | `tutorials/basic/` | 基本操作コース (順に進める。前のページの状態を引き継ぐ) |
 | `tutorials/figures/` | 作図 |
-| `tutorials/structure/` | 構造を読む・比較する |
+| `tutorials/structure/` | 構造の解析 |
 | `tutorials/experimental/` | 実験データ (X 線・クライオ電子顕微鏡) |
 | `tutorials/prediction/` | 予測構造 |
 | `tutorials/animation/` | 動画 |

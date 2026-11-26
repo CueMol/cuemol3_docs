@@ -1,5 +1,5 @@
 /**
- * Doc: docs/ja/tutorials/structure/superpose.md (2 つの構造の重ね合わせと比較)
+ * Doc: docs/ja/tutorials/structure/superpose.md (構造の重ね合わせと比較)
  *
  * The tests mirror the page's numbered h2 sections. The RMSD values the page
  * gives are read back from the Output panel (LSQ prints "RMSD").
@@ -56,7 +56,7 @@ async function lsq(selection: string, shotId?: string): Promise<number> {
     return Number(all.at(-1)?.[1]);
 }
 
-test.describe.serial('2 つの構造の重ね合わせと比較', { tag: '@net' }, () => {
+test.describe.serial('構造の重ね合わせと比較', { tag: '@net' }, () => {
     test.beforeAll(async () => {
         harness = await CueMolHarness.launch();
     });

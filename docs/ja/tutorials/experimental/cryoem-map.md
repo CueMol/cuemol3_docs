@@ -11,10 +11,7 @@
     - **学ぶこと**: Get PDB での cryo-EM マップとモデルの取得、上位 % によるレベルの指定、Level と側鎖の密度の見え方、スラブによる切り出し
     - **前提**: [電子密度マップの表示](density-map.md) (Density map パネルの使い方)
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。S6 ヘリックスの一部 (ballstick) と、それを包む等値面 -->
+![完成イメージ。S6 ヘリックスの一部 (ballstick) と、それを包む等値面 (推奨レベル付近)](../../../assets/images/tutorials/experimental/cryoem-map/4-level-0.9.webp){ .on-glb }
 
 ## 1. マップとモデルを取得する
 
@@ -24,7 +21,11 @@
 1. **Coordinates** の **Fetch coordinates** が ON になっていることを確かめます。
 2. **Cryo-EM maps** の **EMD-8118 map** が ON になっていることを確かめます。行の下に、
    ファイルのサイズ (約 28 MB)・格子の大きさ (各辺 192)・推奨レベルが表示されます。
+   表示されるまで少し時間がかかります。`Reading map information...` と出ている間に Download を押すと、
+   推奨レベルが読み込まれず、上位 1 % のレベルになります。
 3. **Download** を押し、Renderer は **cartoon** を選びます。
+
+    ![5IRZ を入力した Get PDB ダイアログ。EMD-8118 map の行の下にサイズ・格子・推奨レベルが表示される](../../../assets/images/tutorials/experimental/cryoem-map/1-getpdb.webp){ width="380" .on-glb }
 
 モデルは `5irz` (chain B〜E の 4 本の鎖でできた四量体)、マップは `emd_8118` という名前の Object になります。
 マップは等値面 ([isosurf](../../reference/renderers/isosurf.md)) で、登録者が推奨するレベルで表示されます。
@@ -43,6 +44,8 @@ cryo-EM マップは、読み込んだ時点ではレベルを絶対値 (マッ�
 
 1. Renderer の選択の右の ▼ を押し、**Use top-percent contour level** を選びます。
 
+    ![Density map パネルの ▼ メニュー](../../../assets/images/tutorials/experimental/cryoem-map/2-level-mode.webp){ width="304" .on-glb }
+
 入力欄が上位 % の値になります。「格子点の値の上位何 % を囲むか」という単位で、値が**小さいほど
 囲む範囲が狭く** (レベルが高く) なります。マップごとに密度の値の大きさが違っても、同じ感覚で比べられます
 (→ [DensityMap](../../reference/objects/densitymap.md#マップの種類-map-type))。
@@ -55,6 +58,14 @@ cryo-EM マップは、読み込んだ時点ではレベルを絶対値 (マッ�
 |---|---|
 | 0.9 (推奨レベル付近) | 四量体の形と、膜貫通部分のヘリックスが見えます。 |
 | 3 | マスク (マップの外側を 0 にした範囲) の内側のノイズまで囲まれ、全体が球状の塊になります。 |
+
+**上位 0.9 % (推奨レベル付近)**
+
+![上位 0.9 % で表示したマップ全体](../../../assets/images/tutorials/experimental/cryoem-map/3-level-0.9.webp){ .on-glb }
+
+**上位 3 %**
+
+![上位 3 % で表示したマップ全体。マスクの内側のノイズで球状になる](../../../assets/images/tutorials/experimental/cryoem-map/3-level-3.webp){ .on-glb }
 
 レベルを下げすぎると、ノイズがタンパク質の密度と区別できなくなります。
 確かめたら、**Level** を推奨レベル付近 (0.9) に戻します。
@@ -81,7 +92,17 @@ cryo-EM マップは、読み込んだ時点ではレベルを絶対値 (マッ�
 | 0.9 (推奨レベル付近) | チロシンの環が密度に包まれ、ヘリックスの主鎖も連続して見えます。 |
 | 3 | 密度が太ってほかの密度とつながり、側鎖の形が読み取れなくなります。 |
 
-<!-- TODO(screenshot): Level 0.3 / 0.9 / 3 での S6 ヘリックスの比較 -->
+**上位 0.3 %**
+
+![上位 0.3 % の等値面と S6 ヘリックスの一部](../../../assets/images/tutorials/experimental/cryoem-map/4-level-0.3.webp){ .on-glb }
+
+**上位 0.9 % (推奨レベル付近)**
+
+![上位 0.9 % の等値面と S6 ヘリックスの一部](../../../assets/images/tutorials/experimental/cryoem-map/4-level-0.9.webp){ .on-glb }
+
+**上位 3 %**
+
+![上位 3 % の等値面と S6 ヘリックスの一部](../../../assets/images/tutorials/experimental/cryoem-map/4-level-3.webp){ .on-glb }
 
 3 Å 台前半の分解能では、同じヘリックスの中でも、芳香環のような大きく硬い側鎖ははっきり見え、
 小さな側鎖や柔らかい側鎖ははっきりしません。モデルの側鎖の向きを確かめるときは、
