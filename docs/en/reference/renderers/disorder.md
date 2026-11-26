@@ -43,10 +43,10 @@ As with other Renderers, an outline can be drawn with [edge lines](edge-lines.md
 
 Target
 :   The Renderer on which the dotted line of the disordered region is displayed. At creation, it is chosen automatically from the Renderers that exist at that time, such as ribbon / cartoon / nucl.
-    If an unintended Target has been chosen, change it here
+    If an unintended Target has been chosen, change it here.
 
 Detail
-:   Polygon subdivision level of the dots (spheres) of the dotted line. Larger values give a finer, smoother result
+:   Polygon subdivision level of the dots (spheres) of the dotted line. Larger values give a finer, smoother result.
 
 Dot size
 :   Size of the dots (spheres) of the dotted line. The default is 0.3. In the figure below, the left is 0.1 and the right is 0.5<br/>

@@ -20,8 +20,8 @@ Choose a Renderer that shows the outline of the molecule, such as **cartoon**.
 Open the **Crystal &gt; Symmetry** panel in the left side panel
 (→ [Side panels](../ui/side-panels.md)).
 
-1. Select the target (1QIO) in **Object**
-2. The cell parameters (*a* / *b* / *c* / *α* / *β* / *γ*) and the space group are displayed
+1. Select the target (1QIO) in **Object**.
+2. The cell parameters (*a* / *b* / *c* / *α* / *β* / *γ*) and the space group are displayed.
 
 Structures fetched from the PDB contain crystallographic information, so you can usually
 go straight to the next step.
@@ -44,8 +44,8 @@ It appears in the **Explorer &gt; Scene** tree (scene tree) in the left side pan
 Choose the display range with the **Symm mol** button in the panel.
 
 - **20 Å / 50 Å / 100 Å / 200 Å** — Displays the symmetry mates within that distance of the current view center.
-  The display follows automatically when you move the view
-- **Unit cell** — Displays the symmetry mates for one unit cell
+  The display follows automatically when you move the view.
+- **Unit cell** — Displays the symmetry mates for one unit cell.
 
 The symmetry mates are added to the scene tree as a Renderer named `*symm`, drawn
 with the same display style and colors as the original Renderer. `*symm` only shows the original Renderer's display
@@ -67,9 +67,9 @@ Use this for contact interface analysis or to make a figure in which only the sy
 
 1. In the molecular view, right-click an atom of the symmetry mate (with the Navigate tool)
 2. The symmetry operation (`symop: ...`) is shown at the top of the menu, which confirms that
-   the atom belongs to a symmetry mate
+   the atom belongs to a symmetry mate.
 3. Choose **Create SYMM mol...**
-4. Specify the name and Renderer type of the new Object and click **Create**
+4. Specify the name and Renderer type of the new Object and click **Create**.
 
 A new molecular Object with the coordinates after applying the symmetry operation is created. From then on, Renderers
 can be added and colors set as for any other Object. The operation can be
@@ -83,9 +83,9 @@ so choosing it while looking at a symmetry mate sends the view to a distant loca
 
 ## 6. Adjust or remove the display
 
-- To change the display range, choose again from **Symm mol**
+- To change the display range, choose again from **Symm mol**.
 - To remove the symmetry mates or the unit cell, delete the `*symm` / `*unitcell` Renderer in the scene tree,
-  or hide it with the eye icon
+  or hide it with the eye icon.
 
 ## Next steps
 

@@ -26,10 +26,10 @@ None
 :   No edge lines (default)
 
 Edges
-:   Draws edge lines
+:   Draws edge lines.
 
 Silhouette
-:   Draws silhouette lines. Lines are drawn only along the outline
+:   Draws silhouette lines. Lines are drawn only along the outline.
 
 The lines for each setting look as follows.
 

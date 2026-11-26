@@ -8,8 +8,8 @@ Settings that apply per view, such as the projection mode and the center mark of
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Perspective | Switches to perspective projection. The current projection mode is checked | |
-| Orthographic | Switches to orthographic projection. The current projection mode is checked | |
+| Perspective | Switches to perspective projection. The current projection mode is checked. | |
+| Orthographic | Switches to orthographic projection. The current projection mode is checked. | |
 
 ## Center mark
 
@@ -17,15 +17,15 @@ Selects how the mark that indicates the rotation center is displayed.
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Center mark &gt; Cross | Shows a cross mark | |
-| Center mark &gt; Axis | Shows the coordinate axes | |
-| Center mark &gt; None | Hides the center mark | |
+| Center mark &gt; Cross | Shows a cross mark. | |
+| Center mark &gt; Axis | Shows the coordinate axes. | |
+| Center mark &gt; None | Hides the center mark. | |
 
 ## Tool palette
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Tool palette | Collapses / opens the tool palette on the molecular view. Checked while it is shown | ++cmd+shift+p++ |
+| Tool palette | Collapses / opens the tool palette on the molecular view. Checked while it is shown. | ++cmd+shift+p++ |
 
 When collapsed, only the handle at the top edge of the palette remains. Clicking the handle toggles it in the same way.
 The state is kept for the next launch
@@ -35,13 +35,13 @@ The state is kept for the next launch
 
 | Item | Description | Shortcut |
 |---|---|---|
-| View property... | Opens the current view on the Generic tab of the [property inspector](../ui/inspector.md) | |
+| View property... | Opens the current view on the Generic tab of the [property inspector](../ui/inspector.md). | |
 
 ## For developers
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Toggle Developer Tools | Opens / closes the developer tools. Used when investigating problems | |
+| Toggle Developer Tools | Opens / closes the developer tools. Used when investigating problems. | |
 
 !!! tip "Also available from the side panel"
     The projection mode and center mark can also be switched from **View &gt; View** in the left side panel.

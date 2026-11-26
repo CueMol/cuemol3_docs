@@ -28,14 +28,14 @@ On macOS, the menu named after the application (**CueMol3**) has the following i
 
 | Item | Description | Shortcut |
 |---|---|---|
-| About CueMol3 | Shows the version information | |
-| Check for Updates... | Checks for a new release and, if there is one, updates in the app (→ [Updating](../install/update.md)) | |
-| Preferences... | Opens the Settings tab (switches to it if it is already open) | ++cmd+comma++ |
+| About CueMol3 | Shows the version information. | |
+| Check for Updates... | Checks for a new release and, if there is one, updates in the app (→ [Updating](../install/update.md)). | |
+| Preferences... | Opens the Settings tab (switches to it if it is already open). | ++cmd+comma++ |
 | Services | The macOS Services menu | |
-| Hide CueMol3 | Hides the window | ++cmd+h++ |
-| Hide Others | Hides the windows of other apps | ++cmd+opt+h++ |
-| Show All | Shows all windows again | |
-| Quit CueMol3 | Quits CueMol3. If there are unsaved scenes, a confirmation is shown | ++cmd+q++ |
+| Hide CueMol3 | Hides the window. | ++cmd+h++ |
+| Hide Others | Hides the windows of other apps. | ++cmd+opt+h++ |
+| Show All | Shows all windows again. | |
+| Quit CueMol3 | Quits CueMol3. If there are unsaved scenes, a confirmation is shown. | ++cmd+q++ |
 
 ## Menus
 
@@ -57,7 +57,7 @@ The tables on each page use the following symbols.
 
 | Symbol | Meaning |
 |---|---|
-| <span class="badge-wip">In development</span> | The item exists in the menu but **does not work in the current version**. Choosing it does nothing |
+| <span class="badge-wip">In development</span> | The item exists in the menu but **does not work in the current version**. Choosing it does nothing. |
 | *(added in CueMol3)* | An item that did not exist in CueMol2 and was newly added in CueMol3 |
 | *(renamed in CueMol3)* | An item whose name changed from CueMol2 |
 

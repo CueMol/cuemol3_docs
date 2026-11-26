@@ -14,13 +14,13 @@ start with Val2 to Phe3 (`A.2:3.*`) of `lysozyme` selected.
 
 Display only the two selected residues as ballstick.
 
-1. In the scene tree, right-click `lysozyme` and choose **New Renderer**
-2. Choose **ballstick** from **Renderer type**
+1. In the scene tree, right-click `lysozyme` and choose **New Renderer**.
+2. Choose **ballstick** from **Renderer type**.
 3. **Selection** is already filled with the expression for the current selection (`A.2:3.*`).
-   Leave it as it is
+   Leave it as it is.
 4. **Renderer name** is automatically suggested with an unused name (such as `ballstick1`).
-   To use a more descriptive name, change it here
-5. Click **Create**. Only the Val2 to Phe3 part is displayed as ballstick
+   To use a more descriptive name, change it here.
+5. Click **Create**. Only the Val2 to Phe3 part is displayed as ballstick.
 
 <!-- TODO(screenshot): New Renderer dialog (ballstick, Selection = A.2:3.*), and the display with only two residues as ballstick -->
 
@@ -28,9 +28,9 @@ Display only the two selected residues as ballstick.
 
 To apply a Renderer to everything regardless of the current selection, uncheck **Selection**.
 
-1. Open **New Renderer** on `lysozyme` again and choose **ribbon**
-2. Uncheck **Selection**
-3. Click **Create**. The ribbon display is layered over the whole molecule
+1. Open **New Renderer** on `lysozyme` again and choose **ribbon**.
+2. Uncheck **Selection**.
+3. Click **Create**. The ribbon display is layered over the whole molecule.
 
 The simple line drawing, the two-residue ballstick and the whole-molecule ribbon are now stacked.
 Closing the eye icon of simple1 in the scene tree tidies up the picture and makes it easier to see.
@@ -40,8 +40,8 @@ Closing the eye icon of simple1 in the scene tree tidies up the picture and make
 Extend the displayed range of ballstick1 from Val2 to Phe3 to Val2 to Glu7.
 
 1. In the **Molecular structure** panel, select residues 2 to 7 as a range and click **Select**
-   (applying the selection expression `A.2:7.*` in the Selection panel works the same way)
-2. In the scene tree, right-click `ballstick1` and choose **Change sel &gt; Current**
+   (applying the selection expression `A.2:7.*` in the Selection panel works the same way).
+2. In the scene tree, right-click `ballstick1` and choose **Change sel &gt; Current**.
 
 The displayed range of the Renderer is replaced with the current selection and extends to Glu7.
 **Change sel** also offers standard ranges such as **All** (everything), **Protein**, **Water** and **Ligand**.
@@ -57,11 +57,11 @@ so feel free to experiment (ballstick1 is kept here).
 The fine details of a Renderer's appearance are determined by **properties**, which are edited in the
 **property inspector** on the right (→ [Property inspector](../../ui/inspector.md)).
 
-1. Select `ballstick1` in the scene tree
-2. A ballstick-specific section is shown in the **Properties** tab of the inspector
+1. Select `ballstick1` in the scene tree.
+2. A ballstick-specific section is shown in the **Properties** tab of the inspector.
 3. Set **Bond width** (thickness of the bond sticks, in Å) and **Atom radius** (radius of the atom spheres)
-   to `0.4`. The model becomes stubby
-4. Enable **Show ring** to display a plate on the aromatic ring of Phe3
+   to `0.4`. The model becomes stubby.
+4. Enable **Show ring** to display a plate on the aromatic ring of Phe3.
 
 Changes are **reflected immediately** in the molecular view. There are no OK / Apply buttons;
 use Undo to revert.

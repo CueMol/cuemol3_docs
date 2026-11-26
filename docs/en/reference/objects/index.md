@@ -29,7 +29,7 @@ the Renderers for density maps can be attached to either.
 - **Create** — load a file from the File menu, or use one of the generating tools in the Tools menu
   (→ [File menu](../../menu/file.md), [Tools menu](../../menu/tools.md))
 - **Save** — File &gt; Save File As... writes a single Object to a file.
-  Only Objects that have a corresponding save format can be saved
+  Only Objects that have a corresponding save format can be saved.
 - **Delete, rename and copy** — right-click menu of the scene tree
   (→ [Side panels](../../ui/side-panels.md))
 - **Edit properties** — property inspector

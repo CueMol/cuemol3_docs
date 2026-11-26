@@ -22,14 +22,14 @@ For the common properties, see [Common Renderer properties](common.md).
      description) from the isosurf inspector section and the C++ definition -->
 
 Map kind
-:   The kind of this map (*Crystallographic* / *Cryo-EM*). Read-only; it shows the result of the
+:   The kind of this map (*Crystallographic* / *Cryo-EM*). Read-only; it shows the result of the.
     **Map type** detection of the [DensityMap](../objects/densitymap.md#map-type)
 
 Region
 :   The range to display. *Auto* (default) becomes *Box around center* for crystallographic maps
     and *Full map* for cryo-EM maps.
     *Box around center* draws only the area around the view center and follows the movement of the viewpoint.
-    *Full map* draws the entire map
+    *Full map* draws the entire map.
 
 Level of detail
 :   How many grid points to skip between reads. With *Auto* (default), when **Region** is *Full map*
@@ -40,12 +40,12 @@ Level of detail
 LoD budget
 :   The number of grid points that *Auto* **Level of detail** tries to stay within. The unit, 1 Mcell, is
     about one million grid points. A larger value gives finer detail but makes drawing slower
-    (default: 16 Mcell). Shown only when **Region** is *Full map*
+    (default: 16 Mcell). Shown only when **Region** is *Full map*.
 
 Refine on zoom
 :   When ON (default), the drawn range is narrowed to the area around the viewpoint and redrawn in finer detail accordingly.
     When zoomed out, the whole map is drawn coarsely, and the part you zoom in on becomes finer.
-    Shown only when **Region** is *Full map*
+    Shown only when **Region** is *Full map*.
 
 Cap mode
 :   Whether to close with a face the places where the isosurface is cut at the boundary of the displayed range. With *Auto* (default),

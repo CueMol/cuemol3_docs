@@ -35,7 +35,7 @@ Scene
 :   Named selection definitions saved in the scene
 
 Global
-:   Definitions shared by all scenes. Built-in selections such as `protein` and `water` are listed here
+:   Definitions shared by all scenes. Built-in selections such as `protein` and `water` are listed here.
 
 ## History
 

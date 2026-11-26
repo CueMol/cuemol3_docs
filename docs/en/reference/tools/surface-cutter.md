@@ -20,16 +20,16 @@ The cutting plane is the **near slab plane** of the molecular view. Before openi
 |---|---|---|
 | **Target surface** | — | The molecular surface Object to cut |
 | **Cross section** | Complete | How the cross section is handled (see the table below) |
-| **Section mesh density (/A)** | 5.0 | Density of the triangle mesh created for the cross section. A larger value gives a finer mesh but takes longer to compute |
+| **Section mesh density (/A)** | 5.0 | Density of the triangle mesh created for the cross section. A larger value gives a finer mesh but takes longer to compute. |
 
 The choices for **Cross section** are as follows.
 
 | Cross section | Description |
 |---|---|
-| **Complete** | Puts the cut surface and the cross section in the same Object |
-| **Separately** | Puts the cut surface and the cross section in separate Objects. The cross section becomes a new Object named `sect_<original name>`. Use this when you want to color only the cross section differently |
-| **Section only** | Keeps only the cross section |
-| **No section** | Keeps only the cut surface (a surface with a hole and no cross section) |
+| **Complete** | Puts the cut surface and the cross section in the same Object. |
+| **Separately** | Puts the cut surface and the cross section in separate Objects. The cross section becomes a new Object named `sect_<original name>`. Use this when you want to color only the cross section differently. |
+| **Section only** | Keeps only the cross section. |
+| **No section** | Keeps only the cut surface (a surface with a hole and no cross section). |
 
 ## Running and the result
 
