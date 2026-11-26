@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/experimental/symmetry.md @ 1002eeb -->
+<!-- source: ja/tutorials/experimental/symmetry.md @ b9950c9 -->
 
 # Displaying symmetry mates and the unit cell
 
@@ -91,9 +91,9 @@ With **Center at SYMM atom** in the same menu, the view center can be moved to t
 The similarly named **Center at this atom** targets the atom (the entity) **before** the symmetry operation,
 so choosing it while looking at a symmetry mate sends the view to a distant location.
 
-![The New Renderer dialog opened by Create SYMM mol... The Object name is the original name plus the symmetry operation](../../../assets/images/tutorials/experimental/symmetry/5-create-symm.webp){ width="480" .on-glb }
+![The menu shown by right-clicking an atom of a symmetry mate. A symop row below the names of the atom and the Renderer, and Center at SYMM atom and Create SYMM mol... at the end](../../../assets/images/tutorials/experimental/symmetry/5-context-menu.webp){ width="295" .on-glb }
 
-<!-- TODO(screenshot): Context menu from right-clicking a symmetry mate (symop display + Create SYMM mol...). It is a native menu, so docShot cannot capture it -->
+![The New Renderer dialog opened by Create SYMM mol... The Object name is the original name plus the symmetry operation](../../../assets/images/tutorials/experimental/symmetry/5-create-symm.webp){ width="480" .on-glb }
 
 ## 6. Adjust or remove the display
 

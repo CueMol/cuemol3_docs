@@ -77,15 +77,24 @@ export async function lastPopupLabels(app: ElectronApplication): Promise<string[
 export async function installContextMenuDriver(app: ElectronApplication): Promise<void> {
     await app.evaluate(({ Menu }) => {
         const g = globalThis as unknown as {
-            __e2eCtx?: { queue: string[][]; last: string[] };
+            __e2eCtx?: { queue: string[][]; last: string[]; showNext?: boolean; shown?: unknown };
         };
         if (g.__e2eCtx) return;
         g.__e2eCtx = { queue: [], last: [] };
         type Item = { type?: string; label?: string; enabled?: boolean; submenu?: { items: Item[] } | null; click?: (...a: unknown[]) => void };
         const proto = Menu.prototype as unknown as { popup: (opts?: { callback?: () => void }) => void; items: Item[] };
+        const original = proto.popup;
         proto.popup = function (this: { items: Item[] }, opts?: { callback?: () => void }) {
             const st = g.__e2eCtx!;
             st.last = this.items.filter((i) => i.type !== 'separator').map((i) => i.label ?? '');
+            if (st.showNext) {
+                // Show the real native menu once, for a screen capture
+                // (showNativeMenu); it stays open until closeNativeMenu.
+                st.showNext = false;
+                st.shown = this;
+                original.call(this, opts);
+                return;
+            }
             const path = st.queue.shift();
             setTimeout(() => {
                 try {
@@ -129,5 +138,34 @@ export async function clearLastContextLabels(app: ElectronApplication): Promise<
     await app.evaluate(() => {
         const g = globalThis as unknown as { __e2eCtx: { last: string[] } };
         g.__e2eCtx.last = [];
+    });
+}
+
+/**
+ * Let the next context menu open for real (the native menu on macOS), so it
+ * can be captured with the screen; close it with closeNativeMenu.
+ */
+export async function showNextNativeMenu(app: ElectronApplication): Promise<void> {
+    await app.evaluate(() => {
+        const g = globalThis as unknown as { __e2eCtx: { showNext?: boolean; shown?: unknown } };
+        g.__e2eCtx.showNext = true;
+        g.__e2eCtx.shown = undefined;
+    });
+}
+
+/** Whether the real menu requested by showNextNativeMenu is open. */
+export async function nativeMenuShown(app: ElectronApplication): Promise<boolean> {
+    return app.evaluate(() => {
+        const g = globalThis as unknown as { __e2eCtx: { shown?: unknown } };
+        return g.__e2eCtx.shown !== undefined;
+    });
+}
+
+/** Close the real menu opened through showNextNativeMenu. */
+export async function closeNativeMenu(app: ElectronApplication): Promise<void> {
+    await app.evaluate(() => {
+        const g = globalThis as unknown as { __e2eCtx: { shown?: { closePopup: () => void } } };
+        g.__e2eCtx.shown?.closePopup();
+        g.__e2eCtx.shown = undefined;
     });
 }

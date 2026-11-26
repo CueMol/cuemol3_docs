@@ -4,7 +4,8 @@
  * The tests mirror the page's numbered h2 sections. §5 right-clicks an atom
  * of a symmetry mate: the molecular view's context menu is native on
  * macOS, so points near the view centre are tried with the context-menu
- * driver until the menu shows a symop row (helpers/popupMenu.ts).
+ * driver until the menu shows a symop row (helpers/popupMenu.ts). The menu
+ * itself is captured from the screen (helpers/nativeShot.ts).
  */
 import { test, expect, type Page } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
@@ -12,6 +13,7 @@ import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { getPdb } from '../../helpers/openFile';
 import { clickSceneToolbar, expectRow, rowVisibilityToggle, selectRow, toggleRowVisibility } from '../../helpers/sceneTree';
 import { clearLastContextLabels, lastContextLabels, pickNextContextItem } from '../../helpers/popupMenu';
+import { nativeMenuShot } from '../../helpers/nativeShot';
 import { openSidebarView } from '../../helpers/sidebar';
 import { setViewValue } from '../../helpers/viewPane';
 import { docShot, sidebarRect } from '../../helpers/docShot';
@@ -142,6 +144,12 @@ test.describe.serial('対称分子・単位格子の表示', { tag: '@net' }, ()
         expect(labels).toContain('Center at SYMM atom');
         expect(labels).toContain('Create SYMM mol...');
         const symop = labels[2].replace(/^symop: /, '');
+        // The real (native) menu, captured from the screen.
+        await w.mouse.move(p.x, p.y);
+        await nativeMenuShot(harness.app, w, `${SHOT}/5-context-menu`, async () => {
+            await w.waitForTimeout(700);
+            await w.mouse.click(p.x, p.y, { button: 'right' });
+        });
         // 「3. Create SYMM mol... を選びます」
         await w.waitForTimeout(700);
         await pickNextContextItem(harness.app, ['Create SYMM mol...']);

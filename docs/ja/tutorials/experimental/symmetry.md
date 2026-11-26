@@ -92,9 +92,9 @@ Object と同じように Renderer の追加や色の設定ができます。操
 移せます。よく似た名前の **Center at this atom** は対称操作する**前**の原子 (実体) が
 対象なので、対称分子を見ているときに選ぶと視点が離れた場所へ飛んでしまいます。
 
-![Create SYMM mol... で開く New Renderer ダイアログ。Object 名は元の名前と対称操作になる](../../../assets/images/tutorials/experimental/symmetry/5-create-symm.webp){ width="480" .on-glb }
+![対称分子の原子を右クリックしたときのメニュー。原子と Renderer の名前の下に symop の行があり、末尾に Center at SYMM atom と Create SYMM mol... が並ぶ](../../../assets/images/tutorials/experimental/symmetry/5-context-menu.webp){ width="295" .on-glb }
 
-<!-- TODO(screenshot): 対称分子を右クリックしたコンテキストメニュー (symop 表示 + Create SYMM mol...)。ネイティブメニューのため docShot では撮れない -->
+![Create SYMM mol... で開く New Renderer ダイアログ。Object 名は元の名前と対称操作になる](../../../assets/images/tutorials/experimental/symmetry/5-create-symm.webp){ width="480" .on-glb }
 
 ## 6. 表示を調整・解除する
 

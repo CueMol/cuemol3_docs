@@ -248,22 +248,7 @@ export async function docShot(
 ): Promise<void> {
     if (!process.env.DOCSHOT) return;
 
-    const file = path.join(DOCS_IMAGES_DIR, `${id}.webp`);
-    const existing = fs.existsSync(file) ? fs.readFileSync(file) : undefined;
-
-    if (process.env.DOCSHOT_ADOPT) {
-        if (existing) {
-            recordHash(id, sha256(existing));
-            console.log(`[docShot] adopt ${id}.webp`);
-            return;
-        }
-    } else if (existing && !process.env.DOCSHOT_FORCE && !isOwnOutput(id, existing)) {
-        console.log(
-            `[docShot] SKIP ${id}.webp — hand-made or edited after generation; ` +
-            'left as is (DOCSHOT_FORCE=1 to overwrite)',
-        );
-        return;
-    }
+    if (!mayWriteShot(id)) return;
 
     // Park the pointer in the window's top-left corner so no tooltip or
     // hover highlight from the last click ends up in the picture.
@@ -277,6 +262,35 @@ export async function docShot(
         if (frames) await clearHighlight(window);
     }
 
+    await writeShot(id, png);
+}
+
+/**
+ * Whether a shot may be (re)written: false for a hand-made or edited file
+ * (reported as SKIP) and in DOCSHOT_ADOPT mode once its hash is recorded.
+ */
+export function mayWriteShot(id: string): boolean {
+    const file = path.join(DOCS_IMAGES_DIR, `${id}.webp`);
+    const existing = fs.existsSync(file) ? fs.readFileSync(file) : undefined;
+    if (process.env.DOCSHOT_ADOPT) {
+        if (existing) {
+            recordHash(id, sha256(existing));
+            console.log(`[docShot] adopt ${id}.webp`);
+            return false;
+        }
+    } else if (existing && !process.env.DOCSHOT_FORCE && !isOwnOutput(id, existing)) {
+        console.log(
+            `[docShot] SKIP ${id}.webp — hand-made or edited after generation; ` +
+            'left as is (DOCSHOT_FORCE=1 to overwrite)',
+        );
+        return false;
+    }
+    return true;
+}
+
+/** Encode a PNG capture as WebP within the budget, write it and record its hash. */
+export async function writeShot(id: string, png: Buffer): Promise<void> {
+    const file = path.join(DOCS_IMAGES_DIR, `${id}.webp`);
     // Lazy import keeps sharp (a native module) out of the normal test runs.
     const sharp = (await import('sharp')).default;
     const { width = 0 } = await sharp(png).metadata();
