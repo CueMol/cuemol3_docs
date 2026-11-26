@@ -10,10 +10,7 @@
     - **学ぶこと**: タイムラインの編集、カメラモーション、表示の切り替え、モーフィング、動画の書き出し
     - **前提**: [タンパク質のリボン図の表示](../figures/ribbon-figure.md) (前半で仕上げたシーンを使う)
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。Animation パネルにストリップが並んだタイムラインと再生中の分子ビュー -->
+![完成イメージ。Animation パネルに Simple spin / Camera motion / Show のストリップが並んだタイムライン](../../../assets/images/tutorials/animation/animation-movie/6-timeline.webp){ .on-glb }
 
 ## 1. アニメーションのしくみ
 
@@ -37,7 +34,7 @@
    360° にすると 1 周して元の向きに戻ります (→ [SimpleSpin](../../reference/animation/simplespin.md))。
 4. 帯をドラッグすると開始位置を、端をドラッグすると長さ (回転にかける時間) を変えられます。
 
-<!-- TODO(screenshot): Simple spin のストリップとインスペクタ (Rotation angle / Spin axis) -->
+![Simple spin のストリップを選び、インスペクタで Rotation angle を 360°、Spin axis を Y axis にした](../../../assets/images/tutorials/animation/animation-movie/3-simple-spin.webp){ .on-glb }
 
 ## 4. 再生して確認する
 
@@ -86,10 +83,10 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 ### 2 つの構造を読み込む
 
 1. **File &gt; New Tab** を選び、**New Scene** で新しいシーンを作ります。
-2. **File &gt; Get PDB...** で `1TND` を取得します。Renderer の指定画面では **trace** を選び、
+2. **File &gt; Get PDB...** で `1TND` を取得します。Renderer の指定画面では **cartoon** を選び、
    **Selection** に `c; A` を指定します (1TND には同じ分子が 3 つ (chain A / B / C)
    含まれているため、chain A だけを表示します)。
-3. 同様に **File &gt; Get PDB...** で `1TAG` も取得します (Renderer は **trace**。
+3. 同様に **File &gt; Get PDB...** で `1TAG` も取得します (Renderer は **cartoon**。
    こちらは chain A のみなので Selection の指定は不要です)。
 
 ### 1TAG を 1TND に重ね合わせる
@@ -129,7 +126,7 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 3. 再生すると、GTP 結合型と GDP 結合型の間で分子が変形します。
 
 1TND 側にしかない chain B・C やリガンド・水分子は、対応が取れないため
-静止したままですが、chain A の trace しか表示していないため見えません。
+静止したままですが、chain A の cartoon しか表示していないため見えません。
 
 !!! tip "行って戻るループにするには"
     **Mol morphing** のストリップをもう 1 つ後ろに追加し、インスペクタの
@@ -137,7 +134,8 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
     2 本並べると「行って戻る」ループアニメーションが作れます
     (→ [MolAnim](../../reference/animation/molanim.md))。
 
-<!-- TODO(screenshot): Morph animation tool ダイアログ (フレーム一覧) と、モーフィング再生中の分子ビュー -->
+![Morph animation tool ダイアログ。フレームの一覧に (this) と 1tag が並んだ](../../../assets/images/tutorials/animation/animation-movie/7-morph-dialog.webp){ width="420" .on-glb }
+![Mol morphing のストリップを選び、Target MorphMol に 1tnd を指定した](../../../assets/images/tutorials/animation/animation-movie/7-morph-timeline.webp){ .on-glb }
 
 !!! note "自分の構造でモーフィングを作るには"
     フレーム間の原子の対応づけは、**チェイン名・残基番号・原子名**の一致で行われます
@@ -160,7 +158,7 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 動画 (Movie) モードで開きます (→ [レンダリングウィンドウ](../../ui/rendering-window.md))。
 
 1. **Target** に対象のビューを選びます。**Backend** は既定の **Umbreon** のままで構いません。
-2. **Image** タブでサイズ (例: **HD1080 (1920×1080)**) を選びます。
+2. **Image** タブでサイズ (例: **VGA (640×480)**) を選びます。
 3. **Start Render** を押すと、フレームを 1 枚ずつレンダリングし、完了すると
    ffmpeg で動画ファイルにエンコードされます (macOS / Windows の配布物には同梱、
    → [外部ツールの設定](../../install/external-tools.md))
@@ -174,7 +172,8 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 品質を上げたいときの設定は静止画と共通です
 (→ [論文用の高解像度画像の書き出し](../figures/publication-images.md))。
 
-<!-- TODO(screenshot): Movie モードのレンダリングウィンドウ (進捗とプレビュー) -->
+![Movie モードの Image タブで、Preset に VGA (640×480) を選んだ](../../../assets/images/tutorials/animation/animation-movie/8-movie-settings.webp){ width="380" .on-glb }
+![動画のレンダリングが完了したレンダリングウィンドウ](../../../assets/images/tutorials/animation/animation-movie/8-movie-done.webp){ .on-glb }
 
 ## 同じことをコマンドで
 
@@ -202,8 +201,8 @@ add_anim show, name=show1
 set_anim_prop show1, rend, 3ug9/ballstick1
 # 7. モーフィングを加える
 create_scene
-fetch_pdb 1TND, mmcif, trace, selection="c; A"
-fetch_pdb 1TAG, mmcif, trace
+fetch_pdb 1TND, mmcif, cartoon, selection="c; A"
+fetch_pdb 1TAG, mmcif, cartoon
 superpose 1tag, 1tnd, refSel="c; A", algo=SSM
 convert_to_morph 1tnd
 add_morph_frame 1tnd, fromObjId=1tag
