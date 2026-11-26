@@ -49,20 +49,30 @@ DPI は画像のピクセル数には影響しません。書き出した PNG �
    **Backend** は既定の **Umbreon** のままで構いません。
 2. **Image** タブで出力サイズを選びます。プリセット (例: **1200×1200 (600dpi)**) から選ぶか、
    **Custom** で幅・高さを直接指定します。
-3. **Render** タブの **Quality** セクションで、**Lighting** (陰影の付け方) を
-   **Raytrace only** にします。今回のような cartoon の図は、これで十分きれいに仕上がります。
+3. **Render** タブの **Quality** セクションで、**Lighting** (陰影の付け方) が既定の
+   **Global Illumination** になっていることを確かめます。大域照明による陰影づけで、cartoon の
+   ヘリックスの筒が重なる部分にも奥行き感が出ます。
    **Supersampling** (輪郭を滑らかにする設定) は既定のままで構いません。
 4. **Start Render** を押すとレンダリングが始まり、進捗が表示されます。
 
 ![Image タブの Preset で 1200×1200 (600dpi) を選んだところ](../../../assets/images/tutorials/figures/publication-images/3-image-tab.webp){ width="380" .on-glb }
-![Render タブの Quality セクションで Lighting を Raytrace only にしたところ](../../../assets/images/tutorials/figures/publication-images/3-render-tab.webp){ width="380" .on-glb }
+![Render タブの Quality セクション。Lighting は既定の Global Illumination](../../../assets/images/tutorials/figures/publication-images/3-render-tab.webp){ width="380" .on-glb }
 
-!!! tip "陰影に奥行き感を出すなら Global Illumination"
-    **Lighting** を **Global Illumination** (既定) にすると、大域照明による陰影づけで
-    奥行き感のある仕上がりになります。ただし、cartoon だけの図では効果は小さめです。
-    分子表面のような込み入った形状の図で試してみてください。
+!!! tip "速さを優先するなら Raytrace only"
+    **Lighting** を **Raytrace only** にすると、大域照明の計算を省くぶん速く仕上がります。
+    そのかわり陰影が弱くなり、cartoon では奥行き感が減ります (下図)。細い ribbon や線の図では
+    差が出にくいので、構図の確認や試し出しに使うとよいでしょう。
 
-    <!-- TODO(screenshot): Raytrace only と Global Illumination の比較例 (同一構図、GI の効果がわかる込み入った形状が望ましい)。この admonition 内にインデントして width 指定 + .on-glb で挿入 -->
+    ![Raytrace only で仕上げた cartoon](../../../assets/images/tutorials/figures/publication-images/lighting-rt.webp){ width="220" .on-glb }
+    ![Global Illumination で仕上げた cartoon。ヘリックスの筒が重なる奥が暗くなり、奥行きが出る](../../../assets/images/tutorials/figures/publication-images/lighting-gi.webp){ width="220" .on-glb }
+    ![Global Illumination で、Light intensity を 1.7 に上げた cartoon](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="220" .on-glb }
+
+!!! tip "Global Illumination で全体が暗く見えるときは"
+    Global Illumination では、光が遮られる奥や隙間が暗くなるぶん、図全体も Raytrace only より
+    暗く見えます。明るくしたいときは、**Render** タブの **Lights** セクションで **Light intensity**
+    (光源全体の強さ、既定 1.3) を 1.7 程度に上げます (上図の右)。陰影の付き方はそのままで、全体が
+    明るくなります。上げすぎると明るい色が白く飛ぶので、結果を見ながら調整してください
+    (→ [レンダリング](../../reference/rendering.md#lights))。
 
 各品質項目の意味と使い分けは [レンダリング](../../reference/rendering.md) を参照してください。
 
@@ -98,15 +108,16 @@ DPI は画像のピクセル数には影響しません。書き出した PNG �
 ```
 # 2. 画面のまま PNG に書き出す (1200×1200 ピクセル、600 DPI)
 export_scene ~/3ug9.png, png, 1200, 1200, dpi=600
-# 3. レイトレースで仕上げる (Lighting を Raytrace only にして、1200×1200 で書き出す)
-set_render_settings "umbreon.useGI=false; umbreon.aoEnabled=false; umbreon.lightIntensity=1.55; umbreon.flashFraction=0.6; umbreon.ambientFraction=0.16"
+# 3. レイトレースで仕上げる (既定の Global Illumination で、1200×1200 で書き出す)
 render_image ~/3ug9-rt.png, 1200, 1200
 # 4. 結果を確認して保存する (GUI のみ)
 ```
 
 - `export_scene` に `transparent=true` を付けると、背景が透明な PNG になります。
-- `set_render_settings` の値は、レンダリングウィンドウの **Lighting** で **Raytrace only** を
-  選んだときと同じです。設定はシーンに保存され、レンダリングウィンドウにも反映されます。
+- **Raytrace only** にするには、`render_image` の前に
+  `set_render_settings "umbreon.useGI=false; umbreon.aoEnabled=false; umbreon.lightIntensity=1.55; umbreon.flashFraction=0.6; umbreon.ambientFraction=0.16"`
+  を実行します。値はレンダリングウィンドウの **Lighting** で **Raytrace only** を選んだときと同じです。
+  設定はシーンに保存され、レンダリングウィンドウにも反映されます。
 - `render_image` は結果をファイルに直接書き出します。レンダリングウィンドウの結果の履歴には残りません。
 
 ## 次のステップ

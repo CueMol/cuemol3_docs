@@ -14,7 +14,7 @@ import { clickMenu } from '../../helpers/menu';
 import { runConsole, clearConsole } from '../../helpers/console';
 import { addPaintRowAtTop, chooseColoring, selectColorTarget } from '../../helpers/colorPane';
 import { showBottomTab } from '../../helpers/bottomPanel';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/structure/superpose';
 const DOC = 'docs/ja/tutorials/structure/superpose.md';
@@ -147,5 +147,6 @@ test.describe.serial('構造の重ね合わせと比較', { tag: '@net' }, () =>
         await runConsole(w, 'set_view 60, 80, center="25.54 47.84 19.26", rotation="0.8169 -0.5256 0.1422 -0.1900"');
         await clearConsole(w);
         await docShot(w, `${SHOT}/4-domains`);
+        await thumbShot(w, 'superpose');
     });
 });

@@ -14,7 +14,7 @@ import { runConsole, clearConsole } from '../../helpers/console';
 import { densityPane, levelInput, selectMapRenderer, setDragRow, setLevel } from '../../helpers/densityPane';
 import { setViewValue } from '../../helpers/viewPane';
 import { openSidebarView } from '../../helpers/sidebar';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/experimental/cryoem-map';
 const DOC = 'docs/ja/tutorials/experimental/cryoem-map.md';
@@ -140,6 +140,7 @@ test.describe.serial('cryo-EM マップとモデルの表示', { tag: '@net' }, 
             });
         }
         await setLevel(pane, 0.9);
+        await thumbShot(w, 'cryoem-map');
     });
 });
 

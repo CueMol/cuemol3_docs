@@ -19,7 +19,7 @@ import { checkField, fieldControl, fieldRow } from '../../helpers/form';
 import { setNumericProperty } from '../../helpers/inspector';
 import { clearConsole, runConsole, useConsoleMode } from '../../helpers/console';
 import { clickMenu } from '../../helpers/menu';
-import { docShot, inspectorRect } from '../../helpers/docShot';
+import { docShot, inspectorRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/structure/binding-site';
 const OBJ = '1stp';
@@ -153,6 +153,7 @@ test.describe.serial('リガンド結合部位の表示', { tag: '@net' }, () =>
         // The spec's own console lines are not part of the page's steps.
         await clearConsole(harness.window);
         await docShot(harness.window, `${SHOT}/6-labeled`);
+        await thumbShot(harness.window, 'binding-site');
     });
 });
 

@@ -18,7 +18,7 @@ import { openSidebarView } from '../../helpers/sidebar';
 import { clearLastContextLabels, lastContextLabels, pickNextContextItem } from '../../helpers/popupMenu';
 import { nativeMenuShot } from '../../helpers/nativeShot';
 import { runConsole, clearConsole } from '../../helpers/console';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/basic/selection';
 const DOC = 'docs/ja/tutorials/basic/selection.md';
@@ -179,6 +179,7 @@ test.describe.serial('分子の一部の選択', { tag: '@net' }, () => {
         await pane.locator('.section-action-btn').nth(2).click();
         await w.waitForTimeout(800);
         await docShot(w, `${SHOT}/0-highlight`);
+        await thumbShot(w, 'selection');
     });
 
     test('4. Selection パネルと選択ビルダー', async () => {

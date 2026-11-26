@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/ribbon-figure.md @ 1002eeb -->
+<!-- source: ja/tutorials/figures/ribbon-figure.md @ 5f16888 -->
 
 # Making a protein ribbon figure
 
@@ -27,6 +27,13 @@ Use **File &gt; Get PDB...** to fetch the structure from the network.
 
 The protein part is drawn as a cartoon that reflects the secondary structure
 (→ [cartoon](../../reference/renderers/cartoon.md)).
+
+!!! note "ribbon and cartoon"
+    A "ribbon diagram" is the common name for a figure that draws the protein main chain as bands and tubes by secondary structure.
+    CueMol has two Renderers for it. **ribbon** draws helices as spiral bands, and
+    **cartoon** draws helices as tubes that curve along the main chain. This tutorial uses cartoon,
+    but the same steps work with ribbon
+    (→ [ribbon](../../reference/renderers/ribbon.md) / [cartoon](../../reference/renderers/cartoon.md)).
 
 !!! tip "A preset does it in one step"
     If you select **Default preset 2** under Presets in **Renderer type**, a Renderer group is created at once, combining a cartoon for the protein, a ballstick for nucleic acids, and a ballstick for everything else (ligands and so on).

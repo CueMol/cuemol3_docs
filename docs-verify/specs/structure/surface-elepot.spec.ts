@@ -15,7 +15,7 @@ import { expectRow, sceneRow, toggleRowVisibility } from '../../helpers/sceneTre
 import { chooseColoring, colorPane, selectColorTargetOf } from '../../helpers/colorPane';
 import { setNumericProperty } from '../../helpers/inspector';
 import { openSidebarView } from '../../helpers/sidebar';
-import { docShot, inspectorRect, sidebarRect } from '../../helpers/docShot';
+import { docShot, inspectorRect, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/structure/surface-elepot';
 const DOC = 'docs/ja/tutorials/structure/surface-elepot.md';
@@ -142,6 +142,7 @@ test.describe.serial('分子表面の静電ポテンシャル表示', { tag: '@n
             highlight: pane,
         });
         await docShot(w, `${SHOT}/4-colored`);
+        await thumbShot(w, 'surface-elepot');
     });
 
     test('5. 半透明の表面と cartoon を重ねる', async () => {

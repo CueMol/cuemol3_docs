@@ -29,6 +29,13 @@
 タンパク質部分が、二次構造を反映した cartoon 表示で描かれます
 (→ [cartoon](../../reference/renderers/cartoon.md))。
 
+!!! note "ribbon と cartoon"
+    「リボン図」は、タンパク質の主鎖を二次構造ごとに帯や筒で描く図の一般的な呼び名です。
+    CueMol にはそのための Renderer が 2 種類あります。**ribbon** はヘリックスをらせん状の帯で、
+    **cartoon** はヘリックスを主鎖に沿ってうねる筒で描きます。このチュートリアルでは cartoon を
+    使いますが、ribbon でも同じ手順で作ることができます
+    (→ [ribbon](../../reference/renderers/ribbon.md) / [cartoon](../../reference/renderers/cartoon.md))。
+
 !!! tip "プリセットなら一度で作れます"
     **Renderer type** の Presets にある **Default preset 2** を選ぶと、タンパク質の cartoon・
     核酸・それ以外 (リガンドなど) の ballstick をまとめた Renderer グループが一度に作られます。

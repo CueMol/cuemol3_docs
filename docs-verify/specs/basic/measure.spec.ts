@@ -20,7 +20,7 @@ import { expectRow, rowVisibilityToggle, sceneRow, sceneToolbarButtons, toggleRo
 import { clearLastContextLabels, lastContextLabels, pickNextContextItem } from '../../helpers/popupMenu';
 import { openSidebarView } from '../../helpers/sidebar';
 import { runConsole, clearConsole } from '../../helpers/console';
-import { aroundBox, docShot, sidebarRect } from '../../helpers/docShot';
+import { aroundBox, docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/basic/measure';
 const DOC = 'docs/ja/tutorials/basic/measure.md';
@@ -109,6 +109,10 @@ test.describe.serial('計測と相互作用の表示', { tag: '@net' }, () => {
         await click(w, p2);
         await expectRow(w, 'measure');
         await expect.poll(async () => (await interactionLines(w)).length).toBe(1);
+        // The card shows the measurement itself: 320 x 240 around the two atoms.
+        await thumbShot(w, 'measure', {
+            x: (p1.x + p2.x) / 2 - 160, y: (p1.y + p2.y) / 2 - 120, width: 320, height: 240,
+        });
         await clearConsole(w);
         // 「途中でやめたいときは Esc を押すか、Navigate など他のツールに切り替えます」
         await tool(w, 'Navigate (N)').click();

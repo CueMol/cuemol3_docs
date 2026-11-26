@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/publication-images.md @ 1002eeb -->
+<!-- source: ja/tutorials/figures/publication-images.md @ e17fb41 -->
 
 # Exporting high-resolution images for publication
 
@@ -51,20 +51,30 @@ it stays open (→ [Rendering window](../../ui/rendering-window.md)).
    **Backend** can be left at the default, **Umbreon**
 2. Select the output size in the **Image** tab. Choose a preset (for example, **1200×1200 (600dpi)**)
    or specify the width and height directly with **Custom**
-3. In the **Quality** section of the **Render** tab, set **Lighting** (how shading is applied) to
-   **Raytrace only**. This is sufficient to give a clean result for a cartoon figure like this one.
+3. In the **Quality** section of the **Render** tab, check that **Lighting** (how shading is applied) is the default
+   **Global Illumination**. Shading by global illumination adds a sense of depth, even where the tubes of
+   the cartoon's helices overlap.
    **Supersampling** (the setting that smooths outlines) can be left at the default
 4. Press **Start Render** to start rendering. Progress is displayed.
 
 ![1200×1200 (600dpi) selected in the Preset of the Image tab](../../../assets/images/tutorials/figures/publication-images/3-image-tab.webp){ width="380" .on-glb }
-![Lighting set to Raytrace only in the Quality section of the Render tab](../../../assets/images/tutorials/figures/publication-images/3-render-tab.webp){ width="380" .on-glb }
+![The Quality section of the Render tab. Lighting is the default Global Illumination](../../../assets/images/tutorials/figures/publication-images/3-render-tab.webp){ width="380" .on-glb }
 
-!!! tip "Global Illumination for depth in shading"
-    Setting **Lighting** to **Global Illumination** (the default) gives shading by global
-    illumination, which adds a sense of depth. For figures with only a cartoon, however, the
-    effect is small. Try it on figures with intricate shapes such as molecular surfaces.
+!!! tip "Raytrace only when speed comes first"
+    Setting **Lighting** to **Raytrace only** skips the global illumination calculation, so rendering is faster.
+    In exchange, the shading is weaker and a cartoon loses some of its depth (see below). Figures of thin ribbons or lines
+    show little difference, so it is a good choice for checking the composition or for trial renders.
 
-    <!-- TODO(screenshot): Comparison of Raytrace only and Global Illumination (same composition, preferably an intricate shape where the effect of GI is visible). Insert indented inside this admonition with a width attribute + .on-glb -->
+    ![A cartoon finished with Raytrace only](../../../assets/images/tutorials/figures/publication-images/lighting-rt.webp){ width="220" .on-glb }
+    ![A cartoon finished with Global Illumination. The back where the helix tubes overlap gets darker, giving depth](../../../assets/images/tutorials/figures/publication-images/lighting-gi.webp){ width="220" .on-glb }
+    ![A cartoon finished with Global Illumination and Light intensity raised to 1.7](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="220" .on-glb }
+
+!!! tip "When Global Illumination looks dark overall"
+    With Global Illumination, the back and the gaps where light is blocked get darker, so the whole figure also looks
+    darker than with Raytrace only. To brighten it, raise **Light intensity** (the overall strength of the lights, default 1.3)
+    to about 1.7 in the **Lights** section of the **Render** tab (the right image above). The shading stays the same and the
+    whole picture gets brighter. Raising it too far washes out light colors, so adjust it while checking the result
+    (→ [Rendering](../../reference/rendering.md#lights)).
 
 For the meaning of each quality item and how to choose among them, see [Rendering](../../reference/rendering.md).
 
@@ -99,15 +109,16 @@ The steps on this page can be written as native-mode commands of the [Console](.
 ```
 # 2. Export a PNG as shown on screen (1200×1200 pixels, 600 DPI)
 export_scene ~/3ug9.png, png, 1200, 1200, dpi=600
-# 3. Finish with ray tracing (set Lighting to Raytrace only and export at 1200×1200)
-set_render_settings "umbreon.useGI=false; umbreon.aoEnabled=false; umbreon.lightIntensity=1.55; umbreon.flashFraction=0.6; umbreon.ambientFraction=0.16"
+# 3. Finish with ray tracing (export at 1200×1200 with the default Global Illumination)
 render_image ~/3ug9-rt.png, 1200, 1200
 # 4. Check and save the result (GUI only)
 ```
 
 - Adding `transparent=true` to `export_scene` gives a PNG with a transparent background.
-- The values of `set_render_settings` are the same as choosing **Raytrace only** for **Lighting** in the
-  rendering window. The settings are saved in the scene and are also reflected in the rendering window.
+- To use **Raytrace only**, run
+  `set_render_settings "umbreon.useGI=false; umbreon.aoEnabled=false; umbreon.lightIntensity=1.55; umbreon.flashFraction=0.6; umbreon.ambientFraction=0.16"`
+  before `render_image`. The values are the same as choosing **Raytrace only** for **Lighting** in the rendering window.
+  The settings are saved in the scene and are also reflected in the rendering window.
 - `render_image` writes the result directly to a file. It does not appear in the result history of the rendering window.
 
 ## Next steps

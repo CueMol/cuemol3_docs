@@ -17,7 +17,7 @@ import { runConsole, clearConsole } from '../../helpers/console';
 import { chooseColoring, selectColorTarget } from '../../helpers/colorPane';
 import { openSidebarView } from '../../helpers/sidebar';
 import { showBottomTab } from '../../helpers/bottomPanel';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/prediction/alphafold';
 const DOC = 'docs/ja/tutorials/prediction/alphafold.md';
@@ -167,6 +167,7 @@ test.describe.serial('AlphaFold の予測構造の評価', { tag: '@net' }, () =
         // Output tail is alignment text, not the result lines.
         await clearConsole(w);
         await docShot(w, `${SHOT}/5-superposed`);
+        await thumbShot(w, 'alphafold');
     });
 });
 

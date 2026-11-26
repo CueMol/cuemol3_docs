@@ -358,3 +358,53 @@ async function capture(window: Page, opts: ShotOptions): Promise<Buffer> {
     const y2 = Math.min(vp.h, Math.max(...boxes.map((b) => b.y + b.height)) + pad);
     return window.screenshot({ clip: { x, y, width: x2 - x, height: y2 - y } });
 }
+
+/* --- tutorial index thumbnails --- */
+
+const THUMB_WIDTH = 640;
+/** The tool palette floats over the molecular view's left edge. */
+const PALETTE_INSET = 56;
+
+/**
+ * A 4:3 thumbnail of the molecular view (or of `target`, such as the
+ * rendering window's result image) for the tutorial index cards, written as
+ * `tutorials/index/<slug>`. Taken at the same moment as the page's finished
+ * image, so the card shows the result of the tutorial. `target` may also be
+ * an explicit area, for a detail of the view (such as a measurement).
+ */
+export async function thumbShot(window: Page, slug: string, target?: Locator | Rect): Promise<void> {
+    if (!process.env.DOCSHOT) return;
+    const id = `tutorials/index/${slug}`;
+    if (!mayWriteShot(id)) return;
+    let box: Rect;
+    if (target && 'width' in target) {
+        box = target;
+    } else if (target) {
+        [box] = await boxesOf([target]);
+    } else {
+        const canvas = await window.locator('canvas').evaluateAll((cs) => cs
+            .map((c) => c.getBoundingClientRect())
+            .map((r) => ({ x: r.x, y: r.y, width: r.width, height: r.height }))
+            .sort((a, b) => b.width * b.height - a.width * a.height)[0]);
+        if (!canvas) throw new Error('[thumbShot] no canvas');
+        box = { x: canvas.x + PALETTE_INSET, y: canvas.y, width: canvas.width - PALETTE_INSET, height: canvas.height };
+    }
+    // Centre crop to 4:3.
+    let { x, y, width, height } = box;
+    if (width / height > 4 / 3) {
+        const w = height * 4 / 3;
+        x += (width - w) / 2;
+        width = w;
+    } else {
+        const h = width * 3 / 4;
+        y += (height - h) / 2;
+        height = h;
+    }
+    await window.mouse.move(1, 1).catch(() => {});
+    await window.waitForTimeout(SHOT_SETTLE_MS);
+    const png = await window.screenshot({
+        clip: { x: Math.round(x), y: Math.round(y), width: Math.round(width), height: Math.round(height) },
+    });
+    const sharp = (await import('sharp')).default;
+    await writeShot(id, await sharp(png).resize({ width: THUMB_WIDTH }).png().toBuffer());
+}

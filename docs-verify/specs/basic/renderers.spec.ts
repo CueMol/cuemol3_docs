@@ -14,7 +14,7 @@ import { clickSceneToolbar, rowVisibilityToggle, sceneRow, sceneToolbarButtons, 
 import { setNumericProperty } from '../../helpers/inspector';
 import { openSidebarView } from '../../helpers/sidebar';
 import { runConsole, clearConsole } from '../../helpers/console';
-import { docShot, inspectorRect } from '../../helpers/docShot';
+import { docShot, inspectorRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/basic/renderers';
 const DOC = 'docs/ja/tutorials/basic/renderers.md';
@@ -78,6 +78,7 @@ test.describe.serial('Renderer の追加・削除と設定', { tag: '@net' }, ()
         await clickSceneToolbar(w, 'focus');
         await w.waitForTimeout(800);
         await docShot(w, `${SHOT}/2-layered`);
+        await thumbShot(w, 'renderers');
     });
 
     test('3. 表示する範囲を後から変える', async () => {

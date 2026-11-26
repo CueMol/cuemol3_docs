@@ -16,7 +16,7 @@ import { clearLastContextLabels, lastContextLabels, pickNextContextItem } from '
 import { nativeMenuShot } from '../../helpers/nativeShot';
 import { openSidebarView } from '../../helpers/sidebar';
 import { setViewValue } from '../../helpers/viewPane';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/experimental/symmetry';
 const DOC = 'docs/ja/tutorials/experimental/symmetry.md';
@@ -129,6 +129,7 @@ test.describe.serial('対称分子・単位格子の表示', { tag: '@net' }, ()
         await setViewValue(w, 'Zoom', 120);
         await w.waitForTimeout(1500);
         await docShot(w, `${SHOT}/4-symm-cell`);
+        await thumbShot(w, 'symmetry');
     });
 
     test('5. 対称分子を独立した Object にする', async () => {
