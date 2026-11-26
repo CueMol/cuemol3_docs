@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/structure/surface-elepot.md @ dcf70c1 -->
+<!-- source: ja/tutorials/structure/surface-elepot.md @ 1002eeb -->
 
 # Coloring a molecular surface by electrostatic potential
 
@@ -12,10 +12,7 @@ positively charged regions of its surface stand out clearly.
     - **What you learn**: Generating a molecular surface, calculating the electrostatic potential with APBS, coloring the surface, overlaying a translucent surface on the cartoon
     - **Prerequisites**: The basic course up to [Coloring Renderers](../basic/coloring.md)
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
-<!-- TODO(screenshot): Final result. A molecular surface colored by electrostatic potential (oriented so that the positive and negative regions are visible) -->
+![Finished result. The molecular surface of 1QIO colored by electrostatic potential (blue is positive, red is negative)](../../../assets/images/tutorials/structure/surface-elepot/4-colored.webp){ .on-glb }
 
 ## 1. Load the structure
 
@@ -37,7 +34,9 @@ Open **Tools &gt; Mol surface generation...**.
    [MolSurfObj (molecular surface)](../../reference/objects/molsurf.md#generation-algorithm-algorithm))
 6. Click OK. A molecular surface Object and a molsurf Renderer are created, and the surface is displayed.
 
-<!-- TODO(screenshot): The Mol surface generation dialog and the molecular surface right after generation -->
+![Mol surface generation dialog. protein in Use selection, Point density set to 5](../../../assets/images/tutorials/structure/surface-elepot/2-molsurf-dialog.webp){ width="380" .on-glb }
+
+![The molecular surface right after generation](../../../assets/images/tutorials/structure/surface-elepot/2-surface.webp){ .on-glb }
 
 The MolSurf Object holds only the shape of the surface. The molsurf Renderer refers to the molecule
 specified in **Selection mol** in the inspector (here, 1QIO, from which the surface was generated)
@@ -63,7 +62,7 @@ APBS and pdb2pqr are bundled with the macOS / Windows release assets, so install
 configuration are normally not needed. For builds that do not bundle them (such as Linux), install them
 separately and specify the paths in Settings (→ [Configuring external tools](../../install/external-tools.md)).
 
-<!-- TODO(screenshot): The APBS elepot calculation dialog (progress display during the run) -->
+![APBS electrostatic potential dialog. During the calculation, the progress and the current stage (Running pdb2pqr...) are shown](../../../assets/images/tutorials/structure/surface-elepot/3-apbs-running.webp){ width="400" .on-glb }
 
 Calculation conditions such as temperature and dielectric constants can be changed in **APBS options**.
 A box showing the region over which the map was calculated (a `*unitcell` Renderer) is also added to the scene.
@@ -79,13 +78,16 @@ For details on the electrostatic potential map Object, see [ElePotMap](../../ref
 5. Enable **By SAS**. The values on the surface itself (SES) are too close to the charged atoms
    and tend to give a mottled coloring, so the surface is colored with the values on the
    solvent-accessible surface (SAS), which lies outside the surface by the radius of a water molecule (1.4 Å).
-6. Set **High** to about **2** and **Low** to about **-2**. The unit of the values is kT/e, and
-   with the default of ±10 hardly any color appears. The narrower the range,
-   the stronger the contrast.
+6. Set **High** to about **5** and **Low** to about **-5**. The unit of the values is kT/e.
+   The narrower the range, the stronger the contrast, but if it is too narrow most of the surface
+   turns deep blue or red and the distribution can no longer be seen (in this example, ±2 to 3 leans toward blue).
+   With the default of ±10 the colors are faint. Try a few values and choose a range that shows the distribution.
 
 For details on the settings, see [Coloring](../../reference/coloring.md).
 
-<!-- TODO(screenshot): The Electrostatic potential settings in the Color panel, and the colored surface -->
+![The Electrostatic potential settings in the Color panel. By SAS enabled, High set to 5 and Low to -5](../../../assets/images/tutorials/structure/surface-elepot/4-color-pane.webp){ width="318" .on-glb }
+
+![The surface colored by electrostatic potential](../../../assets/images/tutorials/structure/surface-elepot/4-colored.webp){ .on-glb }
 
 ## 5. Overlay a translucent surface and the cartoon
 
@@ -98,7 +100,9 @@ To show the structure inside the surface as well, make the surface translucent a
 This gives the classic overlay in which the path of the main chain is visible through the surface.
 For finishing and export, see [Exporting high-resolution images for publication](../figures/publication-images.md).
 
-<!-- TODO(screenshot): Overlay of a translucent surface and the cartoon -->
+![Opacity set to 0.5 in the inspector](../../../assets/images/tutorials/structure/surface-elepot/5-opacity.webp){ width="316" .on-glb }
+
+![Overlay of the cartoon seen through the translucent surface](../../../assets/images/tutorials/structure/surface-elepot/5-translucent.webp){ .on-glb }
 
 ## The same with commands
 
@@ -113,7 +117,7 @@ create_surface 1qio, protein, density=5
 calc_elepot 1qio, protein
 hide pot_1qio/unitcell
 # 4. Color the surface by the electrostatic potential
-set_elepot_coloring sf_1qio/molsurf, pot_1qio, -2, 2
+set_elepot_coloring sf_1qio/molsurf, pot_1qio, -5, 5
 set sf_1qio/molsurf.ramp_above, true
 # 5. Overlay a translucent surface and the cartoon
 set sf_1qio/molsurf.alpha, 0.5

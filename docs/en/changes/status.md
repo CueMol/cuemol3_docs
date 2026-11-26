@@ -1,4 +1,4 @@
-<!-- source: ja/changes/status.md @ c730ead -->
+<!-- source: ja/changes/status.md @ 1002eeb -->
 
 # Development status and unimplemented features
 
@@ -18,7 +18,7 @@
 | Symptom | Details |
 |---|---|
 | **Selection changes in the Sequence panel are slow to take effect** | After changing the selection in the sequence panel, the highlight in the molecular view may take about 0.5 seconds to update. |
-| **The first expansion of the Molecular structure panel is slow** | The tree may stutter when first expanded (even when the number of residues is small). |
+| **The first expansion of the Mol Struct panel is slow** | The tree may stutter when first expanded (even when the number of residues is small). |
 | **The pointing device is sometimes detected incorrectly** | Detection is estimated from scrolling characteristics, so a mouse and a trackpad may be confused. Specify the device explicitly in Settings. |
 | **Focus on a density map Renderer row jumps to the origin** | Selecting a density map Renderer (contour / isosurf) row in the scene tree and pressing **Focus** moves the view to the origin instead of the map. Focus on the map's Object row instead. |
 

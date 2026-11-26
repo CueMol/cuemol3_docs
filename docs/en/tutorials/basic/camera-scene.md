@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/camera-scene.md @ dcf70c1 -->
+<!-- source: ja/tutorials/basic/camera-scene.md @ 1002eeb -->
 
 # Saving the camera and the scene
 
@@ -18,7 +18,9 @@ The position, orientation, zoom and slab of a view can be saved as a named **cam
 1. Set up the view you want to save.
 2. Click **Explorer** in the activity bar and open the **Camera** panel.
 3. Press the **New camera from view** button at the top of the panel.
-4. Give it a name and create it (the default name is fine).
+4. Give it a name in the **New Camera** dialog and press **Create** (the default name `camera_0` is fine).
+
+    ![New Camera dialog](../../../assets/images/tutorials/basic/camera-scene/1-new-camera.webp){ width="360" .on-glb }
 
 The new camera appears in the list. Move the view around, then
 **double-click** the camera row. The saved view is restored.
@@ -50,16 +52,23 @@ Quit CueMol3 and start it again, then open
 `tutorial1.qsc` with **File &gt; Open Scene...**. The saved state is restored as it was
 (it can also be opened from **File &gt; Open Recent**).
 
+![tutorial1.qsc reopened. The Renderers and the camera camera_0 are restored](../../../assets/images/tutorials/basic/camera-scene/3-reopened.webp){ .on-glb }
+
 ## 4. Work with multiple scenes in tabs
 
 Each scene corresponds to a **tab** at the top of the window, and several scenes can be open at once.
 Scenes are independent and do not affect each other.
 
-1. Choose **File &gt; New Tab** (++cmd+t++) and create a new scene with **New Scene**.
+1. Choose **File &gt; New Tab** (++cmd+t++), leave **New Scene** selected and press **OK** to create a new scene.
+
+    ![New Tab/Window dialog. The default is New Scene](../../../assets/images/tutorials/basic/camera-scene/4-new-tab.webp){ width="380" .on-glb }
+
 2. The new scene is empty, so nothing is displayed.
 3. Fetch `1EHZ` (a tRNA structure) with **File &gt; Get PDB...** and choose **nucl**, the type for nucleic acids, as the **Renderer type**.
 4. Click the tabs to switch between scenes. The contents of the scene tree also
    switch to the scene of that tab.
+
+![1EHZ shown with nucl in the second tab. The tab bar shows tutorial1 and Untitled 1](../../../assets/images/tutorials/basic/camera-scene/4-tabs.webp){ .on-glb }
 
 ### Close a tab
 
@@ -69,9 +78,11 @@ For a scene with unsaved changes, a confirmation asks whether to save
 
 ## 5. View the same scene from another viewpoint
 
-If you choose **New View** in **File &gt; New Tab**, a tab is created that holds
+If you choose **New View for &lt;scene name&gt;** in **File &gt; New Tab**, a tab is created that holds
 **another view of the current scene**, instead of a new scene
-(you can also choose whether to inherit the current camera).
+(**Inherit view props** lets you choose whether to inherit the settings of the current view).
+
+![New View for tutorial1 chosen in the New Tab/Window dialog](../../../assets/images/tutorials/basic/camera-scene/5-new-view.webp){ width="380" .on-glb }
 
 The scene is shared by both tabs, so selection and color changes are reflected in both.
 The viewpoint, on the other hand, is independent for each view, so you can switch quickly between two ways of looking at the scene.
@@ -85,4 +96,4 @@ To keep the viewpoint itself, a camera is more suitable than a view
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.6.577*

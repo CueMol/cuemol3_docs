@@ -1,4 +1,4 @@
-<!-- source: ja/getting-started/quick-tour.md @ dcf70c1 -->
+<!-- source: ja/getting-started/quick-tour.md @ 1002eeb -->
 
 # Quick tour
 
@@ -50,7 +50,7 @@ through **Renderers** (display methods). Multiple Renderers can be stacked on on
 To show the secondary structure, add a **ribbon**.
 
 1. In the **Explorer &gt; Scene** tree (scene tree) in the left side panel, right-click the Object (`1crn`)
-   and choose **New Renderer**.
+   and choose **New Renderer...**.
 
     ![Object row in the scene tree](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="304" .on-glb }
 
@@ -65,7 +65,7 @@ atoms as spheres and bonds as cylinders). A Renderer can narrow its target atoms
 (→ [Selection expression syntax](../reference/selection.md)). Here, instead of writing the expression by hand,
 build it with the [selection builder](../ui/selection-builder.md).
 
-1. In the same way, right-click the Object (`1crn`) and choose **New Renderer**.
+1. In the same way, right-click the Object (`1crn`) and choose **New Renderer...**.
 2. Choose **ballstick** from **Renderer type**.
 3. Check **Selection**.
 4. Press the ▼ at the right end of the selection expression field to open the selection builder.

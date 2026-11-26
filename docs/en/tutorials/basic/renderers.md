@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/renderers.md @ dcf70c1 -->
+<!-- source: ja/tutorials/basic/renderers.md @ 1002eeb -->
 
 # Adding, removing and configuring Renderers
 
@@ -12,44 +12,48 @@ start with Val2 to Phe3 (`A.2:3.*`) of `lysozyme` selected.
     - **What you learn**: Adding and removing Renderers, changing the displayed range, adjusting properties in the inspector
     - **Prerequisites**: [Selecting part of a molecule](selection.md)
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
 ## 1. Add a Renderer to the selection
 
 Display only the two selected residues as ballstick.
 
-1. In the scene tree, right-click `lysozyme` and choose **New Renderer**.
+1. In the scene tree, right-click `lysozyme` and choose **New Renderer...**.
 2. Choose **ballstick** from **Renderer type**.
 3. **Selection** is already filled with the expression for the current selection (`A.2:3.*`).
    Leave it as it is.
 4. **Renderer name** is automatically suggested with an unused name (such as `ballstick1`).
    To use a more descriptive name, change it here.
+
+    ![New Renderer dialog. ballstick in Renderer type; Selection holds the current selection](../../../assets/images/tutorials/basic/renderers/1-new-renderer.webp){ width="480" .on-glb }
+
 5. Click **Create**. Only the Val2 to Phe3 part is displayed as ballstick.
 
-<!-- TODO(screenshot): New Renderer dialog (ballstick, Selection = A.2:3.*), and the display with only two residues as ballstick -->
+![Only Val2 to Phe3 shown as ballstick](../../../assets/images/tutorials/basic/renderers/1-ballstick.webp){ .on-glb }
 
 ## 2. Add a Renderer to the whole molecule
 
 To apply a Renderer to everything regardless of the current selection, uncheck **Selection**.
 
-1. Open **New Renderer** on `lysozyme` again and choose **ribbon**.
+1. Open **New Renderer...** on `lysozyme` again and choose **ribbon**.
 2. Uncheck **Selection**.
 3. Click **Create**. The ribbon display is layered over the whole molecule.
 
 The simple line drawing, the two-residue ballstick and the whole-molecule ribbon are now stacked.
 Closing the eye icon of simple1 in the scene tree tidies up the picture and makes it easier to see.
 
+![simple1 hidden; the ribbon and the two-residue ballstick stacked](../../../assets/images/tutorials/basic/renderers/2-layered.webp){ .on-glb }
+
 ## 3. Change the displayed range later
 
 Extend the displayed range of ballstick1 from Val2 to Phe3 to Val2 to Glu7.
 
-1. In the **Molecular structure** panel, select residues 2 to 7 as a range and click **Select**
+1. In the **Mol Struct** panel, select residues 2 to 7 as a range and click **Select atoms**
    (applying the selection expression `A.2:7.*` in the Selection panel works the same way).
 2. In the scene tree, right-click `ballstick1` and choose **Change sel &gt; Current**.
 
 The displayed range of the Renderer is replaced with the current selection and extends to Glu7.
 **Change sel** also offers standard ranges such as **All** (everything), **Protein**, **Water** and **Ligand**.
+
+![The ballstick range extended to Val2 to Glu7](../../../assets/images/tutorials/basic/renderers/3-widened.webp){ .on-glb }
 
 ## 4. Delete a Renderer
 
@@ -68,6 +72,8 @@ The fine details of a Renderer's appearance are determined by **properties**, wh
    to `0.4`. The model becomes stubby.
 4. Enable **Show ring** to display a plate on the aromatic ring of Phe3.
 
+    ![The Ball and stick section of the inspector. Bond width and Atom radius set to 0.4, Show ring enabled](../../../assets/images/tutorials/basic/renderers/5-inspector.webp){ width="316" .on-glb }
+
 Changes are **reflected immediately** in the molecular view. There are no OK / Apply buttons;
 use Undo to revert.
 
@@ -75,7 +81,7 @@ Properties without a type-specific section can all be edited in the **Generic** 
 Each value has a defined default, and only the items changed from their defaults
 can be reset (→ [Property inspector](../../ui/inspector.md)).
 
-<!-- TODO(screenshot): before and after changing Bond width / Atom radius of ballstick in the inspector -->
+![ballstick1 with Bond width and Atom radius set to 0.4](../../../assets/images/tutorials/basic/renderers/5-result.webp){ .on-glb }
 
 !!! note "Differences from CueMol2"
     In CueMol2, properties were edited by opening a dialog for each Renderer and confirmed with OK.
@@ -89,4 +95,4 @@ can be reset (→ [Property inspector](../../ui/inspector.md)).
 
 ---
 
-*Verified against: CueMol3 2.3.8.494*
+*Verified against: CueMol3 3.0.6.577*

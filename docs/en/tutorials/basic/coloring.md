@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/coloring.md @ dcf70c1 -->
+<!-- source: ja/tutorials/basic/coloring.md @ 1002eeb -->
 
 # Coloring Renderers
 
@@ -12,16 +12,16 @@ previous page ([Adding, removing and configuring Renderers](renderers.md)).
     - **What you learn**: The Color panel, coloring by CPK / B-factor / Rainbow / Paint
     - **Prerequisites**: [Adding, removing and configuring Renderers](renderers.md)
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
 ## 1. Using the Color panel
 
 Open the **Explorer &gt; Color** panel in the left side panel
 (→ [Side panels](../../ui/side-panels.md)).
 
 1. Select the target Renderer at the top (selecting a Renderer in the scene tree also updates this).
-2. Select the Coloring **type**; the settings for that type appear below.
+2. Then select the Coloring **type** with the button next to it; the settings for that type appear below.
+   The button shows the current type.
+
+![Color panel. The target Renderer on the left, the Coloring type button on the right](../../../assets/images/tutorials/basic/coloring/1-color-pane.webp){ width="310" .on-glb }
 
 For the list of types and their settings, see [Coloring](../../reference/coloring.md).
 
@@ -30,35 +30,43 @@ For the list of types and their settings, see [Coloring](../../reference/colorin
 **CPK** assigns a color to each element, and is the standard choice for simple and ballstick.
 
 1. Select `lysozyme/ballstick1` as the target.
-2. Select **CPK** as the Coloring type.
-3. Change the color of **C** (carbon) to gray (for example, `#808080`).
+2. Select **CPK coloring** as the Coloring type.
+3. Change the color of **Carbon** to gray (for example, `#808080`).
+
+    ![CPK settings. #808080 entered as the color of Carbon](../../../assets/images/tutorials/basic/coloring/2-cpk.webp){ width="304" .on-glb }
 
 Only the carbon parts of the ballstick turn gray. For how to specify colors (color names,
 color codes, etc.), see [Color syntax](../../reference/color-syntax.md).
+
+![ballstick1 with gray carbons](../../../assets/images/tutorials/basic/coloring/2-cpk-view.webp){ .on-glb }
 
 ## 3. B-factor — gradient by value
 
 **B-factor** changes the color continuously according to values such as the temperature factor.
 
 1. Select `lysozyme/simple1` as the target (if you hid it, restore it with the eye icon).
-2. Select **B-factor** as the Coloring type.
+2. Select **Bfac/Occ coloring** as the Coloring type.
 
 The structure is painted with a gradient from low to high temperature factors.
-The colors at the lower and upper limits and the value range (Auto / Manual) can also be set.
+The colors at the lower and upper limits (**Low** / **High**) and the value range (**Auto** / **Manual**) can also be set.
+
+![simple1 colored by B-factor. Parts with a low temperature factor are blue and parts with a high one are red](../../../assets/images/tutorials/basic/coloring/3-bfac.webp){ .on-glb }
 
 ## 4. Rainbow — rainbow from end to end
 
 **Rainbow** changes the hue along the residue sequence.
 
-1. Select `1G59/trace1` as the target.
-2. Select **Rainbow** as the Coloring type.
-3. Switch the mode from whole molecule to per chain.
+1. Select `1g59/trace1` as the target.
+2. Select **Rainbow coloring** as the Coloring type.
+3. Switch **Mode** from **Molecule** (whole molecule) to **Chain** (per chain).
+
+    ![Mode set to Chain in the Rainbow settings](../../../assets/images/tutorials/basic/coloring/4-rainbow-mode.webp){ width="304" .on-glb }
 
 In 1G59 the protein and the tRNA are separate chains, so each is painted
 with its own rainbow (the protein from the N-terminus to the C-terminus, the RNA
 from the 5' end to the 3' end).
 
-<!-- TODO(screenshot): 1G59 displayed with per-chain Rainbow -->
+![1g59 with per-chain Rainbow](../../../assets/images/tutorials/basic/coloring/4-rainbow.webp){ .on-glb }
 
 ## 5. Paint — color by pairs of selection and color
 
@@ -92,7 +100,9 @@ The C-terminal region turns red. Because this row is above the `helix` row, red
 takes precedence in this range. Layering paints while keeping the row order in mind
 is how Paint is used. Rows that are no longer needed can be deleted.
 
-<!-- TODO(screenshot): Paint table (4 rows) and the ribbon after coloring -->
+![The Paint table. A row for A.119:129.* added at the top](../../../assets/images/tutorials/basic/coloring/5-paint-table.webp){ width="318" .on-glb }
+
+![ribbon1 after coloring. Helices are light blue, sheets green, coils white and the C-terminal helix red](../../../assets/images/tutorials/basic/coloring/5-paint.webp){ .on-glb }
 
 !!! tip "Presets are also available"
     The Paint coloring submenu lists the colors of palettes other than the Okabe-Ito used above,

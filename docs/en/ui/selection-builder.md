@@ -1,4 +1,4 @@
-<!-- source: ja/ui/selection-builder.md @ dcf70c1 -->
+<!-- source: ja/ui/selection-builder.md @ 1002eeb -->
 
 # Selection builder
 
@@ -39,7 +39,7 @@ Global
 
 ## History
 
-The history of previously applied selection expressions (up to 100 entries). A click applies the expression again. The history is saved in the application and is shared by every operation that applies a selection and records into it (the Selection panel, the selection fields of the inspector and the New Renderer dialog, selections made from the scene tree, the sequence panel and the context menu, rectangle / lasso selection, and the Molecular structure panel). The whole selection (`*`) and the empty selection are not recorded (the whole selection can always be chosen from the top of Named). Intermediate results of combining in the Term / Mod tabs are not recorded either.
+The history of previously applied selection expressions (up to 100 entries). A click applies the expression again. The history is saved in the application and is shared by every operation that applies a selection and records into it (the Selection panel, the selection fields of the inspector and the New Renderer dialog, selections made from the scene tree, the sequence panel and the context menu, rectangle / lasso selection, and the Mol Struct panel). The whole selection (`*`) and the empty selection are not recorded (the whole selection can always be chosen from the top of Named). Intermediate results of combining in the Term / Mod tabs are not recorded either.
 
 The height of the Named / History lists depends on where they are placed. In the Selection panel the lists fill the rest of the panel; in a popover they fit into the free space on the side where it opened.
 
@@ -100,4 +100,4 @@ Next to the apply buttons, the **number of atoms** that would be selected if the
 
 ---
 
-*Verified against: CueMol3 2.3.14.525*
+*Verified against: CueMol3 3.0.6.577*

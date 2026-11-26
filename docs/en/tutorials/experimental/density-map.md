@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/experimental/density-map.md @ dcf70c1 -->
+<!-- source: ja/tutorials/experimental/density-map.md @ 1002eeb -->
 
 # Displaying an electron density map
 
@@ -10,10 +10,7 @@ The example is the crystal structure of lysozyme (PDB ID: **1QIO**); the 2Fo-Fc 
     - **What you learn**: Fetching maps with Get PDB, adjusting the level and range in the Density map panel, checking a region of interest
     - **Prerequisites**: [Loading and displaying a structure](../basic/loading.md) in the basic course
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
-<!-- TODO(screenshot): Final result. The model (stick model) overlaid with the 2Fo-Fc (blue) and Fo-Fc (green/red) meshes -->
+![Finished result. The meshes of 2Fo-Fc (blue) and Fo-Fc (green/red) over the active-site model (line drawing)](../../../assets/images/tutorials/experimental/density-map/4-active-site.webp){ .on-glb }
 
 ## 1. Fetch the coordinates and density maps together
 
@@ -25,7 +22,7 @@ The example is the crystal structure of lysozyme (PDB ID: **1QIO**); the 2Fo-Fc 
 4. When the download finishes, a dialog appears for specifying the Object name and Renderer of the coordinates.
    Choosing **simple** (line drawing) here makes it easier to see the correspondence between density and atoms.
 
-<!-- TODO(screenshot): Get PDB dialog (1QIO, both maps checked) -->
+![Get PDB dialog. 1QIO entered, with 2Fo-Fc map and Fo-Fc map checked](../../../assets/images/tutorials/experimental/density-map/1-getpdb.webp){ width="380" .on-glb }
 
 No Renderer dialog appears for the maps; they are displayed automatically with the following configuration.
 
@@ -42,6 +39,13 @@ The 2Fo-Fc map (blue) is the density that envelops the whole model. The Fo-Fc ma
 In the **Explorer &gt; Scene** tree in the left side panel (scene tree →
 [Side panels](../../ui/side-panels.md)), the map Objects (`1qio_2fofc` / `1qio_fofc`) and their contour Renderers are listed separately from the coordinate Object. The eye icons toggle their visibility individually.
 
+Right after loading, the view may move to the center of the map's range (near the center of the unit cell), and the map may be drawn away
+from the molecule. In that case, select `1qio` in the scene tree and press **Focus** at the top of the panel, then press
+**Redraw** for each Renderer in the **Crystal &gt; Density map** panel to redraw the map at the molecule's position.
+
+![Right after loading. The map (right) is drawn away from the molecule (left)](../../../assets/images/tutorials/experimental/density-map/2-loaded.webp){ .on-glb }
+![After Focus and Redraw. The map overlaps the molecule](../../../assets/images/tutorials/experimental/density-map/2-redrawn.webp){ .on-glb }
+
 Crystallographic maps are drawn **only around the view center**. When the molecular view is translated, the displayed map region follows (a cryo-EM map is drawn in its entirety, and the display range adjustment below is not needed
 → **Region** in [contour](../../reference/renderers/contour.md#contour)).
 
@@ -56,7 +60,7 @@ The map display is adjusted in the **Crystal &gt; Density map** panel in the lef
 
 1. At the top, select the target Renderer (such as `1qio_2fofc/contour1`).
 2. Change the contour level by dragging the marker on the **Level** histogram
-   (a value can also be typed into the input field). Raise it when noise is distracting, and lower it to see weak density.
+   (a value can also be typed into the input field). Raise it when noise is distracting, and lower it to see weak density. Here, set the Level of 2Fo-Fc to `1.5`.
 3. Change the display range (distance from the center) with the **Extent** slider.
 4. Change the transparency with the **Transp** slider.
 
@@ -66,19 +70,25 @@ The ▼ menu item **Use absolute contour level** switches to specifying an absol
 (the value in the other unit is shown below Level). For a cryo-EM map, the unit is the top percentage of grid point values instead of σ, and the level is specified as an absolute value when the map is loaded.
 Note that the upper limit of **Extent** is determined by the **Buffer size** property of the contour; to extend it further, increase it in the inspector.
 
-<!-- TODO(screenshot): Density map panel, and the mesh changing with Level (two-step comparison) -->
+![Density map panel. The Level of 2Fo-Fc set to 1.5σ](../../../assets/images/tutorials/experimental/density-map/3-density-pane.webp){ width="304" .on-glb }
 
 ## 4. Focus on a region of interest
 
 This is the procedure for zooming in on a region of interest such as the active site.
 
-1. Move the view in the molecular view so that the region of interest is at the center.
+1. Move the view so that the region of interest is at the center. Here we look at Glu35 and Asp52 in the active site.
+   In the **Selection &gt; Mol Struct** panel, choose residues 35 and 52 (++cmd++ / ++ctrl++ + click),
+   and press **Zoom at**.
 2. Lower **Extent** to about 10 Å to reduce the surrounding mesh.
 3. If the display has not followed, **Redraw** in the panel updates the display center to the current view center.
-4. Narrowing the **Slab** (the width of the depth range displayed) also reduces the mesh in front of and behind the region of interest, making it easier to see (→ the View panel in [Side panels](../../ui/side-panels.md)).
+4. Narrowing the **Slab** (the width of the depth range displayed) to about 8 Å also reduces the mesh in front of and behind the region of interest, making it easier to see (→ the View panel in [Side panels](../../ui/side-panels.md)).
+
+![Zoomed in on Glu35 and Asp52, with Extent 10 Å and Slab 8 Å](../../../assets/images/tutorials/experimental/density-map/4-active-site.webp){ .on-glb }
 
 To see only the green and red Fo-Fc meshes, close the eye icon of
 `1qio_2fofc` in the scene tree to hide the 2Fo-Fc map temporarily.
+
+![2Fo-Fc hidden, showing only Fo-Fc](../../../assets/images/tutorials/experimental/density-map/4-fofc-only.webp){ .on-glb }
 
 ## 5. Finish as a figure
 

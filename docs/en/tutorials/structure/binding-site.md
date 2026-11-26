@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/structure/binding-site.md @ dcf70c1 -->
+<!-- source: ja/tutorials/structure/binding-site.md @ 1002eeb -->
 
 # Displaying a ligand binding site
 
@@ -23,7 +23,7 @@ The residue name of biotin is **BTN** (residue number 300).
 
 ## 2. Show the ligand in ballstick
 
-1. In the scene tree, right-click `1stp` and choose **New Renderer**.
+1. In the scene tree, right-click `1stp` and choose **New Renderer...**.
 2. Choose **ballstick** from **Renderer type**.
 3. Check **Selection** and enter `resn BTN` in **Atoms**.
    The atoms with the residue name BTN (the 16 atoms of biotin) become the target.
@@ -38,7 +38,7 @@ The residue name of biotin is **BTN** (residue number 300).
 
 Display the residues that have atoms within 4 Å of biotin with a second ballstick.
 
-1. Again, choose **ballstick** from **New Renderer** of `1stp`.
+1. Again, choose **ballstick** from **New Renderer...** of `1stp`.
 2. Check **Selection** and enter the following expression in **Atoms**.
 
     ```

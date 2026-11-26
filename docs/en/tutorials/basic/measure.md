@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/measure.md @ dcf70c1 -->
+<!-- source: ja/tutorials/basic/measure.md @ 1002eeb -->
 
 # Measurement and interaction display
 
@@ -16,6 +16,9 @@ Measurements use the Measure group in the **tool palette** at the left edge of t
 (→ [Toolbar and tool palette](../../ui/toolbar-tools.md)).
 
 1. Select the **Distance** tool in the tool palette (shortcut ++d++)
+
+    ![The Distance tool in the tool palette](../../../assets/images/tutorials/basic/measure/1-tool-palette.webp){ width="220" .on-glb }
+
 2. Click the first atom of the distance to measure. A cross mark shows the progress.
 3. Click the second atom. A dotted line is drawn between the atoms and a distance label is shown.
 
@@ -38,6 +41,8 @@ The dotted lines and labels of measurements are drawn by a Renderer called **ato
 In the scene tree, an atomintr Renderer named `measure` is
 created automatically.
 
+![The measure (atomintr) row in the scene tree](../../../assets/images/tutorials/basic/measure/3-measure-row.webp){ width="318" .on-glb }
+
 - The eye icon temporarily hides only the measurement display.
 - Select the row and press **Delete** to remove all measurements at once (can be undone)
 
@@ -45,6 +50,9 @@ Opening the **option knob** of the Measure group in the tool palette lets you ch
 the **label set** to which labels are added. Each set becomes a separate
 atomintr Renderer, so interactions can be grouped, for example as "active-site distances" or "coordination bonds",
 and shown, hidden or deleted group by group.
+Entering a new name creates a new label set.
+
+![Options of the Measure group. Choose the label set in Target label set](../../../assets/images/tutorials/basic/measure/3-measure-options.webp){ width="302" .on-glb }
 
 ## 4. Adjust the appearance with a style
 
@@ -69,7 +77,10 @@ instead of deleting the whole Renderer.
 1. Right-click `measure` (atomintr) in the scene tree and
    choose **Edit interaction list...**
 2. A list of the measurements (interactions) belonging to that Renderer is shown.
-3. Select the unwanted rows and delete them. The operation can be undone.
+3. Press the **−** button at the right end of an unwanted row to delete it.
+4. Press **OK** to close. The operation can be undone.
+
+![Edit interaction list dialog. The button at the right end of a row deletes the measurement](../../../assets/images/tutorials/basic/measure/5-edit-list.webp){ width="474" .on-glb }
 
 !!! note "Differences from CueMol2"
     In CueMol2, the measurement mode was switched with the ribbon at the top of the window (Measure tab),
@@ -86,4 +97,4 @@ the task-oriented tutorials to see the actual flow of figure making.
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.6.577*

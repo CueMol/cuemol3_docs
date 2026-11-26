@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/index.md @ 8d54764 -->
+<!-- source: ja/reference/renderers/index.md @ 1002eeb -->
 
 # Renderer
 
@@ -7,7 +7,7 @@ Multiple Renderers can be attached to a single Object, for example ribbon for th
 and ballstick for the active site.
 
 Renderers are created by right-clicking an Object row or a Renderer group row in the scene tree
-and choosing **New Renderer** (→ [Side panels](../../ui/side-panels.md)).
+and choosing **New Renderer...** (→ [Side panels](../../ui/side-panels.md)).
 Settings are edited in the property inspector
 (→ [Property inspector](../../ui/inspector.md)).
 
@@ -85,4 +85,4 @@ as a single group.
 
 ---
 
-*Verified against: CueMol3 2.3.21.544*
+*Verified against: CueMol3 3.0.6.577*

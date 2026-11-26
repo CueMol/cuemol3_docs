@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/publication-images.md @ dcf70c1 -->
+<!-- source: ja/tutorials/figures/publication-images.md @ 1002eeb -->
 
 # Exporting high-resolution images for publication
 
@@ -11,10 +11,7 @@ but the procedure is the same for any scene.
     - **What you learn**: When to export a PNG as shown on screen and when to finish with ray tracing
     - **Prerequisites**: [Making a protein ribbon figure](ribbon-figure.md)
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
-<!-- TODO(screenshot): Finished result. Comparison of a screen capture and the ray-traced result with the same composition -->
+![Finished result. The ray-traced result shown in the rendering window](../../../assets/images/tutorials/figures/publication-images/4-result.webp){ .on-glb }
 
 ## 1. The two output methods and when to use them
 
@@ -32,8 +29,10 @@ into presentation software or figure-making software to assemble a composite fig
 When **Rendering &gt; Export scene &gt; PNG image...** is selected, an options screen appears
 after the destination is specified.
 
-- **Size** and **resolution (DPI)** can be specified.
-- Enabling **background transparency** produces a PNG with a transparent background (useful for overlaying on slides).
+- The **size** (**Width** / **Height**) and **resolution** (**Resolution (DPI)**) can be specified.
+- Enabling **Transparent PNG** produces a PNG with a transparent background (useful for overlaying on slides).
+
+![PNG options dialog (1200×1200 pixels, 600 DPI, Transparent PNG enabled)](../../../assets/images/tutorials/figures/publication-images/2-png-options.webp){ width="360" .on-glb }
 
 DPI does not affect the number of pixels in the image. It determines the **physical size on paper**
 when the exported PNG is pasted into other software and printed (for example, a 1200×1200 pixel
@@ -57,7 +56,8 @@ it stays open (→ [Rendering window](../../ui/rendering-window.md)).
    **Supersampling** (the setting that smooths outlines) can be left at the default
 4. Press **Start Render** to start rendering. Progress is displayed.
 
-<!-- TODO(screenshot): Rendering window. Size selection in the Image tab -> Quality section of the Render tab (Lighting = Raytrace only) -->
+![1200×1200 (600dpi) selected in the Preset of the Image tab](../../../assets/images/tutorials/figures/publication-images/3-image-tab.webp){ width="380" .on-glb }
+![Lighting set to Raytrace only in the Quality section of the Render tab](../../../assets/images/tutorials/figures/publication-images/3-render-tab.webp){ width="380" .on-glb }
 
 !!! tip "Global Illumination for depth in shading"
     Setting **Lighting** to **Global Illumination** (the default) gives shading by global

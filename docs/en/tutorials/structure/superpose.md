@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/structure/superpose.md @ dcf70c1 -->
+<!-- source: ja/tutorials/structure/superpose.md @ 1002eeb -->
 
 # Superposing and comparing structures
 
@@ -27,7 +27,7 @@ and 1AKE, the second, is light blue.
 The inhibitor Ap5A (residue name **AP5**) is bound to chain A of 1AKE. Display it in
 ballstick so that its position is visible.
 
-1. In the scene tree, right-click `1ake` and choose **New Renderer**.
+1. In the scene tree, right-click `1ake` and choose **New Renderer...**.
 2. Choose **ballstick** from **Renderer type**, check **Selection** and
    enter `chain A and resn AP5` in **Atoms**.
 3. Press **Create**.
