@@ -98,7 +98,7 @@ Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリ�
 
 ## 次のステップ
 
-- [対称分子・単位格子を表示する](symmetry.md) — 同じ 1QIO で結晶パッキングを見る
+- [対称分子・単位格子の表示](symmetry.md) — 同じ 1QIO で結晶パッキングを見る
 - [contour](../../reference/renderers/contour.md) / [DensityMap](../../reference/objects/densitymap.md) — 表示設定の詳細
 - [サイドパネル](../../ui/side-panels.md) — Density map パネルの各項目
 

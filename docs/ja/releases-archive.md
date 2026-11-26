@@ -778,7 +778,7 @@
 
 - **Create SYMM mol** を 3D ビューから使えるようになりました。対称分子の原子を
   右クリックすると、その対称コピーを新しい分子として取り出せます。
-  → [対称分子・単位格子を表示する](tutorials/experimental/symmetry.md)
+  → [対称分子・単位格子の表示](tutorials/experimental/symmetry.md)
 - **Mol morphing animation** のダイアログが使えるようになりました。対象を MorphMol に
   変換してから、PDB ファイルやシーン中の分子をフレームとして追加します。
   → [アニメーションを作って動画に出力する](tutorials/animation/animation-movie.md)
