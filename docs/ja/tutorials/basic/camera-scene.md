@@ -80,7 +80,7 @@
 
 ## 5. 同じシーンをもう 1 つの視点で見る
 
-**File &gt; New Tab** で **New View for で **New View** を選ぶとlt;シーン名で **New View** を選ぶとgt;** を選ぶと、新しいシーンではなく、
+**File &gt; New Tab** で **New View for &lt;シーン名&gt;** を選ぶと、新しいシーンではなく、
 **現在のシーンを映すもう 1 つのビュー**がタブとして作られます
 (**Inherit view props** で、現在のビューの設定を引き継ぐかどうかも選べます)。
 
