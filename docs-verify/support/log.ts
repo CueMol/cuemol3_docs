@@ -7,7 +7,7 @@ import type { ChildProcess } from 'node:child_process';
  */
 export const READY_LINES = [
     'launch worker OK',
-    'CueMol2 nodejs add-on : INITIALIZED',
+    'CueMol2 nodejs module : INITIALIZED',
     'bindCanvas',
     'shader program created OK',
 ] as const;

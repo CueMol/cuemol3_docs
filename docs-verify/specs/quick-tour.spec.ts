@@ -27,9 +27,11 @@ import {
 } from '../helpers/sceneTree';
 import { getPdb } from '../helpers/openFile';
 import { setNumericProperty } from '../helpers/inspector';
-import { selectColorTarget, chooseColoring } from '../helpers/colorPane';
+import { selectColorTarget, chooseColoring, coloringButton } from '../helpers/colorPane';
+import { lastPopupLabels } from '../helpers/popupMenu';
 import { rotateView, zoomView } from '../helpers/molView';
 import { docShot } from '../helpers/docShot';
+import { checkField, fieldControl } from '../helpers/form';
 
 const PDB_ID = '1CRN';
 const OBJ_NAME = PDB_ID.toLowerCase();
@@ -112,7 +114,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await clickSceneToolbar(harness.window, 'add');
             const dlg = dialog(harness.window, 'New Renderer');
             await expect(dlg).toBeVisible();
-            await dlg.locator('#rend-type').selectOption(type);
+            await fieldControl(dlg, 'Renderer type').selectOption(type);
             await opts.configure?.(dlg);
             if (opts.shotId) await docShot(harness.window, opts.shotId, { clip: dlg });
             await clickDialogButton(harness.window, 'New Renderer', 'Create');
@@ -136,7 +138,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await addRenderer('ballstick', 'ballstick1', {
                 shotId: 'getting-started/quick-tour/3-ballstick-selection',
                 configure: async (dlg) => {
-                    await dlg.getByText('Selection', { exact: true }).click();
+                    await checkField(dlg, 'Selection');
                     await dlg.getByRole('button', { name: 'Build selection' }).click();
                     const builder = harness.window.locator('.selbuilder');
                     await expect(builder).toBeVisible();
@@ -199,13 +201,13 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
                 clip: harness.window.locator('.color-shell-row').first(),
                 pad: 6,
             });
-            await chooseColoring(harness.window, 'Rainbow coloring', {
-                beforeSelect: async (menu) => {
-                    await docShot(harness.window, 'getting-started/quick-tour/3-coloring-menu', {
-                        clip: [harness.window.getByRole('button', { name: 'Coloring', exact: true }), menu],
-                    });
-                },
-            });
+            // 「隣のボタンを押し、Rainbow coloring を選びます」. The menu is a
+            // native macOS menu (answered by the popup-menu stub), so it has
+            // no screenshot; the labels it offered are checked instead.
+            await chooseColoring(harness.app, harness.window, ['Rainbow coloring']);
+            expect(await lastPopupLabels(harness.app)).toContain('Rainbow coloring');
+            // The button now shows the picked mode.
+            await expect(coloringButton(harness.window)).toHaveText('Rainbow');
             await docShot(harness.window, 'getting-started/quick-tour/3-styled');
         });
 

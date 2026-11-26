@@ -1,9 +1,12 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
+import type { ElectronApplication } from 'playwright';
+import { pickNextPopupItem } from './popupMenu';
 
 /**
  * Explorer > Color pane. The renderer selector is an HTMLSelect whose
  * options read "name (type)" grouped per object; the coloring type opens
- * from the caret button next to it as a Blueprint menu.
+ * from the button next to it (title "Coloring mode", text = the current
+ * mode) as the platform menu, which the popup-menu stub answers.
  */
 
 export async function selectColorTarget(window: Page, optionLabel: string): Promise<void> {
@@ -11,16 +14,21 @@ export async function selectColorTarget(window: Page, optionLabel: string): Prom
         .selectOption({ label: optionLabel });
 }
 
+/** The coloring-type button next to the target selector. */
+export function coloringButton(window: Page) {
+    return window.locator('.color-shell-row').getByTitle('Coloring mode');
+}
+
+/**
+ * Pick a coloring type, e.g. ['Rainbow coloring'] or
+ * ['Paint coloring', 'Okabe-Ito', 'Sky blue'] (submenu path).
+ */
 export async function chooseColoring(
+    app: ElectronApplication,
     window: Page,
-    itemLabel: string,
-    opts: { beforeSelect?: (menu: Locator) => Promise<void> } = {},
+    path: string[],
 ): Promise<void> {
-    await window.getByRole('button', { name: 'Coloring', exact: true }).click();
-    const menu = window.locator('.bp5-menu');
-    await expect(menu).toBeVisible();
-    // Hook for capturing the open menu (documentation shots).
-    await opts.beforeSelect?.(menu);
-    await menu.getByText(itemLabel, { exact: true }).click();
-    await menu.waitFor({ state: 'detached' });
+    await pickNextPopupItem(app, path);
+    await coloringButton(window).click();
+    await expect(coloringButton(window)).toBeEnabled();
 }

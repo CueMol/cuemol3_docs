@@ -2,6 +2,7 @@ import { _electron, type ElectronApplication, type Page } from 'playwright';
 import { resolveTarget } from '../support/env';
 import { LogCollector, READY_LINES } from '../support/log';
 import { installDialogStubs } from '../helpers/dialogs';
+import { installPopupMenuStub } from '../helpers/popupMenu';
 
 const READY_LINE_TIMEOUT_MS = 60_000;
 const QUIT_TIMEOUT_MS = 15_000;
@@ -56,6 +57,7 @@ export class CueMolHarness {
         }, { w: winW, h: winH });
 
         await installDialogStubs(app);
+        await installPopupMenuStub(app);
         return new CueMolHarness(app, window, logs, extraFiles);
     }
 

@@ -19,6 +19,15 @@ import type { Locator, Page } from '@playwright/test';
  * stay in device pixels (2x on Retina), so the page can show them near their
  * natural size with a markdown width attribute and still be Retina-sharp.
  *
+ * ## Show a widget in its surroundings
+ *
+ * A crop of one widget (a row, a button, a selector) does not tell the
+ * reader where in the window it is. For those, pass the widget as
+ * opts.highlight and a larger area as opts.clip (the side panel column, the
+ * toolbar, or `aroundBox()` for a margin around the widget): the capture
+ * covers the area and a frame is drawn around the widget. Whole dialogs and
+ * menus are self-explanatory and are still clipped on their own.
+ *
  * id convention: "<docs page slug>/<section>-<content>", e.g.
  * "getting-started/quick-tour/2-getpdb".
  *
@@ -49,10 +58,85 @@ const WEBP_QUALITIES = [82, 70, 58, 46];
 
 export interface Rect { x: number; y: number; width: number; height: number }
 
+export interface ShotOptions {
+    /** Area to capture: one element, or the bounding box of several. */
+    clip?: Locator | Locator[];
+    /** Margin around the clip box, in CSS pixels. */
+    pad?: number;
+    /** An explicit area, for parts of the GL canvas that no element covers. */
+    rect?: Rect;
+    /** Widgets the text points at; framed in the capture. */
+    highlight?: Locator | Locator[];
+}
+
+/** Frame colour: Okabe-Ito vermillion, visible on the dark UI and on white. */
+const HIGHLIGHT_COLOR = '#D55E00';
+const HIGHLIGHT_ID = 'docshot-highlight';
+
+/**
+ * The area within `margin` CSS pixels of the widgets (clamped to the
+ * window), for a widget that has no natural container to show it in.
+ */
+export async function aroundBox(window: Page, targets: Locator | Locator[], margin = 120): Promise<Rect> {
+    const boxes = await boxesOf(Array.isArray(targets) ? targets : [targets]);
+    const vp = await viewport(window);
+    const x = Math.max(0, Math.min(...boxes.map((b) => b.x)) - margin);
+    const y = Math.max(0, Math.min(...boxes.map((b) => b.y)) - margin);
+    const x2 = Math.min(vp.w, Math.max(...boxes.map((b) => b.x + b.width)) + margin);
+    const y2 = Math.min(vp.h, Math.max(...boxes.map((b) => b.y + b.height)) + margin);
+    return { x, y, width: x2 - x, height: y2 - y };
+}
+
+async function boxesOf(locs: Locator[]): Promise<Rect[]> {
+    const boxes: Rect[] = [];
+    for (const c of locs) {
+        // A pane can be scrolled out of view at the shot window size.
+        await c.scrollIntoViewIfNeeded().catch(() => {});
+        const b = await c.boundingBox();
+        if (b) boxes.push(b);
+    }
+    if (!boxes.length) throw new Error('[docShot] no visible clip target');
+    return boxes;
+}
+
+async function viewport(window: Page): Promise<{ w: number; h: number }> {
+    // "window" here is the Page; the browser globals come via globalThis.
+    return window.evaluate(() => ({
+        w: (globalThis as any).innerWidth as number,
+        h: (globalThis as any).innerHeight as number,
+    }));
+}
+
+/** Overlay one frame per widget (fixed position, so layout is untouched). */
+async function drawHighlight(window: Page, targets: Locator | Locator[]): Promise<number> {
+    const boxes = await boxesOf(Array.isArray(targets) ? targets : [targets]);
+    await window.evaluate(({ boxes, color, id }) => {
+        const doc = (globalThis as any).document;
+        for (const b of boxes) {
+            const el = doc.createElement('div');
+            el.className = id;
+            el.style.cssText =
+                `position:fixed;left:${b.x - 4}px;top:${b.y - 4}px;` +
+                `width:${b.width + 8}px;height:${b.height + 8}px;` +
+                `border:3px solid ${color};border-radius:6px;box-sizing:border-box;` +
+                'pointer-events:none;z-index:2147483647;';
+            doc.body.appendChild(el);
+        }
+    }, { boxes, color: HIGHLIGHT_COLOR, id: HIGHLIGHT_ID });
+    return boxes.length;
+}
+
+async function clearHighlight(window: Page): Promise<void> {
+    await window.evaluate((id) => {
+        const doc = (globalThis as any).document;
+        for (const el of Array.from(doc.querySelectorAll(`.${id}`)) as any[]) el.remove();
+    }, HIGHLIGHT_ID).catch(() => {});
+}
+
 export async function docShot(
     window: Page,
     id: string,
-    opts: { clip?: Locator | Locator[]; pad?: number; rect?: Rect } = {},
+    opts: ShotOptions = {},
 ): Promise<void> {
     if (!process.env.DOCSHOT) return;
 
@@ -74,7 +158,13 @@ export async function docShot(
     }
 
     await window.waitForTimeout(SHOT_SETTLE_MS);
-    const png = await capture(window, opts);
+    const frames = opts.highlight ? await drawHighlight(window, opts.highlight) : 0;
+    let png: Buffer;
+    try {
+        png = await capture(window, opts);
+    } finally {
+        if (frames) await clearHighlight(window);
+    }
 
     // Lazy import keeps sharp (a native module) out of the normal test runs.
     const sharp = (await import('sharp')).default;
@@ -127,30 +217,16 @@ function recordHash(id: string, hash: string): void {
     fs.writeFileSync(MANIFEST, `${JSON.stringify(sorted, null, 2)}\n`);
 }
 
-async function capture(
-    window: Page,
-    opts: { clip?: Locator | Locator[]; pad?: number; rect?: Rect },
-): Promise<Buffer> {
+async function capture(window: Page, opts: ShotOptions): Promise<Buffer> {
     // An explicit region, for parts of the GL canvas that no element covers.
     if (opts.rect) return window.screenshot({ clip: opts.rect });
     if (!opts.clip) return window.screenshot();
     const clips = Array.isArray(opts.clip) ? opts.clip : [opts.clip];
     if (clips.length === 1 && opts.pad === undefined) return clips[0].screenshot();
 
-    const boxes = [];
-    for (const c of clips) {
-        // A pane can be scrolled out of view at the shot window size.
-        await c.scrollIntoViewIfNeeded().catch(() => {});
-        const b = await c.boundingBox();
-        if (b) boxes.push(b);
-    }
-    if (!boxes.length) throw new Error('[docShot] no visible clip target');
+    const boxes = await boxesOf(clips);
     const pad = opts.pad ?? 8;
-    // "window" here is the Page; the browser globals come via globalThis.
-    const vp = await window.evaluate(() => ({
-        w: (globalThis as any).innerWidth as number,
-        h: (globalThis as any).innerHeight as number,
-    }));
+    const vp = await viewport(window);
     const x = Math.max(0, Math.min(...boxes.map((b) => b.x)) - pad);
     const y = Math.max(0, Math.min(...boxes.map((b) => b.y)) - pad);
     const x2 = Math.min(vp.w, Math.max(...boxes.map((b) => b.x + b.width)) + pad);

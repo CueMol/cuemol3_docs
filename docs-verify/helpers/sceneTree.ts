@@ -53,5 +53,13 @@ export async function toggleRowVisibility(window: Page, name: string): Promise<v
 const TOOLBAR_INDEX = { add: 0, focus: 1, delete: 2, property: 3 } as const;
 
 export async function clickSceneToolbar(window: Page, which: keyof typeof TOOLBAR_INDEX): Promise<void> {
-    await window.locator('.section-action-btn').nth(TOOLBAR_INDEX[which]).click();
+    await sceneToolbarButtons(window).nth(TOOLBAR_INDEX[which]).click();
+}
+
+/**
+ * The Scene pane's own toolbar buttons. Other panes (Camera, Styles...) use
+ * the same class, so the lookup is scoped to the first pane (Scene).
+ */
+export function sceneToolbarButtons(window: Page): Locator {
+    return window.locator('.sp-pane').first().locator('.section-action-btn');
 }

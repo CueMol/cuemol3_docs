@@ -112,7 +112,7 @@ Object の色 (`$molcol`) を参照するため、Object 側を塗り替える�
 
     ![Color パネルの対象選択](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="233" }
 
-2. 隣の **Coloring** ボタンを押し、**Rainbow coloring** を選びます。
+2. 隣のボタン (いまの Coloring の種類が表示されています) を押し、**Rainbow coloring** を選びます。
 
     ![Coloring メニュー](../../assets/images/getting-started/quick-tour/3-coloring-menu.webp){ width="196" .on-glb }
 
@@ -186,4 +186,4 @@ PNG を書き出せます。
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.6.577*
