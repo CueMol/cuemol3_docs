@@ -1,4 +1,4 @@
-<!-- source: ja/ui/bottom-panels/index.md @ 6cacee7 -->
+<!-- source: ja/ui/bottom-panels/index.md @ f8502b6 -->
 
 # Bottom panel
 
@@ -10,15 +10,15 @@ The panel at the bottom of the window has four tabs by default.
 |---|---|
 | **Console** | Command line (→ [Console](../../reference/plugins/console/index.md)) |
 | **Output** | Log display |
-| **Sequence** | Display and selection of the amino acid / nucleotide sequences of molecules |
-| **Animation** | Timeline editing for animations |
+| **Sequence** | Display and selection of the amino acid / nucleotide sequences of molecules (→ [Sequence panel](sequence.md)) |
+| **Animation** | Timeline editing for animations (→ [Animation panel](animation.md)) |
 
 Enabling a [plugin](../../reference/plugins/index.md) adds the following tab.
 The **Console** tab is also part of the Console plugin, and it disappears when the plugin is disabled.
 
 | Tab | Contents | Plugin |
 |---|---|---|
-| **Trajectory** | Playback of MD trajectories | MD Tools |
+| **Trajectory** | Playback of MD trajectories (→ [Trajectory panel](trajectory.md)) | MD Tools |
 
 ## Output
 
@@ -28,63 +28,20 @@ Shows the application log. File loading results and error messages appear here.
 
 ## Sequence
 
-Shows the sequences of the loaded molecules, one grid row per chain.
-There is no per-molecule switching; the chains of all molecules in the scene are listed together.
-
-### Operations
-
-| Operation | Action |
-|---|---|
-| Click | Toggles the selection of that residue and moves the molecular view to the position of that residue |
-| Drag | Toggles the selection of the residues from the start point to the end point |
-| ++shift++ + click | Selects from the most recently marked position to the clicked position |
-| Right-click | Opens the menu described below |
-
-### Right-click menu
-
-| Item | Action |
-|---|---|
-| Toggle sel | Toggles the selection of that residue |
-| Around 3 / 5 / 7 / 10 | Selects atoms within the given distance of the selection |
-| Around Byresid 3 / 5 / 7 / 10 | Same as above, but selects whole residues |
-| Unselect all | Clears the selection |
-| Invert sel | Inverts the selection |
-| Copy sequence | Copies the sequence to the clipboard in one-letter code (residues without a one-letter code become `*`) |
-| Center here | Brings that residue to the center of the molecular view |
-
-The boundary between the name column on the left and the sequence grid can be dragged to change the column width.
-
-!!! warning "Known issue: selection updates are delayed"
-    After the selection is changed, the highlight in the molecular view may take about 0.5 seconds to update.
-    This is a known issue under investigation.
+Shows the sequences of the loaded molecules, one grid row per chain. Residues can be selected by
+clicking or dragging. For details, see [Sequence panel](sequence.md).
 
 ## Animation
 
-Edits the animation timeline. It uses a strip layout like Blender's,
-with each animation element shown as one strip.
-
-- Drag a strip to move its start position, or drag its edge to change its length.
-- Strips can be added, deleted and reordered.
-- The play button plays the animation in the molecular view.
-- The current time display is editable. Type a time and press ++enter++ to jump to that point
-  (→ [Entering times](../inspector.md#entering-times)).
-- Selecting a strip shows the detailed settings of that element in the inspector on the right
-  (type-specific settings and the generic property list).
-- The start camera can be chosen in the timeline header.
-- An element whose start-time reference (Relative to) cannot be resolved is shown with diagonal stripes
-  and cannot be played until this is fixed.
-
-To export the created animation as a movie file,
-use **Rendering &gt; Movie rendering...** (→ [Rendering window](../rendering-window.md)).
-
-!!! note
-    While animation properties are being edited, the molecular view does not follow in real time.
-    Play the animation to check the result.
+Edits the animation timeline. Each animation element is shown as one strip, and strips can be added,
+moved, copied and pasted, and played. For details, see
+[Animation panel](animation.md).
 
 ## Console
 
 A command line for running CueMol operations as commands. Switching to PyM console on the toolbar
-allows PyMOL commands such as `fetch 1crn` to be typed as they are.
+allows PyMOL commands such as `fetch 1crn` to be typed as they are. ChX console accepts ChimeraX
+commands such as `open 1crn`.
 
 This tab is part of the **Console** plugin, which is **enabled by default**
 (→ [Console](../../reference/plugins/console/index.md)). It is the first tab of the bottom panel and
@@ -92,13 +49,12 @@ stays in front until another tab is selected.
 
 ## Trajectory
 
-Plays MD trajectories loaded with **File &gt; Open MD Trajectory...**.
-Frame blocks are shown on the timeline, with playback, frame stepping and seeking.
+Plays MD trajectories. Frame blocks are shown on the timeline, with playback, frame stepping,
+seeking and block editing. For details, see [Trajectory panel](trajectory.md).
 
-This tab is part of the **MD Tools** plugin, which is **disabled by default**.
-Enable it in Settings &gt; Plugins &gt; Installed
+This tab is part of the **MD Tools** plugin, which is **disabled by default**
 (→ [Plugins](../../reference/plugins/index.md)).
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*
