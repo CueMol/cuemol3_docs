@@ -388,20 +388,18 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 
 ## 次に適用する対象 (未着手)
 
-spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/` の 6 ページすべて (2026-11-27)、
-目的別のチュートリアルの `structure/binding-site.md` / `structure/superpose.md` / `prediction/alphafold.md` /
-`experimental/cryoem-map.md` / `figures/protein-dna.md` / `scripting/chx-console.md` (2026-11-26)。
-目的別の 6 本は、右クリックメニューを Console のコマンドで代替して `skipped-step` を記録している
-(右クリックメニューの driver を入れる前に書いたため)。driver で置き換えられる。
+spec があるのは `getting-started/quick-tour.md`、`tutorials/basic/` の 6 ページ、目的別のうち
+`figures/ribbon-figure.md` / `figures/protein-dna.md` / `structure/binding-site.md` / `structure/superpose.md` /
+`structure/surface-elepot.md` / `experimental/density-map.md` / `experimental/symmetry.md` /
+`experimental/cryoem-map.md` / `prediction/alphafold.md` / `scripting/chx-console.md` (2026-11-27)。
+右クリックメニューはすべて driver で実際に操作している。APBS / pdb2pqr / ffmpeg は開発版では
+`BUNDLE_APPS` (support/env.ts) から使われる。
 基本操作コースは前のページの到達状態を `fixtures/course.ts` / `courseSelection.ts` / `courseRenderers.ts` に
 置き、後のページの spec はそれを呼んで始める。既存の手作りの図 (`camera-scene/camera-created.webp`、
 `measure/distance.webp` / `dashed-stick1.webp`) は spec で撮らない。適用の優先順:
 
-1. 目的別 6 本の `skipped-step` を右クリックメニューの driver で置き換える。
-2. 残りの目的別チュートリアル 6 ページ (ribbon-figure / publication-images / density-map /
-   symmetry / surface-elepot / animation-movie)。APBS・ffmpeg・レイトレースを伴うため
-   `E2E_SLOW` ゲートの対象が増える。
-3. `ui/` の画面構成ページ (撮影のみで spec 化しない選択肢もある)。
+1. 残りの `figures/publication-images.md` と `animation/animation-movie.md` (レイトレースと動画の書き出しを伴う)。
+2. `ui/` の画面構成ページ (撮影のみで spec 化しない選択肢もある)。
 
 packaged (.app) ターゲットは `support/env.ts` の `resolveTarget` に差し込む口だけ用意してある
 (現状は未実装で例外を投げる)。
