@@ -279,6 +279,7 @@ nav:
       - 作図:
           - タンパク質のリボン図の表示: tutorials/figures/ribbon-figure.md
           - 論文用の画像の書き出し: tutorials/figures/publication-images.md
+          - タンパク質-DNA 複合体の表示: tutorials/figures/protein-dna.md
       - 構造を読む・比較する:
           - リガンド結合部位の表示: tutorials/structure/binding-site.md
           - 表面の静電ポテンシャル表示: tutorials/structure/surface-elepot.md
@@ -289,6 +290,8 @@ nav:
           - AlphaFold 予測構造の評価: tutorials/prediction/alphafold.md
       - 動画:
           - アニメーション動画の作成: tutorials/animation/animation-movie.md
+      - スクリプト:
+          - ChX console による作図: tutorials/scripting/chx-console.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md

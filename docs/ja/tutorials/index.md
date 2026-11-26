@@ -29,6 +29,7 @@
 
 - **[タンパク質のリボン図の表示](figures/ribbon-figure.md)** — 構造の取得から塗り分け・輪郭線まで、作図の基本コース
 - **[論文用の高解像度画像の書き出し](figures/publication-images.md)** — Export scene とレイトレースの使い分け
+- **[タンパク質と DNA の複合体の表示](figures/protein-dna.md)** — nucl による DNA の表示と配列の塗り分け
 
 </div>
 
@@ -63,6 +64,14 @@
 <div class="grid cards" markdown>
 
 - **[アニメーションの作成と動画の出力](animation/animation-movie.md)** — タイムライン編集・モーフィング・動画出力
+
+</div>
+
+## スクリプト
+
+<div class="grid cards" markdown>
+
+- **[ChX console による作図](scripting/chx-console.md)** — ChimeraX のコマンドと `.cxc` スクリプトで図を作る
 
 </div>
 
