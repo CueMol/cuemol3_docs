@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/secondary-structure.md @ 773364a -->
+<!-- source: ja/reference/tools/secondary-structure.md @ d6bebaf -->
 
 # Assigning secondary structure (Reassign secondary structure)
 
@@ -27,8 +27,8 @@ Choose the target molecule in **Molecule**, and the operation in **Mode**.
 
 | Mode | Description |
 |---|---|
-| **Recalculate** (default) | Redoes the automatic secondary structure assignment |
-| **Assign** | Assigns the specified secondary structure to the selected part |
+| **Recalculate** (default) | Redoes the automatic secondary structure assignment. |
+| **Assign** | Assigns the specified secondary structure to the selected part. |
 
 ### Recalculate (rerun the automatic assignment)
 
@@ -36,28 +36,31 @@ Recalculates the secondary structure with the same DSSP algorithm as when a file
 
 | Item | Default | Description |
 |---|---|---|
-| **Ignore β bulge** | OFF | Ignores β bulges in the calculation |
-| **Helix gap-fill angle (°)** / **Angle** | OFF / 120 | The angle used to fill gaps in helices. **Angle** can be set only when the switch is ON |
+| **Ignore β bulge** | OFF | Ignores β bulges in the calculation. |
+| **Helix gap-fill angle (°)** / **Angle** | OFF / 120 | The angle used to fill gaps in helices. **Angle** can be set only when the switch is ON. |
 
 <!-- TODO(content): Details of how Ignore β bulge and Helix gap-fill angle are judged (to be written from the C++ calcProt2ndry2 implementation) -->
+
+Mode, the selection, Type and the values above are kept the next time the dialog is opened (even after CueMol3 is restarted).
+The values above can be reset to their defaults with **Defaults** at the lower left of the dialog.
 
 
 ### Assign (manual assignment)
 
 | Item | Description |
 |---|---|
-| Selection | The selection expression for the part whose assignment is to be changed. The ▼ at the right end gives access to named selections, history and the selection builder |
+| Selection | The selection expression for the part whose assignment is to be changed. The ▼ at the right end gives access to named selections, history and the selection builder. |
 | **Type** | The secondary structure to assign. The default is Coil |
 
 The following can be chosen for **Type**.
 
 | Type | Description |
 |---|---|
-| Coil | Removes the secondary structure |
-| β strand | Makes it a β strand |
-| α helix | Makes it an α helix |
-| 3-10 helix | Makes it a 3<sub>10</sub> helix |
-| π helix | Makes it a π helix |
+| Coil | Removes the secondary structure. |
+| β strand | Makes it a β strand. |
+| α helix | Makes it an α helix. |
+| 3-10 helix | Makes it a 3<sub>10</sub> helix. |
+| π helix | Makes it a π helix. |
 
 For example, with the selection `*` and Type set to Coil, all secondary structure information is removed.
 If you do not like the automatic assignment, you can use this method to change regions to β strands or
@@ -91,4 +94,4 @@ given, `type` (`coil` / `strand` / `helix` / `helix310` / `helixpi`) is assigned
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*

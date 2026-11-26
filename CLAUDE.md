@@ -121,6 +121,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   続いて ui / install / menu / getting-started / tutorials / changes の stale 27 ページを追随させた
   (マーカー `c730ead`)。日本語版で文末に「。」を付けた表のセル・箇条書きには、英語版でも
   ピリオドを付けた (表の行と箇条書きを日本語版と順に対応させて機械的に揃えた)。
+  最後に reference の stale 36 ページを追随させ (マーカー `d6bebaf`。camera / coloring / material /
+  scene は全面的に訳し直した)、定義リストのピリオドも同じ方法で揃えた。これで**更新履歴以外の
+  全ページが日本語版 `d6bebaf` に追随済み** (2026-11-26)。
 - 新しい日本語ページを足したら、英語版も同じ PR か次の追随 PR で訳し、en の nav に載せる
   (`task i18n:status -- -v` の untranslated に出る)。
 

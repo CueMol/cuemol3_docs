@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/interaction.md @ 773364a -->
+<!-- source: ja/reference/tools/interaction.md @ d6bebaf -->
 
 # Extracting interactions (Interaction)
 
@@ -15,9 +15,9 @@ Open the **Interaction analysis** dialog with **Tools &gt; Interaction...**.
 
 | Item | Default | Description |
 |---|---|---|
-| Molecule / selection | — | The molecule to extract interactions from, and the part of it to target. If the selection is empty, all atoms are targeted |
-| **Second molecule** | OFF | When ON, you can choose a second molecule. Interactions between the first selection and the second molecule are extracted |
-| **Second selection** | OFF | When ON, you can specify a second selection. Only interactions spanning the first selection and the second selection are extracted |
+| Molecule / selection | — | The molecule to extract interactions from, and the part of it to target. If the selection is empty, all atoms are targeted. |
+| **Second molecule** | OFF | When ON, you can choose a second molecule. Interactions between the first selection and the second molecule are extracted. |
+| **Second selection** | OFF | When ON, you can specify a second selection. Only interactions spanning the first selection and the second selection are extracted. |
 
 The second selection applies to the second molecule if Second molecule is ON, and to the first molecule if it is OFF. If you choose the same molecule as the first one for the second molecule, the second molecule setting is ignored.
 
@@ -26,12 +26,14 @@ The second selection applies to the second molecule if Second molecule is ON, an
 | Item | Default | Description |
 |---|---|---|
 | **Min distance (A)** | 2.5 | Minimum distance (Å) to count as an interaction |
-| **Max distance (A)** | 3.5 | Maximum distance (Å) to count as an interaction. Must be larger than Min distance |
+| **Max distance (A)** | 3.5 | Maximum distance (Å) to count as an interaction. Must be larger than Min distance. |
 | **Max labels** | 30 | Maximum number of interactions to extract (1 to 1000) |
-| **Hydrogen bond (N, O) only** | OFF | When ON, pairs involving carbon atoms are excluded (in proteins, only pairs of atoms such as N and O remain) |
-| **Label set name** | `measure` | Name of the atomintr Renderer to which the interactions are added. It is created if it does not exist |
+| **Hydrogen bond (N, O) only** | OFF | When ON, pairs involving carbon atoms are excluded (in proteins, only pairs of atoms such as N and O remain). |
+| **Label set name** | `measure` | Name of the atomintr Renderer to which the interactions are added. It is created if it does not exist. |
 
-Each time you open the dialog, all items other than the molecule return to their defaults.
+The two selections (including the Second selection switch) and the Parameters values other than Label set name are kept the next time the dialog is opened (even after
+CueMol3 is restarted). The Parameters values other than Label set name can be reset to the defaults above with
+**Defaults** at the lower left of the dialog.
 
 !!! note "Hydrogen bond geometry is not considered"
     What is extracted is the set of atom pairs that satisfy the distance condition; hydrogen bond geometry and the like are not taken into account.
@@ -68,4 +70,4 @@ In the native mode of the [Console](../plugins/console/index.md), `analyze_inter
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*

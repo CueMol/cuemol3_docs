@@ -1,4 +1,4 @@
-<!-- source: ja/reference/index.md @ e4bd8cd -->
+<!-- source: ja/reference/index.md @ d6bebaf -->
 
 # Reference
 
@@ -46,6 +46,7 @@ To learn by following the flow of operations, see the
 - **[Plugins](plugins/index.md)** — Switchable features, and AI Agent / Console / MCP Server
 - **[Tools](../menu/tools.md)** — Tools for superposition, interactions, secondary structure, morphing, molecular surfaces and electrostatic potential
 - **[Recording and replaying operations (Actions)](actions.md)** — The History / Actions panel, macros and qax files
+- **[User directory (~/.cuemol)](dotfiles.md)** — Startup scripts and additional style files
 - **[Keyboard shortcuts](shortcuts.md)** — List of shortcuts
 - **[Menu reference](../menu/index.md)** — List of all menu items
 
@@ -56,10 +57,11 @@ To learn by following the flow of operations, see the
 <div class="grid cards" markdown>
 
 - **[Supported file formats](../getting-started/index.md#supported-file-formats)** — List of formats that can be read and written
+- **[Saving the scene (Save Scene)](save-scene.md)** — Save options of Save Scene As
 - **[Scene file (`.qsc`)](qsc-format.md)** — Structure of the scene file
 
 </div>
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.3.565*

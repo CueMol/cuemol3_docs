@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/ribbon.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/ribbon.md @ d6bebaf -->
 
 # ribbon
 
@@ -24,7 +24,7 @@ Right-click the Renderer in the scene tree and choose a style from the list to a
 (see [Styles](../styles.md)).
 
 Default
-:   The default ribbon display. Coils are thick tubes; helices and sheets are plate-like ribbons with a rectangular cross-section (figure below, left)
+:   The default ribbon display. Coils are tubes; helices and sheets are plate-like ribbons with a rectangular cross-section (figure below, left)
 
 Fancy1
 :   A Molscript-style ribbon display. The inside of helices and the sides of sheets are colored whitish,
@@ -46,11 +46,11 @@ For the common properties (name, visibility, material, edge lines, etc.), see
 
 Section detail
 :   Number of polygon divisions in the cross-section direction. The larger the value, the finer the
-    division and the smoother the display, but the slower the rendering
+    division and the smoother the display, but the slower the rendering.
 
 Axial detail
 :   Number of polygon divisions along the chain. The larger the value, the finer the
-    division and the smoother the display, but the slower the rendering
+    division and the smoother the display, but the slower the rendering.
 
 Smooth color
 :   When the colors of adjacent residues differ, ON makes the coloring between residues a gradient (figure below, left),
@@ -60,7 +60,7 @@ Smooth color
 
 Pivot atom name
 :   Name of the atom that the ribbon or tube passes through. For proteins it defaults to CA (Cα carbon atom),
-    and normally you do not need to change it
+    and normally you do not need to change it.
 
 Cap type
 :   Shape of the ends. **sphere** gives a spherical end (figure below, left), **flat** gives a flat end (figure below, center),
@@ -92,7 +92,7 @@ Width
 :   Thickness of the helix. The unit is Å
 
 Tuber
-:   Width of the helix, specified as a multiple of Width
+:   Width of the helix, specified as a multiple of Width.
 
 Sharpness
 :   The meaning depends on Section type.<br/>
@@ -107,7 +107,7 @@ Sharpness
 
 Smoothness
 :   At 0 the helix is a curve passing through the position of the pivot atom (Cα atom by default);
-    at lower values it becomes a smooth curve that does not pass through the pivot atom
+    at lower values it becomes a smooth curve that does not pass through the pivot atom.
 
 Head type / Tail type
 :   Shape of the end (Head) and start (Tail) of the helix.
@@ -127,7 +127,7 @@ Head power / Tail power
     ![power = 3](../../../assets/images/reference/renderers/ribbon/22-prop-hhead-pow3.png){ .on-glb }
 
 Head arrow height / width
-:   Effective only when type is arrow. Specifies the height and width of the arrow (see [Sheet](#sheet))
+:   Effective only when type is arrow. Specifies the height and width of the arrow (see [Sheet](#sheet)).
 
 ### Sheet
 
@@ -156,7 +156,7 @@ Head type = Arrow
 
 Head arrow width
 :   Width of the arrowhead. At 100% the arrow is three times as wide as the body of the sheet,
-    and at 0% its width equals the body of the sheet (that is, there is no arrowhead)
+    and at 0% its width equals the body of the sheet (that is, there is no arrowhead).
 
 Head arrow height
 :   Height of the arrowhead. Decreasing the value reduces the height of the arrowhead<br/>
@@ -176,4 +176,4 @@ Each setting has the same meaning as the cross-section settings in [Helix](#heli
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 2.4.2.550*

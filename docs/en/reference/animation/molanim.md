@@ -1,4 +1,4 @@
-<!-- source: ja/reference/animation/molanim.md @ 570ee02 -->
+<!-- source: ja/reference/animation/molanim.md @ d6bebaf -->
 
 # MolAnim (structural change)
 
@@ -21,7 +21,7 @@ For the common properties (name, start time, duration, etc.), see
 [Animation](index.md#common-properties).
 
 Target MorphMol
-:   The MorphMol Object that represents the morph. It holds the pair of structures to interpolate
+:   The MorphMol Object that represents the morph. It holds the pair of structures to interpolate.
 
 Start value
 :   The start value of the interpolation parameter

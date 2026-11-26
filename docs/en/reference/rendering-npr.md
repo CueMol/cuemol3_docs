@@ -1,4 +1,4 @@
-<!-- source: ja/reference/rendering-npr.md @ 8d54764 -->
+<!-- source: ja/reference/rendering-npr.md @ d6bebaf -->
 
 # NPR (ink-style rendering)
 
@@ -27,11 +27,11 @@ edit the contents of the style in the Detail tab.
 |---|---|---|
 | Style | richardson | Template for the drawing feel (see below) |
 | Coloring | Style default | How ink and paper colors are combined (see below) |
-| Mark density | 1.0 (0.25-4) | Multiplier that divides the spacing of lines and dots. At 2, the number of lines and dots doubles |
+| Mark density | 1.0 (0.25-4) | Multiplier that divides the spacing of lines and dots. At 2, the number of lines and dots doubles. |
 | Mark width | 1.0 (0.25-4) | Multiplier for line thickness and dot size |
-| Custom ink color / Ink color | OFF / `#000000` | The ink color is specified explicitly only when ON |
-| Custom paper color / Paper color | OFF / `#ffffff` | The paper color is specified explicitly only when ON |
-| Default contour edges | ON | Draws contour lines also for Renderers that have no edge lines configured |
+| Custom ink color / Ink color | OFF / `#000000` | The ink color is specified explicitly only when ON. |
+| Custom paper color / Paper color | OFF / `#ffffff` | The paper color is specified explicitly only when ON. |
+| Default contour edges | ON | Draws contour lines also for Renderers that have no edge lines configured. |
 
 Mark density and Mark width are **multipliers applied uniformly** to the per-layer values of the style.
 Even for a style made of several layers, the ratio of spacings between layers is preserved.
@@ -79,7 +79,7 @@ The **Quality** section of Umbreon (NPR) differs from the photorealistic Umbreon
 - **Lighting** has only two options, **Raytrace only** (**default**) and **Ambient Occlusion**.
   Global illumination is disabled when hatching is used, so there is **no GI lighting axis**.
 - **Supersampling** has the same meaning. The minimum hatching spacing is determined not by the
-  output pixels but by the grid after supersampling, so raising it is effective for fine styles.
+  output pixels but by the grid after supersampling, so raise it for fine styles.
 
 The other individual settings (Lights / Ambient Occlusion / Shadows / Edges / Transparency) are
 the same as in [Rendering](rendering.md#individual-settings) (only the Lights defaults differ from the
@@ -88,11 +88,13 @@ photorealistic Umbreon: Light intensity 1.55 / Flash fraction 0.6).
 ## Detail tab
 
 The Style selected in the Render tab is **loaded as a template**, and its contents can be edited.
-`Style template: <style name>` is shown at the top of the tab.
+`Template: <style name>` is shown in the **Style** section at the top.
 
 - An **Edited** badge appears once you edit.
 - **Reset to style** returns to the state of the template.
 - When you switch the Style in the Render tab, the edits are discarded without confirmation.
+- Numeric items can be changed within the ranges in the tables below by dragging or with the left and right arrows, as in the inspector
+  (→ [Entering numbers](../ui/inspector.md#entering-numbers)).
 
 !!! note "Edits are saved in the scene"
     Edits in the Detail tab are saved in the scene, like the other rendering settings
@@ -115,7 +117,7 @@ and duplicated or deleted from each layer's header.
 | Width | 1.1 | 0.1-8 px | Line thickness (Line only) |
 | Dot scale | 1 | 0.1-8 | Dot size (Dot screen / Stipple only) |
 | Tone high | 0.95 | 0-1 | Brightness at which the first mark appears |
-| Tone low | 0.55 | 0-1 | Brightness at which the last mark appears. No more marks are added below this |
+| Tone low | 0.55 | 0-1 | Brightness at which the last mark appears. No more marks are added below this. |
 | Fade (0 = auto) | 16 | 0-64 | How quickly a mark grows to its maximum size after appearing. 0 means automatic |
 | Opacity | 1 | 0-1 | Opacity of the layer |
 | Ink darkness | 1 | 0-1 | Darkness of the ink |
@@ -141,7 +143,7 @@ Determines how much ink a given brightness is converted into. Two items are alwa
 
 | Item | Default | Range | Description |
 |---|---|---|---|
-| Strength | 1 | 0.25-3 | Overall increase or decrease of the amount of ink. Raising it darkens the whole image |
+| Strength | 1 | 0.25-3 | Overall increase or decrease of the amount of ink. Raising it darkens the whole image. |
 | Curve | 1 | 0.5-2 | How the midtones are shifted |
 
 **Advanced** contains the settings for how tones are built (Diffuse weight / Ambient / Wrap / Contour darkening /
@@ -154,7 +156,7 @@ Tone fog / Fill posterize).
     Lighting in the molecular view is bright and flat, so with some styles the default
     leaves the hatching sparse. Adjust Strength first, then Curve.
 
-### Settings that have no effect are not shown
+### Settings that are not used are not shown
 
 Items that do not affect the image are either **hidden** or **disabled**.
 
@@ -178,4 +180,4 @@ This keeps edits reversible.
 
 ---
 
-*Verified against: CueMol3 2.3.14.525*
+*Verified against: CueMol3 3.0.3.565*

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/objects/densitymap.md @ f5ac4ed -->
+<!-- source: ja/reference/objects/densitymap.md @ d6bebaf -->
 
 # DensityMap (density map)
 
@@ -10,8 +10,8 @@ An Object that holds a three-dimensional scalar field such as an electron densit
 ## Creating
 
 Load a density map file or a structure factor file with **Open File...** in the File menu,
-or fetch one with **Get PDB...**
-(→ [File menu](../../menu/file.md)).
+or fetch one with **Get PDB...**. Get PDB can also fetch cryo-EM maps from EMDB
+(→ [File menu](../../menu/file.md), [Fetching from the PDB](../get-pdb.md)).
 
 ## Properties
 
@@ -56,4 +56,4 @@ The display range and contour level can also be adjusted from the Density map pa
 
 ---
 
-*Verified against: CueMol3 2.3.13.523*
+*Verified against: CueMol3 2.4.2.550*

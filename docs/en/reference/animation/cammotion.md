@@ -1,4 +1,4 @@
-<!-- source: ja/reference/animation/cammotion.md @ 570ee02 -->
+<!-- source: ja/reference/animation/cammotion.md @ d6bebaf -->
 
 # CamMotion (camera motion)
 

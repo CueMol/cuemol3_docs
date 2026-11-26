@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/mol-surface.md @ 773364a -->
+<!-- source: ja/reference/tools/mol-surface.md @ d6bebaf -->
 
 # Generating a molecular surface (Mol surface generation)
 
@@ -18,7 +18,7 @@ and is displayed by the [molsurf](../renderers/molsurf.md) Renderer.
 | Item | Default | Description |
 |---|---|---|
 | **Molecule** | — | The molecule to build the surface for |
-| **Use selection** / selection | OFF | When ON, the surface is built only for the part specified by the selection expression. The ▼ at the right end gives access to named selections, history and the selection builder |
+| **Use selection** / selection | OFF | When ON, the surface is built only for the part specified by the selection expression. The ▼ at the right end gives access to named selections, history and the selection builder. |
 
 !!! tip "Exclude water molecules"
     Crystal structures and similar data may contain water molecules. Unless a selection is used,
@@ -29,15 +29,17 @@ and is displayed by the [molsurf](../renderers/molsurf.md) Renderer.
 
 | Item | Default | Description |
 |---|---|---|
-| **Object name** | `sf_<molecule name>` | Name of the surface Object to be created. Filled in automatically when a molecule is chosen |
-| **Point density (/A)** | 2 | Fineness of the surface (1 to 10). A higher value gives a finer surface, but the calculation takes longer and memory use and file size also increase |
-| **Probe radius (A)** | 1.4 | Radius (Å) of the probe used to calculate the surface. The default is the radius of a water molecule |
+| **Object name** | `sf_<molecule name>` | Name of the surface Object to be created. Filled in automatically when a molecule is chosen. |
+| **Point density (/A)** | 2 | Fineness of the surface (1 to 10). A higher value gives a finer surface, but the calculation takes longer and memory use and file size also increase. |
+| **Probe radius (A)** | 1.4 | Radius (Å) of the probe used to calculate the surface. The default is the radius of a water molecule. |
 | **Algorithm** | Auto | Method used to calculate the surface (Auto / MeshMS / BALL) |
 
 - For a small molecule of about 10 kDa, raising Point density to about 5 gives a smoother surface.
   For a large molecule over 100 kDa, a lower value calculates faster.
 - For the differences between the **Algorithm** options, see [MolSurfObj generation algorithm](../objects/molsurf.md#generation-algorithm-algorithm).
   The default *Auto* uses MeshMS and switches to BALL if it fails.
+- The selection and the Surface values (except Object name) are kept the next time the dialog is opened (even after CueMol3 is restarted).
+  Point density, Probe radius and Algorithm can be reset to the defaults above with **Defaults** at the lower left of the dialog.
 
 ## Running and the result
 
@@ -75,4 +77,4 @@ and regenerated with `recalc_surface` (→ [Console command list](../plugins/con
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/namelabel.md @ 8d54764 -->
+<!-- source: ja/reference/renderers/namelabel.md @ d6bebaf -->
 
 # namelabel (name label)
 
@@ -29,10 +29,10 @@ For the common properties, see [Common Renderer properties](common.md).
 
 | Item | Default | Description |
 |---|---|---|
-| Format | (empty) | Format of the label text. When empty, it takes the form `{chain} {resn}{resi} {name}` |
+| Format | (empty) | Format of the label text. When empty, it takes the form `{chain} {resn}{resi} {name}`. |
 | Color | Yellow | Color of the label text |
-| Label on top | OFF | When ON, the label is always visible and is not hidden by shapes in front of it |
-| Max labels | 50 | Upper limit on the number of labels (1 to 1000). When exceeded, the oldest ones disappear first |
+| Label on top | OFF | When ON, the label is always visible and is not hidden by shapes in front of it. |
+| Max labels | 50 | Upper limit on the number of labels (1 to 1000). When exceeded, the oldest ones disappear first. |
 | Horizontal align | Left | Which position of the label is aligned to the atom (horizontal: Left / Center / Right) |
 | Vertical align | Bottom | Which position of the label is aligned to the atom (vertical: Top / Middle / Bottom) |
 | Offset X / Offset Y | 0 px | Amount by which the label is shifted on the screen from the atom position (-100 to 100 px) |
@@ -55,7 +55,7 @@ For the common properties, see [Common Renderer properties](common.md).
 | Item | Default | Description |
 |---|---|---|
 | Font size | 12 pt | Size of the text (1 to 72 pt) |
-| Font name | sans-serif | Choose from the list of fonts installed on the system |
+| Font name | sans-serif | Choose from the list of fonts installed on the system. |
 | Font style | Normal | Normal / Italic |
 | Font weight | Normal | Normal / Bold |
 
@@ -66,7 +66,7 @@ The default color and font for newly created labels can be changed in **Atom Lab
 
 - The alignment (Horizontal align / Vertical align) is also reflected in POV-Ray output,
   but not in output to the LW viewer, where labels remain bottom-left aligned.
-- In [command-line rendering](../rendering.md#rendering-from-the-command-line),
+- In [command-line rendering](../cuetty.md),
   labels are not drawn.
 
 ## See also

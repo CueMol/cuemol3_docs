@@ -1,4 +1,4 @@
-<!-- source: ja/reference/rendering.md @ 8d54764 -->
+<!-- source: ja/reference/rendering.md @ d6bebaf -->
 
 # Rendering
 
@@ -44,10 +44,10 @@ Umbreon. While Umbreon is selected, the setting fields themselves are hidden.
 
 | Item | Why it is hidden |
 |---|---|
-| Stereo mode / Stereo depth | Umbreon does not support stereoscopic output |
-| CPU threads | Umbreon renders in parallel within the process, so it does not accept a thread count |
-| Post-render alpha blending | Umbreon composites transparency itself, so the external blendpng is not used |
-| Pixel labels | A POV-Ray-only feature |
+| Stereo mode / Stereo depth | Umbreon does not support stereoscopic output. |
+| CPU threads | Umbreon renders in parallel within the process, so it does not accept a thread count. |
+| Post-render alpha blending | Umbreon composites transparency itself, so the external blendpng is not used. |
+| Pixel labels | A POV-Ray-only feature. |
 
 ## Quality
 
@@ -61,10 +61,10 @@ Supersampling
 :   Base image quality. The default is **3x**
 
 AO quality
-:   Quality of ambient occlusion. Shown only when Lighting is Ambient Occlusion
+:   Quality of ambient occlusion. Shown only when Lighting is Ambient Occlusion.
 
 GI lighting
-:   Distribution of light for global illumination. Shown only when Lighting is Global Illumination
+:   Distribution of light for global illumination. Shown only when Lighting is Global Illumination.
 
 Shadows
 :   How shadows are cast. The default is **Off**
@@ -80,8 +80,8 @@ brightening the protruding parts.
 
 | Lighting | Description |
 |---|---|
-| Raytrace only | No shading. The fastest, with a flat appearance |
-| Ambient Occlusion | Computes shading from occlusion by the surroundings |
+| Raytrace only | No shading. The fastest, with a flat appearance. |
+| Ambient Occlusion | Computes shading from occlusion by the surroundings. |
 | Global Illumination | Computes shading by tracing light bounces (**default**) |
 
 Only **one** of Ambient Occlusion and Global Illumination can be selected, because both
@@ -117,7 +117,7 @@ Shown when Lighting is **Ambient Occlusion**.
 |---|---|
 | Low | For drafts, with fewer samples |
 | Medium | Standard (**default**) |
-| High | Computes shading exactly for each point |
+| High | Computes shading exactly for each point. |
 
 !!! warning "High takes an extremely long time"
     Low and Medium compute in batches per output pixel, but High recomputes for each
@@ -132,7 +132,7 @@ The strength of the key light from diagonally above does not change at any level
 
 | GI lighting | Description |
 |---|---|
-| 0 (raytrace match) | Same light distribution as Raytrace only. The global-illumination bounce is minimal |
+| 0 (raytrace match) | Same light distribution as Raytrace only. The global-illumination bounce is minimal. |
 | 1 | |
 | 2 | |
 | 3 | |
@@ -155,11 +155,6 @@ Cast shadows from the light source. This can be set independently of Lighting.
 | Soft | Blurred shadows |
 | Very soft | More blurred shadows |
 
-!!! note "Shadows fall only on meshes"
-    Parts drawn as spheres or cylinders (the atoms and bonds of [cpk](renderers/cpk.md)
-    and [ballstick](renderers/ballstick.md)) receive no shadows. For molecular
-    representations Lighting alone gives a sense of depth, so the default is Off.
-
 ## Individual settings
 
 An accordion below the Quality section. Open it when the presets are not enough.
@@ -169,17 +164,17 @@ Changing a setting here changes the display of the corresponding axis to Custom.
 
 | Item | Default | Range | Description |
 |---|---|---|---|
-| Supersampling | 3 | 1-8 | Same value as Supersampling in Quality |
+| Supersampling | 3 | 1-8 | Same value as Supersampling in Quality. |
 
 ### Lights
 
-Light source settings that apply regardless of the Lighting method. Umbreon (NPR) has the
+Light source settings common to all Lighting methods. Umbreon (NPR) has the
 same group.
 
 | Item | Default | Range | Description |
 |---|---|---|---|
 | Light intensity | 1.3 | 0-3 | Overall strength of the light sources |
-| Flash fraction | 0 | 0-1 | Fraction of the direct light assigned to the headlight from the viewpoint direction. The rest becomes the key light from diagonally above. The smaller it is, the sharper the shading |
+| Flash fraction | 0 | 0-1 | Fraction of the direct light assigned to the headlight from the viewpoint direction. The rest becomes the key light from diagonally above. The smaller it is, the sharper the shading. |
 
 When Lighting is Global Illumination, the **GI lighting** level rewrites these two.
 Selecting Raytrace only or Ambient Occlusion returns them to 1.55 / 0.6. The defaults of
@@ -193,12 +188,12 @@ Shown only when Lighting is Ambient Occlusion.
 | Item | Default | Range | Description |
 |---|---|---|---|
 | AO samples | 64 | 1-256 | Samples per point. More is smoother but slower |
-| AO distance (0 = auto) | 0 | 0-1000 | Radius within which occluders are searched. 0 determines it automatically from the size of the scene |
+| AO distance (0 = auto) | 0 | 0-1000 | Radius within which occluders are searched. 0 determines it automatically from the size of the scene. |
 | AO intensity | 1.0 | 0-1 | Strength of the shading |
-| AO on direct light | 1.0 | 0-1 | Fraction by which shading is also applied to direct light. At 0, the shading becomes almost invisible |
-| Multi-scale AO | ON | | Combines large and small radii to emphasize both fine bumps and the overall shape |
-| Bent normal | ON | | Applies ambient light taking the direction of occlusion into account |
-| Low-discrepancy sampling | ON | | Spreads samples evenly to reduce noise |
+| AO on direct light | 1.0 | 0-1 | Fraction by which shading is also applied to direct light. At 0, the shading becomes almost invisible. |
+| Multi-scale AO | ON | | Combines large and small radii to emphasize both fine bumps and the overall shape. |
+| Bent normal | ON | | Applies ambient light taking the direction of occlusion into account. |
+| Low-discrepancy sampling | ON | | Spreads samples evenly to reduce noise. |
 | AO gather | Per output pixel | | Unit of the shading computation. **Per output pixel** is per output pixel (fast); **Per shading hit** is per shading point (exact, slow) |
 
 !!! tip "Leave AO distance at 0 (auto)"
@@ -212,7 +207,7 @@ Shown only when Lighting is Ambient Occlusion.
 |---|---|---|---|
 | Cast shadows | OFF | | Whether shadows are cast |
 | Shadow samples | 1 | 1-64 | Number of shadow samples. More is smoother but slower |
-| Light radius (deg) | 0.0 | 0-30 | Apparent size of the light source (degrees). Values above 0 give blurred shadows |
+| Light radius (deg) | 0.0 | 0-30 | Apparent size of the light source (degrees). Values above 0 give blurred shadows. |
 
 The larger the Light radius, the wider the shadow edges blur and the more noise appears,
 so increase Shadow samples as well.
@@ -225,9 +220,9 @@ common properties on the Renderer side.
 
 | Item | Default | Range | Description |
 |---|---|---|---|
-| Crease angle (deg) | Off | Off / 15 / 30 / 45 / 60 / 90 / 120 | Lower limit (degrees) of the fold angle of faces drawn as crease lines. Effective when Edge type is Edges; the larger the angle, the fewer folds are drawn, leaving only distinct ones. Off draws no crease lines |
+| Crease angle (deg) | Off | Off / 15 / 30 / 45 / 60 / 90 / 120 | Lower limit (degrees) of the fold angle of faces drawn as crease lines. Used when Edge type is Edges; the larger the angle, the fewer folds are drawn, leaving only distinct ones. Off draws no crease lines. |
 | Contact edges | ON | | Draws the lines where Renderers with different edge-line settings intersect (see below) |
-| Outline far depth | 0.2 | 0-1 | When Edge type is Silhouette, the depth at which outlines behind faces faded by fog start to be drawn. A fraction of the fog range: 0 is the view center and 1 is the end of the fog |
+| Outline far depth | 0.2 | 0-1 | When Edge type is Silhouette, the depth at which outlines behind faces faded by fog start to be drawn. A fraction of the fog range: 0 is the view center and 1 is the end of the fog. |
 
 **Contact edges** draws the intersection lines where the shape of one Renderer pierces the
 surface of another (for example, a ballstick bond going into a ribbon). Renderers with the
@@ -246,7 +241,7 @@ Umbreon (NPR) (not in POV-Ray). Collapsed by default.
 
 | Item | Default | Description |
 |---|---|---|
-| Per-pixel transparency | ON | Composites translucency pixel by pixel |
+| Per-pixel transparency | ON | Composites translucency pixel by pixel. |
 
 Each translucent Renderer is drawn as if opaque and then composited. When ON, the weights
 are determined only by the layers that actually cover the pixel, so the weight of the
@@ -259,6 +254,9 @@ A pixel covered by only one translucent layer looks the same whether ON or OFF. 
 difference appears only where layers overlap. The rendering time is the same either way.
 Turn it OFF only when you need the same result as blendpng or POV-Ray.
 
+The molecular view also overlays translucent Renderers with the same method as when it is ON
+(→ [How translucent Renderers overlap](renderers/common.md#how-translucent-renderers-overlap)).
+
 ### Global Illumination
 
 Shown only when Lighting is Global Illumination.
@@ -267,8 +265,8 @@ Shown only when Lighting is Global Illumination.
 |---|---|---|---|
 | GI samples | 32 | 8 / 32 / 64 / 256 | Samples per pixel. More reduces noise but is slower |
 | Denoise | OIDN | | Noise removal method. **OIDN** / **A-trous** / **None** |
-| Ambient fraction | 0.6 | 0-1 | Fraction of the total light gathered as global-illumination bounce. Rewritten by the **GI lighting** level |
-| Sky gradient | ON | | Makes the sky, which is the light source of the bounce, a gradient that is white at the top and approaches Ground color toward the bottom. The brightness of the bounce then varies with the orientation of the surface (the overall brightness does not change) |
+| Ambient fraction | 0.6 | 0-1 | Fraction of the total light gathered as global-illumination bounce. Rewritten by the **GI lighting** level. |
+| Sky gradient | ON | | Makes the sky, which is the light source of the bounce, a gradient that is white at the top and approaches Ground color toward the bottom. The brightness of the bounce then varies with the orientation of the surface (the overall brightness does not change). |
 | Ground color | #666666 | | Ground-side color of Sky gradient |
 
 With Denoise set to None, the image is grainy unless GI samples is made large.
@@ -276,10 +274,10 @@ Normally leave it at OIDN.
 
 ## Edge lines and materials
 
-Some of the common properties on the Renderer side affect only ray-tracing output.
+Some of the common properties on the Renderer side need attention in how they are handled in the rendering window.
 
 [Material](renderers/material.md)
-:   Umbreon resolves the surface appearance from the material name. Some appearances differ from POV-Ray
+:   Materials are also reflected in the molecular view, and the appearances in Umbreon are tuned to match. Some appearances differ from POV-Ray.
 
 [Edge lines](renderers/edge-lines.md)
 :   In Umbreon, the **Silhouette** Edge type is a mode that draws **only the outer outline**.
@@ -291,27 +289,7 @@ Some of the common properties on the Renderer side affect only ray-tracing outpu
 ## Rendering from the command line
 
 Images can also be written from a scene file (`.qsc`) without using the GUI.
-Both routes use Umbreon.
-
-```sh
-cuetty --input scene.qsc --render out.png --width 1920 --height 1080
-```
-
-```sh
-python -m cuemol.umbreon_render scene.qsc out.png -W 1920 -H 1080
-```
-
-`--camera` (`-c`) specifies a camera saved in the scene. If omitted, the current view
-(`__current`) that the GUI writes when saving the scene is used.
-
-Both render using the rendering window settings saved in the scene
-(→ [Saving settings](#saving-settings)) as they are. A scene with no saved settings is
-rendered with the defaults (Lighting is Global Illumination, 1200×1200 px), and the
-projection follows that of the camera. `--width` / `--height` (`-W` / `-H`) override the
-saved size.
-
-!!! warning "Text such as atom labels is not rendered"
-    If you need a figure with labels, use the rendering window.
+→ [Rendering from the command line (cuetty)](cuetty.md)
 
 ## Saving settings
 
@@ -321,7 +299,7 @@ scene file (`.qsc`). When you switch Target, the settings of that scene are show
 values changed from the defaults are written.
 
 Changing settings is an edit of the scene and can be undone. In the rendering window as
-well, ++cmd+z++ / ++cmd+shift+z++ (++ctrl+z++ / ++ctrl+y++ on Windows / Linux) work
+well, ++cmd+z++ / ++cmd+shift+z++ (++ctrl+z++ / ++ctrl+y++ on Windows / Linux) undo and redo
 (when a text field has focus, they undo within the field).
 
 The history of render results records the settings used at run time. The history arrows
@@ -335,6 +313,7 @@ is opened.
 
 - [Rendering window](../ui/rendering-window.md) — window layout and operations
 - [NPR (ink-style rendering)](rendering-npr.md) — settings of the Umbreon (NPR) backend
+- [Rendering from the command line (cuetty)](cuetty.md) — exporting images and movie frames without the GUI
 - [Rendering menu](../menu/rendering.md) — menu items and Export scene
 - [Material](renderers/material.md) / [Edge lines](renderers/edge-lines.md)
 - [Scene](scene.md) — ambient occlusion and antialiasing on the molecular view side
@@ -342,4 +321,4 @@ is opened.
 
 ---
 
-*Verified against: CueMol3 2.3.14.525*
+*Verified against: CueMol3 3.0.6.577*

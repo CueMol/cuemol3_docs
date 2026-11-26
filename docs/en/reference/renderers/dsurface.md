@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/dsurface.md @ f5ac4ed -->
+<!-- source: ja/reference/renderers/dsurface.md @ d6bebaf -->
 
 # dsurface (molecular surface, direct calculation)
 
@@ -23,8 +23,8 @@ For the common properties, see [Common Renderer properties](common.md).
 | Item | Default | Description |
 |---|---|---|
 | Drawing mode | Fill | Fill the surface (**Fill**) / mesh (**Wireframe**) / points (**Dots**) |
-| Line/Point size | 1.2 px | Line width for Wireframe and point size for Dots. Not used with Fill |
-| Algorithm | Distance field | How the mesh is built (see below) |
+| Line/Point size | 1.2 px | Line width for Wireframe and point size for Dots. Not used with Fill. |
+| Algorithm | MeshMS (analytic SES) | How the mesh is built (see below) |
 | Surface type | Solvent excluded | Type of surface. **van der Waals** (van der Waals surface) / **Solvent accessible** (solvent-accessible surface) / **Solvent excluded** (solvent-excluded surface) |
 | Detail | 6 | Fineness of the mesh. Chosen from fixed steps (`1` / `2` / `4` / `6` / `8` / `16` / `24` / `32`) |
 
@@ -35,9 +35,9 @@ what differs is how the mesh is built and how fast.
 
 | Algorithm | Supported Surface type | Description |
 |---|---|---|
-| Distance field | vdW / SAS / SES | Places a distance field on a grid and meshes it (**default**) |
-| MeshMS (analytic SES) | SES only | Meshes the solvent-excluded surface analytically. At fine settings it is much faster than the distance field |
-| EDTSurf (voxel) | vdW / SAS / SES | The conventional implementation, using voxels and a distance transform |
+| Distance field | vdW / SAS / SES | Places a distance field on a grid and meshes it. |
+| MeshMS (analytic SES) | SES only | Meshes the solvent-excluded surface analytically. At fine settings it is much faster than the distance field (**default**). |
+| EDTSurf (voxel) | vdW / SAS / SES | The conventional implementation, using voxels and a distance transform. |
 
 **The Detail scale is aligned across the three.** At the default of 6, all algorithms
 give almost the same number of vertices.
@@ -47,6 +47,8 @@ give almost the same number of vertices.
     when Surface type is anything other than **Solvent excluded**, or when generation fails.
     The switch and its reason appear in the [Output panel](../../ui/bottom-panels/index.md#output) as lines
     starting with `DirectSurfRend&gt;`. **The values you set are not changed.**
+
+A dsurface in a scene saved without an Algorithm setting also opens with MeshMS (analytic SES).
 
 ### Atom radii
 
@@ -78,4 +80,4 @@ target the surface (→ [Picking and hover display](../../ui/mouse-input.md#pick
 
 ---
 
-*Verified against: CueMol3 2.3.15.530*
+*Verified against: CueMol3 3.0.6.577*
