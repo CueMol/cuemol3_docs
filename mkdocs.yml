@@ -73,7 +73,11 @@ plugins:
                 - Side panels: ui/side-panels.md
                 - Selection builder: ui/selection-builder.md
                 - Property inspector: ui/inspector.md
-                - Bottom panel: ui/bottom-panels/index.md
+                - Bottom panel:
+                    - ui/bottom-panels/index.md
+                    - Sequence panel: ui/bottom-panels/sequence.md
+                    - Trajectory panel: ui/bottom-panels/trajectory.md
+                    - Animation panel: ui/bottom-panels/animation.md
                 - Toolbar and tool palette: ui/toolbar-tools.md
                 - Rendering window: ui/rendering-window.md
                 - Mouse and trackpad: ui/mouse-input.md
@@ -150,6 +154,7 @@ plugins:
                 - Animation:
                     - reference/animation/index.md
                     - SimpleSpin: reference/animation/simplespin.md
+                    - RockSpin (swing): reference/animation/rockspin.md
                     - CamMotion (camera motion): reference/animation/cammotion.md
                     - ShowHide (show / hide): reference/animation/showhide.md
                     - SlideInOut: reference/animation/slideinout.md
@@ -157,6 +162,7 @@ plugins:
                 - Styles: reference/styles.md
                 - Rendering: reference/rendering.md
                 - NPR (ink-style rendering): reference/rendering-npr.md
+                - Rendering from the command line (cuetty): reference/cuetty.md
                 - Settings: reference/settings.md
                 - Plugins:
                     - reference/plugins/index.md
@@ -166,6 +172,7 @@ plugins:
                         - Command list: reference/plugins/console/commands.md
                         - tritium_cli: reference/plugins/console/cli.md
                         - PyM console: reference/plugins/console/pymconsole.md
+                        - ChX console: reference/plugins/console/chx_console.md
                     - MCP Server: reference/plugins/mcp-server.md
                 - Tools:
                     - Superposing molecules: reference/tools/superpose.md
@@ -175,8 +182,11 @@ plugins:
                     - Generating molecular surfaces: reference/tools/mol-surface.md
                     - Cutting molecular surfaces: reference/tools/surface-cutter.md
                     - Calculating electrostatic potential: reference/tools/apbs.md
+                - Fetching from the PDB (Get PDB): reference/get-pdb.md
                 - Recording and replaying operations (Actions): reference/actions.md
+                - User directory (~/.cuemol): reference/dotfiles.md
                 - Keyboard shortcuts: reference/shortcuts.md
+                - Saving the scene (Save Scene): reference/save-scene.md
                 - Scene file (.qsc): reference/qsc-format.md
 
 markdown_extensions:

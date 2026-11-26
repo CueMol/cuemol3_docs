@@ -113,6 +113,11 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   以後は `task i18n:status` の stale を別 PR でまとめて追随させる。追随は該当ページの
   日本語版の差分 (`git diff <マーカーの hash>..HEAD -- docs/ja/<path>`) を英語版に反映し、
   マーカーの hash を更新する (全面的な訳し直しはしない)。
+  2026-11-26 (日本語版 `f8502b6`) に、その後に新設した 9 ページ (`reference/get-pdb.md` /
+  `cuetty.md` / `dotfiles.md` / `save-scene.md` / `animation/rockspin.md` /
+  `plugins/console/chx_console.md` / `ui/bottom-panels/{sequence,trajectory,animation}.md`) を訳し、
+  `ui/bottom-panels/index.md` を分割に追随させた。これらから英語版の `camera.md#__current` と
+  `scene.md#compatibility` へのアンカーは、両ページの追随までは解決しない (build の INFO に出る)。
 - 新しい日本語ページを足したら、英語版も同じ PR か次の追随 PR で訳し、en の nav に載せる
   (`task i18n:status -- -v` の untranslated に出る)。
 
