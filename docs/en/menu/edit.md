@@ -1,4 +1,4 @@
-<!-- source: ja/menu/edit.md @ 6cacee7 -->
+<!-- source: ja/menu/edit.md @ c730ead -->
 
 # Edit menu
 
@@ -8,8 +8,8 @@ This menu covers undoing operations, the clipboard, editing molecular structures
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Undo | Undoes the last operation. Disabled when there is nothing to undo | ++cmd+z++ |
-| Redo | Redoes an undone operation. Disabled when there is nothing to redo | macOS: ++cmd+shift+z++ / Windows, Linux: ++ctrl+y++ |
+| Undo | Undoes the last operation. Disabled when there is nothing to undo. | ++cmd+z++ |
+| Redo | Redoes an undone operation. Disabled when there is nothing to redo. | macOS: ++cmd+shift+z++ / Windows, Linux: ++ctrl+y++ |
 
 The shortcuts act on whichever element has focus. If you undo a typing mistake in a text field
 with ++cmd+z++, scene operations are not rolled back. The Undo / Redo buttons on the toolbar
@@ -25,18 +25,20 @@ always act on the scene, regardless of focus.
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Cut | Cuts the selected item | ++cmd+x++ |
-| Copy | Copies the selected item | ++cmd+c++ |
-| Paste | Pastes the clipboard contents | ++cmd+v++ |
-| Select All | Selects everything in the text field if one has focus; otherwise selects everything in the active selectable area (such as the log in the Output panel) | ++cmd+a++ |
+| Cut | Cuts the selected item. | ++cmd+x++ |
+| Copy | Copies the selected item. | ++cmd+c++ |
+| Paste | Pastes the clipboard contents. | ++cmd+v++ |
+| Select All | Selects everything in the text field if one has focus; otherwise selects everything in the active selectable area (such as the log in the Output panel). | ++cmd+a++ |
 
 What Cut / Copy / Paste act on **depends on where the focus is**.
 
 | Focus | Target |
 |---|---|
 | Text field | The text being entered (standard OS editing operations) |
-| Scene tree | Object / Renderer / Renderer group / style set nodes |
+| Scene tree | Object / Renderer / Renderer group nodes |
 | Camera panel | Cameras |
+| Style Sets panel in the Styles view | Style sets |
+| Animation panel | Animation elements (Cut / Copy / Paste) |
 | Paint table in the Color panel | Table rows |
 | History panel in the Actions view | Copies the operation of the selected step as a Console command (Copy only) |
 
@@ -49,6 +51,7 @@ reverted with a single Undo. The same operation is also available from the scene
     camera / style / Paint row in CueMol3 and paste it into CueMol2, or the other way around.
     Selections and colors are resolved again against the destination scene when pasting,
     so you can also paste into a different Renderer or a different scene.
+    Animation elements have no corresponding format in CueMol2, so they can be pasted only within CueMol3.
 
     Using the OS clipboard has two side effects: copying in CueMol3 replaces the text
     on the clipboard, and copying in another application discards
@@ -58,7 +61,7 @@ reverted with a single Undo. The same operation is also available from the scene
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Clear undo data | Discards the Undo history. The Undo / Redo state is updated as well | |
+| Clear undo data | Discards the Undo history. The Undo / Redo state is updated as well. | |
 
 ## Editing molecular structures
 
@@ -66,10 +69,10 @@ All of these open a tool dialog.
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Merge molecule... | Merges two molecule Objects into one | |
-| Delete mol atoms... | Deletes the selected atoms from a molecule | |
-| Change chain ID... | Changes the chain ID | |
-| Change residue number... | Changes the residue number | |
+| Merge molecule... | Merges two molecule Objects into one. | |
+| Delete mol atoms... | Deletes the selected atoms from a molecule. | |
+| Change chain ID... | Changes the chain ID. | |
+| Change residue number... | Changes the residue number. | |
 
 ## Settings
 
@@ -84,4 +87,4 @@ All of these open a tool dialog.
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*

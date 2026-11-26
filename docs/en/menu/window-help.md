@@ -1,4 +1,4 @@
-<!-- source: ja/menu/window-help.md @ 6cacee7 -->
+<!-- source: ja/menu/window-help.md @ c730ead -->
 
 # Window / Help menus
 
@@ -11,8 +11,8 @@ This menu switches which window is brought to the front.
 
 | Item | Description | Shortcut |
 |---|---|---|
-| Main Window | Brings the main window to the front. If it is minimized or hidden, it is restored | |
-| Rendering Window | Brings the rendering window to the front. If it is not open, it is opened first and then brought to the front | |
+| Main Window | Brings the main window to the front. If it is minimized or hidden, it is restored. | |
+| Rendering Window | Brings the rendering window to the front. If it is not open, it is opened first and then brought to the front. | |
 
 !!! note "Differences between operating systems"
     On macOS, the menu bar belongs to the OS (shared by the whole application), so this menu
@@ -35,8 +35,8 @@ merged into the application menu, so this menu itself is not shown.
 
 | Item | Description | Shortcut |
 |---|---|---|
-| About CueMol3 | Shows version information | |
-| Check for Updates... | Checks for a new release. In-app update is currently available only in the macOS (Apple Silicon) build; on Windows / Linux, a message saying it is unavailable is shown (→ [Updating](../install/update.md)) | |
+| About CueMol3 | Shows version information (Version / Commit / Date, and the versions of Electron / Chromium / Node.js / V8 / OS). **Copy** copies this information to the clipboard (useful for bug reports). | |
+| Check for Updates... | Checks for a new release. In-app update is available in the macOS (Apple Silicon) and Windows builds; on Linux, a message saying it is unavailable is shown (→ [Updating](../install/update.md)). | |
 
 !!! info "Mozilla-specific items were removed"
     About plugins... / About config... / Addon manager... / Console in the CueMol2 Help menu
@@ -46,4 +46,4 @@ merged into the application menu, so this menu itself is not shown.
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 2.4.2.550*

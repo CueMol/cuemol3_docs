@@ -1,4 +1,4 @@
-<!-- source: ja/getting-started/quick-tour.md @ 6cacee7 -->
+<!-- source: ja/getting-started/quick-tour.md @ c730ead -->
 
 # Quick tour
 
@@ -22,12 +22,12 @@ For a structure whose PDB ID is known, **File &gt; Get PDB...** is the easiest w
 
     ![Get PDB button on the toolbar](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="94" }
 
-2. Enter `1CRN` in **PDB Accession Code** and press **Download**
+2. Enter `1CRN` in **PDB or EMDB ID, or keywords** and press **Download**.
 
     ![Get PDB dialog](../../assets/images/getting-started/quick-tour/2-getpdb.webp){ width="380" .on-glb }
 
 3. An options dialog for loading appears. Choose **simple** from **Renderer type** and
-   press **Open**
+   press **Open**.
 
     ![Loading options dialog (Open File Options)](../../assets/images/getting-started/quick-tour/2-open-options.webp){ width="480" .on-glb }
 
@@ -50,11 +50,11 @@ through **Renderers** (display methods). Multiple Renderers can be stacked on on
 To show the secondary structure, add a **ribbon**.
 
 1. In the **Explorer &gt; Scene** tree (scene tree) in the left side panel, right-click the Object (`1crn`)
-   and choose **New Renderer**
+   and choose **New Renderer**.
 
     ![Object row in the scene tree](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="237" .on-glb }
 
-2. Choose **ribbon** from **Renderer type** and press **Create**
+2. Choose **ribbon** from **Renderer type** and press **Create**.
 
     ![New Renderer dialog](../../assets/images/getting-started/quick-tour/3-new-renderer.webp){ width="480" .on-glb }
 
@@ -65,17 +65,17 @@ atoms as spheres and bonds as cylinders). A Renderer can narrow its target atoms
 (→ [Selection expression syntax](../reference/selection.md)). Here, instead of writing the expression by hand,
 build it with the [selection builder](../ui/selection-builder.md).
 
-1. In the same way, right-click the Object (`1crn`) and choose **New Renderer**
-2. Choose **ballstick** from **Renderer type**
-3. Check **Selection**
-4. Press the ▼ at the right end of the selection expression field to open the selection builder
-5. Switch to the **Term** tab and choose **resn** (residue name) from the keywords
-6. Open the candidates with the ▼ of the value field and choose **CYS**
-7. Press **Set**. `resn CYS` is entered in the selection expression field
+1. In the same way, right-click the Object (`1crn`) and choose **New Renderer**.
+2. Choose **ballstick** from **Renderer type**.
+3. Check **Selection**.
+4. Press the ▼ at the right end of the selection expression field to open the selection builder.
+5. Switch to the **Term** tab and choose **resn** (residue name) from the keywords.
+6. Open the candidates with the ▼ of the value field and choose **CYS**.
+7. Press **Set**. `resn CYS` is entered in the selection expression field.
 
     ![resn CYS built on the Term tab of the selection builder](../../assets/images/getting-started/quick-tour/3-selection-builder.webp){ width="228" .on-glb }
 
-8. Press **Create**
+8. Press **Create**.
 
     ![New Renderer dialog with Selection specified](../../assets/images/getting-started/quick-tour/3-ballstick-selection.webp){ width="480" .on-glb }
 
@@ -90,7 +90,7 @@ at any time.
 
 - When a type is chosen, a Renderer is **created immediately with default values**, and detailed settings are adjusted
   afterward in the inspector (for this policy, see [Changes in the interaction model](../changes/ui-paradigm.md))
-- Choosing a predefined combination (preset) creates a group of multiple Renderers at once
+- Choosing a predefined combination (preset) creates a group of multiple Renderers at once.
 
 ### Adjust the appearance
 
@@ -109,11 +109,11 @@ for each Renderer or on the molecular Object. The default color of a Renderer re
 the color of the Object (`$molcol`), so recoloring the Object is reflected in all
 Renderers that refer to it. Here, recolor the Object.
 
-1. Select `1crn (object)` at the top
+1. Select `1crn (object)` at the top.
 
     ![Target selection in the Color panel](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="233" }
 
-2. Press the adjacent **Coloring** button and choose **Rainbow coloring**
+2. Press the adjacent **Coloring** button and choose **Rainbow coloring**.
 
     ![Coloring menu](../../assets/images/getting-started/quick-tour/3-coloring-menu.webp){ width="196" .on-glb }
 
@@ -153,7 +153,7 @@ in Still mode.
 
 ![Rendering window (Still mode)](../../assets/images/getting-started/quick-tour/4-rendering-window.webp){ .on-glb }
 
-1. Choose the target view (Target). The backend can stay at the default **Umbreon**
+1. Choose the target view (Target). The backend can stay at the default **Umbreon**.
 
     ![Controls row in Still mode](../../assets/images/getting-started/quick-tour/4-render-controls.webp){ width="561" .on-glb }
 
@@ -161,7 +161,7 @@ in Still mode.
 
     ![Render Settings panel](../../assets/images/getting-started/quick-tour/4-render-settings.webp){ width="307" .on-glb }
 
-3. Press **Start Render**. Progress is shown, and when it finishes the resulting image appears in the same window
+3. Press **Start Render**. Progress is shown, and when it finishes the resulting image appears in the same window.
 
     ![Rendering finished](../../assets/images/getting-started/quick-tour/4-render-result.webp){ .on-glb }
 
@@ -186,4 +186,4 @@ On the first save, as with **Save Scene As...**, a dialog appears for specifying
 
 ---
 
-*Verified against: CueMol3 2.3.8.495*
+*Verified against: CueMol3 2.4.2.550*

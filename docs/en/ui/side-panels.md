@@ -1,4 +1,4 @@
-<!-- source: ja/ui/side-panels.md @ 6cacee7 -->
+<!-- source: ja/ui/side-panels.md @ c730ead -->
 
 # Side panels
 
@@ -11,12 +11,12 @@ Clicking the selected icon again closes the side panel.
 
 | Icon | View | Panels |
 |---|---|---|
-| Explorer | Scene structure and display settings | Scene / Color |
-| View | Camera and viewpoint control | Camera / View |
+| Explorer | Scene structure and display settings | Scene / Camera / Color / View |
+| Styles | Style sets and their named colors and selections | Style Sets / Colors / Selections |
 | Selection | Molecule selection | Molecular structure / Selection |
 | Crystal | Crystallographic information | Symmetry / Density map |
 | Actions | Recording and replaying operations | History / Actions |
-| Gear (at the bottom) | Opens the Settings tab (not a side panel) | |
+| Gear (at the bottom) | Opens the Settings tab (not a side panel). | |
 
 ## Explorer
 
@@ -24,7 +24,7 @@ Clicking the selected icon again closes the side panel.
 
 Shows the contents of the scene as a tree. It corresponds to the workspace panel of CueMol2.
 
-- **Node types**: scene / Object / Renderer / Renderer group / style set
+- **Node types**: scene / Object / Renderer / Renderer group
 - **Toggling visibility**: The eye icon on each row shows or hides it.
   A row that is not drawn because a parent node is hidden has a grayed-out icon.
 - **Selection**: Click to select; ++cmd++ / ++ctrl++ + click selects multiple rows.
@@ -44,8 +44,10 @@ Shows the contents of the scene as a tree. It corresponds to the workspace panel
 - **Right-click**: Opens a menu for each node type (see below).
 
 The toolbar at the top of the panel has **Add** / **Focus** / **Delete** / **Property** buttons.
-Focus and Property are unavailable while multiple nodes are selected. **Delete** removes all selected nodes
-and can be undone in one step with a single Undo. The ++delete++ / ++backspace++ keys do the same.
+Property is unavailable while multiple nodes are selected. **Focus** fits all selected nodes in the view
+(for a molecule Object, it fits the atoms drawn by the displayed Renderers; for a density map Object, the displayed contours;
+even for something small, the width of the view is not made narrower than 15 Å), and
+**Delete** removes all selected nodes and can be undone in one step with a single Undo. The ++delete++ / ++backspace++ keys do the same.
 
 #### Main context menu operations
 
@@ -55,7 +57,6 @@ and can be undone in one step with a single Undo. The ++delete++ / ++backspace++
 | Object | Specifying a selection, renaming, copy &amp; paste, creating a new Renderer / Renderer group, setting colors, Save As, regenerating molecular surfaces |
 | Renderer | Renaming, copy &amp; paste (pastes into the same Object and the same group), setting colors, applying / creating / editing styles, changing the selection, generating a surface Object, changing the Renderer type, editing the interaction list |
 | Renderer group | Show / hide (applies to its members), renaming, copy &amp; paste, creating a new Renderer |
-| Style set | Create / copy &amp; paste / delete, toggling read-only, reading and writing files, style editor |
 
 When multiple nodes are selected, **copy** is available in addition to show, hide and delete.
 Selecting a Renderer group targets its member Renderers. Copying is not possible when nodes of
@@ -83,16 +84,16 @@ Rainbow / Potential / Multi-gradient).
 
 | Type | Settings |
 |---|---|
-| Solid | Specifies a single default color |
-| Paint | Specifies pairs of a selection and a color in a table. Rows can be added, deleted, cleared and reordered, and Cut / Copy / Paste are available |
+| Solid | Specifies a single default color. |
+| Paint | Specifies pairs of a selection and a color in a table. Rows can be added, deleted, cleared and reordered, and Cut / Copy / Paste are available. |
 | CPK | Color for each element (C / N / O / S / P / H / others) |
 | Rainbow | Mode, quantity to vary, start and end hue, brightness, saturation |
 | B-factor | Mode (B-factor / occupancy / distance), lower and upper colors, lower and upper values (editable only when Auto is set to Manual) |
 | Electrostatic potential | Target potential map, whether to color by SAS, low / middle / high values and colors |
-| Multi-gradient | Edit the stops (color breakpoints) directly on the map histogram and the gradient bar |
+| Multi-gradient | Edit the stops (color breakpoints) directly on the map histogram and the gradient bar. |
 
 The Paint table supports multiple selection. ++cmd++ / ++ctrl++ + click adds a row to or removes it from the selection,
-and ++shift++ + click selects a range. Delete, Cut and Copy act on all selected rows.
+and ++shift++ + click selects a range. Delete, Cut and Copy apply to all selected rows.
 Reordering (Move up / Move down) is available when exactly one row is selected.
 Rows can also be reordered by dragging. Dropping a row below the last row moves it to the end.
 Rows can also be moved and selected with the same keys as the scene tree (++up++ / ++down++ / ++home++ / ++end++ and
@@ -113,40 +114,43 @@ Because the displayed rows have no text input field, ++cmd+c++ / ++cmd+v++ / ++c
 A Paint Cut can be undone in one step with a single Undo. Paste is unavailable when the clipboard is empty.
 Pasted rows keep the order in which they were copied.
 
-## View
-
 ### Camera panel
 
 ![The Camera panel: six buttons along the top, and row badges for a camera with show/hide states (eye) and a camera loaded from a camera file (link)](../../assets/images/ui/side-panels/camera-panel.webp){ width="270" .on-glb }
 
 A list of [cameras](../reference/camera.md) (saved named viewpoints).
 Click a row to select it, and use the toolbar or the right-click menu to operate on it.
-When there are no cameras, `(no cameras)` is shown.
 
-The toolbar at the top of the panel has six buttons.
+The toolbar at the top of the panel has seven buttons.
 
 | Button | Action |
 |---|---|
-| New camera from view | Creates a new camera from the current view. A dialog asks for the name |
-| Save from view | Overwrites the selected camera with the current view |
-| Save from view with show/hide | Same as above. The show / hide state is also saved |
-| Apply to view | Restores the view of the selected camera |
-| Apply to view with show/hide | Same as above. The saved show / hide state is also restored |
-| Delete | Deletes the selected camera |
+| New camera from view | Creates a new camera from the current view. A dialog asks for the name. |
+| Save from view | Overwrites the selected camera with the current view. |
+| Save from view with show/hide | Same as above. The show / hide state is also saved. |
+| Apply to view | Restores the view of the selected camera. |
+| Apply to view with show/hide | Same as above. The saved show / hide state is also restored. |
+| Delete | Deletes the selected camera. |
+| Property | Shows the selected camera in the [inspector](inspector.md). |
 
 - **Double-click**: Applies the camera, including its show / hide state.
 - **Renaming**: Press ++f2++ or choose **Rename...** from the right-click menu to edit in place.
 - **Deleting**: The ++delete++ / ++backspace++ keys also delete it.
 - **Reordering**: Drag rows to change the order. Dropping a row below the last row of the list
   moves it to the end. The order is saved in the scene file (`.qsc`).
-- **`__current`**: A special camera that records the view at the time the scene was saved.
-  It is pinned to the top of the list and cannot be moved by dragging.
+- **`__current`**: A special camera that represents the current view. Every scene has it from the moment it is created.
+  It is pinned to the top of the list and cannot be moved by dragging. It cannot be overwritten, applied, deleted, renamed or
+  copied, and its right-click menu offers only New, Paste, loading a camera file, **Save As...** and **Properties...**.
+- **Inspector**: **Property** on the toolbar or **Properties...** in the right-click menu shows the camera in
+  the inspector. While it is shown, selecting another row in the list switches the inspector to
+  that camera as well.
 - **Row badges**: A camera that holds a show / hide state has an eye icon, and a camera
   loaded from a camera file has a link icon.
 
 In addition to the above, the right-click menu offers **copy &amp; paste**,
 **loading, reloading and saving camera files (`.cam`)**, and
 **editing and clearing display flags** (→ [Camera](../reference/camera.md)).
+Editing the display flags (**Edit vis flags**) opens **Visibility** in the inspector.
 Right-clicking on an empty area opens a menu with only New, Paste and loading a camera file.
 
 !!! warning "Creating a camera with an existing name overwrites it"
@@ -159,7 +163,7 @@ Controls the viewpoint numerically. It corresponds to the fake dial (View panel)
 
 | Section | Contents |
 |---|---|
-| Rotation | Rotation about X / Y / Z. Dragging rotates relatively |
+| Rotation | Rotation about X / Y / Z. Dragging rotates relatively. |
 | Translation | Translation |
 | Zoom / Slab | Zoom, slab (width of the visible depth), distance |
 | Projection | Projection mode (Perspective / Orthographic) and the center mark |
@@ -168,6 +172,35 @@ Controls the viewpoint numerically. It corresponds to the fake dial (View panel)
     Changes of the view are not subject to Undo.
     The background color is a scene setting, so set it from the [Scene menu](../menu/scene.md) or the
     inspector, not from this panel.
+
+## Styles
+
+Handles the style sets of [styles](../reference/styles.md) and the named colors and selections in them.
+
+### Style Sets panel
+
+A list of the style sets visible from the scene. In the order in which names are looked up (highest priority first), the scene's style sets
+are listed, followed by the application-wide style sets (shown as `global`). Read-only style sets have
+a lock icon, and style sets loaded from a file have a link icon.
+
+The toolbar at the top of the panel has **New style set** / **Load style file** / **Style entries** / **Delete**
+buttons. Double-clicking a row or pressing **Style entries** opens the list of styles contained in that style set
+(deletion only).
+
+In addition to the above, the right-click menu offers copy &amp; paste, loading, reloading and saving style files
+(**Style file**), and toggling read-only (**Read-only**). The `global` style sets
+cannot be copied, deleted, saved or toggled read-only.
+
+- The style sets bundled with the app and those loaded from `~/.cuemol/styles/` are read-only.
+  The `user` style set can be edited and is saved when CueMol3 quits.
+- Edits to `global` style sets cannot be undone with Undo (because they do not belong to a scene).
+
+### Colors panel / Selections panel
+
+Lists of the named colors (Colors) and named selections (Selections) of the style set chosen in the Style Sets panel.
+The values of rows can be edited in place. Colors are entered from the color swatch, and selections from the ▼ at the right end, using named selections, the history or the selection builder.
+**Add** in the header adds an entry after a name is entered, and **Delete** deletes the selected rows.
+Read-only style sets are display-only and cannot be edited (`(read-only)` is shown next to the target name).
 
 ## Selection
 
@@ -217,15 +250,23 @@ Handles crystallographic symmetry.
 
 Adjusts the display of density map Renderers (contour / isosurface, etc.).
 
-- Choose a Renderer and adjust the transparency / contour level / display extent with the sliders.
+- Choose a Renderer, adjust the transparency / display extent with the sliders, and adjust the contour level with **Level**.
+- **Level** consists of a value input field and a histogram of the map density. The histogram
+  shows the current level as a marker.
+    - Drag the marker or click the histogram to set the level. While dragging,
+      ++shift++ moves it finely and ++esc++ cancels. Each operation becomes a single Undo step.
+    - Dragging, pinching or scrolling on the histogram moves and zooms the displayed value range.
+      The **-** / **+** / **Fit** buttons also change the range.
 - The level can be specified either in a unit that depends on the map type (σ for crystallographic maps, the top % of
   grid point values for cryo-EM maps) or as an absolute value (switch with the ▼ menu).
-  The value in the other unit is shown below Level.
+  The input field is shown in this unit, and the value in the other unit is shown below it.
   A cryo-EM map is in absolute values from the moment it is loaded.
 - **Redraw** updates the center of the display to the current view center. **Cell** displays the unit cell.
 - When the whole map is displayed (the **Region** of the Renderer is *Full map*),
-  the **Extent** slider and **Redraw** have no effect
+  operating the **Extent** slider and **Redraw** does not change the display
   (→ [contour](../reference/renderers/contour.md#contour)).
+
+<!-- TODO(screenshot): the Density map panel, with the Level input field and the density histogram (marker) -->
 
 ## Actions
 
@@ -247,4 +288,4 @@ to apply it to the Object selected in the scene tree.
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.5.576*
