@@ -44,7 +44,7 @@
 
 <div class="grid cards" markdown>
 
-- **[電子密度マップを重ねて表示する](experimental/density-map.md)** — Get PDB でのマップ取得と Density map パネル
+- **[電子密度マップの表示](experimental/density-map.md)** — Get PDB でのマップ取得と Density map パネル
 - **[対称分子・単位格子を表示する](experimental/symmetry.md)** — 結晶パッキングの表示と Create SYMM mol
 
 </div>
