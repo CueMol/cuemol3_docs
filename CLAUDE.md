@@ -665,6 +665,8 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
     tritium_cli で作った**手作りの図** (ribbon-figure と同じ 3UG9 の cartoon を `render_image` で 800×800、
     Raytrace only は `set_render_settings` で切り替え、450×600 に切り出して `task images:import`)。
     Slab は 200 Å に広げてフォグがかからないようにした (`set_view slab=200`)。GI の差は cartoon では出る (ヘリックスの筒が重なる奥が暗くなる)、細い ribbon では出にくい (ユーザー指摘)。
+    `lighting-gi-bright.webp` は同じ GI で `umbreon.lightIntensity=1.7` にしたもの (GI は全体が暗く見えるので、
+    明るくするのは Light intensity。GI lighting の段は奥行き感が減るので変えない、とユーザー判断)。
   - ribbon-figure の題名の「リボン図」は一般的な呼び名として残し、cartoon を使う旨の note を置いた (ユーザー判断)。
   - チュートリアルの目次 (`tutorials/index.md`) のカードのサムネイルは、各 spec の `thumbShot` で撮る。
   - 目的別のチュートリアル (上記 6 本) には docs-verify の spec がある (`docs-verify/specs/{structure,prediction,
