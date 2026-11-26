@@ -345,7 +345,10 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | Open File Options などのフォームの欄が `#rend-type` などの id で見つからない | 3.0 系で id が無くなった。h3-kit の `Field` は label と欄が結び付いていないので、行のラベルで探す (`fieldControl(dlg, 'Renderer type')`)。チェックボックスは `checkField()` |
 | Color パネルの Coloring のボタンを押してもメニューが操作できない | macOS では pane のドロップダウンがネイティブメニュー (`popup-menu:show` の IPC)。harness がこれをスタブにしているので、`chooseColoring(app, window, ['Paint coloring', 'Okabe-Ito', 'Sky blue'])` のようにラベルの経路を渡す。ネイティブメニューは撮影できない |
 | 起動の時点で `READY_LINES` の待ちでタイムアウトする | アプリのログの文言が変わった。`DEBUG_E2E=1` で流してログを見て、`support/log.ts` の `READY_LINES` を直す (3.0.6.577 で `nodejs add-on` → `nodejs module`) |
-| シーンツリーの右クリックメニューが操作できない | native Menu なので Playwright からクリックできない。Scene パネルのツールバー Add ボタンが同じ New Renderer フローを開くので代替する (spec にその旨のコメントを残す) |
+| 右クリックメニュー (シーンツリー・分子ビュー) が操作できない | main プロセスの `Menu.popup` で出る native Menu。harness が `Menu.prototype.popup` を差し替えている (`installContextMenuDriver`)。`pickNextContextItem(app, ['Change sel', 'Current'])` で実際のラベルの経路を積んでから右クリックする。ラベルは `New Renderer…` のように U+2026 の省略記号。何も積まずに右クリックするとメニューはすぐ閉じ、`lastContextLabels` で項目を確かめられる (分子ビューでは、原子の上でだけ `Select Atom` などが並ぶので、原子のある点を探すのに使える) |
+| 分子ビューのダブルクリックが効かない / 右クリックでメニューが出ない | C++ の `MouseEventHandler` は、直前のクリックから 500 ms 以内のクリックをダブルクリックにする。Playwright の `dblclick` は間隔が 0 なので、700 ms 待ってから `click` を 120 ms 空けて 2 回。右クリックも直前のクリックから 700 ms 空ける (空けないと右ダブルクリックになりメニューが出ない) |
+| Paint の表のボタンを押した後、行のダブルクリックが効かない | ボタンのツールチップが表の上に残ってクリックを取る。ポインタを (1, 1) に逃がしてから次の操作をする (`paintRowAction`) |
+| パネルの見出しを押しても畳まれない | 見出しの中央がボタン群 (`sp-section-header-actions`、クリックを止める) に重なる。`.section-title` を押す |
 | ネイティブの open/save ダイアログでハングする | `expectOpenDialog` / `expectSaveDialog` で応答をキューに積んでから操作する。積み忘れは即エラーになる |
 | 撮影サイズでしか通らない spec を書いてしまう | 座標依存の操作を書かない。最後に `task e2e` (1600x1000) で回帰確認する |
 | `docShot` が `no visible clip target` / `not an HTMLElement` で落ちる | 対象が `display: contents` の要素だと矩形を持たない (View パネルの `.h3-form-grid-row` がこれ)。内側の実体 (ラベルとコントロール) を配列で渡す |
@@ -385,19 +388,17 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 
 ## 次に適用する対象 (未着手)
 
-spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/loading.md`、目的別のチュートリアルの
-`structure/binding-site.md` / `structure/superpose.md` / `prediction/alphafold.md` / `experimental/cryoem-map.md` /
-`figures/protein-dna.md` / `scripting/chx-console.md` (2026-11-26)。ページの手順のうち、ネイティブメニュー
-(右クリックの Change sel など) や視点に依存するクリック (原子のラベル) は、ページの「同じことをコマンドで」の
-コマンドを Console で流して同じ状態にし、`skipped-step` を記録している。適用の優先順:
+spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/` の 6 ページすべて (2026-11-27)、
+目的別のチュートリアルの `structure/binding-site.md` / `structure/superpose.md` / `prediction/alphafold.md` /
+`experimental/cryoem-map.md` / `figures/protein-dna.md` / `scripting/chx-console.md` (2026-11-26)。
+目的別の 6 本は、右クリックメニューを Console のコマンドで代替して `skipped-step` を記録している
+(右クリックメニューの driver を入れる前に書いたため)。driver で置き換えられる。
+基本操作コースは前のページの到達状態を `fixtures/course.ts` / `courseSelection.ts` / `courseRenderers.ts` に
+置き、後のページの spec はそれを呼んで始める。既存の手作りの図 (`camera-scene/camera-created.webp`、
+`measure/distance.webp` / `dashed-stick1.webp`) は spec で撮らない。適用の優先順:
 
-1. `tutorials/basic/` の残り 5 ページ (selection / renderers / coloring / camera-scene /
-   measure)。原子ピック、ダブルクリック選択、`harness.restart()` を使う camera-scene が
-   ここで初めて必要になる。
-   **基本操作コースはページ間で状態を引き継ぐ**構成なので、前ページの到達状態は
-   `fixtures/course.ts` に足していく (`setupLoadingPage.run()` が loading.md の終状態を作る)。
-   前ページの spec と手順を二重に持たないこと。
-2. 目的別チュートリアル 6 ページ (ribbon-figure / publication-images / density-map /
+1. 目的別 6 本の `skipped-step` を右クリックメニューの driver で置き換える。
+2. 残りの目的別チュートリアル 6 ページ (ribbon-figure / publication-images / density-map /
    symmetry / surface-elepot / animation-movie)。APBS・ffmpeg・レイトレースを伴うため
    `E2E_SLOW` ゲートの対象が増える。
 3. `ui/` の画面構成ページ (撮影のみで spec 化しない選択肢もある)。

@@ -4,10 +4,10 @@
  * Starts from the end state of loading.md (lysozyme + 1g59) and mirrors the
  * page's numbered h2 sections.
  *
- * Not automated: §1 double-clicks atoms in the molecular view (which atom a
- * click lands on depends on the viewpoint) and §2 is the molecular view's
- * context menu (a native menu on macOS). The Mol Struct panel in §3 makes
- * the same residue selection.
+ * §1 and §2 act on whichever atom lies under a point near the view centre
+ * (found by opening the context menu there: it lists the atom items only
+ * over an atom). The context menu is native on macOS; the context-menu
+ * driver picks its items by label (helpers/popupMenu.ts).
  */
 import { test, expect, type Locator, type Page } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
@@ -15,6 +15,7 @@ import { setupLoadingPage, LYSOZYME } from '../../fixtures/course';
 import { setupSelectionPage, molStructPane, selectionPane } from '../../fixtures/courseSelection';
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { openSidebarView } from '../../helpers/sidebar';
+import { clearLastContextLabels, lastContextLabels, pickNextContextItem } from '../../helpers/popupMenu';
 import { runConsole, clearConsole } from '../../helpers/console';
 import { docShot, sidebarRect } from '../../helpers/docShot';
 
@@ -39,6 +40,48 @@ async function selectedAtoms(w: Page): Promise<number> {
 async function countOf(w: Page, sel: string): Promise<number> {
     const out = await runConsole(w, `count ${LYSOZYME}, "${sel.replace(/"/g, '\\"')}"`);
     return Number(/atomCount: (\d+)/.exec(out.join('\n'))?.[1] ?? -1);
+}
+
+let atom: { x: number; y: number };
+
+/** A right click that the view does not pair with an earlier click. */
+async function rightClick(w: Page, p: { x: number; y: number }): Promise<void> {
+    await w.waitForTimeout(700);
+    await w.mouse.click(p.x, p.y, { button: 'right' });
+}
+
+/**
+ * Two clicks a moment apart: the view tells a double click from the time
+ * between clicks, and Playwright's dblclick leaves none.
+ */
+async function doubleClick(w: Page, p: { x: number; y: number }): Promise<void> {
+    // Any click within 500 ms before (MouseEventHandler::DBLCLICK_TIME) would
+    // pair with the first one, so start after a pause.
+    await w.waitForTimeout(700);
+    await w.mouse.click(p.x, p.y);
+    await w.waitForTimeout(120);
+    await w.mouse.click(p.x, p.y);
+}
+
+/**
+ * A point near the view centre that lies on a lysozyme atom: the context
+ * menu there lists the atom items (Select Atom, ...) only over an atom. With
+ * no pick queued the driver dismisses the menu at once.
+ */
+async function findAtomPoint(w: Page): Promise<{ x: number; y: number }> {
+    const box = (await w.locator('canvas').evaluateAll((cs) => cs
+        .map((c) => c.getBoundingClientRect())
+        .map((r) => ({ x: r.x, y: r.y, width: r.width, height: r.height }))
+        .sort((a, b) => b.width * b.height - a.width * a.height)[0]))!;
+    const cx = box.x + box.width / 2;
+    const cy = box.y + box.height / 2;
+    for (const [dx, dy] of [[0, 0], [12, 8], [-14, 6], [8, -16], [-20, -12], [24, 20], [-26, 18], [30, -24]]) {
+        await clearLastContextLabels(harness.app);
+        await rightClick(w, { x: cx + dx, y: cy + dy });
+        await w.waitForTimeout(400);
+        if ((await lastContextLabels(harness.app)).includes('Select Atom')) return { x: cx + dx, y: cy + dy };
+    }
+    throw new Error('[docs-verify] no atom found near the view centre');
 }
 
 function builder(pane: Locator): Locator {
@@ -67,14 +110,45 @@ test.describe.serial('分子の一部の選択', { tag: '@net' }, () => {
     });
 
     test('1. ダブルクリックで選択する', async () => {
-        test.info().annotations.push({
-            type: 'skipped-step',
-            description: '§1 分子ビューでの原子のダブルクリック (視点に依存するため。§3 で同じ残基を選ぶ)',
-        });
-        test.info().annotations.push({
-            type: 'skipped-step',
-            description: '§2 分子ビューの右クリックメニュー (macOS ではネイティブメニュー)',
-        });
+        const w = harness.window;
+        await runConsole(w, `focus ${LYSOZYME}`);
+        await clearConsole(w);
+        atom = await findAtomPoint(w);
+        // 「分子ビューで原子をダブルクリックすると、その残基が選択されます」
+        await doubleClick(w, atom);
+        await expect.poll(() => selectedAtoms(w), { timeout: 15_000 }).toBeGreaterThan(0);
+        const pane = selectionPane(w);
+        const expr = await pane.getByPlaceholder('Input selection command').inputValue();
+        // One residue: the selection is unchanged when widened to whole residues.
+        expect(await countOf(w, `byres (${expr})`)).toBe(await countOf(w, expr));
+        // 「選択済みの残基をもう一度ダブルクリックすると解除されます」
+        await doubleClick(w, atom);
+        await expect.poll(() => selectedAtoms(w), { timeout: 15_000 }).toBe(0);
+        await clearConsole(w);
+    });
+
+    test('2. 右クリックメニューで選択する', async () => {
+        const w = harness.window;
+        // 「原子の上で右クリックすると、選択に関する項目が並んだメニューが開きます」
+        await clearLastContextLabels(harness.app);
+        await rightClick(w, atom);
+        await expect.poll(() => lastContextLabels(harness.app)).toContain('Select Atom');
+        const labels = await lastContextLabels(harness.app);
+        for (const l of ['Select Atom', 'Select Residue', 'Select Chain', 'Select Molecule',
+            'Add Select Atom', 'Add Select Residue', 'Add Select Chain',
+            'Unselect', 'Invert Selection', 'Around', 'Around Byres']) {
+            expect(labels).toContain(l);
+        }
+        // 「ともかく分子全体を選択したいときは Select Molecule」
+        await pickNextContextItem(harness.app, ['Select Molecule']);
+        await rightClick(w, atom);
+        const all = await countOf(w, '*');
+        await expect.poll(() => selectedAtoms(w), { timeout: 15_000 }).toBe(all);
+        // 「まっさらに戻したいときは Unselect」
+        await pickNextContextItem(harness.app, ['Unselect']);
+        await rightClick(w, atom);
+        await expect.poll(() => selectedAtoms(w), { timeout: 15_000 }).toBe(0);
+        await clearConsole(w);
     });
 
     test('3. Molecular structure パネルで選択する', async () => {

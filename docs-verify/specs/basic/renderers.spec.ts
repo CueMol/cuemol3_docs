@@ -3,11 +3,6 @@
  *
  * Starts from the end state of selection.md (lysozyme Val2-Phe3 selected)
  * and mirrors the page's numbered h2 sections.
- *
- * Not automated: the scene tree's context menu (New Renderer, Change sel)
- * is a native menu on macOS. New Renderer is opened from the Scene pane's
- * Add button instead (same dialog), and Change sel > Current is replaced by
- * the page's equivalent command (set_renderer_selection).
  */
 import { test, expect, type Page } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
@@ -63,11 +58,7 @@ test.describe.serial('Renderer の追加・削除と設定', { tag: '@net' }, ()
 
     test('1. 選択部分に Renderer を追加する', async () => {
         const w = harness.window;
-        test.info().annotations.push({
-            type: 'skipped-step',
-            description: '§1 手順 1 の右クリックメニュー (ネイティブメニュー。Scene パネルの Add で同じダイアログを開く)',
-        });
-        await setupRenderersPage.addBallstick(w, {
+        await setupRenderersPage.addBallstick(harness.app, w, {
             onDialog: (dlg) => docShot(w, `${SHOT}/1-new-renderer`, { clip: dlg }),
         });
         // 「Create を押すと、Val2〜Phe3 の部分だけが ballstick で表示されます」
@@ -78,7 +69,7 @@ test.describe.serial('Renderer の追加・削除と設定', { tag: '@net' }, ()
 
     test('2. 分子全体に Renderer を追加する', async () => {
         const w = harness.window;
-        await setupRenderersPage.addRibbon(w);
+        await setupRenderersPage.addRibbon(harness.app, w);
         // 「シーンツリーで simple1 の目のアイコンを閉じると、図が整理されて見やすくなります」
         await setupRenderersPage.hideSimple(w);
         await expect(rowVisibilityToggle(w, 'simple1')).toHaveClass(/hidden/);
@@ -91,13 +82,14 @@ test.describe.serial('Renderer の追加・削除と設定', { tag: '@net' }, ()
 
     test('3. 表示する範囲を後から変える', async () => {
         const w = harness.window;
-        test.info().annotations.push({
-            type: 'skipped-step',
-            description: '§3 手順 2 の Change sel > Current (ネイティブメニュー。ページと同じ範囲をコマンドで設定する)',
-        });
         // 「1. Molecular structure パネルで残基 2〜7 を範囲選択し、Select atoms を押します」
-        const expr = await setupRenderersPage.widenBallstick(w);
-        expect(await countOf(w, expr)).toBe(await countOf(w, 'A.2:7.*'));
+        // 「2. シーンツリーで ballstick1 を右クリックし、Change sel > Current を選びます」
+        await setupRenderersPage.widenBallstick(harness.app, w);
+        // 「Renderer の表示範囲が現在の選択に置き換わり、Glu7 まで広がります」
+        const out = await runConsole(w, `get ${LYSOZYME}/ballstick1.sel`);
+        // "Property\tValue\nlysozyme/ballstick1.sel\t'A'.2:7.*"
+        const sel = /\.sel\t(.+)$/m.exec(out.join('\n'))?.[1]?.trim() ?? '';
+        expect(await countOf(w, sel)).toBe(await countOf(w, 'A.2:7.*'));
         await clearConsole(w);
         await focusRow(w, 'ballstick1');
         await docShot(w, `${SHOT}/3-widened`);

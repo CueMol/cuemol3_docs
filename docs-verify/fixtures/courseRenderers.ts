@@ -1,31 +1,32 @@
 import { expect, type Locator, type Page } from '@playwright/test';
+import type { ElectronApplication } from 'playwright';
 import type { CueMolHarness } from './app';
 import { LYSOZYME } from './course';
 import { setupSelectionPage } from './courseSelection';
 import { clickDialogButton, dialog, expectDialogClosed } from '../helpers/dialogs';
 import { fieldControl, fieldRow } from '../helpers/form';
-import { clickSceneToolbar, expectRow, selectRow, toggleRowVisibility } from '../helpers/sceneTree';
+import { expectRow, sceneRow, toggleRowVisibility } from '../helpers/sceneTree';
+import { pickNextContextItem } from '../helpers/popupMenu';
 import { openSidebarView } from '../helpers/sidebar';
-import { runConsole, clearConsole } from '../helpers/console';
 
 /**
  * renderers.md of the basic course: New Renderer for the selected residues
  * and for the whole molecule, and the range change of ballstick1. Later
  * pages (coloring.md) start from the state these steps leave.
  *
- * The page opens New Renderer from the scene tree's context menu, which is
- * a native menu on macOS; the Scene pane's Add button opens the same
- * dialog for the selected Object.
+ * The scene tree's context menu is a native menu on macOS; the context-menu
+ * driver (helpers/popupMenu.ts) picks its items by their real labels.
  */
 
 export interface NewRendererHooks {
     onDialog?: (dlg: Locator) => Promise<void>;
 }
 
-async function openNewRenderer(window: Page): Promise<Locator> {
+async function openNewRenderer(app: ElectronApplication, window: Page): Promise<Locator> {
+    // 「シーンツリーで lysozyme を右クリックし、New Renderer を選びます」
     await openSidebarView(window, 'explorer');
-    await selectRow(window, LYSOZYME);
-    await clickSceneToolbar(window, 'add');
+    await pickNextContextItem(app, ['New Renderer…']);
+    await sceneRow(window, LYSOZYME).click({ button: 'right' });
     const dlg = dialog(window, 'New Renderer');
     await expect(dlg).toBeVisible();
     return dlg;
@@ -41,8 +42,8 @@ async function uncheckField(scope: Locator, label: string): Promise<void> {
 
 export const setupRenderersPage = {
     /** §1: ballstick for the current selection (A.2:3.*), name ballstick1. */
-    async addBallstick(window: Page, hooks: NewRendererHooks = {}): Promise<void> {
-        const dlg = await openNewRenderer(window);
+    async addBallstick(app: ElectronApplication, window: Page, hooks: NewRendererHooks = {}): Promise<void> {
+        const dlg = await openNewRenderer(app, window);
         await fieldControl(dlg, 'Renderer type').selectOption('ballstick');
         // 「Selection には、現在の選択に対応する式 (A.2:3.*) が最初から入っています」
         await expect(fieldRow(dlg, 'Selection').locator('input[type="checkbox"]').first()).toBeChecked();
@@ -56,8 +57,8 @@ export const setupRenderersPage = {
     },
 
     /** §2: ribbon for the whole molecule (Selection unchecked). */
-    async addRibbon(window: Page, hooks: NewRendererHooks = {}): Promise<void> {
-        const dlg = await openNewRenderer(window);
+    async addRibbon(app: ElectronApplication, window: Page, hooks: NewRendererHooks = {}): Promise<void> {
+        const dlg = await openNewRenderer(app, window);
         await fieldControl(dlg, 'Renderer type').selectOption('ribbon');
         await uncheckField(dlg, 'Selection');
         if (hooks.onDialog) await hooks.onDialog(dlg);
@@ -72,29 +73,20 @@ export const setupRenderersPage = {
         await toggleRowVisibility(window, 'simple1');
     },
 
-    /**
-     * §3: select residues 2-7 in Mol Struct, then make it ballstick1's range.
-     * Change sel > Current is in the tree's native context menu; the page's
-     * equivalent command applies the same expression.
-     */
-    async widenBallstick(window: Page): Promise<string> {
+    /** §3: select residues 2-7 in Mol Struct, then ballstick1 > Change sel > Current. */
+    async widenBallstick(app: ElectronApplication, window: Page): Promise<void> {
         await setupSelectionPage.pickResidues(window, 2, 7);
         await setupSelectionPage.applyMolStruct(window);
-        const pane = window.locator('.sp-pane.selection-pane').first();
-        await setupSelectionPage.chooseMolecule(pane);
-        const input = pane.getByPlaceholder('Input selection command');
-        await expect(input).toHaveValue(/2:7/);
-        const expr = await input.inputValue();
-        await runConsole(window, `set_renderer_selection ${LYSOZYME}/ballstick1, "${expr.replace(/"/g, '\\"')}"`);
-        await clearConsole(window);
-        return expr;
+        await openSidebarView(window, 'explorer');
+        await pickNextContextItem(app, ['Change sel', 'Current']);
+        await sceneRow(window, 'ballstick1').click({ button: 'right' });
     },
 
     async run(harness: CueMolHarness): Promise<void> {
         await setupSelectionPage.run(harness.window);
-        await this.addBallstick(harness.window);
-        await this.addRibbon(harness.window);
+        await this.addBallstick(harness.app, harness.window);
+        await this.addRibbon(harness.app, harness.window);
         await this.hideSimple(harness.window);
-        await this.widenBallstick(harness.window);
+        await this.widenBallstick(harness.app, harness.window);
     },
 };

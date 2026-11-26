@@ -14,7 +14,7 @@
 
 選択した 2 残基だけを ballstick で表示してみます。
 
-1. シーンツリーで `lysozyme` を右クリックし、**New Renderer** を選びます。
+1. シーンツリーで `lysozyme` を右クリックし、**New Renderer...** を選びます。
 2. **Renderer type** から **ballstick** を選びます。
 3. **Selection** には、現在の選択に対応する式 (`A.2:3.*`) が最初から入っています。
    そのままにします。
@@ -31,7 +31,7 @@
 
 現在の選択にかかわらず全体に付けたい場合は、**Selection** のチェックを外します。
 
-1. もう一度 `lysozyme` の **New Renderer** から **ribbon** を選びます。
+1. もう一度 `lysozyme` の **New Renderer...** から **ribbon** を選びます。
 2. **Selection** のチェックを外します。
 3. **Create** を押すと、分子全体がリボン表示で重なります。
 

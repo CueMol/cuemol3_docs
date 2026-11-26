@@ -64,3 +64,70 @@ export async function lastPopupLabels(app: ElectronApplication): Promise<string[
             .map((n) => n.label ?? '');
     });
 }
+
+/**
+ * Context menus (the scene tree's right-click menu, ...) are built in the
+ * main process and shown with `Menu.popup`. The driver patches
+ * `Menu.prototype.popup`: when a pick is queued it finds that item by its
+ * real label path, fires its click handler, then the menu's `callback`
+ * (Electron fires `click` before `callback`, which is the order the menu
+ * code relies on). With nothing queued the menu is dismissed at once.
+ * The labels of the last menu are kept for assertions.
+ */
+export async function installContextMenuDriver(app: ElectronApplication): Promise<void> {
+    await app.evaluate(({ Menu }) => {
+        const g = globalThis as unknown as {
+            __e2eCtx?: { queue: string[][]; last: string[] };
+        };
+        if (g.__e2eCtx) return;
+        g.__e2eCtx = { queue: [], last: [] };
+        type Item = { type?: string; label?: string; enabled?: boolean; submenu?: { items: Item[] } | null; click?: (...a: unknown[]) => void };
+        const proto = Menu.prototype as unknown as { popup: (opts?: { callback?: () => void }) => void; items: Item[] };
+        proto.popup = function (this: { items: Item[] }, opts?: { callback?: () => void }) {
+            const st = g.__e2eCtx!;
+            st.last = this.items.filter((i) => i.type !== 'separator').map((i) => i.label ?? '');
+            const path = st.queue.shift();
+            setTimeout(() => {
+                try {
+                    if (path) {
+                        let items: Item[] | undefined = this.items;
+                        let picked: Item | undefined;
+                        for (const label of path) {
+                            picked = items?.find((i) => i.type !== 'separator' && i.label === label);
+                            if (!picked) throw new Error(`[docs-verify] context menu has no item "${label}" (path ${path.join(' > ')})`);
+                            items = picked.submenu?.items;
+                        }
+                        if (picked?.enabled === false) throw new Error(`[docs-verify] context menu item disabled: ${path.join(' > ')}`);
+                        picked?.click?.({}, undefined, undefined);
+                    }
+                } finally {
+                    opts?.callback?.();
+                }
+            }, 0);
+        };
+    });
+}
+
+/** Queue the item (a label path through submenus) the next context menu picks. */
+export async function pickNextContextItem(app: ElectronApplication, path: string[]): Promise<void> {
+    await app.evaluate((_electron, p) => {
+        const g = globalThis as unknown as { __e2eCtx: { queue: string[][] } };
+        g.__e2eCtx.queue.push(p);
+    }, path);
+}
+
+/** Top-level labels of the last context menu. */
+export async function lastContextLabels(app: ElectronApplication): Promise<string[]> {
+    return app.evaluate(() => {
+        const g = globalThis as unknown as { __e2eCtx: { last: string[] } };
+        return g.__e2eCtx.last;
+    });
+}
+
+/** Forget the last context menu's labels (to tell whether a new one opened). */
+export async function clearLastContextLabels(app: ElectronApplication): Promise<void> {
+    await app.evaluate(() => {
+        const g = globalThis as unknown as { __e2eCtx: { last: string[] } };
+        g.__e2eCtx.last = [];
+    });
+}

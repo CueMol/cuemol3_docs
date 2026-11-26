@@ -14,6 +14,9 @@
 (→ [ツールバーとツールパレット](../../ui/toolbar-tools.md))。
 
 1. ツールパレットで **Distance** ツールを選びます (ショートカット ++d++)
+
+    ![ツールパレットの Distance ツール](../../../assets/images/tutorials/basic/measure/1-tool-palette.webp){ width="220" .on-glb }
+
 2. 距離を測りたい 1 つめの原子をクリックします。途中経過は十字マークで示されます。
 3. 2 つめの原子をクリックすると、原子間に点線が引かれ、距離のラベルが表示されます。
 
@@ -37,6 +40,8 @@
 シーンツリーを見ると、`measure` という名前の atomintr Renderer が
 自動で作られているのがわかります。
 
+![シーンツリーの measure (atomintr) の行](../../../assets/images/tutorials/basic/measure/3-measure-row.webp){ width="318" .on-glb }
+
 - 目のアイコンで、計測表示だけを一時的に隠せます。
 - 行を選んで **Delete** を押せば、計測表示をまとめて削除できます (Undo 可)
 
@@ -44,6 +49,9 @@
 ラベルを追加する対象の**ラベルセット**を選べます。セットごとに別の
 atomintr Renderer になるため、「活性部位の距離」「配位結合」のように
 相互作用をグループ分けして、グループ単位で表示・非表示や削除ができます。
+新しい名前を入力すると、新しいラベルセットになります。
+
+![Measure グループのオプション。Target label set でラベルセットを選ぶ](../../../assets/images/tutorials/basic/measure/3-measure-options.webp){ width="302" .on-glb }
 
 ## 4. 見た目をスタイルで整える
 
@@ -69,7 +77,10 @@ atomintr Renderer になるため、「活性部位の距離」「配位結合�
 1. シーンツリーで `measure` (atomintr) を右クリックし、
    **Edit interaction list...** を選びます。
 2. その Renderer に属する計測 (相互作用) の一覧が表示されます。
-3. 不要な行を選んで削除します。操作は Undo で戻せます。
+3. 不要な行の右端の **−** ボタンを押して削除します。
+4. **OK** を押して閉じます。操作は Undo で戻せます。
+
+![Edit interaction list ダイアログ。行の右端のボタンで計測を削除する](../../../assets/images/tutorials/basic/measure/5-edit-list.webp){ width="474" .on-glb }
 
 !!! note "CueMol2 との違い"
     CueMol2 では計測モードの切り替えはウィンドウ上部のリボン (Measure タブ) で
@@ -86,4 +97,4 @@ atomintr Renderer になるため、「活性部位の距離」「配位結合�
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.6.577*
