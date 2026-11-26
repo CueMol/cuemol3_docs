@@ -6,10 +6,6 @@
     CueMol3 is under active development. The limitations and problems listed here
     may already be resolved in your version.
 
-The CueMol3 release assets can be downloaded from GitHub Releases, but they are **work-in-progress versions**.
-If you need stable behavior, use CueMol2
-(→ [Installation](../install/index.md)).
-
 ## Partially implemented features
 
 | Feature | Status |

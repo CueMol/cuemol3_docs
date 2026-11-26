@@ -1,14 +1,9 @@
 # インストール
 
-!!! warning "CueMol3 は開発版です"
-    CueMol3 の配布物は GitHub の Releases から誰でもダウンロードできますが、
-    **開発途上のバージョン**です。
-    配布元を証明するコード署名 (Developer ID / Authenticode) と notarization は
-    行っていないため、初回起動時に OS のセキュリティ警告が表示され、
+!!! warning "初回起動時に OS の警告が表示されます"
+    CueMol3 の配布物は、配布元を証明するコード署名 (Developer ID / Authenticode) と
+    notarization を行っていないため、初回起動時に OS のセキュリティ警告が表示され、
     回避のための手動操作が必要になります。
-
-    業務や論文作成で安定して使いたい場合は、**CueMol2 の安定版**をご利用ください。
-    入手方法は [CueMol2 ドキュメントサイト](https://cuemol.github.io/cuemol2_docs/) にあります。
 
 ## 配布物の署名状況
 
@@ -36,7 +31,7 @@ CueMol3 の配布物は、GitHub の **Releases** ページで公開されてい
   過去のバージョンのダウンロードと、リリースごとの詳細な変更点
   (要点だけを知りたい場合は → [更新履歴](../releases.md))
 
-そのほか、開発版の入手経路として次の方法もあります。
+そのほか、リリース前のビルドは次の方法でも入手できます。
 
 - [GitHub リポジトリ](https://github.com/CueMol/cuemol3) の CI (`build2.yml`) が生成したアーティファクト
   (GitHub へのログインが必要)

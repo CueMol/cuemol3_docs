@@ -48,7 +48,6 @@ sudo apt remove cuemol3
 ## Code signing
 
 Linux release assets are not signed, but no startup warning caused by code signing appears.
-As on macOS / Windows, this is a development version.
 
 ## Configuring external tools
 
