@@ -1,4 +1,4 @@
-<!-- source: ja/ui/rendering-window.md @ c730ead -->
+<!-- source: ja/ui/rendering-window.md @ 7804f30 -->
 
 # Rendering window
 
