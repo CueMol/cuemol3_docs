@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/experimental/symmetry.md @ 1002eeb -->
+<!-- source: ja/tutorials/experimental/symmetry.md @ b9950c9 -->
 
 # Displaying symmetry mates and the unit cell
 
