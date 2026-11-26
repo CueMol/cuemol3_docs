@@ -20,7 +20,7 @@ For a structure whose PDB ID is known, **File &gt; Get PDB...** is the easiest w
 
 1. Choose **File &gt; Get PDB...** (the `Get PDB` toolbar button does the same)
 
-    ![Get PDB button on the toolbar](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="94" }
+    ![Get PDB button on the toolbar](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="640" .on-glb }
 
 2. Enter `1CRN` in **PDB or EMDB ID, or keywords** and press **Download**.
 
@@ -52,7 +52,7 @@ To show the secondary structure, add a **ribbon**.
 1. In the **Explorer &gt; Scene** tree (scene tree) in the left side panel, right-click the Object (`1crn`)
    and choose **New Renderer**.
 
-    ![Object row in the scene tree](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="237" .on-glb }
+    ![Object row in the scene tree](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="304" .on-glb }
 
 2. Choose **ribbon** from **Renderer type** and press **Create**.
 
@@ -86,7 +86,7 @@ The initial line drawing is no longer needed, so click the **eye icon** on the `
 of the scene tree to hide it. The eye icon toggles the visibility of each Renderer
 at any time.
 
-![Scene tree with simple1 hidden](../../assets/images/getting-started/quick-tour/3-hide-simple.webp){ width="237" .on-glb }
+![Scene tree with simple1 hidden](../../assets/images/getting-started/quick-tour/3-hide-simple.webp){ width="304" .on-glb }
 
 - When a type is chosen, a Renderer is **created immediately with default values**, and detailed settings are adjusted
   afterward in the inspector (for this policy, see [Changes in the interaction model](../changes/ui-paradigm.md))
@@ -100,7 +100,7 @@ on the right. Open the **Ball and stick** section and raise **Atom radius**
 The spheres become larger, giving a display that emphasizes the atoms. Changes to values are reflected
 in the molecular view immediately, and can be undone with ++cmd+z++ / ++ctrl+z++.
 
-![Ball and stick section of the property inspector](../../assets/images/getting-started/quick-tour/3-inspector.webp){ width="300" .on-glb }
+![Ball and stick section of the property inspector](../../assets/images/getting-started/quick-tour/3-inspector.webp){ width="340" .on-glb }
 
 ### Change the colors
 
@@ -111,7 +111,7 @@ Renderers that refer to it. Here, recolor the Object.
 
 1. Select `1crn (object)` at the top.
 
-    ![Target selection in the Color panel](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="233" }
+    ![Target selection in the Color panel](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="304" .on-glb }
 
 2. Press the adjacent **Coloring** button and choose **Rainbow coloring**.
 
@@ -155,11 +155,11 @@ in Still mode.
 
 1. Choose the target view (Target). The backend can stay at the default **Umbreon**.
 
-    ![Controls row in Still mode](../../assets/images/getting-started/quick-tour/4-render-controls.webp){ width="561" .on-glb }
+    ![Controls row in Still mode](../../assets/images/getting-started/quick-tour/4-render-controls.webp){ width="640" .on-glb }
 
 2. Set the quality and size
 
-    ![Render Settings panel](../../assets/images/getting-started/quick-tour/4-render-settings.webp){ width="307" .on-glb }
+    ![Render Settings panel](../../assets/images/getting-started/quick-tour/4-render-settings.webp){ width="379" .on-glb }
 
 3. Press **Start Render**. Progress is shown, and when it finishes the resulting image appears in the same window.
 

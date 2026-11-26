@@ -87,6 +87,35 @@ export async function aroundBox(window: Page, targets: Locator | Locator[], marg
     return { x, y, width: x2 - x, height: y2 - y };
 }
 
+/**
+ * The left column (activity bar + side panel) from its top down to just
+ * below the widgets, so a pane row is shown inside the panel it lives in.
+ */
+export async function sidebarRect(window: Page, targets: Locator | Locator[], below = 80): Promise<Rect> {
+    const boxes = await boxesOf(Array.isArray(targets) ? targets : [targets]);
+    const panel = await window.locator('.side-panel').first().boundingBox();
+    const bar = await window.locator('.activity-bar').first().boundingBox();
+    if (!panel) throw new Error('[docShot] side panel not visible');
+    const vp = await viewport(window);
+    const x = bar ? Math.min(bar.x, panel.x) : panel.x;
+    const y = panel.y;
+    const x2 = panel.x + panel.width;
+    const y2 = Math.min(vp.h, Math.max(...boxes.map((b) => b.y + b.height)) + below);
+    return { x, y, width: x2 - x, height: y2 - y };
+}
+
+/**
+ * The toolbar from the window's left edge to a little past the button, so
+ * the button is shown among its neighbours.
+ */
+export async function toolbarRect(window: Page, button: Locator, right = 200): Promise<Rect> {
+    const [b] = await boxesOf([button]);
+    const bar = await window.locator('.app-toolbar').first().boundingBox();
+    if (!bar) throw new Error('[docShot] toolbar not visible');
+    const vp = await viewport(window);
+    return { x: 0, y: bar.y, width: Math.min(vp.w, b.x + b.width + right), height: bar.height };
+}
+
 async function boxesOf(locs: Locator[]): Promise<Rect[]> {
     const boxes: Rect[] = [];
     for (const c of locs) {

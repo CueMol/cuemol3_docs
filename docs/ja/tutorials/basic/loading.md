@@ -95,7 +95,7 @@ nucl、それ以外は ballstick、というように**複数の Renderer をま
 3. 左サイドパネルの **Explorer &gt; View** パネルで、**Zoom / Slab** の **Zoom** の値を
    クリックし、`40` と入力して ++enter++ を押すと、Zoom が 40 に設定されます。
 
-    ![View パネルの Zoom](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="213" }
+    ![View パネルの Zoom](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="304" .on-glb }
 
 Zoom は分子ビューに表示する範囲の高さ (Å) です。値を小さくすると、その分だけ分子が
 大きく表示されます。
@@ -111,7 +111,7 @@ View パネルの各行は、次の 3 通りで操作できます。
 値は 0 に戻ります。**Translation** (TraX / TraY / TraZ、Å) と **Zoom / Slab** (Zoom・Slab・Dist、Å) は
 **絶対値**で、現在の視点の値がそのまま表示されます。
 
-![View パネル。回転させた後でも Rotation は 0 に戻っており、Zoom には入力した 40 が残っている](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="237" .on-glb }
+![View パネル。回転させた後でも Rotation は 0 に戻っており、Zoom には入力した 40 が残っている](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="304" .on-glb }
 
 平行移動やスラブ (手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
 [マウス・トラックパッド操作](../../ui/mouse-input.md)、View パネルの各項目は
@@ -230,7 +230,7 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 
 シーン行を右クリックすると **Background color** から背景色を変えられます。
 
-![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="253" .on-glb }
+![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="304" .on-glb }
 
 ## 次のステップ
 

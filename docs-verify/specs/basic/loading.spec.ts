@@ -19,7 +19,7 @@ import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { expectRow, sceneRow, sceneToolbarButtons } from '../../helpers/sceneTree';
 import { enterViewValue, setViewValue, viewPaneRowParts } from '../../helpers/viewPane';
 import { clickAtomNearCenter, rotateView, zoomView } from '../../helpers/molView';
-import { docShot } from '../../helpers/docShot';
+import { docShot, sidebarRect } from '../../helpers/docShot';
 import { fieldControl } from '../../helpers/form';
 import { showBottomTab } from '../../helpers/bottomPanel';
 
@@ -121,13 +121,16 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         // 「3. Explorer > View パネルで Zoom の値をクリックし、40 と入力して Enter」
         // (Zoom は絶対値なので入力した値がそのまま残る)
         await setViewValue(harness.window, 'Zoom', 40);
+        // Shown inside the side panel, with the row framed, so the reader
+        // sees where the row is.
         await docShot(harness.window, `${SHOT}/2-view-zoom`, {
-            clip: viewPaneRowParts(harness.window, 'Zoom'),
-            pad: 0,
+            rect: await sidebarRect(harness.window, viewPaneRowParts(harness.window, 'Zoom')),
+            highlight: viewPaneRowParts(harness.window, 'Zoom'),
         });
         // The pane as a whole, for the paragraph about how its rows work.
         await docShot(harness.window, `${SHOT}/2-view-pane`, {
-            clip: harness.window.locator('.view-pane'),
+            rect: await sidebarRect(harness.window, harness.window.locator('.view-pane'), 16),
+            highlight: harness.window.locator('.view-pane'),
         });
 
         test.info().annotations.push({
@@ -172,7 +175,8 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         // Header (it carries the Delete button the section mentions) down to
         // the last renderer row; Camera / Styles are not part of this section.
         await docShot(harness.window, `${SHOT}/5-scene-tree`, {
-            clip: [
+            rect: await sidebarRect(harness.window, harness.window.getByText('(*selection)').last(), 40),
+            highlight: [
                 harness.window.locator('.sp-pane').first().locator('.sp-section-header'),
                 harness.window.getByText('(*selection)').last(),
             ],
