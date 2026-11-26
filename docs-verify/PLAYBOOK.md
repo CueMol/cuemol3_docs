@@ -356,6 +356,9 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | ホイール操作がズームにならず視点が平行移動する | 合成したホイールイベントは **Mac trackpad と自動判定**され、2 本指スクロール = 平行移動として扱われる (ステータスバーに `Input device auto-detected: Mac trackpad` と出る)。中心を狙ったクリックはホイール操作の**前**に行う |
 | 原子クリックの結果がログに出ない | クリックの報告は**ステータスバー (`.status-left`) と Output パネル** (`.bottom-panel-content pre[data-select-scope]`) に出る。main プロセスの stdout には流れないので `logs.waitForLine` では待てない |
 | `--grep` で 1 test だけ流すと落ちる | `describe.serial` の前提となる test (分子の読み込みなど) が走らないため。分子が無い状態では原子ピックは必ず失敗する。切り分けのときも spec 全体を流す |
+| Animation パネルの現在時刻が `fill` できない | `TimeField` は `M:SS.mmm` の区切りを並べた div で、input は編集中だけ現れる。欄にフォーカスして Enter で式の入力欄を開き、`0:00.500` / `250ms` / `1.5s` を入れて Enter (`typeCurrentTime`)。表示は `currentTimeText` で読む |
+| チェックボックス・スイッチの `check()` が「状態が変わらない」で落ちる | 値を確定してから描き直す制御された部品 (アニメーション要素の Target renderers など) と、input がクリックを受けない Blueprint のスイッチ。前者は `click()` してから `toBeChecked()` で待つ。後者は `setSwitchField()` |
+| 動画の書き出しがテストの 2 分の上限で切れる | 既定の Lighting は Global Illumination で、1 フレームに数秒かかる。その test だけ `test.setTimeout()` を延ばす |
 | ログ行の待ち受けが別の行に当たる | `waitForLine` は部分一致。`'read '` は `thread read (2047) ok` に、`'> read '` は `LoadSymLib> read 266 s.g.s` に当たる。読み込み確認は `' atoms'` を待って `/read \d+ atoms/` で検証する |
 
 ## セレクタ台帳
@@ -382,7 +385,11 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | Term の値候補 | トリガ `title="Show candidate values"` → `.h3-form-combobox-menu` | — |
 | Term の適用ボタン | 名前 `/^Set/` など (原子数バッジが付くので exact にしない) | — |
 | 選択の確定 | ビルダーを閉じる (再度 ▼) と入力欄に反映される | — |
-| レンダリングウィンドウ | `app.windows()` から `url().includes('render.html')` | — |
+| レンダリングウィンドウ | `app.windows()` から `url().includes('render.html')` | `openRenderWindow(app, 'Image rendering...')` |
+| Still / Movie のタブ | `.render-panel .bottom-tab` (前面は class `active`) | — |
+| Image / Render タブ・設定の select | `role=radio` の `Image` / `Render`、ラベルの後の `select` | `showSettingsTab` / `settingSelect(rw, 'Preset')` |
+| Animation パネル | `.animation-panel`。要素は `.anim-label-row` (選択中は `is-selected`)、追加は `[title="Add element"]` | `showAnimPanel` / `addAnimElement` / `selectAnimElement` |
+| 再生ボタン・開始カメラ | `.anim-transport` の `[title^="Play"]` など、`aria-label="Start camera"` | `transportButton` / `startCameraSelect` |
 | 実行ボタン / 結果 | `Start Render` / `getByAltText('Render result')` | — |
 | Lighting の選択 | `getByText('Lighting').locator('xpath=following::select[1]')` (既定は Global Illumination) | — |
 
@@ -391,15 +398,16 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 spec があるのは `getting-started/quick-tour.md`、`tutorials/basic/` の 6 ページ、目的別のうち
 `figures/ribbon-figure.md` / `figures/protein-dna.md` / `structure/binding-site.md` / `structure/superpose.md` /
 `structure/surface-elepot.md` / `experimental/density-map.md` / `experimental/symmetry.md` /
-`experimental/cryoem-map.md` / `prediction/alphafold.md` / `scripting/chx-console.md` (2026-11-27)。
+`experimental/cryoem-map.md` / `prediction/alphafold.md` / `scripting/chx-console.md` /
+`figures/publication-images.md` / `animation/animation-movie.md` (2026-11-27)。チュートリアルはすべて spec がある。
+レイトレース (§3〜4) と動画の書き出し (§8) は E2E_SLOW=1 のときだけ走る (`task e2e:slow` / `task e2e:shots`)。
 右クリックメニューはすべて driver で実際に操作している。APBS / pdb2pqr / ffmpeg は開発版では
 `BUNDLE_APPS` (support/env.ts) から使われる。
 基本操作コースは前のページの到達状態を `fixtures/course.ts` / `courseSelection.ts` / `courseRenderers.ts` に
 置き、後のページの spec はそれを呼んで始める。既存の手作りの図 (`camera-scene/camera-created.webp`、
 `measure/distance.webp` / `dashed-stick1.webp`) は spec で撮らない。適用の優先順:
 
-1. 残りの `figures/publication-images.md` と `animation/animation-movie.md` (レイトレースと動画の書き出しを伴う)。
-2. `ui/` の画面構成ページ (撮影のみで spec 化しない選択肢もある)。
+1. `ui/` の画面構成ページ (撮影のみで spec 化しない選択肢もある)。
 
 packaged (.app) ターゲットは `support/env.ts` の `resolveTarget` に差し込む口だけ用意してある
 (現状は未実装で例外を投げる)。
