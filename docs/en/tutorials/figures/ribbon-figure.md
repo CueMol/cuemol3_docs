@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/ribbon-figure.md @ 1002eeb -->
+<!-- source: ja/tutorials/figures/ribbon-figure.md @ 5f16888 -->
 
 # Making a protein ribbon figure
 

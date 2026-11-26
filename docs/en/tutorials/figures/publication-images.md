@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/publication-images.md @ 1002eeb -->
+<!-- source: ja/tutorials/figures/publication-images.md @ 5f16888 -->
 
 # Exporting high-resolution images for publication
 
