@@ -72,7 +72,7 @@
 - [Tools メニュー](../../menu/tools.md)
 - [MolSurfObj (分子表面)](../objects/molsurf.md) / [molsurf](../renderers/molsurf.md)
 - [分子表面の切断](surface-cutter.md) / [静電ポテンシャルの計算](apbs.md)
-- [分子表面を静電ポテンシャルで着色する](../../tutorials/structure/surface-elepot.md)
+- [分子表面の静電ポテンシャル表示](../../tutorials/structure/surface-elepot.md)
 
 ---
 

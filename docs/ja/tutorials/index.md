@@ -27,8 +27,8 @@
 
 <div class="grid cards" markdown>
 
-- **[タンパク質のリボン図を作る](figures/ribbon-figure.md)** — 構造の取得から塗り分け・輪郭線まで、作図の基本コース
-- **[論文用の高解像度画像を書き出す](figures/publication-images.md)** — Export scene とレイトレースの使い分け
+- **[タンパク質のリボン図](figures/ribbon-figure.md)** — 構造の取得から塗り分け・輪郭線まで、作図の基本コース
+- **[論文用の高解像度画像の書き出し](figures/publication-images.md)** — Export scene とレイトレースの使い分け
 
 </div>
 
@@ -36,7 +36,7 @@
 
 <div class="grid cards" markdown>
 
-- **[分子表面を静電ポテンシャルで着色する](structure/surface-elepot.md)** — 表面生成から APBS 計算・着色まで
+- **[分子表面の静電ポテンシャル表示](structure/surface-elepot.md)** — 表面生成から APBS 計算・着色まで
 
 </div>
 
@@ -53,7 +53,7 @@
 
 <div class="grid cards" markdown>
 
-- **[アニメーションを作って動画に出力する](animation/animation-movie.md)** — タイムライン編集・モーフィング・動画出力
+- **[アニメーションと動画の出力](animation/animation-movie.md)** — タイムライン編集・モーフィング・動画出力
 
 </div>
 

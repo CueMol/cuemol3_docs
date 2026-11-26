@@ -81,7 +81,7 @@ atomintr Renderer になるため、「活性部位の距離」「配位結合�
 基本操作コースはここまでです。ここからは目的別のチュートリアルで、
 実際の作図の流れを追ってみてください。
 
-- [タンパク質のリボン図を作る](../figures/ribbon-figure.md) — 作図の基本コース
+- [タンパク質のリボン図](../figures/ribbon-figure.md) — 作図の基本コース
 - [atomintr](../../reference/renderers/atomintr.md) — 計測表示の設定項目
 
 ---

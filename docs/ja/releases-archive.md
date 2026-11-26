@@ -552,7 +552,7 @@
   静電ポテンシャルによる着色、ストップの編集、シーンへの保存ができます。
   → [Coloring](reference/coloring.md#multi-gradient)
 - **APBS elepot calculation... の Charge method** がドロップダウン (**Method**) になりました。
-  → [分子表面を静電ポテンシャルで着色する](tutorials/structure/surface-elepot.md)
+  → [分子表面の静電ポテンシャル表示](tutorials/structure/surface-elepot.md)
 
 ### 画面と操作
 
@@ -781,7 +781,7 @@
   → [対称分子・単位格子の表示](tutorials/experimental/symmetry.md)
 - **Mol morphing animation** のダイアログが使えるようになりました。対象を MorphMol に
   変換してから、PDB ファイルやシーン中の分子をフレームとして追加します。
-  → [アニメーションを作って動画に出力する](tutorials/animation/animation-movie.md)
+  → [アニメーションと動画の出力](tutorials/animation/animation-movie.md)
 
 ### 配布物
 
@@ -833,7 +833,7 @@
   定義済みの選択を 1 クリックで適用できるようになりました。
   → [選択ビルダー](ui/selection-builder.md)
 - **APBS による静電ポテンシャル計算**が使えるようになりました (実行ファイルは同梱)
-  → [分子表面を静電ポテンシャルで着色する](tutorials/structure/surface-elepot.md)
+  → [分子表面の静電ポテンシャル表示](tutorials/structure/surface-elepot.md)
 - Windows の配布物が**ウィザード型のインストーラー**になりました。
   → [Windows へのインストール](install/windows.md)
 

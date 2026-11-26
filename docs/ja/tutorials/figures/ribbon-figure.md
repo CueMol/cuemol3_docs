@@ -1,4 +1,4 @@
-# タンパク質のリボン図を作る
+# タンパク質のリボン図
 
 タンパク質を cartoon (いわゆるリボン図) で表示し、リガンドを ballstick で重ね、
 色と輪郭線を整えて 1 枚の図に仕上げるまでの流れを追います。題材にはチャネルロドプシンの結晶構造
@@ -151,7 +151,7 @@ cartoon は主鎖の走行だけを描くため、リガンドは表示されま
 
 ## 次のステップ
 
-- [論文用の高解像度画像を書き出す](publication-images.md) — この図をレイトレースで仕上げる
+- [論文用の高解像度画像の書き出し](publication-images.md) — この図をレイトレースで仕上げる
 - [Coloring](../../reference/coloring.md) / [選択式の文法](../../reference/selection.md) — 塗り分けと選択の詳細
 - [Renderer 一覧](../../reference/renderers/index.md) — 他の表示方法を知る
 

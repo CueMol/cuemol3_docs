@@ -1,4 +1,4 @@
-# 分子表面を静電ポテンシャルで着色する
+# 分子表面の静電ポテンシャル表示
 
 分子表面を生成し、APBS で計算した静電ポテンシャルで着色して、
 分子の電荷の偏りを示す図を作る手順を追います。
@@ -94,13 +94,13 @@ Settings でパスを指定します (→ [外部ツールの設定](../../insta
 2. プロパティインスペクタの **Basic settings** セクションで **Opacity** を 0.5 前後に下げます。
 
 表面越しに主鎖の走行が見える、定番の重ね図になります。
-仕上げと書き出しは [論文用の高解像度画像を書き出す](../figures/publication-images.md) を参照してください。
+仕上げと書き出しは [論文用の高解像度画像の書き出し](../figures/publication-images.md) を参照してください。
 
 <!-- TODO(screenshot): 半透明表面 + cartoon の重ね図 -->
 
 ## 次のステップ
 
-- [論文用の高解像度画像を書き出す](../figures/publication-images.md) — この図をレイトレースで仕上げる
+- [論文用の高解像度画像の書き出し](../figures/publication-images.md) — この図をレイトレースで仕上げる
 - [Coloring](../../reference/coloring.md) — 静電ポテンシャルの設定項目
 - [MolSurf](../../reference/objects/molsurf.md) / [ElePotMap](../../reference/objects/elepot.md) — 生成される Object の詳細
 

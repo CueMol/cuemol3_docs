@@ -277,10 +277,10 @@ nav:
           - カメラとシーンの保存: tutorials/basic/camera-scene.md
           - 計測と相互作用の表示: tutorials/basic/measure.md
       - 作図:
-          - タンパク質のリボン図を作る: tutorials/figures/ribbon-figure.md
-          - 論文用の画像を書き出す: tutorials/figures/publication-images.md
+          - タンパク質のリボン図: tutorials/figures/ribbon-figure.md
+          - 論文用の画像の書き出し: tutorials/figures/publication-images.md
       - 構造を読む・比較する:
-          - 静電ポテンシャルで表面を着色: tutorials/structure/surface-elepot.md
+          - 表面の静電ポテンシャル表示: tutorials/structure/surface-elepot.md
       - 実験データ:
           - 電子密度マップの表示: tutorials/experimental/density-map.md
           - 対称分子・単位格子の表示: tutorials/experimental/symmetry.md

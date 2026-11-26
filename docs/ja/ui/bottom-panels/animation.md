@@ -63,7 +63,7 @@ Blender のようなストリップ形式で、1 つのアニメーション要�
 ## 関連項目
 
 - [アニメーション](../../reference/animation/index.md) — 要素の種類と共通プロパティ
-- [アニメーションを作って動画に出力する](../../tutorials/animation/animation-movie.md)
+- [アニメーションと動画の出力](../../tutorials/animation/animation-movie.md)
 - [下部パネル](index.md)
 - [プロパティインスペクタ](../inspector.md)
 

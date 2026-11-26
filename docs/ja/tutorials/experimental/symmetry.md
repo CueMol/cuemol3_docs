@@ -96,7 +96,7 @@ Object と同じように Renderer の追加や色の設定ができます。操
 ## 次のステップ
 
 - [電子密度マップの表示](density-map.md) — 同じ 1QIO で密度を確かめる
-- [論文用の高解像度画像を書き出す](../figures/publication-images.md) — パッキング図を書き出す
+- [論文用の高解像度画像の書き出し](../figures/publication-images.md) — パッキング図を書き出す
 - [サイドパネル](../../ui/side-panels.md) — Symmetry パネルの各項目
 
 ---
