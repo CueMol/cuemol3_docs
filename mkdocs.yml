@@ -278,14 +278,14 @@ nav:
           - 計測と相互作用の表示: tutorials/basic/measure.md
       - 作図:
           - タンパク質のリボン図を作る: tutorials/figures/ribbon-figure.md
-          - 論文用の高解像度画像を書き出す: tutorials/figures/publication-images.md
+          - 論文用の画像を書き出す: tutorials/figures/publication-images.md
       - 構造を読む・比較する:
-          - 分子表面を静電ポテンシャルで着色する: tutorials/structure/surface-elepot.md
+          - 静電ポテンシャルで表面を着色: tutorials/structure/surface-elepot.md
       - 実験データ:
-          - 電子密度マップを重ねて表示する: tutorials/experimental/density-map.md
+          - 電子密度マップを重ねる: tutorials/experimental/density-map.md
           - 対称分子・単位格子を表示する: tutorials/experimental/symmetry.md
       - 動画:
-          - アニメーションを作って動画に出力する: tutorials/animation/animation-movie.md
+          - アニメーションと動画の出力: tutorials/animation/animation-movie.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md
@@ -335,7 +335,7 @@ nav:
       - スタイル: reference/styles.md
       - レンダリング: reference/rendering.md
       - NPR (インク画風レンダリング): reference/rendering-npr.md
-      - コマンドラインでのレンダリング (cuetty): reference/cuetty.md
+      - cuetty (コマンドライン描画): reference/cuetty.md
       - 設定項目: reference/settings.md
       - プラグイン:
           - reference/plugins/index.md
@@ -357,7 +357,7 @@ nav:
           - 静電ポテンシャルの計算: reference/tools/apbs.md
       - PDB からの取得 (Get PDB): reference/get-pdb.md
       - 操作の記録と再生 (Actions): reference/actions.md
-      - ユーザーディレクトリ (~/.cuemol): reference/dotfiles.md
+      - ~/.cuemol ディレクトリ: reference/dotfiles.md
       - キーボードショートカット: reference/shortcuts.md
       - シーンの保存 (Save Scene): reference/save-scene.md
       - シーンファイル (.qsc): reference/qsc-format.md
