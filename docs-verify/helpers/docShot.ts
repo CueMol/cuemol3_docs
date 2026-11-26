@@ -253,6 +253,9 @@ export async function docShot(
         return;
     }
 
+    // Park the pointer in the window's top-left corner so no tooltip or
+    // hover highlight from the last click ends up in the picture.
+    await window.mouse.move(1, 1).catch(() => {});
     await window.waitForTimeout(SHOT_SETTLE_MS);
     const frames = opts.highlight ? await drawHighlight(window, opts.highlight) : 0;
     let png: Buffer;

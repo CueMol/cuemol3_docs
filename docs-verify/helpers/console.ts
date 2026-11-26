@@ -47,5 +47,6 @@ export async function runConsole(window: Page, line: string): Promise<string[]> 
 
 /** Empty the transcript (the toolbar's Clear button). */
 export async function clearConsole(window: Page): Promise<void> {
+    await showBottomTab(window, 'Console');
     await consolePanel(window).getByRole('button', { name: 'Clear console' }).click();
 }

@@ -11,10 +11,7 @@ AlphaFold DB から予測構造を取得し、予測の信頼度 (pLDDT) の色�
     - **学ぶこと**: Get PDB での AlphaFold DB からの取得、pLDDT の色の読み方、温度因子による選択、US-align による重ね合わせ
     - **前提**: 基本操作コースの [Renderer の着色](../basic/coloring.md) まで
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。pLDDT で着色した予測構造と、重ね合わせた 2OCJ (赤紫) -->
+![完成イメージ。pLDDT で着色した予測構造と、重ね合わせた 2OCJ (赤紫)](../../../assets/images/tutorials/prediction/alphafold/5-superposed.webp){ .on-glb }
 
 ## 1. AlphaFold DB から取得する
 
@@ -22,6 +19,9 @@ AlphaFold DB から予測構造を取得し、予測の信頼度 (pLDDT) の色�
 2. **Database** で **AlphaFold DB** を選びます。
 3. **UniProt accession or AlphaFold ID** に `P04637` を入力します。
    入力欄の下に、タンパク質の名前と、遺伝子・生物種・残基数 (393)・mean pLDDT が表示されます。
+
+    ![Database を AlphaFold DB にして P04637 を入力した Get PDB ダイアログ](../../../assets/images/tutorials/prediction/alphafold/1-getpdb.webp){ width="380" .on-glb }
+
 4. **Format** は既定の **mmCIF** のままで **Download** を押します。
 5. Renderer は **cartoon** を選びます。
 
@@ -59,6 +59,8 @@ P04637 のモデルを回して見ると、色は領域ごとに次のように�
 | 326〜356 付近 | 青 | 四量体化ドメイン (1 本のヘリックスとストランド) |
 | 357〜393 | 橙 | C 末端の領域 |
 
+![pLDDT の色で表示された P04637 の予測構造](../../../assets/images/tutorials/prediction/alphafold/2-plddt.webp){ .on-glb }
+
 DNA 結合ドメインはまとまった立体構造として予測されています。
 一方、橙や黄の部分は、分子の周りを大きく回り込む紐のような形になっています。
 
@@ -79,10 +81,15 @@ pLDDT が 70 を超える部分だけを cartoon で表示します。
 2. **Selection** 欄に `bfac>70` を入力し、++enter++ を押します (欄の下の適用ボタンを押しても同じです)。
    B-factor (ここでは pLDDT) が 70 より大きい原子が選択されます
    (→ [選択式の文法](../../reference/selection.md#温度因子による選択))。
+
+    ![Selection パネルに bfac>70 を入力したところ](../../../assets/images/tutorials/prediction/alphafold/3-selection.webp){ width="304" .on-glb }
+
 3. シーンツリーで `cartoon1` を右クリックし、**Change sel &gt; Current** を選びます。
 
 cartoon の表示範囲が、選択した部分に置き換わります。DNA 結合ドメインと四量体化ドメインの
 ほかに、短い断片がいくつか残ります。
+
+![pLDDT が 70 を超える部分だけを表示したところ](../../../assets/images/tutorials/prediction/alphafold/3-high-confidence.webp){ .on-glb }
 
 !!! note "比較の演算子"
     温度因子による選択で使える比較は `<` / `>` / `=` の 3 つです。`>=` は使えません。
@@ -97,7 +104,8 @@ cartoon の表示範囲が、選択した部分に置き換わります。DNA �
 
 読み込んだ直後の 2OCJ は分子ごとの既定の色 (水色) で、pLDDT の青と見分けにくいので、色を変えます。
 
-1. 左サイドパネルの **Explorer &gt; Color** パネルを開き、上部で `2ocj/cartoon1` を選びます。
+1. 左サイドパネルの **Explorer &gt; Color** パネルを開き、上部で `2ocj` の `cartoon2` を選びます。
+   GUI で作る Renderer の名前はシーン全体で重ならないように付くので、2 つ目の cartoon は `cartoon2` になります。
 2. Coloring の種類から **Paint coloring** &gt; **Okabe-Ito** &gt; **Reddish purple** を選びます。
 
 2OCJ が赤紫に変わります (→ [Renderer の着色](../basic/coloring.md))。
@@ -113,11 +121,14 @@ cartoon の表示範囲が、選択した部分に置き換わります。DNA �
    2OCJ の chain A にある範囲と同じ残基だけを重ね合わせに使います。
 4. **OK** を押すと、予測構造が 2OCJ の位置に移動します。
 
-結果は下部パネルの **Output** に表示されます。**RMSD** (対応づけた Cα 原子の RMSD) は 1 Å を下回り、
-**TM-score** は 1 に近い値になります。青の DNA 結合ドメインが、赤紫の 2OCJ とほぼ重なって
+    ![設定を終えた Molecular superposition ダイアログ](../../../assets/images/tutorials/prediction/alphafold/5-superpose.webp){ width="420" .on-glb }
+
+
+結果は下部パネルの **Output** に表示されます。**RMSD** (対応づけた Cα 原子の RMSD) は約 0.51 Å、
+**TM-score** は約 0.99 で、1 に近い値になります。青の DNA 結合ドメインが、赤紫の 2OCJ とほぼ重なって
 見えるはずです。
 
-<!-- TODO(screenshot): 重ね合わせた予測構造 (pLDDT の色) と 2OCJ (赤紫) -->
+![重ね合わせた予測構造 (pLDDT の色) と 2OCJ (赤紫)](../../../assets/images/tutorials/prediction/alphafold/5-superposed.webp){ .on-glb }
 
 分子を回して、ストランドやループが重なっているか、ずれている部分があるかを確かめてください。
 DNA 結合ドメインの中にも、pLDDT がやや低い (水色や黄の) ループがあります。そうした部分で
@@ -153,6 +164,8 @@ superpose AF-P04637-F1, 2ocj, movSel="resi 96:289", refSel="chain A"
 - `count` は、条件に合う原子の数を数えます。`name CA` で Cα 原子に限ると、残基の数になります。
   P04637 のモデルでは、pLDDT が 70 より大きい残基が 233、50 より小さい残基が 117 です。
 - `fetch_entry` の Object 名は `AF-<accession>-F1` です。
+- コマンドで作る Renderer の名前は、分子ごとに `cartoon1` から付きます。GUI で作った場合
+  (本文の手順 4) と違い、2OCJ の cartoon は `2ocj/cartoon1` になります。
 - `superpose` は、重ね合わせの結果 (RMSD など) をコマンドの出力には返しません。
   値は Output パネルで確認します。
 

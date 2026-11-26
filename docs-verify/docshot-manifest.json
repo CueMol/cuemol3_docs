@@ -29,9 +29,15 @@
   "tutorials/basic/loading/3-open-options": "364170a84d0f11789e168fcd51bb834eb27807a2dfa0c63e980bd1db149498bf",
   "tutorials/basic/loading/3-two-objects": "4845afdb84ea259b0cc2db76c20f016ee52bd54741b87e83062422bacbee750a",
   "tutorials/basic/loading/5-scene-tree": "1df340865f9c0e482231dd927c20f4419cc352ced82fd114a5ee842234906485",
-  "tutorials/structure/binding-site/2-new-renderer": "2bb3a61ce50566265180b6a289261374c6f043d0c342543d75677a71e4b56b8b",
-  "tutorials/structure/binding-site/4-opacity": "699a46d13345775b51cce69a146abf4b025b6d4becb76ae0c01d3eaa47806df1",
-  "tutorials/structure/binding-site/5-interaction": "d447943fae501bc15a52a079450b3ee6db4232c5474117f16a499438b57a875f",
+  "tutorials/prediction/alphafold/1-getpdb": "96e547ef45fc105cb53d52dd363b0d322b27a53eb63b180ad04e422ef16aa209",
+  "tutorials/prediction/alphafold/2-plddt": "faa47e239b6c1345a6bb722efb01e0048cfe53055a4d9bf9e77d3bfdb0ee173b",
+  "tutorials/prediction/alphafold/3-high-confidence": "2e7e083d19a639933e676f4be5ae977922afbf36f647653f88e8fa467bfd0372",
+  "tutorials/prediction/alphafold/3-selection": "620c6981bdb97c0969ffbb90b07ed15d422fe61e157e9f196ecc93acad0dc90c",
+  "tutorials/prediction/alphafold/5-superpose": "8527832e512658bbd2e887a6a5a9ed8cabd025b118053b06c1fe5941e6f33351",
+  "tutorials/prediction/alphafold/5-superposed": "0af2980ddba4e4ffa1b60c57958d19c76e4d4dce9a821870146fb20a9f4269df",
+  "tutorials/structure/binding-site/2-new-renderer": "ca0c6616b987fab22943f260511deaa72eb165c137c5b2850472c9633d92ee6d",
+  "tutorials/structure/binding-site/4-opacity": "8af9c634e0c64ff37935fb15f95b1ec24232b87a3ece90c4a451da00b253e95d",
+  "tutorials/structure/binding-site/5-interaction": "cde45622871b3c94c6532ed67db07ab9ecd4f971ea04f2c22fad75e57797f784",
   "tutorials/structure/binding-site/6-format": "b6ac2ea544a40baf74cf98c74557f6e2bb243c7b8f3f0ed508b58c43454ef016",
-  "tutorials/structure/binding-site/6-labeled": "f7177ae9395194cc92570d88ac534d7a3448674b24f1cfaf3275dc2d683c52e0"
+  "tutorials/structure/binding-site/6-labeled": "46f5f597d1e36df3569e3ea2e698f4da2c13eb0f68dd85c668afaf298fda6969"
 }
