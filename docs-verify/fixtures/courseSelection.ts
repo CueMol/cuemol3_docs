@@ -55,17 +55,19 @@ export const setupSelectionPage = {
 
     /** Collapse the Mol Struct pane (its header toggles it). */
     async foldMolStruct(window: Page): Promise<void> {
+        await openSidebarView(window, 'selection');
         const pane = molStructPane(window);
         if ((await pane.locator('.mol-tree').count()) > 0) {
-            await pane.locator('.sp-section-header.collapsible').first().click();
+            await pane.locator('.section-title').first().click();
             await expect(pane.locator('.mol-tree')).toHaveCount(0);
         }
     },
 
     async unfoldMolStruct(window: Page): Promise<void> {
+        await openSidebarView(window, 'selection');
         const pane = molStructPane(window);
         if ((await pane.locator('.mol-tree').count()) === 0) {
-            await pane.locator('.sp-section-header.collapsible').first().click();
+            await pane.locator('.section-title').first().click();
             await expect(pane.locator('.mol-tree')).toHaveCount(1);
         }
     },

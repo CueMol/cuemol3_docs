@@ -9,10 +9,7 @@ X 線結晶構造に電子密度マップを重ねて、モデルと密度の対
     - **学ぶこと**: Get PDB でのマップの取得、Density map パネルでのレベルと範囲の調整、注目部位の確認
     - **前提**: 基本操作コースの [構造の読み込みと表示](../basic/loading.md)
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。モデル (棒モデル) に 2Fo-Fc (青) と Fo-Fc (緑/赤) のメッシュが重なった図 -->
+![完成イメージ。活性部位のモデル (線画) に 2Fo-Fc (青) と Fo-Fc (緑/赤) のメッシュが重なった図](../../../assets/images/tutorials/experimental/density-map/4-active-site.webp){ .on-glb }
 
 ## 1. 座標と密度マップをまとめて取得する
 
@@ -25,7 +22,7 @@ X 線結晶構造に電子密度マップを重ねて、モデルと密度の対
 4. 取得が終わると、座標の Object 名と Renderer を指定する画面が出ます。
    ここでは **simple** (線画) を選ぶと、密度と原子の対応が見やすくなります。
 
-<!-- TODO(screenshot): Get PDB ダイアログ (1QIO、マップ 2 種にチェック) -->
+![Get PDB ダイアログ。1QIO を入力し、2Fo-Fc map と Fo-Fc map にチェックを入れた](../../../assets/images/tutorials/experimental/density-map/1-getpdb.webp){ width="380" .on-glb }
 
 マップには Renderer 指定の画面は出ず、次の構成で自動的に表示されます。
 
@@ -45,6 +42,13 @@ X 線結晶構造に電子密度マップを重ねて、モデルと密度の対
 [サイドパネル](../../ui/side-panels.md)) には、座標の Object とは別に、
 マップの Object (`1qio_2fofc` / `1qio_fofc`) とその contour Renderer が並びます。目のアイコンで個別に表示・非表示を切り替えられます。
 
+読み込んだ直後は、視点がマップの範囲の中央 (単位格子の中央付近) に移り、マップは分子から離れた
+位置に描かれることがあります。そのときは、シーンツリーで `1qio` を選んでパネル上部の **Focus** を押し、
+**Crystal &gt; Density map** パネルで各 Renderer の **Redraw** を押して、マップを分子の位置に描き直します。
+
+![読み込んだ直後。マップ (右) が分子 (左) から離れた位置に描かれている](../../../assets/images/tutorials/experimental/density-map/2-loaded.webp){ .on-glb }
+![Focus と Redraw の後。マップが分子に重なる](../../../assets/images/tutorials/experimental/density-map/2-redrawn.webp){ .on-glb }
+
 結晶学的マップは**ビュー中心の周囲だけ**が描かれます。分子ビューを平行移動すると、
 表示されるマップの範囲も追従します (クライオ電子顕微鏡マップではマップ全体が描かれ、
 以下の表示範囲の調整は必要ありません
@@ -63,7 +67,7 @@ contour という名前は、地図でおなじみの 2 次元の等高線 (cont
 1. 上部で対象の Renderer (`1qio_2fofc/contour1` など) を選びます。
 2. **Level** のヒストグラム上のマーカーをドラッグして、等高線レベルを変えます
    (入力欄に値を打ち込むこともできます)。ノイズが目立つときは上げ、
-   密度の弱い部分を見たいときは下げます。
+   密度の弱い部分を見たいときは下げます。ここでは 2Fo-Fc の Level を `1.5` にします。
 3. **Extent** スライダで表示範囲 (中心からの距離) を変えます。
 4. **Transp** スライダで透明度を変えます。
 
@@ -75,21 +79,27 @@ contour という名前は、地図でおなじみの 2 次元の等高線 (cont
 なお **Extent** の上限は contour の **Buffer size** プロパティで決まっており、
 もっと広げたいときはインスペクタで増やします。
 
-<!-- TODO(screenshot): Density map パネルと、Level を変えたときのメッシュの変化 (2 段階の比較) -->
+![Density map パネル。2Fo-Fc の Level を 1.5σ にした](../../../assets/images/tutorials/experimental/density-map/3-density-pane.webp){ width="304" .on-glb }
 
 ## 4. 注目部位に絞って表示する
 
 活性部位などの注目箇所を拡大して確かめるときの流れです。
 
-1. 分子ビューで注目部位が中心に来るように視点を動かします。
+1. 注目部位が中心に来るように視点を動かします。ここでは活性部位の Glu35 と Asp52 を見ます。
+   **Selection &gt; Mol Struct** パネルで残基 35 と 52 を選び (++cmd++ / ++ctrl++ + クリック)、
+   **Zoom at** を押します。
 2. **Extent** を 10 Å 程度まで下げて、周囲のメッシュを減らします。
 3. 表示が追従していないときは、パネルの **Redraw** で表示中心を現在のビュー中心に
    更新できます。
-4. **Slab** (表示する奥行きの幅) を狭めると、注目部位の前後のメッシュも減って
+4. **Slab** (表示する奥行きの幅) を 8 Å 程度に狭めると、注目部位の前後のメッシュも減って
    さらに見やすくなります (→ [サイドパネル](../../ui/side-panels.md) の View パネル)。
+
+![Glu35 と Asp52 に寄せ、Extent 10 Å・Slab 8 Å にした表示](../../../assets/images/tutorials/experimental/density-map/4-active-site.webp){ .on-glb }
 
 Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリーで
 `1qio_2fofc` の目のアイコンを閉じて 2Fo-Fc を一時的に隠すと確認しやすくなります。
+
+![2Fo-Fc を隠し、Fo-Fc だけを表示した](../../../assets/images/tutorials/experimental/density-map/4-fofc-only.webp){ .on-glb }
 
 ## 5. 図として仕上げる
 
