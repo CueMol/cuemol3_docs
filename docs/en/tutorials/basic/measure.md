@@ -76,7 +76,7 @@ instead of deleting the whole Renderer.
 This is the end of the basic course. From here, follow
 the task-oriented tutorials to see the actual flow of figure making.
 
-- [Making a protein ribbon figure](../ribbon-figure.md) — basic course on figure making
+- [Making a protein ribbon figure](../figures/ribbon-figure.md) — basic course on figure making
 - [atomintr](../../reference/renderers/atomintr.md) — settings of the measurement display
 
 ---

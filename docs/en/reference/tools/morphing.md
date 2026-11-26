@@ -13,7 +13,7 @@ A morph is built in two steps.
    how long, the morph is played (→ [MolAnim (structural change)](../animation/molanim.md)).
 
 For a worked example, see
-[Making an animation and exporting a movie](../../tutorials/animation-movie.md).
+[Making an animation and exporting a movie](../../tutorials/animation/animation-movie.md).
 
 !!! info "Screenshot planned"
 
@@ -88,7 +88,7 @@ In the native mode of the [Console](../plugins/console/index.md), the same opera
 
 - [Tools menu](../../menu/tools.md)
 - [MolAnim (structural change)](../animation/molanim.md) — the animation element for morphing
-- [Making an animation and exporting a movie](../../tutorials/animation-movie.md)
+- [Making an animation and exporting a movie](../../tutorials/animation/animation-movie.md)
 
 ---
 

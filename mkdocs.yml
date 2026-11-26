@@ -107,12 +107,16 @@ plugins:
                     - Coloring Renderers: tutorials/basic/coloring.md
                     - Saving the camera and the scene: tutorials/basic/camera-scene.md
                     - Measurement and interaction display: tutorials/basic/measure.md
-                - Making a protein ribbon figure: tutorials/ribbon-figure.md
-                - Exporting high-resolution images for publication: tutorials/publication-images.md
-                - Overlaying an electron density map: tutorials/density-map.md
-                - Displaying symmetry mates and the unit cell: tutorials/symmetry.md
-                - Coloring a molecular surface by electrostatic potential: tutorials/surface-elepot.md
-                - Making an animation and exporting a movie: tutorials/animation-movie.md
+                - Figures:
+                    - Making a protein ribbon figure: tutorials/figures/ribbon-figure.md
+                    - Exporting high-resolution images for publication: tutorials/figures/publication-images.md
+                - Reading and comparing structures:
+                    - Coloring a molecular surface by electrostatic potential: tutorials/structure/surface-elepot.md
+                - Experimental data:
+                    - Overlaying an electron density map: tutorials/experimental/density-map.md
+                    - Displaying symmetry mates and the unit cell: tutorials/experimental/symmetry.md
+                - Animation:
+                    - Making an animation and exporting a movie: tutorials/animation/animation-movie.md
             - Reference:
                 - reference/index.md
                 - Selection syntax: reference/selection.md
@@ -272,12 +276,16 @@ nav:
           - Renderer を着色する: tutorials/basic/coloring.md
           - カメラとシーンの保存: tutorials/basic/camera-scene.md
           - 計測と相互作用の表示: tutorials/basic/measure.md
-      - タンパク質のリボン図を作る: tutorials/ribbon-figure.md
-      - 論文用の高解像度画像を書き出す: tutorials/publication-images.md
-      - 電子密度マップを重ねて表示する: tutorials/density-map.md
-      - 対称分子・単位格子を表示する: tutorials/symmetry.md
-      - 分子表面を静電ポテンシャルで着色する: tutorials/surface-elepot.md
-      - アニメーションを作って動画に出力する: tutorials/animation-movie.md
+      - 作図:
+          - タンパク質のリボン図を作る: tutorials/figures/ribbon-figure.md
+          - 論文用の高解像度画像を書き出す: tutorials/figures/publication-images.md
+      - 構造を読む・比較する:
+          - 分子表面を静電ポテンシャルで着色する: tutorials/structure/surface-elepot.md
+      - 実験データ:
+          - 電子密度マップを重ねて表示する: tutorials/experimental/density-map.md
+          - 対称分子・単位格子を表示する: tutorials/experimental/symmetry.md
+      - 動画:
+          - アニメーションを作って動画に出力する: tutorials/animation/animation-movie.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md

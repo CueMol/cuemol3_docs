@@ -65,7 +65,7 @@ use **Rendering &gt; Movie rendering...** (→ [Rendering window](../rendering-w
 ## See also
 
 - [Animation](../../reference/animation/index.md) — element types and common properties
-- [Making an animation and exporting a movie](../../tutorials/animation-movie.md)
+- [Making an animation and exporting a movie](../../tutorials/animation/animation-movie.md)
 - [Bottom panel](index.md)
 - [Property inspector](../inspector.md)
 

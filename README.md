@@ -76,6 +76,38 @@ task e2e:shots    # ドキュメント用スクリーンショットを撮影し
 これらは `docs-verify/` の spec が書ける粒度と一致します
 (→ [docs-verify/PLAYBOOK.md](docs-verify/PLAYBOOK.md))。
 
+### チュートリアルの構成とひな形
+
+チュートリアルは分野ごとのディレクトリに置きます。新しいページは該当する分野に足し、
+`docs/ja/tutorials/index.md` のカードと mkdocs.yml の nav にも載せます。
+
+| ディレクトリ | 分野 |
+|---|---|
+| `tutorials/basic/` | 基本操作コース (順に進める。前のページの状態を引き継ぐ) |
+| `tutorials/figures/` | 作図 |
+| `tutorials/structure/` | 構造を読む・比較する |
+| `tutorials/experimental/` | 実験データ (X 線・クライオ電子顕微鏡) |
+| `tutorials/prediction/` | 予測構造 |
+| `tutorials/animation/` | 動画 |
+| `tutorials/scripting/` | コマンドで図を作る |
+
+ページの冒頭 (導入の段落の直後) には、次のブロックを置きます。所要時間は書きません。
+
+```markdown
+!!! abstract "このチュートリアルについて"
+    - **題材**: チャネルロドプシン (PDB ID: 3UG9)
+    - **学ぶこと**: cartoon の調整、ドメインごとの塗り分け、...
+    - **前提**: [クイックツアー](../../getting-started/quick-tour.md)
+```
+
+目的別のチュートリアル (`basic/` 以外) には、末尾の「次のステップ」の前に
+`## 同じことをコマンドで` の節を置き、本文の操作を Console の native モードのコマンドで示します。
+
+- コードブロックに、本文の節の番号と見出しをコメントで入れる (`# 2. 分子表面を作る`)。
+- コマンドに経路が無い操作は「GUI のみ」と書いて飛ばす。代わりのコマンドは作らない。
+- 書いたコマンドは、起動中の CueMol3 に tritium_cli で流して動作を確かめる。
+- 基本操作コースには置かない (GUI の練習に集中するため)。
+
 ### 画像 (Git LFS は使いません)
 
 このリポジトリは画像を **通常の git 管理** にしています (CueMol2 側の docs は LFS 管理ですが、

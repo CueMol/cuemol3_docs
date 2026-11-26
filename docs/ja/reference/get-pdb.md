@@ -76,7 +76,7 @@ Object 名の既定は PDB ID の小文字です。
 | **Source** | 取得元。**RCSB (cif.gz)** (既定) か **EBI (MTZ)** |
 
 マップには Renderer を指定する画面は出ず、決まった色とレベルの等高線で表示されます
-(→ [電子密度マップを重ねて表示する](../tutorials/density-map.md))。
+(→ [電子密度マップを重ねて表示する](../tutorials/experimental/density-map.md))。
 
 ## Cryo-EM maps
 
@@ -172,7 +172,7 @@ CCP4 / MRC 形式のマップは `fetch_map_url` で取得できます
 
 - [File メニュー](../menu/file.md)
 - [DensityMap (密度マップ)](objects/densitymap.md)
-- [電子密度マップを重ねて表示する](../tutorials/density-map.md)
+- [電子密度マップを重ねて表示する](../tutorials/experimental/density-map.md)
 - [構造の読み込みと表示](../tutorials/basic/loading.md)
 
 ---

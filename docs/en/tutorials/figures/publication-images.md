@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/publication-images.md @ 8d54764 -->
+<!-- source: ja/tutorials/figures/publication-images.md @ 8d54764 -->
 
 # Exporting high-resolution images for publication
 
@@ -35,13 +35,13 @@ when the exported PNG is pasted into other software and printed (for example, a 
 image exported at 600 DPI prints at 2×2 inches, about 5 cm square).
 
 For other output formats (POV-Ray SDL / STL / MQO, etc.), see the
-[Rendering menu](../menu/rendering.md).
+[Rendering menu](../../menu/rendering.md).
 
 ## 3. Finishing with ray tracing
 
 When **Rendering &gt; Image rendering...** is selected, a separate **rendering window** opens
 in Still mode. The window is modeless, so the view can be adjusted in the main window while
-it stays open (→ [Rendering window](../ui/rendering-window.md)).
+it stays open (→ [Rendering window](../../ui/rendering-window.md)).
 
 1. In the run bar at the bottom, select the view to render in **Target**.
    **Backend** can be left at the default, **Umbreon**
@@ -61,12 +61,12 @@ it stays open (→ [Rendering window](../ui/rendering-window.md)).
 
     <!-- TODO(screenshot): Comparison of Raytrace only and Global Illumination (same composition, preferably an intricate shape where the effect of GI is visible). Insert indented inside this admonition with a width attribute + .on-glb -->
 
-For the meaning of each quality item and how to choose among them, see [Rendering](../reference/rendering.md).
+For the meaning of each quality item and how to choose among them, see [Rendering](../../reference/rendering.md).
 
 !!! note "Differences from CueMol2"
     High-quality output in CueMol2 called an external POV-Ray, but in CueMol3 the built-in
     ray tracer **Umbreon** is the default, and neither preparing an external program nor
-    setting a path is needed (→ [Rendering window](../ui/rendering-window.md)).
+    setting a path is needed (→ [Rendering window](../../ui/rendering-window.md)).
 
 ## 4. Checking and saving the result
 
@@ -85,12 +85,12 @@ while experimenting.
 !!! note "Rendering window settings are saved in the scene"
     The settings are saved together with the scene file and are still there the next time the
     scene is opened. Changes to the settings can be reverted with Undo. To return to past
-    settings, use **Use settings** in the result history (→ [Rendering](../reference/rendering.md#saving-settings)).
+    settings, use **Use settings** in the result history (→ [Rendering](../../reference/rendering.md#saving-settings)).
 
 ## Next steps
 
-- [Rendering](../reference/rendering.md) — Details and default values of the quality items
-- [Rendering window](../ui/rendering-window.md) — Description of each part of the window
+- [Rendering](../../reference/rendering.md) — Details and default values of the quality items
+- [Rendering window](../../ui/rendering-window.md) — Description of each part of the window
 
 ---
 

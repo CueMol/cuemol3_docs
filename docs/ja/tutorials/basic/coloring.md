@@ -5,6 +5,11 @@ Renderer の色は、設定のうち着色 (Coloring) だけを独立して扱�
 前のページ ([Renderer の追加・削除と設定](renderers.md)) の
 `lysozyme` (simple + ballstick + ribbon) と `1G59` (trace) を使います。
 
+!!! abstract "このチュートリアルについて"
+    - **題材**: リゾチーム (`lysozyme`) と 1G59
+    - **学ぶこと**: Color パネル、CPK / B-factor / Rainbow / Paint による着色
+    - **前提**: [Renderer の追加・削除と設定](renderers.md)
+
 !!! info "撮影予定"
     このページには操作の流れを示すスクリーンショットを追加予定です。
 

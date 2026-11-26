@@ -93,7 +93,7 @@ In ChX console, `matchmaker` superposes with US-align and `align` with LSQ
 ## See also
 
 - [Tools menu](../../menu/tools.md)
-- [Making an animation and exporting a movie](../../tutorials/animation-movie.md) — an example of superposing with SSM and then creating a morph
+- [Making an animation and exporting a movie](../../tutorials/animation/animation-movie.md) — an example of superposing with SSM and then creating a morph
 - [Selection expression syntax](../selection.md)
 
 ---

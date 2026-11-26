@@ -618,6 +618,17 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
 - 仕上げは `task build` (strict) / `task check:images` / `task e2e` の 3 点。
   `test-results/` や `.last-run.json` をコミットしない。
 
+## チュートリアル (tutorials/)
+
+分野ごとのディレクトリ (`basic/` / `figures/` / `structure/` / `experimental/` / `prediction/` /
+`animation/` / `scripting/`) に置く (2026-11-26 に階層化。旧 URL のリダイレクトは無い)。
+冒頭の「このチュートリアルについて」ブロックと、目的別のページの「同じことをコマンドで」
+(native モード) の書き方は README.md の「チュートリアルの構成とひな形」を参照。
+
+- 題材は ChimeraX のチュートリアル・図のスクリプトと同じものにしない (ユーザー指示)。
+  分野は参考にしてよいが、題材 (PDB / EMDB ID) と流れは独自に選ぶ。
+- 「同じことをコマンドで」のコマンドは、tritium_cli で起動中の CueMol3 に流して確かめてから書く。
+
 ## 注目の機能 (features/)
 
 目玉の機能を 1 回に 1 つ紹介するブログ風のページ (`docs/{ja,en}/features/`)。書き方・ひな形・

@@ -9,7 +9,7 @@ well suited to animating local structural changes.
 A morph pair (MorphMol) is created with **Mol morphing animation...** in the Tools menu
 (→ [Morphing structural changes](../tools/morphing.md)).
 The target molecule is converted to a MorphMol, and the structures that serve as frames are added
-(→ [Making an animation and exporting a movie](../../tutorials/animation-movie.md)).
+(→ [Making an animation and exporting a movie](../../tutorials/animation/animation-movie.md)).
 Morphs in scenes created with CueMol2 can also be loaded and played or edited as they are.
 
 !!! info "In preparation"

@@ -106,7 +106,7 @@ ChX console の `matchmaker` は US-align、`align` は LSQ で重ね合わせ�
 ## 関連項目
 
 - [Tools メニュー](../../menu/tools.md)
-- [アニメーションを作って動画に出力する](../../tutorials/animation-movie.md) — SSM で重ね合わせてからモーフィングを作る例
+- [アニメーションを作って動画に出力する](../../tutorials/animation/animation-movie.md) — SSM で重ね合わせてからモーフィングを作る例
 - [選択式の文法](../selection.md)
 
 ---

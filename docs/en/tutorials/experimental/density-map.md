@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/density-map.md @ c730ead -->
+<!-- source: ja/tutorials/experimental/density-map.md @ c730ead -->
 
 # Overlaying an electron density map
 
@@ -35,19 +35,19 @@ The 2Fo-Fc map (blue) is the density that envelops the whole model. The Fo-Fc ma
 ## 2. Check the display
 
 In the **Explorer &gt; Scene** tree in the left side panel (scene tree →
-[Side panels](../ui/side-panels.md)), the map Objects (`1qio_2fofc` / `1qio_fofc`) and their contour Renderers are listed separately from the coordinate Object. The eye icons toggle their visibility individually.
+[Side panels](../../ui/side-panels.md)), the map Objects (`1qio_2fofc` / `1qio_fofc`) and their contour Renderers are listed separately from the coordinate Object. The eye icons toggle their visibility individually.
 
 Crystallographic maps are drawn **only around the view center**. When the molecular view is translated, the displayed map region follows (a cryo-EM map is drawn in its entirety, and the display range adjustment below is not needed
-→ **Region** in [contour](../reference/renderers/contour.md#contour)).
+→ **Region** in [contour](../../reference/renderers/contour.md#contour)).
 
 The name "contour" comes from extending the familiar two-dimensional contour lines of maps to three dimensions. For how the display works, see
-[contour](../reference/renderers/contour.md);
-for the map Object, see [DensityMap](../reference/objects/densitymap.md).
+[contour](../../reference/renderers/contour.md);
+for the map Object, see [DensityMap](../../reference/objects/densitymap.md).
 
 ## 3. Adjust the level and extent
 
 The map display is adjusted in the **Crystal &gt; Density map** panel in the left side panel
-(→ [Side panels](../ui/side-panels.md)).
+(→ [Side panels](../../ui/side-panels.md)).
 
 1. At the top, select the target Renderer (such as `1qio_2fofc/contour1`).
 2. Change the contour level by dragging the marker on the **Level** histogram
@@ -70,7 +70,7 @@ This is the procedure for zooming in on a region of interest such as the active 
 1. Move the view in the molecular view so that the region of interest is at the center.
 2. Lower **Extent** to about 10 Å to reduce the surrounding mesh.
 3. If the display has not followed, **Redraw** in the panel updates the display center to the current view center.
-4. Narrowing the **Slab** (the width of the depth range displayed) also reduces the mesh in front of and behind the region of interest, making it easier to see (→ the View panel in [Side panels](../ui/side-panels.md)).
+4. Narrowing the **Slab** (the width of the depth range displayed) also reduces the mesh in front of and behind the region of interest, making it easier to see (→ the View panel in [Side panels](../../ui/side-panels.md)).
 
 To see only the green and red Fo-Fc meshes, close the eye icon of
 `1qio_2fofc` in the scene tree to hide the 2Fo-Fc map temporarily.
@@ -78,13 +78,13 @@ To see only the green and red Fo-Fc meshes, close the eye icon of
 ## 5. Finish as a figure
 
 A figure containing a density map can be exported in the same way as an ordinary scene
-(→ [Exporting high-resolution images for publication](publication-images.md)).
+(→ [Exporting high-resolution images for publication](../figures/publication-images.md)).
 
 ## Next steps
 
 - [Displaying symmetry mates and the unit cell](symmetry.md) — look at the crystal packing of the same 1QIO
-- [contour](../reference/renderers/contour.md) / [DensityMap](../reference/objects/densitymap.md) — details of the display settings
-- [Side panels](../ui/side-panels.md) — each item of the Density map panel
+- [contour](../../reference/renderers/contour.md) / [DensityMap](../../reference/objects/densitymap.md) — details of the display settings
+- [Side panels](../../ui/side-panels.md) — each item of the Density map panel
 
 ---
 
