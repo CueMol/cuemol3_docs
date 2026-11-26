@@ -213,6 +213,8 @@ the list of Renderers attached to that Object. The current tree reads as follows
 - `(*namelabel)` — The Renderer for labels, created when an atom was clicked to show its name in §2.
   The row remains even after the label is hidden.
 
+![Scene tree (lysozyme / 1g59 and their Renderers)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="304" .on-glb }
+
 **Camera** and **Styles** at the bottom are the places where saved views and styles are kept
 (→ [Saving the camera and the scene](camera-scene.md)).
 
@@ -230,8 +232,6 @@ the list of Renderers attached to that Object. The current tree reads as follows
 | **Property** | Shows the selected item in the property inspector. |
 
 Right-clicking the scene row lets you change the background color from **Background color**.
-
-![Scene tree (lysozyme / 1g59 and their Renderers)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="318" .on-glb }
 
 ## Next steps
 

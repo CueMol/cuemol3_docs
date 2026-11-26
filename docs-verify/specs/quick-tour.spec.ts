@@ -265,7 +265,8 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             ];
             await docShot(renderWindow, 'getting-started/quick-tour/4-render-controls', {
                 rect: await aroundBox(renderWindow, renderControls, 120),
-                highlight: renderControls,
+                // Step 1 is about the Target; Start Render comes in step 3.
+                highlight: renderWindow.locator('.render-panel-bar select').last(),
             });
             const renderSettings = [
                 renderWindow.locator('.render-window-settings-header'),
@@ -273,7 +274,9 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             ];
             await docShot(renderWindow, 'getting-started/quick-tour/4-render-settings', {
                 rect: await aroundBox(renderWindow, renderSettings, 80),
-                highlight: renderSettings,
+                // The step points at the panel; its title marks it without
+                // stretching the crop over the empty lower half.
+                highlight: renderWindow.locator('.render-window-settings-header'),
             });
 
             if (process.env.E2E_SLOW) {

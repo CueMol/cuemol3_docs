@@ -32,3 +32,15 @@ export async function chooseColoring(
     await coloringButton(window).click();
     await expect(coloringButton(window)).toBeEnabled();
 }
+
+/**
+ * Select a renderer of one object: options are grouped per object
+ * (`<optgroup label=objName>`), and two objects can both have "cartoon1".
+ */
+export async function selectColorTargetOf(window: Page, objName: string, optionLabel: string): Promise<void> {
+    const select = window.locator('.color-enum-select select, select.color-enum-select').first();
+    const value = await select.locator(`optgroup[label="${objName}"] option`)
+        .filter({ hasText: optionLabel }).first().getAttribute('value');
+    if (value === null) throw new Error(`no "${optionLabel}" under ${objName} in the Color pane`);
+    await select.selectOption(value);
+}

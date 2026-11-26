@@ -16,7 +16,7 @@ import { test, expect } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { setupLoadingPage, LYSOZYME, SECOND_OBJ } from '../../fixtures/course';
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
-import { expectRow, sceneRow, sceneToolbarButtons } from '../../helpers/sceneTree';
+import { collapseOtherPanes, expectRow, sceneRow, sceneToolbarButtons } from '../../helpers/sceneTree';
 import { enterViewValue, setViewValue, viewPaneRowParts } from '../../helpers/viewPane';
 import { clickAtomNearCenter, rotateView, zoomView } from '../../helpers/molView';
 import { docShot, sidebarRect } from '../../helpers/docShot';
@@ -166,20 +166,22 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         }
         // 「名前のない Renderer は括弧と型だけが表示されます」
         await expect(harness.window.getByText('(*selection)').first()).toBeVisible();
-        // 「いちばん下の Camera は、保存した視点の置き場所です」(Styles left the
-        //   tree for the Styles view in 3.0.2.560)
+        // 「シーンツリーの下の Camera パネルは、保存した視点の置き場所です」(Styles
+        //   left the tree for the Styles view in 3.0.2.560)
         await expect(harness.window.getByText('Camera', { exact: true })).toBeVisible();
         // 「パネル上部には 4 つのボタンがあります」(Add / Focus / Delete / Property)
         await expect(sceneToolbarButtons(harness.window)).toHaveCount(4);
 
         // Header (it carries the Delete button the section mentions) down to
         // the last renderer row; Camera / Styles are not part of this section.
+        // The whole tree, from the scene row down: at the shot window size
+        // the Scene pane is short, so the panes below it are collapsed for
+        // the picture and opened again afterwards. No frame: the figure is
+        // the tree itself.
+        const collapsed = await collapseOtherPanes(harness.window);
         await docShot(harness.window, `${SHOT}/5-scene-tree`, {
             rect: await sidebarRect(harness.window, harness.window.getByText('(*selection)').last(), 40),
-            highlight: [
-                harness.window.locator('.sp-pane').first().locator('.sp-section-header'),
-                harness.window.getByText('(*selection)').last(),
-            ],
         });
+        for (const header of collapsed) await header.click();
     });
 });

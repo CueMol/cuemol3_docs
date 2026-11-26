@@ -76,7 +76,7 @@ DNA 結合ドメインはまとまった立体構造として予測されてい�
 pLDDT が 70 を超える部分だけを cartoon で表示します。
 
 1. 左サイドパネルの **Selection &gt; Selection** パネルを開き、**Molecule** で `AF-P04637-F1` を選びます。
-2. **Selection** 欄に `bfac>70` を入力し、**Select** を押します。
+2. **Selection** 欄に `bfac>70` を入力し、++enter++ を押します (欄の下の適用ボタンを押しても同じです)。
    B-factor (ここでは pLDDT) が 70 より大きい原子が選択されます
    (→ [選択式の文法](../../reference/selection.md#温度因子による選択))。
 3. シーンツリーで `cartoon1` を右クリックし、**Change sel &gt; Current** を選びます。

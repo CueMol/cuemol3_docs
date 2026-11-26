@@ -211,7 +211,9 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 - `(*namelabel)` — §2 で原子をクリックして名称を表示したときに作られた、ラベル用の
   Renderer です。ラベルを消しても行は残ります。
 
-いちばん下の **Camera** は、保存した視点の置き場所です
+![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="304" .on-glb }
+
+シーンツリーの下の **Camera** パネルは、保存した視点の置き場所です
 (→ [カメラとシーンの保存](camera-scene.md))。スタイルは、アクティビティバーの **Styles** で扱います
 (→ [サイドパネル](../../ui/side-panels.md#styles))。
 
@@ -229,8 +231,6 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 | **Property** | 選んでいる項目をプロパティインスペクタに表示します。 |
 
 シーン行を右クリックすると **Background color** から背景色を変えられます。
-
-![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="318" .on-glb }
 
 ## 次のステップ
 
