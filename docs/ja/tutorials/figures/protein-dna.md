@@ -26,7 +26,7 @@ TBP は馬の鞍のような形で DNA の副溝側に乗り、DNA を大きく�
 cartoon はタンパク質の主鎖を描く Renderer です。核酸には、専用の nucl を使います
 (→ [nucl (核酸)](../../reference/renderers/nucl.md))。
 
-1. シーンツリーで `1ytb` を右クリックし、**New Renderer** を選びます。
+1. シーンツリーで `1ytb` を右クリックし、**New Renderer...** を選びます。
 2. **Renderer type** から **nucl** を選び、**Selection** にチェックを入れて **Atoms** に `chain C` を入力します。
 3. **Create** を押します。
 
@@ -64,7 +64,7 @@ DNA が水色になり、TATA ボックス (塩基 4〜10 の `TATAAAA` と、�
 TBP は、TATA ボックスの両端付近で 2 つずつ、計 4 つのフェニルアラニン (Phe99・Phe116・Phe190・Phe207) の
 側鎖を DNA の塩基の間に差し込んでいます。DNA はこの位置で折れ曲がります。
 
-1. `1ytb` の **New Renderer** から **ballstick** を選びます。
+1. `1ytb` の **New Renderer...** から **ballstick** を選びます。
 2. **Selection** にチェックを入れ、**Atoms** に `bysidech A.99,116,190,207.*` を入力して **Create** を押します。
 
 `bysidech` は、選択を側鎖 (と Cα) に限ります (→ [選択式の文法](../../reference/selection.md#bysidech-演算子))。

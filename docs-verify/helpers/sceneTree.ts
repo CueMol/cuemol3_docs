@@ -1,4 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
+import type { ElectronApplication } from 'playwright';
+import { pickNextContextItem } from './popupMenu';
 
 /**
  * Scene-tree (Explorer > Scene) helpers. The tree has no test ids, so rows
@@ -82,4 +84,14 @@ export async function collapseOtherPanes(window: Page): Promise<Locator[]> {
         clicked.push(header);
     }
     return clicked;
+}
+
+/**
+ * Right-click a tree row and pick a context-menu item by its label path,
+ * e.g. ['New Renderer…'] or ['Change sel', 'Current'] (the menu is native on
+ * macOS; helpers/popupMenu.ts drives it).
+ */
+export async function rowContextMenu(app: ElectronApplication, window: Page, name: string, path: string[]): Promise<void> {
+    await pickNextContextItem(app, path);
+    await sceneRow(window, name).click({ button: 'right' });
 }

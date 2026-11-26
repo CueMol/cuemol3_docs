@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { assertDialogQueuesEmpty, clickDialogButton, dialog, expectDialogClosed } from '../../helpers/dialogs';
-import { expectRow, selectRow, clickSceneToolbar, toggleRowVisibility } from '../../helpers/sceneTree';
+import { expectRow, selectRow, clickSceneToolbar, toggleRowVisibility, rowContextMenu } from '../../helpers/sceneTree';
 import { checkField, fieldControl } from '../../helpers/form';
 import { clickMenu } from '../../helpers/menu';
 import { runConsole, clearConsole } from '../../helpers/console';
@@ -109,8 +109,7 @@ test.describe.serial('cryo-EM マップとモデルの表示', { tag: '@net' }, 
         const w = harness.window;
         await openSidebarView(w, 'explorer');
         // 1. New Renderer ballstick, Atoms B.660:672.*
-        await selectRow(w, '5irz');
-        await clickSceneToolbar(w, 'add');
+        await rowContextMenu(harness.app, w, '5irz', ['New Renderer…']);
         const dlg = dialog(w, 'New Renderer');
         await expect(dlg).toBeVisible();
         await fieldControl(dlg, 'Renderer type').selectOption('ballstick');

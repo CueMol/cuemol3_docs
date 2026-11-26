@@ -7,7 +7,7 @@
 import { test, expect, type Locator } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { assertDialogQueuesEmpty, clickDialogButton, dialog, expectDialogClosed } from '../../helpers/dialogs';
-import { expectRow, selectRow, clickSceneToolbar } from '../../helpers/sceneTree';
+import { expectRow, rowContextMenu } from '../../helpers/sceneTree';
 import { getPdb } from '../../helpers/openFile';
 import { checkField, fieldControl } from '../../helpers/form';
 import { clickMenu } from '../../helpers/menu';
@@ -91,8 +91,7 @@ test.describe.serial('構造の重ね合わせと比較', { tag: '@net' }, () =>
         await expectRow(w, '4ake');
         await expectRow(w, '1ake');
         // 「chain A に、阻害剤 Ap5A (残基名 AP5) が結合しています ... ballstick で表示」
-        await selectRow(w, '1ake');
-        await clickSceneToolbar(w, 'add');
+        await rowContextMenu(harness.app, w, '1ake', ['New Renderer…']);
         const dlg = dialog(w, 'New Renderer');
         await expect(dlg).toBeVisible();
         await fieldControl(dlg, 'Renderer type').selectOption('ballstick');
