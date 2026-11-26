@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/selection.md @ dcf70c1 -->
+<!-- source: ja/tutorials/basic/selection.md @ 1002eeb -->
 
 # Selecting part of a molecule
 
@@ -10,15 +10,12 @@ It uses `lysozyme` from the previous page ([Loading and displaying a structure](
 
 !!! abstract "About this tutorial"
     - **Subject**: Lysozyme (`lysozyme`)
-    - **What you learn**: Selecting by double-click, the context menu, the Molecular structure panel, the selection builder and selection expressions
+    - **What you learn**: Selecting by double-click, the context menu, the Mol Struct panel, the selection builder and selection expressions
     - **Prerequisites**: [Loading and displaying a structure](loading.md)
-
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
 
 The selected part is highlighted with a semi-transparent overlay in the molecular view.
 
-<!-- TODO(screenshot): highlight shown when a residue is selected -->
+![Val2 to Phe3 selected. The selected atoms are emphasized with a light blue highlight](../../../assets/images/tutorials/basic/selection/0-highlight.webp){ .on-glb }
 
 ## 1. Select by double-clicking
 
@@ -29,6 +26,8 @@ an already selected residue deselects it.
 ## 2. Select from the right-click menu
 
 Right-clicking an atom opens a menu with selection-related items.
+At the top of the menu are also the names of the clicked atom and the Renderer, and
+**Center at this atom**, which moves the atom to the center of the view (→ [Loading and displaying a structure](loading.md)).
 
 | Item | What is selected |
 |---|---|
@@ -37,6 +36,7 @@ Right-clicking an atom opens a menu with selection-related items.
 | **Add Select Atom / Residue / Chain** | Adds to the selection while keeping the current one |
 | **Unselect** | Clears the whole selection |
 | **Invert Selection** | Inverts the selection |
+| **Toggle Sidechain** | Limits the current selection to side chains (choosing it again restores it. → [BYSIDECH operator](../../reference/selection.md#bysidech-operator)) |
 | **Around** / **Around Byres** | The surroundings of the clicked position (3 to 10 Å), by atom / by residue |
 
 To select the entire molecule, **Select Molecule** is the quickest way;
@@ -44,24 +44,24 @@ to start over with a clean slate, use **Unselect**.
 
 <!-- TODO(screenshot): right-click menu in the molecular view (Select items) -->
 
-## 3. Select in the Molecular structure panel
+## 3. Select in the Mol Struct panel
 
 To choose by residue number or atom name, use the
-**Selection &gt; Molecular structure** panel in the left side panel
+**Selection &gt; Mol Struct** panel in the left side panel
 (→ [Side panels](../../ui/side-panels.md)).
 
 1. Choose the target molecule (`lysozyme`) at the top of the panel.
 2. The tree is shown as a chain, residue, atom hierarchy. Select residues Val2 and Phe3
    (++cmd++ / ++ctrl++ + click for multiple selection, ++shift++ + click for range selection).
-3. Click the **Select** button in the panel to select the corresponding part of the molecule.
+3. Click the **Select atoms** button to the right of the panel heading to select the corresponding part of the molecule.
+
+    ![Val2 and Phe3 chosen in the Mol Struct panel, then the Select atoms button](../../../assets/images/tutorials/basic/selection/3-molstruct.webp){ width="304" .on-glb }
 
 Choosing items in the tree does not yet select the molecule.
-Note that the selection takes effect only after you click **Select**.
+Note that the selection takes effect only after you click **Select atoms**.
 
-The **Center** button moves the chosen range to the center of the view, and **Zoom**
-centers it and then zooms to fit the size of the range.
-
-<!-- TODO(screenshot): Molecular structure panel with Val2 to Phe3 chosen and Select clicked -->
+The **Center at** button moves the chosen range to the center of the view, and **Zoom at**
+centers it and then zooms to fit the size of the range. The heading buttons are icons; hovering the pointer over one shows its name.
 
 ## 4. The Selection panel and the selection builder
 
@@ -90,9 +90,10 @@ without writing an expression. It has four tabs.
 Each button shows the **number of atoms** that would be selected if it were applied,
 so you can predict the result as you work. As an experiment, click `protein` in the **Named** tab,
 then click **Invert** in the **Mod** tab. The protein selection is inverted, and
-only the water molecules are selected.
+only the water molecules and ions (Na⁺ and Cl⁻) are selected.
 
-<!-- TODO(screenshot): Selection panel and selection builder (Named tab and Term tab) -->
+![protein in the Named tab](../../../assets/images/tutorials/basic/selection/4-named.webp){ width="304" .on-glb }
+![Invert in the Mod tab. The button shows the number of atoms that would be selected if applied (183)](../../../assets/images/tutorials/basic/selection/4-mod.webp){ width="304" .on-glb }
 
 The same selection builder opens from the ▼ button in almost every place where a
 selection expression is entered, starting with the Selection field of New Renderer.
@@ -110,8 +111,11 @@ A.2:3.*
 
 It means "all atoms of residues 2 to 3 in chain A". The expression is validated
 as you type, and a warning is shown if it is invalid. Apply an expression typed by hand
-with the **Select** button. Expressions built with the builder also appear in this field as they are,
+with the **Apply selection** button below the field or by pressing ++enter++.
+Expressions built with the builder also appear in this field as they are,
 which is a shortcut to learning the syntax (→ [Selection expression syntax](../../reference/selection.md)).
+
+![A.2:3.* typed in the Selection field and applied with the Apply selection button](../../../assets/images/tutorials/basic/selection/4-expression.webp){ width="304" .on-glb }
 
 !!! note "Differences from CueMol2"
     The hierarchical editor in the CueMol2 selection panel (Hierarchical / Terminal /
@@ -128,4 +132,4 @@ The next page uses the selection, so keep Val2 to Phe3 (`A.2:3.*`) selected.
 
 ---
 
-*Verified against: CueMol3 2.3.8.494*
+*Verified against: CueMol3 3.0.6.577*

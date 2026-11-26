@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/experimental/symmetry.md @ dcf70c1 -->
+<!-- source: ja/tutorials/experimental/symmetry.md @ 1002eeb -->
 
 # Displaying symmetry mates and the unit cell
 
@@ -10,10 +10,7 @@ You can also follow it as a continuation of [Displaying an electron density map]
     - **What you learn**: Checking the crystallographic information, displaying the unit cell and symmetry mates, Create SYMM mol
     - **Prerequisites**: [Loading and displaying a structure](../basic/loading.md) in the basic course
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
-<!-- TODO(screenshot): Final result. A packing view with the unit cell frame and symmetry mates displayed -->
+![Finished result. The unit cell frame and the symmetry mates of one unit cell](../../../assets/images/tutorials/experimental/symmetry/4-symm-cell.webp){ .on-glb }
 
 ## 1. Load the crystal structure
 
@@ -31,7 +28,7 @@ Open the **Crystal &gt; Symmetry** panel in the left side panel
 Structures fetched from the PDB contain crystallographic information, so you can usually
 go straight to the next step.
 
-<!-- TODO(screenshot): Symmetry panel (showing the cell parameters and space group of 1QIO) -->
+![Symmetry panel. The cell parameters and space group (P 4~3~ 2~1~ 2) of 1QIO](../../../assets/images/tutorials/experimental/symmetry/2-symmetry.webp){ width="318" .on-glb }
 
 !!! note "If the displayed values differ from the actual ones"
     Depending on the PDB file, the values shown here may differ from what was intended.
@@ -41,18 +38,20 @@ go straight to the next step.
 ## 3. Display the unit cell
 
 Click the **Unit cell** button in the panel to add the unit cell frame to the scene.
-It appears in the **Explorer &gt; Scene** tree (scene tree) in the left side panel as a Renderer named
-`*unitcell`, and can be shown or hidden with the eye icon.
+It appears in the **Explorer &gt; Scene** tree (scene tree) in the left side panel as the row of a Renderer named
+`unitcell (*unitcell)`, and can be shown or hidden with the eye icon.
 
 ## 4. Display symmetry mates
 
 Choose the display range with the **Symm mol** button in the panel.
 
-- **20 Å / 50 Å / 100 Å / 200 Å** — Displays the symmetry mates within that distance of the current view center.
+- **20 Å / 50 Å / 100 Å / 200 Å** — Displays the symmetry mates whose molecular center is within that distance of the current view center.
   The display follows automatically when you move the view.
 - **Unit cell** — Displays the symmetry mates for one unit cell.
 
-The symmetry mates are added to the scene tree as a Renderer named `*symm`, drawn
+![The menu of the Symm mol button](../../../assets/images/tutorials/experimental/symmetry/4-symm-menu.webp){ width="311" .on-glb }
+
+The symmetry mates are added to the scene tree as the row of a Renderer named `symm (*symm)`, drawn
 with the same display style and colors as the original Renderer. `*symm` only shows the original Renderer's display
 transformed by the symmetry operations. Like a mirror image, it **has no entity (coordinate data) of its own**.
 However many symmetry mates are displayed, the original Object is unchanged.
@@ -60,10 +59,17 @@ However many symmetry mates are displayed, the original Object is unchanged.
 The space group of 1QIO, P4~3~2~1~2, has 8 symmetry operations, so choosing **Unit cell** displays
 8 molecules per unit cell.
 
-<!-- TODO(screenshot): Packing views for Symm mol 20 Å and Unit cell -->
-
-A clear way to work is to first check only the molecules in contact with **20 Å**, and
+A clear way to work is to first check only the molecules in contact with **50 Å**, and
 switch to **Unit cell** or a larger distance when looking at the whole packing.
+The distance is measured between molecular centers, so with a distance shorter than the size of the molecule (**20 Å** for 1QIO),
+no symmetry mate is displayed while the view center is at the center of the molecule.
+
+![Symmetry mates displayed with 50 Å. The molecules in contact surround the original molecule](../../../assets/images/tutorials/experimental/symmetry/4-symm-50.webp){ .on-glb }
+
+When one unit cell is displayed, widen **Zoom** in the **View** panel to about 120 Å to see
+the whole.
+
+![Displayed with Unit cell, with Zoom set to 120 Å](../../../assets/images/tutorials/experimental/symmetry/4-symm-cell.webp){ .on-glb }
 
 ## 5. Make a symmetry mate an independent Object
 
@@ -71,10 +77,11 @@ One of the displayed symmetry mates can be extracted as an independent Object wi
 Use this for contact interface analysis or to make a figure in which only the symmetry mate is colored differently.
 
 1. In the molecular view, right-click an atom of the symmetry mate (with the Navigate tool)
-2. The symmetry operation (`symop: ...`) is shown at the top of the menu, which confirms that
+2. The symmetry operation (`symop: ...`) is shown near the top of the menu (below the names of the atom and the Renderer), which confirms that
    the atom belongs to a symmetry mate.
 3. Choose **Create SYMM mol...**
-4. Specify the name and Renderer type of the new Object and click **Create**.
+4. The **New Renderer** dialog opens. Specify the name of the new Object (by default the original name and the symmetry operation,
+   such as `1qio 1/2-Y,1/2+X,3/4+Z`) and the Renderer type, and click **Create**.
 
 A new molecular Object with the coordinates after applying the symmetry operation is created. From then on, Renderers
 can be added and colors set as for any other Object. The operation can be
@@ -84,12 +91,14 @@ With **Center at SYMM atom** in the same menu, the view center can be moved to t
 The similarly named **Center at this atom** targets the atom (the entity) **before** the symmetry operation,
 so choosing it while looking at a symmetry mate sends the view to a distant location.
 
-<!-- TODO(screenshot): Context menu from right-clicking a symmetry mate (symop display + Create SYMM mol...) -->
+![The New Renderer dialog opened by Create SYMM mol... The Object name is the original name plus the symmetry operation](../../../assets/images/tutorials/experimental/symmetry/5-create-symm.webp){ width="480" .on-glb }
+
+<!-- TODO(screenshot): Context menu from right-clicking a symmetry mate (symop display + Create SYMM mol...). It is a native menu, so docShot cannot capture it -->
 
 ## 6. Adjust or remove the display
 
 - To change the display range, choose again from **Symm mol**.
-- To remove the symmetry mates or the unit cell, delete the `*symm` / `*unitcell` Renderer in the scene tree,
+- To remove the symmetry mates or the unit cell, delete the `symm` / `unitcell` Renderer in the scene tree,
   or hide it with the eye icon.
 
 ## The same with commands
@@ -102,8 +111,8 @@ fetch_pdb 1QIO, mmcif, cartoon
 # 2. Check the crystallographic information (GUI only)
 # 3. Display the unit cell
 show_unit_cell 1qio
-# 4. Display symmetry mates (within 20 Å of the view center)
-show_symmetry 1qio, 20
+# 4. Display symmetry mates (within 50 Å of the view center)
+show_symmetry 1qio, 50
 # 5. Make a symmetry mate an independent Object (GUI only)
 # 6. Adjust or remove the display (switch to one unit cell, then delete both)
 show_symmetry 1qio

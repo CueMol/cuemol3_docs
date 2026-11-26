@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/protein-dna.md @ dcf70c1 -->
+<!-- source: ja/tutorials/figures/protein-dna.md @ 1002eeb -->
 
 # Displaying a protein-DNA complex
 
@@ -27,7 +27,7 @@ to form a double helix as a hairpin (bases 1-12 pair with 18-29, and 13-17 form 
 cartoon is a Renderer that draws the protein main chain. For nucleic acids, use the dedicated nucl
 (→ [nucl (nucleic acid)](../../reference/renderers/nucl.md)).
 
-1. Right-click `1ytb` in the scene tree and select **New Renderer**.
+1. Right-click `1ytb` in the scene tree and select **New Renderer...**.
 2. Select **nucl** from **Renderer type**, check **Selection**, and enter `chain C` in **Atoms**.
 3. Press **Create**.
 
@@ -65,7 +65,7 @@ The DNA turns sky blue, and the TATA box (`TATAAAA` at bases 4-10, and 20-26 tha
 TBP inserts the side chains of four phenylalanines (Phe99, Phe116, Phe190 and Phe207), two near each end of the TATA box,
 between the DNA bases. The DNA bends at these positions.
 
-1. Select **ballstick** from **New Renderer** of `1ytb`.
+1. Select **ballstick** from **New Renderer...** of `1ytb`.
 2. Check **Selection**, enter `bysidech A.99,116,190,207.*` in **Atoms**, and press **Create**.
 
 `bysidech` limits the selection to the side chain (and Cα) (→ [Selection expression syntax](../../reference/selection.md#bysidech-operator)).

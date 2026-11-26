@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/experimental/cryoem-map.md @ dcf70c1 -->
+<!-- source: ja/tutorials/experimental/cryoem-map.md @ 1002eeb -->
 
 # Displaying a cryo-EM map and model
 
@@ -77,7 +77,7 @@ After checking, return **Level** to near the recommended level (0.9).
 Check the correspondence between the map and the fitted model in a short range. Here, part of the pore-forming S6 helix
 (residues 660–672 of chain B) is used. This range includes large side chains such as tyrosine.
 
-1. Right-click `5irz` in the scene tree and select **ballstick** from **New Renderer**.
+1. Right-click `5irz` in the scene tree and select **ballstick** from **New Renderer...**.
    Check **Selection**, enter `B.660:672.*` in **Atoms**, and press **Create**.
 2. Close the eye icon of `cartoon1` in the scene tree to hide the cartoon.
 3. Select the `ballstick1` row and press **Focus**.

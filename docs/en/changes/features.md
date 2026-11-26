@@ -1,4 +1,4 @@
-<!-- source: ja/changes/features.md @ c730ead -->
+<!-- source: ja/changes/features.md @ 1002eeb -->
 
 # Merged, renamed and removed features
 
@@ -32,7 +32,7 @@ These features are still available, but their names or locations have changed.
 | Window &gt; Restore default panel location | Same as above | Switch the panel layout with the activity bar. |
 | Window &gt; Panels submenu | Same as above. Side panels switch by group, so there is no place for showing or hiding individual panels. | Same as above |
 | Tools &gt; Molecular surface generation with MSMS | The route using the external MSMS binary was not in use | Use **Tools &gt; Mol surface generation...** (built-in SES generation). |
-| Hierarchical editor in the selection panel (Hierarchical / Terminal / Around-Expand) | Writing selection expressions directly covers most uses | The selection expression field in the Selection panel, or tree selection in the Molecular structure panel |
+| Hierarchical editor in the selection panel (Hierarchical / Terminal / Around-Expand) | Writing selection expressions directly covers most uses | The selection expression field in the Selection panel, or tree selection in the Mol Struct panel |
 | Key binding customization | A decision not to port the UXP implementation as it was | Cannot be changed at present. |
 | Help &gt; About plugins... / About config... / Addon manager... / Console | Features specific to Mozilla XULRunner | Developer tools can be opened from **View &gt; Toggle Developer Tools**. |
 
@@ -59,4 +59,4 @@ Separately from the above, some items are planned but do not work yet.
 
 ---
 
-*Verified against: CueMol3 3.0.3.565*
+*Verified against: CueMol3 3.0.6.577*

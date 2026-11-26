@@ -1,4 +1,4 @@
-<!-- source: ja/ui/side-panels.md @ c730ead -->
+<!-- source: ja/ui/side-panels.md @ 1002eeb -->
 
 # Side panels
 
@@ -13,7 +13,7 @@ Clicking the selected icon again closes the side panel.
 |---|---|---|
 | Explorer | Scene structure and display settings | Scene / Camera / Color / View |
 | Styles | Style sets and their named colors and selections | Style Sets / Colors / Selections |
-| Selection | Molecule selection | Molecular structure / Selection |
+| Selection | Molecule selection | Mol Struct / Selection |
 | Crystal | Crystallographic information | Symmetry / Density map |
 | Actions | Recording and replaying operations | History / Actions |
 | Gear (at the bottom) | Opens the Settings tab (not a side panel). | |
@@ -67,7 +67,7 @@ Copy &amp; paste can also be done with the shortcuts of the Edit menu
 
 #### Creating a Renderer
 
-Use **New Renderer** in the context menu of an Object row or a Renderer group row
+Use **New Renderer...** in the context menu of an Object row or a Renderer group row
 to choose the Renderer type and target.
 
 - Choosing a **preset** creates a group of several predefined Renderers at once.
@@ -204,15 +204,16 @@ Read-only style sets are display-only and cannot be edited (`(read-only)` is sho
 
 ## Selection
 
-### Molecular structure panel
+### Mol Struct panel
 
 Shows a molecule as a chain → residue → atom hierarchical tree and builds selections.
 
 - Choose the target molecule at the top.
 - The tree is loaded when a node is expanded.
 - Multiple selection is supported (++cmd++ / ++ctrl++ + click, ++shift++ + click).
-- With **Select** / **Center** / **Zoom** on the toolbar, the chosen range can be made the current selection /
-  brought to the center / zoomed in on.
+- With the buttons to the right of the heading, **Select atoms** / **Center at** / **Zoom at**, the range chosen in the tree
+  can be made the molecule's selection / brought to the center / centered and zoomed in on. The buttons are icons;
+  hovering the pointer over one shows its name. Choosing in the tree alone does not change the molecule's selection.
 
 ### Selection panel
 
@@ -227,7 +228,11 @@ A dedicated panel for displaying and editing the selection of a molecule.
   Arnd / Expn). Each operation shows the number of atoms that would result if it were applied
   (→ [Selection builder](selection-builder.md)).
 - The **Selection** field can also be edited by hand. The expression is validated as you type,
-  and a warning is shown if it is invalid. Apply a hand-typed expression with the **Select** button.
+  and a warning is shown if it is invalid. Apply a hand-typed expression with the **Apply selection** button below the field
+  or by pressing ++enter++.
+- The buttons below the field are, from the left, **Apply selection** (apply the expression), **Center view on selection**
+  (center the view on the selection), **Clear selection** (clear the selection) and **Define name** (name the selection
+  so that it can be reused in the scene as a named selection). The buttons are icons; hovering the pointer over one shows its description.
 - The history is saved in the application and shared with the selection fields of Renderers and elsewhere.
 
 !!! note "Differences from CueMol2"
@@ -288,4 +293,4 @@ to apply it to the Object selected in the scene tree.
 
 ---
 
-*Verified against: CueMol3 3.0.5.576*
+*Verified against: CueMol3 3.0.6.577*

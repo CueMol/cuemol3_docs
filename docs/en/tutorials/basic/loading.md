@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/loading.md @ dcf70c1 -->
+<!-- source: ja/tutorials/basic/loading.md @ 1002eeb -->
 
 # Loading and displaying a structure
 
@@ -136,8 +136,9 @@ followed by the occupancy (O), temperature factor (B), and coordinates.
 
 ![Bottom of the window. The atom information appears in both the status bar (blue band) and the Output panel](../../../assets/images/tutorials/basic/loading/2-status-bar.webp){ width="640" .on-glb }
 
-Right-clicking at an atom's position shows a context menu. The top entry shows the same atom
-information as above; selecting it does nothing. Selecting the next entry, **Center at this atom**,
+Right-clicking at an atom's position shows a context menu. The top two entries are the clicked atom
+(molecule name, chain, residue and atom name, as in `lysozyme: A PHE 38 CZ`) and the name of the Renderer
+that draws the atom (`simple1 (simple)`); selecting them does nothing. Selecting the entry below them, **Center at this atom**,
 moves the view so that the atom comes to the center. The Select-related menu items below that are
 described in [Selecting part of a molecule](selection.md).
 

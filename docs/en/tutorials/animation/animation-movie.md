@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/animation/animation-movie.md @ dcf70c1 -->
+<!-- source: ja/tutorials/animation/animation-movie.md @ 1002eeb -->
 
 # Making an animation and exporting a movie
 
@@ -10,10 +10,7 @@ The first half uses the scene (3UG9) finished in [Making a protein ribbon figure
     - **What you learn**: Editing the timeline, camera motion, switching the display, morphing, exporting a movie
     - **Prerequisites**: [Making a protein ribbon figure](../figures/ribbon-figure.md) (uses the scene finished there in the first half)
 
-!!! info "Screenshots planned"
-    Screenshots showing the workflow will be added to this page.
-
-<!-- TODO(screenshot): Finished result. A timeline with strips lined up in the Animation panel and the molecular view during playback -->
+![Finished result. A timeline in the Animation panel with Simple spin / Camera motion / Show strips](../../../assets/images/tutorials/animation/animation-movie/6-timeline.webp){ .on-glb }
 
 ## 1. How animation works
 
@@ -35,7 +32,7 @@ First, create the classic animation in which the molecule keeps spinning in plac
    At 360°, the molecule makes one full turn and returns to its original orientation (→ [SimpleSpin](../../reference/animation/simplespin.md)).
 4. Drag the band to change its start position, and drag its edge to change its length (the time taken for the rotation).
 
-<!-- TODO(screenshot): Simple spin strip and inspector (Rotation angle / Spin axis) -->
+![The Simple spin strip selected; Rotation angle set to 360° and Spin axis to Y axis in the inspector](../../../assets/images/tutorials/animation/animation-movie/3-simple-spin.webp){ .on-glb }
 
 ## 4. Play it back to check
 
@@ -73,8 +70,8 @@ Morphing animates a structural change by linearly interpolating the coordinates 
 ### Load the two structures
 
 1. Choose **File &gt; New Tab** and create a new scene with **New Scene**.
-2. Fetch `1TND` with **File &gt; Get PDB...**. On the Renderer specification screen, choose **trace** and specify `c; A` in **Selection** (1TND contains three copies of the same molecule (chains A / B / C), so only chain A is displayed).
-3. In the same way, fetch `1TAG` with **File &gt; Get PDB...** (Renderer is **trace**. It has only chain A, so no Selection is needed).
+2. Fetch `1TND` with **File &gt; Get PDB...**. On the Renderer specification screen, choose **cartoon** and specify `c; A` in **Selection** (1TND contains three copies of the same molecule (chains A / B / C), so only chain A is displayed).
+3. In the same way, fetch `1TAG` with **File &gt; Get PDB...** (Renderer is **cartoon**. It has only chain A, so no Selection is needed).
 
 ### Superpose 1TAG onto 1TND
 
@@ -105,14 +102,15 @@ The 1TAG Object that was the copy source is no longer needed, so you can delete 
 2. Select the added strip and specify the converted 1TND in **Target MorphMol** of the inspector (→ [MolAnim](../../reference/animation/molanim.md)).
 3. On playback, the molecule deforms between the GTP-bound form and the GDP-bound form.
 
-Chains B and C, ligands and water molecules that exist only on the 1TND side have no correspondence, so they stay still, but they are not visible because only the trace of chain A is displayed.
+Chains B and C, ligands and water molecules that exist only on the 1TND side have no correspondence, so they stay still, but they are not visible because only the cartoon of chain A is displayed.
 
 !!! tip "To make a back-and-forth loop"
     Add another **Mol morphing** strip after the first, and set **Start value** to 1 and **End value** to 0 in the inspector to get the change in the reverse direction.
     Placing the two side by side gives a "there and back" loop animation
     (→ [MolAnim](../../reference/animation/molanim.md)).
 
-<!-- TODO(screenshot): Morph animation tool dialog (frame list) and the molecular view during morphing playback -->
+![Morph animation tool dialog. The frame list shows (this) and 1tag](../../../assets/images/tutorials/animation/animation-movie/7-morph-dialog.webp){ width="420" .on-glb }
+![The Mol morphing strip selected, with 1tnd as Target MorphMol](../../../assets/images/tutorials/animation/animation-movie/7-morph-timeline.webp){ .on-glb }
 
 !!! note "To create morphing with your own structures"
     Atoms are matched between frames by **chain name, residue number and atom name** (the order of atoms in the file does not matter). Failure to match is not an error: atoms present only in the original structure (`(this)`) **stay still**, and atoms present only in the added structure are ignored. To deform the whole molecule cleanly, prepare structures with water, ligands, hydrogens, etc. removed and with consistent chain names and residue numbers.
@@ -126,7 +124,7 @@ Chains B and C, ligands and water molecules that exist only on the 1TND side hav
 Choose **Rendering &gt; Movie rendering...** and the rendering window opens in Movie mode (→ [Rendering window](../../ui/rendering-window.md)).
 
 1. Choose the target view in **Target**. **Backend** can be left at the default **Umbreon**.
-2. Choose the size in the **Image** tab (e.g. **HD1080 (1920×1080)**).
+2. Choose the size in the **Image** tab (e.g. **VGA (640×480)**).
 3. Press **Start Render**. The frames are rendered one by one, and when finished they are encoded into a movie file with ffmpeg (bundled with the macOS / Windows release assets; → [Configuring external tools](../../install/external-tools.md))
 4. By default the output is created in a temporary folder. Use **Save movie as...** to save the finished movie wherever you like.
 
@@ -135,7 +133,8 @@ Output settings such as the frame rate and movie format are remembered next time
 The settings for raising quality are shared with still images
 (→ [Exporting high-resolution images for publication](../figures/publication-images.md)).
 
-<!-- TODO(screenshot): Rendering window in Movie mode (progress and preview) -->
+![VGA (640×480) chosen as Preset in the Image tab in Movie mode](../../../assets/images/tutorials/animation/animation-movie/8-movie-settings.webp){ width="380" .on-glb }
+![The rendering window after the movie render has finished](../../../assets/images/tutorials/animation/animation-movie/8-movie-done.webp){ .on-glb }
 
 ## The same with commands
 
@@ -160,8 +159,8 @@ add_anim show, name=show1
 set_anim_prop show1, rend, 3ug9/ballstick1
 # 7. Add morphing
 create_scene
-fetch_pdb 1TND, mmcif, trace, selection="c; A"
-fetch_pdb 1TAG, mmcif, trace
+fetch_pdb 1TND, mmcif, cartoon, selection="c; A"
+fetch_pdb 1TAG, mmcif, cartoon
 superpose 1tag, 1tnd, refSel="c; A", algo=SSM
 convert_to_morph 1tnd
 add_morph_frame 1tnd, fromObjId=1tag
