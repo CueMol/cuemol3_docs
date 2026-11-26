@@ -105,5 +105,12 @@
   "tutorials/structure/binding-site/6-labeled": "46f5f597d1e36df3569e3ea2e698f4da2c13eb0f68dd85c668afaf298fda6969",
   "tutorials/structure/superpose/2-lsq-all": "f731086ec5fa8f631a708b55ea44c097da7b7a7ef024b180177be6faa2bbcac2",
   "tutorials/structure/superpose/4-domains": "94a95629a3153917ba91d914b92320e8e8db6b584e5125bb12b61439d209b292",
-  "tutorials/structure/superpose/4-paint": "2ce33d7c17f497868d983493afacf76d7570a198aa7dcfda38b8033a4fd5ba17"
+  "tutorials/structure/superpose/4-paint": "2ce33d7c17f497868d983493afacf76d7570a198aa7dcfda38b8033a4fd5ba17",
+  "tutorials/structure/surface-elepot/2-molsurf-dialog": "49ca3eace21d045a5b54272dcd9e9ea96766f6ccac3de7dc1ba122ee662f7287",
+  "tutorials/structure/surface-elepot/2-surface": "fddea1a184950fc4ff5ca5580a9eb0715c051878542a3598b7307f0e06dca54a",
+  "tutorials/structure/surface-elepot/3-apbs-running": "c35b6f33cfeb903c14981db1bf391e9a94204eb35d9a19b066a3a2c6e278582e",
+  "tutorials/structure/surface-elepot/4-color-pane": "5c0acb07e7218c4c46edd18972ed0f256bf84977db3d1769c8f57aef65a878d5",
+  "tutorials/structure/surface-elepot/4-colored": "633f116149bb43a20d7d223d86b9e3df6d8675eb7596cbc055d44597ec46dd83",
+  "tutorials/structure/surface-elepot/5-opacity": "b21f14c743c297a48bf443aa60191da094c610a3688686420c06a2b0bca63275",
+  "tutorials/structure/surface-elepot/5-translucent": "6185b7e85382d0ff07399a5b80a4da59a9562d5c54666595283fd59a7f596010"
 }

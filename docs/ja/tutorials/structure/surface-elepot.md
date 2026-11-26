@@ -10,10 +10,7 @@
     - **学ぶこと**: 分子表面の生成、APBS による静電ポテンシャルの計算、表面の着色、半透明の表面と cartoon の重ね合わせ
     - **前提**: 基本操作コースの [Renderer の着色](../basic/coloring.md) まで
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。静電ポテンシャルで着色された分子表面 (正負の偏りがわかる向き) -->
+![完成イメージ。静電ポテンシャルで着色した 1QIO の分子表面 (青が正、赤が負)](../../../assets/images/tutorials/structure/surface-elepot/4-colored.webp){ .on-glb }
 
 ## 1. 構造を読み込む
 
@@ -35,7 +32,9 @@ Renderer は **cartoon** を選んでおきます。
    [MolSurfObj (分子表面)](../../reference/objects/molsurf.md#生成アルゴリズム-algorithm))
 6. OK を押すと、分子表面の Object と molsurf Renderer が作られ、表面が表示されます。
 
-<!-- TODO(screenshot): Mol surface generation ダイアログと、生成直後の分子表面 -->
+![Mol surface generation ダイアログ。Use selection に protein、Point density を 5 にした](../../../assets/images/tutorials/structure/surface-elepot/2-molsurf-dialog.webp){ width="380" .on-glb }
+
+![生成直後の分子表面](../../../assets/images/tutorials/structure/surface-elepot/2-surface.webp){ .on-glb }
 
 MolSurf Object は表面の形状だけを保持しており、molsurf Renderer はインスペクタの
 **Selection mol** に指定された分子 (生成元の 1QIO) を参照して着色や選択を行います。
@@ -60,7 +59,7 @@ APBS と pdb2pqr は macOS / Windows の配布物に同梱されており、通�
 設定は不要です。同梱されていないビルド (Linux など) では、別途インストールして
 Settings でパスを指定します (→ [外部ツールの設定](../../install/external-tools.md))。
 
-<!-- TODO(screenshot): APBS elepot calculation ダイアログ (実行中の進捗表示) -->
+![APBS electrostatic potential ダイアログ。計算中は進捗と現在の段階 (Running pdb2pqr...) が表示される](../../../assets/images/tutorials/structure/surface-elepot/3-apbs-running.webp){ width="400" .on-glb }
 
 温度や誘電率などの計算条件は **APBS options** で変更できます。
 シーンには、マップが計算された範囲を示す枠 (`*unitcell` Renderer) も追加されます。
@@ -83,7 +82,9 @@ Settings でパスを指定します (→ [外部ツールの設定](../../insta
 
 設定項目の詳細は [Coloring](../../reference/coloring.md) を参照してください。
 
-<!-- TODO(screenshot): Color パネルの Electrostatic potential 設定と、着色された表面 -->
+![Color パネルの Electrostatic potential の設定。By SAS を有効にし、High を 2、Low を -2 にした](../../../assets/images/tutorials/structure/surface-elepot/4-color-pane.webp){ width="318" .on-glb }
+
+![静電ポテンシャルで着色した表面](../../../assets/images/tutorials/structure/surface-elepot/4-colored.webp){ .on-glb }
 
 ## 5. 半透明の表面と cartoon を重ねる
 
@@ -96,7 +97,9 @@ Settings でパスを指定します (→ [外部ツールの設定](../../insta
 表面越しに主鎖の走行が見える、定番の重ね図になります。
 仕上げと書き出しは [論文用の高解像度画像の書き出し](../figures/publication-images.md) を参照してください。
 
-<!-- TODO(screenshot): 半透明表面 + cartoon の重ね図 -->
+![インスペクタの Opacity を 0.5 にした](../../../assets/images/tutorials/structure/surface-elepot/5-opacity.webp){ width="316" .on-glb }
+
+![半透明の表面越しに cartoon が見える重ね図](../../../assets/images/tutorials/structure/surface-elepot/5-translucent.webp){ .on-glb }
 
 ## 同じことをコマンドで
 
