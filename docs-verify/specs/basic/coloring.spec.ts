@@ -22,7 +22,7 @@ import { rowVisibilityToggle, selectRow, toggleRowVisibility } from '../../helpe
 import { fieldControl } from '../../helpers/form';
 import { openSidebarView } from '../../helpers/sidebar';
 import { runConsole, clearConsole } from '../../helpers/console';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/basic/coloring';
 const DOC = 'docs/ja/tutorials/basic/coloring.md';
@@ -189,6 +189,7 @@ test.describe.serial('Renderer の着色', { tag: '@net' }, () => {
             await toggleRowVisibility(w, 'ballstick1');
             await focusRow(w, LYSOZYME);
             await docShot(w, `${SHOT}/5-paint`);
+            await thumbShot(w, 'coloring');
         });
     });
 });

@@ -21,7 +21,7 @@ import { openSidebarView } from '../../helpers/sidebar';
 import {
     openRenderWindow, settingSelect, showSettingsTab, startRender, startRenderButton,
 } from '../../helpers/renderWindow';
-import { aroundBox, docShot } from '../../helpers/docShot';
+import { aroundBox, docShot, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/figures/publication-images';
 const DOC = 'docs/ja/tutorials/figures/publication-images.md';
@@ -132,12 +132,14 @@ test.describe.serial('論文用の高解像度画像の書き出し', { tag: '@n
             rect: await aroundBox(rw, [rw.locator('.render-window-settings-header'), preset], 80),
             highlight: preset,
         });
-        // 「3. Render タブの Quality セクションで、Lighting を Raytrace only にします」
+        // 「3. Render タブの Quality セクションで、Lighting が既定の Global Illumination
+        //   になっていることを確かめます」
         await showSettingsTab(rw, 'Render');
         await expect(rw.getByText('Quality', { exact: true }).first()).toBeVisible();
         const lighting = settingSelect(rw, 'Lighting');
         await expect(lighting.locator('option:checked')).toHaveText('Global Illumination');
-        await lighting.selectOption({ label: 'Raytrace only' });
+        // The tip's alternative is offered.
+        await expect(lighting.locator('option', { hasText: 'Raytrace only' })).toHaveCount(1);
         // 「Supersampling は既定のままで構いません」
         await expect(rw.getByText('Supersampling', { exact: true }).first()).toBeVisible();
         await docShot(rw, `${SHOT}/3-render-tab`, {
@@ -162,6 +164,7 @@ test.describe.serial('論文用の高解像度画像の書き出し', { tag: '@n
         // 「結果画像がウィンドウ左上の画像領域に表示されます」
         await expect(rw.getByAltText('Render result')).toBeVisible();
         await docShot(rw, `${SHOT}/4-result`);
+        await thumbShot(rw, 'publication-images', rw.getByAltText('Render result'));
         // 「Save で PNG ファイルとして保存します」
         const out = artifacts('publication-images', 'render.png');
         fs.rmSync(out, { force: true });

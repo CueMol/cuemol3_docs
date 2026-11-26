@@ -343,6 +343,8 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | レンダリングウィンドウのボタンが見つからない | 別 BrowserWindow (`render.html`)。`app.windows()` を `expect.poll` で待って取得する |
 | `harness.app.process()` が `_object` で TypeError | `close()` 後は取得できない。close の**前**に `const proc = harness.app.process()` |
 | Open File Options などのフォームの欄が `#rend-type` などの id で見つからない | 3.0 系で id が無くなった。h3-kit の `Field` は label と欄が結び付いていないので、行のラベルで探す (`fieldControl(dlg, 'Renderer type')`)。チェックボックスは `checkField()` |
+| spec を流した後、インストール版の CueMol3 に tritium_cli がつながらない | 接続情報 `~/.cuemol/local-api.json` はアプリが起動時に書き、終了時に消す。開発ビルドも同じ場所を使っていたので、spec の終了でインストール版のファイルが消えた。`support/env.ts` で開発ビルドの `CUEMOL_LOCAL_API_INFO` を `.artifacts/local-api.json` に向けて分けた。消えてしまったときは、インストール版を開き直すと書き直される |
+| 目次のカードのサムネイル | `thumbShot(window, slug)` が分子ビュー (ツールパレットを除く) を 4:3 に切り出して 640 px 幅で `tutorials/index/<slug>` に書く。各 spec の完成図と同じ時点で呼ぶ。publication-images はレンダリングウィンドウの結果の画像を渡す |
 | ネイティブの右クリックメニューを図にしたい | Playwright では撮れない (OS が描く)。`nativeMenuShot(app, window, id, () => 右クリック)` が driver に本物のメニューを 1 回だけ出させ、`screencapture` で画面から撮る。メニューが出る前と出た後の 2 枚の差分でメニューの矩形を求め、周囲 40 pt を付けて切り出す。**テストを走らせるターミナルに macOS の「画面とシステムオーディオの収録」の許可が要る**。ウィンドウは撮影前に最前面に出す。右クリックの前にポインタを同じ点へ動かしておく (ホバー表示の変化が差分に入らないように) |
 | Color パネルの Coloring のボタンを押してもメニューが操作できない | macOS では pane のドロップダウンがネイティブメニュー (`popup-menu:show` の IPC)。harness がこれをスタブにしているので、`chooseColoring(app, window, ['Paint coloring', 'Okabe-Ito', 'Sky blue'])` のようにラベルの経路を渡す。ネイティブメニューは撮影できない |
 | 起動の時点で `READY_LINES` の待ちでタイムアウトする | アプリのログの文言が変わった。`DEBUG_E2E=1` で流してログを見て、`support/log.ts` の `READY_LINES` を直す (3.0.6.577 で `nodejs add-on` → `nodejs module`) |

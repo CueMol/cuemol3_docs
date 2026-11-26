@@ -11,7 +11,7 @@ import { getPdb } from '../../helpers/openFile';
 import { checkField, fieldControl } from '../../helpers/form';
 import { runConsole, clearConsole } from '../../helpers/console';
 import { addPaintRowAtTop, chooseColoring, selectColorTarget } from '../../helpers/colorPane';
-import { docShot, inspectorRect, sidebarRect } from '../../helpers/docShot';
+import { docShot, inspectorRect, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/figures/protein-dna';
 const DOC = 'docs/ja/tutorials/figures/protein-dna.md';
@@ -121,5 +121,6 @@ test.describe.serial('タンパク質と DNA の複合体の表示', { tag: '@ne
         await runConsole(w, 'rotate_view y, -90');
         await clearConsole(w);
         await docShot(w, `${SHOT}/5-complex`);
+        await thumbShot(w, 'protein-dna');
     });
 });

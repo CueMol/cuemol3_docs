@@ -64,6 +64,11 @@ export function devTarget(extraFiles: string[] = []): AppTarget {
             // Isolated, wiped-on-start userData: deterministic prefs and no
             // clash with a normally-running CueMol3 (single-instance lock).
             CUEMOL_FRESH_PREFS: '1',
+            // The local API info file (~/.cuemol/local-api.json) is shared
+            // with an installed CueMol3: the app writes it on start and
+            // deletes it on quit, so a test run would cut tritium_cli off
+            // from the installed app. Keep the test build's copy apart.
+            CUEMOL_LOCAL_API_INFO: artifacts('local-api.json'),
         },
         readiness: 'log',
     };

@@ -21,7 +21,7 @@ import { clickSceneToolbar, expectRow, rowContextMenu, sceneRow, selectRow } fro
 import { addPaintRowAtTop, chooseColoring, colorPane, paintSelections, selectColorTargetOf } from '../../helpers/colorPane';
 import { openSidebarView } from '../../helpers/sidebar';
 import { runConsole, clearConsole } from '../../helpers/console';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/figures/ribbon-figure';
 const DOC = 'docs/ja/tutorials/figures/ribbon-figure.md';
@@ -150,6 +150,7 @@ test.describe.serial('タンパク質のリボン図の表示', { tag: '@net' },
         expect(bg.join('\n')).toMatch(/#?F{6}|white|1,\s*1,\s*1/i);
         await clearConsole(w);
         await docShot(w, `${SHOT}/6-finished`);
+        await thumbShot(w, 'ribbon-figure');
     });
 
     test('7. カメラとシーンを保存する', async () => {

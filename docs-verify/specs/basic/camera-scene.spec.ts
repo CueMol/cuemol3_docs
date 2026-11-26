@@ -26,7 +26,7 @@ import { getPdb } from '../../helpers/openFile';
 import { expectRow } from '../../helpers/sceneTree';
 import { setViewValue, viewValueText } from '../../helpers/viewPane';
 import { openSidebarView } from '../../helpers/sidebar';
-import { docShot } from '../../helpers/docShot';
+import { docShot, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/basic/camera-scene';
 const DOC = 'docs/ja/tutorials/basic/camera-scene.md';
@@ -129,6 +129,7 @@ test.describe.serial('カメラとシーンの保存', { tag: '@net' }, () => {
         await openSidebarView(w, 'explorer');
         await expect(cameraPane(w).getByText('camera_0', { exact: true })).toBeVisible();
         await docShot(w, `${SHOT}/3-reopened`);
+        await thumbShot(w, 'camera-scene');
     });
 
     test('4. 複数のシーンをタブで扱う', async () => {

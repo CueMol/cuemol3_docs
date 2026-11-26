@@ -661,6 +661,12 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   - 基本操作コースの 6 ページにも spec がある (`docs-verify/specs/basic/`、2026-11-27)。右クリックメニューは
     harness の driver (`pickNextContextItem`) で実際の項目名を選んで操作する (PLAYBOOK の「既知の落とし穴」)。
     ページにある手作りの図 (camera-created / distance / dashed-stick1) は、ユーザー指示により撮り直さない。
+  - `figures/publication-images.md` の Lighting の比較図 (`publication-images/lighting-{rt,gi}.webp`) は
+    tritium_cli で作った**手作りの図** (ribbon-figure と同じ 3UG9 の cartoon を `render_image` で 800×800、
+    Raytrace only は `set_render_settings` で切り替え、450×600 に切り出して `task images:import`)。
+    Slab は 200 Å に広げてフォグがかからないようにした (`set_view slab=200`)。GI の差は cartoon では出る (ヘリックスの筒が重なる奥が暗くなる)、細い ribbon では出にくい (ユーザー指摘)。
+  - ribbon-figure の題名の「リボン図」は一般的な呼び名として残し、cartoon を使う旨の note を置いた (ユーザー判断)。
+  - チュートリアルの目次 (`tutorials/index.md`) のカードのサムネイルは、各 spec の `thumbShot` で撮る。
   - 目的別のチュートリアル (上記 6 本) には docs-verify の spec がある (`docs-verify/specs/{structure,prediction,
     experimental,figures,scripting}/`)。ページを直したら spec も直し、図は `task e2e:shots` で撮り直す。
 

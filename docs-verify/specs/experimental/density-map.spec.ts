@@ -15,7 +15,7 @@ import { molStructPane, setupSelectionPage } from '../../fixtures/courseSelectio
 import { setViewValue, viewValueText } from '../../helpers/viewPane';
 import { openSidebarView } from '../../helpers/sidebar';
 import { runConsole, clearConsole } from '../../helpers/console';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/experimental/density-map';
 const DOC = 'docs/ja/tutorials/experimental/density-map.md';
@@ -152,6 +152,7 @@ test.describe.serial('電子密度マップの表示', { tag: '@net' }, () => {
         await runConsole(w, `set_mol_selection ${OBJ}, ""`);
         await clearConsole(w);
         await docShot(w, `${SHOT}/4-active-site`);
+        await thumbShot(w, 'density-map');
         // 「1qio_2fofc の目のアイコンを閉じて 2Fo-Fc を一時的に隠すと」
         await toggleRowVisibility(w, '1qio_2fofc');
         await expect(rowVisibilityToggle(w, '1qio_2fofc')).toHaveClass(/hidden/);

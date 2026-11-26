@@ -18,7 +18,7 @@ import { collapseOtherPanes, expectRow, sceneRow, sceneToolbarButtons } from '..
 import { enterViewValue, setViewValue, viewPaneRowParts, viewValueText } from '../../helpers/viewPane';
 import { lastContextLabels, pickNextContextItem } from '../../helpers/popupMenu';
 import { clickAtomNearCenter, rotateView, zoomView } from '../../helpers/molView';
-import { docShot, sidebarRect } from '../../helpers/docShot';
+import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 import { fieldControl } from '../../helpers/form';
 import { showBottomTab } from '../../helpers/bottomPanel';
 
@@ -78,6 +78,7 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         const line = await harness.logs.waitForLine(' atoms', { from: mark });
         expect(line).toMatch(/read \d+ atoms/);
         await docShot(harness.window, `${SHOT}/1-loaded`);
+        await thumbShot(harness.window, 'loading');
     });
 
     test('2. 視点を操作する', async () => {

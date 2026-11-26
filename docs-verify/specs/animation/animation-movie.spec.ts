@@ -28,7 +28,7 @@ import { setViewValue } from '../../helpers/viewPane';
 import { openSidebarView } from '../../helpers/sidebar';
 import { showBottomTab } from '../../helpers/bottomPanel';
 import { openRenderWindow, settingSelect, showSettingsTab, startRenderButton } from '../../helpers/renderWindow';
-import { aroundBox, docShot } from '../../helpers/docShot';
+import { aroundBox, docShot, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/animation/animation-movie';
 const DOC = 'docs/ja/tutorials/animation/animation-movie.md';
@@ -169,6 +169,7 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
         await transportButton(w, 'Skip to start').click();
         await w.waitForTimeout(800);
         await docShot(w, `${SHOT}/6-timeline`);
+        await thumbShot(w, 'animation-movie');
     });
 
     test('7. モーフィングを加える', async () => {

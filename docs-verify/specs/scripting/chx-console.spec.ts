@@ -14,7 +14,7 @@ import { expectRow, sceneRow } from '../../helpers/sceneTree';
 import { fieldRow } from '../../helpers/form';
 import { clickMenu } from '../../helpers/menu';
 import { clearConsole, consolePanel, runConsole, useConsoleMode } from '../../helpers/console';
-import { aroundBox, docShot } from '../../helpers/docShot';
+import { aroundBox, docShot, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/scripting/chx-console';
 const DOC = 'docs/ja/tutorials/scripting/chx-console.md';
@@ -160,5 +160,6 @@ test.describe.serial('ChX console による作図', { tag: '@net' }, () => {
         await expect.poll(() => fs.existsSync(png) && fs.readFileSync(png).subarray(1, 4).toString() === 'PNG').toBe(true);
         await clearConsole(w);
         await docShot(w, `${SHOT}/5-finished`);
+        await thumbShot(w, 'chx-console');
     });
 });
