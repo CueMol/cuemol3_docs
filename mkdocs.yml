@@ -282,9 +282,11 @@ nav:
       - 構造を読む・比較する:
           - リガンド結合部位の表示: tutorials/structure/binding-site.md
           - 表面の静電ポテンシャル表示: tutorials/structure/surface-elepot.md
+          - 2 つの構造の重ね合わせと比較: tutorials/structure/superpose.md
       - 実験データ:
           - 電子密度マップの表示: tutorials/experimental/density-map.md
           - 対称分子・単位格子の表示: tutorials/experimental/symmetry.md
+          - cryo-EM マップとモデルの表示: tutorials/experimental/cryoem-map.md
       - 予測構造:
           - AlphaFold 予測構造の評価: tutorials/prediction/alphafold.md
       - 動画:

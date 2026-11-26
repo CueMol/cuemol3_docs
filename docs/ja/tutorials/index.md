@@ -38,6 +38,7 @@
 
 - **[リガンド結合部位の表示](structure/binding-site.md)** — 周辺残基の選択と水素結合の候補の表示
 - **[分子表面の静電ポテンシャル表示](structure/surface-elepot.md)** — 表面生成から APBS 計算・着色まで
+- **[2 つの構造の重ね合わせと比較](structure/superpose.md)** — 重ね合わせに使う原子の選び方とドメインの動き
 
 </div>
 
@@ -47,6 +48,7 @@
 
 - **[電子密度マップの表示](experimental/density-map.md)** — Get PDB でのマップ取得と Density map パネル
 - **[対称分子・単位格子の表示](experimental/symmetry.md)** — 結晶パッキングの表示と Create SYMM mol
+- **[cryo-EM マップとモデルの表示](experimental/cryoem-map.md)** — 上位 % のレベルと側鎖の密度の見え方
 
 </div>
 

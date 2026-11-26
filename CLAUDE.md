@@ -638,6 +638,14 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
     アニメーション要素のプロパティは Console から読み出せないので、`animate seek` と
     `export_image` で画像を書き出して確かめる。
   - レンダリング設定のキーには接頭辞が要る (`umbreon.useGI`)。`width` / `height` は接頭辞なし。
+  - 選択式: `A.*` は不可 (`chain A` か `A.*.*`)。残基番号だけなら `resi 96:289` (`96:289` は不可)。
+    `A.1:29,60:121.CA` のような階層表記の列挙は可。温度因子の比較は `<` / `>` / `=` のみ (`>=` は不可)。
+  - `superpose` は結果 (RMSD など) を CLI に返さない。本文に RMSD を書くときは、LSQ なら同じ原子で
+    手元で最小二乗の RMSD を計算すれば一致する。US-align の値は Output パネルで確かめる。
+  - `set_map_contour` の `level` は、cryo-EM マップでは常に上位 % (Density map パネルの単位の
+    切り替えとは無関係)。
+  - 2026-11-26 に A〜D (binding-site / alphafold / superpose / cryoem-map) を同じ方法で書いた。
+    A は表面の部分表示をやめた (ビオチンが β バレルに埋まっていて表面でポケットが見えない)。
 
 ## 注目の機能 (features/)
 
