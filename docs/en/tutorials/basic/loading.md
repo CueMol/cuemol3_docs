@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/loading.md @ 6cacee7 -->
+<!-- source: ja/tutorials/basic/loading.md @ c730ead -->
 
 # Loading and displaying a structure
 
@@ -10,24 +10,24 @@ The pages of the basic course carry over the state of the previous page when fol
 
 ## 1. Load a structure
 
-Open **File &gt; Get PDB...**, enter `1QIO` in **PDB Accession Code**, and download it.
+Open **File &gt; Get PDB...**, enter `1QIO` in **PDB or EMDB ID, or keywords**, and download it.
 To open a local file, use **File &gt; Open File...** (++cmd+o++)
 (→ [File menu](../../menu/file.md)).
 
 ![Get PDB dialog](../../../assets/images/tutorials/basic/loading/1-getpdb.webp){ width="380" .on-glb }
 
 While downloading, a `Downloading 1QIO…` progress screen appears. Press **Cancel** to abort.
-If a nonexistent ID is entered, a **Get PDB failed** error is shown.
+If a nonexistent ID is entered, the dialog shows **No entry ... was found.** and nothing can be fetched.
 
 When the download finishes, the **Open File Options** screen appears. At the top it shows the
 name of the file to be loaded (`1qio.cif`) and the file format CueMol3 detected (`mmCIF`).
 
 1. Change **Object name** to `lysozyme`. The loaded data is called an **Object**, and
-   CueMol identifies it by this name (by default, a name derived from the file name is filled in)
-2. Choose **simple** from **Renderer type**
+   CueMol identifies it by this name (by default, a name derived from the file name is filled in).
+2. Choose **simple** from **Renderer type**.
 3. **Renderer name** is set automatically from the chosen type (`simple1`). Leave it at the default.
-   This name is used as is in the scene tree and in the rest of the tutorial
-4. Leave the other options at their defaults and press **Open**
+   This name is used as is in the scene tree and in the rest of the tutorial.
+4. Leave the other options at their defaults and press **Open**.
 
 ![Open File Options (Object name = lysozyme, Renderer type = simple)](../../../assets/images/tutorials/basic/loading/1-open-options.webp){ width="480" .on-glb }
 
@@ -71,27 +71,28 @@ ballstick for everything else. When a preset is chosen, **Selection** below beco
 ### Other options
 
 - **Renderer name** — The name of the Renderer to be created. It is filled in automatically
-  when a type is chosen (for a preset, it becomes the group name)
+  when a type is chosen (for a preset, it becomes the group name).
 - **Selection** — When checked, the adjacent field is enabled and the **range to display**
   can be narrowed with a selection expression. Loading itself is performed on the whole molecule,
-  so the displayed range can be changed later (→ [Selecting part of a molecule](selection.md))
-- **Center view on molecule after loading** — Moves the view to the loaded molecule.
-  Uncheck it to keep the current view
+  so the displayed range can be changed later (→ [Selecting part of a molecule](selection.md)).
+- **Center view on molecule after loading** — Adjusts the view so that the loaded molecule fits
+  (the same as pressing **Focus**).
+  Uncheck it to keep the current view.
 - **&lt;format&gt;-specific options** — A collapsible section at the bottom. When opened, it lists the
   loading settings specific to that format (for mmCIF / PDB, **Load MODEL records**,
   **Load anisotropic U (ANISOU)**, **Load alternate conformations**,
   **Calculate secondary structure**, and so on).
   `(defaults)` is shown to the right of the heading when the settings are at their defaults,
-  and `(modified)` when they have been changed
+  and `(modified)` when they have been changed.
 
 ## 2. Manipulate the view
 
 Look at the loaded molecule from various directions.
 
-1. **Left-drag** on the molecular view. The molecule rotates in the direction of the drag
-2. Turn the **wheel** to zoom the display in and out
-3. In the **View &gt; View** panel in the left side panel, click the **Zoom** value under
-   **Zoom / Slab**, enter `40`, and press ++enter++. Zoom is set to 40
+1. **Left-drag** on the molecular view. The molecule rotates in the direction of the drag.
+2. Turn the **wheel** to zoom the display in and out.
+3. In the **Explorer &gt; View** panel in the left side panel, click the **Zoom** value under
+   **Zoom / Slab**, enter `40`, and press ++enter++. Zoom is set to 40.
 
     ![Zoom in the View panel](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="213" }
 
@@ -100,9 +101,9 @@ the larger the molecule appears.
 
 Each row of the View panel can be operated in three ways.
 
-- Press the **left/right arrows** to increase or decrease the value one step at a time
-- **Drag left or right** over the number to change it continuously
-- **Click** the number to make it directly editable, and press ++enter++ to confirm
+- Press the **left/right arrows** to increase or decrease the value one step at a time.
+- **Drag left or right** over the number to change it continuously.
+- **Click** the number to make it directly editable, and press ++enter++ to confirm.
 
 The View panel is thus useful when the view needs to be set more precisely than is possible with the mouse.
 **Rotation** (RotX / RotY / RotZ) values are **relative**: the view rotates by the entered angle,
@@ -140,13 +141,13 @@ described in [Selecting part of a molecule](selection.md).
 Multiple Objects can be loaded into the same scene. Here, add `1G59`
 (a complex of glutamyl-tRNA synthetase and tRNA).
 
-1. Open **File &gt; Get PDB...**, enter `1G59` in **PDB Accession Code**, and press
-   **Download**
-2. Choose **trace** from **Renderer type**
+1. Open **File &gt; Get PDB...**, enter `1G59` in **PDB or EMDB ID, or keywords**, and press
+   **Download**.
+2. Choose **trace** from **Renderer type**.
 
     ![Choose trace for Renderer type](../../../assets/images/tutorials/basic/loading/3-open-options.webp){ width="480" .on-glb }
 
-3. Leave **Object name** at the default (`1g59`) and press **Open**
+3. Leave **Object name** at the default (`1g59`) and press **Open**.
 
 This draws a lightweight display connecting only Cα atoms for the protein and phosphorus atoms for
 the nucleic acid. The asymmetric unit of 1G59 contains two copies of the complex
@@ -156,9 +157,9 @@ After loading, the view moves to the new molecule (**Center view on molecule aft
 is on by default), so lysozyme is not visible at this point. To see both at once, operate the
 View panel in the same way as in §2.
 
-1. Enter `300` in **Slab**
-2. Enter `150` in **Zoom**
-3. Enter `90` in **RotY**
+1. Enter `300` in **Slab**.
+2. Enter `150` in **Zoom**.
+3. Enter `90` in **RotY**.
 
 The key is to widen **Slab** (the thickness displayed along the depth direction). With the default
 50 Å, lysozyme, which lies about 100 Å away from 1G59, is clipped by the depth range no matter how
@@ -204,13 +205,13 @@ Rows are written as **`name (type)`**. Click the **triangle** to the left of a n
 the list of Renderers attached to that Object. The current tree reads as follows.
 
 - The scene `Untitled 1` has two Objects, `lysozyme` and `1g59`
-  (when loaded with Get PDB, the Object name is the lowercase PDB ID)
+  (when loaded with Get PDB, the Object name is the lowercase PDB ID).
 - `1g59 (MolCoord)` — The type of Object `1g59` is MolCoord (molecular coordinates)
 - `trace1 (trace)` — The Renderer `trace1` attached to `1g59` is of type trace
 - `(*selection)` — A Renderer without a name is shown with only parentheses and its type. This is the
-  Renderer for highlighting the selected part, and it is created automatically when a molecule is loaded
+  Renderer for highlighting the selected part, and it is created automatically when a molecule is loaded.
 - `(*namelabel)` — The Renderer for labels, created when an atom was clicked to show its name in §2.
-  The row remains even after the label is hidden
+  The row remains even after the label is hidden.
 
 **Camera** and **Styles** at the bottom are the places where saved views and styles are kept
 (→ [Saving the camera and the scene](camera-scene.md)).
@@ -218,15 +219,15 @@ the list of Renderers attached to that Object. The current tree reads as follows
 ### Eye icons and buttons at the top of the panel
 
 - The **eye icon** on a row toggles the visibility of a Renderer. Toggling it on an Object row
-  toggles all Renderers under it together
-- There are four buttons at the top of the panel (names appear when the pointer is placed over them)
+  toggles all Renderers under it together.
+- There are four buttons at the top of the panel (names appear when the pointer is placed over them).
 
 | Button | Action |
 |---|---|
 | **Add** | Adds a Renderer to the selected Object (same as New Renderer in the right-click menu) |
-| **Focus** | Adjusts the view (Zoom and Slab) to fit the selected Object or Renderer |
-| **Delete** | Deletes the selected Object or Renderer. It can be restored with Undo |
-| **Property** | Shows the selected item in the property inspector |
+| **Focus** | Adjusts the view (Zoom and Slab) to fit the selected Object or Renderer. |
+| **Delete** | Deletes the selected Object or Renderer. It can be restored with Undo. |
+| **Property** | Shows the selected item in the property inspector. |
 
 Right-clicking the scene row lets you change the background color from **Background color**.
 
@@ -239,4 +240,4 @@ Right-clicking the scene row lets you change the background color from **Backgro
 
 ---
 
-*Verified against: CueMol3 2.3.8.495*
+*Verified against: CueMol3 3.0.2.560*

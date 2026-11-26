@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/selection.md @ 6cacee7 -->
+<!-- source: ja/tutorials/basic/selection.md @ c730ead -->
 
 # Selecting part of a molecule
 

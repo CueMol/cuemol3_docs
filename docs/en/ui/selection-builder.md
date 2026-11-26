@@ -1,11 +1,11 @@
-<!-- source: ja/ui/selection-builder.md @ 8d54764 -->
+<!-- source: ja/ui/selection-builder.md @ c730ead -->
 
 # Selection builder
 
 The **selection builder** is a widget for assembling a selection through GUI operations, without writing a [selection expression](../reference/selection.md) by hand. It is available in the following places.
 
-- **Selection panel** — always present in the panel (→ [Side panels](side-panels.md))
-- **Any selection expression input field** — in the New Renderer dialog, tool dialogs such as molecular surface generation and superposition, the Paint selection cell of the Color panel, and so on, the ▼ button opens the same widget as a popover
+- **Selection panel** — always present in the panel (→ [Side panels](side-panels.md)).
+- **Any selection expression input field** — in the New Renderer dialog, tool dialogs such as molecular surface generation and superposition, the Paint selection cell of the Color panel, and so on, the ▼ button opens the same widget as a popover.
 
 The result of an operation in the builder is always reflected in the input field as a **selection expression**. The generated expression can be edited by hand as it is, so the builder is also a shortcut for learning the syntax.
 

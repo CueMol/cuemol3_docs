@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/measure.md @ 8d54764 -->
+<!-- source: ja/tutorials/basic/measure.md @ c730ead -->
 
 # Measurement and interaction display
 
@@ -11,8 +11,8 @@ Measurements use the Measure group in the **tool palette** at the left edge of t
 (→ [Toolbar and tool palette](../../ui/toolbar-tools.md)).
 
 1. Select the **Distance** tool in the tool palette (shortcut ++d++)
-2. Click the first atom of the distance to measure. A cross mark shows the progress
-3. Click the second atom. A dotted line is drawn between the atoms and a distance label is shown
+2. Click the first atom of the distance to measure. A cross mark shows the progress.
+3. Click the second atom. A dotted line is drawn between the atoms and a distance label is shown.
 
 Keep clicking to measure several distances in succession.
 To stop partway, press ++esc++ or switch to another tool such as Navigate.
@@ -21,8 +21,8 @@ To stop partway, press ++esc++ or switch to another tool such as Navigate.
 
 ## 2. Measure angles and dihedral angles
 
-- **Angle** tool (++a++) — click three atoms in order to display their angle
-- **Torsion** tool (++t++) — click four atoms in order to display their dihedral angle
+- **Angle** tool (++a++) — click three atoms in order to display their angle.
+- **Torsion** tool (++t++) — click four atoms in order to display their dihedral angle.
 
 For practice, try measuring the coordination angles of the Na⁺ ion (Na130) in 1QIO
 and its ligands (the side-chain oxygen of Ser72, the main-chain carbonyl oxygen of Ser60, and so on).
@@ -33,7 +33,7 @@ The dotted lines and labels of measurements are drawn by a Renderer called **ato
 In the scene tree, an atomintr Renderer named `measure` is
 created automatically.
 
-- The eye icon temporarily hides only the measurement display
+- The eye icon temporarily hides only the measurement display.
 - Select the row and press **Delete** to remove all measurements at once (can be undone)
 
 Opening the **option knob** of the Measure group in the tool palette lets you choose
@@ -46,8 +46,8 @@ and shown, hidden or deleted group by group.
 Measurement dotted lines are thin lines by default, but they can be switched all at once
 to a three-dimensional display suited to figures in papers.
 
-1. Right-click `measure` (atomintr) in the scene tree
-2. Choose **Style &gt; Dashed stick1**
+1. Right-click `measure` (atomintr) in the scene tree.
+2. Choose **Style &gt; Dashed stick1**.
 
 The dotted lines change to a yellow dashed three-dimensional display, and the distance labels are no longer shown (**Dashed stick2** is a cyan preset with a different dash pattern).
 To adjust the line thickness or the dash spacing individually, edit the atomintr
@@ -63,8 +63,8 @@ instead of deleting the whole Renderer.
 
 1. Right-click `measure` (atomintr) in the scene tree and
    choose **Edit interaction list...**
-2. A list of the measurements (interactions) belonging to that Renderer is shown
-3. Select the unwanted rows and delete them. The operation can be undone
+2. A list of the measurements (interactions) belonging to that Renderer is shown.
+3. Select the unwanted rows and delete them. The operation can be undone.
 
 !!! note "Differences from CueMol2"
     In CueMol2, the measurement mode was switched with the ribbon at the top of the window (Measure tab),

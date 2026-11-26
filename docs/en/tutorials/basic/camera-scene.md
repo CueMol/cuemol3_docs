@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/camera-scene.md @ 6cacee7 -->
+<!-- source: ja/tutorials/basic/camera-scene.md @ c730ead -->
 
 # Saving the camera and the scene
 
@@ -10,10 +10,10 @@ It continues from the previous page ([Coloring Renderers](coloring.md)).
 While examining a molecule, you often want to come back to a particular view later.
 The position, orientation, zoom and slab of a view can be saved as a named **camera**.
 
-1. Set up the view you want to save
-2. Click **View** in the activity bar and open the **Camera** panel
-3. Press the **New camera from view** button at the top of the panel
-4. Give it a name and create it (the default name is fine)
+1. Set up the view you want to save.
+2. Click **Explorer** in the activity bar and open the **Camera** panel.
+3. Press the **New camera from view** button at the top of the panel.
+4. Give it a name and create it (the default name is fine).
 
 The new camera appears in the list. Move the view around, then
 **double-click** the camera row. The saved view is restored.
@@ -50,11 +50,11 @@ Quit CueMol3 and start it again, then open
 Each scene corresponds to a **tab** at the top of the window, and several scenes can be open at once.
 Scenes are independent and do not affect each other.
 
-1. Choose **File &gt; New Tab** (++cmd+t++) and create a new scene with **New Scene**
-2. The new scene is empty, so nothing is displayed
-3. Fetch `1EHZ` (a tRNA structure) with **File &gt; Get PDB...** and choose **nucl**, the type for nucleic acids, as the **Renderer type**
+1. Choose **File &gt; New Tab** (++cmd+t++) and create a new scene with **New Scene**.
+2. The new scene is empty, so nothing is displayed.
+3. Fetch `1EHZ` (a tRNA structure) with **File &gt; Get PDB...** and choose **nucl**, the type for nucleic acids, as the **Renderer type**.
 4. Click the tabs to switch between scenes. The contents of the scene tree also
-   switch to the scene of that tab
+   switch to the scene of that tab.
 
 ### Close a tab
 
@@ -80,4 +80,4 @@ To keep the viewpoint itself, a camera is more suitable than a view
 
 ---
 
-*Verified against: CueMol3 2.3.15.530*
+*Verified against: CueMol3 3.0.2.560*

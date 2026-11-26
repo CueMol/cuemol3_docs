@@ -1,4 +1,4 @@
-<!-- source: ja/ui/inspector.md @ 777582f -->
+<!-- source: ja/ui/inspector.md @ c730ead -->
 
 # Property inspector
 
@@ -25,7 +25,7 @@ The tabs at the top of the inspector switch the view.
 
 | Tab | Contents |
 |---|---|
-| **Properties** | A settings view organized by purpose. It is divided into sections, which are opened one at a time (only the scene shows all sections open side by side) |
+| **Properties** | A settings view organized by purpose. It is divided into sections, which are opened one at a time (only the scene shows all sections open side by side). |
 | **Generic** | A general-purpose editor that lists all the properties of the element |
 
 The tab that opens by default depends on the type of the selected element.
@@ -60,9 +60,16 @@ for handling the map type (Map type / Effective kind)
 ### Scene
 
 Opened from **Properties...** in the Scene menu.
-It has settings for ambient occlusion / anti-aliasing / background / color proofing
+It has settings for ambient occlusion / anti-aliasing / background / color proofing /
+compatibility (Legacy mode)
 (→ [Scene reference](../reference/scene.md)). Because there are few items, the sections are not collapsed
 and are all displayed.
+
+### Camera
+
+Opened from **Property** on the toolbar of the Camera panel, or from **Properties...** in the right-click menu of a row.
+It shows the name, the source it was loaded from, the saved view and the visibility flags; the name and visibility flags can be edited
+(→ [Camera](../reference/camera.md#information-stored-in-a-camera)).
 
 ### View
 
@@ -124,4 +131,4 @@ Shows the properties of the element as a list of names and values.
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.3.565*

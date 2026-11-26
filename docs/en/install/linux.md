@@ -1,4 +1,4 @@
-<!-- source: ja/install/linux.md @ 6cacee7 -->
+<!-- source: ja/install/linux.md @ c730ead -->
 
 # Installing on Linux
 

@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/ribbon-figure.md @ 773364a -->
+<!-- source: ja/tutorials/ribbon-figure.md @ c730ead -->
 
 # Making a protein ribbon figure
 
@@ -15,10 +15,10 @@ This tutorial assumes you have gone through the [Quick tour](../getting-started/
 
 Use **File &gt; Get PDB...** to fetch the structure from the network.
 
-1. Enter `3UG9` in **PDB Accession Code**
-2. Make sure **Fetch coord file** is checked (leave the format at the default, **RCSB (mmCIF)**)
-3. When the download finishes, a screen for specifying the Object name and Renderer appears
-4. Select **cartoon** from **Renderer type**, and create it with everything else at the defaults
+1. Enter `3UG9` in **PDB or EMDB ID, or keywords**.
+2. Make sure **Fetch coordinates** is checked (leave **Server** at the default **RCSB** and **Format** at the default **mmCIF**)
+3. When the download finishes, a screen for specifying the Object name and Renderer appears.
+4. Select **cartoon** from **Renderer type**, and create it with everything else at the defaults.
 
 The protein part is drawn as a cartoon that reflects the secondary structure
 (→ [cartoon](../reference/renderers/cartoon.md)).
@@ -49,10 +49,10 @@ The width and thickness of helices are adjusted in the **Helix** section, those 
 
 3UG9 contains a single molecule (chain A). Three regions, the N-terminal domain, the transmembrane part, and the C-terminal domain, are colored separately by residue number range.
 
-1. Open the **Explorer &gt; Color** panel in the left side panel
-2. Select the cartoon Renderer at the top
-3. Select **Paint** as the Coloring type
-4. Create the following three rows in the table and specify a color of your choice for each
+1. Open the **Explorer &gt; Color** panel in the left side panel.
+2. Select the cartoon Renderer at the top.
+3. Select **Paint** as the Coloring type.
+4. Create the following three rows in the table and specify a color of your choice for each.
 
 | Region | Selection expression |
 |---|---|
@@ -81,10 +81,10 @@ Paint is evaluated from the top row down, and the color of the first matching ro
 A cartoon draws only the course of the main chain, so the ligand is not displayed.
 Overlay the retinal (residue name `RET`) of 3UG9 as a ballstick (ball-and-stick model).
 
-1. Right-click the Object (3UG9) in the scene tree and select **New Renderer**
-2. Select **ballstick** from **Renderer type**
-3. Check **Selection** and enter `r; RET` as the selection expression
-4. Press **Create**, and the retinal is drawn as a ballstick over the cartoon
+1. Right-click the Object (3UG9) in the scene tree and select **New Renderer**.
+2. Select **ballstick** from **Renderer type**.
+3. Check **Selection** and enter `r; RET` as the selection expression.
+4. Press **Create**, and the retinal is drawn as a ballstick over the cartoon.
 
 Multiple Renderers can be stacked on one Object in this way. What each Renderer displays is narrowed down with a selection expression (`r;` is a shorthand for selection by residue name →
 [Selection expression syntax](../reference/selection.md)).
@@ -99,10 +99,10 @@ If the ligand is too small to see in an overview figure, displaying it as **cpk*
 In figures for papers, combining a white background with outlines (edge lines) is a classic choice.
 Edge lines make the boundaries of each element clear even on a white background.
 
-1. Set the background to white with **Scene &gt; Background &gt; White**
-2. Right-click the cartoon Renderer in the scene tree
-3. Select **Style &gt; Edge line (normal)**. The edge line type and width are set together
-4. Repeat the same operation (steps 2-3) for the ballstick Renderer
+1. Set the background to white with **Scene &gt; Background &gt; White**.
+2. Right-click the cartoon Renderer in the scene tree.
+3. Select **Style &gt; Edge line (normal)**. The edge line type and width are set together.
+4. Repeat the same operation (steps 2-3) for the ballstick Renderer.
 
 To make the lines thicker or thinner, select **Edge line (thick)** /
 **Edge line (thin)** from the same menu. To remove them, select **No edge line**
@@ -119,8 +119,8 @@ To make the lines thicker or thinner, select **Edge line (thick)** /
 
 Once the view is decided, save it as a camera so that you can return to the same composition later.
 
-1. Click **View** in the activity bar to open the **Camera** panel
-2. Press the **New camera from view** button, and create a camera with a name
+1. Click **Explorer** in the activity bar to open the **Camera** panel.
+2. Press the **New camera from view** button, and create a camera with a name.
 
 Double-clicking a camera row returns to that view at any time
 (→ [Camera](../reference/camera.md)).
@@ -136,4 +136,4 @@ Finally, save the scene to a `.qsc` file with **File &gt; Save Scene** (++cmd+s+
 
 ---
 
-*Verified against: CueMol3 2.3.15.530*
+*Verified against: CueMol3 3.0.2.560*

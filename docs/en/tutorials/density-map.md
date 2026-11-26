@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/density-map.md @ 773364a -->
+<!-- source: ja/tutorials/density-map.md @ c730ead -->
 
 # Overlaying an electron density map
 
@@ -14,11 +14,11 @@ The example is the crystal structure of lysozyme (PDB ID: **1QIO**); the 2Fo-Fc 
 
 **File &gt; Get PDB...** can fetch electron density maps in addition to coordinates.
 
-1. Enter `1QIO` in **PDB Accession Code**
-2. In addition to **Fetch coord file**, check **Fetch 2Fo-Fc map** and **Fetch Fo-Fc map**
-3. Leave the map source at the default **RCSB (cif.gz)** (**EBI (MTZ)** also works)
+1. Enter `1QIO` in **PDB or EMDB ID, or keywords**.
+2. In addition to **Fetch coordinates**, check **2Fo-Fc map** and **Fo-Fc map**.
+3. Leave the map source at the default **RCSB (cif.gz)** (**EBI (MTZ)** also works).
 4. When the download finishes, a dialog appears for specifying the Object name and Renderer of the coordinates.
-   Choosing **simple** (line drawing) here makes it easier to see the correspondence between density and atoms
+   Choosing **simple** (line drawing) here makes it easier to see the correspondence between density and atoms.
 
 <!-- TODO(screenshot): Get PDB dialog (1QIO, both maps checked) -->
 
@@ -49,10 +49,11 @@ for the map Object, see [DensityMap](../reference/objects/densitymap.md).
 The map display is adjusted in the **Crystal &gt; Density map** panel in the left side panel
 (→ [Side panels](../ui/side-panels.md)).
 
-1. At the top, select the target Renderer (such as `1qio_2fofc/contour1`)
-2. Change the contour level with the **Level** slider. Raise it when noise is distracting, and lower it to see weak density
-3. Change the display range (distance from the center) with the **Extent** slider
-4. Change the transparency with the **Transp** slider
+1. At the top, select the target Renderer (such as `1qio_2fofc/contour1`).
+2. Change the contour level by dragging the marker on the **Level** histogram
+   (a value can also be typed into the input field). Raise it when noise is distracting, and lower it to see weak density.
+3. Change the display range (distance from the center) with the **Extent** slider.
+4. Change the transparency with the **Transp** slider.
 
 By default, the level of a crystallographic map is in σ units (the standard deviation of the map taken as 1).
 As a guide, view the 2Fo-Fc map at 1 to 1.5σ and the Fo-Fc map at around ±3σ.
@@ -66,10 +67,10 @@ Note that the upper limit of **Extent** is determined by the **Buffer size** pro
 
 This is the procedure for zooming in on a region of interest such as the active site.
 
-1. Move the view in the molecular view so that the region of interest is at the center
-2. Lower **Extent** to about 10 Å to reduce the surrounding mesh
-3. If the display has not followed, **Redraw** in the panel updates the display center to the current view center
-4. Narrowing the **Slab** (the width of the depth range displayed) also reduces the mesh in front of and behind the region of interest, making it easier to see (→ the View panel in [Side panels](../ui/side-panels.md))
+1. Move the view in the molecular view so that the region of interest is at the center.
+2. Lower **Extent** to about 10 Å to reduce the surrounding mesh.
+3. If the display has not followed, **Redraw** in the panel updates the display center to the current view center.
+4. Narrowing the **Slab** (the width of the depth range displayed) also reduces the mesh in front of and behind the region of interest, making it easier to see (→ the View panel in [Side panels](../ui/side-panels.md)).
 
 To see only the green and red Fo-Fc meshes, close the eye icon of
 `1qio_2fofc` in the scene tree to hide the 2Fo-Fc map temporarily.
@@ -87,4 +88,4 @@ A figure containing a density map can be exported in the same way as an ordinary
 
 ---
 
-*Verified against: CueMol3 2.3.13.523*
+*Verified against: CueMol3 3.0.5.576*

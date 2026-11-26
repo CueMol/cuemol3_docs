@@ -1,4 +1,4 @@
-<!-- source: ja/ui/rendering-window.md @ 6cacee7 -->
+<!-- source: ja/ui/rendering-window.md @ c730ead -->
 
 # Rendering window
 
@@ -9,9 +9,9 @@ It is **modeless** (non-modal), so you can keep it open and work with the molecu
 
 | Action | Result |
 |---|---|
-| **Rendering &gt; Image rendering...** | Opens the window in **Still mode** |
-| **Rendering &gt; Movie rendering...** | Opens the window in **Movie mode** |
-| **Window &gt; Rendering Window** | Opens the window or brings it to the front (the mode is not changed) |
+| **Rendering &gt; Image rendering...** | Opens the window in **Still mode**. |
+| **Rendering &gt; Movie rendering...** | Opens the window in **Movie mode**. |
+| **Window &gt; Rendering Window** | Opens the window or brings it to the front (the mode is not changed). |
 | **Render** button on the toolbar | Same as above |
 
 If the window is already open, Image / Movie rendering... only switches the mode.
@@ -23,7 +23,7 @@ If the window is already open, Image / Movie rendering... only switches the mode
 | Area | Contents |
 |---|---|
 | Image area (upper left) | Preview of the rendering result. The toolbar is used to save, move through the history and change the zoom (see below) |
-| Render Settings (right) | Settings panel. It has an **Image** tab and a **Render** tab, plus a **Detail** tab when Umbreon (NPR) is selected |
+| Render Settings (right) | Settings panel. It has an **Image** tab and a **Render** tab, plus a **Detail** tab when Umbreon (NPR) is selected. |
 | Run bar + log (bottom) | Backend / Target selection, Start / Stop, progress and log |
 
 ## Image area
@@ -32,11 +32,11 @@ The rendering result is shown here, and the toolbar above it provides the follow
 
 | Item | Description |
 |---|---|
-| **Save** | Saves the result as a PNG file |
-| **Copy** | Copies the result to the clipboard |
-| Arrows | Move back and forth through the history of rendering results |
-| **Use settings** | Restores the settings that were used to render the result currently selected in the history |
-| `+` / `-` / `100%` / `Fit` | Change the zoom. **Fit** is the zoom at which the whole image fits |
+| **Save** | Saves the result as a PNG file. |
+| **Copy** | Copies the result to the clipboard. |
+| Arrows | Move back and forth through the history of rendering results. |
+| **Use settings** | Restores the settings that were used to render the result currently selected in the history. |
+| `+` / `-` / `100%` / `Fit` | Change the zoom. **Fit** is the zoom at which the whole image fits. |
 
 **The zoom and scroll position are kept across renders.** Even if you change one setting
 and render again, or move through the history, the view stays magnified, so two results can be
@@ -50,11 +50,11 @@ Pinch and ++cmd++ + wheel zoom around the pointer position.
 
 | Item | Description |
 |---|---|
-| **Backend** | Selects the rendering backend. The default is the built-in ray tracer, **Umbreon** |
-| **Target** | Selects which view to render (the open views are listed) |
-| **Start Render** | Starts rendering |
-| **Stop** | Cancels the rendering in progress |
-| **Re-encode** (Movie mode only) | Rebuilds the movie file from the frame images already written |
+| **Backend** | Selects the rendering backend. The default is the built-in ray tracer, **Umbreon**. |
+| **Target** | Selects which view to render (the open views are listed). |
+| **Start Render** | Starts rendering. |
+| **Stop** | Cancels the rendering in progress. |
+| **Re-encode** (Movie mode only) | Rebuilds the movie file from the frame images already written. |
 
 !!! note "You can leave Backend set to Umbreon"
     Umbreon is built into the visualization library, so no external program or
@@ -85,7 +85,7 @@ each with its own dropdown, and usually choosing here is all you need to do.
 | Item | Description |
 |---|---|
 | Lighting | How shading is applied (Raytrace only / Ambient Occlusion / Global Illumination) |
-| Supersampling | Basic image quality. The quality of edge lines is also determined by this |
+| Supersampling | Basic image quality. The quality of edge lines is also determined by this. |
 | AO quality / GI lighting | Quality of the method selected in Lighting (for Global Illumination, the distribution of light) |
 | Shadows | Cast shadows |
 
@@ -101,7 +101,7 @@ For the POV-Ray backend, you can specify the radiosity mode, whether shadows are
 light source spread / intensity), among others. There is no Quality section.
 
 The contents of Render Settings, including the Backend selection, are saved in the scene and restored for each scene.
-Changes are undoable, and ++cmd+z++ also works inside this window
+Changes are undoable, and they can also be undone with ++cmd+z++ inside this window
 (→ [Saving settings](../reference/rendering.md#saving-settings)).
 
 ## Movie mode
@@ -109,10 +109,22 @@ Changes are undoable, and ++cmd+z++ also works inside this window
 In Movie mode, in addition to the above, you specify the output folder, frame rate, movie format and so on.
 The output settings are retained the next time the window is opened.
 
+The movie quality is specified with the following items.
+
+| Item | Default | Description |
+|---|---|---|
+| Rate control | Quality | How the quality is determined. **Quality** specifies a quality level, and **Bit rate** specifies a constant bit rate. It can be chosen only for the H.264 / H.265 formats. |
+| Quality | High | **High** / **Standard** / **Small file**. The closer to Small file, the smaller the file. |
+| Bit rate (kbps) | 10240 | The bit rate when Rate control is Bit rate. WMV is always encoded at this value. |
+
+The uncompressed and animated GIF formats use neither setting.
+
+<!-- TODO(screenshot): the Movie mode output settings (Rate control / Quality / Bit rate) -->
+
 The process is as follows.
 
-1. **Start Render** renders the frames one by one and writes them to the output folder
-2. When all the frames are ready, they are encoded into a movie file with ffmpeg
+1. **Start Render** renders the frames one by one and writes them to the output folder.
+2. When all the frames are ready, they are encoded into a movie file with ffmpeg.
 
 If you cancel partway, or want to rebuild only the movie after changing settings, the **Re-encode** button
 rebuilds the movie from the frames in the output folder.
@@ -135,4 +147,4 @@ the built-in **Umbreon**.
 
 ---
 
-*Verified against: CueMol3 2.3.14.525*
+*Verified against: CueMol3 3.0.5.576*

@@ -118,6 +118,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   `plugins/console/chx_console.md` / `ui/bottom-panels/{sequence,trajectory,animation}.md`) を訳し、
   `ui/bottom-panels/index.md` を分割に追随させた。これらから英語版の `camera.md#__current` と
   `scene.md#compatibility` へのアンカーは、両ページの追随までは解決しない (build の INFO に出る)。
+  続いて ui / install / menu / getting-started / tutorials / changes の stale 27 ページを追随させた
+  (マーカー `c730ead`)。日本語版で文末に「。」を付けた表のセル・箇条書きには、英語版でも
+  ピリオドを付けた (表の行と箇条書きを日本語版と順に対応させて機械的に揃えた)。
 - 新しい日本語ページを足したら、英語版も同じ PR か次の追随 PR で訳し、en の nav に載せる
   (`task i18n:status -- -v` の untranslated に出る)。
 

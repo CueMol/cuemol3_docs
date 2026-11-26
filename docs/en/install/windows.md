@@ -1,4 +1,4 @@
-<!-- source: ja/install/windows.md @ 6cacee7 -->
+<!-- source: ja/install/windows.md @ c730ead -->
 
 # Installing on Windows
 
@@ -21,7 +21,7 @@ Target: **Windows (x64)**. The release asset is `CueMol3-<version>-Windows-x64-S
 1. Welcome page
 2. Choose the install location
 3. Run the installation (the program is installed for all users in `C:\Program Files\CueMol3\`,
-   so a UAC elevation prompt is displayed)
+   so a UAC elevation prompt is displayed).
 4. Finish
 
 After installation, shortcuts are created in the Start menu and on the desktop, and CueMol3 is registered in
@@ -52,6 +52,11 @@ For builds that do not include them, specify the paths in Settings.
 Umbreon, which is used for ray tracing, is built into the library, so it is not among the bundled tools.
 
 → [Configuring external tools](external-tools.md)
+
+## Updating
+
+From 2.4.2.550 on, a new release can be installed from within the app
+(→ [Updating](update.md)).
 
 ## Uninstalling
 

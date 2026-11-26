@@ -1,4 +1,4 @@
-<!-- source: ja/install/external-tools.md @ 8d54764 -->
+<!-- source: ja/install/external-tools.md @ c730ead -->
 
 # Configuring external tools
 
@@ -37,7 +37,7 @@ Tools used by the rendering window.
 | POV-Ray Executable | POV-Ray itself | Ray tracing with the POV-Ray backend |
 | POV-Ray Include Directory | Directory of the standard POV-Ray include files | Same as above |
 | blendpng Executable | blendpng | Layer compositing of rendering results with the POV-Ray backend |
-| ffmpeg Executable | ffmpeg | Encoding of movie output. Required regardless of the backend |
+| ffmpeg Executable | ffmpeg | Encoding of movie output. Required regardless of the backend. |
 
 ### Tools &gt; APBS / PDB2PQR
 

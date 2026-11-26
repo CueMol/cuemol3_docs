@@ -1,4 +1,4 @@
-<!-- source: ja/ui/mouse-input.md @ 6cacee7 -->
+<!-- source: ja/ui/mouse-input.md @ c730ead -->
 
 # Mouse and trackpad input
 
@@ -27,9 +27,9 @@ In CueMol3, specify which to use with **Pointing device** in **Settings &gt; Inp
 
 | Setting | Behavior |
 |---|---|
-| **Auto-detect** (default) | Automatically determines whether the device is a mouse or a trackpad from the characteristics of the scrolling |
-| **Mouse** | The wheel zooms |
-| **Mac trackpad** | Two-finger scroll translates; pinch zooms |
+| **Auto-detect** (default) | Automatically determines whether the device is a mouse or a trackpad from the characteristics of the scrolling. |
+| **Mouse** | The wheel zooms. |
+| **Mac trackpad** | Two-finger scroll translates; pinch zooms. |
 
 !!! warning "Auto-detection is an estimate"
     The OS provides no way to know the device type, so Auto-detect is an estimate based on the characteristics
@@ -128,13 +128,13 @@ Three switches in **Settings &gt; Input &gt; Mouse &amp; Navigation** control th
 
 | Setting | Behavior when turned OFF |
 |---|---|
-| GPU Picking | Reverts to the previous atom-position hit-testing. The change takes effect immediately |
-| Hover Info | The chip is no longer shown, and the hit-testing that follows the pointer stops altogether |
-| Hover Highlight | Only the highlight is no longer shown. It works when both GPU Picking and Hover Info are ON |
+| GPU Picking | Reverts to the previous atom-position hit-testing. The change is applied immediately. |
+| Hover Info | The chip is no longer shown, and the hit-testing that follows the pointer stops altogether. |
+| Hover Highlight | Only the highlight is no longer shown. It works when both GPU Picking and Hover Info are ON. |
 
 ## Controlling the view numerically
 
-To adjust the view precisely, use the **View &gt; View** panel in the left side panel,
+To adjust the view precisely, use the **Explorer &gt; View** panel in the left side panel,
 which lets you specify rotation, translation, zoom and slab numerically (→ [Side panels](side-panels.md)).
 
 ## Operations for selection and measurement
@@ -147,4 +147,4 @@ When a tool other than Navigate is selected in the tool palette, the meaning of 
 
 ---
 
-*Verified against: CueMol3 2.3.20.539*
+*Verified against: CueMol3 3.0.2.560*

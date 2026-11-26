@@ -1,4 +1,4 @@
-<!-- source: ja/ui/toolbar-tools.md @ 6cacee7 -->
+<!-- source: ja/ui/toolbar-tools.md @ c730ead -->
 
 # Toolbar and tool palette
 
@@ -17,11 +17,11 @@ CueMol3 has two rows of buttons with different roles.
 |---|---|---|
 | New Tab | Creates a new tab. | File &gt; New Tab |
 | Open File | Opens a file. | File &gt; Open File... |
-| Save As | Saves an Object to a file. | File &gt; Save File As... |
+| Save File As | Saves an Object to a file. | File &gt; Save File As... |
 | Open Scene | Opens a scene file. | File &gt; Open Scene... |
 | Reload Scene | Reloads the scene. | File &gt; Reload Scene |
 | Save Scene | Saves the scene. | File &gt; Save Scene |
-| Get PDB | Fetches a structure by PDB ID. | File &gt; Get PDB... |
+| Get PDB | Fetches a structure by PDB ID or EMDB ID. | File &gt; Get PDB... |
 | Render | Opens the rendering window. | Rendering &gt; Image / Movie rendering... |
 | Undo | Undoes the last operation. | Edit &gt; Undo |
 | Redo | Redoes an undone operation. | Edit &gt; Redo |
@@ -97,4 +97,4 @@ and each row can be deleted. Even when several bonds are deleted together, a sin
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.3.565*
