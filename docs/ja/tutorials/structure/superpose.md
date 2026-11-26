@@ -1,4 +1,4 @@
-# 2 つの構造の重ね合わせと比較
+# 構造の重ね合わせと比較
 
 同じタンパク質の 2 つの結晶構造を重ね合わせ、どの部分がどれだけ動いているかを比べる手順を追います。
 題材にはアデニル酸キナーゼを使います。基質の無い開いた構造 (PDB ID: **4AKE**) と、
@@ -10,10 +10,7 @@
     - **学ぶこと**: LSQ による重ね合わせ、重ね合わせに使う原子の選び方と RMSD の読み方、Paint によるドメインの塗り分け
     - **前提**: 基本操作コースの [Renderer の着色](../basic/coloring.md) まで
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。CORE で重ね合わせた 4AKE (ドメインを塗り分け) と 1AKE (水色) -->
+![完成イメージ。CORE で重ね合わせた 4AKE (ドメインを塗り分け) と 1AKE (水色)](../../../assets/images/tutorials/structure/superpose/4-domains.webp){ .on-glb }
 
 ## 1. 2 つの構造を読み込む
 
@@ -44,6 +41,9 @@ ballstick で表示しておきます。
 2. **Reference** の Molecule で `1ake` を選び、Selection に `chain A and name CA` を指定します。
 3. **Moving** の Molecule で `4ake` を選び、Selection に `chain A and name CA` を指定します。
 4. **OK** を押すと、4AKE が 1AKE に重なるように移動します。
+
+    ![LSQ を選び、両方の Selection を指定した Molecular superposition ダイアログ](../../../assets/images/tutorials/structure/superpose/2-lsq-all.webp){ width="420" .on-glb }
+
 
 LSQ は、2 つの Selection で選んだ原子を順に対応づけて、ずれの二乗和が最小になるように重ね合わせます
 (2 つの構造は配列と残基番号が同じなので、Cα が 214 個ずつ、同じ順に並びます)。
@@ -94,7 +94,9 @@ LSQ は、2 つの Selection で選んだ原子を順に対応づけて、ずれ
 
 4AKE の NMP が緑、LID が朱色になります (→ [Renderer の着色](../basic/coloring.md))。
 
-<!-- TODO(screenshot): CORE で重ね合わせ、ドメインを塗り分けた図 -->
+![Paint の表の先頭に 2 行を追加したところ](../../../assets/images/tutorials/structure/superpose/4-paint.webp){ width="310" .on-glb }
+
+![CORE で重ね合わせ、ドメインを塗り分けた図。朱色の LID と緑の NMP が、閉じた 1AKE (水色) から離れている](../../../assets/images/tutorials/structure/superpose/4-domains.webp){ .on-glb }
 
 分子を回して、ドメインの動きを確かめてください。
 

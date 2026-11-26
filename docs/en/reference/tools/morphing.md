@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/morphing.md @ 8d54764 -->
+<!-- source: ja/reference/tools/morphing.md @ dcf70c1 -->
 
 # Morphing structural changes (Mol morphing animation)
 

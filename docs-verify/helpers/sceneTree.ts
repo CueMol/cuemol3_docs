@@ -53,5 +53,33 @@ export async function toggleRowVisibility(window: Page, name: string): Promise<v
 const TOOLBAR_INDEX = { add: 0, focus: 1, delete: 2, property: 3 } as const;
 
 export async function clickSceneToolbar(window: Page, which: keyof typeof TOOLBAR_INDEX): Promise<void> {
-    await window.locator('.section-action-btn').nth(TOOLBAR_INDEX[which]).click();
+    await sceneToolbarButtons(window).nth(TOOLBAR_INDEX[which]).click();
+}
+
+/**
+ * The Scene pane's own toolbar buttons. Other panes (Camera, Styles...) use
+ * the same class, so the lookup is scoped to the first pane (Scene).
+ */
+export function sceneToolbarButtons(window: Page): Locator {
+    return window.locator('.sp-pane').first().locator('.section-action-btn');
+}
+
+/**
+ * Collapse the Explorer panes below Scene (Camera / Color / View) so the
+ * scene tree gets the column's height. Returns the headers it clicked, to
+ * open them again.
+ */
+export async function collapseOtherPanes(window: Page): Promise<Locator[]> {
+    const panes = window.locator('.sp-pane');
+    const n = await panes.count();
+    const clicked: Locator[] = [];
+    for (let i = 1; i < n; i++) {
+        const pane = panes.nth(i);
+        if ((await pane.locator('.sp-pane-fill').count()) === 0) continue;
+        const header = pane.locator('.sp-section-header.collapsible').first();
+        if ((await header.count()) === 0) continue;
+        await header.click();
+        clicked.push(header);
+    }
+    return clicked;
 }

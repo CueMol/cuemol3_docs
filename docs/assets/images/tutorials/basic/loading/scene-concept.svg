@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 348" width="760" height="348" font-family="-apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title>Scene / Object / Renderer / View</title>
+  <rect x="0" y="0" width="760" height="348" fill="#ffffff"/>
+
+  <!-- CueMol -->
+  <rect x="12" y="12" width="736" height="252" rx="16" fill="#f0ffff" stroke="#269999" stroke-width="2"/>
+  <text x="30" y="40" font-size="17" font-weight="700" fill="#177575">CueMol</text>
+
+  <!-- Scene 1 -->
+  <rect x="30" y="54" width="440" height="192" rx="12" fill="#ffffff" stroke="#269999" stroke-width="1.6"/>
+  <text x="46" y="78" font-size="15" font-weight="700" fill="#177575">Scene</text>
+
+  <!-- Object MolCoord (scene 1) -->
+  <rect x="46" y="90" width="196" height="140" rx="10" fill="#fff6e5" stroke="#E69F00" stroke-width="1.6"/>
+  <text x="60" y="112" font-size="13" font-weight="700" fill="#7a5200">Object</text>
+  <text x="110" y="112" font-size="12" fill="#7a5200">(MolCoord)</text>
+  <rect x="62" y="124" width="164" height="30" rx="6" fill="#269999"/>
+  <text x="144" y="144" font-size="13" fill="#ffffff" text-anchor="middle">Renderer: cartoon</text>
+  <rect x="62" y="164" width="164" height="30" rx="6" fill="#269999"/>
+  <text x="144" y="184" font-size="13" fill="#ffffff" text-anchor="middle">Renderer: ballstick</text>
+
+  <!-- Object DensityMap (scene 1) -->
+  <rect x="258" y="90" width="196" height="140" rx="10" fill="#fff6e5" stroke="#E69F00" stroke-width="1.6"/>
+  <text x="272" y="112" font-size="13" font-weight="700" fill="#7a5200">Object</text>
+  <text x="322" y="112" font-size="12" fill="#7a5200">(DensityMap)</text>
+  <rect x="274" y="124" width="164" height="30" rx="6" fill="#269999"/>
+  <text x="356" y="144" font-size="13" fill="#ffffff" text-anchor="middle">Renderer: contour</text>
+
+  <!-- Scene 2 -->
+  <rect x="490" y="54" width="240" height="192" rx="12" fill="#ffffff" stroke="#269999" stroke-width="1.6"/>
+  <text x="506" y="78" font-size="15" font-weight="700" fill="#177575">Scene</text>
+  <rect x="506" y="90" width="208" height="140" rx="10" fill="#fff6e5" stroke="#E69F00" stroke-width="1.6"/>
+  <text x="520" y="112" font-size="13" font-weight="700" fill="#7a5200">Object</text>
+  <text x="570" y="112" font-size="12" fill="#7a5200">(MolCoord)</text>
+  <rect x="522" y="124" width="176" height="30" rx="6" fill="#269999"/>
+  <text x="610" y="144" font-size="13" fill="#ffffff" text-anchor="middle">Renderer: ribbon</text>
+  <rect x="522" y="164" width="176" height="30" rx="6" fill="#269999"/>
+  <text x="610" y="184" font-size="13" fill="#ffffff" text-anchor="middle">Renderer: simple</text>
+
+  <!-- Connections Scene -> View -->
+  <g stroke="#404046" stroke-width="1.6" fill="none">
+    <path d="M 180 246 L 140 296"/>
+    <path d="M 320 246 L 360 296"/>
+    <path d="M 610 246 L 610 296"/>
+  </g>
+
+  <!-- Views -->
+  <g font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <rect x="70" y="296" width="140" height="40" rx="8" fill="#404046"/>
+    <text x="140" y="321">View</text>
+    <rect x="290" y="296" width="140" height="40" rx="8" fill="#404046"/>
+    <text x="360" y="321">View</text>
+    <rect x="540" y="296" width="140" height="40" rx="8" fill="#404046"/>
+    <text x="610" y="321">View</text>
+  </g>
+</svg>

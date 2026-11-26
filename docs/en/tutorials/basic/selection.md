@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/selection.md @ c730ead -->
+<!-- source: ja/tutorials/basic/selection.md @ dcf70c1 -->
 
 # Selecting part of a molecule
 
@@ -7,6 +7,11 @@ style of only that part or to color it), first **select** that part and then
 apply the operation. There are several ways to make a selection, and this page
 practices them together.
 It uses `lysozyme` from the previous page ([Loading and displaying a structure](loading.md)).
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (`lysozyme`)
+    - **What you learn**: Selecting by double-click, the context menu, the Molecular structure panel, the selection builder and selection expressions
+    - **Prerequisites**: [Loading and displaying a structure](loading.md)
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.

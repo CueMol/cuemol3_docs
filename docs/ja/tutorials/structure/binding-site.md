@@ -10,10 +10,7 @@
     - **学ぶこと**: 選択式による周辺残基の選択 (`around` / `byres`)、Interaction ツールによる水素結合の候補の表示、原子のラベルの書式
     - **前提**: 基本操作コースの [分子の一部の選択](../basic/selection.md) と [Renderer の追加・削除と設定](../basic/renderers.md)
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。ビオチンと周辺残基の ballstick、水素結合の候補の点線、残基名のラベル -->
+![完成イメージ。ビオチンと周辺残基の ballstick、水素結合の候補の点線、残基名のラベル](../../../assets/images/tutorials/structure/binding-site/6-labeled.webp){ .on-glb }
 
 ## 1. 構造を読み込む
 
@@ -29,6 +26,9 @@
 3. **Selection** にチェックを入れ、**Atoms** に `resn BTN` を入力します。
    残基名が BTN の原子 (ビオチンの 16 原子) が対象になります。
 4. **Create** を押すと、ビオチンが ballstick で表示されます (Renderer 名は `ballstick1`)。
+
+    ![Selection に resn BTN を入力した New Renderer ダイアログ](../../../assets/images/tutorials/structure/binding-site/2-new-renderer.webp){ width="480" .on-glb }
+
 5. シーンツリーで `ballstick1` の行を選び、パネル上部の **Focus** を押します。
    ビオチンが画面に収まるように視点が移動します。
 
@@ -66,6 +66,9 @@ cartoon を半透明にすると、シートの位置を残したまま内側が
 1. シーンツリーで `cartoon1` を選びます。
 2. プロパティインスペクタの **Basic settings** セクションで **Opacity** を 0.3 前後に下げます。
 
+    ![インスペクタの Opacity](../../../assets/images/tutorials/structure/binding-site/4-opacity.webp){ width="316" .on-glb }
+
+
 分子をドラッグして回し、ビオチンと周辺の残基が重ならずに見える向きを探してください。
 
 ## 5. 水素結合の候補を表示する
@@ -79,6 +82,9 @@ cartoon を半透明にすると、シートの位置を残したまま内側が
 3. **Hydrogen bond (N, O) only** を ON にします。炭素原子が関わる組が除かれます。
 4. **Min distance (A)** (2.5)・**Max distance (A)** (3.5)・**Max labels** (30) は既定のままにします。
 5. **OK** を押します。
+
+    ![設定を終えた Interaction analysis ダイアログ](../../../assets/images/tutorials/structure/binding-site/5-interaction.webp){ width="400" .on-glb }
+
 
 条件に合う原子の組が、点線と距離のラベルで表示されます。1STP では次の 8 組です。
 
@@ -114,11 +120,14 @@ cartoon を半透明にすると、シートの位置を残したまま内側が
 2. シーンツリーに、ラベル用の `(*namelabel)` の行が作られています。この行を選びます。
 3. プロパティインスペクタの **Name label** セクションで、**Format** に `{resn}{resi}` を入力します。
 
+    ![インスペクタの Format](../../../assets/images/tutorials/structure/binding-site/6-format.webp){ width="316" .on-glb }
+
+
 ラベルが `ASN23` のような短い形に変わります。書式に使える項目は
 [namelabel (名前ラベル)](../../reference/renderers/namelabel.md) を参照してください。
 ラベルが ballstick に隠れる場合は、同じセクションの **Label on top** を ON にします。
 
-<!-- TODO(screenshot): ラベルを付けた結合部位 -->
+![ラベルを付けた結合部位](../../../assets/images/tutorials/structure/binding-site/6-labeled.webp){ .on-glb }
 
 ## 同じことをコマンドで
 

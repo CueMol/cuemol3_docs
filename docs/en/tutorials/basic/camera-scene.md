@@ -1,9 +1,14 @@
-<!-- source: ja/tutorials/basic/camera-scene.md @ c730ead -->
+<!-- source: ja/tutorials/basic/camera-scene.md @ dcf70c1 -->
 
 # Saving the camera and the scene
 
 This page shows how to keep a favorite viewpoint as a **camera**, and how to save the whole working state to a **scene file** (`.qsc`) and resume from it.
 It continues from the previous page ([Coloring Renderers](coloring.md)).
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (`lysozyme`) and 1G59
+    - **What you learn**: Saving viewpoints with cameras, saving and loading scenes, tabs
+    - **Prerequisites**: [Coloring Renderers](coloring.md)
 
 ## 1. Save a viewpoint as a camera
 

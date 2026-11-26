@@ -1,4 +1,4 @@
-<!-- source: ja/ui/bottom-panels/animation.md @ f8502b6 -->
+<!-- source: ja/ui/bottom-panels/animation.md @ dcf70c1 -->
 
 # Animation panel
 

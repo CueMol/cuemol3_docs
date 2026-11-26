@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/structure/surface-elepot.md @ 777582f -->
+<!-- source: ja/tutorials/structure/surface-elepot.md @ dcf70c1 -->
 
 # Coloring a molecular surface by electrostatic potential
 
@@ -6,6 +6,11 @@ This tutorial generates a molecular surface, colors it by the electrostatic pote
 calculated with APBS, and produces a figure showing the charge distribution of the molecule.
 The example is lysozyme (PDB ID: **1QIO**). It is a basic protein, so the
 positively charged regions of its surface stand out clearly.
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (PDB ID: 1QIO)
+    - **What you learn**: Generating a molecular surface, calculating the electrostatic potential with APBS, coloring the surface, overlaying a translucent surface on the cartoon
+    - **Prerequisites**: The basic course up to [Coloring Renderers](../basic/coloring.md)
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.
@@ -95,6 +100,29 @@ For finishing and export, see [Exporting high-resolution images for publication]
 
 <!-- TODO(screenshot): Overlay of a translucent surface and the cartoon -->
 
+## The same with commands
+
+The steps on this page can be written as native-mode commands of the [Console](../../reference/plugins/console/index.md) as follows. Enter them in the Console one line at a time (they can also be run from [tritium_cli](../../reference/plugins/console/cli.md)). To check the arguments of each command, run `help <command>` in the Console (→ [Console command list](../../reference/plugins/console/commands.md)).
+
+```
+# 1. Load the structure
+fetch_pdb 1QIO, mmcif, cartoon
+# 2. Generate the molecular surface
+create_surface 1qio, protein, density=5
+# 3. Calculate the electrostatic potential
+calc_elepot 1qio, protein
+hide pot_1qio/unitcell
+# 4. Color the surface by the electrostatic potential
+set_elepot_coloring sf_1qio/molsurf, pot_1qio, -2, 2
+set sf_1qio/molsurf.ramp_above, true
+# 5. Overlay a translucent surface and the cartoon
+set sf_1qio/molsurf.alpha, 0.5
+```
+
+- When made with commands, the molecular surface Object is named `sf_1qio` and the electrostatic potential map
+  Object is named `pot_1qio`.
+- `ramp_above` corresponds to **By SAS** in the Color panel, and `alpha` to **Opacity** in the inspector.
+
 ## Next steps
 
 - [Exporting high-resolution images for publication](../figures/publication-images.md) — finish this figure by ray tracing
@@ -103,4 +131,4 @@ For finishing and export, see [Exporting high-resolution images for publication]
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.6.577*

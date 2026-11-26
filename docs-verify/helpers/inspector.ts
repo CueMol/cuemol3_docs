@@ -19,10 +19,20 @@ export async function setNumericProperty(
     value: number,
 ): Promise<void> {
     const labelEl = window.getByText(label, { exact: true }).last();
-    if (!(await labelEl.isVisible().catch(() => false))) {
-        await window.getByText(section, { exact: true }).last().click();
-        await labelEl.waitFor({ state: 'visible', timeout: 5_000 });
-    }
+    // The row exists only while its section is open; in a small window it
+    // may be scrolled out of view, which must not be taken for "closed"
+    // (clicking the header would then close the section).
+    const header = window.getByText(section, { exact: true }).last();
+    await header.waitFor({ state: 'visible', timeout: 10_000 });
+    // The inspector may still be settling after the row was opened; open the
+    // section (once per poll) until the row appears.
+    await expect.poll(async () => {
+        if ((await labelEl.count()) > 0) return true;
+        await header.click();
+        await window.waitForTimeout(300);
+        return (await labelEl.count()) > 0;
+    }, { timeout: 10_000 }).toBe(true);
+    await labelEl.scrollIntoViewIfNeeded({ timeout: 5_000 });
     // Snapshot shape: row > (label + reset button) + (Decrement / value / Increment).
     const row = labelEl.locator('xpath=ancestor::*[2]');
     await row.getByRole('button', { name: 'Decrement' }).locator('xpath=following-sibling::*[1]').click();

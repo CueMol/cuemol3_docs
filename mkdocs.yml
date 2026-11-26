@@ -108,15 +108,23 @@ plugins:
                     - Saving the camera and the scene: tutorials/basic/camera-scene.md
                     - Measurement and interaction display: tutorials/basic/measure.md
                 - Figures:
-                    - Making a protein ribbon figure: tutorials/figures/ribbon-figure.md
-                    - Exporting high-resolution images for publication: tutorials/figures/publication-images.md
-                - Reading and comparing structures:
-                    - Coloring a molecular surface by electrostatic potential: tutorials/structure/surface-elepot.md
+                    - Protein ribbon figure: tutorials/figures/ribbon-figure.md
+                    - Images for publication: tutorials/figures/publication-images.md
+                    - Protein-DNA complex: tutorials/figures/protein-dna.md
+                - Structure analysis:
+                    - Ligand binding site: tutorials/structure/binding-site.md
+                    - Surface electrostatics: tutorials/structure/surface-elepot.md
+                    - Superposition and comparison: tutorials/structure/superpose.md
                 - Experimental data:
-                    - Overlaying an electron density map: tutorials/experimental/density-map.md
-                    - Displaying symmetry mates and the unit cell: tutorials/experimental/symmetry.md
+                    - Electron density map: tutorials/experimental/density-map.md
+                    - Symmetry mates and unit cell: tutorials/experimental/symmetry.md
+                    - Cryo-EM map and model: tutorials/experimental/cryoem-map.md
+                - Predicted structures:
+                    - AlphaFold predicted structure: tutorials/prediction/alphafold.md
                 - Animation:
-                    - Making an animation and exporting a movie: tutorials/animation/animation-movie.md
+                    - Animation movie: tutorials/animation/animation-movie.md
+                - Scripting:
+                    - Figures with the ChX console: tutorials/scripting/chx-console.md
             - Reference:
                 - reference/index.md
                 - Selection syntax: reference/selection.md
@@ -280,10 +288,10 @@ nav:
           - タンパク質のリボン図の表示: tutorials/figures/ribbon-figure.md
           - 論文用の画像の書き出し: tutorials/figures/publication-images.md
           - タンパク質-DNA 複合体の表示: tutorials/figures/protein-dna.md
-      - 構造を読む・比較する:
+      - 構造の解析:
           - リガンド結合部位の表示: tutorials/structure/binding-site.md
           - 表面の静電ポテンシャル表示: tutorials/structure/surface-elepot.md
-          - 2 つの構造の重ね合わせと比較: tutorials/structure/superpose.md
+          - 構造の重ね合わせと比較: tutorials/structure/superpose.md
       - 実験データ:
           - 電子密度マップの表示: tutorials/experimental/density-map.md
           - 対称分子・単位格子の表示: tutorials/experimental/symmetry.md

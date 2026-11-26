@@ -1,9 +1,14 @@
-<!-- source: ja/tutorials/basic/measure.md @ c730ead -->
+<!-- source: ja/tutorials/basic/measure.md @ dcf70c1 -->
 
 # Measurement and interaction display
 
 This tutorial shows how to measure distances, angles and dihedral angles between atoms, and how to adjust their display as part of a figure.
 The example is again lysozyme (`lysozyme`, simple display).
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (`lysozyme`)
+    - **What you learn**: Measuring distances, angles and dihedral angles, the atomintr Renderer, styles for measurement display
+    - **Prerequisites**: [Loading and displaying a structure](loading.md)
 
 ## 1. Measure distances
 

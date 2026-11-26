@@ -196,11 +196,15 @@ spec が落ちたとき、原因が**ページの記述が実装と違うこと*
 
 | 対象 | 撮り方 | ページでの見せ方 |
 |---|---|---|
-| 順序付きリストの各ステップ | **操作対象の要素だけ**を切り抜き | ステップ直下に小さく |
+| ダイアログ・メニュー | そのダイアログ・メニューだけを切り抜き | ステップ直下 |
+| パネルの行・ボタン・セレクタなどの部品 | **周りを含めて**撮り、操作対象に枠を描く (下記) | ステップ直下 |
 | 節の始め・操作の結果 | ウィンドウ全景 | 本文中に幅いっぱい |
 
-手順の各ステップには、原則として操作対象の GUI 要素の切り抜きを付ける。
-全景を並べても、どこを操作するのか読者にはわからない。
+手順の各ステップには、原則として操作対象の GUI 要素の図を付ける。全景を並べても、
+どこを操作するのか読者にはわからない。一方で、**部品だけを切り抜くと、それがウィンドウの
+どこにあるのかがわからない** (ユーザー指摘)。部品の図は、それが置かれている場所
+(サイドパネルの列、ツールバー、ウィンドウの一角) ごと撮り、操作対象を `highlight` の
+枠 (Okabe-Ito の朱色) で示す。ダイアログとメニューは単体で意味が通じるので、切り抜きのままでよい。
 
 ### docShot の使い方
 
@@ -220,6 +224,27 @@ await docShot(harness.window, '.../2-toolbar-getpdb', {
 // 複数要素の外接矩形 (ボタンと開いたメニュー、パネルの先頭と末尾のフィールドなど)
 await docShot(harness.window, '.../3-coloring-menu', {
     clip: [window.getByRole('button', { name: 'Coloring' }), menu],
+});
+```
+
+部品を周りごと撮るときは、範囲を `rect` に、操作対象を `highlight` に渡す。範囲は
+次のヘルパーで決める。
+
+```ts
+// サイドパネルの行: アクティビティバー + サイドパネルの上端から、行の少し下まで
+await docShot(window, '.../2-view-zoom', {
+    rect: await sidebarRect(window, viewPaneRowParts(window, 'Zoom')),
+    highlight: viewPaneRowParts(window, 'Zoom'),
+});
+// ツールバーのボタン: ツールバーの左端からボタンの少し右まで
+await docShot(window, '.../2-toolbar-getpdb', {
+    rect: await toolbarRect(window, button),
+    highlight: button,
+});
+// それ以外 (インスペクタ、レンダリングウィンドウなど): 対象の周り margin px
+await docShot(window, '.../4-render-controls', {
+    rect: await aroundBox(window, controls, 120),
+    highlight: controls,
 });
 ```
 
@@ -317,6 +342,9 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 | 数値プロパティが入力できない | DragNumericField。値表示をクリック → `role=spinbutton` に `fill` → Enter。`setNumericProperty()` を使う |
 | レンダリングウィンドウのボタンが見つからない | 別 BrowserWindow (`render.html`)。`app.windows()` を `expect.poll` で待って取得する |
 | `harness.app.process()` が `_object` で TypeError | `close()` 後は取得できない。close の**前**に `const proc = harness.app.process()` |
+| Open File Options などのフォームの欄が `#rend-type` などの id で見つからない | 3.0 系で id が無くなった。h3-kit の `Field` は label と欄が結び付いていないので、行のラベルで探す (`fieldControl(dlg, 'Renderer type')`)。チェックボックスは `checkField()` |
+| Color パネルの Coloring のボタンを押してもメニューが操作できない | macOS では pane のドロップダウンがネイティブメニュー (`popup-menu:show` の IPC)。harness がこれをスタブにしているので、`chooseColoring(app, window, ['Paint coloring', 'Okabe-Ito', 'Sky blue'])` のようにラベルの経路を渡す。ネイティブメニューは撮影できない |
+| 起動の時点で `READY_LINES` の待ちでタイムアウトする | アプリのログの文言が変わった。`DEBUG_E2E=1` で流してログを見て、`support/log.ts` の `READY_LINES` を直す (3.0.6.577 で `nodejs add-on` → `nodejs module`) |
 | シーンツリーの右クリックメニューが操作できない | native Menu なので Playwright からクリックできない。Scene パネルのツールバー Add ボタンが同じ New Renderer フローを開くので代替する (spec にその旨のコメントを残す) |
 | ネイティブの open/save ダイアログでハングする | `expectOpenDialog` / `expectSaveDialog` で応答をキューに積んでから操作する。積み忘れは即エラーになる |
 | 撮影サイズでしか通らない spec を書いてしまう | 座標依存の操作を書かない。最後に `task e2e` (1600x1000) で回帰確認する |
@@ -357,7 +385,11 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 
 ## 次に適用する対象 (未着手)
 
-spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/loading.md`。適用の優先順:
+spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/loading.md`、目的別のチュートリアルの
+`structure/binding-site.md` / `structure/superpose.md` / `prediction/alphafold.md` / `experimental/cryoem-map.md` /
+`figures/protein-dna.md` / `scripting/chx-console.md` (2026-11-26)。ページの手順のうち、ネイティブメニュー
+(右クリックの Change sel など) や視点に依存するクリック (原子のラベル) は、ページの「同じことをコマンドで」の
+コマンドを Console で流して同じ状態にし、`skipped-step` を記録している。適用の優先順:
 
 1. `tutorials/basic/` の残り 5 ページ (selection / renderers / coloring / camera-scene /
    measure)。原子ピック、ダブルクリック選択、`harness.restart()` を使う camera-scene が

@@ -1,9 +1,14 @@
-<!-- source: ja/tutorials/animation/animation-movie.md @ c730ead -->
+<!-- source: ja/tutorials/animation/animation-movie.md @ dcf70c1 -->
 
 # Making an animation and exporting a movie
 
 This tutorial follows the whole process: arranging molecule rotations, camera movements and display switches on a timeline to build an animation, then writing it out as a movie file.
 The first half uses the scene (3UG9) finished in [Making a protein ribbon figure](../figures/ribbon-figure.md), and the morphing in the second half uses two structures of transducin-α (1TND / 1TAG).
+
+!!! abstract "About this tutorial"
+    - **Subject**: The channelrhodopsin (3UG9) scene, transducin-α (1TND / 1TAG)
+    - **What you learn**: Editing the timeline, camera motion, switching the display, morphing, exporting a movie
+    - **Prerequisites**: [Making a protein ribbon figure](../figures/ribbon-figure.md) (uses the scene finished there in the first half)
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.
@@ -132,6 +137,45 @@ The settings for raising quality are shared with still images
 
 <!-- TODO(screenshot): Rendering window in Movie mode (progress and preview) -->
 
+## The same with commands
+
+The steps on this page can be written as native-mode commands of the [Console](../../reference/plugins/console/index.md) as follows. Enter them in the Console one line at a time (they can also be run from [tritium_cli](../../reference/plugins/console/cli.md)). To check the arguments of each command, run `help <command>` in the Console (→ [Console command list](../../reference/plugins/console/commands.md)).
+
+```
+# 3. Rotate the molecule (one turn in 5 seconds)
+add_anim spin, name=spin1
+set_anim_prop spin1, angle, 360
+set_anim_prop spin1, axis, "0 1 0"
+set_anim_time spin1, 0, 5000
+# 4. Play back and check
+animate play
+# 5. Add a camera motion (adjust the view before saving each one)
+save_camera start
+save_camera end
+set_anim_options startCamera=start
+add_anim camera, name=cam1
+set_anim_prop cam1, endcam, end
+# 6. Add a display switch
+add_anim show, name=show1
+set_anim_prop show1, rend, 3ug9/ballstick1
+# 7. Add morphing
+create_scene
+fetch_pdb 1TND, mmcif, trace, selection="c; A"
+fetch_pdb 1TAG, mmcif, trace
+superpose 1tag, 1tnd, refSel="c; A", algo=SSM
+convert_to_morph 1tnd
+add_morph_frame 1tnd, fromObjId=1tag
+hide 1tag
+add_anim mol, name=morph1
+set_anim_prop morph1, mol, 1tnd
+animate play
+# 8. Export a movie (GUI only)
+```
+
+- There is no command for step 2 (opening the Animation panel). `list_anims` lists the elements.
+- `add_anim` adds the element at the end of the timeline (after the previous element).
+- Enclose selection expressions that contain `;` (`c; A`) in quotes.
+
 ## Next steps
 
 - [Animation](../../reference/animation/index.md) — element types and common properties
@@ -140,4 +184,4 @@ The settings for raising quality are shared with still images
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.6.577*

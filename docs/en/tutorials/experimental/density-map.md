@@ -1,9 +1,14 @@
-<!-- source: ja/tutorials/experimental/density-map.md @ c730ead -->
+<!-- source: ja/tutorials/experimental/density-map.md @ dcf70c1 -->
 
-# Overlaying an electron density map
+# Displaying an electron density map
 
 This tutorial shows how to overlay an electron density map on an X-ray crystal structure and check how the model fits the density.
 The example is the crystal structure of lysozyme (PDB ID: **1QIO**); the 2Fo-Fc map and the Fo-Fc map are downloaded from the network together with the coordinates.
+
+!!! abstract "About this tutorial"
+    - **Subject**: The 2Fo-Fc / Fo-Fc maps of lysozyme (PDB ID: 1QIO)
+    - **What you learn**: Fetching maps with Get PDB, adjusting the level and range in the Density map panel, checking a region of interest
+    - **Prerequisites**: [Loading and displaying a structure](../basic/loading.md) in the basic course
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.
@@ -80,6 +85,32 @@ To see only the green and red Fo-Fc meshes, close the eye icon of
 A figure containing a density map can be exported in the same way as an ordinary scene
 (→ [Exporting high-resolution images for publication](../figures/publication-images.md)).
 
+## The same with commands
+
+The steps on this page can be written as native-mode commands of the [Console](../../reference/plugins/console/index.md) as follows. Enter them in the Console one line at a time (they can also be run from [tritium_cli](../../reference/plugins/console/cli.md)). To check the arguments of each command, run `help <command>` in the Console (→ [Console command list](../../reference/plugins/console/commands.md)).
+
+```
+# 1. Fetch the coordinates and the density maps together
+fetch_pdb 1QIO, mmcif, simple
+fetch_map 1QIO, 2fofc
+fetch_map 1QIO, fofc
+# 2. Check the display (list the map Renderers and their levels)
+list_map_contours
+# 3. Adjust the level and range
+set_map_contour 1qio_2fofc/contour1, level=1.5, alpha=0.6
+# 4. Focus on a region of interest (the active-site Glu35 and Asp52)
+zoom 1qio, "A.35,52.*"
+set_map_contour 1qio_*/*, extent=10
+recenter_map 1qio_*/*
+set_view slab=8
+hide 1qio_2fofc
+# 5. Finish as a figure (→ Exporting high-resolution images for publication)
+```
+
+- `1qio_*/*` is a wildcard that specifies the contour Renderers (three of them) of the two map Objects at once.
+- The `alpha` of `set_map_contour` is the opacity (0 to 1) that corresponds to **Transp** in the Density map panel.
+- Enclose selection expressions that contain commas (`A.35,52.*`) in quotes.
+
 ## Next steps
 
 - [Displaying symmetry mates and the unit cell](symmetry.md) — look at the crystal packing of the same 1QIO
@@ -88,4 +119,4 @@ A figure containing a density map can be exported in the same way as an ordinary
 
 ---
 
-*Verified against: CueMol3 3.0.5.576*
+*Verified against: CueMol3 3.0.6.577*

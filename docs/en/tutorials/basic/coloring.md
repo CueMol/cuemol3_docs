@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/coloring.md @ c730ead -->
+<!-- source: ja/tutorials/basic/coloring.md @ dcf70c1 -->
 
 # Coloring Renderers
 
@@ -6,6 +6,11 @@ The color of a Renderer is changed in the **Color panel**, which handles only th
 Coloring part of the settings. This page tries the main Coloring types in turn,
 using `lysozyme` (simple + ballstick + ribbon) and `1G59` (trace) from the
 previous page ([Adding, removing and configuring Renderers](renderers.md)).
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (`lysozyme`) and 1G59
+    - **What you learn**: The Color panel, coloring by CPK / B-factor / Rainbow / Paint
+    - **Prerequisites**: [Adding, removing and configuring Renderers](renderers.md)
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.

@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/loading.md @ c730ead -->
+<!-- source: ja/tutorials/basic/loading.md @ dcf70c1 -->
 
 # Loading and displaying a structure
 
@@ -7,6 +7,11 @@ This page covers loading and displaying a molecular structure, and the
 The example is the 1.2 Å resolution crystal structure of lysozyme (PDB ID: **1QIO**).
 
 The pages of the basic course carry over the state of the previous page when followed in order.
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (PDB ID: 1QIO), and also 1G59
+    - **What you learn**: Loading structures, manipulating the view, the concepts of Scene / Object / Renderer, the scene tree
+    - **Prerequisites**: Being able to start CueMol3 (→ [Installation](../../install/index.md))
 
 ## 1. Load a structure
 
@@ -94,7 +99,7 @@ Look at the loaded molecule from various directions.
 3. In the **Explorer &gt; View** panel in the left side panel, click the **Zoom** value under.
    **Zoom / Slab**, enter `40`, and press ++enter++. Zoom is set to 40.
 
-    ![Zoom in the View panel](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="213" }
+    ![Zoom in the View panel](../../../assets/images/tutorials/basic/loading/2-view-zoom.webp){ width="304" .on-glb }
 
 Zoom is the height (Å) of the range shown in the molecular view. The smaller the value,
 the larger the molecule appears.
@@ -111,7 +116,7 @@ and the value returns to 0 after the operation. **Translation** (TraX / TraY / T
 **Zoom / Slab** (Zoom, Slab, Dist, Å) values are **absolute**: the values of the current view
 are displayed as they are.
 
-![View panel. Rotation has returned to 0 even after rotating, and Zoom keeps the entered 40](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="237" .on-glb }
+![View panel. Rotation has returned to 0 even after rotating, and Zoom keeps the entered 40](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="318" .on-glb }
 
 For the full list of operations, including translation and slab (the range displayed by clipping
 the near and far sides), see [Mouse and trackpad input](../../ui/mouse-input.md); for each
@@ -192,7 +197,7 @@ View
 :   The screen that shows a scene (the molecular view). Multiple Views can also be
     connected to one scene (→ New Tab in the [File menu](../../menu/file.md)).
 
-![Relationship between Scene / Object / Renderer / View](../../../assets/images/tutorials/basic/loading/scene-concept.png){ .on-glb }
+![Relationship between Scene / Object / Renderer / View](../../../assets/images/tutorials/basic/loading/scene-concept.svg){ .on-glb }
 
 Think of a scene as the whole that contains multiple Objects and the Renderers attached to them.
 
@@ -213,8 +218,11 @@ the list of Renderers attached to that Object. The current tree reads as follows
 - `(*namelabel)` — The Renderer for labels, created when an atom was clicked to show its name in §2.
   The row remains even after the label is hidden.
 
-**Camera** and **Styles** at the bottom are the places where saved views and styles are kept
-(→ [Saving the camera and the scene](camera-scene.md)).
+![Scene tree (lysozyme / 1g59 and their Renderers)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="304" .on-glb }
+
+The **Camera** panel below the scene tree is where saved views are kept
+(→ [Saving the camera and the scene](camera-scene.md)). Styles are handled in **Styles** on the activity bar
+(→ [Side panels](../../ui/side-panels.md#styles)).
 
 ### Eye icons and buttons at the top of the panel
 
@@ -231,8 +239,6 @@ the list of Renderers attached to that Object. The current tree reads as follows
 
 Right-clicking the scene row lets you change the background color from **Background color**.
 
-![Scene tree (lysozyme / 1g59 and their Renderers)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="253" .on-glb }
-
 ## Next steps
 
 - [Selecting part of a molecule](selection.md) — How to choose what to operate on
@@ -240,4 +246,4 @@ Right-clicking the scene row lets you change the background color from **Backgro
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.6.577*

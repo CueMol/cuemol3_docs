@@ -10,10 +10,7 @@ TBP は馬の鞍のような形で DNA の副溝側に乗り、DNA を大きく�
     - **学ぶこと**: nucl による DNA の表示、Base type の切り替え、Paint による配列の塗り分け、`bysidech` による側鎖の表示
     - **前提**: 基本操作コースの [Renderer の着色](../basic/coloring.md) まで
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。TBP (cartoon) と、TATA ボックスを朱色にした DNA (nucl) -->
+![完成イメージ。TBP (cartoon) と、TATA ボックスを朱色にした DNA (nucl)](../../../assets/images/tutorials/figures/protein-dna/5-complex.webp){ .on-glb }
 
 ## 1. 構造を読み込む
 
@@ -33,6 +30,8 @@ cartoon はタンパク質の主鎖を描く Renderer です。核酸には、�
 2. **Renderer type** から **nucl** を選び、**Selection** にチェックを入れて **Atoms** に `chain C` を入力します。
 3. **Create** を押します。
 
+    ![nucl を選び、Atoms に chain C を入力した New Renderer ダイアログ](../../../assets/images/tutorials/figures/protein-dna/2-new-renderer.webp){ width="480" .on-glb }
+
 DNA の主鎖がチューブで、塩基がスティックで表示されます。塩基対を作っている 2 つの塩基は、
 1 本のスティックでつながります。
 
@@ -40,6 +39,8 @@ DNA の主鎖がチューブで、塩基がスティックで表示されます�
 
 1. シーンツリーで `nucl1` を選びます。
 2. プロパティインスペクタの **Nucleic acid** セクションで、**Base type** を **detail1** にします。
+
+    ![インスペクタの Base type](../../../assets/images/tutorials/figures/protein-dna/3-base-type.webp){ width="316" .on-glb }
 
 塩基が板状の形になり、塩基の重なり (スタッキング) が見やすくなります。
 ほかの形 (simple1 / detail2 / None) も試してみてください。
@@ -52,6 +53,8 @@ DNA を別の色にし、TATA ボックスをさらに目立つ色にします�
 1. 左サイドパネルの **Explorer &gt; Color** パネルを開き、上部で `1ytb/nucl1` を選びます。
 2. Coloring の種類から **Paint coloring** &gt; **Okabe-Ito** &gt; **Sky blue** を選びます。
 3. 表の一番上に行を追加し、選択式に `C.4:10,20:26.*`、色に Okabe-Ito の **Vermillion** (`#D55E00`) を指定します。
+
+    ![Paint の表の先頭に TATA ボックスの行を追加したところ](../../../assets/images/tutorials/figures/protein-dna/4-paint.webp){ width="310" .on-glb }
 
 DNA が水色になり、TATA ボックス (塩基 4〜10 の `TATAAAA` と、それと対を作る 20〜26) が朱色になります
 (→ [Renderer の着色](../basic/coloring.md))。
@@ -70,7 +73,7 @@ TBP は、TATA ボックスの両端付近で 2 つずつ、計 4 つのフェ�
 分子を回して、DNA の曲がり方と、Phe の側鎖が塩基の間に入り込んでいる様子を確かめてください。
 TBP の β シートが DNA の副溝側に広く接し、DNA が TBP から離れる向きに曲がっているのがわかります。
 
-<!-- TODO(screenshot): Phe の側鎖が DNA に入り込む部分の拡大 -->
+![TBP と DNA の複合体。DNA が TATA ボックス (朱色) の位置で大きく曲がっている](../../../assets/images/tutorials/figures/protein-dna/5-complex.webp){ .on-glb }
 
 ## 同じことをコマンドで
 

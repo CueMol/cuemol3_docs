@@ -16,10 +16,12 @@ import { test, expect } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { setupLoadingPage, LYSOZYME, SECOND_OBJ } from '../../fixtures/course';
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
-import { expectRow, sceneRow } from '../../helpers/sceneTree';
+import { collapseOtherPanes, expectRow, sceneRow, sceneToolbarButtons } from '../../helpers/sceneTree';
 import { enterViewValue, setViewValue, viewPaneRowParts } from '../../helpers/viewPane';
 import { clickAtomNearCenter, rotateView, zoomView } from '../../helpers/molView';
-import { docShot } from '../../helpers/docShot';
+import { docShot, sidebarRect } from '../../helpers/docShot';
+import { fieldControl } from '../../helpers/form';
+import { showBottomTab } from '../../helpers/bottomPanel';
 
 const SHOT = 'tutorials/basic/loading';
 
@@ -57,9 +59,9 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
                 await expect(dlg.locator('.fod-file-name')).toHaveText('1qio.cif');
                 await expect(dlg.locator('.fod-file-format')).toHaveText('mmCIF');
                 // 「Renderer name は選んだ種類から自動で決まります (simple1)」
-                await expect(dlg.locator('#rend-name')).toHaveValue('simple1');
+                await expect(fieldControl(dlg, 'Renderer name')).toHaveValue('simple1');
                 // 「Renderer type のリストの先頭には Presets というグループがあります」
-                await expect(dlg.locator('#rend-type optgroup[label="Presets"]')).toHaveCount(1);
+                await expect(fieldControl(dlg, 'Renderer type').locator('optgroup[label="Presets"]')).toHaveCount(1);
                 // 「<形式>-specific options ... 既定のままなら (defaults) と表示されます」
                 await expect(dlg.locator('.fod-collapsible-label')).toHaveText('mmCIF-specific options');
                 await expect(dlg.locator('.fod-collapsible-hint')).toHaveText('(defaults)');
@@ -89,6 +91,8 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         // "Molecule [lysozyme], A TRP 63 CH2, O: 1.00 B: 12.58 Pos: (...)"
         await expect(harness.window.locator('.status-left'))
             .toContainText(/O: [\d.]+ B: [\d.]+ Pos: \(/);
+        // Output is not the front tab (Console is); bring it forward to read it.
+        await showBottomTab(harness.window, 'Output');
         await expect(harness.window.locator('.bottom-panel-content pre[data-select-scope]'))
             .toContainText(`Molecule [${LYSOZYME}]`);
         await docShot(harness.window, `${SHOT}/2-atom-label`, {
@@ -117,13 +121,16 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         // 「3. Explorer > View パネルで Zoom の値をクリックし、40 と入力して Enter」
         // (Zoom は絶対値なので入力した値がそのまま残る)
         await setViewValue(harness.window, 'Zoom', 40);
+        // Shown inside the side panel, with the row framed, so the reader
+        // sees where the row is.
         await docShot(harness.window, `${SHOT}/2-view-zoom`, {
-            clip: viewPaneRowParts(harness.window, 'Zoom'),
-            pad: 0,
+            rect: await sidebarRect(harness.window, viewPaneRowParts(harness.window, 'Zoom')),
+            highlight: viewPaneRowParts(harness.window, 'Zoom'),
         });
         // The pane as a whole, for the paragraph about how its rows work.
         await docShot(harness.window, `${SHOT}/2-view-pane`, {
-            clip: harness.window.locator('.view-pane'),
+            rect: await sidebarRect(harness.window, harness.window.locator('.view-pane'), 16),
+            highlight: harness.window.locator('.view-pane'),
         });
 
         test.info().annotations.push({
@@ -159,19 +166,22 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         }
         // 「名前のない Renderer は括弧と型だけが表示されます」
         await expect(harness.window.getByText('(*selection)').first()).toBeVisible();
-        // 「いちばん下の Camera と Styles は…」
+        // 「シーンツリーの下の Camera パネルは、保存した視点の置き場所です」(Styles
+        //   left the tree for the Styles view in 3.0.2.560)
         await expect(harness.window.getByText('Camera', { exact: true })).toBeVisible();
-        await expect(harness.window.getByText('Styles', { exact: true })).toBeVisible();
         // 「パネル上部には 4 つのボタンがあります」(Add / Focus / Delete / Property)
-        await expect(harness.window.locator('.section-action-btn')).toHaveCount(4);
+        await expect(sceneToolbarButtons(harness.window)).toHaveCount(4);
 
         // Header (it carries the Delete button the section mentions) down to
         // the last renderer row; Camera / Styles are not part of this section.
+        // The whole tree, from the scene row down: at the shot window size
+        // the Scene pane is short, so the panes below it are collapsed for
+        // the picture and opened again afterwards. No frame: the figure is
+        // the tree itself.
+        const collapsed = await collapseOtherPanes(harness.window);
         await docShot(harness.window, `${SHOT}/5-scene-tree`, {
-            clip: [
-                harness.window.locator('.sp-pane').first().locator('.sp-section-header'),
-                harness.window.getByText('(*selection)').last(),
-            ],
+            rect: await sidebarRect(harness.window, harness.window.getByText('(*selection)').last(), 40),
         });
+        for (const header of collapsed) await header.click();
     });
 });

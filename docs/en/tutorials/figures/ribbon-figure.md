@@ -1,10 +1,15 @@
-<!-- source: ja/tutorials/figures/ribbon-figure.md @ c730ead -->
+<!-- source: ja/tutorials/figures/ribbon-figure.md @ dcf70c1 -->
 
 # Making a protein ribbon figure
 
 This tutorial follows the whole process of building a single figure: display a protein as a cartoon (a so-called ribbon diagram), overlay a ligand as a ballstick, and finish the figure by adjusting colors and outlines. The example is the crystal structure of channelrhodopsin (PDB ID: **3UG9**).
 
 This tutorial assumes you have gone through the [Quick tour](../../getting-started/quick-tour.md) (startup, loading, and basic view operations).
+
+!!! abstract "About this tutorial"
+    - **Subject**: Channelrhodopsin (PDB ID: 3UG9)
+    - **What you learn**: Adjusting cartoon, coloring by domain, ballstick for the ligand, finishing with the background and outlines
+    - **Prerequisites**: [Quick tour](../../getting-started/quick-tour.md)
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.
@@ -128,6 +133,40 @@ Double-clicking a camera row returns to that view at any time
 Finally, save the scene to a `.qsc` file with **File &gt; Save Scene** (++cmd+s++ / ++ctrl+s++). On saving, the current view is also recorded as a camera named `__current` and is applied the next time the file is opened. If you enable **data embedding** in the save options, the molecular data is also included in the `.qsc`, so the file can be carried around by itself
 (→ [File menu](../../menu/file.md)).
 
+## The same with commands
+
+The steps on this page can be written as native-mode commands of the [Console](../../reference/plugins/console/index.md) as follows. Enter them in the Console one line at a time (they can also be run from [tritium_cli](../../reference/plugins/console/cli.md)). To check the arguments of each command, run `help <command>` in the Console (→ [Console command list](../../reference/plugins/console/commands.md)).
+
+```
+# 1. Fetch the structure
+fetch_pdb 3UG9, mmcif, cartoon
+# 2. Adjust the view
+focus 3ug9
+# 3. Adjust the look of the cartoon (list the properties that can be set)
+props 3ug9/cartoon1
+# 4. Color by domain
+set_renderer_coloring 3ug9/cartoon1, paint-type-paint
+add_paint 3ug9/cartoon1, A.49:83.*, #E69F00
+add_paint 3ug9/cartoon1, A.84:317.*, #56B4E9
+add_paint 3ug9/cartoon1, A.318:342.*, #009E73
+set_mol_selection 3ug9, ""
+# 5. Show the ligand as ballstick
+create_renderer 3ug9, ballstick, selection="r; RET"
+# 6. Finish with the background and outlines
+set bgcolor, #FFFFFF
+apply_renderer_style 3ug9/cartoon1, EgLineNormal
+apply_renderer_style 3ug9/ballstick1, EgLineNormal
+# 7. Save the camera and the scene
+save_camera view1
+save_scene ~/3ug9.qsc, embedAll=true
+```
+
+- `add_paint` also makes the painted range the molecule's selection. So that the selection highlight does not
+  remain in the figure, `set_mol_selection` clears the selection at the end.
+- Enclose selection expressions that contain `;` or commas (such as `r; RET`) in quotes.
+- `save_scene` is not executed when it is run as part of a script file. Enter it on its own line,
+  or run it by itself.
+
 ## Next steps
 
 - [Exporting high-resolution images for publication](publication-images.md) — finish this figure by ray tracing
@@ -136,4 +175,4 @@ Finally, save the scene to a `.qsc` file with **File &gt; Save Scene** (++cmd+s+
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.6.577*

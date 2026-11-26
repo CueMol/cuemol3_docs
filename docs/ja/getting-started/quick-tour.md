@@ -18,7 +18,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 
 1. **File &gt; Get PDB...** を選びます (ツールバーの `Get PDB` ボタンでも同じ)
 
-    ![ツールバーの Get PDB ボタン](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="94" }
+    ![ツールバーの Get PDB ボタン](../../assets/images/getting-started/quick-tour/2-toolbar-getpdb.webp){ width="640" .on-glb }
 
 2. **PDB or EMDB ID, or keywords** に `1CRN` と入力し、**Download** を押します。
 
@@ -50,7 +50,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 1. 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー) で Object (`1crn`) を
    右クリックし、**New Renderer** を選びます。
 
-    ![シーンツリーの Object 行](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="237" .on-glb }
+    ![シーンツリーの Object 行](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="304" .on-glb }
 
 2. **Renderer type** から **ribbon** を選び、**Create** を押します。
 
@@ -85,7 +85,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 クリックして非表示にします。目のアイコンでは Renderer ごとの表示・非表示を
 いつでも切り替えられます。
 
-![simple1 を非表示にしたシーンツリー](../../assets/images/getting-started/quick-tour/3-hide-simple.webp){ width="237" .on-glb }
+![simple1 を非表示にしたシーンツリー](../../assets/images/getting-started/quick-tour/3-hide-simple.webp){ width="304" .on-glb }
 
 - Renderer は種類を選ぶと**すぐに既定値で作成**され、細かい設定は後から
   インスペクタで調整します (この方針は [操作パラダイムの変更](../changes/ui-paradigm.md) を参照)
@@ -99,7 +99,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 球が大きくなり、原子を強調した表示に変わります。値の変更は分子ビューに
 即座に反映され、取り消したいときは ++cmd+z++ / ++ctrl+z++ で戻せます。
 
-![プロパティインスペクタの Ball and stick セクション](../../assets/images/getting-started/quick-tour/3-inspector.webp){ width="300" .on-glb }
+![プロパティインスペクタの Ball and stick セクション](../../assets/images/getting-started/quick-tour/3-inspector.webp){ width="340" .on-glb }
 
 ### 色を塗り替える
 
@@ -110,9 +110,9 @@ Object の色 (`$molcol`) を参照するため、Object 側を塗り替える�
 
 1. 上部で `1crn (object)` を選びます。
 
-    ![Color パネルの対象選択](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="233" }
+    ![Color パネルの対象選択](../../assets/images/getting-started/quick-tour/3-color-target.webp){ width="304" .on-glb }
 
-2. 隣の **Coloring** ボタンを押し、**Rainbow coloring** を選びます。
+2. 隣のボタン (いまの Coloring の種類が表示されています) を押し、**Rainbow coloring** を選びます。
 
     ![Coloring メニュー](../../assets/images/getting-started/quick-tour/3-coloring-menu.webp){ width="196" .on-glb }
 
@@ -154,11 +154,11 @@ PNG を書き出せます。
 
 1. 対象のビュー (Target) を選ぶ。バックエンドは既定の **Umbreon** のままで構いません。
 
-    ![Still モードの操作列](../../assets/images/getting-started/quick-tour/4-render-controls.webp){ width="561" .on-glb }
+    ![Still モードの操作列](../../assets/images/getting-started/quick-tour/4-render-controls.webp){ width="640" .on-glb }
 
 2. 画質・サイズを設定する
 
-    ![Render Settings パネル](../../assets/images/getting-started/quick-tour/4-render-settings.webp){ width="307" .on-glb }
+    ![Render Settings パネル](../../assets/images/getting-started/quick-tour/4-render-settings.webp){ width="379" .on-glb }
 
 3. **Start Render** を押すと、進捗が表示され、完了すると結果画像が同じウィンドウに表示されます。
 
@@ -186,4 +186,4 @@ PNG を書き出せます。
 
 ---
 
-*確認対象: CueMol3 2.4.2.550*
+*確認対象: CueMol3 3.0.6.577*

@@ -12,18 +12,17 @@ ChimeraX で使っていたコマンドと原子の指定をそのまま打つ�
     - **学ぶこと**: ChX console への切り替え、ChimeraX のコマンドと原子の指定、対応していないコマンドの扱い、`.cxc` スクリプトの実行 (Console と tritium_cli)、GUI での仕上げと保存
     - **前提**: ChimeraX のコマンドの基本を知っていること。GUI の操作は基本操作コースの [Renderer の追加・削除と設定](../basic/renderers.md) まで
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
-<!-- TODO(screenshot): 完成イメージ。ChX console のスクリプトで作った 1STP の結合部位 -->
+![完成イメージ。ChX console のスクリプトで作った 1STP の結合部位](../../../assets/images/tutorials/scripting/chx-console/5-finished.webp){ .on-glb }
 
 ## 1. ChX console に切り替える
 
-1. **File &gt; New Tab** などで、空のシーンを用意します。
+1. **File &gt; New Tab** で、空のシーンを用意します (**New Tab/Window** ダイアログは既定のまま **OK** を押します)。
 2. 下部パネルの **Console** タブを開きます。
 3. ツールバー左端の切り替えで **ChimeraX** を選びます (行に `chimerax` とだけ打って実行しても切り替わります)。
 
 プロンプトが `ChX>` になります (→ [Console](../../reference/plugins/console/index.md#モードの切り替え))。
+
+![Console タブで ChimeraX を選んだところ](../../../assets/images/tutorials/scripting/chx-console/1-mode.webp){ width="640" .on-glb }
 
 ## 2. コマンドを 1 行ずつ実行する
 
@@ -41,6 +40,8 @@ label (:BTN :<4) & protein residues
 distance :BTN@O3 :43@OH
 view :BTN :<5
 ```
+
+![2. のコマンドを実行し終えたところ](../../../assets/images/tutorials/scripting/chx-console/2-figure.webp){ .on-glb }
 
 | コマンド | 結果 |
 |---|---|
@@ -79,6 +80,8 @@ hbonds :BTN
 Warning: hbonds is not supported yet (a ChimeraX command the console does not have); skipped
 ```
 
+![Console に表示された警告](../../../assets/images/tutorials/scripting/chx-console/3-warning.webp){ width="640" .on-glb }
+
 ChX console は ChimeraX のコマンドの一部だけに対応しています。対応していないコマンド・値・原子の指定は、
 このように警告を出して飛ばし、スクリプトの残りを実行します。一方、ChimeraX にも無いコマンドや
 書式の誤り (`colr` のような打ち間違いなど) は、エラーを出してそこでスクリプトを止めます。
@@ -113,6 +116,8 @@ open ~/binding-site.cxc
 ```
 
 `hbonds` の行で警告が出ますが、残りのコマンドはすべて実行され、2. と同じ図ができます。
+
+![スクリプトを実行し終えたところ](../../../assets/images/tutorials/scripting/chx-console/4-script.webp){ .on-glb }
 
 ターミナルからは、[tritium_cli](../../reference/plugins/console/cli.md) にファイルを渡して実行することもできます。
 起動中の CueMol3 の、前面のタブのシーンに対して実行されます。

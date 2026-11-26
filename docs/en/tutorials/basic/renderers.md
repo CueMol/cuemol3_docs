@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/basic/renderers.md @ 8d54764 -->
+<!-- source: ja/tutorials/basic/renderers.md @ dcf70c1 -->
 
 # Adding, removing and configuring Renderers
 
@@ -6,6 +6,11 @@ This tutorial practices attaching multiple Renderers to one Object to layer the 
 and changing settings in the inspector.
 Continuing from the previous page ([Selecting part of a molecule](selection.md)),
 start with Val2 to Phe3 (`A.2:3.*`) of `lysozyme` selected.
+
+!!! abstract "About this tutorial"
+    - **Subject**: Lysozyme (`lysozyme`)
+    - **What you learn**: Adding and removing Renderers, changing the displayed range, adjusting properties in the inspector
+    - **Prerequisites**: [Selecting part of a molecule](selection.md)
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.

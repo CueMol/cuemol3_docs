@@ -24,12 +24,15 @@ import {
     clickSceneToolbar,
     toggleRowVisibility,
     rowVisibilityToggle,
+    sceneRow,
 } from '../helpers/sceneTree';
 import { getPdb } from '../helpers/openFile';
 import { setNumericProperty } from '../helpers/inspector';
-import { selectColorTarget, chooseColoring } from '../helpers/colorPane';
+import { selectColorTarget, chooseColoring, coloringButton } from '../helpers/colorPane';
+import { lastPopupLabels } from '../helpers/popupMenu';
 import { rotateView, zoomView } from '../helpers/molView';
-import { docShot } from '../helpers/docShot';
+import { aroundBox, docShot, sidebarRect, toolbarRect } from '../helpers/docShot';
+import { checkField, fieldControl } from '../helpers/form';
 
 const PDB_ID = '1CRN';
 const OBJ_NAME = PDB_ID.toLowerCase();
@@ -76,9 +79,11 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
 
     test('2. 構造を読み込む', async () => {
         // 「1. File > Get PDB... を選びます (ツールバーの Get PDB ボタンでも同じ)」
+        // The toolbar around the button, with the button framed.
+        const getPdbButton = harness.window.getByRole('button', { name: 'Get PDB', exact: true });
         await docShot(harness.window, 'getting-started/quick-tour/2-toolbar-getpdb', {
-            clip: harness.window.getByRole('button', { name: 'Get PDB', exact: true }),
-            pad: 6,
+            rect: await toolbarRect(harness.window, getPdbButton),
+            highlight: getPdbButton,
         });
         await getPdb(harness.app, harness.window, {
             // 「2. PDB or EMDB ID, or keywords に 1CRN と入力し、Download を押します」
@@ -112,7 +117,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await clickSceneToolbar(harness.window, 'add');
             const dlg = dialog(harness.window, 'New Renderer');
             await expect(dlg).toBeVisible();
-            await dlg.locator('#rend-type').selectOption(type);
+            await fieldControl(dlg, 'Renderer type').selectOption(type);
             await opts.configure?.(dlg);
             if (opts.shotId) await docShot(harness.window, opts.shotId, { clip: dlg });
             await clickDialogButton(harness.window, 'New Renderer', 'Create');
@@ -124,7 +129,8 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             // The right-click target: the scene tree with the object row.
             await selectRow(harness.window, OBJ_NAME);
             await docShot(harness.window, 'getting-started/quick-tour/3-scene-tree', {
-                clip: harness.window.locator('.sp-pane').first(),
+                rect: await sidebarRect(harness.window, harness.window.locator('.sp-pane').first(), 16),
+                highlight: sceneRow(harness.window, OBJ_NAME),
             });
             // 「二次構造がわかるように、ribbon を追加してみます。」
             await addRenderer('ribbon', 'ribbon1', { shotId: 'getting-started/quick-tour/3-new-renderer' });
@@ -136,7 +142,7 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await addRenderer('ballstick', 'ballstick1', {
                 shotId: 'getting-started/quick-tour/3-ballstick-selection',
                 configure: async (dlg) => {
-                    await dlg.getByText('Selection', { exact: true }).click();
+                    await checkField(dlg, 'Selection');
                     await dlg.getByRole('button', { name: 'Build selection' }).click();
                     const builder = harness.window.locator('.selbuilder');
                     await expect(builder).toBeVisible();
@@ -171,7 +177,8 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await toggleRowVisibility(harness.window, 'simple1');
             await expect(rowVisibilityToggle(harness.window, 'simple1')).toHaveClass(/hidden/);
             await docShot(harness.window, 'getting-started/quick-tour/3-hide-simple', {
-                clip: harness.window.locator('.sp-pane').first(),
+                rect: await sidebarRect(harness.window, harness.window.locator('.sp-pane').first(), 16),
+                highlight: rowVisibilityToggle(harness.window, 'simple1'),
             });
         });
 
@@ -182,12 +189,11 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await setNumericProperty(harness.window, 'Ball and stick', 'Atom radius', 0.5);
             // The open "Ball and stick" section, top tab bar to last field.
             await docShot(harness.window, 'getting-started/quick-tour/3-inspector', {
-                clip: [
+                rect: await aroundBox(harness.window, [
                     harness.window.locator('.inspector-mode-bar'),
-                    harness.window.getByText('Atom radius', { exact: true }).last(),
                     harness.window.getByText('Ring color', { exact: true }).last(),
-                ],
-                pad: 0,
+                ], 40),
+                highlight: harness.window.getByText('Atom radius', { exact: true }).last(),
             });
         });
 
@@ -196,16 +202,16 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             // the renderers' default colours reference it via $molcol.
             await selectColorTarget(harness.window, '1crn (object)');
             await docShot(harness.window, 'getting-started/quick-tour/3-color-target', {
-                clip: harness.window.locator('.color-shell-row').first(),
-                pad: 6,
+                rect: await sidebarRect(harness.window, harness.window.locator('.color-shell-row').first(), 120),
+                highlight: harness.window.locator('.color-shell-row select').first(),
             });
-            await chooseColoring(harness.window, 'Rainbow coloring', {
-                beforeSelect: async (menu) => {
-                    await docShot(harness.window, 'getting-started/quick-tour/3-coloring-menu', {
-                        clip: [harness.window.getByRole('button', { name: 'Coloring', exact: true }), menu],
-                    });
-                },
-            });
+            // 「隣のボタンを押し、Rainbow coloring を選びます」. The menu is a
+            // native macOS menu (answered by the popup-menu stub), so it has
+            // no screenshot; the labels it offered are checked instead.
+            await chooseColoring(harness.app, harness.window, ['Rainbow coloring']);
+            expect(await lastPopupLabels(harness.app)).toContain('Rainbow coloring');
+            // The button now shows the picked mode.
+            await expect(coloringButton(harness.window)).toHaveText('Rainbow');
             await docShot(harness.window, 'getting-started/quick-tour/3-styled');
         });
 
@@ -253,17 +259,24 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
             await docShot(renderWindow, 'getting-started/quick-tour/4-rendering-window');
             // Just the operated controls; the bar's right half is empty and
             // the settings panel extends far below its last field.
+            const renderControls = [
+                renderWindow.getByRole('button', { name: 'Start Render', exact: true }),
+                renderWindow.locator('.render-panel-bar select').last(),
+            ];
             await docShot(renderWindow, 'getting-started/quick-tour/4-render-controls', {
-                clip: [
-                    renderWindow.getByRole('button', { name: 'Start Render', exact: true }),
-                    renderWindow.locator('.render-panel-bar select').last(),
-                ],
+                rect: await aroundBox(renderWindow, renderControls, 120),
+                // Step 1 is about the Target; Start Render comes in step 3.
+                highlight: renderWindow.locator('.render-panel-bar select').last(),
             });
+            const renderSettings = [
+                renderWindow.locator('.render-window-settings-header'),
+                renderWindow.getByText('Transparent background', { exact: true }),
+            ];
             await docShot(renderWindow, 'getting-started/quick-tour/4-render-settings', {
-                clip: [
-                    renderWindow.locator('.render-window-settings-header'),
-                    renderWindow.getByText('Transparent background', { exact: true }),
-                ],
+                rect: await aroundBox(renderWindow, renderSettings, 80),
+                // The step points at the panel; its title marks it without
+                // stretching the crop over the empty lower half.
+                highlight: renderWindow.locator('.render-window-settings-header'),
             });
 
             if (process.env.E2E_SLOW) {

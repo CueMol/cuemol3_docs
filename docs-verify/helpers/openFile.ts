@@ -2,6 +2,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import type { ElectronApplication } from 'playwright';
 import { clickMenu } from './menu';
 import { dialog, clickDialogButton, expectDialogClosed } from './dialogs';
+import { fieldControl } from './form';
 
 /**
  * File > Get PDB... — the flow the docs describe: enter the accession code,
@@ -40,9 +41,9 @@ export async function getPdb(
     const options = dialog(window, 'Open File Options');
     await expect(options).toBeVisible({ timeout: NET_TIMEOUT_MS });
     if (opts.objectName !== undefined) {
-        await options.locator('#rend-objname').fill(opts.objectName);
+        await fieldControl(options, 'Object name').fill(opts.objectName);
     }
-    await options.locator('#rend-type').selectOption(opts.rendType);
+    await fieldControl(options, 'Renderer type').selectOption(opts.rendType);
     await opts.onOptionsDialog?.(options);
     await options.getByRole('button', { name: 'Open', exact: true }).click();
     await expectDialogClosed(window, 'Open File Options');

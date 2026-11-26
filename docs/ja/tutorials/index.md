@@ -33,13 +33,13 @@
 
 </div>
 
-## 構造を読む・比較する
+## 構造の解析
 
 <div class="grid cards" markdown>
 
 - **[リガンド結合部位の表示](structure/binding-site.md)** — 周辺残基の選択と水素結合の候補の表示
 - **[分子表面の静電ポテンシャル表示](structure/surface-elepot.md)** — 表面生成から APBS 計算・着色まで
-- **[2 つの構造の重ね合わせと比較](structure/superpose.md)** — 重ね合わせに使う原子の選び方とドメインの動き
+- **[構造の重ね合わせと比較](structure/superpose.md)** — 重ね合わせに使う原子の選び方とドメインの動き
 
 </div>
 
@@ -57,7 +57,7 @@
 
 <div class="grid cards" markdown>
 
-- **[AlphaFold の予測構造の評価](prediction/alphafold.md)** — pLDDT の色の読み方と実験構造との重ね合わせ
+- **[AlphaFold の予測構造の評価](prediction/alphafold.md)** — pLDDT 値の可視化と実験構造との重ね合わせ
 
 </div>
 
