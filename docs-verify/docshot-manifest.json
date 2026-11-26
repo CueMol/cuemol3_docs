@@ -39,5 +39,8 @@
   "tutorials/structure/binding-site/4-opacity": "8af9c634e0c64ff37935fb15f95b1ec24232b87a3ece90c4a451da00b253e95d",
   "tutorials/structure/binding-site/5-interaction": "cde45622871b3c94c6532ed67db07ab9ecd4f971ea04f2c22fad75e57797f784",
   "tutorials/structure/binding-site/6-format": "b6ac2ea544a40baf74cf98c74557f6e2bb243c7b8f3f0ed508b58c43454ef016",
-  "tutorials/structure/binding-site/6-labeled": "46f5f597d1e36df3569e3ea2e698f4da2c13eb0f68dd85c668afaf298fda6969"
+  "tutorials/structure/binding-site/6-labeled": "46f5f597d1e36df3569e3ea2e698f4da2c13eb0f68dd85c668afaf298fda6969",
+  "tutorials/structure/superpose/2-lsq-all": "f731086ec5fa8f631a708b55ea44c097da7b7a7ef024b180177be6faa2bbcac2",
+  "tutorials/structure/superpose/4-domains": "94a95629a3153917ba91d914b92320e8e8db6b584e5125bb12b61439d209b292",
+  "tutorials/structure/superpose/4-paint": "2ce33d7c17f497868d983493afacf76d7570a198aa7dcfda38b8033a4fd5ba17"
 }

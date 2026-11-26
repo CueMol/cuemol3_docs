@@ -67,6 +67,8 @@ export interface ShotOptions {
     rect?: Rect;
     /** Widgets the text points at; framed in the capture. */
     highlight?: Locator | Locator[];
+    /** Draw one frame around all highlight targets (adjacent rows, ...). */
+    mergeHighlight?: boolean;
 }
 
 /** Frame colour: Okabe-Ito vermillion, visible on the dark UI and on white. */
@@ -158,6 +160,14 @@ const FRAME_STROKE = 3;
 /** Space kept around a frame so its rounded stroke is never cut. */
 const FRAME_MARGIN = 10;
 
+function unionBox(boxes: Rect[]): Rect {
+    const x = Math.min(...boxes.map((b) => b.x));
+    const y = Math.min(...boxes.map((b) => b.y));
+    const x2 = Math.max(...boxes.map((b) => b.x + b.width));
+    const y2 = Math.max(...boxes.map((b) => b.y + b.height));
+    return { x, y, width: x2 - x, height: y2 - y };
+}
+
 /** The frame rectangle for a widget box, pulled inside the window. */
 function frameRect(b: Rect, vp: { w: number; h: number }): Rect {
     const inset = 1;
@@ -203,9 +213,11 @@ async function withFrames(window: Page, opts: ShotOptions): Promise<ShotOptions>
 }
 
 /** Overlay one frame per widget (fixed position, so layout is untouched). */
-async function drawHighlight(window: Page, targets: Locator | Locator[]): Promise<number> {
+async function drawHighlight(window: Page, targets: Locator | Locator[], merge = false): Promise<number> {
     const vp = await viewport(window);
-    const boxes = (await boxesOf(Array.isArray(targets) ? targets : [targets])).map((b) => frameRect(b, vp));
+    let raw = await boxesOf(Array.isArray(targets) ? targets : [targets]);
+    if (merge) raw = [unionBox(raw)];
+    const boxes = raw.map((b) => frameRect(b, vp));
     await window.evaluate(({ boxes, color, id, stroke }) => {
         const doc = (globalThis as any).document;
         for (const b of boxes) {
@@ -257,7 +269,7 @@ export async function docShot(
     // hover highlight from the last click ends up in the picture.
     await window.mouse.move(1, 1).catch(() => {});
     await window.waitForTimeout(SHOT_SETTLE_MS);
-    const frames = opts.highlight ? await drawHighlight(window, opts.highlight) : 0;
+    const frames = opts.highlight ? await drawHighlight(window, opts.highlight, opts.mergeHighlight) : 0;
     let png: Buffer;
     try {
         png = await capture(window, await withFrames(window, opts));
