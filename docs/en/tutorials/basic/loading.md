@@ -111,7 +111,7 @@ and the value returns to 0 after the operation. **Translation** (TraX / TraY / T
 **Zoom / Slab** (Zoom, Slab, Dist, Å) values are **absolute**: the values of the current view
 are displayed as they are.
 
-![View panel. Rotation has returned to 0 even after rotating, and Zoom keeps the entered 40](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="304" .on-glb }
+![View panel. Rotation has returned to 0 even after rotating, and Zoom keeps the entered 40](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="318" .on-glb }
 
 For the full list of operations, including translation and slab (the range displayed by clipping
 the near and far sides), see [Mouse and trackpad input](../../ui/mouse-input.md); for each
@@ -192,7 +192,7 @@ View
 :   The screen that shows a scene (the molecular view). Multiple Views can also be
     connected to one scene (→ New Tab in the [File menu](../../menu/file.md)).
 
-![Relationship between Scene / Object / Renderer / View](../../../assets/images/tutorials/basic/loading/scene-concept.png){ .on-glb }
+![Relationship between Scene / Object / Renderer / View](../../../assets/images/tutorials/basic/loading/scene-concept.svg){ .on-glb }
 
 Think of a scene as the whole that contains multiple Objects and the Renderers attached to them.
 
@@ -231,7 +231,7 @@ the list of Renderers attached to that Object. The current tree reads as follows
 
 Right-clicking the scene row lets you change the background color from **Background color**.
 
-![Scene tree (lysozyme / 1g59 and their Renderers)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="304" .on-glb }
+![Scene tree (lysozyme / 1g59 and their Renderers)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="318" .on-glb }
 
 ## Next steps
 

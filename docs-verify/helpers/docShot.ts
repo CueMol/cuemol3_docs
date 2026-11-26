@@ -105,6 +105,22 @@ export async function sidebarRect(window: Page, targets: Locator | Locator[], be
 }
 
 /**
+ * The property inspector column (right side) from its header down to just
+ * below the widgets.
+ */
+export async function inspectorRect(window: Page, targets: Locator | Locator[], below = 80): Promise<Rect> {
+    const boxes = await boxesOf(Array.isArray(targets) ? targets : [targets]);
+    const bar = await window.locator('.inspector-mode-bar').first().boundingBox();
+    if (!bar) throw new Error('[docShot] inspector not visible');
+    const vp = await viewport(window);
+    const x = Math.max(0, bar.x - 16);
+    // The header row (kind / name / close) sits above the mode bar.
+    const y = Math.max(0, bar.y - 44);
+    const y2 = Math.min(vp.h, Math.max(...boxes.map((b) => b.y + b.height)) + below);
+    return { x, y, width: vp.w - x, height: y2 - y };
+}
+
+/**
  * The toolbar from the window's left edge to a little past the button, so
  * the button is shown among its neighbours.
  */
@@ -136,22 +152,73 @@ async function viewport(window: Page): Promise<{ w: number; h: number }> {
     }));
 }
 
+/** Frame stroke plus the gap between frame and widget, in CSS pixels. */
+const FRAME_OUTSET = 4;
+const FRAME_STROKE = 3;
+/** Space kept around a frame so its rounded stroke is never cut. */
+const FRAME_MARGIN = 10;
+
+/** The frame rectangle for a widget box, pulled inside the window. */
+function frameRect(b: Rect, vp: { w: number; h: number }): Rect {
+    const inset = 1;
+    const x = Math.max(inset, b.x - FRAME_OUTSET);
+    const y = Math.max(inset, b.y - FRAME_OUTSET);
+    const x2 = Math.min(vp.w - inset, b.x + b.width + FRAME_OUTSET);
+    const y2 = Math.min(vp.h - inset, b.y + b.height + FRAME_OUTSET);
+    return { x, y, width: x2 - x, height: y2 - y };
+}
+
+/**
+ * Grow the capture area so every highlight frame fits in it with a margin:
+ * a frame cut by the crop edge looks like a broken shape.
+ */
+async function withFrames(window: Page, opts: ShotOptions): Promise<ShotOptions> {
+    if (!opts.highlight) return opts;
+    if (!opts.rect && !opts.clip) return opts; // full window
+    const vp = await viewport(window);
+    const frames = (await boxesOf(Array.isArray(opts.highlight) ? opts.highlight : [opts.highlight]))
+        .map((b) => frameRect(b, vp));
+    let area: Rect;
+    if (opts.rect) {
+        area = opts.rect;
+    } else {
+        const clips = Array.isArray(opts.clip) ? opts.clip! : [opts.clip!];
+        const boxes = await boxesOf(clips);
+        const pad = opts.pad ?? 8;
+        const x = Math.min(...boxes.map((b) => b.x)) - pad;
+        const y = Math.min(...boxes.map((b) => b.y)) - pad;
+        area = {
+            x, y,
+            width: Math.max(...boxes.map((b) => b.x + b.width)) + pad - x,
+            height: Math.max(...boxes.map((b) => b.y + b.height)) + pad - y,
+        };
+    }
+    let x = Math.min(area.x, ...frames.map((f) => f.x - FRAME_MARGIN));
+    let y = Math.min(area.y, ...frames.map((f) => f.y - FRAME_MARGIN));
+    let x2 = Math.max(area.x + area.width, ...frames.map((f) => f.x + f.width + FRAME_MARGIN));
+    let y2 = Math.max(area.y + area.height, ...frames.map((f) => f.y + f.height + FRAME_MARGIN));
+    x = Math.max(0, x); y = Math.max(0, y);
+    x2 = Math.min(vp.w, x2); y2 = Math.min(vp.h, y2);
+    return { rect: { x, y, width: x2 - x, height: y2 - y } };
+}
+
 /** Overlay one frame per widget (fixed position, so layout is untouched). */
 async function drawHighlight(window: Page, targets: Locator | Locator[]): Promise<number> {
-    const boxes = await boxesOf(Array.isArray(targets) ? targets : [targets]);
-    await window.evaluate(({ boxes, color, id }) => {
+    const vp = await viewport(window);
+    const boxes = (await boxesOf(Array.isArray(targets) ? targets : [targets])).map((b) => frameRect(b, vp));
+    await window.evaluate(({ boxes, color, id, stroke }) => {
         const doc = (globalThis as any).document;
         for (const b of boxes) {
             const el = doc.createElement('div');
             el.className = id;
             el.style.cssText =
-                `position:fixed;left:${b.x - 4}px;top:${b.y - 4}px;` +
-                `width:${b.width + 8}px;height:${b.height + 8}px;` +
-                `border:3px solid ${color};border-radius:6px;box-sizing:border-box;` +
+                `position:fixed;left:${b.x}px;top:${b.y}px;` +
+                `width:${b.width}px;height:${b.height}px;` +
+                `border:${stroke}px solid ${color};border-radius:6px;box-sizing:border-box;` +
                 'pointer-events:none;z-index:2147483647;';
             doc.body.appendChild(el);
         }
-    }, { boxes, color: HIGHLIGHT_COLOR, id: HIGHLIGHT_ID });
+    }, { boxes, color: HIGHLIGHT_COLOR, id: HIGHLIGHT_ID, stroke: FRAME_STROKE });
     return boxes.length;
 }
 
@@ -190,7 +257,7 @@ export async function docShot(
     const frames = opts.highlight ? await drawHighlight(window, opts.highlight) : 0;
     let png: Buffer;
     try {
-        png = await capture(window, opts);
+        png = await capture(window, await withFrames(window, opts));
     } finally {
         if (frames) await clearHighlight(window);
     }

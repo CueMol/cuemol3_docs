@@ -111,7 +111,7 @@ View パネルの各行は、次の 3 通りで操作できます。
 値は 0 に戻ります。**Translation** (TraX / TraY / TraZ、Å) と **Zoom / Slab** (Zoom・Slab・Dist、Å) は
 **絶対値**で、現在の視点の値がそのまま表示されます。
 
-![View パネル。回転させた後でも Rotation は 0 に戻っており、Zoom には入力した 40 が残っている](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="304" .on-glb }
+![View パネル。回転させた後でも Rotation は 0 に戻っており、Zoom には入力した 40 が残っている](../../../assets/images/tutorials/basic/loading/2-view-pane.webp){ width="318" .on-glb }
 
 平行移動やスラブ (手前と奥を切り抜いて表示する範囲) の操作を含めた一覧は
 [マウス・トラックパッド操作](../../ui/mouse-input.md)、View パネルの各項目は
@@ -190,7 +190,7 @@ View
 :   シーンを映す画面 (分子ビュー) のこと。1 つのシーンに複数の View を
     接続することもできます (→ [File メニュー](../../menu/file.md) の New Tab)。
 
-![Scene / Object / Renderer / View の関係](../../../assets/images/tutorials/basic/loading/scene-concept.png){ .on-glb }
+![Scene / Object / Renderer / View の関係](../../../assets/images/tutorials/basic/loading/scene-concept.svg){ .on-glb }
 
 シーンとは、複数の Object と、それらに接続された Renderer を含む全体だと捉えてください。
 
@@ -230,7 +230,7 @@ Object とその配下の Renderer が階層で表示されます (→ [サイ�
 
 シーン行を右クリックすると **Background color** から背景色を変えられます。
 
-![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="304" .on-glb }
+![シーンツリー (lysozyme / 1g59 と各 Renderer)](../../../assets/images/tutorials/basic/loading/5-scene-tree.webp){ width="318" .on-glb }
 
 ## 次のステップ
 

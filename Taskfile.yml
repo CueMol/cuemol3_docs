@@ -197,7 +197,7 @@ tasks:
     cmds:
       - npm run doctor
       # E2E_SLOW so the raytraced result is captured too.
-      - DOCSHOT=1 E2E_SLOW=1 E2E_WINDOW=1280x800 npx playwright test specs/quick-tour.spec.ts specs/basic
+      - DOCSHOT=1 E2E_SLOW=1 E2E_WINDOW=1280x800 npx playwright test specs/quick-tour.spec.ts specs/basic specs/structure specs/prediction specs/experimental specs/figures specs/scripting
       - task: check:images
 
   e2e:report:
