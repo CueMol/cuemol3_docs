@@ -6,13 +6,6 @@ while the GUI has been rebuilt from scratch on Electron + React.
 
 ![CueMol3 in use: the main window showing a cryo-EM map, and the rendering window ray-tracing the scene with Umbreon](../assets/images/index/app-example2.webp){ .on-glb }
 
-!!! warning "This is a development build"
-    CueMol3 builds can be downloaded from
-    [GitHub Releases](https://github.com/CueMol/cuemol2/releases/latest), but they are still
-    **under development**, and they carry no code signature identifying their origin (the macOS
-    app is ad-hoc signed only). If you need a stable version for day-to-day work, please use
-    CueMol2 — see the [CueMol2 documentation site](https://cuemol.github.io/cuemol2_docs/).
-
 !!! note "Citing CueMol3"
     If you publish work produced with CueMol3, please cite
     [the CueMol3 paper](https://doi.org/10.26434/chemrxiv.15012002/v2)
@@ -44,7 +37,7 @@ while the GUI has been rebuilt from scratch on Electron + React.
 | Link | Contents |
 |---|---|
 | [GitHub Releases](https://github.com/CueMol/cuemol2/releases) | Downloads and release notes (CueMol3 assets are the `CueMol3-*` files) |
-| [CueMol2 documentation](https://cuemol.github.io/cuemol2_docs/) | Documentation for CueMol2 (stable). Frozen for CueMol2 |
+| [CueMol2 documentation](https://cuemol.github.io/cuemol2_docs/) | Documentation for CueMol2. Frozen for CueMol2 |
 | [Gallery](https://cuemol.github.io/cuemol2_docs/en/Gallery/) | Example images made with CueMol (on the CueMol2 site) |
 | [GitHub: CueMol/cuemol2](https://github.com/CueMol/cuemol2) | Source repository (CueMol3 lives under `tritium/`) |
 
