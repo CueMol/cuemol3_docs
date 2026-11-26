@@ -75,3 +75,42 @@ export async function addPaintRowAtTop(window: Page, selection: string, color: s
     await colorInput.press('Escape').catch(() => {});
     await expect(top.locator('.color-cell-color')).toContainText(new RegExp(color.replace('#', ''), 'i'));
 }
+
+/** The Explorer > Color pane (the one with the Coloring mode button). */
+export function colorPane(window: Page) {
+    return window.locator('.sp-pane').filter({ has: window.getByTitle('Coloring mode') }).first();
+}
+
+/** Paint table row whose selection cell reads exactly `selection`. */
+export function paintRow(window: Page, selection: string) {
+    const escaped = selection.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return window.locator('.color-row').filter({
+        has: window.locator('.color-cell-selection', { hasText: new RegExp(`^\\s*${escaped}\\s*$`) }),
+    }).first();
+}
+
+/** Click a Paint table toolbar button on a row ("Move row up", "Delete row", ...). */
+export async function paintRowAction(window: Page, selection: string, action: 'Move row up' | 'Move row down' | 'Delete row'): Promise<void> {
+    await paintRow(window, selection).click();
+    await window.getByRole('button', { name: action }).click();
+    // The button's tooltip stays over the table while the pointer rests on
+    // it and would take the next click; move the pointer away.
+    await window.mouse.move(1, 1);
+    await expect(window.locator('.bp5-popover-content', { hasText: action.replace(' row', '') })).toHaveCount(0);
+}
+
+/** Edit the colour cell of a Paint row (double-click, type, Enter, Escape). */
+export async function setPaintRowColor(window: Page, selection: string, color: string): Promise<void> {
+    const row = paintRow(window, selection);
+    await row.locator('.color-cell-color').dblclick();
+    const input = row.locator('.color-cell-color input').first();
+    await input.fill(color);
+    await input.press('Enter');
+    await input.press('Escape').catch(() => {});
+    await expect(row.locator('.color-cell-color')).toContainText(new RegExp(color.replace('#', ''), 'i'));
+}
+
+/** The selection cells of the Paint table, top to bottom. */
+export async function paintSelections(window: Page): Promise<string[]> {
+    return (await window.locator('.color-row .color-cell-selection').allInnerTexts()).map((t) => t.trim());
+}
