@@ -39,7 +39,7 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 「ともかく分子全体を選択したい」ときは **Select Molecule**、
 「まっさらに戻したい」ときは **Unselect** が手早い方法です。
 
-<!-- TODO(screenshot): 分子ビューの右クリックメニュー (Select 系の項目) -->
+![分子ビューで原子を右クリックしたときのメニュー。先頭に原子と Renderer の名前、その下に Center at this atom と Select 系の項目が並ぶ](../../../assets/images/tutorials/basic/selection/2-context-menu.webp){ width="300" .on-glb }
 
 ## 3. Mol Struct パネルで選択する
 

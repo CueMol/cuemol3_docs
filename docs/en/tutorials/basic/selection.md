@@ -42,7 +42,7 @@ At the top of the menu are also the names of the clicked atom and the Renderer, 
 To select the entire molecule, **Select Molecule** is the quickest way;
 to start over with a clean slate, use **Unselect**.
 
-<!-- TODO(screenshot): right-click menu in the molecular view (Select items) -->
+![The menu shown by right-clicking an atom in the molecular view. The names of the atom and the Renderer at the top, then Center at this atom and the Select items](../../../assets/images/tutorials/basic/selection/2-context-menu.webp){ width="300" .on-glb }
 
 ## 3. Select in the Mol Struct panel
 

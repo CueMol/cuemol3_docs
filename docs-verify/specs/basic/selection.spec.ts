@@ -16,6 +16,7 @@ import { setupSelectionPage, molStructPane, selectionPane } from '../../fixtures
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { openSidebarView } from '../../helpers/sidebar';
 import { clearLastContextLabels, lastContextLabels, pickNextContextItem } from '../../helpers/popupMenu';
+import { nativeMenuShot } from '../../helpers/nativeShot';
 import { runConsole, clearConsole } from '../../helpers/console';
 import { docShot, sidebarRect } from '../../helpers/docShot';
 
@@ -139,6 +140,9 @@ test.describe.serial('分子の一部の選択', { tag: '@net' }, () => {
             'Unselect', 'Invert Selection', 'Toggle Sidechain', 'Around', 'Around Byres', 'Center at this atom']) {
             expect(labels).toContain(l);
         }
+        // The real (native) menu, captured from the screen.
+        await w.mouse.move(atom.x, atom.y);
+        await nativeMenuShot(harness.app, w, `${SHOT}/2-context-menu`, () => rightClick(w, atom));
         // 「ともかく分子全体を選択したいときは Select Molecule」
         await pickNextContextItem(harness.app, ['Select Molecule']);
         await rightClick(w, atom);
