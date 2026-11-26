@@ -1,8 +1,13 @@
-# 電子密度マップを重ねて表示する
+# 電子密度マップの表示
 
 X 線結晶構造に電子密度マップを重ねて、モデルと密度の対応を確かめる手順を追います。
 題材にはリゾチームの結晶構造 (PDB ID: **1QIO**) を使い、2Fo-Fc マップと Fo-Fc マップを
 座標と一緒にネットワークから取得します。
+
+!!! abstract "このチュートリアルについて"
+    - **題材**: リゾチーム (PDB ID: 1QIO) の 2Fo-Fc / Fo-Fc マップ
+    - **学ぶこと**: Get PDB でのマップの取得、Density map パネルでのレベルと範囲の調整、注目部位の確認
+    - **前提**: 基本操作コースの [構造の読み込みと表示](../basic/loading.md)
 
 !!! info "撮影予定"
     このページには操作の流れを示すスクリーンショットを追加予定です。
@@ -37,23 +42,23 @@ X 線結晶構造に電子密度マップを重ねて、モデルと密度の対
 ## 2. 表示を確認する
 
 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー →
-[サイドパネル](../ui/side-panels.md)) には、座標の Object とは別に、
+[サイドパネル](../../ui/side-panels.md)) には、座標の Object とは別に、
 マップの Object (`1qio_2fofc` / `1qio_fofc`) とその contour Renderer が並びます。目のアイコンで個別に表示・非表示を切り替えられます。
 
 結晶学的マップは**ビュー中心の周囲だけ**が描かれます。分子ビューを平行移動すると、
 表示されるマップの範囲も追従します (クライオ電子顕微鏡マップではマップ全体が描かれ、
 以下の表示範囲の調整は必要ありません
-→ [contour](../reference/renderers/contour.md#contour) の **Region**)。
+→ [contour](../../reference/renderers/contour.md#contour) の **Region**)。
 
 contour という名前は、地図でおなじみの 2 次元の等高線 (contour) 表示を 3 次元に
 拡張したものであることに由来します。表示の仕組みは
-[contour](../reference/renderers/contour.md)、
-マップ Object の詳細は [DensityMap](../reference/objects/densitymap.md) を参照してください。
+[contour](../../reference/renderers/contour.md)、
+マップ Object の詳細は [DensityMap](../../reference/objects/densitymap.md) を参照してください。
 
 ## 3. レベルと範囲を調整する
 
 マップの表示は、左サイドパネルの **Crystal &gt; Density map** パネルで調整します
-(→ [サイドパネル](../ui/side-panels.md))。
+(→ [サイドパネル](../../ui/side-panels.md))。
 
 1. 上部で対象の Renderer (`1qio_2fofc/contour1` など) を選びます。
 2. **Level** のヒストグラム上のマーカーをドラッグして、等高線レベルを変えます
@@ -81,7 +86,7 @@ contour という名前は、地図でおなじみの 2 次元の等高線 (cont
 3. 表示が追従していないときは、パネルの **Redraw** で表示中心を現在のビュー中心に
    更新できます。
 4. **Slab** (表示する奥行きの幅) を狭めると、注目部位の前後のメッシュも減って
-   さらに見やすくなります (→ [サイドパネル](../ui/side-panels.md) の View パネル)。
+   さらに見やすくなります (→ [サイドパネル](../../ui/side-panels.md) の View パネル)。
 
 Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリーで
 `1qio_2fofc` の目のアイコンを閉じて 2Fo-Fc を一時的に隠すと確認しやすくなります。
@@ -89,13 +94,13 @@ Fo-Fc の緑・赤のメッシュだけを見たいときは、シーンツリ�
 ## 5. 図として仕上げる
 
 密度マップ入りの図も、通常のシーンと同じ手順で書き出せます
-(→ [論文用の高解像度画像を書き出す](publication-images.md))。
+(→ [論文用の高解像度画像の書き出し](../figures/publication-images.md))。
 
 ## 次のステップ
 
-- [対称分子・単位格子を表示する](symmetry.md) — 同じ 1QIO で結晶パッキングを見る
-- [contour](../reference/renderers/contour.md) / [DensityMap](../reference/objects/densitymap.md) — 表示設定の詳細
-- [サイドパネル](../ui/side-panels.md) — Density map パネルの各項目
+- [対称分子・単位格子の表示](symmetry.md) — 同じ 1QIO で結晶パッキングを見る
+- [contour](../../reference/renderers/contour.md) / [DensityMap](../../reference/objects/densitymap.md) — 表示設定の詳細
+- [サイドパネル](../../ui/side-panels.md) — Density map パネルの各項目
 
 ---
 

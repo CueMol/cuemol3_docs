@@ -1,9 +1,9 @@
-<!-- source: ja/tutorials/animation-movie.md @ c730ead -->
+<!-- source: ja/tutorials/animation/animation-movie.md @ c730ead -->
 
 # Making an animation and exporting a movie
 
 This tutorial follows the whole process: arranging molecule rotations, camera movements and display switches on a timeline to build an animation, then writing it out as a movie file.
-The first half uses the scene (3UG9) finished in [Making a protein ribbon figure](ribbon-figure.md), and the morphing in the second half uses two structures of transducin-α (1TND / 1TAG).
+The first half uses the scene (3UG9) finished in [Making a protein ribbon figure](../figures/ribbon-figure.md), and the morphing in the second half uses two structures of transducin-α (1TND / 1TAG).
 
 !!! info "Screenshots planned"
     Screenshots showing the workflow will be added to this page.
@@ -13,12 +13,12 @@ The first half uses the scene (3UG9) finished in [Making a protein ribbon figure
 ## 1. How animation works
 
 An animation is built by placing **animation elements** (rotation, camera movement, display switching, etc.) on a timeline. Each element is shown as a band (strip); the position of the band is the start time and its length is the duration
-(→ [Animation](../reference/animation/index.md)).
+(→ [Animation](../../reference/animation/index.md)).
 
 ## 2. Open the Animation panel
 
 With the 3UG9 scene open, open the **Animation** tab in the bottom panel
-(→ [Animation panel](../ui/bottom-panels/animation.md)).
+(→ [Animation panel](../../ui/bottom-panels/animation.md)).
 
 ## 3. Rotate the molecule
 
@@ -27,7 +27,7 @@ First, create the classic animation in which the molecule keeps spinning in plac
 1. Choose **Simple spin** from the add menu of the panel.
 2. A strip is added. Select it and check the inspector on the right.
 3. Adjust **Rotation angle** and **Spin axis**.
-   At 360°, the molecule makes one full turn and returns to its original orientation (→ [SimpleSpin](../reference/animation/simplespin.md)).
+   At 360°, the molecule makes one full turn and returns to its original orientation (→ [SimpleSpin](../../reference/animation/simplespin.md)).
 4. Drag the band to change its start position, and drag its edge to change its length (the time taken for the rotation).
 
 <!-- TODO(screenshot): Simple spin strip and inspector (Rotation angle / Spin axis) -->
@@ -41,13 +41,13 @@ You can also check the state at any point in time by dragging the current positi
 
 The view moves smoothly to a saved camera. This is used for effects such as zooming from the overall view to a region of interest.
 
-1. Set the molecular view to the viewpoint you want as the start, and press **New camera from view** in the **Explorer &gt; Camera** panel of the left side panel to save it (→ [Camera](../reference/camera.md)).
+1. Set the molecular view to the viewpoint you want as the start, and press **New camera from view** in the **Explorer &gt; Camera** panel of the left side panel to save it (→ [Camera](../../reference/camera.md)).
 2. In the same way, set the view to the viewpoint you want as the end and save another camera.
 3. In the header of the timeline, set the **start camera** to the camera for the start point.
 4. Choose **Camera motion** from the add menu.
-5. Select the added strip and specify the end camera in **Target camera** of the inspector (→ [CamMotion](../reference/animation/cammotion.md)).
+5. Select the added strip and specify the end camera in **Target camera** of the inspector (→ [CamMotion](../../reference/animation/cammotion.md)).
 
-On playback, the view is interpolated from the start camera to the end camera over the span of the strip. If a start camera is specified, the animation always starts from the viewpoint of that camera, regardless of the viewpoint at the time you press play. To add acceleration and deceleration to the viewpoint movement, set the common property **Quadric** (→ [Animation](../reference/animation/index.md)).
+On playback, the view is interpolated from the start camera to the end camera over the span of the strip. If a start camera is specified, the animation always starts from the viewpoint of that camera, regardless of the viewpoint at the time you press play. To add acceleration and deceleration to the viewpoint movement, set the common property **Quadric** (→ [Animation](../../reference/animation/index.md)).
 
 ## 6. Add a display switch
 
@@ -56,10 +56,10 @@ Show / Hide are animations in which a Renderer gradually **fades in / fades out*
 
 1. Choose **Show** (fade in) or **Hide** (fade out) from the add menu.
 2. In the inspector, choose the target Renderer from the checklist
-   (→ [Show / Hide](../reference/animation/showhide.md)).
+   (→ [Show / Hide](../../reference/animation/showhide.md)).
 
 There are also **Slide in / Slide out**, which bring objects in and out with a movement from off-screen
-(→ [SlideInOutAnim](../reference/animation/slideinout.md)). To leave a span with no elements placed, secure the length with the do-nothing **No operation** element.
+(→ [SlideInOutAnim](../../reference/animation/slideinout.md)). To leave a span with no elements placed, secure the length with the do-nothing **No operation** element.
 
 ## 7. Add morphing
 
@@ -97,7 +97,7 @@ The 1TAG Object that was the copy source is no longer needed, so you can delete 
 ### Place it on the timeline and play
 
 1. Choose **Mol morphing** from the add menu of the Animation panel.
-2. Select the added strip and specify the converted 1TND in **Target MorphMol** of the inspector (→ [MolAnim](../reference/animation/molanim.md)).
+2. Select the added strip and specify the converted 1TND in **Target MorphMol** of the inspector (→ [MolAnim](../../reference/animation/molanim.md)).
 3. On playback, the molecule deforms between the GTP-bound form and the GDP-bound form.
 
 Chains B and C, ligands and water molecules that exist only on the 1TND side have no correspondence, so they stay still, but they are not visible because only the trace of chain A is displayed.
@@ -105,7 +105,7 @@ Chains B and C, ligands and water molecules that exist only on the 1TND side hav
 !!! tip "To make a back-and-forth loop"
     Add another **Mol morphing** strip after the first, and set **Start value** to 1 and **End value** to 0 in the inspector to get the change in the reverse direction.
     Placing the two side by side gives a "there and back" loop animation
-    (→ [MolAnim](../reference/animation/molanim.md)).
+    (→ [MolAnim](../../reference/animation/molanim.md)).
 
 <!-- TODO(screenshot): Morph animation tool dialog (frame list) and the molecular view during morphing playback -->
 
@@ -118,25 +118,25 @@ Chains B and C, ligands and water molecules that exist only on the 1TND side hav
 
 ## 8. Export as a movie
 
-Choose **Rendering &gt; Movie rendering...** and the rendering window opens in Movie mode (→ [Rendering window](../ui/rendering-window.md)).
+Choose **Rendering &gt; Movie rendering...** and the rendering window opens in Movie mode (→ [Rendering window](../../ui/rendering-window.md)).
 
 1. Choose the target view in **Target**. **Backend** can be left at the default **Umbreon**.
 2. Choose the size in the **Image** tab (e.g. **HD1080 (1920×1080)**).
-3. Press **Start Render**. The frames are rendered one by one, and when finished they are encoded into a movie file with ffmpeg (bundled with the macOS / Windows release assets; → [Configuring external tools](../install/external-tools.md))
+3. Press **Start Render**. The frames are rendered one by one, and when finished they are encoded into a movie file with ffmpeg (bundled with the macOS / Windows release assets; → [Configuring external tools](../../install/external-tools.md))
 4. By default the output is created in a temporary folder. Use **Save movie as...** to save the finished movie wherever you like.
 
 A **Frame rate** of 24 to 30 is usually sufficient. Movie rendering takes "number of frames × time per still image", so it is safest to try the size and quality on a single still image first. For presentations, a size around VGA / SVGA is enough.
 Output settings such as the frame rate and movie format are remembered next time.
 The settings for raising quality are shared with still images
-(→ [Exporting high-resolution images for publication](publication-images.md)).
+(→ [Exporting high-resolution images for publication](../figures/publication-images.md)).
 
 <!-- TODO(screenshot): Rendering window in Movie mode (progress and preview) -->
 
 ## Next steps
 
-- [Animation](../reference/animation/index.md) — element types and common properties
-- [Rendering window](../ui/rendering-window.md) — settings of the movie mode
-- [Camera](../reference/camera.md) — saving viewpoints and display flags
+- [Animation](../../reference/animation/index.md) — element types and common properties
+- [Rendering window](../../ui/rendering-window.md) — settings of the movie mode
+- [Camera](../../reference/camera.md) — saving viewpoints and display flags
 
 ---
 

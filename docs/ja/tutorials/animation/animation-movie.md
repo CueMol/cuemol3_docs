@@ -1,9 +1,14 @@
-# アニメーションを作って動画に出力する
+# アニメーションの作成と動画の出力
 
 分子の回転・視点の移動・表示の切り替えをタイムラインに並べてアニメーションを作り、
 動画ファイルとして書き出すまでの流れを追います。
-前半は [タンパク質のリボン図を作る](ribbon-figure.md) で仕上げたシーン (3UG9) を、
+前半は [タンパク質のリボン図の表示](../figures/ribbon-figure.md) で仕上げたシーン (3UG9) を、
 後半のモーフィングでは transducin-α の 2 つの構造 (1TND / 1TAG) を使います。
+
+!!! abstract "このチュートリアルについて"
+    - **題材**: チャネルロドプシン (3UG9) のシーン、transducin-α (1TND / 1TAG)
+    - **学ぶこと**: タイムラインの編集、カメラモーション、表示の切り替え、モーフィング、動画の書き出し
+    - **前提**: [タンパク質のリボン図の表示](../figures/ribbon-figure.md) (前半で仕上げたシーンを使う)
 
 !!! info "撮影予定"
     このページには操作の流れを示すスクリーンショットを追加予定です。
@@ -15,12 +20,12 @@
 アニメーションは、**アニメーション要素** (回転・カメラ移動・表示切り替えなど) を
 タイムラインに並べて構成します。1 つの要素が 1 本の帯 (ストリップ) として表示され、
 帯の位置が開始時刻、長さが継続時間を表します
-(→ [アニメーション](../reference/animation/index.md))。
+(→ [アニメーション](../../reference/animation/index.md))。
 
 ## 2. Animation パネルを開く
 
 3UG9 のシーンを開いた状態で、下部パネルの **Animation** タブを開きます
-(→ [Animation パネル](../ui/bottom-panels/animation.md))。
+(→ [Animation パネル](../../ui/bottom-panels/animation.md))。
 
 ## 3. 分子を回転させる
 
@@ -29,7 +34,7 @@
 1. パネルの追加メニューから **Simple spin** を選びます。
 2. ストリップが追加されるので、選択して右側のインスペクタを確認します。
 3. **Rotation angle** (回転角) と **Spin axis** (回転軸) を調整します。
-   360° にすると 1 周して元の向きに戻ります (→ [SimpleSpin](../reference/animation/simplespin.md))。
+   360° にすると 1 周して元の向きに戻ります (→ [SimpleSpin](../../reference/animation/simplespin.md))。
 4. 帯をドラッグすると開始位置を、端をドラッグすると長さ (回転にかける時間) を変えられます。
 
 <!-- TODO(screenshot): Simple spin のストリップとインスペクタ (Rotation angle / Spin axis) -->
@@ -46,17 +51,17 @@
 といった演出に使います。
 
 1. 分子ビューで始点にしたい視点に合わせ、左サイドパネルの **Explorer &gt; Camera** パネルで
-   **New camera from view** を押して保存します (→ [カメラ](../reference/camera.md))。
+   **New camera from view** を押して保存します (→ [カメラ](../../reference/camera.md))。
 2. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します。
 3. タイムラインのヘッダで、**開始カメラ**に始点のカメラを指定します。
 4. 追加メニューから **Camera motion** を選びます。
 5. 追加されたストリップを選び、インスペクタの **Target camera** に終点のカメラを
-   指定します (→ [CamMotion](../reference/animation/cammotion.md))。
+   指定します (→ [CamMotion](../../reference/animation/cammotion.md))。
 
 再生すると、ストリップの区間で視点が始点から終点へ補間されます。開始カメラを
 指定しておくと、再生を押したときの視点にかかわらず、常にそのカメラの視点から
 アニメーションが始まります。視点の動きに加減速を付けたいときは、共通プロパティの
-**Quadric** を設定します (→ [アニメーション](../reference/animation/index.md))。
+**Quadric** を設定します (→ [アニメーション](../../reference/animation/index.md))。
 
 ## 6. 表示の切り替えを加える
 
@@ -66,10 +71,10 @@ Show / Hide は、ストリップの区間で Renderer が徐々に**フェー�
 
 1. 追加メニューから **Show** (フェードイン) または **Hide** (フェードアウト) を選びます。
 2. インスペクタで、対象の Renderer をチェックリストから選びます
-   (→ [Show / Hide](../reference/animation/showhide.md))。
+   (→ [Show / Hide](../../reference/animation/showhide.md))。
 
 画面外からの移動を伴って出し入れする **Slide in / Slide out** もあります
-(→ [SlideInOutAnim](../reference/animation/slideinout.md))。また、要素を置いて
+(→ [SlideInOutAnim](../../reference/animation/slideinout.md))。また、要素を置いて
 いない区間を作りたいときは、何もしない **No operation** 要素で長さを確保します。
 
 ## 7. モーフィングを加える
@@ -120,7 +125,7 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 
 1. Animation パネルの追加メニューから **Mol morphing** を選びます。
 2. 追加されたストリップを選び、インスペクタの **Target MorphMol** で
-   変換した 1TND を指定します (→ [MolAnim](../reference/animation/molanim.md))。
+   変換した 1TND を指定します (→ [MolAnim](../../reference/animation/molanim.md))。
 3. 再生すると、GTP 結合型と GDP 結合型の間で分子が変形します。
 
 1TND 側にしかない chain B・C やリガンド・水分子は、対応が取れないため
@@ -130,7 +135,7 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
     **Mol morphing** のストリップをもう 1 つ後ろに追加し、インスペクタの
     **Start value** を 1、**End value** を 0 にすると逆方向の変化になります。
     2 本並べると「行って戻る」ループアニメーションが作れます
-    (→ [MolAnim](../reference/animation/molanim.md))。
+    (→ [MolAnim](../../reference/animation/molanim.md))。
 
 <!-- TODO(screenshot): Morph animation tool ダイアログ (フレーム一覧) と、モーフィング再生中の分子ビュー -->
 
@@ -152,13 +157,13 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 ## 8. 動画に出力する
 
 **Rendering &gt; Movie rendering...** を選ぶと、レンダリングウィンドウが
-動画 (Movie) モードで開きます (→ [レンダリングウィンドウ](../ui/rendering-window.md))。
+動画 (Movie) モードで開きます (→ [レンダリングウィンドウ](../../ui/rendering-window.md))。
 
 1. **Target** に対象のビューを選びます。**Backend** は既定の **Umbreon** のままで構いません。
 2. **Image** タブでサイズ (例: **HD1080 (1920×1080)**) を選びます。
 3. **Start Render** を押すと、フレームを 1 枚ずつレンダリングし、完了すると
    ffmpeg で動画ファイルにエンコードされます (macOS / Windows の配布物には同梱、
-   → [外部ツールの設定](../install/external-tools.md))
+   → [外部ツールの設定](../../install/external-tools.md))
 4. 出力は既定では一時フォルダに作られます。**Save movie as...** で
    完成した動画を好きな場所に保存します。
 
@@ -167,15 +172,15 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 試してから決めるのが確実です。プレゼン用なら VGA / SVGA 程度のサイズでも十分です。
 フレームレートや動画形式などの出力設定は次回も記憶されます。
 品質を上げたいときの設定は静止画と共通です
-(→ [論文用の高解像度画像を書き出す](publication-images.md))。
+(→ [論文用の高解像度画像の書き出し](../figures/publication-images.md))。
 
 <!-- TODO(screenshot): Movie モードのレンダリングウィンドウ (進捗とプレビュー) -->
 
 ## 次のステップ
 
-- [アニメーション](../reference/animation/index.md) — 要素の種類と共通プロパティ
-- [レンダリングウィンドウ](../ui/rendering-window.md) — 動画モードの各設定
-- [カメラ](../reference/camera.md) — 視点の保存と表示フラグ
+- [アニメーション](../../reference/animation/index.md) — 要素の種類と共通プロパティ
+- [レンダリングウィンドウ](../../ui/rendering-window.md) — 動画モードの各設定
+- [カメラ](../../reference/camera.md) — 視点の保存と表示フラグ
 
 ---
 

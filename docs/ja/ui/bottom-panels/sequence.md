@@ -43,7 +43,7 @@
 ## 関連項目
 
 - [下部パネル](index.md)
-- [分子の一部を選択する](../../tutorials/basic/selection.md)
+- [分子の一部の選択](../../tutorials/basic/selection.md)
 - [選択式の文法](../../reference/selection.md)
 
 ---

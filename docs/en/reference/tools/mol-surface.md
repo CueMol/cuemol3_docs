@@ -73,7 +73,7 @@ and regenerated with `recalc_surface` (→ [Console command list](../plugins/con
 - [Tools menu](../../menu/tools.md)
 - [MolSurfObj (molecular surface)](../objects/molsurf.md) / [molsurf](../renderers/molsurf.md)
 - [Cutting a molecular surface](surface-cutter.md) / [Calculating the electrostatic potential](apbs.md)
-- [Coloring a molecular surface by electrostatic potential](../../tutorials/surface-elepot.md)
+- [Coloring a molecular surface by electrostatic potential](../../tutorials/structure/surface-elepot.md)
 
 ---
 

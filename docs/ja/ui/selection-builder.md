@@ -113,7 +113,7 @@ Arnd / Expn の距離は、隣のドロップダウンからプリセット (3�
 
 - [選択式の文法](../reference/selection.md) — ビルダーが生成する式の文法
 - [サイドパネル](side-panels.md) — Selection パネル
-- [分子の一部を選択する](../tutorials/basic/selection.md) — チュートリアル
+- [分子の一部の選択](../tutorials/basic/selection.md) — チュートリアル
 
 ---
 

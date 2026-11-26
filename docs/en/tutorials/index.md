@@ -26,12 +26,12 @@ If you proceed in order, each page picks up the state left by the previous one.
 
 <div class="grid cards" markdown>
 
-- **[Making a protein ribbon figure](ribbon-figure.md)** — The basic figure-making course, from fetching a structure to coloring and outlines
-- **[Exporting high-resolution images for publication](publication-images.md)** — Choosing between Export scene and ray tracing
-- **[Overlaying an electron density map](density-map.md)** — Fetching a map with Get PDB and the Density map panel
-- **[Displaying symmetry mates and the unit cell](symmetry.md)** — Showing crystal packing and Create SYMM mol
-- **[Coloring a molecular surface by electrostatic potential](surface-elepot.md)** — From surface generation to APBS calculation and coloring
-- **[Making an animation and exporting a movie](animation-movie.md)** — Timeline editing, morphing, and movie output
+- **[Making a protein ribbon figure](figures/ribbon-figure.md)** — The basic figure-making course, from fetching a structure to coloring and outlines
+- **[Exporting high-resolution images for publication](figures/publication-images.md)** — Choosing between Export scene and ray tracing
+- **[Overlaying an electron density map](experimental/density-map.md)** — Fetching a map with Get PDB and the Density map panel
+- **[Displaying symmetry mates and the unit cell](experimental/symmetry.md)** — Showing crystal packing and Create SYMM mol
+- **[Coloring a molecular surface by electrostatic potential](structure/surface-elepot.md)** — From surface generation to APBS calculation and coloring
+- **[Making an animation and exporting a movie](animation/animation-movie.md)** — Timeline editing, morphing, and movie output
 
 </div>
 

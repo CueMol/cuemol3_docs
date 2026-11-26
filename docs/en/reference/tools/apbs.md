@@ -79,7 +79,7 @@ The addition can be reverted with a single Undo.
 In the Color panel, select a molsurf Renderer, choose **Electrostatic potential** as the Coloring type, and specify the
 calculated map. Turn **By SAS** ON and set **High** / **Low** to about ±2 (in kT/e)
 to make the distribution easier to see. For the detailed procedure, see
-[Coloring a molecular surface by electrostatic potential](../../tutorials/surface-elepot.md); for the settings, see
+[Coloring a molecular surface by electrostatic potential](../../tutorials/structure/surface-elepot.md); for the settings, see
 [Coloring](../coloring.md).
 
 ## Using from the Console

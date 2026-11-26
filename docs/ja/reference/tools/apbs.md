@@ -76,7 +76,7 @@ APBS の計算条件です。通常は変える必要はありません。詳し
 Color パネルで molsurf Renderer を選び、Coloring の種類から **Electrostatic potential** を選んで、
 計算したマップを指定します。**By SAS** を ON にし、**High** / **Low** を ±2 程度 (単位は kT/e) に
 すると、分布が見やすくなります。詳しい手順は
-[分子表面を静電ポテンシャルで着色する](../../tutorials/surface-elepot.md) を、設定項目は
+[分子表面の静電ポテンシャル表示](../../tutorials/structure/surface-elepot.md) を、設定項目は
 [Coloring](../coloring.md) を参照してください。
 
 ## Console から使う

@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/surface-elepot.md @ 777582f -->
+<!-- source: ja/tutorials/structure/surface-elepot.md @ 777582f -->
 
 # Coloring a molecular surface by electrostatic potential
 
@@ -29,7 +29,7 @@ Open **Tools &gt; Mol surface generation...**.
    the default of 2 is faster).
 4. **Object name** and **Probe radius (A)** (1.4 Å, the radius of a water molecule) can be left at their defaults.
 5. **Algorithm** can also be left at the default **Auto** (→
-   [MolSurfObj (molecular surface)](../reference/objects/molsurf.md#generation-algorithm-algorithm))
+   [MolSurfObj (molecular surface)](../../reference/objects/molsurf.md#generation-algorithm-algorithm))
 6. Click OK. A molecular surface Object and a molsurf Renderer are created, and the surface is displayed.
 
 <!-- TODO(screenshot): The Mol surface generation dialog and the molecular surface right after generation -->
@@ -38,8 +38,8 @@ The MolSurf Object holds only the shape of the surface. The molsurf Renderer ref
 specified in **Selection mol** in the inspector (here, 1QIO, from which the surface was generated)
 for coloring and selection.
 To display only part of the surface, specify the range in **Selection**.
-For details, see [MolSurf](../reference/objects/molsurf.md) /
-[molsurf](../reference/renderers/molsurf.md).
+For details, see [MolSurf](../../reference/objects/molsurf.md) /
+[molsurf](../../reference/renderers/molsurf.md).
 
 ## 3. Calculate the electrostatic potential
 
@@ -56,14 +56,14 @@ Open **Tools &gt; APBS elepot calculation...**.
 
 APBS and pdb2pqr are bundled with the macOS / Windows release assets, so installation and
 configuration are normally not needed. For builds that do not bundle them (such as Linux), install them
-separately and specify the paths in Settings (→ [Configuring external tools](../install/external-tools.md)).
+separately and specify the paths in Settings (→ [Configuring external tools](../../install/external-tools.md)).
 
 <!-- TODO(screenshot): The APBS elepot calculation dialog (progress display during the run) -->
 
 Calculation conditions such as temperature and dielectric constants can be changed in **APBS options**.
 A box showing the region over which the map was calculated (a `*unitcell` Renderer) is also added to the scene.
 Once you have confirmed that the region is large enough, you can hide it.
-For details on the electrostatic potential map Object, see [ElePotMap](../reference/objects/elepot.md).
+For details on the electrostatic potential map Object, see [ElePotMap](../../reference/objects/elepot.md).
 
 ## 4. Color the surface by electrostatic potential
 
@@ -78,7 +78,7 @@ For details on the electrostatic potential map Object, see [ElePotMap](../refere
    with the default of ±10 hardly any color appears. The narrower the range,
    the stronger the contrast.
 
-For details on the settings, see [Coloring](../reference/coloring.md).
+For details on the settings, see [Coloring](../../reference/coloring.md).
 
 <!-- TODO(screenshot): The Electrostatic potential settings in the Color panel, and the colored surface -->
 
@@ -91,15 +91,15 @@ To show the structure inside the surface as well, make the surface translucent a
 2. In the **Basic settings** section of the property inspector, lower **Opacity** to about 0.5.
 
 This gives the classic overlay in which the path of the main chain is visible through the surface.
-For finishing and export, see [Exporting high-resolution images for publication](publication-images.md).
+For finishing and export, see [Exporting high-resolution images for publication](../figures/publication-images.md).
 
 <!-- TODO(screenshot): Overlay of a translucent surface and the cartoon -->
 
 ## Next steps
 
-- [Exporting high-resolution images for publication](publication-images.md) — finish this figure by ray tracing
-- [Coloring](../reference/coloring.md) — settings for electrostatic potential
-- [MolSurf](../reference/objects/molsurf.md) / [ElePotMap](../reference/objects/elepot.md) — details of the generated Objects
+- [Exporting high-resolution images for publication](../figures/publication-images.md) — finish this figure by ray tracing
+- [Coloring](../../reference/coloring.md) — settings for electrostatic potential
+- [MolSurf](../../reference/objects/molsurf.md) / [ElePotMap](../../reference/objects/elepot.md) — details of the generated Objects
 
 ---
 

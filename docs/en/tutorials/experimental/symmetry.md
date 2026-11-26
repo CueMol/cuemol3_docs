@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/symmetry.md @ 8d54764 -->
+<!-- source: ja/tutorials/experimental/symmetry.md @ 8d54764 -->
 
 # Displaying symmetry mates and the unit cell
 
@@ -18,7 +18,7 @@ Choose a Renderer that shows the outline of the molecule, such as **cartoon**.
 ## 2. Check the crystallographic information
 
 Open the **Crystal &gt; Symmetry** panel in the left side panel
-(→ [Side panels](../ui/side-panels.md)).
+(→ [Side panels](../../ui/side-panels.md)).
 
 1. Select the target (1QIO) in **Object**.
 2. The cell parameters (*a* / *b* / *c* / *α* / *β* / *γ*) and the space group are displayed.
@@ -31,7 +31,7 @@ go straight to the next step.
 !!! note "If the displayed values differ from the actual ones"
     Depending on the PDB file, the values shown here may differ from what was intended.
     In that case, or when you load a file without symmetry information, the crystal system and space group
-    can be set again with **Change...** in the panel (→ [Side panels](../ui/side-panels.md)).
+    can be set again with **Change...** in the panel (→ [Side panels](../../ui/side-panels.md)).
 
 ## 3. Display the unit cell
 
@@ -90,8 +90,8 @@ so choosing it while looking at a symmetry mate sends the view to a distant loca
 ## Next steps
 
 - [Overlaying an electron density map](density-map.md) — Check the density on the same 1QIO
-- [Exporting high-resolution images for publication](publication-images.md) — Export the packing view
-- [Side panels](../ui/side-panels.md) — Each item of the Symmetry panel
+- [Exporting high-resolution images for publication](../figures/publication-images.md) — Export the packing view
+- [Side panels](../../ui/side-panels.md) — Each item of the Symmetry panel
 
 ---
 
