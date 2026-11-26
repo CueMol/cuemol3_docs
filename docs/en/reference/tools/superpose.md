@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/superpose.md @ 773364a -->
+<!-- source: ja/reference/tools/superpose.md @ d6bebaf -->
 
 # Superposing molecules (Molecular superposition)
 
@@ -14,9 +14,9 @@ Superpose two molecules. Open the **Molecular superposition** dialog with **Tool
 
 | Method | Applies to | Characteristics |
 |---|---|---|
-| **US-align** (default) | Proteins and nucleic acids (RNA / DNA) | Automatically matches the structurally similar parts and superposes them. No need to worry about the selection ranges |
-| **SSM** | Proteins only | Automatically determines the corresponding parts from the secondary structure and superposes them |
-| **LSQ** | Any molecule | Pairs the selected atoms in order and superposes them by least squares. The atoms to superpose must be specified correctly |
+| **US-align** (default) | Proteins and nucleic acids (RNA / DNA) | Automatically matches the structurally similar parts and superposes them. No need to worry about the selection ranges. |
+| **SSM** | Proteins only | Automatically determines the corresponding parts from the secondary structure and superposes them. |
+| **LSQ** | Any molecule | Pairs the selected atoms in order and superposes them by least squares. The atoms to superpose must be specified correctly. |
 
 ### US-align
 
@@ -26,8 +26,8 @@ US-align automatically finds and matches the structurally similar parts, then su
 
 | Pivot atom | Description |
 |---|---|
-| Auto (CA / C3') (default) | Uses CA for amino acids and C3' for nucleotides (including modified bases) |
-| CA / C3' / C4' / P | Uses the specified atom |
+| Auto (CA / C3') (default) | Uses CA for amino acids and C3' for nucleotides (including modified bases). |
+| CA / C3' / C4' / P | Uses the specified atom. |
 
 ### SSM
 
@@ -50,12 +50,13 @@ Superposes by least squares (Least Square Fitting). It works with any molecule, 
 |---|---|
 | **Algorithm** &gt; **Method** | Superposition method (US-align / SSM / LSQ) |
 | **Algorithm** &gt; **Pivot atom** | Atom that represents each residue in US-align |
-| **Reference** &gt; Molecule / Selection | The molecule that stays fixed, and the part used for superposition. An empty Selection means all atoms |
+| **Reference** &gt; Molecule / Selection | The molecule that stays fixed, and the part used for superposition. An empty Selection means all atoms. |
 | **Moving** &gt; Molecule / Selection | The molecule to be moved, and the part used for superposition |
-| **Auto recenter** | When ON (default), the view is centered on the selected part of the Moving molecule after superposition |
+| **Auto recenter** | When ON (default), the view is centered on the selected part of the Moving molecule after superposition. |
 | **Use xformMat property** | When ON, the superposition transform is saved as the xformMat property of the molecule instead of rewriting the coordinates (default is OFF) |
 
-- Method, Pivot atom, the two switches and the molecule choices are kept the next time the dialog is opened. Selection is empty every time.
+- Method, Pivot atom, the two switches, the molecule choices and Selection are kept the next time the dialog is opened
+  (even after CueMol3 is restarted). The molecules are used if they remain in the scene.
 - In the Selection input field, the ▼ at the right end gives access to named selections, the input history and the selection builder (→ [Selection builder](../../ui/selection-builder.md)).
 
 ## Running and results
@@ -76,7 +77,7 @@ The result is written as a log to **Output** in the bottom panel. With US-align,
 ========================
 ```
 
-- **TM-score**: Structural similarity. Two values are given, normalized by the length of the Reference and of the Moving molecule respectively
+- **TM-score**: Structural similarity. Two values are given, normalized by the length of the Reference and of the Moving molecule respectively.
 - **RMSD**: RMSD of the representative atoms of the matched residues
 - **Nalgn**: Number of matched (aligned) residues
 - **SeqID**: Fraction of the matched residues that have the same residue type
@@ -86,6 +87,8 @@ SSM outputs `RMSD` (RMSD of the Cα atoms), `Nalgn` (number of matched residues)
 ## Using it from the Console
 
 In the native mode of the [Console](../plugins/console/index.md), the `superpose` command performs the same operation. `algo` specifies the method (`USalign` / `SSM` / `LSQ`) and `pivot` specifies the Pivot atom. In PyM console, `align` / `super` superpose with US-align and `pair_fit` with LSQ (→ [PyM console](../plugins/console/pymconsole.md#supported-commands)).
+In ChX console, `matchmaker` superposes with US-align and `align` with LSQ
+(→ [ChX console](../plugins/console/chx_console.md#supported-commands)).
 
 ## See also
 
@@ -95,4 +98,4 @@ In the native mode of the [Console](../plugins/console/index.md), the `superpose
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/tools/apbs.md @ 773364a -->
+<!-- source: ja/reference/tools/apbs.md @ d6bebaf -->
 
 # Calculating the electrostatic potential (APBS elepot calculation)
 
@@ -28,8 +28,8 @@ To use a surface for coloring, [generate the molecular surface](mol-surface.md) 
 | Item | Default | Description |
 |---|---|---|
 | **Molecule** | — | Molecule to calculate |
-| **Use selection** / selection | OFF | When ON, only the part specified by the selection expression is calculated. To exclude water molecules and ions, specify something like `protein` |
-| **Elepot name** | `pot_<molecule name>` | Name of the resulting electrostatic potential map Object. Filled in automatically when a molecule is chosen |
+| **Use selection** / selection | OFF | When ON, only the part specified by the selection expression is calculated. To exclude water molecules and ions, specify something like `protein`. |
+| **Elepot name** | `pot_<molecule name>` | Name of the resulting electrostatic potential map Object. Filled in automatically when a molecule is chosen. |
 
 ### Charge method
 
@@ -37,7 +37,7 @@ To use a surface for coloring, [generate the molecular surface](mol-surface.md) 
 |---|---|---|
 | **Method** | Use PDB2PQR | How charges are assigned (see below) |
 | **Force field** | Value in Settings (default `charmm`) | With Use PDB2PQR, the force field used to assign charges (`charmm` / `amber` / `tyl06` / `peoepb` / `swanson`) |
-| **Use hydrogen atoms** | OFF | With Use internal, uses the hydrogen atoms in the molecule |
+| **Use hydrogen atoms** | OFF | With Use internal, uses the hydrogen atoms in the molecule. |
 
 - **Use PDB2PQR**: Assigns charges and atomic radii with pdb2pqr, then runs the calculation.
 - **Use internal**: Uses CueMol's own charge assignment. pdb2pqr is not required, but the
@@ -52,11 +52,15 @@ Calculation conditions for APBS. They normally do not need to be changed. See th
 
 | Item | Default | Description |
 |---|---|---|
-| **Solve non-linear PBE** | OFF | Solves the non-linear Poisson-Boltzmann equation |
+| **Solve non-linear PBE** | OFF | Solves the non-linear Poisson-Boltzmann equation. |
 | **Temperature (K)** | 298.15 | Temperature |
 | **Max grid size (A)** | 1.0 | Grid spacing (Å) |
 | **Water dielectric** | 78.54 | Dielectric constant of the solvent |
 | **Protein dielectric** | 2.0 | Dielectric constant of the molecular interior |
+
+The selection and the calculation conditions (except Elepot name and Force field) are kept the next time the dialog is opened (even after
+CueMol3 is restarted). The values other than the selection can be reset to the defaults above with **Defaults** at the lower left of the dialog
+(not available during a calculation).
 
 ## Running and results
 
@@ -92,4 +96,4 @@ In the native mode of the [Console](../plugins/console/index.md), `calc_elepot` 
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.2.560*

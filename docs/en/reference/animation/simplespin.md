@@ -1,4 +1,4 @@
-<!-- source: ja/reference/animation/simplespin.md @ 570ee02 -->
+<!-- source: ja/reference/animation/simplespin.md @ d6bebaf -->
 
 # SimpleSpin
 
@@ -14,7 +14,7 @@ For the common properties (name, start time, duration, etc.),
 see [Animation](index.md#common-properties).
 
 Rotation angle
-:   The angle to rotate by
+:   The angle to rotate by. There is no range limit; a negative value rotates in the opposite direction, and 360° is one full turn.
 
 Spin axis
 :   The vector of the rotation axis (X / Y / Z)
@@ -28,8 +28,9 @@ whose rotation direction or speed changes partway through can be created.
 ## See also
 
 - [List of animations](index.md)
+- [RockSpin](rockspin.md)
 - [Bottom panel](../../ui/bottom-panels/index.md)
 
 ---
 
-*Last checked: 2026-08-11 / Verified against: development build (tritium)*
+*Verified against: CueMol3 3.0.2.560*

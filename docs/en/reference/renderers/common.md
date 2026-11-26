@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/common.md @ 777582f -->
+<!-- source: ja/reference/renderers/common.md @ d6bebaf -->
 
 # Common Renderer properties
 
@@ -9,17 +9,17 @@ at the top of the **Properties** tab of the property inspector
 ## Basic settings
 
 Name
-:   The name of the Renderer. It must be unique within the scene
+:   The name of the Renderer. It must be unique within the scene.
 
 Selection
 :   A [selection expression](../selection.md) that specifies the range drawn by this Renderer.
-    Effective only for Renderers that target molecules (MolCoord)
+    Effective only for Renderers that target molecules (MolCoord).
 
 Visible
-:   Toggles visibility. Linked to the eye icon in the scene tree
+:   Toggles visibility. Linked to the eye icon in the scene tree.
 
 Locked
-:   Lock. When ON, the Renderer is excluded from editing operations
+:   Lock. When ON, the Renderer is excluded from editing operations.
 
 ## Material and opacity
 
@@ -28,7 +28,23 @@ Material
     → [Material](material.md)
 
 Opacity
-:   Opacity. 1 is fully opaque; the closer to 0, the more transparent
+:   Opacity. 1 is fully opaque; the closer to 0, the more transparent.
+
+### How translucent Renderers overlap
+
+A Renderer whose Opacity is below 1 is composited over the background in the molecular view with the same method as
+in the rendering window (Umbreon).
+
+- Within one Renderer, only the frontmost surface is visible. Its own back faces do not show through
+  as a mottled pattern.
+- When translucent Renderers overlap, the color is the same regardless of the order in which they are drawn.
+- Labels with **Label on top** turned ON stay displayed on top of translucent Renderers.
+- Translucent Renderers do not cast ambient occlusion shading. Wrapping a molecule in a translucent surface
+  does not darken the structure inside. Ambient occlusion is not applied to the translucent Renderer itself
+  either.
+
+For the compositing settings in the rendering window, see **Transparency** in
+[Rendering](../rendering.md#transparency).
 
 ## Edge lines
 
@@ -60,4 +76,4 @@ unit cell, [namelabel](namelabel.md)) do not show the edge line settings.
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.5.576*

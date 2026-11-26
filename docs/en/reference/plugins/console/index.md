@@ -1,20 +1,25 @@
-<!-- source: ja/reference/plugins/console/index.md @ 773364a -->
+<!-- source: ja/reference/plugins/console/index.md @ d6bebaf -->
 
 # Console
 
 The Console is a command line for operating CueMol with commands. It is a plugin that is **enabled by default** and is used from the **Console** tab of the bottom panel. **tritium_cli**, which runs the same commands from a terminal, is also bundled (→ [tritium_cli](cli.md)).
 
-There are two command modes, switched in the panel.
+There are three command modes, switched in the panel.
 
 | Mode | Prompt | Description |
 |---|---|---|
-| **native mode** (default) | `CueMol>` | Commands for operating CueMol itself. Selections are written with CueMol's [selection expressions](../../selection.md). Described on this page |
+| **native mode** (default) | `CueMol>` | Commands for operating CueMol itself. Selections are written with CueMol's [selection expressions](../../selection.md). Described on this page. |
 | **PyM console** | `PyM>` | PyMOL-compatible commands (→ [PyM console](pymconsole.md)) |
+| **ChX console** | `ChX>` | ChimeraX-compatible commands (→ [ChX console](chx_console.md)) |
 
 ## Enabling the plugin
 
 Because it is enabled by default, the **Console** tab is the first tab of the bottom panel. This tab stays in front until another tab is selected.
 To stop using it, disable **Console** in **Settings &gt; Plugins &gt; Installed** (→ [Plugins](../index.md)).
+
+PyM console and ChX console are provided by plugins of the same names (**PyM console** and
+**ChX console**). Both are enabled by default, and disabling one removes that mode from the switch in the panel and from tritium_cli.
+The native mode is part of Console and is always available.
 
 !!! note "Renamed from PyM console"
     The **PyM console** plugin up to 2.3.20.539 became **Console** in 2.3.21.544. If you had disabled PyM console, Console is enabled anyway, so disable it again if you do not use it. The input history of PyM console is carried over.
@@ -23,8 +28,8 @@ To stop using it, disable **Console** in **Settings &gt; Plugins &gt; Installed*
 
 ![The Console tab. Switch the mode at the left end of the toolbar. Here `help` has been run in native mode (CueMol)](../../../../assets/images/reference/plugins/console/native.webp){ width="625" .on-glb }
 
-- Use **CueMol** | **PyMOL** at the left end of the toolbar. **CueMol** is the native mode.
-- Typing just `native` or `pymol` on a line and running it also switches the mode.
+- Use **CueMol** | **PyMOL** | **ChimeraX** at the left end of the toolbar. **CueMol** is the native mode.
+- Typing just `native` / `pymol` / `chimerax` on a line and running it also switches the mode.
 - The selected mode is remembered, and the next launch starts in that mode.
 - The input history is separate for each mode.
 
@@ -32,9 +37,9 @@ To stop using it, disable **Console** in **Settings &gt; Plugins &gt; Installed*
 
 | Action | Behavior |
 |---|---|
-| ++enter++ | Runs the command |
-| ++shift+enter++ | Inserts a line break |
-| ++tab++ | Completes the part before the cursor. The part after the cursor is left as is. When there are multiple candidates, a list is shown just above the prompt. Pressing it again while the list is shown opens a menu for choosing a candidate |
+| ++enter++ | Runs the command. |
+| ++shift+enter++ | Inserts a line break. |
+| ++tab++ | Completes the part before the cursor. The part after the cursor is left as is. When there are multiple candidates, a list is shown just above the prompt. Pressing it again while the list is shown opens a menu for choosing a candidate. |
 | ++up++ / ++down++ | Steps through the input history (when the cursor is on the first / last line) |
 
 - In the candidate menu, ++tab++ / ++shift+tab++ / the arrow keys move between candidates, and ++enter++ confirms the choice (the command is not run). ++esc++ restores the input as it was before ++tab++ was pressed. Any other key confirms the selected candidate and is then typed. A candidate can also be confirmed by clicking it.
@@ -42,6 +47,8 @@ To stop using it, disable **Console** in **Settings &gt; Plugins &gt; Installed*
 - In file name completion, names starting with `.` become candidates only when `.` is typed. If nothing matches, the search is retried without distinguishing upper and lower case. For `cd`, only directories are candidates.
 - In native mode, ++tab++ completes command names, `help` topics, argument values (choices and true / false), Object and Renderer names, named selections, color names, Renderer types, property paths, the `name=` of arguments not yet specified, and file paths (only for arguments that take a path).
 - **One execution is grouped into one Undo.**
+- A command that the current mode does not support is skipped with `Warning: <reason>; skipped`,
+  and the remaining commands are run. Other errors stop execution there.
 - **Clear** on the toolbar clears the log area, and **Help** runs `help` for the current mode.
 - While a command is running, **Stop** is shown next to "Running...". Pressing it stops before the next command. What has been executed up to that point remains.
 
@@ -54,6 +61,8 @@ create_renderer 1crn, ballstick, name=bs1
 ```
 
 - Write arguments after the command name, separated by **commas**. An argument can also be given by name in the form `name=value`.
+- Type command names in full. An abbreviation is not run; candidates are shown instead, as in `unknown command: "open" (did you mean open_log?)`
+  (++tab++ completes them).
 - Command names take the form "verb_target" (`list_cameras` / `add_paint`, etc.). Commands that are just a noun, such as `props` / `view` / `slab`, display their contents when typed without a value and set it when given a value.
 - An Object is specified by name (`1crn`), and a Renderer by `ObjectName/RendererName` (`1crn/cartoon1`). A Renderer name alone is also accepted if it is unique in the scene. Any element can be specified by **uid**, such as `#12`. If a name is ambiguous, the command is not run and the candidate uids are displayed.
 - A property follows the element after a `.` (`1crn/cartoon1.width`, `view.centerMark`). Scene properties are specified by name only.
@@ -88,7 +97,10 @@ The native-mode commands are collected by `help` topic in the [Console command l
 - `run file.qax` (or `@file.qax`) replays a file of recorded operations (qax). When it is the only thing on the line, each recorded operation becomes one Undo, and replay stops at an operation that fails. When run from inside a script, it is included in the Undo of the whole script (→ [Recording and replaying operations](../../actions.md)).
 - `open_log` opens a file (`log.qax` by default), and from then on the operations performed by subsequent executions are recorded as qax. Executions that did not change the scene are not recorded. A statement written with `log` is included as a note. `close_log` ends the recording.
 - `list_actions` displays each Undo step and the operations performed in it, oldest first. `export_actions file[, first[, last]]` writes that range to a qax file.
-- A `.pml` file (a PyMOL script) cannot be run in native mode. Switch to PyM console to run it.
+- `.pml` files (PyMOL scripts) and `.cxc` files (ChimeraX scripts) cannot be run in native mode.
+  Switch to PyM console or ChX console to run them.
+- Scripts that run automatically at every startup (such as `~/.cuemol/startup.txt`) can be placed
+  (→ [User directory (~/.cuemol)](../../dotfiles.md)).
 
 ## Using from a terminal (tritium_cli)
 
@@ -103,7 +115,7 @@ The native-mode commands are collected by `help` topic in the [Console command l
 ## See also
 
 - [Console command list](commands.md) / [tritium_cli](cli.md)
-- [PyM console](pymconsole.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
+- [PyM console](pymconsole.md) / [ChX console](chx_console.md) / [MCP Server](../mcp-server.md) / [AI Agent](../ai-agent.md)
 - [Plugins](../index.md) / [Settings reference](../../settings.md#plugins)
 - [Selection expression syntax](../../selection.md)
 - [Recording and replaying operations](../../actions.md)
@@ -111,4 +123,4 @@ The native-mode commands are collected by `help` topic in the [Console command l
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.1.555*

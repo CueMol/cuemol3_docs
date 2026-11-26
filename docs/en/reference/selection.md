@@ -1,4 +1,4 @@
-<!-- source: ja/reference/selection.md @ 8d54764 -->
+<!-- source: ja/reference/selection.md @ d6bebaf -->
 
 # Selection expression syntax
 
@@ -14,7 +14,7 @@ Some selection literals take a [name list](#name-list) or a [number list](#numbe
       which assembles an expression in the GUI without writing it, is also available
       (→ [Selection builder](../ui/selection-builder.md))
     - **The `sel` property of a Renderer** — In the property inspector, or in the Selection field of the
-      New Renderer dialog, specifies the range that the Renderer draws
+      New Renderer dialog, specifies the range that the Renderer draws.
     - **Selection fields in dialogs** — Specify the target for molecular surface generation,
       interaction detection and so on
 
@@ -390,6 +390,7 @@ bysidech [expr1]
 
 Restricts the selection of expr1 to side chains only.
 For proteins, the region selected by bysidech also includes Cα, to make the display easier to read.
+For nucleic acids, the methyl group of thymine (`C7` and its hydrogens) is also selected as side chain.
 
 **Example:**
 
@@ -406,6 +407,10 @@ bymainch [expr1]
 ```
 
 Restricts the selection of expr1 to the main chain only.
+For nucleic acids, the phosphate oxygens (`OP1` / `OP2` / `OP3`) are also selected as main chain.
+
+bysidech and bymainch apply only to amino acid and nucleic acid residues. Atoms of residues without a definition of
+main chain and side chain, such as water, ions and ligands, are selected by neither.
 
 ### NEIGHBOR / EXTEND operators
 
@@ -524,4 +529,4 @@ so unexpected residues may be selected.
 
 ---
 
-*Verified against: CueMol3 2.3.12.517*
+*Verified against: CueMol3 3.0.6.577*

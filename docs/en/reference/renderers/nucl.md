@@ -1,4 +1,4 @@
-<!-- source: ja/reference/renderers/nucl.md @ e4bd8cd -->
+<!-- source: ja/reference/renderers/nucl.md @ d6bebaf -->
 
 # nucl (nucleic acid)
 
@@ -49,13 +49,17 @@ Base type
         ![detail2](../../../assets/images/reference/renderers/nucl/nucl-basetype-detail2.png){ width="220" .on-glb }
         ![detail2 enlarged](../../../assets/images/reference/renderers/nucl/nucl-basetype-detail2-2.png){ width="220" .on-glb }
 
+    **None**
+    :   Shows no bases and leaves only the backbone tube. Switching from None back to another shape
+        resets Base size and Base thick to their defaults.
+
 Detail
 :   The fineness of the residue display. Larger values give a smoother display, but increase
     the number of polygons and make processing heavier. In ray tracing, it is ignored
-    except when [edge lines](edge-lines.md) are used
+    except when [edge lines](edge-lines.md) are used.
 
 Base size
-:   The size of the residue display. Specifies the radius of the cylinders of the stick-like parts, in Å
+:   The size of the residue display. Specifies the radius of the cylinders of the stick-like parts, in Å.
 
 Base thick
 :   The thickness of the plate-like bases and so on when Base type is detail1 / detail2.
@@ -92,4 +96,4 @@ You cannot manually force specified residues to form a base pair, or delete a ba
 
 ---
 
-*Last checked: 2026-08-11 / Verified against: development build (tritium)*
+*Verified against: CueMol3 3.0.2.560*

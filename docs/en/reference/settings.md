@@ -1,4 +1,4 @@
-<!-- source: ja/reference/settings.md @ e4bd8cd -->
+<!-- source: ja/reference/settings.md @ d6bebaf -->
 
 # Settings reference
 
@@ -12,7 +12,7 @@ Choose a category in the tree on the left, then edit the values on the right.
 
 | Item | Default | Description |
 |---|---|---|
-| Dark Mode | ON | Switches between the dark and light themes |
+| Dark Mode | ON | Switches between the dark and light themes. |
 
 ### Atom Labels
 
@@ -20,11 +20,11 @@ Format of the atom labels shown in the molecular view.
 
 | Item | Default | Description |
 |---|---|---|
-| Atom Label Font | sans-serif | Label font. Choose from the fonts installed on the system |
+| Atom Label Font | sans-serif | Label font. Choose from the fonts installed on the system. |
 | Atom Label Size | 12 px | Font size (6 to 72 px) |
 | Atom Label Color | `#FFFF00` | Color of the label text |
-| Atom Label Bold | OFF | Makes the label bold |
-| Atom Label Italic | OFF | Makes the label italic |
+| Atom Label Bold | OFF | Makes the label bold. |
+| Atom Label Italic | OFF | Makes the label italic. |
 
 ### Rendering
 
@@ -45,18 +45,24 @@ If they are bundled with the release assets, the default values work as they are
     when the legacy POV-Ray backend is selected
     (→ [Rendering](rendering.md)).
 
+### Compatibility
+
+| Item | Default | Description |
+|---|---|---|
+| Legacy mode for new scenes | OFF | Creates new scenes with the CueMol2 look (Legacy mode). The same setting as **Legacy mode (CueMol2 look)** in the New Tab dialog. For an open scene, switch it in the Scene properties (→ [Scene](scene.md#compatibility)). |
+
 ## Input
 
 ### Mouse & Navigation
 
 | Item | Default | Description |
 |---|---|---|
-| Pointing device | Auto-detect | How scroll input is mapped to view operations. **Mouse** zooms with the wheel; **Mac trackpad** translates with two-finger scrolling and zooms with pinch; **Auto-detect** infers the device from the characteristics of the scroll input |
+| Pointing device | Auto-detect | How scroll input is mapped to view operations. **Mouse** zooms with the wheel; **Mac trackpad** translates with two-finger scrolling and zooms with pinch; **Auto-detect** infers the device from the characteristics of the scroll input. |
 | XY Rotation Sensitivity | 0.8 | Sensitivity of rotation around the X / Y axes (0.1 to 5.0) |
 | Pick Precision | 10 px | Tolerance radius when picking atoms or Objects by clicking (1 to 50 px) |
-| GPU Picking | ON | Picks from the rendered shapes themselves. When OFF, picking reverts to the earlier method based on atom positions. This is a fallback for slow machines. Switching takes effect immediately |
-| Hover Info | ON | Shows what is under the pointer in a corner of the molecular view. When OFF, the picking calls themselves stop |
-| Hover Highlight | ON | Highlights the element under the pointer in the molecular view. Requires both GPU Picking and Hover Info |
+| GPU Picking | ON | Picks from the rendered shapes themselves. When OFF, picking reverts to the earlier method based on atom positions. This is a fallback for slow machines. Switching is applied immediately. |
+| Hover Info | ON | Shows what is under the pointer in a corner of the molecular view. When OFF, the picking calls themselves stop. |
+| Hover Highlight | ON | Highlights the element under the pointer in the molecular view. Requires both GPU Picking and Hover Info. |
 
 → [Picking and hover display](../ui/mouse-input.md#picking-and-hover-display)
 
@@ -68,7 +74,7 @@ Specifies, for each route, whether a loaded file is added to the current scene o
 
 | Item | Default | Description |
 |---|---|---|
-| Drag and drop opens into | Current scene | Destination of files dragged and dropped onto the window. **Current scene** adds them to the scene of the active tab. **New scene** opens them in a dedicated tab |
+| Drag and drop opens into | Current scene | Destination of files dragged and dropped onto the window. **Current scene** adds them to the scene of the active tab. **New scene** opens them in a dedicated tab. |
 | File manager opens into | Current scene | Destination of files opened from the file manager (Finder / Explorer), specified on the command line, or passed from another instance while CueMol3 is running |
 
 - **File &gt; Open File... and Open Recent always load into the current scene, regardless of this setting.**
@@ -81,12 +87,12 @@ Specifies, for each route, whether a loaded file is added to the current scene o
 
 ### Updates
 
-Checking for new releases and in-app updates. Only the macOS (Apple Silicon) version can be updated.
+Checking for new releases and in-app updates. The macOS (Apple Silicon) and Windows versions can be updated.
 
 | Item | Default | Description |
 |---|---|---|
-| Check for Updates at Startup | ON | Checks for a new release after startup and notifies you if there is one. Manual checks are still possible when OFF |
-| Check for Updates | — | Shows the current version and status. It has **Check Now** / **Release Page** / **Update** buttons |
+| Check for Updates at Startup | ON | Checks for a new release after startup and notifies you if there is one. Manual checks are still possible when OFF. |
+| Check for Updates | — | Shows the current version and status. It has **Check Now** / **Release Page** / **Update** buttons. |
 
 For details, see [Updating](../install/update.md).
 
@@ -119,8 +125,10 @@ enables or disables it (→ [Plugins](plugins/index.md)).
 |---|---|---|
 | AI Agent | OFF | A chat panel that builds a scene from instructions written in text (→ [AI Agent](plugins/ai-agent.md)) |
 | MD Tools | OFF | **File &gt; Open MD Trajectory...** and the **Trajectory** tab in the bottom panel |
-| Console | ON | The CueMol command line. PyM console is also available (→ [Console](plugins/console/index.md)) |
-| MCP Server | OFF | Allows AI clients to operate CueMol3 via MCP (→ [MCP Server](plugins/mcp-server.md)) |
+| Console | ON | The CueMol command line (→ [Console](plugins/console/index.md)) |
+| PyM console | ON | The PyMOL-compatible console of Console (→ [PyM console](plugins/console/pymconsole.md)) |
+| ChX console | ON | The ChimeraX-compatible console (→ [ChX console](plugins/console/chx_console.md)) |
+| MCP Server | OFF | Allows AI clients to operate CueMol3 via MCP (→ [MCP Server](plugins/mcp-server.md)). |
 | Component Catalog | OFF | A catalog of UI components (for CueMol3 UI development) |
 
 Plugins that cannot be toggled (Get PDB / Sequence Panel) are not listed here.
@@ -136,8 +144,8 @@ This page appears when **Console** is enabled (Console is enabled by default).
 
 | Item | Default | Description |
 |---|---|---|
-| Command line access | OFF | Allows commands from tritium_cli to be executed in this running window. In a CueMol3 launched by tritium_cli, access is allowed for that session only, without changing this setting |
-| Command line tool | — | Path to the bundled tritium_cli. It can be copied with **Copy**, and instructions for adding it to PATH are shown alongside |
+| Command line access | OFF | Allows commands from tritium_cli to be executed in this running window. In a CueMol3 launched by tritium_cli, access is allowed for that session only, without changing this setting. |
+| Command line tool | — | Path to the bundled tritium_cli. It can be copied with **Copy**, and instructions for adding it to PATH are shown alongside. |
 
 For details, see [tritium_cli](plugins/console/cli.md).
 
@@ -147,8 +155,8 @@ This page appears when **MCP Server** is enabled.
 
 | Item | Default | Description |
 |---|---|---|
-| Accept connections | ON | Accepts connections from MCP clients |
-| Port | 27182 | Port to listen on (1024 to 65535). Applied when ++enter++ is pressed or the field loses focus. Values outside the range are not applied |
+| Accept connections | ON | Accepts connections from MCP clients. |
+| Port | 27182 | Port to listen on (1024 to 65535). Applied when ++enter++ is pressed or the field loses focus. Values outside the range are not applied. |
 
 For details, see [MCP Server](plugins/mcp-server.md).
 
@@ -161,4 +169,4 @@ For details, see [MCP Server](plugins/mcp-server.md).
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.3.565*

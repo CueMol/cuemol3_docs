@@ -1,4 +1,4 @@
-<!-- source: ja/reference/plugins/ai-agent.md @ 773364a -->
+<!-- source: ja/reference/plugins/ai-agent.md @ d6bebaf -->
 
 # AI Agent
 
@@ -17,9 +17,9 @@ The settings are in **Settings &gt; Plugins &gt; AI Agent** (this page appears w
 
 | Item | Default | Description |
 |---|---|---|
-| Model | `openai:gpt-5.6` | The model to use, in the form `provider:model-name`. Choose from the candidates, or enter an ID available to your account directly. The provider part (`openai` / `anthropic` / `google`) determines which of the API keys below is used |
-| Reasoning effort | low | How long the model thinks before answering. Higher values are slower and cost more |
-| Pressing Enter | start a new line | What happens when ++enter++ is pressed in the message box. With *start a new line*, messages are sent with ++cmd+enter++ / ++ctrl+enter++. Choosing *send the message* reverses this |
+| Model | `openai:gpt-5.6` | The model to use, in the form `provider:model-name`. Choose from the candidates, or enter an ID available to your account directly. The provider part (`openai` / `anthropic` / `google`) determines which of the API keys below is used. |
+| Reasoning effort | low | How long the model thinks before answering. Higher values are slower and cost more. |
+| Pressing Enter | start a new line | What happens when ++enter++ is pressed in the message box. With *start a new line*, messages are sent with ++cmd+enter++ / ++ctrl+enter++. Choosing *send the message* reverses this. |
 | OpenAI API key | (not set) | Key used for `openai:` models |
 | Anthropic API key | (not set) | Key used for `anthropic:` models |
 | Google AI API key | (not set) | Key used for `google:` models (a Gemini API key issued in Google AI Studio) |

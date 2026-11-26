@@ -1,4 +1,4 @@
-<!-- source: ja/reference/plugins/mcp-server.md @ 773364a -->
+<!-- source: ja/reference/plugins/mcp-server.md @ d6bebaf -->
 
 # MCP Server
 
@@ -18,8 +18,8 @@ The settings are in **Settings &gt; Plugins &gt; MCP Server**.
 
 | Item | Default | Description |
 |---|---|---|
-| Accept connections | ON | Accepts connections. Turning it OFF closes the port (MCP stays in the status bar, and you can turn it back ON from there) |
-| Port | 27182 | The port to listen on (1024-65535). The value is applied when you press ++enter++ or move focus away (++esc++ restores the original value). A value out of range shows an error and is not applied. The listening state is shown below the field, and when the value is not the default you can restore it with **Reset to 27182**. After changing it, register the client again |
+| Accept connections | ON | Accepts connections. Turning it OFF closes the port (MCP stays in the status bar, and you can turn it back ON from there). |
+| Port | 27182 | The port to listen on (1024-65535). The value is applied when you press ++enter++ or move focus away (++esc++ restores the original value). A value out of range shows an error and is not applied. The listening state is shown below the field, and when the value is not the default you can restore it with **Reset to 27182**. After changing it, register the client again. |
 
 ## MCP in the status bar
 
@@ -30,19 +30,19 @@ it shows **MCP: &lt;tool name&gt;**.
 
 | State | Meaning |
 |---|---|
-| Off | Not accepting connections |
-| Starting | Opening the port |
-| Ready | Waiting for connections from a client |
-| Running | Running a tool |
+| Off | Not accepting connections. |
+| Starting | Opening the port. |
+| Ready | Waiting for connections from a client. |
+| Running | Running a tool. |
 | Error | The server could not be started (for example, the port is in use by another program) |
 
 The popover that opens when you click it contains the following.
 
 - A toggle switch at the top (the same setting as **Accept connections**) and a gear button that opens the settings page
 - **Status** - the state, the address being listened on (`127.0.0.1:<port>`), and the name of the running tool
-- **Set up...** under **Clients** - opens the dialog for registering a client
+- **Set up...** under **Clients** - opens the dialog for registering a client.
 - **Regenerate** under **Token** - regenerates the token used for connections. Clients registered with the old token
-  must be registered again
+  must be registered again.
 
 ## Registering a client
 
@@ -64,6 +64,21 @@ configuration file entry used for registration. Use what you copy with **Copy**.
 
 When you change the token or the port, register the client again.
 
+### Registering with tritium_cli mcp
+
+`tritium_cli mcp` of [tritium_cli](console/cli.md) connects to an MCP client over standard input / output (stdio)
+and relays to the MCP Server of the running CueMol3. For Claude Code, register it as follows.
+
+```
+claude mcp add cuemol -- tritium_cli mcp
+```
+
+- If CueMol3 is not running, it is launched (suppressed with `--no-launch`).
+- **Even if the MCP Server plugin is disabled, the MCP Server is opened for that session only.** The plugin setting
+  does not change.
+- The port and token are read from `~/.cuemol/local-api.json` each time, so no token is needed for registration,
+  and there is no need to register again after the token or port changes.
+
 ## What it can do
 
 - Every operation corresponding to a [Console](console/commands.md) command can be called as a tool.
@@ -75,6 +90,8 @@ When you change the token or the port, register the client again.
 - **One tool call is grouped into one Undo step** (the Undo name is `MCP: <tool name>`).
   Calls are recorded in the [History panel of the Actions view](../actions.md).
 - While an AI Agent instruction or a Console command is running, tool calls are refused.
+  Only one client can edit at a time, and calls are also refused while another MCP client or tritium_cli
+  is running (`CueMol is busy`).
   If the client cancels a call, the running operation stops as well.
 - Errors are returned in a form the client can read (`{ok: false, error}`).
 
@@ -100,4 +117,4 @@ When you change the token or the port, register the client again.
 
 ---
 
-*Verified against: CueMol3 2.4.0.546*
+*Verified against: CueMol3 3.0.0.554*
