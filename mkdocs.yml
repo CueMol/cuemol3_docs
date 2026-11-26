@@ -280,10 +280,13 @@ nav:
           - タンパク質のリボン図の表示: tutorials/figures/ribbon-figure.md
           - 論文用の画像の書き出し: tutorials/figures/publication-images.md
       - 構造を読む・比較する:
+          - リガンド結合部位の表示: tutorials/structure/binding-site.md
           - 表面の静電ポテンシャル表示: tutorials/structure/surface-elepot.md
       - 実験データ:
           - 電子密度マップの表示: tutorials/experimental/density-map.md
           - 対称分子・単位格子の表示: tutorials/experimental/symmetry.md
+      - 予測構造:
+          - AlphaFold 予測構造の評価: tutorials/prediction/alphafold.md
       - 動画:
           - アニメーション動画の作成: tutorials/animation/animation-movie.md
   - リファレンス:
