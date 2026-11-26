@@ -98,6 +98,32 @@ Settings でパスを指定します (→ [外部ツールの設定](../../insta
 
 <!-- TODO(screenshot): 半透明表面 + cartoon の重ね図 -->
 
+## 同じことをコマンドで
+
+本文の操作を [Console](../../reference/plugins/console/index.md) の native モードのコマンドで書くと、
+次のようになります。Console に 1 行ずつ入力します ([tritium_cli](../../reference/plugins/console/cli.md)
+からも実行できます)。各コマンドの引数は Console で `help <コマンド>` を実行すると確認できます
+(→ [Console のコマンド一覧](../../reference/plugins/console/commands.md))。
+
+```
+# 1. 構造を読み込む
+fetch_pdb 1QIO, mmcif, cartoon
+# 2. 分子表面を生成する
+create_surface 1qio, protein, density=5
+# 3. 静電ポテンシャルを計算する
+calc_elepot 1qio, protein
+hide pot_1qio/unitcell
+# 4. 表面を静電ポテンシャルで着色する
+set_elepot_coloring sf_1qio/molsurf, pot_1qio, -2, 2
+set sf_1qio/molsurf.ramp_above, true
+# 5. 半透明の表面と cartoon を重ねる
+set sf_1qio/molsurf.alpha, 0.5
+```
+
+- コマンドで作ると、分子表面の Object は `sf_1qio`、静電ポテンシャルマップの Object は
+  `pot_1qio` という名前になります。
+- `ramp_above` は Color パネルの **By SAS**、`alpha` はインスペクタの **Opacity** にあたります。
+
 ## 次のステップ
 
 - [論文用の高解像度画像の書き出し](../figures/publication-images.md) — この図をレイトレースで仕上げる
@@ -106,4 +132,4 @@ Settings でパスを指定します (→ [外部ツールの設定](../../insta
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.6.577*

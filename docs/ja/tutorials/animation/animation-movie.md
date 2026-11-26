@@ -176,6 +176,48 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 
 <!-- TODO(screenshot): Movie モードのレンダリングウィンドウ (進捗とプレビュー) -->
 
+## 同じことをコマンドで
+
+本文の操作を [Console](../../reference/plugins/console/index.md) の native モードのコマンドで書くと、
+次のようになります。Console に 1 行ずつ入力します ([tritium_cli](../../reference/plugins/console/cli.md)
+からも実行できます)。各コマンドの引数は Console で `help <コマンド>` を実行すると確認できます
+(→ [Console のコマンド一覧](../../reference/plugins/console/commands.md))。
+
+```
+# 3. 分子を回転させる (5 秒で 1 周)
+add_anim spin, name=spin1
+set_anim_prop spin1, angle, 360
+set_anim_prop spin1, axis, "0 1 0"
+set_anim_time spin1, 0, 5000
+# 4. 再生して確認する
+animate play
+# 5. カメラモーションを加える (視点を合わせてから、それぞれ保存する)
+save_camera start
+save_camera end
+set_anim_options startCamera=start
+add_anim camera, name=cam1
+set_anim_prop cam1, endcam, end
+# 6. 表示の切り替えを加える
+add_anim show, name=show1
+set_anim_prop show1, rend, 3ug9/ballstick1
+# 7. モーフィングを加える
+create_scene
+fetch_pdb 1TND, mmcif, trace, selection="c; A"
+fetch_pdb 1TAG, mmcif, trace
+superpose 1tag, 1tnd, refSel="c; A", algo=SSM
+convert_to_morph 1tnd
+add_morph_frame 1tnd, fromObjId=1tag
+hide 1tag
+add_anim mol, name=morph1
+set_anim_prop morph1, mol, 1tnd
+animate play
+# 8. 動画に出力する (GUI のみ)
+```
+
+- 手順 2 (Animation パネルを開く) にあたるコマンドはありません。要素の一覧は `list_anims` で表示します。
+- `add_anim` は、要素をタイムラインの末尾 (直前の要素の後ろ) に追加します。
+- `;` を含む選択式 (`c; A`) は、引用符で囲みます。
+
 ## 次のステップ
 
 - [アニメーション](../../reference/animation/index.md) — 要素の種類と共通プロパティ
@@ -184,4 +226,4 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.6.577*
