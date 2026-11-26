@@ -17,15 +17,7 @@ import {
     expectDialogClosed,
     expectSaveDialog,
 } from '../helpers/dialogs';
-import {
-    expectRow,
-    selectRow,
-    openInInspector,
-    clickSceneToolbar,
-    toggleRowVisibility,
-    rowVisibilityToggle,
-    sceneRow,
-} from '../helpers/sceneTree';
+import { expectRow, selectRow, openInInspector, toggleRowVisibility, rowVisibilityToggle, sceneRow, rowContextMenu } from '../helpers/sceneTree';
 import { getPdb } from '../helpers/openFile';
 import { setNumericProperty } from '../helpers/inspector';
 import { selectColorTarget, chooseColoring, coloringButton } from '../helpers/colorPane';
@@ -103,18 +95,14 @@ test.describe.serial('クイックツアー', { tag: '@net' }, () => {
     });
 
     test('3. 表示を整える', async () => {
-        // Docs: シーンツリーで Object を右クリック → New Renderer。
-        // The tree context menu is a native Menu (main process), which
-        // Playwright cannot click; the Scene panel toolbar's Add button
-        // opens the same New Renderer flow, so the dialog contents are
-        // still verified end-to-end.
+        // Docs: シーンツリーで Object を右クリック → New Renderer...。The native
+        // context menu is driven by label (helpers/popupMenu.ts).
         const addRenderer = async (
             type: string,
             expectName: string,
             opts: { shotId?: string; configure?: (dlg: Locator) => Promise<void> } = {},
         ) => {
-            await selectRow(harness.window, OBJ_NAME);
-            await clickSceneToolbar(harness.window, 'add');
+            await rowContextMenu(harness.app, harness.window, OBJ_NAME, ['New Renderer…']);
             const dlg = dialog(harness.window, 'New Renderer');
             await expect(dlg).toBeVisible();
             await fieldControl(dlg, 'Renderer type').selectOption(type);

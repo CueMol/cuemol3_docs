@@ -5,7 +5,7 @@
 といった重ね方ができます。
 
 Renderer はシーンツリーで Object 行または Renderer グループ行を右クリックし、
-**New Renderer** から作成します (→ [サイドパネル](../../ui/side-panels.md))。
+**New Renderer...** から作成します (→ [サイドパネル](../../ui/side-panels.md))。
 設定はプロパティインスペクタで編集します
 (→ [プロパティインスペクタ](../../ui/inspector.md))。
 
@@ -83,4 +83,4 @@ New Renderer ダイアログでは、複数の Renderer をまとめて作成す
 
 ---
 
-*確認対象: CueMol3 2.3.21.544*
+*確認対象: CueMol3 3.0.6.577*

@@ -96,7 +96,7 @@ Paint は上の行から順に評価され、最初にマッチした行の色�
 cartoon は主鎖の走行だけを描くため、リガンドは表示されません。
 3UG9 が持つレチナール (残基名 `RET`) を、ballstick (棒と球のモデル) で重ねて表示します。
 
-1. シーンツリーで Object (3UG9) を右クリックし、**New Renderer** を選びます。
+1. シーンツリーで Object (3UG9) を右クリックし、**New Renderer...** を選びます。
 2. **Renderer type** から **ballstick** を選びます。
 3. **Selection** にチェックを入れ、選択式に `r; RET` を入力します。
 4. **Create** を押すと、cartoon に重ねてレチナールが ballstick で描かれます。

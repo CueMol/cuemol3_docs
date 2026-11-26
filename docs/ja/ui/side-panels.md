@@ -65,7 +65,7 @@ Renderer グループを選ぶとメンバーの Renderer が対象になりま�
 
 #### Renderer の新規作成
 
-Object 行や Renderer グループ行の右クリックメニューの **New Renderer** から、
+Object 行や Renderer グループ行の右クリックメニューの **New Renderer...** から、
 Renderer の種類と対象を選んで作成します。
 
 - **プリセット**を選ぶと、あらかじめ定義された複数の Renderer をまとめたグループが一度に作られます。

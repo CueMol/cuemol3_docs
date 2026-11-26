@@ -25,7 +25,7 @@
 1AKE の chain A には、阻害剤 Ap5A (残基名 **AP5**) が結合しています。位置がわかるように
 ballstick で表示しておきます。
 
-1. シーンツリーで `1ake` を右クリックし、**New Renderer** を選びます。
+1. シーンツリーで `1ake` を右クリックし、**New Renderer...** を選びます。
 2. **Renderer type** から **ballstick** を選び、**Selection** にチェックを入れて
    **Atoms** に `chain A and resn AP5` を入力します。
 3. **Create** を押します。

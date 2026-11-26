@@ -5,19 +5,18 @@
  * (Scene・Object・Renderer・View) is a conceptual summary with no GUI
  * operation, so it has no test.
  *
- * Not automated (recorded as skipped-step annotations): §2's atom click and
- * the molecular view's right-click menu (Center at this atom). The context
- * menu is a native Electron menu on macOS, and which atom a click lands on
- * depends on the viewpoint, so neither can be driven deterministically.
- * Selecting a named residue is covered by selection.md's Mol Struct
- * panel instead.
+ * §2's atom click and context menu act on whichever atom lies near the view
+ * centre (helpers/molView.ts clickAtomNearCenter). The context menu is
+ * native on macOS; the context-menu driver picks it by label
+ * (helpers/popupMenu.ts).
  */
 import { test, expect } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { setupLoadingPage, LYSOZYME, SECOND_OBJ } from '../../fixtures/course';
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { collapseOtherPanes, expectRow, sceneRow, sceneToolbarButtons } from '../../helpers/sceneTree';
-import { enterViewValue, setViewValue, viewPaneRowParts } from '../../helpers/viewPane';
+import { enterViewValue, setViewValue, viewPaneRowParts, viewValueText } from '../../helpers/viewPane';
+import { lastContextLabels, pickNextContextItem } from '../../helpers/popupMenu';
 import { clickAtomNearCenter, rotateView, zoomView } from '../../helpers/molView';
 import { docShot, sidebarRect } from '../../helpers/docShot';
 import { fieldControl } from '../../helpers/form';
@@ -110,6 +109,23 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
         await harness.window.mouse.click(hit.x, hit.y);
         await expect(harness.window.getByText('(*namelabel)')).toBeVisible();
 
+        // 「原子の位置で右クリックするとコンテキストメニューが表示されます。一番上の 2 行は、
+        //   クリックした原子と、その原子を描いている Renderer の名前で ... その下の
+        //   Center at this atom を選ぶと、その原子がビューの中央に来る」
+        // (700 ms apart from the last click, or the view pairs them into a double click)
+        const before = await Promise.all(['TraX', 'TraY', 'TraZ'].map((k) => viewValueText(harness.window, k)));
+        await harness.window.waitForTimeout(700);
+        await pickNextContextItem(harness.app, ['Center at this atom']);
+        await harness.window.mouse.click(hit.x, hit.y, { button: 'right' });
+        await expect.poll(() => lastContextLabels(harness.app)).toContain('Center at this atom');
+        const labels = await lastContextLabels(harness.app);
+        // e.g. ["lysozyme: A PHE 38 CZ", "simple1 (simple)", "Center at this atom", ...]
+        expect(labels[0]).toMatch(new RegExp(`^${LYSOZYME}: A [A-Z]{3} \\d+ \\S+$`));
+        expect(labels[1]).toBe('simple1 (simple)');
+        expect(labels[2]).toBe('Center at this atom');
+        await expect.poll(() => Promise.all(['TraX', 'TraY', 'TraZ'].map((k) => viewValueText(harness.window, k))))
+            .not.toEqual(before);
+
         // 「1. 分子ビュー上を左ドラッグします」「2. ホイールを回します」
         await rotateView(harness.window);
         await zoomView(harness.window);
@@ -127,16 +143,22 @@ test.describe.serial('構造の読み込みと表示', { tag: '@net' }, () => {
             rect: await sidebarRect(harness.window, viewPaneRowParts(harness.window, 'Zoom')),
             highlight: viewPaneRowParts(harness.window, 'Zoom'),
         });
-        // The pane as a whole, for the paragraph about how its rows work.
+        // The pane as a whole, for the paragraph about how its rows work. The
+        // caption points at both Rotation (back to 0) and Zoom (40), so the
+        // empty Camera pane is folded and the View pane scrolled to its top
+        // to fit both at the shot window size.
+        const cameraTitle = harness.window.locator('.sp-pane.camera-pane .section-title').first();
+        await cameraTitle.click();
+        await harness.window.locator('.view-pane').evaluate((el) => {
+            for (let n: HTMLElement | null = el as HTMLElement; n; n = n.parentElement) n.scrollTop = 0;
+        });
+        await expect(viewPaneRowParts(harness.window, 'RotX')[0]).toBeInViewport();
         await docShot(harness.window, `${SHOT}/2-view-pane`, {
             rect: await sidebarRect(harness.window, harness.window.locator('.view-pane'), 16),
             highlight: harness.window.locator('.view-pane'),
         });
+        await cameraTitle.click();
 
-        test.info().annotations.push({
-            type: 'skipped-step',
-            description: '§2 分子ビューの右クリックメニュー (macOS ではネイティブメニューのため撮影・操作ともできない)',
-        });
     });
 
     test('3. もう 1 つ分子を読み込む', async () => {

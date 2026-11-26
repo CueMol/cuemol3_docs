@@ -13,7 +13,7 @@
 import { test, expect } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { assertDialogQueuesEmpty, clickDialogButton, dialog, expectDialogClosed } from '../../helpers/dialogs';
-import { expectRow, selectRow, clickSceneToolbar, sceneRow } from '../../helpers/sceneTree';
+import { expectRow, selectRow, clickSceneToolbar, sceneRow, rowContextMenu } from '../../helpers/sceneTree';
 import { getPdb } from '../../helpers/openFile';
 import { checkField, fieldControl, fieldRow } from '../../helpers/form';
 import { setNumericProperty } from '../../helpers/inspector';
@@ -27,10 +27,9 @@ const DOC = 'docs/ja/tutorials/structure/binding-site.md';
 
 let harness: CueMolHarness;
 
-/** New Renderer from the Scene toolbar's Add (the tree menu is native). */
+/** 「シーンツリーで 1stp を右クリックし、New Renderer... を選びます」 */
 async function addRenderer(type: string, atoms: string, expectName: string, shotId?: string): Promise<void> {
-    await selectRow(harness.window, OBJ);
-    await clickSceneToolbar(harness.window, 'add');
+    await rowContextMenu(harness.app, harness.window, OBJ, ['New Renderer…']);
     const dlg = dialog(harness.window, 'New Renderer');
     await expect(dlg).toBeVisible();
     await fieldControl(dlg, 'Renderer type').selectOption(type);

@@ -3,15 +3,13 @@
  *
  * The tests mirror the page's numbered h2 sections.
  *
- * Not automated: §3 step 3 (scene tree right-click > Change sel > Current)
- * is a native context menu. The spec applies the same change with the
- * page's command (`set_renderer_selection`) after doing steps 1-2 in the
- * Selection panel.
+ * The scene tree's context menu (§3 Change sel > Current) is native on
+ * macOS; the context-menu driver picks it by label (helpers/popupMenu.ts).
  */
 import { test, expect } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { assertDialogQueuesEmpty, clickDialogButton, dialog, expectDialogClosed } from '../../helpers/dialogs';
-import { expectRow, sceneRow } from '../../helpers/sceneTree';
+import { expectRow, rowContextMenu, sceneRow } from '../../helpers/sceneTree';
 import { getPdb } from '../../helpers/openFile';
 import { checkField, fieldControl } from '../../helpers/form';
 import { clickMenu } from '../../helpers/menu';
@@ -98,11 +96,12 @@ test.describe.serial('AlphaFold の予測構造の評価', { tag: '@net' }, () =
             rect: await sidebarRect(w, pane.locator('.selection-actions'), 60),
             highlight: input,
         });
-        test.info().annotations.push({
-            type: 'skipped-step',
-            description: '§3 手順 3 の Change sel > Current (ネイティブの右クリックメニューのため、ページのコマンドで同じ変更をする)',
-        });
-        await runConsole(w, `set_renderer_selection ${AF}/cartoon1, "bfac>70"`);
+        // 「3. シーンツリーで cartoon1 を右クリックし、Change sel > Current を選びます」
+        await openSidebarView(w, 'explorer');
+        await rowContextMenu(harness.app, w, 'cartoon1', ['Change sel', 'Current']);
+        const got = await runConsole(w, `get ${AF}/cartoon1.sel`);
+        expect(got.join('\n')).toMatch(/\.sel\tbfac\s*>\s*70/);
+        // The selection highlight would cover the figure.
         await runConsole(w, `set_mol_selection ${AF}, ""`);
         await clearConsole(w);
         await openSidebarView(w, 'explorer');

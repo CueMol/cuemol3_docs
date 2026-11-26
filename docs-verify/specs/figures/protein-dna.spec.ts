@@ -6,7 +6,7 @@
 import { test, expect } from '@playwright/test';
 import { CueMolHarness } from '../../fixtures/app';
 import { assertDialogQueuesEmpty, clickDialogButton, dialog, expectDialogClosed } from '../../helpers/dialogs';
-import { expectRow, selectRow, clickSceneToolbar, sceneRow } from '../../helpers/sceneTree';
+import { expectRow, selectRow, clickSceneToolbar, sceneRow, rowContextMenu } from '../../helpers/sceneTree';
 import { getPdb } from '../../helpers/openFile';
 import { checkField, fieldControl } from '../../helpers/form';
 import { runConsole, clearConsole } from '../../helpers/console';
@@ -21,8 +21,8 @@ let harness: CueMolHarness;
 
 async function addRenderer(type: string, atoms: string, expectName: string, shotId?: string): Promise<void> {
     const w = harness.window;
-    await selectRow(w, OBJ);
-    await clickSceneToolbar(w, 'add');
+    // 「シーンツリーで 1ytb を右クリックし、New Renderer... を選びます」
+    await rowContextMenu(harness.app, w, OBJ, ['New Renderer…']);
     const dlg = dialog(w, 'New Renderer');
     await expect(dlg).toBeVisible();
     await fieldControl(dlg, 'Renderer type').selectOption(type);

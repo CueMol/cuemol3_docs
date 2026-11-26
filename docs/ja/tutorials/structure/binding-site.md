@@ -21,7 +21,7 @@
 
 ## 2. リガンドを ballstick で表示する
 
-1. シーンツリーで `1stp` を右クリックし、**New Renderer** を選びます。
+1. シーンツリーで `1stp` を右クリックし、**New Renderer...** を選びます。
 2. **Renderer type** から **ballstick** を選びます。
 3. **Selection** にチェックを入れ、**Atoms** に `resn BTN` を入力します。
    残基名が BTN の原子 (ビオチンの 16 原子) が対象になります。
@@ -36,7 +36,7 @@
 
 ビオチンから 4 Å 以内に原子を持つ残基を、もう 1 つの ballstick で表示します。
 
-1. もう一度 `1stp` の **New Renderer** から **ballstick** を選びます。
+1. もう一度 `1stp` の **New Renderer...** から **ballstick** を選びます。
 2. **Selection** にチェックを入れ、**Atoms** に次の式を入力します。
 
     ```

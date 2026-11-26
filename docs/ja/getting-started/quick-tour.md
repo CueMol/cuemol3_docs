@@ -48,7 +48,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 二次構造がわかるように、**ribbon** を追加してみます。
 
 1. 左サイドパネルの **Explorer &gt; Scene** ツリー (シーンツリー) で Object (`1crn`) を
-   右クリックし、**New Renderer** を選びます。
+   右クリックし、**New Renderer...** を選びます。
 
     ![シーンツリーの Object 行](../../assets/images/getting-started/quick-tour/3-scene-tree.webp){ width="304" .on-glb }
 
@@ -64,7 +64,7 @@ PDB ID がわかっている構造は、**File &gt; Get PDB...** で取得する
 (→ [選択式の文法](../reference/selection.md))。ここでは式を手で書くかわりに、
 [選択ビルダー](../ui/selection-builder.md)で組み立てます。
 
-1. 同じ手順で Object (`1crn`) を右クリックし、**New Renderer** を選びます。
+1. 同じ手順で Object (`1crn`) を右クリックし、**New Renderer...** を選びます。
 2. **Renderer type** から **ballstick** を選びます。
 3. **Selection** にチェックを入れます。
 4. 選択式の欄の右端の ▼ を押して、選択ビルダーを開きます。
