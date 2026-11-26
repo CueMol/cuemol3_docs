@@ -17,7 +17,9 @@
 1. 視点を保存したい状態に合わせます。
 2. アクティビティバーの **Explorer** をクリックし、**Camera** パネルを開きます。
 3. パネル上部の **New camera from view** ボタンを押します。
-4. 名前を付けて作成します (既定の名前のままでも構いません)。
+4. **New Camera** ダイアログで名前を付けて、**Create** を押します (既定の名前 `camera_0` のままでも構いません)。
+
+    ![New Camera ダイアログ](../../../assets/images/tutorials/basic/camera-scene/1-new-camera.webp){ width="360" .on-glb }
 
 作成したカメラは一覧に並びます。視点を適当に動かしてから、
 カメラ行を**ダブルクリック**してみてください。保存した視点に戻ります。
@@ -51,17 +53,24 @@
 `tutorial1.qsc` を開いてみてください。保存した状態がそのまま復元されます
 (**File &gt; Open Recent** からも開けます)。
 
+![tutorial1.qsc を開き直したところ。Renderer とカメラ camera_0 が復元されている](../../../assets/images/tutorials/basic/camera-scene/3-reopened.webp){ .on-glb }
+
 ## 4. 複数のシーンをタブで扱う
 
 シーンはウィンドウ上部の**タブ**に対応しており、複数を同時に開けます。
 各シーンは独立していて、互いに干渉しません。
 
-1. **File &gt; New Tab** (++cmd+t++) を選び、**New Scene** で新しいシーンを作ります。
+1. **File &gt; New Tab** (++cmd+t++) を選び、**New Scene** のまま **OK** を押して新しいシーンを作ります。
+
+    ![New Tab/Window ダイアログ。既定は New Scene](../../../assets/images/tutorials/basic/camera-scene/4-new-tab.webp){ width="380" .on-glb }
+
 2. 新しいシーンは空なので、何も表示されません。
 3. **File &gt; Get PDB...** で `1EHZ` (tRNA の構造) を取得し、**Renderer type** に
    核酸向けの **nucl** を選びます。
 4. タブをクリックすると、シーンを行き来できます。シーンツリーの内容も
    そのタブのシーンに切り替わります。
+
+![2 つ目のタブで 1EHZ を nucl で表示したところ。タブバーに tutorial1 と Untitled 1 が並ぶ](../../../assets/images/tutorials/basic/camera-scene/4-tabs.webp){ .on-glb }
 
 ### タブを閉じる
 
@@ -71,9 +80,11 @@
 
 ## 5. 同じシーンをもう 1 つの視点で見る
 
-**File &gt; New Tab** で **New View** を選ぶと、新しいシーンではなく、
+**File &gt; New Tab** で **New View for で **New View** を選ぶとlt;シーン名で **New View** を選ぶとgt;** を選ぶと、新しいシーンではなく、
 **現在のシーンを映すもう 1 つのビュー**がタブとして作られます
-(現在のカメラを引き継ぐかどうかも選べます)。
+(**Inherit view props** で、現在のビューの設定を引き継ぐかどうかも選べます)。
+
+![New Tab/Window ダイアログで New View for tutorial1 を選んだところ](../../../assets/images/tutorials/basic/camera-scene/5-new-view.webp){ width="380" .on-glb }
 
 どちらのタブで操作してもシーンは共通なので、選択や色の変更は両方に反映されます。
 一方、視点はビューごとに独立しているため、2 つの見方を素早く切り替えられます。
@@ -87,4 +98,4 @@
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.6.577*
