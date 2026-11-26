@@ -385,7 +385,11 @@ task e2e            # 既定ウィンドウ (1600x1000) での回帰。撮影用
 
 ## 次に適用する対象 (未着手)
 
-spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/loading.md`。適用の優先順:
+spec があるのは `getting-started/quick-tour.md` と `tutorials/basic/loading.md`、目的別のチュートリアルの
+`structure/binding-site.md` / `structure/superpose.md` / `prediction/alphafold.md` / `experimental/cryoem-map.md` /
+`figures/protein-dna.md` / `scripting/chx-console.md` (2026-11-26)。ページの手順のうち、ネイティブメニュー
+(右クリックの Change sel など) や視点に依存するクリック (原子のラベル) は、ページの「同じことをコマンドで」の
+コマンドを Console で流して同じ状態にし、`skipped-step` を記録している。適用の優先順:
 
 1. `tutorials/basic/` の残り 5 ページ (selection / renderers / coloring / camera-scene /
    measure)。原子ピック、ダブルクリック選択、`harness.restart()` を使う camera-scene が

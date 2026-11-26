@@ -281,6 +281,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   PyM console の選択式の翻訳表、docs-verify の spec 追加と既存 spec の修正。
   **`task e2e` は 2.3.20.539 でも 5 件すべてが起動の時点で失敗する** (前回と同じ
   `READY_LINES` の待ちでタイムアウトする)。次回はここから。
+  → **2026-11-26 に直した** (ログの文言が `nodejs add-on` → `nodejs module` に変わっていた)。あわせて 3.0 系の
+  UI の変化 (フォームの id の廃止、pane のドロップダウンのネイティブメニュー化、Output が前面でない) に追随し、
+  quick-tour / loading と目的別の新しい 6 本で 41 件が通る。
 - 前回同期: 2026-10-10 / cuemol2 `d3a2038e` (tag `v2.3.21.544`, branch: develop) / CueMol3 `2.3.21.544`。
   `7de1a63a..d3a2038e` の差分を確認した (リリースノート `docs/release_notes/v2.3.21.544.md` を含む)。
   次回はこの hash から差分確認を行う。cuemol2 のローカル作業ツリーは古いままだったので、
@@ -644,8 +647,16 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
     手元で最小二乗の RMSD を計算すれば一致する。US-align の値は Output パネルで確かめる。
   - `set_map_contour` の `level` は、cryo-EM マップでは常に上位 % (Density map パネルの単位の
     切り替えとは無関係)。
-  - 2026-11-26 に A〜D (binding-site / alphafold / superpose / cryoem-map) を同じ方法で書いた。
-    A は表面の部分表示をやめた (ビオチンが β バレルに埋まっていて表面でポケットが見えない)。
+  - 2026-11-26 に A〜F (binding-site / alphafold / superpose / cryoem-map / protein-dna / chx-console)
+    を同じ方法で書いた。A は表面の部分表示をやめた (ビオチンが β バレルに埋まっていて表面でポケットが見えない)。
+  - **tritium_cli は CueMol3 に同梱の版を使う** (`/Applications/CueMol3.app/Contents/Resources/cli/tritium_cli`)。
+    PATH 上の npm 版が古いことがある (2.4.0 は `--dialect chimerax` を受け付けない)。
+  - 確かめ終えたシーンは **名前か番号を指定して** 閉じる (`close_scene <名前>, true`)。名前なしの `close_scene` は
+    前面のシーンを閉じるので、ユーザーが開いたシーンを閉じてしまうことがある (2026-11-26 に実際に起きた)。
+  - GUI で作る Renderer の名前はシーン全体で重ならないように付く (2 つ目の分子の cartoon は `cartoon2`)。
+    コマンド (`fetch_pdb` など) で作ると分子ごとに `cartoon1` から付く。本文と「同じことをコマンドで」で名前が違うことがある。
+  - 目的別のチュートリアル (上記 6 本) には docs-verify の spec がある (`docs-verify/specs/{structure,prediction,
+    experimental,figures,scripting}/`)。ページを直したら spec も直し、図は `task e2e:shots` で撮り直す。
 
 ## 注目の機能 (features/)
 
