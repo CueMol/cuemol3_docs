@@ -57,7 +57,7 @@
 
 <div class="grid cards" markdown>
 
-- **[AlphaFold の予測構造の評価](prediction/alphafold.md)** — pLDDT の色の読み方と実験構造との重ね合わせ
+- **[AlphaFold の予測構造の評価](prediction/alphafold.md)** — pLDDT 値の可視化と実験構造との重ね合わせ
 
 </div>
 

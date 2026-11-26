@@ -74,7 +74,7 @@ test.describe.serial('AlphaFold の予測構造の評価', { tag: '@net' }, () =
         await expectRow(w, 'cartoon1');
     });
 
-    test('2. pLDDT の色を読む', async () => {
+    test('2. pLDDT 値を可視化する', async () => {
         // The counts the page's command section gives.
         const hi = await runConsole(harness.window, `count ${AF}, "bfac>70 and name CA"`);
         expect(hi.join('\n')).toContain('atomCount: 233');

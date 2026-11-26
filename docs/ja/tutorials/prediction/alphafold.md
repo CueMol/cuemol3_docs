@@ -1,6 +1,6 @@
 # AlphaFold の予測構造の評価
 
-AlphaFold DB から予測構造を取得し、予測の信頼度 (pLDDT) の色を読んだうえで、
+AlphaFold DB から予測構造を取得し、予測の信頼度 (pLDDT) の値を色で可視化したうえで、
 信頼度の高い部分を実験構造と比べる手順を追います。
 題材にはヒトのがん抑制タンパク質 p53 (UniProt accession: **P04637**) を使います。
 全長 393 残基のうち、構造をとるドメインと、決まった構造をとらない領域がはっきり分かれています。
@@ -8,7 +8,7 @@ AlphaFold DB から予測構造を取得し、予測の信頼度 (pLDDT) の色�
 
 !!! abstract "このチュートリアルについて"
     - **題材**: ヒト p53 の AlphaFold 予測構造 (UniProt: P04637) と、DNA 結合ドメインの結晶構造 (PDB ID: 2OCJ)
-    - **学ぶこと**: Get PDB での AlphaFold DB からの取得、pLDDT の色の読み方、温度因子による選択、US-align による重ね合わせ
+    - **学ぶこと**: Get PDB での AlphaFold DB からの取得、pLDDT 値の可視化、温度因子による選択、US-align による重ね合わせ
     - **前提**: 基本操作コースの [Renderer の着色](../basic/coloring.md) まで
 
 ![完成イメージ。pLDDT で着色した予測構造と、重ね合わせた 2OCJ (赤紫)](../../../assets/images/tutorials/prediction/alphafold/5-superposed.webp){ .on-glb }
@@ -32,7 +32,7 @@ Object 名は `AF-P04637-F1` になります。読み込んだ構造は、予測
     UniProt accession (`P04637`) のほかに、AlphaFold ID の完全な形 (`AF-P04637-F1-v6` など) も入力できます。
     `AF-P04637` のような途中までの形は受け付けられません。
 
-## 2. pLDDT の色を読む
+## 2. pLDDT 値を可視化する
 
 pLDDT は、AlphaFold が残基ごとに出す予測の信頼度 (0〜100) です。AlphaFold のモデルは
 pLDDT を B-factor の欄に持っており、CueMol3 はその値で次のように塗ります
@@ -149,7 +149,7 @@ DNA 結合ドメインの中にも、pLDDT がやや低い (水色や黄の) ル
 ```
 # 1. AlphaFold DB から取得する
 fetch_entry alphafold, P04637, mmcif, cartoon
-# 2. pLDDT の色を読む
+# 2. pLDDT 値を可視化する
 count AF-P04637-F1, "bfac>70 and name CA"
 count AF-P04637-F1, "bfac<50 and name CA"
 # 3. 信頼度の高い部分だけを表示する
