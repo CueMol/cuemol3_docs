@@ -10,9 +10,6 @@
     - **学ぶこと**: Renderer の追加・削除、表示する範囲の変更、インスペクタでのプロパティの調整
     - **前提**: [分子の一部の選択](selection.md)
 
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
-
 ## 1. 選択部分に Renderer を追加する
 
 選択した 2 残基だけを ballstick で表示してみます。
@@ -23,9 +20,12 @@
    そのままにします。
 4. **Renderer name** には、使われていない名前 (`ballstick1` など) が自動で
    提案されています。わかりやすい名前を付けたい場合はここで変更します。
+
+    ![New Renderer ダイアログ。Renderer type に ballstick、Selection には現在の選択が入っている](../../../assets/images/tutorials/basic/renderers/1-new-renderer.webp){ width="480" .on-glb }
+
 5. **Create** を押すと、Val2〜Phe3 の部分だけが ballstick で表示されます。
 
-<!-- TODO(screenshot): New Renderer ダイアログ (ballstick, Selection = A.2:3.*) と、2 残基だけ ballstick になった表示 -->
+![Val2〜Phe3 だけが ballstick で表示される](../../../assets/images/tutorials/basic/renderers/1-ballstick.webp){ .on-glb }
 
 ## 2. 分子全体に Renderer を追加する
 
@@ -38,15 +38,19 @@
 simple の線画・2 残基の ballstick・全体の ribbon が重なった状態になりました。
 シーンツリーで simple1 の目のアイコンを閉じると、図が整理されて見やすくなります。
 
+![simple1 を非表示にし、ribbon と 2 残基の ballstick が重なった表示](../../../assets/images/tutorials/basic/renderers/2-layered.webp){ .on-glb }
+
 ## 3. 表示する範囲を後から変える
 
 ballstick1 の表示範囲を、Val2〜Phe3 から Val2〜Glu7 に広げてみます。
 
-1. **Molecular structure** パネルで残基 2〜7 を範囲選択し、**Select** を押します
+1. **Molecular structure** パネルで残基 2〜7 を範囲選択し、**Select atoms** を押します
    (選択式 `A.2:7.*` を Selection パネルで適用しても同じです)。
 2. シーンツリーで `ballstick1` を右クリックし、**Change sel &gt; Current** を選びます。
 
 Renderer の表示範囲が現在の選択に置き換わり、Glu7 まで広がります。
+
+![ballstick の範囲が Val2〜Glu7 に広がった表示](../../../assets/images/tutorials/basic/renderers/3-widened.webp){ .on-glb }
 **Change sel** には **All** (全体) や **Protein** / **Water** / **Ligand** などの
 定番の範囲も用意されています。
 
@@ -67,6 +71,8 @@ Renderer の見た目の細部は**プロパティ**で決まっており、右�
    `0.4` にしてみてください。ずんぐりしたモデルに変わります。
 4. **Show ring** を有効にすると、Phe3 の芳香環に板が表示されます。
 
+    ![インスペクタの Ball and stick セクション。Bond width と Atom radius を 0.4 にし、Show ring を有効にした](../../../assets/images/tutorials/basic/renderers/5-inspector.webp){ width="316" .on-glb }
+
 値を変えると分子ビューに**即座に反映**されます。OK / Apply ボタンはなく、
 取り消したいときは Undo です。
 
@@ -74,7 +80,7 @@ Renderer の見た目の細部は**プロパティ**で決まっており、右�
 編集できます。各値には既定値が定義されており、既定値から変えた項目だけを
 リセットすることもできます (→ [プロパティインスペクタ](../../ui/inspector.md))。
 
-<!-- TODO(screenshot): インスペクタで ballstick の Bond width / Atom radius を変更した前後 -->
+![Bond width と Atom radius を 0.4 にした ballstick1](../../../assets/images/tutorials/basic/renderers/5-result.webp){ .on-glb }
 
 !!! note "CueMol2 との違い"
     CueMol2 ではプロパティは Renderer ごとのダイアログを開いて編集し、OK で
@@ -88,4 +94,4 @@ Renderer の見た目の細部は**プロパティ**で決まっており、右�
 
 ---
 
-*確認対象: CueMol3 2.3.8.494*
+*確認対象: CueMol3 3.0.6.577*
