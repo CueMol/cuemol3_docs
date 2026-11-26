@@ -3,7 +3,7 @@
 # Rendering
 
 Settings for ray-tracing output in the [rendering window](../ui/rendering-window.md).
-The default rendering backend of CueMol3 is the built-in ray tracer **Umbreon**.
+The default rendering backend of CueMol3 is the built-in ray tracer **[Umbreon](https://github.com/CueMol/umbreon)**.
 
 Umbreon is built into the visualization library (libcuemol2), so **no external program
 and no path setting are needed**. For how to open the window and run a render, see
