@@ -30,7 +30,7 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 | Window &gt; Restore default panel location | 同上 | パネルの構成はアクティビティバーで切り替えます。 |
 | Window &gt; Panels サブメニュー | 同上。サイドパネルはグループ単位に切り替わるため、パネルごとの表示・非表示に対応する場所がありません。 | 同上 |
 | Tools &gt; MSMS による分子表面生成 | 外部 MSMS バイナリを使う経路は使われていなかったため | **Tools &gt; Mol surface generation...** (内蔵の SES 生成) をお使いください。 |
-| 選択パネルの階層型エディタ (Hierarchical / Terminal / Around-Expand) | 選択式を直接書く方法で大半の用途をカバーできるため | Selection パネルの選択式入力欄、または Molecular structure パネルのツリー選択 |
+| 選択パネルの階層型エディタ (Hierarchical / Terminal / Around-Expand) | 選択式を直接書く方法で大半の用途をカバーできるため | Selection パネルの選択式入力欄、または Mol Struct パネルのツリー選択 |
 | キーバインドのカスタマイズ | UXP 版の実装をそのまま移植しない判断のため | 現時点では変更できません。 |
 | Help &gt; About plugins... / About config... / Addon manager... / Console | Mozilla XULRunner に固有の機能のため | 開発者ツールは **View &gt; Toggle Developer Tools** から開けます。 |
 
@@ -57,4 +57,4 @@ CueMol2 にあった機能が CueMol3 のどこに移ったか、あるいはな
 
 ---
 
-*確認対象: CueMol3 3.0.3.565*
+*確認対象: CueMol3 3.0.6.577*

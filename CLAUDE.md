@@ -658,6 +658,9 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
     前面のシーンを閉じるので、ユーザーが開いたシーンを閉じてしまうことがある (2026-11-26 に実際に起きた)。
   - GUI で作る Renderer の名前はシーン全体で重ならないように付く (2 つ目の分子の cartoon は `cartoon2`)。
     コマンド (`fetch_pdb` など) で作ると分子ごとに `cartoon1` から付く。本文と「同じことをコマンドで」で名前が違うことがある。
+  - 基本操作コースの 6 ページにも spec がある (`docs-verify/specs/basic/`、2026-11-27)。右クリックメニューは
+    harness の driver (`pickNextContextItem`) で実際の項目名を選んで操作する (PLAYBOOK の「既知の落とし穴」)。
+    ページにある手作りの図 (camera-created / distance / dashed-stick1) は、ユーザー指示により撮り直さない。
   - 目的別のチュートリアル (上記 6 本) には docs-verify の spec がある (`docs-verify/specs/{structure,prediction,
     experimental,figures,scripting}/`)。ページを直したら spec も直し、図は `task e2e:shots` で撮り直す。
 

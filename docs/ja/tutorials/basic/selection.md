@@ -7,15 +7,12 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 
 !!! abstract "このチュートリアルについて"
     - **題材**: リゾチーム (`lysozyme`)
-    - **学ぶこと**: ダブルクリック・右クリックメニュー・Molecular structure パネル・選択ビルダー・選択式による選択
+    - **学ぶこと**: ダブルクリック・右クリックメニュー・Mol Struct パネル・選択ビルダー・選択式による選択
     - **前提**: [構造の読み込みと表示](loading.md)
-
-!!! info "撮影予定"
-    このページには操作の流れを示すスクリーンショットを追加予定です。
 
 選択された部分は、分子ビュー上で半透明のハイライトで強調表示されます。
 
-<!-- TODO(screenshot): 残基を選択したときのハイライト表示 -->
+![Val2〜Phe3 を選択したところ。選択した原子が水色のハイライトで強調表示される](../../../assets/images/tutorials/basic/selection/0-highlight.webp){ .on-glb }
 
 ## 1. ダブルクリックで選択する
 
@@ -26,6 +23,8 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 ## 2. 右クリックメニューで選択する
 
 原子の上で右クリックすると、選択に関する項目が並んだメニューが開きます。
+メニューの先頭には、クリックした原子の情報と、その原子をビューの中心に移す **Center at this atom**
+もあります (→ [構造の読み込みと表示](loading.md))。
 
 | 項目 | 選択されるもの |
 |---|---|
@@ -34,6 +33,7 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 | **Add Select Atom / Residue / Chain** | 現在の選択を保ったまま追加 |
 | **Unselect** | 選択をすべて解除 |
 | **Invert Selection** | 選択を反転 |
+| **Toggle Sidechain** | 現在の選択を側鎖だけに限定 (もう一度選ぶと元に戻る。→ [BYSIDECH 演算子](../../reference/selection.md#bysidech-演算子)) |
 | **Around** / **Around Byres** | クリックした位置の周囲 (3〜10 Å) を原子単位 / 残基単位で |
 
 「ともかく分子全体を選択したい」ときは **Select Molecule**、
@@ -41,24 +41,24 @@ CueMol では、分子の一部分に対して操作を行うとき (一部だ�
 
 <!-- TODO(screenshot): 分子ビューの右クリックメニュー (Select 系の項目) -->
 
-## 3. Molecular structure パネルで選択する
+## 3. Mol Struct パネルで選択する
 
 残基番号や原子名から選びたいときは、左サイドパネルの
-**Selection &gt; Molecular structure** パネルを使用してください
+**Selection &gt; Mol Struct** パネルを使用してください
 (→ [サイドパネル](../../ui/side-panels.md))。
 
 1. パネル上部で対象の分子 (`lysozyme`) を選びます。
 2. ツリーがチェイン → 残基 → 原子の階層で表示されるので、残基 Val2 と Phe3 を
    選びます (++cmd++ / ++ctrl++ + クリックで複数選択、++shift++ + クリックで範囲選択)
-3. パネルの **Select** ボタンを押すと、分子の対応する部分が選択されます。
+3. パネルの見出しの右にある **Select atoms** ボタンを押すと、分子の対応する部分が選択されます。
+
+    ![Mol Struct パネルで Val2 と Phe3 を選び、Select atoms ボタンを押す](../../../assets/images/tutorials/basic/selection/3-molstruct.webp){ width="304" .on-glb }
 
 ツリーで項目を選んだだけでは、分子はまだ選択されていません。
-**Select** を押して初めて選択に反映される点に注意してください。
+**Select atoms** を押して初めて選択に反映される点に注意してください。
 
-**Center** ボタンは選んだ範囲をビュー中央へ、**Zoom** は中央に寄せたうえで
-範囲の大きさに合わせて拡大します。
-
-<!-- TODO(screenshot): Molecular structure パネルで Val2〜Phe3 を選び Select を押した状態 -->
+**Center at** ボタンは選んだ範囲をビュー中央へ、**Zoom at** は中央に寄せたうえで
+範囲の大きさに合わせて拡大します。見出しのボタンはアイコンで、ポインタを重ねると名前が表示されます。
 
 ## 4. Selection パネルと選択ビルダー
 
@@ -87,9 +87,10 @@ Selection 欄の下の**選択ビルダー**を使うと、選択式を書かず
 各ボタンには、適用した場合に選択される**原子数**が表示されるので、
 結果を予想しながら操作できます。試しに、**Named** タブで `protein` をクリックし、
 続けて **Mod** タブで **Invert** を押してみてください。タンパク質の選択が反転して、
-水分子だけが選択された状態になります。
+水分子とイオン (Na⁺ と Cl⁻) だけが選択された状態になります。
 
-<!-- TODO(screenshot): Selection パネルと選択ビルダー (Named タブと Term タブ) -->
+![Named タブの protein](../../../assets/images/tutorials/basic/selection/4-named.webp){ width="304" .on-glb }
+![Mod タブの Invert。ボタンに、適用したときに選択される原子数 (183) が表示されている](../../../assets/images/tutorials/basic/selection/4-mod.webp){ width="304" .on-glb }
 
 この選択ビルダーは、New Renderer の Selection 欄をはじめ、選択式を入力する
 ほぼすべての場面で ▼ ボタンから同じものが開きます。タブごとの機能の詳細は
@@ -105,9 +106,12 @@ A.2:3.*
 ```
 
 「chain A の残基番号 2〜3 の全原子」という意味です。入力中に式の妥当性が
-検証され、誤りがあると警告表示になります。手で入力した式は **Select** ボタンで
-適用します。ビルダーで組み立てた式もこの欄にそのまま現れるので、
+検証され、誤りがあると警告表示になります。手で入力した式は、欄の下の **Apply selection**
+ボタンを押すか ++enter++ を押して適用します。
+ビルダーで組み立てた式もこの欄にそのまま現れるので、
 文法を覚える近道にもなります (→ [選択式の文法](../../reference/selection.md))。
+
+![Selection 欄に A.2:3.* を入力し、Apply selection ボタンで適用する](../../../assets/images/tutorials/basic/selection/4-expression.webp){ width="304" .on-glb }
 
 !!! note "CueMol2 との違い"
     CueMol2 の選択パネルにあった階層型エディタ (Hierarchical / Terminal /
@@ -123,4 +127,4 @@ A.2:3.*
 
 ---
 
-*確認対象: CueMol3 2.3.8.494*
+*確認対象: CueMol3 3.0.6.577*
