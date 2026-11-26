@@ -277,7 +277,7 @@ nav:
           - カメラとシーンの保存: tutorials/basic/camera-scene.md
           - 計測と相互作用の表示: tutorials/basic/measure.md
       - 作図:
-          - タンパク質のリボン図: tutorials/figures/ribbon-figure.md
+          - タンパク質のリボン図の表示: tutorials/figures/ribbon-figure.md
           - 論文用の画像の書き出し: tutorials/figures/publication-images.md
       - 構造を読む・比較する:
           - 表面の静電ポテンシャル表示: tutorials/structure/surface-elepot.md

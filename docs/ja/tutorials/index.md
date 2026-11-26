@@ -27,7 +27,7 @@
 
 <div class="grid cards" markdown>
 
-- **[タンパク質のリボン図](figures/ribbon-figure.md)** — 構造の取得から塗り分け・輪郭線まで、作図の基本コース
+- **[タンパク質のリボン図の表示](figures/ribbon-figure.md)** — 構造の取得から塗り分け・輪郭線まで、作図の基本コース
 - **[論文用の高解像度画像の書き出し](figures/publication-images.md)** — Export scene とレイトレースの使い分け
 
 </div>
