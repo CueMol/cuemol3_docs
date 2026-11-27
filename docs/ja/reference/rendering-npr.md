@@ -4,7 +4,7 @@
 (線や点の集まり) で表すレンダリングバックエンドです。紙の上にインクで描いた図に
 仕上がります。
 
-内蔵の Umbreon をそのまま使うため、[レンダリング](rendering.md)と同じく
+内蔵の [Umbreon](https://github.com/CueMol/umbreon) をそのまま使うため、[レンダリング](rendering.md)と同じく
 外部プログラムの用意もパスの設定も不要です。
 
 ![Umbreon (NPR) の richardson スタイルで出力した図 (部分)](../../assets/images/reference/rendering-npr/richardson.webp){ width="300" .on-glb }

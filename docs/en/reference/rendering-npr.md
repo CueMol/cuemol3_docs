@@ -1,4 +1,4 @@
-<!-- source: ja/reference/rendering-npr.md @ d6bebaf -->
+<!-- source: ja/reference/rendering-npr.md @ 7804f30 -->
 
 # NPR (ink-style rendering)
 
@@ -6,7 +6,7 @@
 (collections of lines or dots) instead of photorealistic ray tracing. The result looks like
 a figure drawn in ink on paper.
 
-Because it uses the built-in Umbreon, no external program or path setting is needed,
+Because it uses the built-in [Umbreon](https://github.com/CueMol/umbreon), no external program or path setting is needed,
 just as with [Rendering](rendering.md).
 
 ![A figure rendered with Umbreon (NPR) in the richardson style (detail)](../../assets/images/reference/rendering-npr/richardson.webp){ width="300" .on-glb }

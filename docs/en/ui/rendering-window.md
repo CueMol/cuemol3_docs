@@ -1,4 +1,4 @@
-<!-- source: ja/ui/rendering-window.md @ c730ead -->
+<!-- source: ja/ui/rendering-window.md @ 7804f30 -->
 
 # Rendering window
 
@@ -50,7 +50,7 @@ Pinch and ++cmd++ + wheel zoom around the pointer position.
 
 | Item | Description |
 |---|---|
-| **Backend** | Selects the rendering backend. The default is the built-in ray tracer, **Umbreon**. |
+| **Backend** | Selects the rendering backend. The default is the built-in ray tracer, **[Umbreon](https://github.com/CueMol/umbreon)**. |
 | **Target** | Selects which view to render (the open views are listed). |
 | **Start Render** | Starts rendering. |
 | **Stop** | Cancels the rendering in progress. |
