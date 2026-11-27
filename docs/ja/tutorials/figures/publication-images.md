@@ -60,19 +60,22 @@ DPI は画像のピクセル数には影響しません。書き出した PNG �
 
 !!! tip "速さを優先するなら Raytrace only"
     **Lighting** を **Raytrace only** にすると、大域照明の計算を省くぶん速く仕上がります。
-    そのかわり陰影が弱くなり、cartoon では奥行き感が減ります (下図)。細い ribbon や線の図では
-    差が出にくいので、構図の確認や試し出しに使うとよいでしょう。
+    そのかわり陰影が弱くなり、cartoon では奥行き感が減ります (下図。左が Raytrace only、右が
+    Global Illumination で、明るさを揃えるため Light intensity を 1.7 にしたもの)。細い ribbon や
+    線の図では差が出にくいので、構図の確認や試し出しに使うとよいでしょう。
 
-    ![Raytrace only で仕上げた cartoon](../../../assets/images/tutorials/figures/publication-images/lighting-rt.webp){ width="220" .on-glb }
-    ![Global Illumination で仕上げた cartoon。ヘリックスの筒が重なる奥が暗くなり、奥行きが出る](../../../assets/images/tutorials/figures/publication-images/lighting-gi.webp){ width="220" .on-glb }
-    ![Global Illumination で、Light intensity を 1.7 に上げた cartoon](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="220" .on-glb }
+    ![Raytrace only で仕上げた cartoon](../../../assets/images/tutorials/figures/publication-images/lighting-rt.webp){ width="300" .on-glb }
+    ![Global Illumination (Light intensity 1.7) で仕上げた cartoon。ヘリックスの筒が重なる奥が暗くなり、奥行きが出る](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="300" .on-glb }
 
 !!! tip "Global Illumination で全体が暗く見えるときは"
     Global Illumination では、光が遮られる奥や隙間が暗くなるぶん、図全体も Raytrace only より
     暗く見えます。明るくしたいときは、**Render** タブの **Lights** セクションで **Light intensity**
-    (光源全体の強さ、既定 1.3) を 1.7 程度に上げます (上図の右)。陰影の付き方はそのままで、全体が
-    明るくなります。上げすぎると明るい色が白く飛ぶので、結果を見ながら調整してください
+    (光源全体の強さ、既定 1.3) を 1.7 程度に上げます (下図。左が既定の 1.3、右が 1.7)。陰影の付き方は
+    そのままで、全体が明るくなります。上げすぎると明るい色が白く飛ぶので、結果を見ながら調整してください
     (→ [レンダリング](../../reference/rendering.md#lights))。
+
+    ![Global Illumination で、Light intensity が既定の 1.3 の cartoon](../../../assets/images/tutorials/figures/publication-images/lighting-gi.webp){ width="300" .on-glb }
+    ![Global Illumination で、Light intensity を 1.7 に上げた cartoon](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="300" .on-glb }
 
 各品質項目の意味と使い分けは [レンダリング](../../reference/rendering.md) を参照してください。
 

@@ -62,19 +62,22 @@ it stays open (→ [Rendering window](../../ui/rendering-window.md)).
 
 !!! tip "Raytrace only when speed comes first"
     Setting **Lighting** to **Raytrace only** skips the global illumination calculation, so rendering is faster.
-    In exchange, the shading is weaker and a cartoon loses some of its depth (see below). Figures of thin ribbons or lines
+    In exchange, the shading is weaker and a cartoon loses some of its depth (below: Raytrace only on the left, and on the right
+    Global Illumination with Light intensity set to 1.7 to match the brightness). Figures of thin ribbons or lines
     show little difference, so it is a good choice for checking the composition or for trial renders.
 
-    ![A cartoon finished with Raytrace only](../../../assets/images/tutorials/figures/publication-images/lighting-rt.webp){ width="220" .on-glb }
-    ![A cartoon finished with Global Illumination. The back where the helix tubes overlap gets darker, giving depth](../../../assets/images/tutorials/figures/publication-images/lighting-gi.webp){ width="220" .on-glb }
-    ![A cartoon finished with Global Illumination and Light intensity raised to 1.7](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="220" .on-glb }
+    ![A cartoon finished with Raytrace only](../../../assets/images/tutorials/figures/publication-images/lighting-rt.webp){ width="300" .on-glb }
+    ![A cartoon finished with Global Illumination (Light intensity 1.7). The back where the helix tubes overlap gets darker, giving depth](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="300" .on-glb }
 
 !!! tip "When Global Illumination looks dark overall"
     With Global Illumination, the back and the gaps where light is blocked get darker, so the whole figure also looks
     darker than with Raytrace only. To brighten it, raise **Light intensity** (the overall strength of the lights, default 1.3)
-    to about 1.7 in the **Lights** section of the **Render** tab (the right image above). The shading stays the same and the
-    whole picture gets brighter. Raising it too far washes out light colors, so adjust it while checking the result
+    to about 1.7 in the **Lights** section of the **Render** tab (below: the default 1.3 on the left, 1.7 on the right). The shading
+    stays the same and the whole picture gets brighter. Raising it too far washes out light colors, so adjust it while checking the result
     (→ [Rendering](../../reference/rendering.md#lights)).
+
+    ![A cartoon with Global Illumination at the default Light intensity of 1.3](../../../assets/images/tutorials/figures/publication-images/lighting-gi.webp){ width="300" .on-glb }
+    ![A cartoon with Global Illumination and Light intensity raised to 1.7](../../../assets/images/tutorials/figures/publication-images/lighting-gi-bright.webp){ width="300" .on-glb }
 
 For the meaning of each quality item and how to choose among them, see [Rendering](../../reference/rendering.md).
 
