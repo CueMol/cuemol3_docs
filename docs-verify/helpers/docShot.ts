@@ -361,7 +361,7 @@ async function capture(window: Page, opts: ShotOptions): Promise<Buffer> {
 
 /* --- tutorial index thumbnails --- */
 
-const THUMB_WIDTH = 640;
+const THUMB_WIDTH = 400;
 /** The tool palette floats over the molecular view's left edge. */
 const PALETTE_INSET = 56;
 
