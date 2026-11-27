@@ -1,11 +1,12 @@
-<!-- source: ja/reference/plugins/mcp-server.md @ d6bebaf -->
+<!-- source: ja/reference/plugins/mcp-server.md @ 5008883 -->
 
 # MCP Server
 
 A plugin that lets an AI client running on the same computer (Claude Code / Codex / Antigravity, etc.) operate CueMol3 through **MCP** (Model Context Protocol).
 It is **disabled by default**.
 
-The client can call the same operations as the [Console](console/index.md) commands as tools.
+The client can call almost the same operations as the [Console](console/index.md) commands as tools
+(see [What it can do](#what-it-can-do)).
 No API key is needed on the CueMol3 side; model usage follows the client's own settings.
 
 ## Enabling it
@@ -55,7 +56,8 @@ configuration file entry used for registration. Use what you copy with **Copy**.
 - While displayed, the token is hidden as `<token>`; the actual value is filled in when you copy with **Copy**.
 - For Claude Code, run the displayed command (`claude mcp add --transport http cuemol ...`)
   in a terminal.
-- For Codex, add it to `~/.codex/config.toml`; for Antigravity, add it to `~/.gemini/config/mcp_config.json`.
+- For Codex, add it to `~/.codex/config.toml`; for Antigravity, add it to `~/.gemini/config/mcp_config.json`
+  (the configuration file of Antigravity CLI).
   The Codex configuration includes `tool_timeout_sec` so that long-running renders
   are not cut off midway.
 - For **Other**, the URL (`http://127.0.0.1:<port>/mcp`) and the header to send
@@ -79,10 +81,31 @@ claude mcp add cuemol -- tritium_cli mcp
 - The port and token are read from `~/.cuemol/local-api.json` each time, so no token is needed for registration,
   and there is no need to register again after the token or port changes.
 
+Clients such as Claude Desktop, whose configuration file lists servers launched over standard input / output,
+are registered this way too. For Claude Desktop, write the following in its configuration file
+`claude_desktop_config.json` (opened with **Edit Config** in **Settings &gt; Developer**) and restart
+Claude Desktop. The `"command"` is a macOS example; the path of tritium_cli can be checked under
+**Command line tool** in **Settings &gt; Plugins &gt; Console**.
+
+```json
+{
+  "mcpServers": {
+    "cuemol": {
+      "command": "/Applications/CueMol3.app/Contents/Resources/cli/tritium_cli",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
 ## What it can do
 
-- Every operation corresponding to a [Console](console/commands.md) command can be called as a tool.
-  There is also `capture_view`, which returns the current view as an image.
+- Of the [Console](console/commands.md) (native mode) commands, those that correspond to CueMol3 operations
+  can be called as tools. There is also `capture_view`, which returns the current view as an image.
+- Console-only commands are not available as tools: Undo / Redo and the operation record (`undo` / `redo` /
+  `list_actions` / `export_actions`), the shorthand for reading and writing properties (`get` / `set` / `get_prop` /
+  `set_prop` / `props`), `run` / `cd` / `quit` / `help`, and so on. Properties are handled with `list_node_props` /
+  `set_node_prop` / `reset_prop`. Undo is done on the CueMol3 side.
 - You can list, create, switch and close scenes (`list_scenes` / `create_scene` / `switch_scene` /
   `close_scene`). `close_scene` does not close a scene with unsaved changes
   (specify `discardChanges` to discard the changes and close it). You can also save with `save_scene`
@@ -114,7 +137,8 @@ claude mcp add cuemol -- tritium_cli mcp
 
 - [Console](console/index.md) / [AI Agent](ai-agent.md)
 - [Plugins](index.md) / [Settings](../settings.md#plugins)
+- [Driving CueMol3 from AI clients (MCP)](../../tutorials/scripting/mcp-client.md) (tutorial)
 
 ---
 
-*Verified against: CueMol3 3.0.0.554*
+*Verified against: CueMol3 3.0.6.577*
