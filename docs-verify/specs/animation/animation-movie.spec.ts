@@ -26,7 +26,7 @@ import {
     transportButton, typeCurrentTime,
 } from '../../helpers/animPanel';
 import { setNumericProperty } from '../../helpers/inspector';
-import { setViewValue, viewValueText } from '../../helpers/viewPane';
+import { enterViewValue, setViewValue, viewValueText } from '../../helpers/viewPane';
 import { openSidebarView } from '../../helpers/sidebar';
 import { showBottomTab } from '../../helpers/bottomPanel';
 import { clearConsole, runConsole } from '../../helpers/console';
@@ -200,7 +200,19 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
         await docShot(w, `${SHOT}/5-new-camera`, { rect: await sidebarRect(w, newCam, 120), highlight: newCam });
         const start = await newCameraFromView();
         // 「3. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します」
-        await setViewValue(w, 'Zoom', 25);
+        //   The end view looks at the retinal from the side, through a gap
+        //   between the helices: Focus on the ballstick row centres it, the
+        //   relative RotY / RotX dials turn the view, and Zoom frames it.
+        await selectRow(w, 'ballstick1');
+        await clickSceneToolbar(w, 'focus');
+        await w.waitForTimeout(800);
+        await enterViewValue(w, 'RotY', -140);
+        await enterViewValue(w, 'RotX', -17);
+        await setViewValue(w, 'Zoom', 35);
+        //   Focus narrows the slab to the retinal, so widen it again.
+        await setViewValue(w, 'Slab', 200);
+        await w.waitForTimeout(800);
+        await docShot(w, `${SHOT}/5-end-view`);
         const end = await newCameraFromView();
         await setViewValue(w, 'Zoom', 60);
         // 「4. タイムラインのヘッダで、開始カメラに始点のカメラを指定します」

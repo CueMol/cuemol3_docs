@@ -12,6 +12,15 @@ The first half uses the scene (3UG9) finished in [Making a protein ribbon figure
 
 ![Finished result. A timeline in the Animation panel with Simple spin / Camera motion / Show strips](../../../assets/images/tutorials/animation/animation-movie/6-timeline.webp){ .on-glb }
 
+The movie written out by the steps of the first half (§2 to §6 and §8) looks like this (10 seconds).
+
+<div class="video-embed">
+<iframe src="https://www.youtube-nocookie.com/embed/0nv7LhVDIrY?loop=1&playlist=0nv7LhVDIrY"
+  title="Animation of 3UG9 (rotation, camera motion to the retinal, ballstick fade-in)" loading="lazy"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ## 1. How animation works
 
 An animation is built by placing **animation elements** (rotation, camera movement, display switching, etc.) on a timeline. Each element is shown as a band (strip); the position of the band is the start time and its length is the duration
@@ -61,7 +70,15 @@ The view moves smoothly to a saved camera. This is used for effects such as zoom
 
     ![The New camera from view button of the Camera panel](../../../assets/images/tutorials/animation/animation-movie/5-new-camera.webp){ width="304" .on-glb }
 
-3. In the same way, set the view to the viewpoint you want as the end (here, zoomed in around the retinal) and save another camera.
+3. In the same way, set the view to the viewpoint you want as the end and save another camera. Here it is a side view close to the
+   retinal, in which the retinal can be seen through a gap between the helices.
+    1. Select the `ballstick1` row in the **Explorer &gt; Scene** panel and press **Focus** to center the retinal.
+    2. Enter `-140` in **RotY** and then `-17` in **RotX** of the **View** panel to turn the view
+       (the Rotation fields turn the view by the angle entered).
+    3. Set **Zoom** to 35 Å. Focus narrows the slab, so set **Slab** back to 200 Å as well.
+    4. Press **New camera from view** to save it.
+
+    ![The end view. The retinal can be seen through a gap between the helices](../../../assets/images/tutorials/animation/animation-movie/5-end-view.webp){ .on-glb }
 4. In **Start cam** in the header of the timeline, specify the start camera (`camera_0`).
 
     ![camera_0 specified in Start cam](../../../assets/images/tutorials/animation/animation-movie/5-start-cam.webp){ .on-glb }
@@ -87,7 +104,7 @@ Show / Hide are animations in which a Renderer gradually **fades in / fades out*
 
     ![The Show inspector. 3ug9/ballstick1 checked in Target renderers](../../../assets/images/tutorials/animation/animation-movie/6-show-inspector.webp){ width="308" .on-glb }
 
-You now have a 10-second animation: the molecule makes one turn (5 s), the view zooms in around the retinal (3 s), and the
+You now have a 10-second animation: the molecule makes one turn (5 s), the view swings around and closes in on the retinal (3 s), and the
 retinal ballstick appears (2 s). The target Renderer of Show is not displayed before its strip.
 
 There are also **Slide in / Slide out**, which bring objects in and out with a movement from off-screen
@@ -187,8 +204,12 @@ set_anim_prop spin1, axis, "0 1 0"
 set_anim_time spin1, 0, 5000
 # 4. Play back and check
 animate play
-# 5. Add a camera motion (adjust the view before saving each one)
+# 5. Add a camera motion (save the current view as the start and a view close to the retinal as the end)
 save_camera start
+focus_selection 3ug9, "r; RET"
+rotate_view y, -140
+rotate_view x, -17
+set_view zoom=35, slab=200
 save_camera end
 set_anim_options startCamera=start
 add_anim camera, name=cam1

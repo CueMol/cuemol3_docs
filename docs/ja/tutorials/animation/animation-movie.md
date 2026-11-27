@@ -12,6 +12,15 @@
 
 ![完成イメージ。Animation パネルに Simple spin / Camera motion / Show のストリップが並んだタイムライン](../../../assets/images/tutorials/animation/animation-movie/6-timeline.webp){ .on-glb }
 
+前半 (§2〜§6 と §8) の手順で書き出す動画は、次のようになります (10 秒)。
+
+<div class="video-embed">
+<iframe src="https://www.youtube-nocookie.com/embed/0nv7LhVDIrY?loop=1&playlist=0nv7LhVDIrY"
+  title="3UG9 のアニメーション (回転、レチナールへの視点の移動、ballstick のフェードイン)" loading="lazy"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ## 1. アニメーションのしくみ
 
 アニメーションは、**アニメーション要素** (回転・カメラ移動・表示切り替えなど) を
@@ -66,7 +75,16 @@
 
     ![Camera パネルの New camera from view ボタン](../../../assets/images/tutorials/animation/animation-movie/5-new-camera.webp){ width="304" .on-glb }
 
-3. 同様に、終点にしたい視点 (ここではレチナールのあたりに寄せた視点) に合わせて、もう 1 つカメラを保存します。
+3. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します。ここでは、レチナールに寄せて、
+   ヘリックスの隙間からレチナールが見える横向きの視点にします。
+    1. **Explorer &gt; Scene** パネルで `ballstick1` の行を選び、**Focus** を押してレチナールを中心にします。
+    2. **View** パネルの **RotY** に `-140`、**RotX** に `-17` を順に入力して、視点を回します
+       (Rotation の欄は、入力した角度だけ回します)。
+    3. **Zoom** を 35 Å にします。Focus で Slab が狭くなるので、**Slab** も 200 Å に戻します。
+    4. **New camera from view** を押して保存します。
+
+    ![終点の視点。ヘリックスの隙間からレチナールが見える](../../../assets/images/tutorials/animation/animation-movie/5-end-view.webp){ .on-glb }
+
 4. タイムラインのヘッダの **Start cam** で、始点のカメラ (`camera_0`) を指定します。
 
     ![Start cam に camera_0 を指定した](../../../assets/images/tutorials/animation/animation-movie/5-start-cam.webp){ .on-glb }
@@ -97,7 +115,7 @@ Show / Hide は、ストリップの区間で Renderer が徐々に**フェー�
 
     ![Show のインスペクタ。Target renderers で 3ug9/ballstick1 にチェックを入れた](../../../assets/images/tutorials/animation/animation-movie/6-show-inspector.webp){ width="308" .on-glb }
 
-ここまでで、分子が 1 周回り (5 秒)、レチナールのあたりへズームし (3 秒)、レチナールの ballstick が
+ここまでで、分子が 1 周回り (5 秒)、視点が回り込みながらレチナールに寄り (3 秒)、レチナールの ballstick が
 現れる (2 秒)、計 10 秒のアニメーションができます。Show の対象の Renderer は、ストリップより前の区間では
 表示されません。
 
@@ -231,8 +249,12 @@ set_anim_prop spin1, axis, "0 1 0"
 set_anim_time spin1, 0, 5000
 # 4. 再生して確認する
 animate play
-# 5. カメラモーションを加える (視点を合わせてから、それぞれ保存する)
+# 5. カメラモーションを加える (今の視点を始点、レチナールに寄せた視点を終点として保存する)
 save_camera start
+focus_selection 3ug9, "r; RET"
+rotate_view y, -140
+rotate_view x, -17
+set_view zoom=35, slab=200
 save_camera end
 set_anim_options startCamera=start
 add_anim camera, name=cam1
