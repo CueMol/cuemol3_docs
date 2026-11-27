@@ -4,7 +4,8 @@
 **MCP** (Model Context Protocol) で CueMol3 を操作できるようにするプラグインです。
 **既定では無効**です。
 
-クライアントからは、[Console](console/index.md) のコマンドと同じ操作をツールとして呼び出せます。
+クライアントからは、[Console](console/index.md) のコマンドとほぼ同じ操作をツールとして呼び出せます
+(→ [できること](#できること))。
 API キーは CueMol3 側では不要で、モデルの利用はクライアント側の設定に従います。
 
 ## 有効にする
@@ -54,8 +55,8 @@ API キーは CueMol3 側では不要で、モデルの利用はクライアン�
 - 表示中はトークンが `<token>` と伏せられており、**Copy** でコピーしたときに実際の値が入ります。
 - Claude Code では、表示されたコマンド (`claude mcp add --transport http cuemol ...`) を
   ターミナルで実行します。
-- Codex では `~/.codex/config.toml` に、Antigravity では `~/.gemini/config/mcp_config.json` に
-  追記します。Codex 用の設定には、時間のかかるレンダリングが途中で打ち切られないよう
+- Codex では `~/.codex/config.toml` に、Antigravity では `~/.gemini/config/mcp_config.json`
+  (Antigravity CLI の設定ファイル) に追記します。Codex 用の設定には、時間のかかるレンダリングが途中で打ち切られないよう
   `tool_timeout_sec` が含まれています。
 - **Other** では、URL (`http://127.0.0.1:<ポート>/mcp`) と、送るヘッダ
   (`Authorization: Bearer <token>`) が表示されます。Streamable HTTP に対応し、
@@ -78,10 +79,31 @@ claude mcp add cuemol -- tritium_cli mcp
 - ポートとトークンはそのつど `~/.cuemol/local-api.json` から読み取るので、登録にトークンは要らず、
   トークンやポートを変えても登録し直す必要はありません。
 
+Claude Desktop のように、標準入出力で起動するサーバーを設定ファイルに書くクライアントでも、
+この方法で登録します。Claude Desktop では、設定ファイル `claude_desktop_config.json`
+(**Settings &gt; Developer** の **Edit Config** で開けます) に次のように書き、Claude Desktop を
+起動し直します。`"command"` は macOS の例で、tritium_cli のパスは **Settings &gt; Plugins &gt; Console** の
+**Command line tool** で確かめることができます。
+
+```json
+{
+  "mcpServers": {
+    "cuemol": {
+      "command": "/Applications/CueMol3.app/Contents/Resources/cli/tritium_cli",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
 ## できること
 
-- [Console](console/commands.md) のコマンドにあたる操作を、すべてツールとして呼び出せます。
-  そのほか、今のビューを画像として返す `capture_view` があります。
+- [Console](console/commands.md) (native モード) のコマンドのうち、CueMol3 の操作にあたるものを
+  ツールとして呼び出せます。そのほか、今のビューを画像として返す `capture_view` があります。
+- Console だけのコマンドは、ツールにはありません。Undo / Redo と操作の記録 (`undo` / `redo` /
+  `list_actions` / `export_actions`)、プロパティの読み書きの短縮形 (`get` / `set` / `get_prop` /
+  `set_prop` / `props`)、`run` / `cd` / `quit` / `help` などです。プロパティは `list_node_props` /
+  `set_node_prop` / `reset_prop` で扱います。Undo は CueMol3 の側で行います。
 - シーンの一覧・新規作成・切り替え・クローズ (`list_scenes` / `create_scene` / `switch_scene` /
   `close_scene`) ができます。`close_scene` は、変更が保存されていないシーンを閉じません
   (`discardChanges` を指定すると変更を捨てて閉じます)。`save_scene` での保存や、
@@ -113,7 +135,8 @@ claude mcp add cuemol -- tritium_cli mcp
 
 - [Console](console/index.md) / [AI Agent](ai-agent.md)
 - [プラグイン](index.md) / [設定項目](../settings.md#plugins)
+- [AI クライアントから CueMol3 を操作する (MCP)](../../tutorials/scripting/mcp-client.md) (チュートリアル)
 
 ---
 
-*確認対象: CueMol3 3.0.0.554*
+*確認対象: CueMol3 3.0.6.577*

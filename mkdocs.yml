@@ -213,6 +213,8 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.keys
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tilde
   - toc:
       permalink: true
@@ -302,6 +304,7 @@ nav:
           - アニメーション動画の作成: tutorials/animation/animation-movie.md
       - スクリプト:
           - ChX console による作図: tutorials/scripting/chx-console.md
+          - AI クライアントからの操作: tutorials/scripting/mcp-client.md
   - リファレンス:
       - reference/index.md
       - 選択式の文法: reference/selection.md
