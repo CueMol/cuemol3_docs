@@ -12,6 +12,15 @@
 
 ![完成イメージ。Animation パネルに Simple spin / Camera motion / Show のストリップが並んだタイムライン](../../../assets/images/tutorials/animation/animation-movie/6-timeline.webp){ .on-glb }
 
+前半 (§2〜§6 と §8) の手順で書き出す動画は、次のようになります (10 秒)。
+
+<div class="video-embed">
+<iframe src="https://www.youtube-nocookie.com/embed/0nv7LhVDIrY?loop=1&playlist=0nv7LhVDIrY"
+  title="3UG9 のアニメーション (回転、レチナールへの視点の移動、ballstick のフェードイン)" loading="lazy"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ## 1. アニメーションのしくみ
 
 アニメーションは、**アニメーション要素** (回転・カメラ移動・表示切り替えなど) を
@@ -24,36 +33,69 @@
 3UG9 のシーンを開いた状態で、下部パネルの **Animation** タブを開きます
 (→ [Animation パネル](../../ui/bottom-panels/animation.md))。
 
+![下部パネルの Animation タブ。要素はまだない](../../../assets/images/tutorials/animation/animation-movie/2-anim-panel.webp){ .on-glb }
+
 ## 3. 分子を回転させる
 
 まず、分子がその場で回り続ける定番のアニメーションを作ります。
 
-1. パネルの追加メニューから **Simple spin** を選びます。
+1. パネル左下の **+** ボタン (Add element) を押し、メニューから **Simple spin** を選びます。
+
+    ![Add element のメニュー](../../../assets/images/tutorials/animation/animation-movie/3-add-menu.webp){ width="260" .on-glb }
+
 2. ストリップが追加されるので、選択して右側のインスペクタを確認します。
-3. **Rotation angle** (回転角) と **Spin axis** (回転軸) を調整します。
+3. **Rotation angle** (回転角) と **Spin axis** (回転軸) を調整します。ここでは 360° と **Y axis** にします。
    360° にすると 1 周して元の向きに戻ります (→ [SimpleSpin](../../reference/animation/simplespin.md))。
-4. 帯をドラッグすると開始位置を、端をドラッグすると長さ (回転にかける時間) を変えられます。
+4. **Common** セクションの **Duration** (回転にかける時間) を 5 秒にします。時刻の欄は、クリックして
+   ++enter++ を押すと `5s` のように入力できます (→ [時刻の入力](../../ui/inspector.md#時刻の入力))。
+
+    ![インスペクタ。Duration を 0:05.000、Rotation angle を 360°、Spin axis を Y axis にした](../../../assets/images/tutorials/animation/animation-movie/3-spin-inspector.webp){ width="308" .on-glb }
+
+タイムラインの帯をドラッグすると開始位置を、端をドラッグすると長さを変えることもできます。
 
 ![Simple spin のストリップを選び、インスペクタで Rotation angle を 360°、Spin axis を Y axis にした](../../../assets/images/tutorials/animation/animation-movie/3-simple-spin.webp){ .on-glb }
 
 ## 4. 再生して確認する
 
-パネルの再生ボタンを押すと、アニメーションが分子ビュー上で実際に再生されます。
+パネル左上の再生ボタン (▷) を押すと、アニメーションが分子ビュー上で実際に再生されます。
 タイムラインの現在位置をドラッグするか、現在時刻の欄に時刻を打ち込んで ++enter++ を押して、
 任意の時点の状態を確かめることもできます。
+
+![再生ボタンと現在時刻の欄。右の 0:05.000 がアニメーション全体の長さ](../../../assets/images/tutorials/animation/animation-movie/4-transport.webp){ .on-glb }
 
 ## 5. カメラモーションを加える
 
 保存したカメラへ視点を滑らかに移動させます。全体像から注目部位へズームする、
 といった演出に使います。
 
-1. 分子ビューで始点にしたい視点に合わせ、左サイドパネルの **Explorer &gt; Camera** パネルで
-   **New camera from view** を押して保存します (→ [カメラ](../../reference/camera.md))。
-2. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します。
-3. タイムラインのヘッダで、**開始カメラ**に始点のカメラを指定します。
-4. 追加メニューから **Camera motion** を選びます。
-5. 追加されたストリップを選び、インスペクタの **Target camera** に終点のカメラを
+1. 背景が白のシーンでは、奥がフォグで白くかすまないように、**Explorer &gt; View** パネルの **Slab**
+   (表示する奥行きの幅) を 200 Å 程度に広げておきます。カメラには Slab も保存されます。
+2. 分子ビューで始点にしたい視点 (ここでは分子全体) に合わせ、左サイドパネルの **Explorer &gt; Camera** パネルで
+   **New camera from view** (**+** ボタン) を押して保存します (→ [カメラ](../../reference/camera.md))。
+
+    ![Camera パネルの New camera from view ボタン](../../../assets/images/tutorials/animation/animation-movie/5-new-camera.webp){ width="304" .on-glb }
+
+3. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します。ここでは、レチナールに寄せて、
+   ヘリックスの隙間からレチナールが見える横向きの視点にします。
+    1. **Explorer &gt; Scene** パネルで `ballstick1` の行を選び、**Focus** を押してレチナールを中心にします。
+    2. **View** パネルの **RotY** に `-140`、**RotX** に `-17` を順に入力して、視点を回します
+       (Rotation の欄は、入力した角度だけ回します)。
+    3. **Zoom** を 35 Å にします。Focus で Slab が狭くなるので、**Slab** も 200 Å に戻します。
+    4. **New camera from view** を押して保存します。
+
+    ![終点の視点。ヘリックスの隙間からレチナールが見える](../../../assets/images/tutorials/animation/animation-movie/5-end-view.webp){ .on-glb }
+
+4. タイムラインのヘッダの **Start cam** で、始点のカメラ (`camera_0`) を指定します。
+
+    ![Start cam に camera_0 を指定した](../../../assets/images/tutorials/animation/animation-movie/5-start-cam.webp){ .on-glb }
+
+5. **+** ボタンのメニューから **Camera motion** を選びます。追加した要素は、直前の要素 (Simple spin) の
+   終わりから始まるように置かれます (インスペクタの **Relative to**)。
+6. 追加されたストリップを選び、インスペクタの **Target camera** に終点のカメラ (`camera_1`) を
    指定します (→ [CamMotion](../../reference/animation/cammotion.md))。
+7. **Duration** を 3 秒にします。
+
+    ![Camera motion のインスペクタ。Target camera に camera_1、Duration を 0:03.000 にした](../../../assets/images/tutorials/animation/animation-movie/5-cam-inspector.webp){ width="308" .on-glb }
 
 再生すると、ストリップの区間で視点が始点から終点へ補間されます。開始カメラを
 指定しておくと、再生を押したときの視点にかかわらず、常にそのカメラの視点から
@@ -66,9 +108,16 @@
 Show / Hide は、ストリップの区間で Renderer が徐々に**フェードイン / フェードアウト**
 するアニメーションです。
 
-1. 追加メニューから **Show** (フェードイン) または **Hide** (フェードアウト) を選びます。
-2. インスペクタで、対象の Renderer をチェックリストから選びます
+1. **+** ボタンのメニューから **Show** (フェードイン) または **Hide** (フェードアウト) を選びます。ここでは **Show** です。
+2. インスペクタの **Target renderers** で、対象の Renderer (`3ug9/ballstick1`) にチェックを入れます
    (→ [Show / Hide](../../reference/animation/showhide.md))。
+3. **Duration** を 2 秒にします。
+
+    ![Show のインスペクタ。Target renderers で 3ug9/ballstick1 にチェックを入れた](../../../assets/images/tutorials/animation/animation-movie/6-show-inspector.webp){ width="308" .on-glb }
+
+ここまでで、分子が 1 周回り (5 秒)、視点が回り込みながらレチナールに寄り (3 秒)、レチナールの ballstick が
+現れる (2 秒)、計 10 秒のアニメーションができます。Show の対象の Renderer は、ストリップより前の区間では
+表示されません。
 
 画面外からの移動を伴って出し入れする **Slide in / Slide out** もあります
 (→ [SlideInOutAnim](../../reference/animation/slideinout.md))。また、要素を置いて
@@ -98,6 +147,9 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 2. **Algorithm** の **Method** で **SSM** を選びます。
 3. **Reference** の **Molecule** で 1TND を選び、**Selection** に `c; A` を指定します。
 4. **Moving** の **Molecule** で 1TAG を選びます。
+
+    ![Molecular superposition ダイアログ。Method は SSM、Reference に 1tnd と c; A、Moving に 1tag](../../../assets/images/tutorials/animation/animation-movie/7-superpose.webp){ width="420" .on-glb }
+
 5. **OK** を押すと、1TAG が 1TND の chain A に重なる位置へ移動します。
 
 重ね合わせの結果 (RMSD や対応づけられた残基数) は、下部パネルの **Output** のログで
@@ -110,8 +162,11 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 2. **Target** で、変化の始点にする 1TND を選びます。
 3. **Convert to MorphMol** を押します。分子が、複数のフレーム (構造) を保持できる
    **MorphMol** に変換されます。
-4. **Add mol...** を押し、変化の終点となる 1TAG を選びます。座標がフレームとして
-   コピーされます。
+
+    ![Morph animation tool ダイアログ。Target に 1tnd を選び、Convert to MorphMol を押す](../../../assets/images/tutorials/animation/animation-movie/7-morph-convert.webp){ width="436" .on-glb }
+
+4. **Add mol...** を押し、**Molecule to add** で変化の終点となる 1TAG を選んで **Add as frame** を押します。
+   座標がフレームとしてコピーされます。
 5. フレームの一覧に、元の構造 (`(this)`) と追加した構造が並んだことを確認して、
    ダイアログを閉じます。
 
@@ -157,7 +212,11 @@ GTP 結合型 (**1TND**) と GDP 結合型 (**1TAG**) の間の構造変化を�
 **Rendering &gt; Movie rendering...** を選ぶと、レンダリングウィンドウが
 動画 (Movie) モードで開きます (→ [レンダリングウィンドウ](../../ui/rendering-window.md))。
 
-1. **Target** に対象のビューを選びます。**Backend** は既定の **Umbreon** のままで構いません。
+1. **Target** で、動画にするシーンのビューを選びます。ここでは前半で作った 3UG9 のシーンのビュー
+   (`Untitled 1:0` など、シーン名とビューの番号) を選びます。**Backend** は既定の **Umbreon** のままで構いません。
+
+    ![実行バーの Target で 3UG9 のシーンのビューを選んだ](../../../assets/images/tutorials/animation/animation-movie/8-movie-target.webp){ .on-glb }
+
 2. **Image** タブでサイズ (例: **VGA (640×480)**) を選びます。
 3. **Start Render** を押すと、フレームを 1 枚ずつレンダリングし、完了すると
    ffmpeg で動画ファイルにエンコードされます (macOS / Windows の配布物には同梱、
@@ -190,15 +249,21 @@ set_anim_prop spin1, axis, "0 1 0"
 set_anim_time spin1, 0, 5000
 # 4. 再生して確認する
 animate play
-# 5. カメラモーションを加える (視点を合わせてから、それぞれ保存する)
+# 5. カメラモーションを加える (今の視点を始点、レチナールに寄せた視点を終点として保存する)
 save_camera start
+focus_selection 3ug9, "r; RET"
+rotate_view y, -140
+rotate_view x, -17
+set_view zoom=35, slab=200
 save_camera end
 set_anim_options startCamera=start
 add_anim camera, name=cam1
 set_anim_prop cam1, endcam, end
+set_anim_time cam1, 0, 3000
 # 6. 表示の切り替えを加える
 add_anim show, name=show1
 set_anim_prop show1, rend, 3ug9/ballstick1
+set_anim_time show1, 0, 2000
 # 7. モーフィングを加える
 create_scene
 fetch_pdb 1TND, mmcif, cartoon, selection="c; A"
@@ -214,7 +279,8 @@ animate play
 ```
 
 - 手順 2 (Animation パネルを開く) にあたるコマンドはありません。要素の一覧は `list_anims` で表示します。
-- `add_anim` は、要素をタイムラインの末尾 (直前の要素の後ろ) に追加します。
+- `add_anim` は、要素をタイムラインの末尾 (直前の要素の後ろ) に追加します。`set_anim_time` の開始と終了は、
+  直前の要素の終わりからの時間 (ミリ秒) です。
 - `;` を含む選択式 (`c; A`) は、引用符で囲みます。
 
 ## 次のステップ

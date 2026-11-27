@@ -112,7 +112,8 @@ export async function sidebarRect(window: Page, targets: Locator | Locator[], be
  */
 export async function inspectorRect(window: Page, targets: Locator | Locator[], below = 80): Promise<Rect> {
     const boxes = await boxesOf(Array.isArray(targets) ? targets : [targets]);
-    const bar = await window.locator('.inspector-mode-bar').first().boundingBox();
+    // Each inspector kind has its own mode bar; only the shown one counts.
+    const bar = await window.locator('.inspector-mode-bar').filter({ visible: true }).first().boundingBox();
     if (!bar) throw new Error('[docShot] inspector not visible');
     const vp = await viewport(window);
     const x = Math.max(0, bar.x - 16);
