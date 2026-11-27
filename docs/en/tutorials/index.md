@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/index.md @ 5f16888 -->
+<!-- source: ja/tutorials/index.md @ 23f49a1 -->
 
 # Tutorials
 
