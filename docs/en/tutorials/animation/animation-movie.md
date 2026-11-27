@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/animation/animation-movie.md @ 1002eeb -->
+<!-- source: ja/tutorials/animation/animation-movie.md @ 436fc54 -->
 
 # Making an animation and exporting a movie
 
