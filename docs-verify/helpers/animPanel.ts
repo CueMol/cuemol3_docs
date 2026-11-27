@@ -28,11 +28,26 @@ export async function animRowNames(w: Page): Promise<string[]> {
     return animPanel(w).locator('.anim-label-row .anim-label-text').allInnerTexts();
 }
 
-/** Add an element by its menu label ("Simple spin", "Camera motion", ...); returns its name. */
-export async function addAnimElement(w: Page, label: string): Promise<string> {
+export function addElementButton(w: Page): Locator {
+    return animPanel(w).locator('[title="Add element"]').first();
+}
+
+/**
+ * Add an element by its menu label ("Simple spin", "Camera motion", ...);
+ * returns its name. `onMenu` runs while the menu is open (for a shot).
+ */
+export async function addAnimElement(
+    w: Page,
+    label: string,
+    onMenu?: (menu: Locator, item: Locator) => Promise<void>,
+): Promise<string> {
     const before = await animRowNames(w);
-    await animPanel(w).locator('[title="Add element"]').click();
-    await w.locator('.bp5-popover .bp5-menu').last().getByText(label, { exact: true }).click();
+    await addElementButton(w).click();
+    const menu = w.locator('.bp5-popover .bp5-menu').last();
+    const item = menu.getByText(label, { exact: true });
+    await expect(item).toBeVisible();
+    await onMenu?.(menu, item);
+    await item.click();
     await expect.poll(() => animRowNames(w).then((n) => n.length)).toBe(before.length + 1);
     const after = await animRowNames(w);
     return after.find((n) => !before.includes(n))!;
@@ -42,6 +57,21 @@ export async function addAnimElement(w: Page, label: string): Promise<string> {
 export async function selectAnimElement(w: Page, name: string): Promise<void> {
     const row = animRow(w, name);
     if (!/\bis-selected\b/.test((await row.getAttribute('class')) ?? '')) await row.click();
+    await expect(row).toHaveClass(/is-selected/);
+}
+
+/**
+ * Select an element row afresh (deselect, then select), so the inspector
+ * shows it again: committing a Start time / Duration edit can leave the
+ * inspector closed while the row stays selected.
+ */
+export async function reselectAnimElement(w: Page, name: string): Promise<void> {
+    const row = animRow(w, name);
+    if (/\bis-selected\b/.test((await row.getAttribute('class')) ?? '')) {
+        await row.click();
+        await expect(row).not.toHaveClass(/is-selected/);
+    }
+    await row.click();
     await expect(row).toHaveClass(/is-selected/);
 }
 
@@ -63,20 +93,45 @@ export async function currentTimeText(w: Page): Promise<string> {
     return (await currentTimeField(w).innerText()).replace(/\s+/g, '');
 }
 
-/**
- * Type a time into the segmented time field: Enter on the focused field
- * opens its expression editor, which takes `1:30.500` / `250ms` / `1.5s`.
- */
+export function transportBar(w: Page): Locator {
+    return animPanel(w).locator('.anim-transport').first();
+}
+
+/** Type a time into the playhead's time field. */
 export async function typeCurrentTime(w: Page, text: string): Promise<void> {
-    const field = currentTimeField(w);
+    await typeTime(currentTimeField(w), text);
+}
+
+/** The inspector's Duration field of the selected element. */
+export function durationField(w: Page): Locator {
+    return animInspectorRow(w, 'Duration').locator('.h3-form-time').first();
+}
+
+/** Set the selected element's Duration (`5s`, `0:03.000`, ...). */
+export async function setAnimDuration(w: Page, text: string): Promise<void> {
+    await typeTime(durationField(w), text);
+}
+
+/**
+ * Type a time into a segmented time field (h3-kit TimeField): Enter on the
+ * focused field opens its expression editor, which takes `1:30.500` /
+ * `250ms` / `1.5s`.
+ */
+export async function typeTime(field: Locator, text: string): Promise<void> {
     await field.focus();
     await field.press('Enter');
     const input = field.locator('input.h3-form-time-input');
     await input.fill(text);
     await input.press('Enter');
+    // A field may commit its run only when it loses focus (the inspector's
+    // Start time / Duration do).
+    await field.blur();
 }
 
 /** An inspector row of the animation element inspector, by its label. */
 export function animInspectorRow(w: Page, label: string): Locator {
-    return w.getByText(label, { exact: true }).last().locator('xpath=ancestor::*[2]');
+    const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return w.locator('.h3-form-prop-row')
+        .filter({ has: w.locator('.h3-form-field-label', { hasText: new RegExp(`^${escaped}$`) }) })
+        .last();
 }

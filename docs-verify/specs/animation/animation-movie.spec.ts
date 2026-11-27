@@ -3,8 +3,9 @@
  *
  * The tests mirror the page's numbered h2 sections. The first half starts
  * from the ribbon-figure scene; §1 builds a short version of it (3UG9
- * cartoon plus the retinal ballstick). §7 works in a new scene, and §8
- * renders that scene's morphing (cartoon) as a movie with E2E_SLOW=1.
+ * cartoon plus the retinal ballstick); its spin / camera motion / show
+ * strips last 5 + 3 + 2 s. §7 works in a new scene, and §8 renders the
+ * first scene (10 s) as a movie with E2E_SLOW=1.
  */
 import * as fs from 'node:fs';
 import { test, expect, type Locator } from '@playwright/test';
@@ -20,15 +21,17 @@ import {
     clickSceneToolbar, expectRow, rowContextMenu, rowVisibilityToggle, selectRow, toggleRowVisibility,
 } from '../../helpers/sceneTree';
 import {
-    addAnimElement, animInspectorRow, animRow, currentTimeText, selectAnimElement,
-    showAnimPanel, startCameraSelect, transportButton, typeCurrentTime,
+    addAnimElement, addElementButton, animInspectorRow, animPanel, animRow, currentTimeField, currentTimeText,
+    durationField, reselectAnimElement, selectAnimElement, setAnimDuration, showAnimPanel, startCameraSelect, transportBar,
+    transportButton, typeCurrentTime,
 } from '../../helpers/animPanel';
 import { setNumericProperty } from '../../helpers/inspector';
-import { setViewValue } from '../../helpers/viewPane';
+import { setViewValue, viewValueText } from '../../helpers/viewPane';
 import { openSidebarView } from '../../helpers/sidebar';
 import { showBottomTab } from '../../helpers/bottomPanel';
+import { clearConsole, runConsole } from '../../helpers/console';
 import { openRenderWindow, settingSelect, showSettingsTab, startRenderButton } from '../../helpers/renderWindow';
-import { aroundBox, docShot, thumbShot } from '../../helpers/docShot';
+import { aroundBox, docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
 
 const SHOT = 'tutorials/animation/animation-movie';
 const DOC = 'docs/ja/tutorials/animation/animation-movie.md';
@@ -36,6 +39,46 @@ const OBJ = '3ug9';
 
 let harness: CueMolHarness;
 let spin = '';
+
+/**
+ * The timeline length as the scene keeps it (`list_anims`). The panel's own
+ * length readout can lag behind an inspector edit, so it is not used here.
+ */
+async function expectAnimLength(ms: number): Promise<void> {
+    const w = harness.window;
+    const out = (await runConsole(w, 'list_anims')).join('\n');
+    await clearConsole(w);
+    await showBottomTab(w, 'Animation');
+    expect(out).toContain(`length ${ms} ms`);
+}
+
+/** The whole bottom panel (tabs and the Animation panel). */
+async function bottomPanelShot(id: string, highlight?: Locator | Locator[]): Promise<void> {
+    const w = harness.window;
+    await docShot(w, id, {
+        clip: [w.locator('.bottom-panel-tabs').first(), animPanel(w)],
+        pad: 0,
+        highlight,
+    });
+}
+
+/**
+ * The inspector from its header down to just below `target`, which is
+ * framed. (The animation element inspector has no mode bar for
+ * inspectorRect to measure from.)
+ */
+async function inspectorShot(id: string, target: Locator, below = 40): Promise<void> {
+    const w = harness.window;
+    if (!process.env.DOCSHOT) return;
+    const t = await target.boundingBox();
+    const head = await w.locator('.inspector-header').filter({ visible: true }).first().boundingBox();
+    if (!t || !head) throw new Error('[animation-movie] inspector not visible');
+    const vp = w.viewportSize() ?? { width: 1280, height: 800 };
+    const x = Math.max(0, head.x - 8);
+    const y = Math.max(0, head.y);
+    const y2 = Math.min(vp.height, t.y + t.height + below);
+    await docShot(w, id, { rect: { x, y, width: vp.width - x, height: y2 - y }, highlight: target });
+}
 
 async function selectMol(section: Locator, name: string): Promise<void> {
     const sel = section.getByRole('combobox', { name: 'Molecule' }).first();
@@ -100,13 +143,20 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
 
     test('2. Animation パネルを開く', async () => {
         // 「下部パネルの Animation タブを開きます」
-        await showAnimPanel(harness.window);
+        const w = harness.window;
+        await showAnimPanel(w);
+        await bottomPanelShot(`${SHOT}/2-anim-panel`, w.locator('.bottom-panel-tabs .bottom-tab', { hasText: /^Animation$/ }).first());
     });
 
     test('3. 分子を回転させる', async () => {
         const w = harness.window;
         // 「1. パネルの追加メニューから Simple spin を選びます」
-        spin = await addAnimElement(w, 'Simple spin');
+        spin = await addAnimElement(w, 'Simple spin', async (menu, item) => {
+            await docShot(w, `${SHOT}/3-add-menu`, {
+                rect: await aroundBox(w, [menu, addElementButton(w)], 40),
+                highlight: item,
+            });
+        });
         // 「2. ストリップが追加されるので、選択して右側のインスペクタを確認します」
         await selectAnimElement(w, spin);
         await expect(w.getByText('SimpleSpin', { exact: true }).last()).toBeVisible();
@@ -115,12 +165,20 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
         const axis = animInspectorRow(w, 'Spin axis').locator('select').first();
         await axis.selectOption('y');
         await expect(axis).toHaveValue('y');
+        // 「4. Common セクションの Duration で、回転にかける時間を 5 秒にします」
+        await setAnimDuration(w, '5s');
+        await expect(durationField(w)).toContainText('5');
+        await expectAnimLength(5000);
+        await reselectAnimElement(w, spin);
+        await expect(durationField(w)).toContainText('05');
+        await inspectorShot(`${SHOT}/3-spin-inspector`, animInspectorRow(w, 'Spin axis'));
         await docShot(w, `${SHOT}/3-simple-spin`);
     });
 
     test('4. 再生して確認する', async () => {
         const w = harness.window;
         // 「パネルの再生ボタンを押すと、アニメーションが分子ビュー上で実際に再生されます」
+        await bottomPanelShot(`${SHOT}/4-transport`, [transportButton(w, 'Play'), currentTimeField(w)]);
         const t0 = await currentTimeText(w);
         await transportButton(w, 'Play').click();
         await expect.poll(() => currentTimeText(w), { timeout: 10_000 }).not.toBe(t0);
@@ -132,24 +190,36 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
 
     test('5. カメラモーションを加える', async () => {
         const w = harness.window;
-        // 「1. 始点にしたい視点に合わせ ... New camera from view を押して保存します」
+        // 「2. 始点にしたい視点に合わせ ... New camera from view を押して保存します」
         await transportButton(w, 'Skip to start').click();
+        await openSidebarView(w, 'explorer');
+        // 「1. 背景が白のシーンでは ... View パネルの Slab を 200 Å 程度に広げておきます」
+        await setViewValue(w, 'Slab', 200);
+        expect(await viewValueText(w, 'Slab')).toMatch(/^200/);
+        const newCam = w.locator('.sp-pane.camera-pane .section-action-btn').first();
+        await docShot(w, `${SHOT}/5-new-camera`, { rect: await sidebarRect(w, newCam, 120), highlight: newCam });
         const start = await newCameraFromView();
-        // 「2. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します」
+        // 「3. 同様に、終点にしたい視点に合わせて、もう 1 つカメラを保存します」
         await setViewValue(w, 'Zoom', 25);
         const end = await newCameraFromView();
         await setViewValue(w, 'Zoom', 60);
-        // 「3. タイムラインのヘッダで、開始カメラに始点のカメラを指定します」
+        // 「4. タイムラインのヘッダで、開始カメラに始点のカメラを指定します」
         await showBottomTab(w, 'Animation');
         await startCameraSelect(w).selectOption({ label: start });
         await expect(startCameraSelect(w)).toHaveValue(start);
-        // 「4. 追加メニューから Camera motion を選びます」
+        await bottomPanelShot(`${SHOT}/5-start-cam`, startCameraSelect(w));
+        // 「5. 追加メニューから Camera motion を選びます」
         const cam = await addAnimElement(w, 'Camera motion');
-        // 「5. ストリップを選び、インスペクタの Target camera に終点のカメラ」
+        // 「6. ストリップを選び、インスペクタの Target camera に終点のカメラ」
         await selectAnimElement(w, cam);
         const target = animInspectorRow(w, 'Target camera').locator('select').first();
         await target.selectOption(end);
         await expect(target).toHaveValue(end);
+        // 「7. Duration を 3 秒にします」
+        await setAnimDuration(w, '3s');
+        await expectAnimLength(8000);
+        await reselectAnimElement(w, cam);
+        await inspectorShot(`${SHOT}/5-cam-inspector`, animInspectorRow(w, 'Target camera'));
     });
 
     test('6. 表示の切り替えを加える', async () => {
@@ -164,6 +234,11 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
         // tick shows only after the round trip.
         await box.click();
         await expect(box).toBeChecked();
+        // 「3. Duration を 2 秒にします」
+        await setAnimDuration(w, '2s');
+        await expectAnimLength(10000);
+        await reselectAnimElement(w, show);
+        await inspectorShot(`${SHOT}/6-show-inspector`, animInspectorRow(w, 'Target renderers'));
         await selectAnimElement(w, spin);
         // Back to the start so the view shows the start camera.
         await transportButton(w, 'Skip to start').click();
@@ -211,6 +286,7 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
             await ref.getByPlaceholder('* (all atoms)').fill('c; A');
             // 「4. Moving の Molecule で 1TAG を選びます」
             await selectMol(sections.filter({ hasText: /^Moving/ }).first(), '1tag');
+            await docShot(w, `${SHOT}/7-superpose`, { clip: dlg });
             // 「5. OK を押すと、1TAG が 1TND の chain A に重なる位置へ移動します」
             await clickDialogButton(w, 'Molecular superposition', 'OK');
             await expectDialogClosed(w, 'Molecular superposition', 60_000);
@@ -226,6 +302,8 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
             await expect(dlg).toBeVisible();
             // 「2. Target で、変化の始点にする 1TND を選びます」
             await fieldControl(dlg, 'Target').selectOption({ label: '1tnd' });
+            const convert = dlg.getByRole('button', { name: 'Convert to MorphMol', exact: true });
+            await docShot(w, `${SHOT}/7-morph-convert`, { clip: dlg, highlight: convert });
             // 「3. Convert to MorphMol を押します」
             await dlg.getByRole('button', { name: 'Convert to MorphMol', exact: true }).click();
             // 「4. Add mol... を押し、変化の終点となる 1TAG を選びます」
@@ -268,9 +346,17 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
         // 「Rendering > Movie rendering... を選ぶと、レンダリングウィンドウが動画 (Movie) モードで開きます」
         const rw = await openRenderWindow(harness.app, 'Movie rendering...');
         await expect(rw.locator('.render-panel .bottom-tab', { hasText: 'Movie' })).toHaveClass(/active/);
-        // 「1. Target に対象のビューを選びます。Backend は既定の Umbreon」
+        // 「1. Target で、3UG9 のシーンのビューを選びます。Backend は既定の Umbreon」
         const bar = rw.locator('.render-panel-bar');
         await expect(bar.locator('select').first().locator('option:checked')).toHaveText(/Umbreon/);
+        const targetView = bar.locator('select').last();
+        // The views are listed in the order the scenes were created: the
+        // first is the 3UG9 scene, the front one is the morphing scene.
+        await expect(targetView.locator('option')).toHaveCount(2);
+        const scene1View = (await targetView.locator('option').first().innerText()).trim();
+        await targetView.selectOption({ index: 0 });
+        await expect(targetView.locator('option:checked')).toHaveText(scene1View);
+        await docShot(rw, `${SHOT}/8-movie-target`, { rect: await aroundBox(rw, bar, 30), highlight: targetView });
         // 「2. Image タブでサイズ (例: VGA (640×480)) を選びます」
         await showSettingsTab(rw, 'Image');
         const preset = settingSelect(rw, 'Preset');
@@ -292,14 +378,14 @@ test.describe.serial('アニメーションの作成と動画の出力', { tag: 
             return;
         }
         // 「3. Start Render を押すと ... ffmpeg で動画ファイルにエンコードされます」
-        // Every frame is a Global Illumination render, so allow a few minutes.
-        test.setTimeout(900_000);
+        // 300 frames, each a Global Illumination render: several minutes.
+        test.setTimeout(1_800_000);
         await startRenderButton(rw).click();
         const saveAs = rw.getByRole('button', { name: 'Save movie as', exact: true });
-        await expect(saveAs).toBeVisible({ timeout: 900_000 });
+        await expect(saveAs).toBeVisible({ timeout: 1_700_000 });
         await docShot(rw, `${SHOT}/8-movie-done`);
         // 「4. Save movie as... で完成した動画を好きな場所に保存します」
-        const out = artifacts('animation-movie', 'morph.mp4');
+        const out = artifacts('animation-movie', '3ug9-animation.mp4');
         fs.rmSync(out, { force: true });
         await expectSaveDialog(harness.app, out);
         await saveAs.click();
