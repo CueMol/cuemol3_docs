@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/index.md @ 23f49a1 -->
+<!-- source: ja/tutorials/index.md @ 5008883 -->
 
 # Tutorials
 
@@ -123,6 +123,10 @@ If you proceed in order, each page picks up the state left by the previous one.
 - [![Finished image of Making figures with the ChX console](../../assets/images/tutorials/index/chx-console.webp){ width="200" }](scripting/chx-console.md)
 
     **[Making figures with the ChX console](scripting/chx-console.md)** — Making figures with ChimeraX commands and `.cxc` scripts
+
+- [![Finished image of Driving CueMol3 from AI clients](../../assets/images/tutorials/index/mcp-client.webp){ width="200" }](scripting/mcp-client.md)
+
+    **[Driving CueMol3 from AI clients](scripting/mcp-client.md)** — Asking an AI such as Claude Code to make a figure, and checking what it did
 
 </div>
 

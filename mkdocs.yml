@@ -125,6 +125,7 @@ plugins:
                     - Animation movie: tutorials/animation/animation-movie.md
                 - Scripting:
                     - Figures with the ChX console: tutorials/scripting/chx-console.md
+                    - Driving from AI clients: tutorials/scripting/mcp-client.md
             - Reference:
                 - reference/index.md
                 - Selection syntax: reference/selection.md
