@@ -78,6 +78,22 @@
   white-space: nowrap;
 }
 
+/* Content tabs (pymdownx.tabbed). The alternate style draws only a line
+ * under the labels, so the end of a tab set is hard to tell from the
+ * paragraph after it. Frame the whole set. */
+.md-typeset .tabbed-set {
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+}
+
+.md-typeset .tabbed-set > .tabbed-labels {
+  padding: 0 0.6rem;
+}
+
+.md-typeset .tabbed-set > .tabbed-content {
+  padding: 0 0.8rem;
+}
+
 /* YouTube embed in the feature highlights (the features/ pages). The wrapper
  * keeps the player at 16:9 at any page width. */
 .md-typeset .video-embed {

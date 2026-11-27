@@ -122,5 +122,9 @@
 
     **[ChX console による作図](scripting/chx-console.md)** — ChimeraX のコマンドと `.cxc` スクリプトで図を作る
 
+- [![AI クライアントからの操作の完成イメージ](../../assets/images/tutorials/index/mcp-client.webp){ width="200" }](scripting/mcp-client.md)
+
+    **[AI クライアントからの操作](scripting/mcp-client.md)** — Claude Code などの AI に頼んで図を作り、行った操作を確かめる
+
 </div>
 
