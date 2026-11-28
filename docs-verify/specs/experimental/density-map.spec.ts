@@ -12,7 +12,7 @@ import { checkField } from '../../helpers/form';
 import { expectRow, rowVisibilityToggle, toggleRowVisibility } from '../../helpers/sceneTree';
 import { densityPane, levelInput, selectMapRenderer, setDragRow, setLevel } from '../../helpers/densityPane';
 import { molStructPane, setupSelectionPage } from '../../fixtures/courseSelection';
-import { setViewValue, viewValueText } from '../../helpers/viewPane';
+import { enterViewValue, setViewValue, viewValueText } from '../../helpers/viewPane';
 import { openSidebarView } from '../../helpers/sidebar';
 import { runConsole, clearConsole } from '../../helpers/console';
 import { docShot, sidebarRect, thumbShot } from '../../helpers/docShot';
@@ -87,6 +87,11 @@ test.describe.serial('電子密度マップの表示', { tag: '@net' }, () => {
         // 「目のアイコンで個別に表示・非表示を切り替えられます」
         await expect(rowVisibilityToggle(w, '1qio_2fofc')).toBeVisible();
         // 「マップは、取得したときのビュー中心 (先に読み込んだ分子) の周りに描かれます。視点は動きません。」
+        // Not in the page: the default view looks down a cell axis, which flattens
+        // the map box and the mesh, so the shots of this page are taken a little
+        // turned (the later steps keep this rotation).
+        await enterViewValue(w, 'RotY', 30);
+        await enterViewValue(w, 'RotX', 20);
         await docShot(w, `${SHOT}/2-loaded`);
     });
 
