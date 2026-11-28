@@ -1,4 +1,4 @@
-<!-- source: ja/ui/side-panels.md @ 1002eeb -->
+<!-- source: ja/ui/side-panels.md @ 53a8286 -->
 
 # Side panels
 
@@ -214,6 +214,9 @@ Shows a molecule as a chain → residue → atom hierarchical tree and builds se
 - With the buttons to the right of the heading, **Select atoms** / **Center at** / **Zoom at**, the range chosen in the tree
   can be made the molecule's selection / brought to the center / centered and zoomed in on. The buttons are icons;
   hovering the pointer over one shows its name. Choosing in the tree alone does not change the molecule's selection.
+- Pressing the **Properties** button in the same row, or double-clicking a row, shows the information on that chain, residue or atom
+  (the residue's secondary structure, the atom's coordinates, B-factor, occupancy and so on) read-only in the
+  [inspector](inspector.md). **Properties** can be pressed when exactly one row is chosen in the tree.
 
 ### Selection panel
 
@@ -293,4 +296,4 @@ to apply it to the Object selected in the scene tree.
 
 ---
 
-*Verified against: CueMol3 3.0.6.577*
+*Verified against: CueMol3 3.0.7.578*

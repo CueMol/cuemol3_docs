@@ -1,4 +1,4 @@
-<!-- source: ja/reference/plugins/console/cli.md @ d6bebaf -->
+<!-- source: ja/reference/plugins/console/cli.md @ 53a8286 -->
 
 # tritium_cli
 
@@ -17,8 +17,8 @@ tritium_cli <command> [ARGS]
   (`PyMOL <directory> ❯` in PyM console, `ChimeraX <directory> ❯` in ChX console). ++tab++ completes, ++ctrl+c++ stops the running
   command, `native` / `pymol` / `chimerax` switches the mode, and `exit` or ++ctrl+d++ quits.
   `quit` quits CueMol3 first and then tritium_cli as well.
-- ++tab++ completion works the same as in the panel, and a second ++tab++ opens the candidate menu. The
-  output of `help` is wrapped to the terminal width (it is printed as Markdown when piped).
+- ++tab++ completion works the same as in the panel, and a second ++tab++ opens the candidate menu. ++ctrl+r++
+  history search also works the same as in the panel. The output of `help` is wrapped to the terminal width (it is printed as Markdown when piped).
 - Passing commands with `-c`, or files as arguments, runs them and exits. With `-i`,
   interactive mode starts afterwards. Input can also be piped in.
 - Files given as arguments are handled according to their type.
@@ -110,4 +110,4 @@ toggle switch as **Command line access**, and a button to copy the tritium_cli p
 
 ---
 
-*Verified against: CueMol3 3.0.0.554*
+*Verified against: CueMol3 3.0.7.578*

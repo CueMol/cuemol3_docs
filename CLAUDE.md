@@ -129,6 +129,8 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
 - 2026-11-27 (日本語版 `dcf70c1`) に、目的別の新しい 6 本を訳し、チュートリアルの階層化・冒頭の
   「このチュートリアルについて」(`About this tutorial`)・「同じことをコマンドで」(`The same with commands`) に
   追随させた。stale は 0 件。en の nav の表示名は 1 行に収まる名詞句にしている (`Ligand binding site` など)。
+- 2026-11-28 に、3.0.7.578 の同期 (日本語版 `53a8286`) の 14 ページに追随させた (stale 0 件)。density-map の
+  `2-redrawn.webp` は参照が無くなったので削除した (manifest からも外した)。
 - 新しい日本語ページを足したら、英語版も同じ PR か次の追随 PR で訳し、en の nav に載せる
   (`task i18n:status -- -v` の untranslated に出る)。
 

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/actions.md @ d6bebaf -->
+<!-- source: ja/reference/actions.md @ 53a8286 -->
 
 # Recording and replaying operations (Actions)
 
@@ -22,9 +22,7 @@ the [MCP Server](plugins/mcp-server.md) and the [AI Agent](plugins/ai-agent.md),
 as operations that can be saved and replayed. These include property changes, file loading and fetching,
 Renderers and styles, coloring and Paint, selections, molecular editing, superposition, labels and measurements,
 crystal symmetry, morphing, animation, camera, style sets, electrostatic potential
-calculation, and copy &amp; paste.
-
-**Edits to MD trajectories are not recorded yet.**
+calculation, loading and editing MD trajectories, and copy &amp; paste.
 
 The Undo / Redo display (including the Undo / Redo dropdown on the toolbar) is also built
 from the recorded operations. It shows details such as which Renderer was created and which property was changed.
@@ -62,7 +60,7 @@ the inspector shows its contents **read-only**. You can check the Undo label, th
 the state (Done / Undone), and the name, command and arguments of each operation.
 Showing a step does not change the Undo position.
 
-Steps for edits with no recorded operations (such as edits to MD trajectories) cannot be saved to qax.
+Steps for edits with no recorded operations cannot be saved to qax.
 
 ## Actions panel
 
@@ -144,7 +142,6 @@ A qax file is a file in which recorded operations are written in XML (extension 
 
 ## Limitations
 
-- Edits to MD trajectories are not recorded.
 - Only operations that take no arguments or exactly one Object can be made into macros.
 - The History panel shows only the history of the active scene.
 
@@ -156,4 +153,4 @@ A qax file is a file in which recorded operations are written in XML (extension 
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.7.578*

@@ -1,4 +1,4 @@
-<!-- source: ja/reference/plugins/console/commands.md @ d6bebaf -->
+<!-- source: ja/reference/plugins/console/commands.md @ 53a8286 -->
 
 # Console command list
 
@@ -20,15 +20,18 @@ Prefix abbreviations (such as `open` for `open_log`) are not run (++tab++ comple
 | Colouring (`coloring`) | `list_coloring_styles` / `set_renderer_coloring` / `set_coloring_prop` / `add_paint` / `add_paint_at` / `list_paint` / `set_paint` / `remove_paint` / `move_paint` / `clear_paint` / `set_default_color` / `set_elepot_coloring` / `set_multigrad_nodes` |
 | Style sets (`styles`) | `create_style_set` / `delete_style_set` / `set_style_readonly` / `load_style_file` / `save_style_file` / `define_color` / `remove_color` / `remove_selection` / `remove_style` |
 | Selections (`selections`) | `list_chains` / `list_residues` / `count_selection` (`count`) / `set_mol_selection` (`select`) / `define_selection` (`define`) |
-| View and cameras (`viewing`) | `rotate_view` (`turn`) / `set_view` (`view` / `slab` / `fit_slab`) / `focus_selection` (`zoom` / `center`) / `orient_view` / `pan_view` (`pan`) / `set_projection` (`projection`) / `list_cameras` (`cameras`) / `save_camera` (`save_view`) / `apply_camera` (`restore_view`) / `delete_camera` / `rename_camera` / `move_camera` / `set_camera_visibility` / `clear_camera_visibility` / `load_camera_file` / `save_camera_file` / `reload_camera` |
+| View and cameras (`viewing`) | `rotate_view` (`turn`) / `set_view` (`view` / `slab` / `fit_slab`) / `set_bgcolor` / `focus_selection` (`zoom` / `center`) / `orient_view` / `pan_view` (`pan`) / `set_projection` (`projection`) / `list_cameras` (`cameras`) / `save_camera` (`save_view`) / `apply_camera` (`restore_view`) / `delete_camera` / `rename_camera` / `move_camera` / `set_camera_visibility` / `clear_camera_visibility` / `load_camera_file` / `save_camera_file` / `reload_camera` |
 | Properties (`properties`) | `list_node_props` (`props`) / `get_prop` (`get`) / `set_prop` (`set`) / `set_node_prop` / `reset_prop` |
 | Molecule editing (`molecule`) | `superpose` / `delete_atoms` / `rename_chain` / `renumber_residues` / `merge_molecules` / `set_secondary_structure` / `add_bond` / `remove_bond` / `set_symmetry` / `show_symmetry` / `create_symmetry_copy` / `show_unit_cell` / `set_atom_label` / `set_atom_labels` |
 | Surfaces (`surfaces`) | `create_surface` / `recalc_surface` / `calc_elepot` / `cut_surface` |
 | Measurement and analysis (`analysis`) | `measure_geometry` / `measure_selections` / `analyze_interactions` / `list_interactions` / `remove_interaction` |
 | Density maps (`maps`) | `fetch_map` / `fetch_emdb` / `fetch_map_url` / `list_map_contours` / `set_map_contour` (`contour`) / `create_surface_from_map` / `recenter_map` / `load_mtz` / `load_ccp4` |
-| Animation (`animation`) | `animate` / `list_anims` / `add_anim` / `remove_anim` / `move_anim` / `set_anim_time` / `set_anim_prop` / `set_anim_options` / `reset_anim_prop` / `set_anim_generic_prop` / `list_morph_frames` / `add_morph_frame` / `remove_morph_frame` / `convert_to_morph` / `set_frame` |
-| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_entry` / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_mmcif` / `load_msms` / `load_psf` / `load_amber` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
+| Animation (`animation`) | `animate` / `list_anims` / `add_anim` / `remove_anim` / `move_anim` / `set_anim_time` / `set_anim_prop` / `list_anim_props` (`anim_props`) / `set_anim_options` / `reset_anim_prop` / `set_anim_generic_prop` / `list_morph_frames` / `add_morph_frame` / `remove_morph_frame` / `convert_to_morph` / `set_frame` / `list_traj_blocks` / `remove_traj_block` / `move_traj_block` |
+| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_entry` / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_mmcif` / `load_msms` / `load_psf` / `load_amber` / `load_trajectory` / `add_traj_block` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
 | Console (`console`) | `cd` / `pwd` / `ls` / `run` / `open_log` / `close_log` / `log` / `help` / `quit` / `exit` |
+
+The MD trajectory commands (`load_trajectory` and so on) are available only when the **MD Tools** plugin is enabled
+(→ [MD trajectories](#md-trajectories)).
 
 ## Notes on individual commands
 
@@ -41,6 +44,9 @@ Prefix abbreviations (such as `open` for `open_log`) are not run (++tab++ comple
 - `fetch` retrieves the file in mmCIF format by default. It accepts the same loading options as the **File &gt; Open** dialog
   (`build2ndry` / `loadAltConf`, etc.) as named arguments.
 - `save` accepts the same save options as **Save As** (`embedAll` / `version` / `compress` / `base64`).
+  When several commands are run together, putting `save` last saves the scene after the earlier changes are committed.
+  No other command can follow `save`.
+- `set_bgcolor` sets the background colour (`set_bgcolor white`; the same as `set bgcolor, white`).
 - `focus` (`focus_nodes`), given several Objects or Renderers, fits all of them in the view
   (the same as selecting several in the scene tree and pressing **Focus**). `zoom` / `center` (`focus_selection`)
   fit the view to the atoms matching a selection expression. They do not change the selection of the Object.
@@ -68,13 +74,38 @@ Prefix abbreviations (such as `open` for `open_log`) are not run (++tab++ comple
 - `superpose` superposes with US-align by default (`algo` can also select `SSM` / `LSQ`).
   With `recenter=true`, after superposing, the view is fitted to the superposed atoms of the moved molecule.
   `pivot` specifies the atom that US-align uses to represent each residue (`auto` / `CA` / `C3'` / `C4'` / `P`)
-  (→ [Superposing molecules](../../tools/superpose.md)).
+  (→ [Superposing molecules](../../tools/superpose.md)). As the result, it prints the RMSD, the number of aligned residues (atoms for LSQ)
+  and the rotation angle. With US-align it also prints the TM-score and the sequence identity.
 - `animate` plays, pauses and stops an animation and moves to a given time.
+- `list_anim_props` lists the properties of an animation element, with the names and values that `set_anim_prop` takes.
+  Giving `set_anim_prop` a name that does not exist for `rend` / `endcam` / `mol` is an error.
+  `list_anims` marks an element whose target Renderer or the like cannot be found.
 - The scene commands (`create_scene` / `switch_scene` / `close_scene`) open, close and switch tabs.
   `close_scene` does not close a scene with unsaved changes. Add `discardChanges=true` to
   discard the changes and close it.
 - `quit` exits CueMol3. If there are unsaved changes, a confirmation is shown. `quit force=true`
   (or `quit -f`) exits without confirmation. `exit` is the same as `quit`.
+
+## MD trajectories
+
+When the **MD Tools** plugin is enabled (→ [Plugins](../index.md)), the following commands for MD trajectories
+are added. **File &gt; Open MD Trajectory...**, dropping files, and editing blocks in the
+[Trajectory panel](../../../ui/bottom-panels/trajectory.md) are recorded in History as these commands
+(→ [Recording and replaying operations](../../actions.md)).
+
+| Command | Action |
+|---|---|
+| `load_trajectory` | Opens a topology file (`.gro` / `.prmtop` / `.parm7` / `.psf`) with trajectory and coordinate files. The frames follow one another in the order given. |
+| `add_traj_block` | Adds files as blocks to a molecule or trajectory that is open. An ordinary molecule becomes a trajectory, and its original coordinates remain as the first frame. With `replace=true`, the files replace the existing frames. |
+| `list_traj_blocks` | Lists the blocks (file, format, number of frames, first frame). Blocks are numbered from 0. |
+| `remove_traj_block` | Removes one block. |
+| `move_traj_block` | Moves a block earlier (negative) or later (positive) by `by` places, which reorders the frames. |
+
+- Trajectory and coordinate files can be given several at a time, or as a pattern such as `*.xtc`.
+- `reader` specifies the format (if omitted, it is detected from the extension). With `nevery`, only one frame in
+  every N of each file is read.
+- With a selection expression in `loadSel`, only those atoms are read. The other atoms are removed from the molecule,
+  so reading without the solvent saves memory.
 
 ## See also
 
@@ -84,4 +115,4 @@ Prefix abbreviations (such as `open` for `open_log`) are not run (++tab++ comple
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.7.578*

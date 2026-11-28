@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/prediction/alphafold.md @ dcf70c1 -->
+<!-- source: ja/tutorials/prediction/alphafold.md @ 53a8286 -->
 
 # Evaluating an AlphaFold predicted structure
 
@@ -154,7 +154,7 @@ count AF-P04637-F1, "bfac<50 and name CA"
 set_renderer_selection AF-P04637-F1/cartoon1, "bfac>70"
 # 4. Load the experimental structure
 fetch_pdb 2OCJ, mmcif, cartoon, selection="chain A"
-set_renderer_coloring 2ocj/cartoon1, paint-type-paint, paintColor=okabeito_7
+set_renderer_coloring 2ocj/cartoon2, paint-type-paint, paintColor=okabeito_7
 # 5. Superpose the predicted structure on the experimental structure
 superpose AF-P04637-F1, 2ocj, movSel="resi 96:289", refSel="chain A"
 ```
@@ -162,10 +162,7 @@ superpose AF-P04637-F1, 2ocj, movSel="resi 96:289", refSel="chain A"
 - `count` counts the atoms that match the condition. Restricting to Cα atoms with `name CA` gives the number of residues.
   In the P04637 model, 233 residues have pLDDT greater than 70, and 117 residues have pLDDT less than 50.
 - The Object name created by `fetch_entry` is `AF-<accession>-F1`.
-- Renderers created by commands are named per molecule starting from `cartoon1`. Unlike when created in the GUI
-  (step 4 of the tutorial), the cartoon of 2OCJ is `2ocj/cartoon1`.
-- `superpose` does not return the superposition result (such as the RMSD) in the command output.
-  Check the values in the Output panel.
+- `superpose` prints the superposition result (such as the RMSD, the number of aligned residues and the TM-score).
 
 ## Next steps
 
@@ -175,4 +172,4 @@ superpose AF-P04637-F1, 2ocj, movSel="resi 96:289", refSel="chain A"
 
 ---
 
-*Verified against: CueMol3 3.0.6.577*
+*Verified against: CueMol3 3.0.7.578*

@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/animation/animation-movie.md @ 436fc54 -->
+<!-- source: ja/tutorials/animation/animation-movie.md @ 53a8286 -->
 
 # Making an animation and exporting a movie
 
@@ -233,7 +233,8 @@ animate play
 # 8. Export a movie (GUI only)
 ```
 
-- There is no command for step 2 (opening the Animation panel). `list_anims` lists the elements.
+- There is no command for step 2 (opening the Animation panel). `list_anims` lists the elements, and
+  `list_anim_props` lists the properties of an element.
 - `add_anim` adds the element at the end of the timeline (after the previous element). The start and end of `set_anim_time`
   are times (in milliseconds) from the end of the element before it.
 - Enclose selection expressions that contain `;` (`c; A`) in quotes.
@@ -246,4 +247,4 @@ animate play
 
 ---
 
-*Verified against: CueMol3 3.0.6.577*
+*Verified against: CueMol3 3.0.7.578*

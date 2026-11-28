@@ -1,4 +1,4 @@
-<!-- source: ja/reference/plugins/console/pymconsole.md @ d6bebaf -->
+<!-- source: ja/reference/plugins/console/pymconsole.md @ 53a8286 -->
 
 # PyM console
 
@@ -57,7 +57,7 @@ The arguments of each command can be checked with `help <command>`.
 
 | Category | Commands |
 |---|---|
-| Loading and saving | `load` / `fetch` / `save` / `png` / `ray` / `run` |
+| Loading and saving | `load` / `fetch` / `load_traj` / `save` / `png` / `ray` / `run` |
 | Object | `delete` / `set_name` / `enable` / `disable` / `get_names` / `get_chains` |
 | Selection | `select` / `indicate` / `deselect` / `count_atoms` |
 | Display | `show` / `hide` / `as` (`show_as`) / `color` / `spectrum` / `set_color` / `bg_color` / `label` |
@@ -72,6 +72,13 @@ The arguments of each command can be checked with `help <command>`.
 
 - `load` accepts structure and map files, `http(s)://` URLs, `.qsc` / `.pse` scenes, and
   `.pml` scripts. A `.qsc` is opened in a new tab unless the current scene is new and empty.
+- `load_traj` reads MD trajectory frames into a molecule (when the **MD Tools** plugin is enabled).
+  As in PyMOL, the target is the molecule named by `object`, otherwise the molecule with the same name as the file,
+  otherwise the molecule loaded last. With the default `state=1` the frames replace the existing ones; with `state=0` they are appended.
+  `interval` (read every Nth frame) and `selection` (read only some atoms) are supported.
+  `start` / `stop` / `max` / `average` and the like are ignored with a warning. A trajectory file
+  (`.dcd` / `.xtc`, etc.) given to `load` is attached to a molecule in the same way. A trajectory is treated as a molecule
+  and is a target of `color` / `show` / `count_atoms` and so on.
 - `fetch` downloads from RCSB. `type=pdb1` and similar fetch biological assemblies, and `type=2fofc` /
   `type=fofc` fetch density maps. Writing `1abcA` or `1abc_A` keeps only that chain.
   `fetch EMD-3489` (or `emd_3489`) fetches a cryo-EM map from EMDB. For digits only, write
@@ -187,7 +194,7 @@ The following terms cause an error that names them.
   Renderers whose names start with `pym:`.
 - `zoom` / `center` / `orient` and map clipping work on one molecule.
 - `movie.screw` and PyMOL's `sweep_*` settings are not supported.
-- Not supported: MD trajectory commands (`load_traj` / `intra_fit` / `smooth`, etc.),
+- Not supported: the MD trajectory commands `intra_fit` / `smooth`, etc.,
   commands that depend on picking (`edit` / `drag`, etc.), `h_add` / `cealign`, and so on.
   Saving to `.cif` and `.pse` is not possible.
 
@@ -199,4 +206,4 @@ The following terms cause an error that names them.
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.7.578*

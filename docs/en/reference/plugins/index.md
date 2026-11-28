@@ -1,4 +1,4 @@
-<!-- source: ja/reference/plugins/index.md @ d6bebaf -->
+<!-- source: ja/reference/plugins/index.md @ 53a8286 -->
 
 # Plugins
 
@@ -14,7 +14,7 @@ Plugins are toggled in **Settings &gt; Plugins &gt; Installed**
 | Plugin | Description | Default | What is added when enabled |
 |---|---|---|---|
 | **AI Agent** | A chat panel that builds a scene from instructions written in text. It uses OpenAI, Anthropic, and Google (Gemini) models; you provide your own API key. | OFF | The **AI Agent** view in the activity bar and the **Plugins &gt; AI Agent** page in Settings (→ [AI Agent](ai-agent.md)) |
-| **MD Tools** | Opens and plays MD simulation trajectories (topology + DCD / XTC / TRR). | OFF | **File &gt; Open MD Trajectory...** and the **Trajectory** tab in the bottom panel |
+| **MD Tools** | Opens and plays MD simulation trajectories (topology + DCD / XTC / TRR). | OFF | **File &gt; Open MD Trajectory...**, the **Trajectory** tab in the bottom panel, and the Console's MD trajectory commands (also available from the MCP Server and the AI Agent; → [Console command list](console/commands.md#md-trajectories)) |
 | **Console** | A command line that runs CueMol operations as commands. | **ON** | The **Console** tab at the left end of the bottom panel, **CLI** in the status bar, and the **Plugins &gt; Console** page in Settings (→ [Console](console/index.md)) |
 | **PyM console** | Adds a PyMOL-compatible console to Console. It works only when Console is enabled. | **ON** | **PyMOL** in the Console switch (→ [PyM console](console/pymconsole.md)) |
 | **ChX console** | Adds a ChimeraX-compatible console to Console. It works only when Console is enabled. | **ON** | **ChimeraX** in the Console switch (→ [ChX console](console/chx_console.md)) |
@@ -61,4 +61,4 @@ If the plugin is disabled during playback, the tab closes and playback stops.
 
 ---
 
-*Verified against: CueMol3 3.0.0.554*
+*Verified against: CueMol3 3.0.7.578*

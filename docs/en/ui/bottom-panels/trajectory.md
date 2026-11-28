@@ -1,4 +1,4 @@
-<!-- source: ja/ui/bottom-panels/trajectory.md @ f8502b6 -->
+<!-- source: ja/ui/bottom-panels/trajectory.md @ 53a8286 -->
 
 # Trajectory panel
 
@@ -23,6 +23,10 @@ onto the window opens the **Attach Trajectory** dialog, where the target can be 
 - Molecules moved by superposition or similar operations, edited molecules, and molecules without their original file cannot be chosen.
 - A topology-only file (`.prmtop` / `.psf`) can be opened with **Open File...** as a molecule without coordinates.
   Coordinates are attached afterwards by dropping a coordinate or trajectory file.
+
+Opening and attaching trajectories, and the block edits below, are recorded in History as Console commands
+(`load_trajectory` / `add_traj_block` and so on). The same operations can also be done from the Console
+(→ [Console command list](../../reference/plugins/console/commands.md#md-trajectories)).
 
 ## Panel layout
 
@@ -56,7 +60,8 @@ Each file becomes one block, and the frames are joined in block order.
 - [Bottom panel](index.md)
 - [File menu](../../menu/file.md)
 - [Plugins](../../reference/plugins/index.md)
+- [Recording and replaying operations](../../reference/actions.md)
 
 ---
 
-*Verified against: CueMol3 3.0.2.560*
+*Verified against: CueMol3 3.0.7.578*
