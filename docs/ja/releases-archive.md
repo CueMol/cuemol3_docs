@@ -8,6 +8,68 @@
     修正の一件一件や内部の変更まで含む完全な記録は
     [GitHub の Releases](https://github.com/CueMol/cuemol3/releases) にあります。
 
+## 3.0.1.555 (2026-11-10)
+
+### PDB からの取得
+
+- **Get PDB で、取得元のデータベースを選べるようになりました** (**Database**)。PDB / EMDB に加えて、
+  **AlphaFold DB** (UniProt accession で予測構造を取得) と **PubChem** (CID で化合物の 3D 配座を取得) を選べます。
+  入力すると、タンパク質名・生物種・平均の pLDDT や、化合物名・分子式・分子量が表示されます。
+- **PDB のエントリの座標を、RCSB のほか PDBe / PDBj / PDB-REDO から取得できるようになりました** (**Server**)。
+  電顕マップの取得元にも **PDBj** が加わりました。
+- AlphaFold DB から取得した構造は、予測の信頼度 (pLDDT) の色で表示されます。PubChem の化合物は
+  ball &amp; stick で表示されます。
+- Console の native モードに、`fetch_entry` (上記のデータベースからの取得) と `fetch_map_url`
+  (URL にある CCP4 / MRC のマップの取得) が加わりました。
+  → [PDB からの取得](reference/get-pdb.md)
+
+### B-factor の多色のグラデーション
+
+- **Color パネルの Bfac/Occ で、複数の色を経由するグラデーションを使えるようになりました**
+  (**Multi-colour gradient**)。原子の値のヒストグラムを見ながら、色の区切りを編集できます。
+  編集は Undo で戻せ、シーンに保存されます。
+- プリセットに、AlphaFold の pLDDT を ChimeraX と同じ色で塗る **AlphaFold pLDDT** が加わりました。
+- PyM console の `spectrum b` / `spectrum q` に 3 色以上のパレット (`rainbow` など) を指定すると、
+  PyMOL と同じく多色のグラデーションで塗るようになりました。
+  → [Coloring](reference/coloring.md#bfacocc)
+
+### 視点の合わせ方
+
+- **シーンツリーの Focus で、表示しているものに合わせるようになりました。** 分子は表示中の Renderer が
+  描いている原子に、密度マップは表示中の等高線に合わせます。小さなものでも、表示の幅は 15 Å より
+  狭くしません。
+- **読み込んだときの視点 (Center view on molecule after loading) も、Focus と同じく大きさまで合わせる
+  ようになりました** (以前は中心だけを移していました)。電顕マップは、表示している等値面に合わせます。
+  → [サイドパネル](ui/side-panels.md#explorer)
+
+### ChX console
+
+- **対応していないコマンドや書き方は、警告を出して飛ばし、スクリプトの残りを実行するようになりました**
+  (ChimeraX の公式チュートリアルや図のスクリプトを最後まで流せます)。
+- `open` で、`pdbe:` / `pdbj:` / `redo:` / `alphafold:` / `pubchem:` / `emdb:` などのデータベースの接頭辞、
+  URL、複数の名前、`from eds` (2Fo-Fc マップ) を使えるようになりました。視点を合わせるのは、空のシーンに
+  最初に開いたときだけです (ChimeraX と同じ)
+- `volume` / `lighting` / `camera` / `nucleotides` / `ribbon` / `unitcell` / `dssp` / `preset` / `wait` /
+  `color modify` / `color bfactor` / `color byattribute` などのコマンドと、ColorBrewer のパレットが加わりました。
+- 隠した原子をもう一度表示すると、隠す前のスタイルで表示されるようになりました。
+- Settings &gt; Plugins の表示名が **PyM console** / **ChX console** になりました。
+  → [ChX console](reference/plugins/console/chx_console.md)
+
+### 起動スクリプトとスタイルファイル
+
+- **`~/.cuemol/` に置いたスクリプト (`startup.txt` / `.qax` / `.pml` / `.cxc`) を、起動のたびに
+  Console で実行するようになりました。** 1 つのファイルが 1 回の Undo にまとまります。実行中は
+  ステータスバーに表示が出て、そこから止められます。
+- `~/.cuemol/styles/` に置いたスタイルファイル (`.xml`) を、起動時に読み取り専用のスタイルセットとして
+  読み込むようになりました。
+  → [ユーザーディレクトリ (~/.cuemol)](reference/dotfiles.md)
+
+!!! warning "以前のバージョンから変わる点 (ChX console)"
+    - **コマンド名の `c` は `camera` の省略になりました** (以前は `cartoon`)。`cartoon` は `car` などと
+      打ってください。
+    - **`color random` は拒否されるようになりました** (警告を出して飛ばします)。
+    - **閉じた model の番号は、次に開いたものに再び使われるようになりました** (ChimeraX と同じ)
+
 ## 3.0.0.554 (2026-11-06)
 
 ### バージョン番号とリポジトリ

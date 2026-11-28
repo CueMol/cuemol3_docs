@@ -9,7 +9,7 @@ import { CueMolHarness } from '../../fixtures/app';
 import { assertDialogQueuesEmpty } from '../../helpers/dialogs';
 import { getPdb } from '../../helpers/openFile';
 import { checkField } from '../../helpers/form';
-import { clickSceneToolbar, expectRow, rowVisibilityToggle, selectRow, toggleRowVisibility } from '../../helpers/sceneTree';
+import { expectRow, rowVisibilityToggle, toggleRowVisibility } from '../../helpers/sceneTree';
 import { densityPane, levelInput, selectMapRenderer, setDragRow, setLevel } from '../../helpers/densityPane';
 import { molStructPane, setupSelectionPage } from '../../fixtures/courseSelection';
 import { setViewValue, viewValueText } from '../../helpers/viewPane';
@@ -86,19 +86,8 @@ test.describe.serial('電子密度マップの表示', { tag: '@net' }, () => {
         await openSidebarView(w, 'explorer');
         // 「目のアイコンで個別に表示・非表示を切り替えられます」
         await expect(rowVisibilityToggle(w, '1qio_2fofc')).toBeVisible();
+        // 「マップは、取得したときのビュー中心 (先に読み込んだ分子) の周りに描かれます。視点は動きません。」
         await docShot(w, `${SHOT}/2-loaded`);
-        // 「シーンツリーで 1qio を選んでパネル上部の Focus を押し、Density map パネルで
-        //   各 Renderer の Redraw を押して、マップを分子の位置に描き直します」
-        await selectRow(w, OBJ);
-        await clickSceneToolbar(w, 'focus');
-        await w.waitForTimeout(800);
-        const pane = await densityPane(w);
-        for (const r of ['contour1', 'pos-cont', 'neg-cont']) {
-            await selectMapRenderer(pane, r);
-            await pane.getByRole('button', { name: 'Redraw', exact: true }).click();
-        }
-        await openSidebarView(w, 'explorer');
-        await docShot(w, `${SHOT}/2-redrawn`);
     });
 
     test('3. レベルと範囲を調整する', async () => {

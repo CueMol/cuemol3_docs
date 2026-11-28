@@ -18,15 +18,18 @@
 | Colouring (`coloring`) | `list_coloring_styles` / `set_renderer_coloring` / `set_coloring_prop` / `add_paint` / `add_paint_at` / `list_paint` / `set_paint` / `remove_paint` / `move_paint` / `clear_paint` / `set_default_color` / `set_elepot_coloring` / `set_multigrad_nodes` |
 | Style sets (`styles`) | `create_style_set` / `delete_style_set` / `set_style_readonly` / `load_style_file` / `save_style_file` / `define_color` / `remove_color` / `remove_selection` / `remove_style` |
 | Selections (`selections`) | `list_chains` / `list_residues` / `count_selection` (`count`) / `set_mol_selection` (`select`) / `define_selection` (`define`) |
-| View and cameras (`viewing`) | `rotate_view` (`turn`) / `set_view` (`view` / `slab` / `fit_slab`) / `focus_selection` (`zoom` / `center`) / `orient_view` / `pan_view` (`pan`) / `set_projection` (`projection`) / `list_cameras` (`cameras`) / `save_camera` (`save_view`) / `apply_camera` (`restore_view`) / `delete_camera` / `rename_camera` / `move_camera` / `set_camera_visibility` / `clear_camera_visibility` / `load_camera_file` / `save_camera_file` / `reload_camera` |
+| View and cameras (`viewing`) | `rotate_view` (`turn`) / `set_view` (`view` / `slab` / `fit_slab`) / `set_bgcolor` / `focus_selection` (`zoom` / `center`) / `orient_view` / `pan_view` (`pan`) / `set_projection` (`projection`) / `list_cameras` (`cameras`) / `save_camera` (`save_view`) / `apply_camera` (`restore_view`) / `delete_camera` / `rename_camera` / `move_camera` / `set_camera_visibility` / `clear_camera_visibility` / `load_camera_file` / `save_camera_file` / `reload_camera` |
 | Properties (`properties`) | `list_node_props` (`props`) / `get_prop` (`get`) / `set_prop` (`set`) / `set_node_prop` / `reset_prop` |
 | Molecule editing (`molecule`) | `superpose` / `delete_atoms` / `rename_chain` / `renumber_residues` / `merge_molecules` / `set_secondary_structure` / `add_bond` / `remove_bond` / `set_symmetry` / `show_symmetry` / `create_symmetry_copy` / `show_unit_cell` / `set_atom_label` / `set_atom_labels` |
 | Surfaces (`surfaces`) | `create_surface` / `recalc_surface` / `calc_elepot` / `cut_surface` |
 | Measurement and analysis (`analysis`) | `measure_geometry` / `measure_selections` / `analyze_interactions` / `list_interactions` / `remove_interaction` |
 | Density maps (`maps`) | `fetch_map` / `fetch_emdb` / `fetch_map_url` / `list_map_contours` / `set_map_contour` (`contour`) / `create_surface_from_map` / `recenter_map` / `load_mtz` / `load_ccp4` |
-| Animation (`animation`) | `animate` / `list_anims` / `add_anim` / `remove_anim` / `move_anim` / `set_anim_time` / `set_anim_prop` / `set_anim_options` / `reset_anim_prop` / `set_anim_generic_prop` / `list_morph_frames` / `add_morph_frame` / `remove_morph_frame` / `convert_to_morph` / `set_frame` |
-| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_entry` / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_mmcif` / `load_msms` / `load_psf` / `load_amber` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
+| Animation (`animation`) | `animate` / `list_anims` / `add_anim` / `remove_anim` / `move_anim` / `set_anim_time` / `set_anim_prop` / `list_anim_props` (`anim_props`) / `set_anim_options` / `reset_anim_prop` / `set_anim_generic_prop` / `list_morph_frames` / `add_morph_frame` / `remove_morph_frame` / `convert_to_morph` / `set_frame` / `list_traj_blocks` / `remove_traj_block` / `move_traj_block` |
+| Files and images (`files`) | `fetch_pdb` (`fetch`) / `fetch_entry` / `fetch_url` / `load_file` (`load`) / `load_pdb` / `load_mmcif` / `load_msms` / `load_psf` / `load_amber` / `load_trajectory` / `add_traj_block` / `save_scene` (`save`) / `save_object` (`write`) / `export_scene` / `export_image` / `render_image` (`render`) / `set_render_settings` |
 | Console (`console`) | `cd` / `pwd` / `ls` / `run` / `open_log` / `close_log` / `log` / `help` / `quit` / `exit` |
+
+MD トラジェクトリのコマンド (`load_trajectory` など) は、**MD Tools** プラグインを有効にしたときだけ使えます
+(→ [MD トラジェクトリ](#md-トラジェクトリ))。
 
 ## コマンドごとの補足
 
@@ -39,7 +42,9 @@
 - `fetch` は既定で mmCIF 形式で取得します。**File &gt; Open** のダイアログと同じ読み込みのオプション
   (`build2ndry` / `loadAltConf` など) を名前付きの引数で受け付けます。
 - `save` は **Save As** と同じ保存のオプション (`embedAll` / `version` / `compress` / `base64`) を
-  受け付けます。
+  受け付けます。複数のコマンドをまとめて実行するときは、`save` を最後に置くと、それまでの変更を確定してから
+  保存します。`save` のあとにほかのコマンドを続けることはできません。
+- `set_bgcolor` は背景色を設定します (`set_bgcolor white`。`set bgcolor, white` と同じです)。
 - `focus` (`focus_nodes`) は、Object や Renderer を複数並べると、すべてが収まるように表示します
   (シーンツリーで複数選んで **Focus** を押したときと同じです)。`zoom` / `center` (`focus_selection`)
   は、選択式に一致する原子に合わせて表示します。Object の選択は変えません。
@@ -67,13 +72,38 @@
 - `superpose` は既定で US-align により重ね合わせます (`algo` で `SSM` / `LSQ` も選べます)。
   `recenter=true` を付けると、重ね合わせたあと、動かした分子の重ね合わせた原子に合わせて表示します。
   `pivot` で、US-align が残基の代表に使う原子 (`auto` / `CA` / `C3'` / `C4'` / `P`) を指定します
-  (→ [分子の重ね合わせ](../../tools/superpose.md))。
+  (→ [分子の重ね合わせ](../../tools/superpose.md))。結果として、RMSD と対応づけた残基の数 (LSQ では原子の数)、
+  回転の角度を表示します。US-align では TM-score と配列の一致率も表示します。
 - `animate` はアニメーションの再生・一時停止・停止・時刻の移動を行います。
+- `list_anim_props` は、アニメーションの要素のプロパティを、`set_anim_prop` で指定する名前と値で表示します。
+  `set_anim_prop` で `rend` / `endcam` / `mol` に存在しない名前を指定すると、エラーになります。
+  `list_anims` は、対象の Renderer などが見つからない要素に、その旨を表示します。
 - シーンのコマンド (`create_scene` / `switch_scene` / `close_scene`) はタブを開閉・切り替えます。
   `close_scene` は、変更が保存されていないシーンは閉じません。`discardChanges=true` を付けると
   変更を捨てて閉じます。
 - `quit` は CueMol3 を終了します。保存していない変更があれば確認が出ます。`quit force=true`
   (または `quit -f`) では確認せずに終了します。`exit` は `quit` と同じです。
+
+## MD トラジェクトリ
+
+**MD Tools** プラグインを有効にすると (→ [プラグイン](../index.md))、MD トラジェクトリを扱う次のコマンドが
+加わります。**File &gt; Open MD Trajectory...**・ファイルのドロップ・
+[Trajectory パネル](../../../ui/bottom-panels/trajectory.md)でのブロックの編集は、History にこれらのコマンドとして
+記録されます (→ [操作の記録と再生](../../actions.md))。
+
+| コマンド | 動作 |
+|---|---|
+| `load_trajectory` | トポロジーのファイル (`.gro` / `.prmtop` / `.parm7` / `.psf`) と、トラジェクトリ・座標のファイルを開きます。並べた順にフレームがつながります。 |
+| `add_traj_block` | 開いている分子かトラジェクトリに、ファイルをブロックとして足します。普通の分子はトラジェクトリになり、元の座標が最初のフレームとして残ります。`replace=true` を付けると、今あるフレームを置き換えます。 |
+| `list_traj_blocks` | ブロックの一覧 (ファイル・形式・フレーム数・最初のフレーム) を表示します。ブロックは 0 から数えます。 |
+| `remove_traj_block` | ブロックを 1 つ削除します。 |
+| `move_traj_block` | ブロックを `by` の数だけ前 (負の値) か後ろ (正の値) に移して、フレームの順を変えます。 |
+
+- トラジェクトリ・座標のファイルは、複数並べたり、`*.xtc` のようなパターンで指定したりできます。
+- `reader` で形式を指定できます (省略すると拡張子で判別します)。`nevery` を指定すると、各ファイルの
+  N フレームごとに 1 フレームだけを読み込みます。
+- `loadSel` に選択式を指定すると、その原子だけを読み込みます。外した原子は分子から削除されるので、
+  溶媒を除いて読み込むとメモリを節約できます。
 
 ## 関連項目
 
@@ -83,4 +113,4 @@
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.7.578*

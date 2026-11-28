@@ -42,12 +42,9 @@ X 線結晶構造に電子密度マップを重ねて、モデルと密度の対
 [サイドパネル](../../ui/side-panels.md)) には、座標の Object とは別に、
 マップの Object (`1qio_2fofc` / `1qio_fofc`) とその contour Renderer が並びます。目のアイコンで個別に表示・非表示を切り替えられます。
 
-読み込んだ直後は、視点がマップの範囲の中央 (単位格子の中央付近) に移り、マップは分子から離れた
-位置に描かれることがあります。そのときは、シーンツリーで `1qio` を選んでパネル上部の **Focus** を押し、
-**Crystal &gt; Density map** パネルで各 Renderer の **Redraw** を押して、マップを分子の位置に描き直します。
+マップは、取得したときのビュー中心 (先に読み込んだ分子) の周りに描かれます。視点は動きません。
 
-![読み込んだ直後。マップ (右) が分子 (左) から離れた位置に描かれている](../../../assets/images/tutorials/experimental/density-map/2-loaded.webp){ .on-glb }
-![Focus と Redraw の後。マップが分子に重なる](../../../assets/images/tutorials/experimental/density-map/2-redrawn.webp){ .on-glb }
+![読み込んだ直後。マップが分子に重なって描かれている](../../../assets/images/tutorials/experimental/density-map/2-loaded.webp){ .on-glb }
 
 結晶学的マップは**ビュー中心の周囲だけ**が描かれます。分子ビューを平行移動すると、
 表示されるマップの範囲も追従します (クライオ電子顕微鏡マップではマップ全体が描かれ、
@@ -143,4 +140,4 @@ hide 1qio_2fofc
 
 ---
 
-*確認対象: CueMol3 3.0.6.577*
+*確認対象: CueMol3 3.0.7.578*

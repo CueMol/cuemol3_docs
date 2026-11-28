@@ -93,15 +93,12 @@ set 1ytb/nucl1.base_type, detail1
 # 4. DNA を塗り分ける
 set_renderer_coloring 1ytb/nucl1, paint-type-paint, paintColor=okabeito_2
 add_paint 1ytb/nucl1, "C.4:10,20:26.*", #D55E00
-set_mol_selection 1ytb, ""
 # 5. DNA に入り込むフェニルアラニンを表示する
 create_renderer 1ytb, ballstick, selection="bysidech A.99,116,190,207.*"
 ```
 
 - `focus_nodes` は、シーンツリーで複数の行を選んで **Focus** を押したときと同じく、
   指定した Renderer がすべて収まるように視点を合わせます。
-- `add_paint` は、塗った範囲を分子の選択にもします。選択のハイライトが図に残らないように、
-  `set_mol_selection` で選択を解除しています。
 
 ## 次のステップ
 
@@ -111,4 +108,4 @@ create_renderer 1ytb, ballstick, selection="bysidech A.99,116,190,207.*"
 
 ---
 
-*確認対象: CueMol3 3.0.6.577*
+*確認対象: CueMol3 3.0.7.578*

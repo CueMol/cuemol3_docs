@@ -183,7 +183,6 @@ set_renderer_coloring 3ug9/cartoon1, paint-type-paint
 add_paint 3ug9/cartoon1, A.49:83.*, #E69F00
 add_paint 3ug9/cartoon1, A.84:317.*, #56B4E9
 add_paint 3ug9/cartoon1, A.318:342.*, #009E73
-set_mol_selection 3ug9, ""
 # 5. リガンドを ballstick で表示
 create_renderer 3ug9, ballstick, selection="r; RET"
 # 6. 背景と輪郭線で仕上げる
@@ -195,11 +194,8 @@ save_camera view1
 save_scene ~/3ug9.qsc, embedAll=true
 ```
 
-- `add_paint` は、塗った範囲を分子の選択にもします。選択のハイライトが図に残らないように、
-  最後に `set_mol_selection` で選択を解除しています。
 - `;` やカンマを含む選択式 (`r; RET` など) は、引用符で囲みます。
-- `save_scene` は、スクリプトファイルにまとめて実行すると実行されません。1 行ずつ入力するか、
-  単独で実行します。
+- `save_scene` は、まとめて実行するときは最後に置きます (それまでの変更を確定してから保存します)。
 
 ## 次のステップ
 
@@ -209,4 +205,4 @@ save_scene ~/3ug9.qsc, embedAll=true
 
 ---
 
-*確認対象: CueMol3 3.0.6.577*
+*確認対象: CueMol3 3.0.7.578*
