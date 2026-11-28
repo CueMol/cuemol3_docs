@@ -621,6 +621,13 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   Animation パネルのインスペクタと全体の長さ、Trajectory パネルのヘッダの折り返し (more メニュー)、ffmpeg の取得元、
   local-api.json、`add_paint` の 2 回目で 1 回目の色が保たれる件、依存の更新。
   `reference/settings.md` の Plugins の表 (MD Tools で増えるもの) は要約なので Console のコマンドを足していない。
+  同期の後、3.0.7.578 で確かめた: superpose / alphafold / ribbon-figure / protein-dna の「同じことをコマンドで」を
+  tritium_cli で流し、RMSD (7.13 / 1.98 / 0.51 Å)・`2ocj/cartoon2`・選択が残らないこと・スクリプトの末尾の
+  `save_scene` での保存 (後ろに続けるとエラー) が本文どおり。`set_anim_prop` の名前の検証と `list_anim_props`、
+  MD トラジェクトリの 5 コマンド (Dropbox の `test_data/traj_test` の psf + dcd) と History への記録も確認した。
+  density-map の spec を流して `2-loaded` などを撮り直した (4 件 pass)。既定の向きでは格子軸と視線が揃い
+  立体感が出ないので、spec の手順 2 の撮影前に View パネルで RotY 30・RotX 20 だけ回してから撮る
+  (ユーザー指示。本文には回す手順を書かない)。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
