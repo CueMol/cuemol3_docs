@@ -13,6 +13,40 @@
 このページには直近の 5 リリースを載せています。それより前は
 [過去のリリース](releases-archive.md)を参照してください。
 
+## 3.0.7.578 (2026-11-28)
+
+### MD トラジェクトリをコマンドで扱う
+
+- **Console の native モードで、MD トラジェクトリを開いたり、ファイルを足したりすることができるようになりました。**
+  `load_trajectory` でトポロジーとトラジェクトリのファイルを開き、`add_traj_block` で開いている分子や
+  トラジェクトリにファイルを足します。ブロックの一覧・削除・並べ替えは `list_traj_blocks` /
+  `remove_traj_block` / `move_traj_block` で行います。どれも **MD Tools** プラグインを有効にすると使えます。
+- 普通の分子にファイルを足すと、分子はトラジェクトリになり、元の座標が最初のフレームとして残ります。
+  フレームの間引き (`nevery`) と、一部の原子だけの読み込み (`loadSel`) も指定できます。
+- 同じ操作を [MCP Server](reference/plugins/mcp-server.md) のクライアントと AI Agent からも行うことができます。
+- PyM console で `load_traj` を使えるようになりました。`load` にトラジェクトリのファイルを渡すと、
+  対応する分子に付けます。
+- **File &gt; Open MD Trajectory...**・ファイルのドロップ・Trajectory パネルでのブロックの編集が、
+  History に同じコマンドとして記録されるようになりました。
+  → [Console のコマンド一覧](reference/plugins/console/commands.md#md-トラジェクトリ) /
+  [Trajectory パネル](ui/bottom-panels/trajectory.md) / [操作の記録と再生](reference/actions.md)
+
+### Console の履歴の検索
+
+- **Console のパネルと tritium_cli で、++ctrl+r++ で入力の履歴を検索することができるようになりました**
+  (zsh と同じ操作です)。文字を打つと絞り込み、もう一度 ++ctrl+r++ を押すとさらに前の行へ移り、
+  ++enter++ で実行します。++esc++ か ++ctrl+g++ で取り消します。どのモードでも使えます。
+  → [Console](reference/plugins/console/index.md#入力と補完)
+
+### 分子ビュー (Fast GI)
+
+- **Fast GI で、分子表面と密度マップの等値面も陰影と影を落とすようになりました。** 表面だけの
+  シーンでも陰影が付きます。→ [Scene](reference/scene.md#fast-gi)
+
+!!! warning "以前のバージョンから変わる点"
+    - **Windows / Linux では、Console の入力欄で ++ctrl+r++ を押すと、シーンの読み込み直し
+      (Reload Scene) ではなく履歴の検索になります。** 入力欄の外では今までどおり Reload Scene です。
+
 ## 3.0.6.577 (2026-11-25)
 
 ### 分子の色を選ぶ
@@ -217,79 +251,17 @@
     - **Console の native モードの `load_namd` は `load_psf` になりました** (PSF を開き、`coordFile` で
       `.coor` を指定します)。
 
-## 3.0.1.555 (2026-11-10)
-
-### PDB からの取得
-
-- **Get PDB で、取得元のデータベースを選べるようになりました** (**Database**)。PDB / EMDB に加えて、
-  **AlphaFold DB** (UniProt accession で予測構造を取得) と **PubChem** (CID で化合物の 3D 配座を取得) を選べます。
-  入力すると、タンパク質名・生物種・平均の pLDDT や、化合物名・分子式・分子量が表示されます。
-- **PDB のエントリの座標を、RCSB のほか PDBe / PDBj / PDB-REDO から取得できるようになりました** (**Server**)。
-  電顕マップの取得元にも **PDBj** が加わりました。
-- AlphaFold DB から取得した構造は、予測の信頼度 (pLDDT) の色で表示されます。PubChem の化合物は
-  ball &amp; stick で表示されます。
-- Console の native モードに、`fetch_entry` (上記のデータベースからの取得) と `fetch_map_url`
-  (URL にある CCP4 / MRC のマップの取得) が加わりました。
-  → [PDB からの取得](reference/get-pdb.md)
-
-### B-factor の多色のグラデーション
-
-- **Color パネルの Bfac/Occ で、複数の色を経由するグラデーションを使えるようになりました**
-  (**Multi-colour gradient**)。原子の値のヒストグラムを見ながら、色の区切りを編集できます。
-  編集は Undo で戻せ、シーンに保存されます。
-- プリセットに、AlphaFold の pLDDT を ChimeraX と同じ色で塗る **AlphaFold pLDDT** が加わりました。
-- PyM console の `spectrum b` / `spectrum q` に 3 色以上のパレット (`rainbow` など) を指定すると、
-  PyMOL と同じく多色のグラデーションで塗るようになりました。
-  → [Coloring](reference/coloring.md#bfacocc)
-
-### 視点の合わせ方
-
-- **シーンツリーの Focus で、表示しているものに合わせるようになりました。** 分子は表示中の Renderer が
-  描いている原子に、密度マップは表示中の等高線に合わせます。小さなものでも、表示の幅は 15 Å より
-  狭くしません。
-- **読み込んだときの視点 (Center view on molecule after loading) も、Focus と同じく大きさまで合わせる
-  ようになりました** (以前は中心だけを移していました)。電顕マップは、表示している等値面に合わせます。
-  → [サイドパネル](ui/side-panels.md#explorer)
-
-### ChX console
-
-- **対応していないコマンドや書き方は、警告を出して飛ばし、スクリプトの残りを実行するようになりました**
-  (ChimeraX の公式チュートリアルや図のスクリプトを最後まで流せます)。
-- `open` で、`pdbe:` / `pdbj:` / `redo:` / `alphafold:` / `pubchem:` / `emdb:` などのデータベースの接頭辞、
-  URL、複数の名前、`from eds` (2Fo-Fc マップ) を使えるようになりました。視点を合わせるのは、空のシーンに
-  最初に開いたときだけです (ChimeraX と同じ)
-- `volume` / `lighting` / `camera` / `nucleotides` / `ribbon` / `unitcell` / `dssp` / `preset` / `wait` /
-  `color modify` / `color bfactor` / `color byattribute` などのコマンドと、ColorBrewer のパレットが加わりました。
-- 隠した原子をもう一度表示すると、隠す前のスタイルで表示されるようになりました。
-- Settings &gt; Plugins の表示名が **PyM console** / **ChX console** になりました。
-  → [ChX console](reference/plugins/console/chx_console.md)
-
-### 起動スクリプトとスタイルファイル
-
-- **`~/.cuemol/` に置いたスクリプト (`startup.txt` / `.qax` / `.pml` / `.cxc`) を、起動のたびに
-  Console で実行するようになりました。** 1 つのファイルが 1 回の Undo にまとまります。実行中は
-  ステータスバーに表示が出て、そこから止められます。
-- `~/.cuemol/styles/` に置いたスタイルファイル (`.xml`) を、起動時に読み取り専用のスタイルセットとして
-  読み込むようになりました。
-  → [ユーザーディレクトリ (~/.cuemol)](reference/dotfiles.md)
-
-!!! warning "以前のバージョンから変わる点 (ChX console)"
-    - **コマンド名の `c` は `camera` の省略になりました** (以前は `cartoon`)。`cartoon` は `car` などと
-      打ってください。
-    - **`color random` は拒否されるようになりました** (警告を出して飛ばします)。
-    - **閉じた model の番号は、次に開いたものに再び使われるようになりました** (ChimeraX と同じ)
-
 ---
 
-3.0.0.554 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
+3.0.1.555 以前のリリースは[過去のリリース](releases-archive.md)にまとめてあります。
 
 ## 関連項目
 
-- [過去のリリース](releases-archive.md) — 3.0.0.554 以前の更新履歴
+- [過去のリリース](releases-archive.md) — 3.0.1.555 以前の更新履歴
 - [CueMol2 からの変更点](changes/index.md) — CueMol2 と CueMol3 の違い
 - [開発状況と未実装機能](changes/status.md) — 現時点で残っている制限
 - [ダウンロード](install/index.md#ダウンロード) — 配布物の入手方法
 
 ---
 
-*確認対象: CueMol3 3.0.6.577*
+*確認対象: CueMol3 3.0.7.578*

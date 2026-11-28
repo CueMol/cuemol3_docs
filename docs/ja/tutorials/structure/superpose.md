@@ -124,12 +124,9 @@ superpose 4ake, 1ake, movSel="A.1:29,60:121,160:214.CA", refSel="A.1:29,60:121,1
 set_renderer_coloring 4ake/cartoon1, paint-type-paint, paintColor=okabeito_1
 add_paint 4ake/cartoon1, "A.30:59.*", #009E73
 add_paint 4ake/cartoon1, "A.122:159.*", #D55E00
-set_mol_selection 4ake, ""
 ```
 
-- `superpose` は、重ね合わせの結果 (RMSD など) をコマンドの出力には返しません。値は Output パネルで確認します。
-- `add_paint` は、塗った範囲を分子の選択にもします。選択のハイライトが図に残らないように、
-  最後に `set_mol_selection` で選択を解除しています。
+- `superpose` は、重ね合わせの結果 (RMSD と重ね合わせに使った原子の数など) を表示します。
 
 ## 次のステップ
 
@@ -141,4 +138,4 @@ set_mol_selection 4ake, ""
 
 ---
 
-*確認対象: CueMol3 3.0.6.577*
+*確認対象: CueMol3 3.0.7.578*

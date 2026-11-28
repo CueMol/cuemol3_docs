@@ -156,7 +156,7 @@ count AF-P04637-F1, "bfac<50 and name CA"
 set_renderer_selection AF-P04637-F1/cartoon1, "bfac>70"
 # 4. 実験構造を読み込む
 fetch_pdb 2OCJ, mmcif, cartoon, selection="chain A"
-set_renderer_coloring 2ocj/cartoon1, paint-type-paint, paintColor=okabeito_7
+set_renderer_coloring 2ocj/cartoon2, paint-type-paint, paintColor=okabeito_7
 # 5. 予測構造を実験構造に重ね合わせる
 superpose AF-P04637-F1, 2ocj, movSel="resi 96:289", refSel="chain A"
 ```
@@ -164,10 +164,7 @@ superpose AF-P04637-F1, 2ocj, movSel="resi 96:289", refSel="chain A"
 - `count` は、条件に合う原子の数を数えます。`name CA` で Cα 原子に限ると、残基の数になります。
   P04637 のモデルでは、pLDDT が 70 より大きい残基が 233、50 より小さい残基が 117 です。
 - `fetch_entry` の Object 名は `AF-<accession>-F1` です。
-- コマンドで作る Renderer の名前は、分子ごとに `cartoon1` から付きます。GUI で作った場合
-  (本文の手順 4) と違い、2OCJ の cartoon は `2ocj/cartoon1` になります。
-- `superpose` は、重ね合わせの結果 (RMSD など) をコマンドの出力には返しません。
-  値は Output パネルで確認します。
+- `superpose` は、重ね合わせの結果 (RMSD・対応づけた残基の数・TM-score など) を表示します。
 
 ## 次のステップ
 
@@ -177,4 +174,4 @@ superpose AF-P04637-F1, 2ocj, movSel="resi 96:289", refSel="chain A"
 
 ---
 
-*確認対象: CueMol3 3.0.6.577*
+*確認対象: CueMol3 3.0.7.578*

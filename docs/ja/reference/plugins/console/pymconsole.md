@@ -55,7 +55,7 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 
 | 分類 | コマンド |
 |---|---|
-| 読み込みと保存 | `load` / `fetch` / `save` / `png` / `ray` / `run` |
+| 読み込みと保存 | `load` / `fetch` / `load_traj` / `save` / `png` / `ray` / `run` |
 | Object | `delete` / `set_name` / `enable` / `disable` / `get_names` / `get_chains` |
 | 選択 | `select` / `indicate` / `deselect` / `count_atoms` |
 | 表示 | `show` / `hide` / `as` (`show_as`) / `color` / `spectrum` / `set_color` / `bg_color` / `label` |
@@ -70,6 +70,13 @@ PyMOL との完全な互換は目指しておらず、**すでに知っている
 
 - `load` は構造・マップのファイルのほか、`http(s)://` の URL、`.qsc` / `.pse` のシーン、
   `.pml` スクリプトを受け付けます。`.qsc` は、現在のシーンが新規で空でなければ新しいタブに開きます。
+- `load_traj` は MD トラジェクトリのフレームを分子に読み込みます (**MD Tools** プラグインが有効のとき)。
+  対象の分子は PyMOL と同じく、`object` で指定したもの、なければファイルと同じ名前の分子、なければ
+  最後に読み込んだ分子です。既定の `state=1` では今あるフレームを置き換え、`state=0` では後ろに足します。
+  `interval` (N フレームごとに読み込む) と `selection` (一部の原子だけを読み込む) に対応しています。
+  `start` / `stop` / `max` / `average` などは、警告を出して無視します。`load` にトラジェクトリのファイル
+  (`.dcd` / `.xtc` など) を渡したときも、同じように分子に付けます。トラジェクトリは分子として扱われ、
+  `color` / `show` / `count_atoms` などの対象になります。
 - `fetch` は RCSB から取得します。`type=pdb1` などで生物学的集合体を、`type=2fofc` /
   `type=fofc` で密度マップを取得します。`1abcA` や `1abc_A` と書くと、そのチェーンだけを残します。
   `fetch EMD-3489` (または `emd_3489`) は EMDB の電顕マップを取得します。数字だけの場合は
@@ -185,7 +192,7 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
   `pym:` で始まる名前の Renderer だけを操作します。
 - `zoom` / `center` / `orient` と、マップの切り出しは 1 つの分子に対して働きます。
 - `movie.screw` と、PyMOL の `sweep_*` の設定には対応していません。
-- 未対応: MD トラジェクトリのコマンド (`load_traj` / `intra_fit` / `smooth` など)、
+- 未対応: MD トラジェクトリの `intra_fit` / `smooth` など、
   ピッキングに依存するコマンド (`edit` / `drag` など)、`h_add` / `cealign` など。
   `.cif` と `.pse` には保存できません。
 
@@ -197,4 +204,4 @@ PyMOL の選択式は、CueMol の[選択式](../../selection.md)に**翻訳**�
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.7.578*

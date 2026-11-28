@@ -50,7 +50,9 @@ CueMol3 (tritium) のユーザードキュメントサイト (mkdocs-material、
 (マニュアル本体に書かないのと同じ基準を、更新履歴にも適用する)。
 
 - **不具合修正**。「本来こう動くはずのものが動くようになった」類は、直った先の
-  動作をマニュアルが既に書いているので、更新履歴にも載せない。
+  動作をマニュアルが既に書いているので、更新履歴にも載せない。更新履歴に書くのは
+  **新機能と重大な不具合の修正**が主 (ユーザー指示、3.0.7.578 の同期)。Console の引数の書き方や
+  出力の細かい改善も書かない。
 - **内部的な改善・リファクタリング**。メモリ使用量の削減、クラッシュの回避、
   UI の文字サイズ、入力欄の細かい挙動など、読み手が何かする余地が無いもの。
 
@@ -596,6 +598,29 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   撮り直せる。`reference/scene.md` の AO の比較図は Fast GI が明るくなったので古い。Color パネルの
   Paint coloring のメニュー)、英語版の追随 (`cuetty.md` を含む)、docs-verify の spec 追加と既存 spec の修正
   (今回も e2e は実行していない)。
+- 前回同期: 2026-11-28 / cuemol2 `9ee46d29` (tag `v3.0.7.578`, branch: develop) / CueMol3 `3.0.7.578`。
+  `3c59b72f..9ee46d29` の差分を全件確認した (リリースノート `docs/release_notes/v3.0.7.578.md` を含む)。
+  次回はこの hash から差分確認を行う。更新履歴は 6 本目になったので、3.0.1.555 を
+  `releases-archive.md` へ移した (アーカイブのフッタは前例どおり据え置き)。
+  今回の主題は **MD トラジェクトリのコマンド** (native の `load_trajectory` / `add_traj_block` /
+  `list_traj_blocks` / `remove_traj_block` / `move_traj_block`、PyM console の `load_traj`、MCP と AI Agent の
+  `md` ツールセット、GUI の操作の History への記録)・**Console の ++ctrl+r++ の履歴検索**・**Fast GI で表面が
+  陰影を落とす**。ほかは `DEV_ISSUES.md` (未追跡) で開発側に挙げた #1〜9・#11〜24 の修正。
+  更新履歴は 3 節 + warning (Windows / Linux の Console の入力欄で ++ctrl+r++ が Reload Scene ではなく履歴の検索になる)。
+  **ユーザー指示により更新履歴に書かなかったもの**: Tab で `, ` が入る件、`superpose` が結果を返す件、
+  `list_anim_props`、スクリプトの末尾の `save_scene`、`set_view` の `null` / `[x, y, z]`、取得した結晶のマップが
+  ビュー中心に描かれる件、New Renderer の Center view の既定がオフ、Mol Struct の **Properties**、Renderer の名前の
+  付け方の変更と存在しないプリセット・Renderer の種類のエラー (warning からも落とした)。本体には事実として書いた。
+  `reference/actions.md` の「MD トラジェクトリの編集は記録されない」(3 か所) は obsolete なので直した。
+  `tutorials/experimental/density-map.md` の「読み込んだ直後は視点が単位格子の中央に移る → Focus と Redraw」は
+  obsolete (`e67b152e`) なので、マップがビュー中心に描かれる記述に直し、図 `2-redrawn` の参照を外した
+  (spec も追随。`2-redrawn.webp` は en が参照しているので残した)。チュートリアルの「同じことをコマンドで」から
+  `set_mol_selection` の解除と `superpose` / `save_scene` / Renderer の名前の注記を外し、alphafold の
+  `2ocj/cartoon1` を `cartoon2` に直した。
+  **書かなかったもの**: ダブルクリックの判定と右クリックメニュー直後のクリック、EMDB の推奨レベルを待つ件、
+  Animation パネルのインスペクタと全体の長さ、Trajectory パネルのヘッダの折り返し (more メニュー)、ffmpeg の取得元、
+  local-api.json、`add_paint` の 2 回目で 1 回目の色が保たれる件、依存の更新。
+  `reference/settings.md` の Plugins の表 (MD Tools で増えるもの) は要約なので Console のコマンドを足していない。
 
 ## E2E 検証と画像生成 (docs-verify/)
 
@@ -637,17 +662,18 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
   既存の目的別 6 本には 2026-11-26 に CueMol3 3.0.6.577 で書いた (各行を新しいシーンで
   `tritium_cli -c` に 1 行ずつ流して確認)。確かめ方の要点:
   - `;` やカンマを含む選択式は引用符で囲む (`selection="r; RET"`)。
-  - `save_scene` はスクリプトファイルにまとめると実行されない (1 行に単独で実行する)。
-  - `add_paint` は塗った範囲を分子の選択にもする (意図した副作用。ハイライトが図に残るので
-    `set_mol_selection <obj>, ""` で解除する)。
-  - `set_anim_prop` の `rend` / `endcam` / `mol` は、存在しない名前でもエラーにならない。
-    アニメーション要素のプロパティは Console から読み出せないので、`animate seek` と
+  - `save_scene` は、まとめて実行するときは最後に置く (3.0.7.578 から。それまでの変更を確定してから保存し、
+    後ろにコマンドを続けるとエラーになる。3.0.6.577 以前はスクリプトの中では実行されなかった)。
+  - `add_paint` は分子の選択を変えない (3.0.7.578 から。3.0.6.577 以前は塗った範囲を選択にしたので、
+    チュートリアルに `set_mol_selection <obj>, ""` で解除する行を置いていた。3.0.7.578 の同期で外した)。
+  - `set_anim_prop` の `rend` / `endcam` / `mol` は、存在しない名前をエラーにする (3.0.7.578 から)。
+    アニメーション要素のプロパティは `list_anim_props` で読み出せる。見た目は `animate seek` と
     `export_image` で画像を書き出して確かめる。
   - レンダリング設定のキーには接頭辞が要る (`umbreon.useGI`)。`width` / `height` は接頭辞なし。
   - 選択式: `A.*` は不可 (`chain A` か `A.*.*`)。残基番号だけなら `resi 96:289` (`96:289` は不可)。
     `A.1:29,60:121.CA` のような階層表記の列挙は可。温度因子の比較は `<` / `>` / `=` のみ (`>=` は不可)。
-  - `superpose` は結果 (RMSD など) を CLI に返さない。本文に RMSD を書くときは、LSQ なら同じ原子で
-    手元で最小二乗の RMSD を計算すれば一致する。US-align の値は Output パネルで確かめる。
+  - `superpose` は結果 (RMSD・対応づけた残基 / 原子の数・回転角、US-align では TM-score と配列の一致率) を
+    返す (3.0.7.578 から)。本文に書く RMSD はこの値で確かめる。
   - `set_map_contour` の `level` は、cryo-EM マップでは常に上位 % (Density map パネルの単位の
     切り替えとは無関係)。
   - 2026-11-26 に A〜F (binding-site / alphafold / superpose / cryoem-map / protein-dna / chx-console)
@@ -656,8 +682,8 @@ Version 表示と同じ値なので、ユーザーは手元のビルドと直接
     PATH 上の npm 版が古いことがある (2.4.0 は `--dialect chimerax` を受け付けない)。
   - 確かめ終えたシーンは **名前か番号を指定して** 閉じる (`close_scene <名前>, true`)。名前なしの `close_scene` は
     前面のシーンを閉じるので、ユーザーが開いたシーンを閉じてしまうことがある (2026-11-26 に実際に起きた)。
-  - GUI で作る Renderer の名前はシーン全体で重ならないように付く (2 つ目の分子の cartoon は `cartoon2`)。
-    コマンド (`fetch_pdb` など) で作ると分子ごとに `cartoon1` から付く。本文と「同じことをコマンドで」で名前が違うことがある。
+  - Renderer の名前は、GUI でもコマンド (`fetch_pdb` など) でもシーン全体で重ならないように付く
+    (2 つ目の分子の cartoon は `cartoon2`)。3.0.6.577 以前はコマンドだと分子ごとに `cartoon1` から付いた。
   - 基本操作コースの 6 ページにも spec がある (`docs-verify/specs/basic/`、2026-11-27)。右クリックメニューは
     harness の driver (`pickNextContextItem`) で実際の項目名を選んで操作する (PLAYBOOK の「既知の落とし穴」)。
     ページにある手作りの図 (camera-created / distance / dashed-stick1) は、ユーザー指示により撮り直さない。

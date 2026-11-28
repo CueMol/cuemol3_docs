@@ -22,6 +22,10 @@ Settings &gt; Plugins &gt; Installed で有効にしてください
 - トポロジーだけのファイル (`.prmtop` / `.psf`) は、**Open File...** で座標の無い分子として開くことができます。
   座標は、そのあと座標やトラジェクトリのファイルをドロップして付けます。
 
+トラジェクトリを開く・付ける操作と、下記のブロックの編集は、History に Console のコマンド
+(`load_trajectory` / `add_traj_block` など) として記録されます。同じ操作を Console から行うこともできます
+(→ [Console のコマンド一覧](../../reference/plugins/console/commands.md#md-トラジェクトリ))。
+
 ## パネルの構成
 
 ![Trajectory パネル。3 つの XTC ファイルがブロックとして並び、再生位置が 2 つ目のブロックの途中にある](../../../assets/images/ui/bottom-panels/trajectory.webp){ width="854" .on-glb }
@@ -54,7 +58,8 @@ Settings &gt; Plugins &gt; Installed で有効にしてください
 - [下部パネル](index.md)
 - [File メニュー](../../menu/file.md)
 - [プラグイン](../../reference/plugins/index.md)
+- [操作の記録と再生](../../reference/actions.md)
 
 ---
 
-*確認対象: CueMol3 3.0.2.560*
+*確認対象: CueMol3 3.0.7.578*
