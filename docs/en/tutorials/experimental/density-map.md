@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/experimental/density-map.md @ 1002eeb -->
+<!-- source: ja/tutorials/experimental/density-map.md @ 53a8286 -->
 
 # Displaying an electron density map
 
@@ -39,12 +39,9 @@ The 2Fo-Fc map (blue) is the density that envelops the whole model. The Fo-Fc ma
 In the **Explorer &gt; Scene** tree in the left side panel (scene tree →
 [Side panels](../../ui/side-panels.md)), the map Objects (`1qio_2fofc` / `1qio_fofc`) and their contour Renderers are listed separately from the coordinate Object. The eye icons toggle their visibility individually.
 
-Right after loading, the view may move to the center of the map's range (near the center of the unit cell), and the map may be drawn away
-from the molecule. In that case, select `1qio` in the scene tree and press **Focus** at the top of the panel, then press
-**Redraw** for each Renderer in the **Crystal &gt; Density map** panel to redraw the map at the molecule's position.
+The maps are drawn around the view center at the time of fetching (the molecule loaded before them). The view does not move.
 
-![Right after loading. The map (right) is drawn away from the molecule (left)](../../../assets/images/tutorials/experimental/density-map/2-loaded.webp){ .on-glb }
-![After Focus and Redraw. The map overlaps the molecule](../../../assets/images/tutorials/experimental/density-map/2-redrawn.webp){ .on-glb }
+![Right after loading. The map is drawn over the molecule](../../../assets/images/tutorials/experimental/density-map/2-loaded.webp){ .on-glb }
 
 Crystallographic maps are drawn **only around the view center**. When the molecular view is translated, the displayed map region follows (a cryo-EM map is drawn in its entirety, and the display range adjustment below is not needed
 → **Region** in [contour](../../reference/renderers/contour.md#contour)).
@@ -129,4 +126,4 @@ hide 1qio_2fofc
 
 ---
 
-*Verified against: CueMol3 3.0.6.577*
+*Verified against: CueMol3 3.0.7.578*

@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/structure/superpose.md @ 1002eeb -->
+<!-- source: ja/tutorials/structure/superpose.md @ 53a8286 -->
 
 # Superposing and comparing structures
 
@@ -123,12 +123,9 @@ superpose 4ake, 1ake, movSel="A.1:29,60:121,160:214.CA", refSel="A.1:29,60:121,1
 set_renderer_coloring 4ake/cartoon1, paint-type-paint, paintColor=okabeito_1
 add_paint 4ake/cartoon1, "A.30:59.*", #009E73
 add_paint 4ake/cartoon1, "A.122:159.*", #D55E00
-set_mol_selection 4ake, ""
 ```
 
-- `superpose` does not return the result of the superposition (such as the RMSD) in the command output. Check the values in the Output panel.
-- `add_paint` also makes the painted range the selection of the molecule. To keep the selection highlight out of the figure,
-  the selection is cleared with `set_mol_selection` at the end.
+- `superpose` prints the result of the superposition (such as the RMSD and the number of atoms used for the superposition).
 
 ## Next steps
 
@@ -140,4 +137,4 @@ A movie connecting the open and closed structures can be made by morphing
 
 ---
 
-*Verified against: CueMol3 3.0.6.577*
+*Verified against: CueMol3 3.0.7.578*

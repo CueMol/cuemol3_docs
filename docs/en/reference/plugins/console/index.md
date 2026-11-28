@@ -1,4 +1,4 @@
-<!-- source: ja/reference/plugins/console/index.md @ d6bebaf -->
+<!-- source: ja/reference/plugins/console/index.md @ 53a8286 -->
 
 # Console
 
@@ -41,11 +41,17 @@ The native mode is part of Console and is always available.
 | ++shift+enter++ | Inserts a line break. |
 | ++tab++ | Completes the part before the cursor. The part after the cursor is left as is. When there are multiple candidates, a list is shown just above the prompt. Pressing it again while the list is shown opens a menu for choosing a candidate. |
 | ++up++ / ++down++ | Steps through the input history (when the cursor is on the first / last line) |
+| ++ctrl+r++ | Searches the input history (as in zsh). See below. |
 
 - In the candidate menu, ++tab++ / ++shift+tab++ / the arrow keys move between candidates, and ++enter++ confirms the choice (the command is not run). ++esc++ restores the input as it was before ++tab++ was pressed. Any other key confirms the selected candidate and is then typed. A candidate can also be confirmed by clicking it.
+- When ++tab++ completes an argument and more arguments follow, `, ` is added after it.
 - Pressing ++tab++ on a word containing `*` or `?` expands it to all matches.
 - In file name completion, names starting with `.` become candidates only when `.` is typed. If nothing matches, the search is retried without distinguishing upper and lower case. For `cd`, only directories are candidates.
 - In native mode, ++tab++ completes command names, `help` topics, argument values (choices and true / false), Object and Renderer names, named selections, color names, Renderer types, property paths, the `name=` of arguments not yet specified, and file paths (only for arguments that take a path).
+- ++ctrl+r++ starts a history search. Typing shows the newest line that contains the typed text, and
+  pressing ++ctrl+r++ again moves to an earlier line. ++enter++ runs that line, and ++esc++ or
+  ++ctrl+g++ returns to the input as it was before the search. Any other key ends the search, keeping the
+  line shown. On Windows / Linux too, ++ctrl+r++ in the input field searches the history instead of running Reload Scene.
 - **One execution is grouped into one Undo.**
 - A command that the current mode does not support is skipped with `Warning: <reason>; skipped`,
   and the remaining commands are run. Other errors stop execution there.
@@ -123,4 +129,4 @@ The native-mode commands are collected by `help` topic in the [Console command l
 
 ---
 
-*Verified against: CueMol3 3.0.1.555*
+*Verified against: CueMol3 3.0.7.578*

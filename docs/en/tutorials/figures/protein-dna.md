@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/protein-dna.md @ 1002eeb -->
+<!-- source: ja/tutorials/figures/protein-dna.md @ 53a8286 -->
 
 # Displaying a protein-DNA complex
 
@@ -91,13 +91,11 @@ set 1ytb/nucl1.base_type, detail1
 # 4. Color the DNA
 set_renderer_coloring 1ytb/nucl1, paint-type-paint, paintColor=okabeito_2
 add_paint 1ytb/nucl1, "C.4:10,20:26.*", #D55E00
-set_mol_selection 1ytb, ""
 # 5. Show the phenylalanines that wedge into the DNA
 create_renderer 1ytb, ballstick, selection="bysidech A.99,116,190,207.*"
 ```
 
 - `focus_nodes` sets the view so that all the given Renderers fit, the same as selecting several rows in the scene tree and pressing **Focus**.
-- `add_paint` also makes the painted range the molecule's selection. `set_mol_selection` clears the selection so that the selection highlight does not remain in the figure.
 
 ## Next steps
 
@@ -107,4 +105,4 @@ create_renderer 1ytb, ballstick, selection="bysidech A.99,116,190,207.*"
 
 ---
 
-*Verified against: CueMol3 3.0.6.577*
+*Verified against: CueMol3 3.0.7.578*

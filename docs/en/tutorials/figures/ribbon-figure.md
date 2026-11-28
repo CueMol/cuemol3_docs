@@ -1,4 +1,4 @@
-<!-- source: ja/tutorials/figures/ribbon-figure.md @ 5f16888 -->
+<!-- source: ja/tutorials/figures/ribbon-figure.md @ 53a8286 -->
 
 # Making a protein ribbon figure
 
@@ -164,7 +164,6 @@ set_renderer_coloring 3ug9/cartoon1, paint-type-paint
 add_paint 3ug9/cartoon1, A.49:83.*, #E69F00
 add_paint 3ug9/cartoon1, A.84:317.*, #56B4E9
 add_paint 3ug9/cartoon1, A.318:342.*, #009E73
-set_mol_selection 3ug9, ""
 # 5. Show the ligand as ballstick
 create_renderer 3ug9, ballstick, selection="r; RET"
 # 6. Finish with the background and outlines
@@ -176,11 +175,8 @@ save_camera view1
 save_scene ~/3ug9.qsc, embedAll=true
 ```
 
-- `add_paint` also makes the painted range the molecule's selection. So that the selection highlight does not
-  remain in the figure, `set_mol_selection` clears the selection at the end.
 - Enclose selection expressions that contain `;` or commas (such as `r; RET`) in quotes.
-- `save_scene` is not executed when it is run as part of a script file. Enter it on its own line,
-  or run it by itself.
+- When the commands are run together, put `save_scene` last (it saves after the earlier changes are committed).
 
 ## Next steps
 
@@ -190,4 +186,4 @@ save_scene ~/3ug9.qsc, embedAll=true
 
 ---
 
-*Verified against: CueMol3 3.0.6.577*
+*Verified against: CueMol3 3.0.7.578*
